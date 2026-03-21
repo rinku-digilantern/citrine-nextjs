@@ -1,0 +1,104 @@
+.breadcrumb {
+  background-color: var(--footer-bg);
+  padding: 12px 0;
+  border-bottom: 1px solid #E5D7C3;
+}
+.bredcontainer {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.breadcrumbList {
+  padding: 0 10px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3px;
+  flex-wrap: wrap;
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.breadcrumbLink {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.breadcrumbLink:hover {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumbCurrent {
+  color: var(--default-color);
+  font-weight: 500;
+}
+
+.separator {
+  color: var(--default-color);
+  font-size: 12px;
+  user-select: none;
+  font-weight: 400;
+}
+
+/* Responsive */
+/* Start of IPad Pro Screen */
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.bredcontainer {max-width: 90%; margin: 0px auto;padding: 0px; width: 90%;}
+.breadcrumbList {padding: 0px;}
+}
+
+/* Start of IPad Pro Screen */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.breadcrumb {padding: 10px 0;}
+.bredcontainer {max-width: 92%; margin: 0px auto;padding: 0px; width: 92%;}
+.breadcrumbList {padding: 0px;}
+.breadcrumbItem {font-size: 12px;gap: 5px;}
+}
+
+/* Start of IPad Pro Screen */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.breadcrumb {padding: 10px 0;}
+.bredcontainer {max-width: 92%; margin: 0px auto;padding: 0px; width: 92%;}
+.breadcrumbList {padding: 0px;}
+.breadcrumbItem {font-size: 12px;gap: 5px;}
+}
+
+/* Start of IPad Pro Screen */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.breadcrumb {padding: 10px 0;}
+.bredcontainer {max-width: 92%; margin: 0px auto;padding: 0px; width: 92%;}
+.breadcrumbList {padding: 0px;}
+.breadcrumbItem {font-size: 12px;gap: 5px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .breadcrumb {padding: 10px 0;}
+.bredcontainer {max-width: 92%; margin: 0px auto;padding: 0px; width: 92%;}
+.breadcrumbList {padding: 0px;}
+  .breadcrumbItem {font-size: 12px;gap: 5px;}
+}
+
+/* Start of Mini Ipad Screen */
+@media (max-width: 767.98px) and (min-width: 600px) {
+.breadcrumb{margin-top: 0px;padding: 10px 0;}
+.bredcontainer {max-width: 92%; margin: 0px auto;padding: 0px; width: 92%;}
+.breadcrumbList {padding: 0px;}
+}
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.breadcrumb{margin-top: 0px;padding: 5px 0;}
+.breadcrumbList {max-width: 100%;padding: 0 10px;gap: 2px;}
+}

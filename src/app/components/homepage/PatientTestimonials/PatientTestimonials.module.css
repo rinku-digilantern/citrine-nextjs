@@ -1,0 +1,194 @@
+.testimonialsSection {
+  padding: 60px 0px;
+  position: relative;
+  overflow: hidden;
+}
+.backgroundImage {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Main Heading */
+.mainHeading {
+  text-align: center;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Embla Carousel */
+.embla {
+  overflow: hidden;
+  position: relative;
+  background: #FFFAF3B2;
+  border: 1px solid #E5D7C3;
+}
+
+.emblaContainer {
+  display: flex;
+  gap: 0px;
+}
+
+.emblaSlide {
+  flex: 0 0 50%;
+  min-width: 0;
+  padding: 0px;
+  position: relative;
+}
+
+/* Dotted Line Between Cards */
+.emblaSlide:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+/* Testimonial Card */
+.testimonialCard {
+  background: transparent;
+  padding: 40px;display: flex;align-items: stretch;
+  min-height: 330px;flex-direction: column;
+  border-left: 1px solid #E5D7C3;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--default-color);
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Stars */
+.stars {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.star {
+  color: #FFD700;
+  font-size: 16px;
+}
+
+/* Testimonial Text */
+.testimonialText {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--default-color);
+  margin-bottom: 30px;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Author */
+.author {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--default-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Next Button */
+.nextButtons {
+  position: absolute;
+  right: -54px;
+  top: 65%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 40px;
+  background: var(--gradient-bg);
+  border: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(224, 157, 58, 0.3);
+  z-index: 10;
+}
+
+.nextButtons:hover {
+  transform: translateY(-50%);
+  box-shadow: 0 6px 20px rgba(224, 157, 58, 0.4);
+}
+
+.nextButtons svg {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+/* Previous Button */
+.previousButtons {
+  position: absolute;
+  left: -54px;
+  top: 65%;
+  transform: translateY(-50%);
+  width: 55px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #E5D7C3;
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 10px 20px 0px #00000014;
+  z-index: 10;
+}
+
+.previousButtons:hover {
+  transform: translateY(-50%);
+  box-shadow: 0px 10px 20px 0px #00000014;
+}
+
+.previousButtons svg {
+  color:#D9C6AB;
+  font-size: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .emblaSlide {flex: 0 0 100%;padding: 0 20px;}
+  .emblaSlide:not(:last-child)::after {display: none;}
+  .mainHeading { font-size: 38px;}
+  .nextButtons {right: 20px;width: 50px;height: 50px;}
+  .nextButtons svg {font-size: 18px;}
+}
+
+@media (max-width: 768px) {
+  .testimonialsSection {padding: 2rem 15px;}
+  .mainHeading {font-size: 32px;margin-bottom: 40px;}
+  .testimonialCard {padding: 30px 20px;min-height: auto;}
+  .cardTitle {font-size: 15px;}
+  .testimonialText {font-size: 15px;}
+  .nextButtons {width: 45px;height: 45px; right: 15px;}
+  .nextButtons svg {font-size: 16px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.testimonialsSection{padding: 1.5rem 10px 60px 10px;}
+.mainHeading {letter-spacing: 0px;margin-bottom: 15px;}
+.mainHeading br{display: none;}
+.container{max-width: 100%;}
+.previousButtons {width: 50px;height: 30px;top:unset;left: 34%;bottom: -55px;}
+.nextButtons {width: 50px;height: 30px;right:34%;top:unset;bottom: -55px;}
+.emblaSlide {flex: 0 0 100%;padding: 0px;}
+.testimonialCard{border-left: 0px;}
+}

@@ -1,0 +1,182 @@
+.redefiningSection {
+  background-color: #f5f1e8;
+  padding: 60px 20px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.mainHeading {
+font-weight: 400;
+text-align: center;
+text-transform: uppercase;
+margin-bottom: 15px;
+}
+
+.description {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #333;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.achievementsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+  overflow: visible;
+}
+
+.achievementCard {
+  padding: 30px 30px 30px 30px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.achievementCard:hover {
+  transform: translateY(-5px);
+}
+
+.cardBeige {
+  background: linear-gradient(59.43deg, #FFF0D9 26.92%, #FFDDB2 100%);
+  border: 1px solid #D6C4AC;
+}
+
+.cardPink {
+  background: linear-gradient(59.43deg, #FFEBFD 26.92%, #FFC7F9 100%);
+  border: 1px solid #EFAEE8;
+}
+
+.cardGreen {
+  background: linear-gradient(59.43deg, #E7FFE3 26.92%, #C1FFB9 100%);
+  border: 1px solid #B2EBAB;
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--default-color);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.highlight {
+  font-weight: 700;
+  color: var(--default-color);
+}
+
+.cardLogo {
+  margin-top: auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(140.76deg, rgba(255, 255, 255, 0.7) 15%, rgba(255, 255, 255, 0) 70%);
+}
+
+.logoImage {
+  max-width: 200px;
+  height: auto;
+  opacity: 1;
+  object-fit: contain;
+}
+
+.awardImage {
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+
+  .achievementsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .cardTitle {
+    font-size: 14px;
+  }
+  
+  .cardLogo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .awardImage,
+  .logoImage {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .redefiningSection {
+    padding: 40px 15px;
+  }
+
+  .mainHeading {
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+
+  .achievementsGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .achievementCard {
+    min-height: 220px;
+    padding: 20px 15px 0 15px;
+  }
+
+  .cardTitle {
+    font-size: 13px;
+  }
+  
+  .cardLogo {
+    width: 180px;
+    height: 180px;
+    bottom: -20px;
+    right: -20px;
+  }
+  
+  .awardImage,
+  .logoImage {
+    max-width: 90px;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .redefiningSection {padding: 1.5rem 0px;}
+  .container {padding: 0px;margin:0 auto;width:90%}
+  .mainHeading {margin-bottom: 15px;font-size: 26px;}
+  .mainHeading br{display: none;}
+  .description {font-size: 15px; margin:0px auto 15px auto;}
+  .cardTitle {font-size: 15px;}
+  .achievementsGrid{margin-top: 15px;gap: 10px}
+  .cardLogo {width: 180px;height: 180px;bottom: -30px;right: -30px;}
+}

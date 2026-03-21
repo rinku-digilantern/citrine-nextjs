@@ -1,0 +1,280 @@
+/* Responsive video container for modal */
+.modalVideoContainer {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+}
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+.marqueeWrapper {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  font-family: var(--font-montserrat);
+  animation: marquee-scroll var(--marquee-duration, 9s) linear infinite;
+  will-change: transform;
+  font-weight: 500;
+  line-height: 70px;
+  padding: 0;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 100px;
+  min-width: max-content;
+  text-transform: uppercase;
+  color: rgba(167, 124, 55, 0.09);
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-right: 2rem;
+}
+
+@keyframes marquee-scroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.techSection {
+  position: relative;
+  background: #f7ecd9;
+  padding: 60px 0;
+   overflow: hidden;
+  z-index: 1;
+  border-top: 1px solid #E5D7C3;
+  border-bottom: 1px solid #E5D7C3;
+}
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.techtitle{font-size: 100px;line-height: 70px; text-transform: uppercase;color: #A77C37;font-weight: 300;font-family: var(--font-montserrat);}
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.visible{overflow-y: visible;overflow-x: hidden;padding-top: 58px;}
+.arrowLeft {
+  flex: 0 0 50px;
+  display: flex;
+  color: #a67c52;
+   background: var(--white-color);
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowRight {
+  flex: 0 0 50px;
+  display: flex; 
+  background: var(--default-color);
+  align-items: center;
+  color: var(--white-color);
+  justify-content: center;
+}
+
+.arrowBtns {
+  width: 70px;
+  height: 45px;
+  border: none;
+  background: var(--default-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.2s;
+}
+.arrowBtn:hover {
+  background: #e5d1b8;
+}
+
+.arrowBtn {
+  width: 70px;
+  height: 45px;
+  background: var(--white-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  font-size: 24px;
+  cursor: pointer;
+  color: #a67c52;
+  border: 1px solid #E5D7C3;
+  transition: background 0.2s;
+  box-shadow: 0px 10px 20px 0px #00000014;
+}
+.arrowBtns:hover {
+  background: #e5d1b8;
+}
+
+.contentBox {
+  display: flex;
+  background: var(--lightyellowbg);
+  padding: 50px 30px 30px 30px;
+  gap: 25px;
+  border: 1px solid #E5D7C3;
+  align-items: flex-start;
+}
+
+.leftCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;
+}
+/* make the thumbnail link the positioned ancestor so .play can be positioned over the image */
+.leftCol a {
+  position: relative;
+  display: inline-block;
+}
+.heading {
+  margin-bottom: 12px;
+}
+.deviceThumb {
+  width: 440px;
+  height: 250px;
+  position: relative;
+  object-fit: cover;
+}
+.play{
+position: absolute;
+left: 50%;
+top: 50%;
+z-index: 99;
+cursor: pointer;
+transform: translate(-50%, -50%);
+}
+
+/* embla minimal styles for thumbnail slider */
+.embla {
+  /* overflow: hidden; */
+  width: 100%;
+  position: relative;
+}
+.emblaContainer {
+  display: flex;
+  gap: 0;
+}
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 0px;
+}
+.contentBox {
+  width: 100%;
+  max-width: 100%;
+}
+
+.centerCol {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+.deviceImg {
+  width: 340px;
+  height: 505px;
+  position: absolute; 
+  top: -120px;      
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 99;  
+  object-fit: contain;
+}
+
+.rightCol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bulletList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.bulletList li {
+  font-size: 18px;
+  color: var(--default-color);
+  position: relative;
+  padding-left: 32px;
+}
+.bulletList li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 24px;
+  height:24px;
+  background: url('/assets/images/home/techlist.webp') no-repeat center/contain;
+}
+
+@media (max-width: 1024px) {
+  .contentBox {
+    flex-direction: column;
+    min-width: 0;
+    padding: 24px 8px;
+    gap: 24px;
+  }
+  .container {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .centerCol {
+    justify-content: flex-start;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.techSection {padding: 1.5rem 0;}
+.heading{text-align: center;}
+.contentBox {flex-direction: column;min-width:unset;padding: 12px 8px;gap: 10px;position: relative;}
+.visible {padding-top: 0px;overflow-y: inherit;overflow-x: inherit;}
+.container {max-width: 95%;margin: 0 auto;display: block;}
+.bulletList {gap: 5px;}
+.bulletList li {font-size: 15px;}
+.centerCol {width: 100%;max-width: 100%;order:3;height:100%}
+.centerCol img{height:250px;width: 60%; margin:0 auto;}
+.leftCol{order:1;align-items: center;}
+.rightCol{order:2}
+.deviceImg {width: 100%;height: 100%;position: relative; top: unset;left: unset;transform: unset;z-index: unset;  object-fit: unset;}
+.arrowRight {display: inline-block;right:5%;position: absolute; background: none;bottom:130px;z-index: 9;width: 50px;height: 30px;}
+.arrowLeft {display: inline-block;left:5%;position: absolute;background: none;bottom:130px;z-index: 9;width: 50px;height: 30px;}
+.arrowBtns {width: 50px;height: 30px;display: inline-block;font-size: 20px;position: relative;}
+.arrowBtn {width: 50px;height: 30px;display: inline-block;font-size: 20px;position: relative;}
+}

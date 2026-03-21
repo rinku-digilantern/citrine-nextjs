@@ -1,0 +1,148 @@
+.tableOfContent {
+  background: var(--white-color);
+  border-top: 1px solid #E5D7C3;
+  border-bottom: 1px solid #E5D7C3;
+  width: 100%;
+  transition: all 0.3s ease;
+  z-index: 100;
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  top: 75px;
+  background: var(--white-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0px 0 0 100px;
+  position: relative;
+}
+
+.menuWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.gradientLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: linear-gradient(to right, var(--white-color), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gradientRight {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: linear-gradient(to left, var(--white-color), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.menuList {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: center;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  scroll-behavior: auto;
+  touch-action: pan-x;
+  cursor: grab;
+  user-select: none;
+}
+
+.menuList:active {
+  cursor: grabbing;
+}
+
+.menuList::-webkit-scrollbar {
+  display: none;
+}
+
+.menuItem {
+  flex-shrink: 0;
+}
+
+.menuLink {
+  display: block;
+  padding: 22px 0px 22px 0px;
+  margin-right: 60px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--default-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  border: none; text-transform: uppercase;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-poppins), sans-serif;
+  position: relative;
+  pointer-events: auto;
+}
+
+.menuLink:hover {
+  color: #DE9736;
+}
+
+.menuLink.active {
+  color: #DE9736;
+}
+
+.menuLink.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #DE9736;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .menuLink {
+    padding: 16px 20px;
+    font-size: 12px;
+  }
+
+  .gradientLeft,
+  .gradientRight {
+    width: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sticky {top: 50px;}
+  .menuLink {padding: 14px 16px;font-size: 11px;}
+  .gradientLeft,
+  .gradientRight {width: 30px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .menuList {justify-content: flex-start;}
+  .menuLink {padding: 15px 15px;font-size: 15px;letter-spacing: 0.2px;margin-right: 10px;}
+  .gradientLeft,
+  .gradientRight {width: 25px;}
+  .container {padding: 0 0 0 12px;}
+}

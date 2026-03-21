@@ -1,0 +1,215 @@
+.philosophySection {
+  background-color: var(--footer-bg);
+  padding: 60px 0px;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.mainHeading {
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.highlight {
+  color: #d4a044;
+  font-weight: 400;
+}
+
+.cardsGrid {
+  display: grid;
+  /* grid-template-columns: repeat(4, 1fr); */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+.card {
+  background:var(--lightyellowbg);
+  padding: 30px 25px;
+  display: flex;
+  width: 100%;
+  min-width: 0; 
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  box-shadow: 0px 8px 30px 0px #00000014;
+  border: 6px solid transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  box-shadow: 0px 12px 40px 0px #00000020;
+  transform: translateY(-5px);
+}
+
+.card:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  width: 90px;
+  height: 90px;
+  border-left: 6px solid #403524;
+  border-top: 6px solid #403524;
+  transition: all 0.3s ease;
+}
+
+.card:nth-child(1):hover::before {
+  top: auto;
+  left: auto;
+  bottom: -11px;
+  right: -11px;
+  border-left: none;
+  border-top: none;
+  border-bottom: 6px solid #403524;
+  border-right: 6px solid #403524;
+}
+
+.card:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  bottom: -11px;
+  width: 90px;
+  height: 90px;
+  border-bottom: 6px solid #403524;
+  border-left: 6px solid #403524;
+  transition: all 0.3s ease;
+}
+
+.card:nth-child(2):hover::before {
+  left: auto;
+  bottom: auto;
+  top: -11px;
+  right: -11px;
+  border-bottom: none;
+  border-left: none;
+  border-top: 6px solid #403524;
+  border-right: 6px solid #403524;
+}
+
+.card:nth-child(3)::before {
+  content: '';
+  position: absolute;
+  top: -11px;
+  left: -11px;
+  width: 90px;
+  height: 90px;
+  border-left: 6px solid #403524;
+  border-top: 6px solid #403524;
+  transition: all 0.3s ease;
+}
+
+.card:nth-child(3):hover::before {
+  top: auto;
+  left: auto;
+  bottom: -11px;
+  right: -11px;
+  border-left: none;
+  border-top: none;
+  border-bottom: 6px solid #403524;
+  border-right: 6px solid #403524;
+}
+
+.card:nth-child(4)::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  bottom: -11px;
+  width: 90px;
+  height: 90px;
+  border-bottom: 6px solid #403524;
+  border-left: 6px solid #403524;
+  transition: all 0.3s ease;
+}
+
+.card:nth-child(4):hover::before {
+  left: auto;
+  bottom: auto;
+  top: -11px;
+  right: -11px;
+  border-bottom: none;
+  border-left: none;
+  border-top: 6px solid #403524;
+  border-right: 6px solid #403524;
+}
+
+.subheading {
+  margin-bottom: 25px;font-size: 35px;
+  font-weight: 400;line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.cardDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--default-color);
+  margin-bottom: auto;
+  flex-grow: 1;
+}
+
+.cardIcon {
+  font-size: 48px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophySection {
+    padding: 60px 20px;
+  }
+
+  .mainHeading {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    min-height: 300px;
+    padding: 30px 25px;
+  }
+
+  .cardTitle {
+    font-size: 24px;
+  }
+
+  .cardDescription {
+    font-size: 15px;
+  }
+}
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.philosophySection{padding: 1.5rem 10px;}
+.mainHeading {margin-bottom: 15px;}
+.mainHeading br{display: none;}
+.card {min-height: auto;padding: 15px 10px;display: grid;grid-template-columns: 3fr 1fr;align-items: center;gap: 0 2px;}
+.cardContent {width: 100%;grid-column: 1;}
+.cardIcon {margin-top: 0;width: 100%;grid-column: 2;justify-content: flex-end;}
+.subheading {margin-bottom: 10px;font-size: 22px; font-weight: 500;}
+.cardsGrid {gap: 10px;}
+}

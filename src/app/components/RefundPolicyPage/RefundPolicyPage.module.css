@@ -1,0 +1,44 @@
+.RefundPolicyPage{padding: 40px 0%;background-color: var(--footer-bg);}
+.commonheader {text-align: center;margin-bottom: 1rem;}
+.mainHeading{text-align: center;}
+
+.container {max-width: 1320px;margin: 0 auto;padding: 0px;}
+
+/* Privacy Policy content Start */
+.RefundPolicyPage p {margin-bottom: 10px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+
+
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.RefundPolicyPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.RefundPolicyPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.RefundPolicyPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.RefundPolicyPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+.RefundPolicyPage{padding: 1.5rem 0%;}
+.container {max-width: 92%;}
+}
+
+
+@media (max-width: 767.98px) and (min-width: 320px) {
+.RefundPolicyPage{padding: 1.5rem 0%;}
+.container {max-width: 92%;}
+.commonheader {margin-bottom: 10px;}
+.mainHeading{font-size: 26px;}
+.RefundPolicyPage p {margin-bottom: 10px;font-size: 15px;}
+}

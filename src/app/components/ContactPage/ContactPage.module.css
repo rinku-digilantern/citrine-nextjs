@@ -1,0 +1,36 @@
+.contactPage {
+  padding: 40px 0;background-color: var(--footer-bg);
+}
+
+.wrapper {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.contactLeft {
+  padding: 0;
+}
+
+.contactRight {
+  padding: 0;
+}
+
+@media (max-width: 992px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactPage {padding: 1.5rem 0 1rem 0px;}
+  .wrapper{margin: 0 auto;max-width: 92%;width: 92%;}
+}

@@ -1,0 +1,82 @@
+.TechFourthSection {
+  background: #F6EADB;
+  padding: 40px 0 40px 0;
+  text-align: center;
+}
+.container {
+  margin: 0 auto;max-width: 1320px;text-align: center;
+}
+.mainHeading {
+  color: var(--default-color);
+  font-size: 45px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.benefitsSubheading {
+  color: var(--default-color);
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-items: center;
+  margin: 0 auto;
+}
+
+.benefitCard {
+  background: #FFFAF2;
+  box-shadow: 0px 10px 25px 0px #0000000D;
+  border: 1px solid #E5D7C3;
+  padding: 30px;
+  text-align: left;
+  min-width: 280px;
+  min-height: 100px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  transition: transform .3s, box-shadow .3s;
+}
+.benefitCard:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(90, 80, 67, 0.2);
+}
+
+
+.benefitCardTopBar {
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-bg);
+}
+
+.benefitCardText {
+  color: var(--default-color);
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+  .benefitsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.TechFourthSection {padding: 1.5rem 0;}
+.mainHeading {margin-bottom: 5px;font-size: 26px;}
+.mainHeading br{display: none;}
+.container {max-width: 92%;}
+.benefitsSubheading {margin-bottom: 20px;font-size: 15px;}
+.benefitsGrid {grid-template-columns: 1fr;gap: 10px;}
+.benefitCard {min-width: 0;padding: 15px 12px 15px 12px;min-height: 90px;}
+.benefitCardTopBar {left: 4%;}
+.benefitCardText {margin-top: 5px;font-size: 15px;}
+}

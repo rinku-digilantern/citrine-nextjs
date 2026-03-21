@@ -1,0 +1,111 @@
+.playButtonOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(90,80,67,0.12);
+  z-index: 2;
+}
+.TechStickyThirdSection{padding-bottom: 60px; background: var(--footer-bg);}
+.container {
+  margin: 0 auto;max-width: 1320px;text-align: center;
+}
+.stickyCardsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: 0px 0 0px 0px;
+}
+
+.stickyCard {
+  display: flex;
+  background: #FFFAF2;
+  box-shadow: 0px 10px 25px 0px #0000000D;
+  overflow: hidden;
+  position: sticky;
+  top: 90px;
+  align-items: stretch;
+  min-height: 320px;
+  border: 1px solid #E5D7C3;
+}
+.stickycard:nth-child(2n){top: 90px;}
+
+.cardImage {
+  flex: 1 1 46%;
+  object-fit: cover;
+  width: 100%;
+  padding: 25px;
+  height: 100%;
+  min-width: 280px;
+  display: flex;position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardContent {
+  flex: 1 1 55%;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--default-color);
+}
+
+.mainHeading {
+  color: var(--default-color);
+  font-size: 45px;text-align: left;
+  font-weight: 400;line-height: 1.2;
+  margin-bottom: 10px;
+}
+.bulletList {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0 0;
+}
+
+.bulletItem {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+.cardText {
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.bulletIcon {
+  color: var(--accent-color);
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+@media (max-width: 900px) {
+  .stickyCard {flex-direction: column;}
+  .cardImage, .cardContent {min-width: 0;width: 100%;padding: 24px;}
+  .cardContent {padding: 24px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.stickyCardsWrapper {display: grid; grid-auto-rows: 1fr;}
+/* .stickyCardsWrapper{display: flex; flex-direction: column; gap: 25px; margin: 0px 0 0px 0px;} */
+.TechStickyThirdSection{padding: 1rem 0px 1.5rem 0px;}
+.container {max-width:92%;}
+.cardImage, .cardContent {min-width: 0;width: 100%;padding: 12px;}
+.cardContent {padding: 12px;}
+.mainHeading {margin-bottom: 10px;font-size: 26px;}
+.cardText {font-size: 15px;}
+.bulletItem {margin-bottom: 3px;font-size: 15px;}
+.bulletIcon {margin-right: 7px;font-size: 15px;}
+.stickyCard {top: 70px;flex-direction: column;min-height: unset;height: 92%;}
+.stickycard:nth-child(2n){top: 70px;}
+.playButtonOverlay {width: 48px;height: 48px;}
+}

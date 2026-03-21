@@ -1,0 +1,363 @@
+.columnSection {
+  padding: 2rem 0 3rem 0px;
+  background: #fbf4ea;
+  width: 100%;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+  align-items: flex-start;
+}
+.row:nth-child(1) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 0px 30px 60px;
+}
+.row:nth-child(2) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 60px 30px 0px;
+}
+.row:nth-child(3) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 0px 30px 60px;
+}
+.row:nth-child(4) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 60px 30px 0px;
+}
+.row:nth-child(5) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 0px 30px 60px;
+}
+.row:nth-child(6) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 60px 30px 0px;
+}
+.row:nth-child(7) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 0px 30px 60px;
+}
+.row:nth-child(8) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 60px 30px 0px;
+}
+.row:nth-child(9) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 0px 30px 60px;
+}
+.row:nth-child(10) .contentWrapper {
+  grid-template-columns: 1fr 1fr;
+  padding: 30px 60px 30px 0px;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.topspace{padding: 1.5rem 0px 1.5rem 0px;}
+.sectionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.contentWrapper {
+  padding: 30px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mainHeading {
+  font-size: 45px;
+  font-weight: 400;
+  color: var(--default-color);
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin: 0 0 25px 0;
+}
+
+.treatmentLabel {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--default-color);
+  margin: 0 0 12px 0;
+  letter-spacing: 0.8px;
+}
+
+.treatmentSection {
+  margin-top: 0; 
+  background: #FFFAF2;
+  border: 1px solid #E5D7C3;
+  box-shadow: 0px 15px 25px 0px #0000000D;
+  padding: 0;
+  overflow: hidden;
+}
+
+.tabsContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  margin: 0;
+  width: 100%;
+  border-bottom: none;
+}
+
+.tabButton {
+  padding: 11px 20px;
+  background: #FFFAF2;
+  border: none;
+  border-bottom: 1px solid #E5D7C3;
+  border-right: 1px solid #E5D7C3;
+  font-size: 13px;
+  font-weight: 600;
+  color: #B0A28E;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-montserrat), sans-serif;
+  flex: 1;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tabButton:first-child {
+  border-radius: 0;
+}
+
+.tabButton:last-child {
+  border-right: none;
+  border-radius: 0;
+}
+
+.tabButton:hover {
+  background-color: #FFE8C4;
+}
+
+.activeTab {
+  background: var(--gradient-bg);
+  color: #FFFFFF;
+  border: none;
+}
+
+.activeTab:hover {
+  background: var(--gradient-bg-hover);
+}
+
+.tagsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 1.2rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 9px 18px;
+  background: #FFF0DB;
+  border: 1px solid #E5D7C3;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--default-color);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background-color: #FFF5E0;
+  border-color: #D4A044;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.actionButton {
+  padding: 11px 22px;
+  background: #FFF0DB;
+  color: var(--accent-color);
+  border: 1px solid #DE9736;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.activeActionButton {
+  border-color: #DE9736;
+  box-shadow: 0 4px 12px rgba(232, 164, 73, 0.18);
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  border: 1px solid #DE9736;
+  box-shadow: 0 4px 12px rgba(232, 164, 73, 0.3);
+}
+
+ .treatmentSection {
+    margin-bottom: 25px;
+  }
+
+  .treatmentLabel {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+
+  .tag {
+    padding: 9px 16px;
+    font-size: 13px;
+  }
+
+  .buttonGroup {
+    gap: 10px;
+  }
+
+  .imageWrapper {
+    min-height: 350px;
+  }
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .row,
+  .rowReverse {
+    grid-template-columns: 1fr;
+  }
+
+  .contentWrapper {
+    padding: 40px 30px;
+  }
+
+  .heading {
+    font-size: 36px;
+  }
+
+  .imageWrapper {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .columnSection {
+    padding: 0px 0px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .contentWrapper {
+    padding: 35px 25px;
+  }
+
+  .heading {
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .treatmentLabel {
+    font-size: 12px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .tabsContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+    touch-action: pan-x;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .tabsContainer::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tabButton {
+    flex: 0 0 auto;
+    min-width: max-content;
+  }
+
+  .tagsList {
+    padding: 1.2rem;
+    gap: 10px;
+  }
+
+}
+
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .contentWrapper {padding: 20px 15px;}
+  .container {padding: 0px;margin:0 auto;width:90%}
+  .mainHeading {letter-spacing: 2px;margin: 0 0 10px 0px;font-size: 30px;}
+  .description {font-size: 15px;margin-bottom: 20px;}
+  .treatmentSection {margin-bottom: 20px;}
+  .buttonGroup {gap: 10px;}
+  .imageWrapper {min-height: auto;}
+  .row {display: block;border-bottom: 1px solid #B0A28E;}
+  .row:first-child .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(2) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(3) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(4) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(5) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(6) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(7) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(8) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(9) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(10) .contentWrapper {padding: 10px 0 10px 0px;}
+  .tabsContainer{display:flex;flex-wrap: nowrap;overflow-x: auto;overflow-y: hidden;-webkit-overflow-scrolling: touch;white-space: nowrap;touch-action: pan-x;overscroll-behavior-x: contain;scrollbar-width:none;-ms-overflow-style:none;}
+  .tabsContainer::-webkit-scrollbar{display:none;}
+  .tabButton{flex: 0 0 auto;min-width: max-content;}
+  .tag {padding: 6px 12px;font-size: 13px;}
+  .actionButton{padding: 8px 12px;font-size: 13px;}
+  .topspace {padding: 15px 0;}
+  .tagsList {padding: 10px;}
+  .columnSection {padding: 10px 0 1.5rem 0px;}
+  .row:nth-child(2) .contentWrapper{padding: 0px 0px}
+  .row:first-child .contentWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(2) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:first-child .buttonGroup{margin-bottom: 12px;}
+  .row:nth-child(3) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(4) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:nth-child(5) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(6) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:nth-child(7) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(8) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:nth-child(9) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(10) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:last-child .imageWrapper{padding: 20px 0px 0px 0px}
+  .row:last-child{border-bottom:0px}
+}

@@ -1,0 +1,73 @@
+.TermsConditionsPage{padding: 40px 0%;background-color: var(--footer-bg);}
+.commonheader {text-align: center;margin-bottom: 1rem;}
+.mainHeading{text-align: center;}
+.container {max-width: 1320px;margin: 0 auto;padding: 0px;}
+
+/* Privacy Policy content Start */
+.TermsConditionsPage h2{font-size: 28px;padding: 10px 0px 8px 0px;font-weight: 500;font-family: var( --font-montserrat), sans-serif;color: var(--default-color);}
+.TermsConditionsPage h3{font-size:25;padding: 10px 0px 8px 0px;font-weight: 500;font-family: var( --font-montserrat), sans-serif;color: var(--default-color);}
+.TermsConditionsPage p {margin-bottom: 10px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+.TermsConditionsPage p a {color: var(--accent-color);}
+.personalheading{ font-size: 24px;padding: 12px 0px 5px 0px;}
+.TermsConditionsPage ol{padding: 0px; margin: 0px 0 12px 30px;}
+.TermsConditionsPage ol li{list-style-type: decimal;padding: 3px 0px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+.TermsConditionsPage ol li::marker{color: var(--accent-color);}
+.TermsConditionsPage ul{padding: 0px; margin: 0px 0 12px 30px;}
+.TermsConditionsPage ul li{list-style-type: square;padding: 3px 0px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+.TermsConditionsPage ul li a{color: var(--accent-color);}
+.TermsConditionsPage ul li::marker{color: var(--accent-color);}
+
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.TermsConditionsPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.TermsConditionsPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.TermsConditionsPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.TermsConditionsPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+.TermsConditionsPage {padding: 0px;}
+.TermsConditionsPage h2{font-size: 24px;padding: 8px 0px 5px 0px;line-height: 30px;}
+.TermsConditionsPage h3{font-size: 22px;padding: 8px 0px 5px 0px;line-height: 28px;}
+.TermsConditionsPage ol{padding: 0px; margin: 10px 0 10px 24px;}
+.TermsConditionsPage ol li{list-style-type: decimal;padding: 2px 0px;}
+.TermsConditionsPage ul{padding: 0px; margin: 10px 0 10px 24px;}
+.TermsConditionsPage ul li{list-style-type: square;padding: 2px 0px;}
+}
+
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+.TermsConditionsPage{padding: 1.5rem 0%;}
+.container {max-width:92%;}
+.TermsConditionsPage {padding: 0px;}
+.TermsConditionsPage h2{font-size: 22px;padding: 8px 0px 5px 0px;line-height: 30px;}
+.TermsConditionsPage h3{font-size: 20px;padding: 8px 0px 5px 0px;line-height: 28px;}
+.TermsConditionsPage ol{padding: 0px; margin: 10px 0 10px 24px;}
+.TermsConditionsPage ol li{list-style-type: decimal;padding: 2px 0px;}
+.TermsConditionsPage ul{padding: 0px; margin: 10px 0 10px 24px;}
+.TermsConditionsPage ul li{list-style-type: square;padding: 2px 0px;}
+}
+
+
+@media (max-width: 767.98px) and (min-width: 320px) {
+.TermsConditionsPage{padding: 1.5rem 0%;}
+.container {max-width:92%;}
+.commonheader {margin-bottom: 10px;}
+.mainHeading{font-size: 26px;}
+.TermsConditionsPage h2{font-size: 19px;padding: 5px 0px 4px 0px;line-height: 26px;}
+.TermsConditionsPage h3{font-size: 17px;padding: 5px 0px 4px 0px;line-height: 24px;}
+.TermsConditionsPage ol{padding: 0px; margin: 10px 0 10px 24px;}
+.TermsConditionsPage ol li{list-style-type: decimal;padding: 0px 0px;font-size: 15px;}
+.TermsConditionsPage ul{padding: 0px; margin: 10px 0 10px 24px;}
+.TermsConditionsPage ul li{list-style-type: square;padding: 0px 0px;font-size: 15px;}
+.TermsConditionsPage p {margin-bottom: 10px;font-size: 15px;}
+}

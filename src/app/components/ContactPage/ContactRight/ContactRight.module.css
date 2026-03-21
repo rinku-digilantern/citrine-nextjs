@@ -1,0 +1,109 @@
+.contactSidebar {
+  /* background: color-mix(in srgb, var(--accent-color), transparent 97%); */
+  height: 100%;
+  padding: 30px 30px;
+  background: linear-gradient(259.5deg, #9D835A 0%, #836940 37.87%, #634920 100%);
+}
+
+.contactSidebar .contactHeader {
+  margin-bottom: 20px;
+}
+
+.contactSidebar .contactHeader h3 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: var(--white-color);
+}
+
+.contactSidebar .contactHeader p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--white-color);
+  margin-bottom: 0;
+}
+
+.contactSidebar .contactMethods {
+  margin-bottom: 50px;
+}
+
+.contactSidebar .contactMethod {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 1.5rem;
+}
+
+.contactSidebar .contactMethod:last-child {
+  margin-bottom: 0;
+}
+
+.contactSidebar .contactMethod .contactIcon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex; border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-bg);
+}
+
+.contactSidebar .contactMethod .contactIcon img {
+  filter: brightness(0) invert(1);
+}
+
+.contactSidebar .contactMethod .contactDetails {
+  flex: 1;
+}
+
+.contactSidebar .contactMethod .contactDetails .methodLabel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.contactSidebar .contactMethod .contactDetails p {
+  font-size: 15px;
+  line-height: 1.6;
+ color: var(--white-color);
+  margin-bottom: 0;
+}
+
+.contactSidebar .contactMethod .contactDetails p a{color:#fff}
+.contactSidebar .contactMethod .contactDetails p a:hover{color:var(--accent-color);}
+.contactSidebar .connectSection {
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding-top: 40px;
+}
+.contactSidebar .connectSection .connectLabel {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .contactSidebar {padding: 40px 20px;}
+  .contactSidebar .contactHeader {margin-bottom: 40px;}
+  .contactSidebar .contactMethods {margin-bottom: 40px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.contactSidebar {padding: 1.5rem 12px;}
+.contactSidebar .contactHeader h3 {font-size: 26px;font-weight: 500;margin-bottom: 10px;}
+.contactSidebar .contactHeader p {font-size: 15px;}
+.contactSidebar .contactMethod {gap: 10px;margin-top: 1rem;}
+.contactSidebar .contactMethod .contactDetails p a{color:#fff}
+.contactSidebar .contactMethod .contactDetails p a:hover{color:var(--accent-color);}
+.contactSidebar .connectSection {padding-top: 20px;}
+.contactSidebar .contactHeader {margin-bottom: 20px;}
+.contactSidebar .contactMethods {margin-bottom: 20px;}
+}

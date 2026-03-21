@@ -1,0 +1,184 @@
+.TechSixethSection {
+  background: #f8f2ea;
+  padding: 40px 0 40px 0;
+  text-align: center;
+  border-bottom: 1px solid #E5D7C3
+}
+.container {
+  margin: 0 auto;max-width: 1320px;text-align: center;
+}
+.mainHeading {
+  color: var(--default-color);
+  font-size: 45px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.sixethSubheading {
+  color: var(--default-color);
+  font-size: 18px;line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.sixethGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  justify-items: center;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.sixethCard {
+  padding: 30px 25px;
+  background: #FFFAF2;
+  position: relative;
+  min-height: 140px;
+  display: flex;justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: 0px 8px 30px 0px #00000014;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.desc{font-size: 18px; color: var(--default-color);text-align: left;}
+
+/* Top-left corner bracket (accent color) - Card 1 */
+.leftBorder::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  width: 4px;
+  height: 70px;
+  background-color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.leftBorder::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 70px;
+  height: 4px;
+  background-color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for leftBorder - moves to bottom-right */
+.leftBorder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 40px 0px #00000020;
+}
+
+.leftBorder:hover::before {
+  left: auto;
+  right: -4px;
+  top: auto;
+  bottom: -4px;
+}
+
+.leftBorder:hover::after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: -4px;
+}
+
+/* Top-left corner bracket (accent color) - Cards 3 & 5 */
+.topBorder::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 4px;
+  height: 70px;
+  background-color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.topBorder::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -4px;
+  width: 70px;
+  height: 4px;
+  background-color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for topBorder - moves to bottom-right */
+.topBorder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 40px 0px #00000020;
+}
+
+.topBorder:hover::before {
+  left: auto;
+  right: -4px;
+  top: auto;
+  bottom: -4px;
+}
+
+.topBorder:hover::after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: -4px;
+}
+
+/* Bottom-left corner bracket (dark color) - Cards 2 & 4 */
+.bottomBorder::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  bottom: -4px;
+  width: 4px;
+  height: 70px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.bottomBorder::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 70px;
+  height: 4px;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for bottomBorder - moves to top-right */
+.bottomBorder:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 40px 0px #00000020;
+}
+
+.bottomBorder:hover::before {
+  left: auto;
+  right: -4px;
+  bottom: auto;
+  top: -4px;
+}
+
+.bottomBorder:hover::after {
+  left: auto;
+  right: 0;
+  bottom: auto;
+  top: -4px;
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.TechSixethSection {padding: 1.5rem 0 1.5rem 0;}
+.container {max-width: 92%;}
+.sixethGrid {grid-template-columns: repeat(1fr);gap: 12px;display: flex;max-width: 100%;flex-direction: column;}
+.mainHeading {font-size: 26px;}
+.sixethSubheading {font-size: 15px;margin-bottom: 15px;}
+.sixethSubheading br{display: none;}
+.sixethCard {min-height: 70px;padding: 15px 15px;align-items: center;}
+.desc{font-size: 15px;}
+}

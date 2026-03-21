@@ -1,0 +1,234 @@
+.appointmentSection {
+  padding: 60px 0px;
+  position: relative;
+  background: linear-gradient(259.5deg, #9D835A 0%, #836940 37.87%, #634920 100%);
+}
+/* .bannerImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+} */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.formWrapper {
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 0px; height: 100%;
+  box-shadow: 0px 20px 50px 0px #0000001A;
+  position: relative;
+  z-index: 2;
+}
+
+.subheading {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.formRow:nth-child(2) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.formRow:nth-child(3) {
+  grid-template-columns: 1fr;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  padding: 11px 15px;
+  border: 1px solid #E5D7C3;
+  background: #FFFCF7;
+  font-size: 15px;
+  font-family: var(--font-poppins), sans-serif;
+  color: #AF9E85;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #999;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #d4a044;
+  background: #ffffff;
+}
+
+.select:focus {
+  border-color: #d4a044;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23AF9E85' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23AF9E85' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+  cursor: pointer;
+  padding-right: 45px;
+}
+
+.select:focus,
+.select:active {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23AF9E85' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 12px;
+}
+
+.select option {
+  padding: 10px;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.submitButton {
+  background: linear-gradient(106.1deg, #DE9736 0%, #ECC851 100%);
+  color: #ffffff;
+  padding: 15px 50px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.submitButton:hover {
+  background: linear-gradient(106.1deg, #ECC851 0%, #DE9736 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(222, 151, 54, 0.4);
+}
+
+/* Date Input Styling */
+.input[type="date"] {  
+  position: relative;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  cursor: pointer;
+}
+ .input[type="date"]::-webkit-calendar-picker-indicator {
+  background: transparent;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: auto;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+ .input[type="date"]::before {
+  content: "";
+  left: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .appointmentSection {
+    padding: 1.5rem 20px;
+  }
+
+  .formWrapper {
+    padding: 1.5rem 25px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .input,
+  .select,
+  .textarea {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .submitButton {
+    padding: 12px 40px;
+    font-size: 14px;
+  }
+}
+
+/* Start of mini Desktop */
+@media (max-width: 1300px) and (min-width: 1200px) {
+.container {max-width: 90%;}
+}
+/* Start of mini Desktop */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.container {max-width: 90%;}
+}
+/* Smtart of IPad Pro */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.container {max-width: 90%;}
+}
+/* Smtart of IPad */
+@media (max-width: 991.98px) and (min-width: 768px) {
+.container {max-width: 90%;}
+}
+
+/* Smtart of Mini IPad */
+@media (max-width: 767.98px) and (min-width: 600px) {
+.container {max-width: 90%;}
+}
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .appointmentSection {padding: 1rem 10px;}
+   .formWrapper {padding: 1rem 15px;}
+   .formRow {grid-template-columns: 1fr;gap: 8px;}
+   .subheading{letter-spacing: 0px;margin-bottom: 10px;}
+}

@@ -1,0 +1,76 @@
+.thankpage {
+    background: linear-gradient(259.5deg, #9D835A 0%, #836940 37.87%, #634920 100%);
+    padding: var(--spacing-xxl) var(--spacing-xxl);
+    text-align: center;
+}
+
+.thankpage .row {
+    justify-content: center;
+}
+
+.thankpage .row .col {
+    background: var(--white-color);
+    box-shadow: 0px 5px 24px 1px #00000024;
+    padding: var(--spacing-xl);
+}
+
+.thankpage .col>svg {
+    width: 90px;
+    height: auto;
+    color:var(--accent-color);
+}
+
+.thankpage h1 {
+    font-size: 50px;
+    margin-bottom: var(--spacing-sm);
+    color: var(--default-color);
+    font-weight: 600;
+}
+
+.thankpage p {
+    margin-bottom: var(--spacing-md);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.gohome {
+  display: inline-block;
+  color: var(--default-color);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 7px 20px;
+  border: 1px solid var(--default-color);
+  background: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: var(--font-poppins), sans-serif;
+  cursor: pointer;
+}
+
+.gohome:hover {
+  color: #fff;
+  background: var(--gradient-bg);
+  border: 1px solid var(--accent-color);
+}
+
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) {
+    .thankpage h1 {
+        font-size: 40px;
+    }
+
+    .thankpage .col>svg {
+        width: 75px;
+    }
+}
+
+/* Medium devices (Tablets) */
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+/* Large devices (Desktops) */
+@media (min-width: 992px) and (max-width: 1199.98px) {}
+
+/* Extra Large devices (Large Desktops) */
+@media (min-width: 1200px) {}

@@ -1,0 +1,259 @@
+.seventhSection {
+  padding: 60px 0px;
+  background-color: #F8F4ED;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0 0 85px;
+} 
+
+.mainHeading {
+  font-weight: 400;
+  font-size: 45px;
+  text-align: center;
+  color: var(--default-color);
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 30px;
+  align-items: start;
+}
+
+.videoColumn {
+  position: relative;
+}
+
+.videoWrapper {
+  width: 95%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.videoColumn::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.videoImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.playButtonWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+}
+
+.videoWrapper:hover .playButtonWrapper {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.playButton {
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.4);
+  /* background: #0000001A; */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #FFFFFFB2;
+  backdrop-filter: blur(12px);
+  box-shadow: 0px 5px 40px 0px #00000066;
+  transition: all 0.3s ease;
+  color: var(--white-color);
+}
+
+.playButton svg {
+  margin-left: 4px;
+}
+
+.playButton:hover {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.3);
+  color: var(--default-color);
+}
+
+.carouselColumn {
+  position: relative;
+}
+
+.carouselWrapper {
+  position: relative;
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.emblaContainer {
+  display: flex;
+  gap: 20px;
+
+}
+
+.emblaSlide {
+  flex: 0 0 40%;
+  min-width: 0;
+}
+
+.stepCard {
+  background: #FFFAF2;
+  padding: 30px 25px;
+  min-height: 240px;
+  display: flex;
+  align-items:stretch;
+  flex-direction: column;
+  gap: 20px; margin-bottom: 1.5rem;
+  border: 1px solid #E5D7C3;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: 0px 10px 25px 0px #0000000D;
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 30px;
+  background: var(--gradient-bg);
+  transform: translateX(-50%);
+}
+
+.stepCard:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stepBadge {
+  background: var(--gradient-bg);
+  color: white;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.stepDescription {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--default-color);
+  margin: 0;
+  text-align: center;
+}
+
+.footerText {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: 4rem;
+  padding: 0px;
+}
+
+.footerText strong {
+  font-weight: 600;
+  color: var(--default-color);
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .videoWrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .emblaSlide {
+    flex: 0 0 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .seventhSection {
+    padding: 50px 15px;
+  }
+
+  .mainHeading {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+
+  .contentGrid {
+    gap: 30px;
+  }
+
+  .emblaSlide {
+    flex: 0 0 85%;
+  }
+
+  .stepCard {
+    padding: 25px 20px;
+    min-height: 180px;
+  }
+
+  .stepDescription {
+    font-size: 15px;
+  }
+
+  .footerText {
+    font-size: 16px;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .seventhSection {padding: 1.5rem 0px;}
+  .container {max-width: 100%;width:90%;padding:0px}
+  .mainHeading {font-size: 26px;}
+  .subtitle {font-size: 15px;margin-bottom: 15px;}
+  .emblaSlide {flex: 0 0 100%;}
+  .stepCard {padding: 30px 15px 15px 15px;gap: 10px; margin-bottom: 1rem;}
+  .stepCard::before {height: 30px;}
+  .playButton {width: 54px;height: 54px;}
+  .stepDescription {font-size: 15px;}
+  .footerText {font-size: 15px;margin-right: 0rem;}
+  .contentGrid {gap: 10px;display:block}
+  .videoColumn:before {top: unset;right: unset; bottom:0px;display:none;}
+  .videoWrapper {max-width: 100%;margin: 0 auto;width:100%;}
+}

@@ -1,0 +1,73 @@
+.PrivacyPolicyPage{padding:40px 0%;background-color: var(--footer-bg);}
+.commonheader {text-align: center;margin-bottom: 1rem;}
+.mainHeading{text-align: center;}
+.container {max-width: 1320px;margin: 0 auto;padding: 0px;}
+
+/* Privacy Policy content Start */
+
+.PrivacyPolicyPage h2{font-size: 28px;padding: 10px 0px 8px 0px;font-weight: 500;font-family: var( --font-montserrat), sans-serif;color: var(--default-color);}
+.PrivacyPolicyPage h3{font-size:25;padding: 10px 0px 8px 0px;font-weight: 500;font-family: var( --font-montserrat), sans-serif;color: var(--default-color);}
+.PrivacyPolicyPage p {margin-bottom: 10px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+.PrivacyPolicyPage p a {color: var(--accent-color);}
+.personalheading{ font-size: 24px;padding: 12px 0px 5px 0px;}
+.PrivacyPolicyPage ol{padding: 0px; margin: 0px 0 12px 30px;}
+.PrivacyPolicyPage ol li{list-style-type: decimal;padding: 3px 0px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+.PrivacyPolicyPage ol li::marker{color: var(--accent-color);}
+.PrivacyPolicyPage ul{padding: 0px; margin: 0px 0 12px 30px;}
+.PrivacyPolicyPage ul li{list-style-type: square;padding: 3px 0px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+.PrivacyPolicyPage ul li a{color: var(--accent-color);}
+.PrivacyPolicyPage ul li::marker{color: var(--accent-color);
+}
+
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.TermsConditionsPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.TermsConditionsPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.TermsConditionsPage{padding: 2rem 0%;}
+.container {max-width: 92%;}
+}
+
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.PrivacyPolicyPage {padding: 2rem 0%;}
+.container {max-width: 92%;}
+.PrivacyPolicyPage h2{font-size: 24px;padding: 8px 0px 5px 0px;line-height: 30px;}
+.PrivacyPolicyPage h3{font-size: 22px;padding: 8px 0px 5px 0px;line-height: 28px;}
+.PrivacyPolicyPage ol{padding: 0px; margin: 10px 0 10px 24px;}
+.PrivacyPolicyPage ol li{list-style-type: decimal;padding: 2px 0px;}
+.PrivacyPolicyPage ul{padding: 0px; margin: 10px 0 10px 24px;}
+.PrivacyPolicyPage ul li{list-style-type: square;padding: 2px 0px;}
+}
+
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+.PrivacyPolicyPage {padding: 2rem 0%;}
+.container {max-width: 92%;}
+.PrivacyPolicyPage h2{font-size: 22px;padding: 8px 0px 5px 0px;line-height: 30px;}
+.PrivacyPolicyPage h3{font-size: 20px;padding: 8px 0px 5px 0px;line-height: 28px;}
+.PrivacyPolicyPage ol{padding: 0px; margin: 10px 0 10px 24px;}
+.PrivacyPolicyPage ol li{list-style-type: decimal;padding: 2px 0px;font-size: 15px;}
+.PrivacyPolicyPage ul{padding: 0px; margin: 10px 0 10px 24px;}
+.PrivacyPolicyPage ul li{list-style-type: square;padding: 2px 0px;font-size: 15px;}
+}
+
+
+@media (max-width: 767.98px) and (min-width: 320px) {
+.commonheader {margin-bottom: 10px;}
+.mainHeading{font-size: 26px;}
+.PrivacyPolicyPage {padding: 2rem 0%;}
+.container {max-width: 92%;}
+.PrivacyPolicyPage h2{font-size: 20px;padding: 5px 0px 4px 0px;line-height: 26px;}
+.PrivacyPolicyPage h3{font-size: 18px;padding: 5px 0px 4px 0px;line-height: 24px;}
+.PrivacyPolicyPage ol{padding: 0px; margin: 10px 0 10px 24px;}
+.PrivacyPolicyPage ol li{list-style-type: decimal;padding: 0px 0px;font-size: 15px;}
+.PrivacyPolicyPage ul{padding: 0px; margin: 10px 0 10px 24px;}
+.PrivacyPolicyPage ul li{list-style-type: square;padding: 0px 0px;font-size: 15px;}
+.PrivacyPolicyPage p {margin-bottom: 10px;font-size: 15px;}
+}

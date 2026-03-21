@@ -1,0 +1,87 @@
+.bannerSection {
+  position: relative;
+  width: 100%;
+  min-height: 450px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 2rem 1.2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.bannerSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05); 
+  z-index: 1;
+}
+
+.bannerImage{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+
+.bannerContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 0.2rem 4px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.homeLink {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.separator {
+  color: var(--default-color);
+  margin: 0 0.15rem;
+}
+
+.currentPage {
+  color: var(--default-color);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bannerSection {
+    height: 250px;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .breadcrumb {
+    padding: 0.2rem 0.4rem;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .bannerSection {min-height: 300px;padding: 0 1rem 1rem 1rem;}
+  .breadcrumb {font-size: 11px;}
+}

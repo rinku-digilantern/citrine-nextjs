@@ -1,0 +1,289 @@
+.bannerSection {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0 2rem 0rem 2rem;
+  overflow: hidden;
+}
+
+.bannerSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05); 
+  z-index: 1;
+}
+
+.bannerImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.bannerContainer {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2.5rem;
+  margin-bottom: 0rem;
+}
+
+/* Left Side - Doctor Info */
+.leftContent {
+  padding: 0rem;
+  flex: 1;
+  max-width: 450px;
+}
+
+.mainHeading {
+  font-weight: 400;
+  color: var(--default-color);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.experienceText {
+  color: var(--accent-color);
+  font-size: 20px;
+  font-weight: 600;display: inline-block;
+  padding: 10px 12px;border-top: 1px solid #665946;
+  margin: 0 0 1.2rem 0;border-bottom: 1px solid #665946;
+  letter-spacing: 0.5px;
+}
+
+.specializationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.specializationList li {
+  color: var(--default-color);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Right Side - Testimonial Box */
+.testimonialBox {
+  background: white;
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  flex: 1;
+  max-width: 500px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.quoteIcon {
+  color: var(--accent-color);
+  line-height: 0.5;
+  margin-bottom: 1rem;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.emblaViewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.testimonialText {
+  color: var(--default-color);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin: 0 0 1.8rem 0;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.highlight {
+  font-weight: 700;
+  color: var(--default-color);
+  font-style: normal;
+}
+
+.dotsIndicator {
+  display: flex;
+  gap: 0.4rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.dot:hover {
+  background: #d0d0d0;
+}
+
+.dot.active {
+  background: var(--accent-color);
+  width: 28px;
+  border-radius: 4px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  width: 100%;
+  max-width: 1320px;
+  padding: 0px 6.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 3;
+}
+
+.homeLink {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.homeLink:hover {
+  opacity: 0.8;
+}
+
+.separator {
+  color: var(--default-color);
+  margin: 0 0.1rem;
+}
+
+.currentPage {
+  color: var(--default-color);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .bannerContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .leftContent,
+  .testimonialBox {
+    max-width: 100%;
+  }
+  
+  .breadcrumb {
+    left: 0;
+    padding: 0 1.5rem;
+    bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .bannerSection {
+    min-height: 400px;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .bannerContainer {
+    margin-bottom: 2.5rem;
+  }
+
+  .leftContent {
+    padding: 1.5rem;
+  }
+
+  .doctorName {
+    font-size: 32px;
+  }
+
+  .experienceText {
+    font-size: 12px;
+  }
+
+  .specializationList li {
+    font-size: 14px;
+  }
+
+  .testimonialBox {
+    padding: 2rem 1.5rem 1.2rem 1.5rem;
+  }
+
+  .quoteIcon {
+    font-size: 60px;
+  }
+
+  .testimonialText {
+    font-size: 14px;
+  }
+
+  .breadcrumb {
+    font-size: 11px;
+    padding: 0 1.5rem;
+    bottom: 1rem;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .bannerSection {min-height: auto;padding: 0px 0 1rem 0;justify-content: flex-start; background: #fbf4ea;overflow-x: hidden;margin-top: -2px;}
+  .bannerSection::before {width: 100%;max-width: 100%;left: 0;right: 0;}
+  .bannerImage {position: relative;top: auto;left: auto;width: 100%;
+    height: auto;display: block;object-fit: contain;}
+  .bannerContainer {gap: 0px;margin: 0 auto;max-width: calc(100% - 10%);width: calc(100% - 10%);padding: 0;
+    position: relative;top: auto;left: auto;order: 3;}
+  .bannerSection picture {display: block;width: 100%;max-width: 100%;padding: 0;order: 1;}
+  .leftContent {padding: 0rem;width: 100%; margin:10px 0 0 0;min-width: 0;}
+  .testimonialBox {padding: 12px;width: 100%; margin: 12px 0 0 0;
+    flex: unset;max-width: 100%;min-width: 0;overflow-x: hidden;}
+  .doctorName {font-size: 26px;}
+  .experienceText {font-size: 15px;}
+  .specializationList li {font-size: 15px;}
+  .quoteIcon {font-size: 50px;}
+  .emblaViewport {overflow: hidden;width: 100%;max-width: 100%;min-width: 0;}
+  .emblaContainer {width: 100%;max-width: 100%;min-width: 0;}
+  .emblaSlide{width: 100%;max-width: 100%;min-width: 0;}
+  .testimonialText {font-size: 15px;overflow-wrap: anywhere;word-break: break-word;}
+  .breadcrumb {position: relative;left: auto;bottom: auto;margin: 0 auto;max-width: calc(100% - 10%);width: calc(100% - 10%);padding: 10px 0px 0 0px;font-size: 12px;order: 2;z-index: 2;}
+  .experienceText {letter-spacing: 0px;margin: 0 0 10px 0px;padding: 6px 8px;font-size: 15px;}
+  .bannerSection,
+  .bannerSection picture,
+  .bannerImage,
+  .bannerContainer,
+  .leftContent,
+  .testimonialBox,
+  .breadcrumb,
+  .experienceText {box-sizing: border-box;}
+}

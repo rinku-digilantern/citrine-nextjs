@@ -1,0 +1,212 @@
+.doctorSection {
+  position: relative;
+  min-height: 500px;
+  /* overflow: hidden; */
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(225.59deg, #C7965C -2.58%, #733D11 74.74%);
+}
+
+.backgroundImage {
+  object-fit: cover;
+  z-index: 0;
+}
+
+.container {
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Circular Text */
+.circularText {
+  position: absolute;
+  top: -55px;
+  right: -50px;
+  width: 140px;
+  height: 140px;
+  animation: rotate 20s linear infinite;
+  z-index: 10;
+}
+
+.circularSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.circularTextPath {
+  fill: #5a4630;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 850px 1fr;
+  gap: 0px;
+  position: relative;
+  align-items: center;
+  z-index: 1;
+}
+
+/* Left Section with Brackets */
+.leftSection {
+  position: relative;
+  max-width: 750px;
+  margin-left: 12%;
+  z-index: 3;
+}
+
+/* Content Card */
+.contentCard {
+  background: #ffffff;
+  padding: 80px 150px 80px 80px;
+  box-shadow: 0px 10px 40px 0px #0000001F;
+  position: relative;
+  z-index: 3;
+}
+.comma{position: absolute;top:-35px;left: 11%;}
+
+/* Description */
+.description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--default-color);
+  font-style: italic;
+  margin-bottom: 32px;
+  text-align: left;
+  margin-top: 0;
+}
+
+/* Doctor Name */
+.doctorName {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--default-color);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Experience */
+.experience {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Specialties */
+.specialties {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--default-color);
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Doctor Image Wrapper */
+.doctorImageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+  margin-left: -50px;
+}
+
+.doctorImage {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .leftSection {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .doctorImageWrapper {
+    justify-content: center;
+  }
+
+  .circularText {
+    right: 50px;
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctorSection {
+    min-height: auto;
+  }
+
+  .contentWrapper {
+    padding: 60px 20px;
+  }
+
+  .leftSection {
+    padding: 10px;
+  }
+
+  .contentCard {
+    padding: 40px 30px;
+  }
+
+  .bracketTopLeft,
+  .bracketTopRight {
+    width: 30px;
+    height: 30px;
+    border-width: 4px;
+  }
+
+  .doctorName {
+    font-size: 19px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .circularText {
+    display: none;
+  }
+}
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.leftSection {max-width: 100%;margin: 0 auto;}
+.contentWrapper {grid-template-columns: 1fr;gap:0px;padding: 0rem 0px 1.5rem 0px;display: flex;flex-direction: column-reverse;}
+.doctorImageWrapper {margin-left: 0px;width: 100%;}
+.contentCard {padding: 30px 15px; margin-top: -25px;}
+.description {font-size: 15px;margin-bottom: 20px;}
+.specialties {font-size: 15px;}
+.specialties br{display: none;}
+.comma {left: 5%;}
+.circularText {width: 90px;height: 90px;right: unset;left: 15px;display: block;position: absolute;top:-300px}
+}

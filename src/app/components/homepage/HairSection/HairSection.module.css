@@ -1,0 +1,244 @@
+.hairSection {background: var(--footer-bg);padding: 60px 0;overflow: hidden;}
+.container {display: grid;grid-template-columns: 500px 1fr;gap: 50px;}
+/* Hide .dblock and show .dnone by default (desktop) */
+.dnone{display: block;}
+.dblock{display: none !important;}
+
+/* Left Content */
+.leftContent {
+ background: var(--footer-bg);
+  padding: 0px 50px 0px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mainHeading {
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.mainHeading span{font-weight: 400;font-size: 50px;display: block;} 
+.description {
+  font-size: 20px;
+  line-height: 1.6;text-transform: uppercase;
+  color: var(--default-color);
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-family: var(--font-poppins), sans-serif;
+}
+
+/* Navigation Buttons */
+.navigationButtons {
+  display: flex;
+  gap: 15px;
+}
+
+.previousButton,
+.nextButton {
+  width: 70px;
+  height: 45px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 24px;
+}
+
+.previousButton {
+  background: #ffffff;
+  color: #8B6F47;
+}
+
+.previousButton:hover {
+  background: #f8f8f8;
+  transform: translateX(-3px);
+}
+
+.nextButton {
+  background: var(--default-color);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(224, 157, 58, 0.3);
+}
+
+.nextButton:hover {
+  transform: translateX(3px);
+  box-shadow: 0 6px 20px rgba(224, 157, 58, 0.4);
+}
+.btnrow{width: 50%; margin-bottom: 30px;}
+.mbbtnrow{width: 50%;display: none;}
+.viewMoreLink {
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 11px 24px;
+  background: var(--gradient-bg);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.viewMoreLink:hover {
+  background: var(--gradient-bg-hover);
+  color: #fff
+}
+
+/* Right Carousel */
+.rightCarousel {
+  position: relative;
+}
+
+.embla {
+  overflow: hidden;
+  height: 100%;
+}
+
+.emblaContainer {
+  display: flex;
+  height: 100%;gap: 25px;
+}
+
+.emblaSlide {
+  flex: 0 0 40%;
+  min-width: 0;
+  position: relative;
+}
+
+/* Treatment Card */
+.treatmentCard {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  border: 1px solid #E5D7C3;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+.treatmentCard .zoomWrapper {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+}
+
+.treatmentCard:hover .zoomWrapper,
+.treatmentCard:focus-within .zoomWrapper {
+  transform: scale(1.06);
+}
+
+.treatmentCard:hover {
+  z-index: 2;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+}
+
+.treatmentImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.treatmentOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 50%, transparent 100%);
+  padding: 25px;
+  /* box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.8); */
+}
+
+.treatmentTitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: #4a4a4a;
+  letter-spacing: 10%;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .leftContent {
+    padding: 60px 40px;
+  }
+
+  .mainHeading {
+    font-size: 50px;
+  }
+
+  .emblaSlide {
+    flex: 0 0 100%;
+  }
+
+  .rightCarousel {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftContent {
+    padding: 50px 30px;
+  }
+
+  .mainHeading {
+    font-size: 42px;
+  }
+
+  .description {
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+
+  .previousButton,
+  .nextButton {
+    width: 70px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .treatmentTitle {
+    font-size: 20px;
+  }
+
+  .rightCarousel {
+    min-height: 400px;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.hairSection {padding: 1.5rem 0;}
+.container {width: 95%;margin: 0 auto;}
+.leftContent {padding: 0rem 10px;text-align: center;}
+.rightCarousel{padding: 10px 10px 110px 10px;background: #FFFFFF80;border: 1px solid #E5D7C3;backdrop-filter: blur(20px)}
+.mainHeading {font-size: 35px; margin-bottom: 5px;}
+.mainHeading span {font-size: 25px;}
+.description {margin-bottom: 0px;font-size: 15px;}
+.navigationButtons {gap: 10px;justify-content: center;display: flex;}
+.previousButton, .nextButton {width: 50px;height:30px;font-size: 18px;}
+.btnrow {width: 100%;margin-bottom: 0px;display: none;}
+.mbbtnrow{width: 100%;display: block; margin: 10px 0px 5px 0px;text-align: center;}
+.container {gap: 20px;}
+
+/* Treatment Card */
+ .emblaSlide {flex: 0 0 82%;}
+.emblaContainer {gap: 8px;}
+.treatmentCard {width: 100%;height: 100%;}
+.rightCarousel {min-height: 400px;}
+.navigationButtons{align-items: center;justify-content: center;display: flex;}
+.dnone{display: none;}
+.dblock{display: block !important;}
+.dflex{display: flex !important; margin-top: 10px;}
+.viewMoreLink {padding: 6px 16px;}
+}

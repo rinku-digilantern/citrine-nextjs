@@ -1,0 +1,229 @@
+.grid2x2 {
+  display: flex; justify-content: space-between;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.gridRow {
+  display: flex;
+  gap: 25px;width: 100%;
+}
+
+.wellnessSection {
+  padding: 60px 0 0px 0px;
+  background: linear-gradient(259.5deg, #9D835A 0%, #836940 37.87%, #634920 100%);
+  position: relative;
+  /* overflow: hidden;
+  z-index: 1; */
+}
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0px;
+}
+.container p{color: #fff;font-size: 20px; text-transform: uppercase;text-align: center; margin-bottom: 35px;}
+.btnboxrow{width: 75%; margin-bottom: 0px;text-align: right;}
+.viewMore {
+  display: inline-block;
+  color: #fff;
+  text-transform: none;
+  padding: 11px 24px;
+  background: var(--gradient-bg);
+  text-decoration: none;
+  font-size: 15px;text-transform: uppercase;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.viewMore:hover {
+  background: var(--gradient-bg-hover);
+  color: #fff
+}
+.mainHeading {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.mainHeading span {
+  font-weight: 400;font-size: 50px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.leftSection {
+  flex: 1;
+  max-width: 600px;
+}
+
+.treatmentGrid {
+  display: grid;width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 30px;
+}
+
+.treatmentCard {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 0;
+  transition: border-color 0.3s ease;
+  height: 200px;
+  transition: all 0.3s ease;
+}
+.treatmentCard:hover {
+  transform: translateY(-5px);
+}
+.treatmentCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mainImageWrapper {
+  display: block;
+  overflow: hidden;
+}
+.mainImageWrapper img {
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+  display: block;
+}
+.mainImageWrapper:hover img,
+.mainImageWrapper:focus-within img {
+  transform: scale(1.07);
+}
+
+/* .treatmentCard:hover img {
+  transform: scale(1.1);
+} */
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  /* background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); */
+  pointer-events: none;
+}
+
+.overlay h3 {
+  color: var(--default-color);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.navigation {
+  display: flex;
+  gap: 10px; margin-top: 2rem;
+}
+
+.navButton {
+  width: 70px;
+  height: 45px;
+  border: none;
+  background: #fff;
+  color: #a67c52;
+  cursor: pointer;
+  display: flex;font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  background: #fff;
+}
+
+.navButton.active {
+  background: var(--default-color);
+  color: #fff; border:#fff 1px solid;
+}
+
+.rightSection {
+  flex: 1;
+  max-width: 630px;
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.mainImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+}
+
+@media (max-width: 1024px) {
+  .content {flex-direction: column;}
+  .leftSection,
+  .rightSection {max-width: 100%;width: 100%;}
+  .title {font-size: 36px;letter-spacing: 6px;}
+}
+
+@media (max-width: 768px) {
+  .wellnessSection {padding: 60px 0;}
+  .container {padding: 0 20px;}
+  .title {font-size: 28px;letter-spacing: 4px;margin-bottom: 40px;}
+  .treatmentGrid {gap: 15px;}
+  .overlay h3 {font-size: 12px; padding: 15px;}
+  .navButton {width: 45px;height: 45px;}
+}
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.wellnessSection {padding: 1.5rem 0;}
+.container {padding: 0 10px;}
+.mainImageWrapper{display: none;}
+.mainHeading {margin-bottom: 15px;line-height: 1;}
+.mainHeading span {font-size: 25px;}
+.gridRow {gap: 8px;}
+.container p {margin-bottom: 1rem;font-size: 18px;}
+.leftSection{width: 100%;background: #60483880;border: 1px solid #E5D7C380;backdrop-filter: blur(20px);padding: 8px;}
+.treatmentGrid {margin-bottom: 10px;}
+.overlay {padding: 5px;}
+.emblaSlide {gap: 8px;  flex-direction: row;min-width: inherit;}
+.navigation {margin-top: 1rem;justify-content: center;}
+.navButton {width: 50px;height: 30px;}
+.viewMore {padding: 6px 16px;}
+}

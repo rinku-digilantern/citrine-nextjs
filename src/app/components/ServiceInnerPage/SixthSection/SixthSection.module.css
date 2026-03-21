@@ -1,0 +1,161 @@
+.sixthSection {
+  padding: 60px 0px;
+  background: #F6EADB;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.mainHeading {
+  font-weight: 400;
+  font-size: 45px;
+  text-align: center;
+  color: var(--default-color);
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin-bottom: 30px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.candidatesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.columnLeft,
+.columnRight {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.candidateItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  background: #FFFAF2;
+  border: 1px solid #E5D7C3;
+  box-shadow: 0px 10px 25px 0px #0000000D;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.candidateItem:hover {
+  transform: translateX(5px);
+  box-shadow: 0px 6px 20px 0px #00000012;
+}
+
+.arrow {
+  color: var(--accent-color);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.arrow img {
+  margin-top: 5px;
+}
+
+.candidateText {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin: 0;
+}
+
+.footerText {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin: 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonrow{margin-top: 2rem;text-align: center;}
+.bookbtn{
+  padding: 11px 30px; 
+  background: var(--gradient-bg); 
+  color: #fff; 
+  font-size: 15px; text-transform: uppercase;
+  font-weight: 600; letter-spacing: 5%;
+  text-decoration: none; 
+  display: inline-block; 
+  transition: background-color 0.3s ease;
+}
+.bookbtn:hover{
+  background: var(--gradient-bg-hover); 
+  color: #fff; 
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .candidatesGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sixthSection {
+    padding: 50px 15px;
+  }
+
+  .mainHeading {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    margin-bottom: 35px;
+  }
+
+  .candidatesGrid {
+    margin-bottom: 35px;
+  }
+
+  .candidateItem {
+    padding: 15px 20px;
+  }
+
+  .candidateText {
+    font-size: 15px;
+  }
+
+  .arrow {
+    font-size: 18px;
+  }
+
+  .footerText {
+    font-size: 16px;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .sixthSection {padding: 1.5rem 0px;}
+  .columnLeft,.columnRight {gap: 8px;}
+  .subtitle {font-size: 15px;margin-bottom: 15px;}
+  .container {max-width: 100%;width:90%;}
+  .mainHeading {font-size: 26px;}
+  .candidateText {font-size: 15px;line-height:1.6}
+  .footerText {font-size: 15px;}
+ .candidateItem {padding: 9px 12px;gap:5px;align-items: flex-start;}
+ .arrow img {margin-top:2px}
+ .candidatesGrid{ margin-bottom: 15px;}
+.buttonrow {margin-top: 1rem;}
+.bookbtn {letter-spacing: 0%;padding: 8px 16px;font-size: 15px;font-weight: 500;}
+}

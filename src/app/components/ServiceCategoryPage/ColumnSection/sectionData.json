@@ -1,0 +1,43 @@
+[
+  {
+    "id": "active-acne",
+    "heading": "ACTIVE ACNE",
+    "description": "Our doctors at Citrine Clinic in Gurgaon suggest that other factors, such as hormones, diet, certain medications, and stress, may worsen acne. Various factors can cause acne, and a skin specialist or a dermatologist is the best person to determine the root cause of acne.",
+    "image": "/assets/images/servicecategory/leftimage.webp",
+    "imageAlt": "Active Acne Treatment",
+    "treatmentLabel": "TREATMENT FOR ACNE",
+    "treatments": [
+      { "name": "CHEMICAL PEELS", "link": "/" },
+      { "name": "MEDIFACIALS", "link": "/" },
+      { "name": "PHOTOFACIAL", "link": "/" },
+      { "name": "INTRALESIONAL THERAPY ELABORATION", "link": "/" }
+    ],
+    "buttons": [
+      { "label": "DERMAT CLINIC", "link": "/" },
+      { "label": "HOME CARE", "link": "/" },
+      { "label": "IN CLINIC", "link": "/" }
+    ],
+    "imagePosition": "left"
+  },
+  {
+    "id": "acne-scars",
+    "heading": "ACNE SCARS",
+    "description": "Acne scars are lesions that appear as craters or pits in one's skin after the acne lesions have resolved. Acne scars are formed when the inflammatory lesions of acne are overhealed with the formation of fibrous adhesions at the site of acne lesions.",
+    "image": "/assets/images/servicecategory/rightimage.webp",
+    "imageAlt": "Acne Scars Treatment",
+    "treatmentLabel": "ACNE SCAR TREATMENT",
+    "treatments": [
+      { "name": "TCA CROSS", "link": "/" },
+      { "name": "MICRONEEDLING", "link": "/" },
+      { "name": "CO2 LASER", "link": "/" },
+      { "name": "SUBCISION", "link": "/" },
+      { "name": "BLOOD-DERIVED GROWTH FACTORS", "link": "/" }
+    ],
+    "buttons": [
+      { "label": "DERMAT CLINIC", "link": "/" },
+      { "label": "HOME CARE", "link": "/" },
+      { "label": "IN CLINIC", "link": "/" }
+    ],
+    "imagePosition": "right"
+  }
+]

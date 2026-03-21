@@ -1,0 +1,107 @@
+.AboutDoctorMarqueeSection {
+  background-color: #fbf4ea;
+  text-align: center;
+  padding: 3rem 0px 3rem 0px;
+}
+.headingrow {width: 1320px; margin: auto;}
+.mainHeading{font-weight: 400;text-transform: uppercase;line-height: 1.2;font-size: 50px;}
+.discription {
+  color: var(--default-color);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+}
+.marqueeContainer {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.marquee {
+  display: flex;
+  gap: 30px;
+  animation: scroll 12s linear infinite;
+  animation-play-state: running;
+}
+
+.marquee:hover,
+.marquee:focus,
+.marquee:active {
+  animation-play-state: paused;
+}
+
+.marquee {
+  width: fit-content;
+}
+
+.logoItem {
+  flex-shrink: 0;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;  
+  background: #FFFAF3;
+  box-shadow: 0px 7px 30px 0px #0000000F;
+}
+
+.logoItem img {
+  max-width: 140px;
+  height: auto;
+  max-height: 60px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.logoItem:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+.abcommon{padding: var(--spacing-xxl) 0px;}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .headingrow h2 {
+    font-size: 28px;
+  }
+  
+  .googleReview {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .logoItem {
+    padding: 0 20px;
+    min-width: 120px;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .AboutDoctorMarqueeSection {padding: 1.5rem 0 0 0px;}
+ .googleReview {flex-direction: row;gap: 5px;}
+ .reviewText {font-size: 14px;}
+ .googleReview {gap: 10px;margin: 0 auto 10px auto;padding: 8px 15px;}
+ .headingrow {width: 90%;margin:0 auto;}
+ .headingrow h2 {font-size: 26px;}
+ .logoItem {min-width: 100px;padding: 10px;}
+ .marquee {gap: 10px;}
+ .abcommon{padding: 0px;}
+ .marqueeContainer {padding: 20px 0 20px 0px;}
+ .mainHeading span{display: block;}
+ .mainHeading br{display: none;}
+ .discription {margin: 0 0 10px 0px;font-size: 15px;}
+}

@@ -1,0 +1,24 @@
+.TechSecondSection{padding: 40px 0px; background: var(--footer-bg);}
+
+.container {
+  margin: 0 auto;max-width: 1200px;text-align: center;
+}
+.mainHeading {
+  color: var(--default-color);
+  font-size: 45px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.paragraph {
+  color: var(--default-color); margin:0 auto;
+  font-size: 18px; max-width: 980px; line-height: 1.8;
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.TechSecondSection{padding: 1.5rem 0px;}
+.container {max-width:92%;}
+.TechSecondSection {padding: 15px 0;}
+.mainHeading {margin-bottom: 10px;font-size: 26px;}
+.paragraph {max-width: 100%;font-size: 15px;}
+}
