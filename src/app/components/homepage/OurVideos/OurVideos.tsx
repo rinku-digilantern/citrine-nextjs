@@ -78,7 +78,7 @@ const OurVideos = () => {
           ))}
         </div>
          <div className={styles.viewbtnrow}>
-          <Link href="/" className={styles.viewBtn}>View More</Link>
+          <Link href="/videos" className={styles.viewBtn}>View More</Link>
          </div>
       </div>
 

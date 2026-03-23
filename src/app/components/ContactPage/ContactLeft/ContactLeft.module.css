@@ -136,18 +136,29 @@
   transform: translateX(5px);
 }
 
-@media (max-width: 768px) {
-  .row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .contactFormContainer .formIntro h2 {
-    font-size: 28px;
-  }
-  
-  .contactFormContainer {
-    padding: 40px 0;
-  }
+@media (max-width: 1100.98px) and (min-width: 768px) {
+  .row {grid-template-columns: 1fr;gap: 0;}
+  .contactFormContainer .formIntro h2 {font-size: 28px;}
+  .mainHeading{font-size: 30px;}
+  .contactFormContainer {padding: 30px 20px;}
+  .contactFormContainer .formIntro p {font-size: 16px;line-height: 1.8;}
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .row {grid-template-columns: 1fr;gap: 0;}
+   .mainHeading{font-size: 30px;}
+  .contactFormContainer .formIntro h2 {font-size: 28px;}
+  .contactFormContainer {padding: 30px 20px;}
+  .contactFormContainer .formIntro p {font-size: 16px;line-height: 1.8;}
+}
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px) {
+.contactFormContainer {padding: 1rem 12px 1rem 12px;}
+.row {grid-template-columns: repeat(1, 1fr);gap: 10px;}
+.contactFormContainer .formIntro {margin-bottom: 15px;}
+.mainHeading { margin-bottom: 10px; font-size: 26px;font-weight: 500;}
+.contactFormContainer .formIntro p {font-size: 16px;line-height: 1.8;}
+.contactFormContainer .contactForm .sendButton {font-size: 15px;gap: 5px;padding: 5px 15px;}
 }
 
 /* Small devices (Phones in landscape mode) */

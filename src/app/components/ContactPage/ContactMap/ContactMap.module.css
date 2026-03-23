@@ -1,7 +1,7 @@
 .mapContainer {
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  margin: 3rem 0 0px 0px;
+  margin: 2rem 0 0px 0px;
 }
 
 .mapContainer iframe {

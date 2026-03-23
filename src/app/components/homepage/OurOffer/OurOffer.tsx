@@ -56,7 +56,7 @@ const OurOffer = () => {
           ))}
         </div>
          <div className={styles.btnarearow}>
-          <Link href="/" className={styles.offerBtn}>View More</Link>
+          <Link href="/offers" className={styles.offerBtn}>View More</Link>
          </div>
       </div>
     </section>

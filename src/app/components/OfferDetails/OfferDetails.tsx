@@ -49,7 +49,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
       {/* Left Section: Offer Details */}
       <div className={styles.leftSection}>
         <Image
-          src={offer.full_image || offer.offer_image || "/assets/images/offers/offerdetail01.webp"}
+          src={offer.offer_image || "/assets/images/offers/offerdetail01.webp"}
           alt={offer.alt_tag || offer.offer_name || "Offer Image"}
           width={540}
           height={540}

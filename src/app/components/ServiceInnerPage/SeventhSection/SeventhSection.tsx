@@ -55,7 +55,7 @@ const SeventhSection: React.FC = () => {
           <div className={styles.videoColumn}>
             <div className={styles.videoWrapper}>
               <Image
-                src="/assets/images/serviceinnerpage/lasertoning.webp"
+                src="/assets/images/serviceinnerpage/lasertonings.webp"
                 alt="Laser Toning Procedure"
                 width={600}
                 height={400}

@@ -1,6 +1,7 @@
 "use client";
 import styles from './CitrineClinicSection.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 import React, { useRef, useEffect, useState } from 'react';
 
 export default function CitrineClinicSection() {
@@ -99,7 +100,7 @@ export default function CitrineClinicSection() {
                       </li>
                     ))}
                   </ul>
-                  <button className={styles.aboutbtn}>READ MORE</button>
+                  <Link href="/about-clinic" className={styles.aboutbtn}>READ MORE</Link>
                 </div>
             </div>
           </div>

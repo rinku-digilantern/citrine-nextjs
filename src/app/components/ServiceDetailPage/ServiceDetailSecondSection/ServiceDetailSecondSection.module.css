@@ -1,0 +1,179 @@
+.ServiceDetailSecondSection {
+  padding: 60px 0px;
+  background-color: #fffaf2;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.contentBox {
+  background: #FFFAF2;
+  padding: 60px 50px;
+  box-shadow: 0px 10px 25px 0px #0000000D;
+  max-width: 1050px;
+  border: 1px solid #E5D7C3;
+  width: 100%;
+}
+
+.mainHeading {
+  font-weight: 400;
+  font-size: 45px;
+  text-align: center;
+  color: var(--default-color);
+  margin-bottom: 15px;
+}
+
+.description {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin-bottom: 20px;
+}
+
+.priceWrapper {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 5px;
+}
+.priceWrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 8px;
+  background-image: url('/assets/images/serviceinnerpage/costbg.webp');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.priceHighlight {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.subHeading {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--default-color);
+  margin-bottom: 30px;
+}
+.contentBox ul,.contentBox ol {
+  margin: 18px 0 18px 24px;
+  padding: 0;column-count: 2;column-gap: 40px;
+}
+.contentBox ul li, .contentBox ol li {
+	margin-bottom: 8px;
+	font-size: 18px;
+	color: var(--default-color);
+	line-height: 1.8;
+    list-style-type: square;
+
+}
+.contentBox ul li a, .contentBox ol li a {
+	color: var(--default-color);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+.contentBox ul li a:hover {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+.contentBox ul li::marker, .contentBox ol li::marker {
+    color: var(--accent-color);
+}
+
+.contentBox p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+}
+
+/* Responsive styles */
+@media (max-width: 1500.98px) and (min-width: 1301px) {
+  .ServiceDetailSecondSection {padding: 3rem 0px;}
+  .contentBox {padding: 2rem 20px;max-width: 85%;}
+  .mainHeading {font-size: 45px; }
+}
+
+/* Responsive styles */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+  .ServiceDetailSecondSection {padding: 3rem 0px;}
+  .contentBox {padding: 2rem 20px;max-width: 85%;}
+  .mainHeading {font-size: 45px; }
+}
+
+/* Responsive styles */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+  .ServiceDetailSecondSection {padding: 2rem 0px;}
+  .contentBox {padding: 1.5rem 20px;max-width: 85%;}
+  .mainHeading {font-size: 45px; }
+}
+
+/* Responsive styles */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .ServiceDetailSecondSection {padding: 2rem 0px;}
+  .contentBox {padding: 1.5rem 20px;max-width: 80%;}
+  .mainHeading {font-size: 35px; }
+  .factorsGrid {grid-template-columns: 1fr;gap: 15px;}
+  .description,
+  .footerText {font-size: 16px;margin-bottom: 10px;}
+  .subHeading {font-size: 16px;margin-bottom: 10px;}
+  .contentBox p {font-size: 16px;}
+  .contentBox ul li, .contentBox ol li {margin-bottom: 2px;font-size: 16px;}
+  .contentBox ul, .contentBox ol {margin: 8px 0 8px 22px;}
+}
+
+/* Responsive styles */
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .ServiceDetailSecondSection {padding: 2rem 0px;}
+  .contentBox {padding: 1rem 15px;max-width: 90%;}
+  .mainHeading {font-size: 35px; }
+  .factorsGrid {grid-template-columns: 1fr;gap: 12px;}
+  .description,
+  .footerText {font-size: 15px;margin-bottom: 10px;}
+  .subHeading {font-size: 15px;margin-bottom: 10px;}
+  .contentBox p {font-size: 15px;}
+  .contentBox ul li, .contentBox ol li {margin-bottom: 2px;font-size: 15px;}
+  .contentBox ul, .contentBox ol {column-count: 1;column-gap: 0;margin: 8px 0 8px 22px;}
+}
+
+/* Responsive styles */
+@media (max-width: 767.98px) and (min-width: 600px) {
+  .ServiceDetailSecondSection {padding: 1.5rem 0px;}
+  .contentBox {padding: 1rem 15px;max-width: 90%;}
+  .mainHeading {font-size: 30px; }
+  .factorsGrid {grid-template-columns: 1fr;gap: 12px;}
+  .description,
+  .footerText {font-size: 15px;margin-bottom: 10px;}
+  .subHeading {font-size: 15px;margin-bottom: 10px;}
+  .contentBox p {font-size: 15px;}
+  .contentBox ul li, .contentBox ol li {margin-bottom: 2px;font-size: 15px;}
+  .contentBox ul, .contentBox ol {column-count: 1;column-gap: 0;margin: 8px 0 8px 22px;}
+
+}
+
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .ServiceDetailSecondSection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;width:92%;}
+  .mainHeading {font-size: 26px;margin-bottom: 10px;}
+  .description,
+  .footerText {font-size: 15px; margin-bottom: 10px;}
+  .contentBox {padding: 15px 12px;}
+  .subHeading {font-size: 16px;line-height:1.8;margin-bottom: 10px;}
+  .contentBox li:before {font-size: 20px;top: -2px;left: 0;}  
+  .contentBox ul, .contentBox ol {column-count: 1;column-gap: 0;margin: 8px 0 8px 22px;}
+  .contentBox p {font-size: 15px;}
+  .contentBox ul li, .contentBox ol li {margin-bottom: 2px;font-size: 15px;}
+  .subHeading {font-size: 15px;margin-bottom: 5px;}
+}

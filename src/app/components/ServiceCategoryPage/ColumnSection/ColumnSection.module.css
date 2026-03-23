@@ -243,80 +243,130 @@
     min-height: 350px;
   }
 
+  /* Responsive Design */
+@media (max-width: 1500.98px) and (min-width: 1100px) {
+  .contentWrapper {padding: 20px 0px 20px 20px;}
+  .columnSection {padding: 2rem 0 2rem 0px;}
+  .container {padding: 0px; max-width: 92%;}
+  .mainHeading {font-size: 40px; margin-bottom: 5px;}
+  .topspace {padding: 1rem 0}
+}
+
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .row,
-  .rowReverse {
-    grid-template-columns: 1fr;
-  }
-
-  .contentWrapper {
-    padding: 40px 30px;
-  }
-
-  .heading {
-    font-size: 36px;
-  }
-
-  .imageWrapper {
-    min-height: 400px;
-  }
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .contentWrapper {padding: 20px 20px;}
+  .columnSection {padding: 2rem 0 2rem 0px;}
+  .container {padding: 0px; max-width: 92%;}
+  .mainHeading {font-size: 32px; margin-bottom: 5px;}
+  .topspace {padding: 1rem 0}
+  .row:first-child .contentWrapper{padding: 20px 0 20px 20px;}
+  .row:nth-child(2) .contentWrapper {padding: 10px 0 10px 20px;}
+  .row:nth-child(3) .contentWrapper {padding: 10px 0 10px 20px;}
+  .row:nth-child(4) .contentWrapper {padding: 10px 0 10px 20px;}
+  .row:nth-child(5) .contentWrapper {padding: 10px 0 10px 20px;}
+  .row:nth-child(6) .contentWrapper {padding: 10px 0 10px 20px;}
+  .row:nth-child(7) .contentWrapper {padding: 10px 0 10px 20px;}
+  .row:nth-child(8) .contentWrapper {padding: 10px 0 10px 20px;}
+  .row:nth-child(9) .contentWrapper {padding: 10px 0 10px 20px;}
+  .row:nth-child(10) .contentWrapper {padding: 10px 0 10px 20px;}
+  .row:nth-child(2) .contentWrapper{padding: 10px 20px 10px 0px;}
+  .row:nth-child(4) .contentWrapper{padding: 10px 20px 10px 0px;}
+  .row:nth-child(6) .contentWrapper{padding: 10px 20px 10px 0px;}
+  .row:nth-child(8) .contentWrapper{padding: 10px 20px 10px 0px;}
+  .row:nth-child(10) .contentWrapper{padding: 10px 20px 10px 0px;}
+}
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .columnSection {padding: 1.5rem 0px;}
+  .container {padding: 0px; max-width: 92%;}
+  .contentWrapper {padding: 35px 25px;}
+  .mainHeading {font-size: 32px;margin-bottom: 5px;}
+  .treatmentLabel {font-size: 14px;margin-bottom: 10px;letter-spacing: 0px;}
+  .tabsContainer {display: flex;flex-wrap: nowrap;overflow-x: auto;overflow-y: hidden;-webkit-overflow-scrolling: touch;white-space: nowrap;touch-action: pan-x;overscroll-behavior-x: contain;scrollbar-width: none;-ms-overflow-style: none;}
+  .tabsContainer::-webkit-scrollbar {display: none;}
+  .tabButton {flex: 0 0 auto;min-width: max-content;}
+  .tagsList {padding: 1.2rem;gap: 10px;}
+   .row {display: block;border-bottom: 1px solid #B0A28E;}
+  .row:first-child .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(2) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(3) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(4) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(5) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(6) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(7) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(8) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(9) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(10) .contentWrapper {padding: 10px 0 10px 0px;}
+  .tabsContainer{display:flex;flex-wrap: nowrap;overflow-x: auto;overflow-y: hidden;-webkit-overflow-scrolling: touch;white-space: nowrap;touch-action: pan-x;overscroll-behavior-x: contain;scrollbar-width:none;-ms-overflow-style:none;}
+  .tabsContainer::-webkit-scrollbar{display:none;}
+  .tabButton{flex: 0 0 auto;min-width: max-content;}
+  .tag {padding: 6px 12px;font-size: 13px;}
+  .actionButton{padding: 8px 12px;font-size: 13px;}
+  .topspace {padding: 15px 0;}
+  .tagsList {padding: 10px;}
+  .columnSection {padding: 10px 0 1.5rem 0px;}
+  .row:nth-child(2) .contentWrapper{padding: 0px 0px}
+  .row:first-child .contentWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(2) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:first-child .buttonGroup{margin-bottom: 12px;}
+  .row:nth-child(3) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(4) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:nth-child(5) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(6) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:nth-child(7) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(8) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:nth-child(9) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(10) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:last-child .imageWrapper{padding: 20px 0px 0px 0px}
+  .row:last-child{border-bottom:0px}
+  .description {margin: 0 0 15px 0px;font-size: 15px;}
 }
 
-@media (max-width: 768px) {
-  .columnSection {
-    padding: 0px 0px;
-  }
-
-  .container {
-    padding: 0 15px;
-  }
-
-  .contentWrapper {
-    padding: 35px 25px;
-  }
-
-  .heading {
-    font-size: 32px;
-    margin-bottom: 18px;
-  }
-
-  .treatmentLabel {
-    font-size: 12px;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-  }
-
-  .tabsContainer {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
-    touch-action: pan-x;
-    overscroll-behavior-x: contain;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .tabsContainer::-webkit-scrollbar {
-    display: none;
-  }
-
-  .tabButton {
-    flex: 0 0 auto;
-    min-width: max-content;
-  }
-
-  .tagsList {
-    padding: 1.2rem;
-    gap: 10px;
-  }
-
+@media (max-width: 767.98px) and (min-width: 600px) {
+  .columnSection {padding: 1.5rem 0px;}
+  .container {padding: 0px; max-width: 92%;}
+  .contentWrapper {padding: 35px 25px;}
+  .mainHeading {font-size: 32px;margin-bottom: 5px;}
+  .treatmentLabel {font-size: 14px;margin-bottom: 10px;letter-spacing: 0px;}
+  .tabsContainer {display: flex;flex-wrap: nowrap;overflow-x: auto;overflow-y: hidden;-webkit-overflow-scrolling: touch;white-space: nowrap;touch-action: pan-x;overscroll-behavior-x: contain;scrollbar-width: none;-ms-overflow-style: none;}
+  .tabsContainer::-webkit-scrollbar {display: none;}
+  .tabButton {flex: 0 0 auto;min-width: max-content;}
+  .tagsList {padding: 1.2rem;gap: 10px;}
+   .row {display: block;border-bottom: 1px solid #B0A28E;}
+  .row:first-child .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(2) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(3) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(4) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(5) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(6) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(7) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(8) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(9) .contentWrapper {padding: 10px 0 10px 0px;}
+  .row:nth-child(10) .contentWrapper {padding: 10px 0 10px 0px;}
+  .tabsContainer{display:flex;flex-wrap: nowrap;overflow-x: auto;overflow-y: hidden;-webkit-overflow-scrolling: touch;white-space: nowrap;touch-action: pan-x;overscroll-behavior-x: contain;scrollbar-width:none;-ms-overflow-style:none;}
+  .tabsContainer::-webkit-scrollbar{display:none;}
+  .tabButton{flex: 0 0 auto;min-width: max-content;}
+  .tag {padding: 6px 12px;font-size: 13px;}
+  .actionButton{padding: 8px 12px;font-size: 13px;}
+  .topspace {padding: 15px 0;}
+  .tagsList {padding: 10px;}
+  .columnSection {padding: 10px 0 1.5rem 0px;}
+  .row:nth-child(2) .contentWrapper{padding: 0px 0px}
+  .row:first-child .contentWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(2) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:first-child .buttonGroup{margin-bottom: 12px;}
+  .row:nth-child(3) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(4) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:nth-child(5) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(6) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:nth-child(7) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(8) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:nth-child(9) .imageWrapper{padding: 10px 0px 0 0px}
+  .row:nth-child(10) .imageWrapper{padding: 20px 0px 10px 0px}
+  .row:last-child .imageWrapper{padding: 20px 0px 0px 0px}
+  .row:last-child{border-bottom:0px}
+  .description {margin: 0 0 15px 0px;font-size: 15px;}
 }
-
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {

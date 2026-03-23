@@ -179,9 +179,9 @@ const TechnologyListPage = () => {
                     <Image src={tech.image} width={306} height={306} alt={tech.name} />
                   </div>
                   <div className={styles.techtitle}>{tech.name}</div>
-                  <Link href={tech.link} className={styles.viewmore}>
+                  {/* <Link href={tech.link} className={styles.viewmore}>
                     View More
-                  </Link>
+                  </Link> */}
                 </div>
               ))}
             </div>

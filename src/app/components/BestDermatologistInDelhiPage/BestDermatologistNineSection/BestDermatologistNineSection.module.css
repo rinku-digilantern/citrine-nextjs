@@ -1,0 +1,46 @@
+.BestDermatologistNineSection{padding: 40px 0px;background-color: var(--footer-bg)}
+.container {max-width: 1320px;margin: 0 auto;}
+.mainHeading{text-transform: uppercase;margin-bottom: 10px;font-size: 35px;}
+.BestDermatologistNineSection p{font-size: 18px;line-height: 1.8;color: var(--default-color);}
+.BestDermatologistList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5em 0;
+}
+
+.BestDermatologistList li {
+  margin-bottom: 8px;
+  padding-left: 27px;
+  position: relative;
+  font-size: 18px;
+  color: var(--default-color);
+  line-height: 1.8;
+}
+.BestDermatologistList li strong{
+  font-weight: 600;
+}
+.BestDermatologistList li::before {
+  content: '';
+  position: absolute;
+  left: 0.5em;
+  top: 0.6em;
+  width: 0.5em;
+  height: 0.5em;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  .BestDermatologistList li {
+    font-size: 0.98rem;
+    margin-bottom: 0.7em;
+    padding-left: 1.5em;
+  }
+  .BestDermatologistList li::before {
+    width: 0.5em;
+    height: 0.5em;
+    top: 0.4em;
+    left: 0.2em;
+  }
+}

@@ -11,14 +11,12 @@ const RedefiningSection = () => {
           DERMATOLOGY & AESTHETIC<br />
           EXCELLENCE
         </h2>
-        
         <p className={styles.description}>
           Lorem ipsum dolor sit amet consectetur adipiscing elit. Aliquam nec tortor vitae nulla vulputate auctor nam dapibus
           elit id tortor vulputate finibus. Integer quis vestibulum velit. Quisque efficitur tincidunt dui. Curabitur eleifend orci in
           fringilla bibendum, ut molestie diam gravida. Etiam egestas egestas enim at interdum. Aliquam accumsan nibh eiem
           entum sem bendum venenatis. Aliquam urna est tincidunt vel diam.
         </p>
-
         <div className={styles.achievementsGrid}>
           <div className={`${styles.achievementCard} ${styles.cardBeige}`}>
             <h3 className={styles.cardTitle}>
@@ -49,8 +47,7 @@ const RedefiningSection = () => {
                 alt="Dr. APJ Abdul Kalam Award"
                 width={150}
                 height={150}
-                className={styles.awardImage}
-              />
+                className={styles.awardImage}/>
             </div>
           </div>
 
@@ -66,8 +63,7 @@ const RedefiningSection = () => {
                 alt="Technology"
                 width={150}
                 height={150}
-                className={styles.awardImage}
-              />
+                className={styles.awardImage}/>
             </div>
           </div>
         </div>

@@ -20,7 +20,7 @@ margin-bottom: 15px;
   font-size: 1.15rem;
   line-height: 1.8;
   text-align: center;
-  color: #333;
+  color: var(--default-color);
   max-width: 900px;
   margin: 0 auto 50px;
 }
@@ -107,76 +107,80 @@ margin-bottom: 15px;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-
-  .achievementsGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .cardTitle {
-    font-size: 14px;
-  }
-  
-  .cardLogo {
-    width: 200px;
-    height: 200px;
-  }
-  
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+  .redefiningSection {padding: 2rem 0px;}
+  .container {padding: 0px;margin:0 auto;width:92%}
+  .mainHeading {margin-bottom: 15px;}
+  .mainHeading br{display: none;}
+  .description {max-width: 940px;margin: 0 auto 20px 0px;font-size: 1rem;}
+  .achievementsGrid {grid-template-columns: repeat(3, 1fr);}
+  .chievementCard {padding: 15px 15px 0px 15px;min-height: 320px;}
+  .chievementCard h3 br{display: none;}
+  .cardTitle {font-size: 18px;}
+  .cardTitle br{display: none;}
+  .cardLogo {width: 200px;height: 200px;}
   .awardImage,
-  .logoImage {
-    max-width: 100px;
-  }
+  .logoImage {max-width: 100px;}
 }
 
-@media (max-width: 768px) {
-  .redefiningSection {
-    padding: 40px 15px;
-  }
-
-  .mainHeading {
-    margin-bottom: 20px;
-  }
-
-  .description {
-    font-size: 13px;
-    margin-bottom: 30px;
-  }
-
-  .achievementsGrid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .achievementCard {
-    min-height: 220px;
-    padding: 20px 15px 0 15px;
-  }
-
-  .cardTitle {
-    font-size: 13px;
-  }
-  
-  .cardLogo {
-    width: 180px;
-    height: 180px;
-    bottom: -20px;
-    right: -20px;
-  }
-  
+/* Responsive Design */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .redefiningSection {padding: 2rem 0px;}
+  .container {padding: 0px;margin:0 auto;width:92%}
+  .mainHeading {margin-bottom: 15px;}
+  .mainHeading br{display: none;}
+  .description {max-width: 940px;margin: 0 auto 20px 0px;font-size: 1rem;}
+  .achievementsGrid {grid-template-columns: repeat(3, 1fr);}
+  .chievementCard {padding: 15px 15px 0px 15px;min-height: 320px;}
+  .chievementCard h3 br{display: none;}
+  .cardTitle {font-size: 18px;}
+  .cardTitle br{display: none;}
+  .cardLogo {width: 200px;height: 200px;}
   .awardImage,
-  .logoImage {
-    max-width: 90px;
-  }
+  .logoImage {max-width: 100px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .redefiningSection {padding: 2rem 0px;}
+  .container {padding: 0px;margin:0 auto;width:92%}
+  .mainHeading {margin-bottom: 15px;}
+  .description {font-size: 13px;margin-bottom: 30px;}
+  .achievementsGrid {grid-template-columns: 1fr;gap: 15px;}
+  .achievementCard {min-height: 260px;padding: 20px 15px 0 15px;}
+  .chievementCard h3 br{display: none;}
+  .cardTitle br{display: none;}
+  .cardTitle {font-size: 13px;}
+  .cardLogo {width: 180px;height: 180px;bottom: -20px;right: -20px;}
+  .awardImage,
+  .logoImage {max-width: 90px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px) {
+  .redefiningSection {padding: 2rem 0px;}
+  .container {padding: 0px;margin:0 auto;width:92%}
+  .mainHeading {margin-bottom: 15px;}
+  .description {font-size: 13px;margin-bottom: 30px;}
+  .achievementsGrid {grid-template-columns: 1fr;gap: 15px;}
+  .achievementCard {min-height: 220px;padding: 20px 15px 0 15px;}
+  .chievementCard h3 br{display: none;}
+  .cardTitle br{display: none;}
+  .cardTitle {font-size: 18px;}
+  .cardLogo {width: 180px;height: 180px;bottom: -20px;right: -20px;}
+  .awardImage,
+  .logoImage {max-width: 90px;}
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
   .redefiningSection {padding: 1.5rem 0px;}
-  .container {padding: 0px;margin:0 auto;width:90%}
+  .container {padding: 0px;margin:0 auto;width:92%}
   .mainHeading {margin-bottom: 15px;font-size: 26px;}
   .mainHeading br{display: none;}
   .description {font-size: 15px; margin:0px auto 15px auto;}
   .cardTitle {font-size: 15px;}
+  .cardTitle br{display: none;}
   .achievementsGrid{margin-top: 15px;gap: 10px}
   .cardLogo {width: 180px;height: 180px;bottom: -30px;right: -30px;}
 }

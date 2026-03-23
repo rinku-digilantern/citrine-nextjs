@@ -11,9 +11,9 @@ export default function ThankYou() {
     <section className={styles.thankpage}>
       <div className="wrapper">
         <div className={`row ${styles.row}`}>
-          <div className={`col col-12 col-md-7 col-lg-6 ${styles.col}`}>
+          <div className={`col col-12 col-md-8 col-lg-7 ${styles.col}`}>
             <AiFillCheckCircle/>
-            <h1 className="heading">Thank You!</h1>
+            <h1 className={`mainHeading ${styles.mainHeading}`}>Thank You!</h1>
             <p className="para">We have received your request. We will get in touch with you shortly.</p>
             <Link href="/" className={styles.gohome}>Go Home</Link>
           </div>

@@ -1,0 +1,208 @@
+.BestDermatologistTestimonialSection {
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #E5D7C3
+}
+
+.backgroundImage {
+  object-fit: cover;
+  z-index: 0;
+}
+.desc{text-align: center;padding-bottom: 1rem;}
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0px;
+  position: relative;
+  z-index: 1;
+}
+
+.mainHeading {
+  font-weight: 400;
+  font-size: 35px;
+  text-align: center;
+  color: var(--default-color);
+  margin-bottom: 10px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonialCard {
+  background: #FFFAF3B2;
+  border: 1px solid #E5D7C3;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  position: relative;
+}
+
+.cardTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--default-color);
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-family: var(--font-montserrat), sans-serif;
+}
+
+.stars {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.star {
+  color: #FFD700;
+  font-size: 16px;
+}
+
+.testimonialText {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin-bottom: auto;
+  font-family: var(--font-poppins), sans-serif;
+  flex: 1;
+}
+
+.servicefooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 25px;
+}
+
+.author {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--default-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: var(--font-montserrat), sans-serif;
+  margin: 0;
+}
+
+.googleIcon {
+  flex-shrink: 0;
+}
+
+.googleIcon img {
+  display: block;
+}
+
+.viewMoreWrapper {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.viewMoreBtn {
+  padding: 11px 30px;
+  background: var(--gradient-bg);
+  border: none;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.viewMoreBtn:hover {
+  background: var(--gradient-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 20px rgba(222, 151, 54, 0.3);
+}
+.disclaimer{
+  font-size: 11px;
+  color: var(--default-color);
+  margin-top: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+  .testimonialSection {
+    padding: 60px 0;
+  }
+
+  .mainHeading {
+    font-size: 38px;
+    margin-bottom: 30px;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonialSection {
+    padding: 50px 0;
+  }
+
+  .mainHeading {
+    font-size: 32px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .testimonialCard {
+    padding: 30px 25px;
+    min-height: auto;
+  }
+
+  .cardTitle {
+    font-size: 15px;
+  }
+
+  .testimonialText {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .author {
+    font-size: 12px;
+  }
+
+  .googleIcon img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .testimonialSection {padding: 1.5rem 0;}
+  .mainHeading {margin-bottom: 15px;font-size: 26px;}
+  .container {max-width: 100%;width:90%;padding:0px}
+  .mainHeading {font-size: 26px;margin-bottom: 15px;}
+  .testimonialCard {padding: 15px;}
+  .cardTitle {font-size: 15px;margin-bottom: 10px;}
+  .testimonialText {font-size: 15px;}
+  .googleIcon img {width: 24px;height: 24px;}
+  .testimonialsGrid {display: flex;flex-wrap: nowrap;gap: 8px;overflow-x: auto;overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;scroll-snap-type: x mandatory;margin-bottom: 0px;
+    touch-action: pan-x;scrollbar-width: none;-ms-overflow-style: none;}
+  .testimonialCard {flex: 0 0 88%;min-width: 88%;scroll-snap-align: start;}
+  .testimonialCard::-webkit-scrollbar{display:none}
+  .stars {gap: 2px;margin-bottom: 10px;}
+  .disclaimer {margin-top: 15px;font-size: 9px;}
+  .viewMoreBtn {padding: 8px 16px;font-size: 15px;}
+  .viewMoreWrapper {gap: 0px;margin-top: 15px;}
+  .servicefooter {margin-top: 15px;}
+}

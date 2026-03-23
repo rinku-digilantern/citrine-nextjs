@@ -110,20 +110,93 @@
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
-  .gridContainer {grid-template-columns: repeat(2, 1fr);}
+@media (max-width: 1500.98px) and (min-width: 1301px) {
+.TestimonialPage {padding: 2rem 0;}
+.container{margin: 0 auto;width: 92%; max-width: 92%;}
+}
+/* Responsive Design */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.gridContainer {grid-template-columns: repeat(3, 1fr);gap: 15px;}
+.TestimonialPage {padding: 2rem 0;}
+.container{margin: 0 auto;width: 92%; max-width: 92%;}
+.wcard {padding: 20px;}
+.wcard .wtitle {margin: 0px 0 5px 0px;}
+.googlediv {width: 24px;height: 24px;top: 1rem;right: 10px;}
+.wcard span {margin-top: 0px;margin-bottom: 5px;font-size: 16px;}
+.person {margin-top: 10px;font-size: 11px;}
+.wauthor {margin-top: 15px;font-size: 14px;}
+.testimonialtbottom {margin-top: 1rem;}
+.description {font-size: 15px;padding-right: 5px;height: 140px;}
+.description p {font-size: 15px;padding-right: 5px;}
 }
 
-@media (max-width: 768px) {
-  .gridContainer {grid-template-columns: 1fr;}
-  .TestimonialPage {padding: 1.5rem 0;}
-  .wcard {padding: 30px 20px;}
+/* Responsive Design */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.gridContainer {grid-template-columns: repeat(3, 1fr);gap: 15px;}
+.TestimonialPage {padding: 2rem 0;}
+.container{margin: 0 auto;width: 92%; max-width: 92%;}
+.wcard {padding: 20px;}
+.wcard .wtitle {margin: 0px 0 5px 0px;}
+.googlediv {width: 24px;height: 24px;top: 1rem;right: 10px;}
+.wcard span {margin-top: 0px;margin-bottom: 5px;font-size: 16px;}
+.person {margin-top: 10px;font-size: 11px;}
+.wauthor {margin-top: 15px;font-size: 14px;}
+.testimonialtbottom {margin-top: 1rem;}
+.description {font-size: 15px;padding-right: 5px;height: 140px;}
+.description p {font-size: 15px;padding-right: 5px;}
+}
+
+/* Responsive Design */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.gridContainer {grid-template-columns: repeat(2, 1fr);gap: 15px;}
+.TestimonialPage {padding: 2rem 0;}
+.container{margin: 0 auto;width: 92%; max-width: 92%;}
+.wcard {padding: 20px;}
+.wcard .wtitle {margin: 0px 0 5px 0px;}
+.googlediv {width: 24px;height: 24px;top: 1rem;right: 10px;}
+.wcard span {margin-top: 0px;margin-bottom: 5px;font-size: 16px;}
+.person {margin-top: 10px;font-size: 11px;}
+.wauthor {margin-top: 15px;font-size: 14px;}
+.testimonialtbottom {margin-top: 1rem;}
+.description {font-size: 15px;padding-right: 5px;height: 140px;}
+.description p {font-size: 15px;padding-right: 5px;}
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) and (min-width: 768px) {
+.gridContainer {grid-template-columns: repeat(2, 1fr);gap: 15px;}
+.TestimonialPage {padding: 2rem 0;}
+.container{margin: 0 auto;width: 92%; max-width: 92%;}
+.wcard {padding: 20px;}
+.wcard .wtitle {margin: 0px 0 5px 0px;}
+.googlediv {width: 24px;height: 24px;top: 1rem;right: 10px;}
+.wcard span {margin-top: 0px;margin-bottom: 5px;font-size: 16px;}
+.person {margin-top: 10px;font-size: 11px;}
+.wauthor {margin-top: 15px;font-size: 14px;}
+.testimonialtbottom {margin-top: 1rem;}
+.description {font-size: 15px;padding-right: 5px;height: 140px;}
+.description p {font-size: 15px;padding-right: 5px;}
+}
+
+@media (max-width: 767.98px) and (min-width: 600px) {
+.TestimonialPage {padding: 1.5rem 0;}
+.gridContainer {grid-template-columns: 1fr;gap: 10px;}
+.container{margin: 0 auto;width: 92%; max-width: 92%;}
+.wcard {padding: 20px;}
+.wcard .wtitle {margin: 0px 0 5px 0px;}
+.googlediv {width: 24px;height: 24px;top: 1rem;right: 10px;}
+.wcard span {margin-top: 0px;margin-bottom: 5px;font-size: 16px;}
+.person {margin-top: 10px;font-size: 11px;}
+.wauthor {margin-top: 15px;font-size: 14px;}
+.testimonialtbottom {margin-top: 1rem;}
+.description {font-size: 15px;padding-right: 5px;height: 120px;}
+.description p {font-size: 15px;padding-right: 5px;}
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-.gridContainer {grid-template-columns: 1fr;gap: 10px;}
 .TestimonialPage {padding: 1.5rem 0;}
+.gridContainer {grid-template-columns: 1fr;gap: 10px;}
 .mainHeading{font-size: 26px;}
 .container{margin: 0 auto;width: 92%; max-width: 92%;}
 .wcard {padding: 15px 15px;}

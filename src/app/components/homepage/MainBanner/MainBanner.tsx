@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from 'next/link';
 import styles from "./MainBanner.module.css";
 import React, { useEffect, useRef } from "react";
 
@@ -143,7 +144,7 @@ const MainBanner = () => {
                       <p className={styles.heroSubtitle}>Lorem ipsum dolor sit amet consectetur adipis elit morbe diam dues laoreet non ex elementum porta.</p>
                     </div>
                     <div className={styles.btnbox}>
-                      <button className={styles.primaryBtn}>BOOK APPOINTMENT</button>
+                      <Link href="/book-an-appointment" className={styles.primaryBtn}>BOOK APPOINTMENT</Link>
                   </div>
                   </div>
                 </div>

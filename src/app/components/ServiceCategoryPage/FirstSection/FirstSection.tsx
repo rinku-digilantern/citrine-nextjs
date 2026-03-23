@@ -9,7 +9,6 @@ const FirstSection = () => {
        <Image src={`/assets/images/serviceinnerpage/serviceinnertopbg.webp`} className={styles.topImage} width={1440} height={580} alt="ServiceInner Page" />
       <div className={styles.topContainer}>
         
-
         {/* Main Content Row */}
         <div className={styles.contentRow}>
 
@@ -36,8 +35,7 @@ the face but can involve the upper chest, back, and upper arms where the sebaceo
               width={666} 
               height={500} 
               alt="Treatment" 
-              className={styles.treatmentImage}
-            />
+              className={styles.treatmentImage}/>
           </div>
         </div>
       </div>

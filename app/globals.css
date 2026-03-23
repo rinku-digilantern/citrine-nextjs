@@ -127,7 +127,9 @@ p,
   color: var(--default-color);font-family: var(--font-poppins);
   margin-bottom: var(--spacing-md);
 }
-
+.graybg{background:#f6eadb;}
+.lightpink{background: #f8f4ed}
+.pinkbg{background: #fffaf2;}
 
 /* Wrapper */
 .wrapper {

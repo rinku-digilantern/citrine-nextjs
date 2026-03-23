@@ -6,11 +6,11 @@
 .bredcontainer {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0px;
+  padding: 0px 5px;
 }
 
 .breadcrumbList {
-  padding: 0 10px;
+  padding: 0px;
   list-style: none;
   display: flex;
   justify-content: flex-start;
@@ -55,7 +55,7 @@
 /* Responsive */
 /* Start of IPad Pro Screen */
 @media (max-width: 1400.98px) and (min-width: 1301px) {
-.bredcontainer {max-width: 90%; margin: 0px auto;padding: 0px; width: 90%;}
+.bredcontainer {max-width: 92%; margin: 0px auto;padding: 0px; width: 92%;}
 .breadcrumbList {padding: 0px;}
 }
 

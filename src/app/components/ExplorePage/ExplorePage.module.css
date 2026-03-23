@@ -1,0 +1,106 @@
+.ExplorePage{padding: 40px 0px;background-color: var(--footer-bg);}
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.mainHeading {
+  font-weight: 400;
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--default-color);
+}
+.flexrow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.flexList{padding: 0px;}
+.flexList ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.flexList li {
+  margin-bottom: 0.7em;
+  font-size: 18px;
+  color: var(--default-color);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+.flexList li::before {
+  content: '';
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  margin-top: 0.5em;
+  margin-right: 0.2em;
+}
+
+.flexList a {
+  color: var(--default-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.flexList a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+/* Start of mini IPad */
+@media (max-width: 1500.98px) and (min-width: 1201px) {
+.ExplorePage{padding:2rem 0px;}
+.container {max-width: 92%;margin: 0 auto;}
+.mainHeading {margin-bottom: 15px;}
+}
+
+
+/* Start of mini IPad */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.ExplorePage{padding:2rem 0px;}
+.container {max-width: 92%;margin: 0 auto;}
+.mainHeading {margin-bottom: 15px;}
+.flexrow {display: grid;grid-template-columns: repeat(3, 1fr);gap:0px;}
+.flexList li {gap: 0.2em;margin-bottom: .5em;font-size: 16px;}
+}
+
+/* Start of mini IPad */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.ExplorePage{padding:2rem 0px;}
+.container {max-width: 92%;margin: 0 auto;}
+.mainHeading {margin-bottom: 15px;}
+.flexrow {display: grid;grid-template-columns: repeat(2, 1fr);gap:0px;}
+.flexList li {gap: 0.2em;margin-bottom: .5em;font-size: 16px;}
+}
+
+/* Start of mini IPad */
+@media (max-width: 991.98px) and (min-width: 767px) {
+.ExplorePage{padding:2rem 0px;}
+.container {max-width: 92%;margin: 0 auto;}
+.mainHeading {margin-bottom: 15px;}
+.flexrow {display: grid;grid-template-columns: repeat(2, 1fr);gap:0px;}
+.flexList li {gap: 0.2em;margin-bottom: .5em;font-size: 16px;}
+}
+
+/* Start of mini IPad */
+@media (max-width: 767.98px) and (min-width: 600px) {
+.ExplorePage{padding:1.5rem 0px;}
+.container {max-width: 92%;margin: 0 auto;}
+.mainHeading {margin-bottom: 15px;}
+.flexrow {display: grid;grid-template-columns: repeat(1, 1fr);gap:0px;}
+.flexList li {gap: 0.2em;margin-bottom: .5em;font-size: 16px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.ExplorePage{padding:1.5rem 0px;}
+.container {max-width: 92%;margin: 0 auto;}
+.mainHeading {font-size: 26px;margin-bottom: 15px;}
+.flexrow {display: grid;grid-template-columns: repeat(1, 1fr);gap:0px;}
+.flexList li {gap: 0.2em;margin-bottom: .5em;font-size: 15px;}
+}

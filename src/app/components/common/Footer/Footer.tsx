@@ -256,7 +256,7 @@ const Footer = () => {
         <div className="wrapper">
           <div className={styles.footerBottom}>
             <div className={styles.social}>
-               <Link href="/privacy-policy">Privacy Policy</Link>|<Link href="/terms-conditions">Terms & Conditions</Link>|<Link href="/refund-policy">Refund Policy</Link>|<Link href="/return-policy">Return Policy</Link>
+               <Link href="/privacy-policy">Privacy Policy</Link>|<Link href="/terms-conditions">Terms & Conditions</Link>|<Link href="/refund-policy">Refund Policy</Link>|<Link href="/return-policy">Return Policy</Link>|<Link href="/explore">Explore</Link>
             </div>
             <div className={styles.right}>
               <span aria-label="Copyright">

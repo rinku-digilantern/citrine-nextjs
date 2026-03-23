@@ -3,11 +3,8 @@
     padding: var(--spacing-xxl) var(--spacing-xxl);
     text-align: center;
 }
-
-.thankpage .row {
-    justify-content: center;
-}
-
+.wrapper{max-width: 86%; margin: 0 auto;}
+.thankpage .row {justify-content: center;}
 .thankpage .row .col {
     background: var(--white-color);
     box-shadow: 0px 5px 24px 1px #00000024;
@@ -19,14 +16,7 @@
     height: auto;
     color:var(--accent-color);
 }
-
-.thankpage h1 {
-    font-size: 50px;
-    margin-bottom: var(--spacing-sm);
-    color: var(--default-color);
-    font-weight: 600;
-}
-
+.mainHeading{font-weight: 600; margin-bottom: 0px;}
 .thankpage p {
     margin-bottom: var(--spacing-md);
     font-size: 18px;
@@ -54,23 +44,27 @@
   border: 1px solid var(--accent-color);
 }
 
-
-/* Small devices (Phones in landscape mode) */
-@media (max-width: 767.98px) {
-    .thankpage h1 {
-        font-size: 40px;
-    }
-
-    .thankpage .col>svg {
-        width: 75px;
-    }
+/* Medium devices (Tablets) */
+@media (max-width: 992px) and (min-width: 320px) {
+.thankpage {padding:2rem 20px;}
+.wrapper{max-width: 90%;}
+.mainHeading{font-size: 30px;}
+.thankpage p {font-size: 16px;}
+ .thankpage .col>svg { width: 75px;}
 }
 
-/* Medium devices (Tablets) */
-@media (min-width: 768px) and (max-width: 991.98px) {}
-
 /* Large devices (Desktops) */
-@media (min-width: 992px) and (max-width: 1199.98px) {}
+@media (max-width: 767.98px) and (min-width: 600px) {
+ .thankpage .col>svg { width: 75px;}
+ .thankpage {padding:2rem 20px;}
+ .wrapper{max-width: 90%;}
+}
 
-/* Extra Large devices (Large Desktops) */
-@media (min-width: 1200px) {}
+@media (max-width: 599.98px) and (min-width: 320px) {
+.thankpage {padding:2rem 20px;}
+.wrapper{max-width: 90%;}
+.thankpage .col>svg { width: 75px;}
+.mainHeading{font-size: 30px;}
+.thankpage p {font-size: 15px;}
+.gohome {font-size: 15px;}
+}

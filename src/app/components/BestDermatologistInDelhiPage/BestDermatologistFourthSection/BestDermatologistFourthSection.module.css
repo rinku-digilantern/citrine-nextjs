@@ -1,0 +1,43 @@
+.BestDermatologistFourthSection{padding: 40px 0px;background-color: #f6eadb}
+.container {max-width: 1320px;margin: 0 auto;}
+.mainHeading{text-transform: uppercase;margin-bottom: 10px;font-size: 35px;}
+.BestDermatologistFourthSection p{font-size: 18px;line-height: 1.8;color: var(--default-color);}
+.tableResponsive {
+	width: 100%;
+	overflow-x: auto;
+	margin-bottom: 1.5em;
+}
+
+.tableResponsive table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 100%;
+	background: #fffaf2;
+}
+
+.tableResponsive table th,
+.tableResponsive table td {
+	padding: 0.75em 1em;
+	border: 1px solid #d5c7b3;
+	text-align: left;
+	font-size: 18px;
+    color: var(--default-color);
+}
+
+.tableResponsive table th {
+	background: #fffaf2;
+	font-weight: 600;
+    color: var(--default-color);
+}
+
+@media (max-width: 600px) {
+	.tableResponsive table {
+		min-width: 350px;
+		font-size: 0.95rem;
+	}
+	.tableResponsive table th,
+	.tableResponsive table td {
+		padding: 0.5em 0.5em;
+		font-size: 0.95rem;
+	}
+}

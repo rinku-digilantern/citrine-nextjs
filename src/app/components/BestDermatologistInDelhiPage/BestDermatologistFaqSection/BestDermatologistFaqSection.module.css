@@ -1,0 +1,174 @@
+.BestDermatologistFaqSection {
+  padding: 60px 0px;
+  background: #F6EADB;
+  border-top: 1px solid #E5D7C3
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.mainHeading {
+  font-weight: 400;
+  font-size: 45px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--default-color);
+}
+
+.faqList {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  margin-bottom: 10px;
+}
+
+.faqItem.active {
+  background: #FFFBF5;
+  border: 2px solid var(--accent-color);
+  box-shadow: 0px 5px 25px 0px #0000000D;
+  padding: 20px;
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #FFFAF2;
+  border: 1px solid #E5D7C3;
+  box-shadow: 0px 5px 25px 0px #0000000D;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.15rem;
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  color: var(--default-color);
+  transition: all 0.3s ease;
+}
+
+.faqItem.active .faqQuestion {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 15px;
+}
+
+.faqQuestion:hover {
+  color: var(--accent-color);
+}
+
+.faqQuestion span:first-child {
+  flex: 1;
+  padding-right: 20px;
+  line-height: 1.5;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faqQuestion.active .icon {
+  transform: rotate(180deg);
+}
+
+.faqAnswer {
+  padding: 10px 0 0 0;
+  animation: slideDown 0.3s ease;
+}
+
+.faqAnswer p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--default-color);
+  padding: 15px;
+  background-color: #FFF9EF;
+  border: 1px solid #E5D7C3;
+  box-shadow: 0px 5px 25px 0px #0000000D;
+}
+
+.faqItem.active .faqAnswer {
+  padding: 15px 0 0 0;
+}
+
+.faqItem.active .faqAnswer p {
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #666;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .BestDermatologistFaqSection {
+    padding: 50px 15px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 35px;
+  }
+
+  .faqQuestion {
+    font-size: 15px;
+    padding: 15px 0;
+  }
+
+  .faqQuestion span:first-child {
+    padding-right: 15px;
+  }
+
+  .icon {
+    width: 26px;
+    height: 26px;
+    font-size: 20px;
+  }
+
+  .faqAnswer p {
+    font-size: 14px;
+    padding-right: 0;
+  }
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .BestDermatologistFaqSection {padding: 1.5rem 0;}
+  .mainHeading {margin-bottom: 15px;font-size: 26px;font-weight: 400;}
+  .container {max-width: 100%;width:90%;padding:0px}
+  .title {font-size: 17px;}
+  .faqItem.active .faqQuestion {margin-bottom: 0px;}
+  .faqItem.active .faqAnswer {padding: 10px 0 0 0px;}
+  .faqQuestion {font-size: 15px;margin-bottom: 0px;align-items:flex-start;padding: 12px;}
+  .faqAnswer p {font-size: 15px;}
+  .faqItem.active {padding: 12px;}
+  .icon {width: 20px;height: 20px;font-size: 20px;}
+}

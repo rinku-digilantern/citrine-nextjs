@@ -11,7 +11,7 @@
   text-align: center;
   font-weight: 400;
   color: var(--default-color);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .filterBtns {
   display: flex;

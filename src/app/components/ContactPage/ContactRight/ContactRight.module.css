@@ -1,7 +1,7 @@
 .contactSidebar {
   /* background: color-mix(in srgb, var(--accent-color), transparent 97%); */
   height: 100%;
-  padding: 30px 30px;
+  padding: 40px 30px;
   background: linear-gradient(259.5deg, #9D835A 0%, #836940 37.87%, #634920 100%);
 }
 
@@ -89,10 +89,22 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100.98px) and (min-width: 992px) {
   .contactSidebar {padding: 40px 20px;}
   .contactSidebar .contactHeader {margin-bottom: 40px;}
   .contactSidebar .contactMethods {margin-bottom: 40px;}
+  .contactSidebar .contactHeader p {font-size: 16px;}
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .contactSidebar {padding: 40px 20px;}
+  .contactSidebar .contactHeader {margin-bottom: 40px;}
+  .contactSidebar .contactMethods {margin-bottom: 40px;}
+  .contactSidebar .contactHeader p {font-size: 16px;}
+}
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px) {
+.contactSidebar .contactHeader p {font-size: 16px;}
 }
 
 /* Small devices (Phones in landscape mode) */
