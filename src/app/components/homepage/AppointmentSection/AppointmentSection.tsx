@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './AppointmentSection.module.css';
 
 interface CaptchaData {
@@ -32,6 +33,7 @@ const services = [
 ];
 
 const AppointmentSection = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormState>({
     name: '', email: '', phone: '', service: '', date: '', message: '', captcha: '',
   });
@@ -165,7 +167,7 @@ const AppointmentSection = () => {
       if (res.ok && (data.success || data.status === 'success' || data.title === 'Success')) {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', service: '', date: '', message: '', captcha: '' });
-        fetchCaptcha(); // refresh captcha after success
+        router.push('/thank-you');
       } else {
         setStatus('error');
         setErrorMsg(data.message || 'Submission failed. Please check your captcha and try again.');
