@@ -219,3 +219,78 @@
    .formRow {grid-template-columns: 1fr;gap: 8px;}
    .subheading{letter-spacing: 0px;margin-bottom: 10px;}
 }
+
+/* Captcha & Feedback Styles */
+.captchaRow {
+  grid-template-columns: 1fr 1fr !important;
+  align-items: center;
+}
+.captchaBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFCF7;
+  border: 1px solid #E5D7C3;
+  padding: 6px 12px;
+  height: 45px;
+}
+.captchaImg {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+.captchaRefresh {
+  background: none;
+  border: none;
+  color: #AF9E85;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 5px;
+  transition: color 0.2s;
+}
+.captchaRefresh:hover {
+  color: #DE9736;
+}
+.errorMsg {
+  color: #d9534f;
+  font-size: 14px;
+  text-align: center;
+  margin: 5px 0;
+}
+.successMsg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  padding: 30px 0;
+}
+.successMsg p {
+  font-size: 16px;
+  color: #444;
+  max-width: 400px;
+  line-height: 1.6;
+}
+@media (max-width: 600px) {
+  .captchaRow {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Validation Specifics */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.inputError {
+  border-color: #d9534f !important;
+  background-color: #fff9f9 !important;
+}
+.fieldError {
+  color: #d9534f;
+  font-size: 13px;
+  margin-top: -2px;
+  font-family: var(--font-poppins), sans-serif;
+  letter-spacing: 0.2px;
+}

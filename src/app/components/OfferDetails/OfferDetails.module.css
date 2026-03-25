@@ -299,3 +299,59 @@
 .oldPrice {font-size: 15px;}
 .priceRow {gap: 10px;margin-bottom: 0px;}
 }
+
+/* Captcha & Validation Styles */
+.inputError {
+  border-color: #d9534f !important;
+  background-color: #fff9f9 !important;
+}
+.fieldError {
+  color: #d9534f;
+  font-size: 13px;
+  display: block;
+  margin-top: 5px;
+  font-family: var(--font-poppins), sans-serif;
+}
+.captchaRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.captchaBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid #D5D5D5;
+  padding: 6px 12px;
+  height: 50px;
+}
+.captchaImg {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+.captchaRefresh {
+  background: none;
+  border: none;
+  color: var(--default-color);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 5px;
+  transition: color 0.2s;
+}
+.captchaRefresh:hover {
+  color: var(--accent-color);
+}
+.captchaInputBox {
+  width: 100%;
+}
+.apiErrorMsg {
+  color: #d9534f;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 20px;
+  background: #f8d7da;
+  padding: 10px 15px;
+  border-radius: 4px;
+}

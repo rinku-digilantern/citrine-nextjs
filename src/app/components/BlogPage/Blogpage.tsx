@@ -34,65 +34,65 @@ const Blogpage: React.FC<BlogpageProps> = ({ blogsData }) => {
     <section className={`${styles.blogpage} section blogposts`}>
       <div className={styles.container}>
         <div className={styles.commonheader}>
-            <h1 className={`mainHeading ${styles.mainHeading}`}>Blogs</h1>
+          <h1 className={`mainHeading ${styles.mainHeading}`}>Blogs</h1>
         </div>
         <div className={styles.blogrow}>
           {displayedBlogs.map((blg, index) => (
-              <article key={blg.id} className={`${styles.blogCard}`}>
-                <div className={`${styles.postImg} postimg`}>
-                  <Link href={`/blogs/${blg.url}`}>
-                    <Image
-                      src={`https://api.citrineclinic.com/backend/blog/${blg.image}`}
-                      className="img-fluid"
-                      width={550}
-                      height={365}
-                      alt={blg.alt_tag || blg.blog_name}
-                      priority={index < 3}
-                    />
-                  </Link>
+            <article key={blg.id} className={`${styles.blogCard}`}>
+              <div className={`${styles.postImg} postimg`}>
+                <Link href={`/blog-post/${blg.url}`}>
+                  <Image
+                    src={`https://api.citrineclinic.com/backend/blog/${blg.image}`}
+                    className="img-fluid"
+                    width={550}
+                    height={365}
+                    alt={blg.alt_tag || blg.blog_name}
+                    priority={index < 3}
+                  />
+                </Link>
+              </div>
+              <div className={styles.meta}>
+                <div className={styles.user}>
+                  <Image
+                    src="/assets/images/blogs/users.webp"
+                    width={14}
+                    height={14}
+                    alt="User"
+                  />
+                  By {blg.dr_name || 'Citrine Clinic'}
                 </div>
-                <div className={styles.meta}>
-                    <div className={styles.user}>
-                    <Image
-                      src="/assets/images/blogs/users.webp"
-                      width={14}
-                      height={14}
-                      alt="User"
-                    />
-                    By {blg.dr_name || 'Citrine Clinic'}
-                  </div>
-                  <div className={styles.date}>
-                    <Image
-                      src="/assets/images/blogs/calendar.webp"
-                      width={16}
-                      height={16}
-                      alt="Calendar"
-                    />
-                    {blg.date}
-                  </div>
+                <div className={styles.date}>
+                  <Image
+                    src="/assets/images/blogs/calendar.webp"
+                    width={16}
+                    height={16}
+                    alt="Calendar"
+                  />
+                  {blg.date}
                 </div>
-                <div className={styles.postContent}>
-                  <div className={styles.postTitle}>
-                    <Link href={`/blogs/${blg.url}`}>{blg.blog_name}</Link>
-                  </div>
-                  <div dangerouslySetInnerHTML={{ __html: blg.short_desc }} />
-                  <Link href={`/blogs/${blg.url}`} className={styles.viewallbtn}>
-                    Read More
-                  </Link>
+              </div>
+              <div className={styles.postContent}>
+                <div className={styles.postTitle}>
+                  <Link href={`/blog-post/${blg.url}`}>{blg.blog_name}</Link>
                 </div>
-              </article>
+                <div dangerouslySetInnerHTML={{ __html: blg.short_desc }} />
+                <Link href={`/blog-post/${blg.url}`} className={styles.viewallbtn}>
+                  Read More
+                </Link>
+              </div>
+            </article>
           ))}
         </div>
         <div className={styles.blogtbottom}>
-            {hasMore && (
-              <button
-                  id="load-more-blogs"
-                  onClick={loadMoreBlogs}
-                  className={styles.loadmore}>
-                  Load More
-                </button>
-            )}
-          </div>
+          {hasMore && (
+            <button
+              id="load-more-blogs"
+              onClick={loadMoreBlogs}
+              className={styles.loadmore}>
+              Load More
+            </button>
+          )}
+        </div>
       </div>
     </section>
   );

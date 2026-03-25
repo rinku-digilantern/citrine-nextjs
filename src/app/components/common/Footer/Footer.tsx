@@ -109,7 +109,7 @@ const Footer = () => {
                 <li>
                   <Link href="/about-doctor">About Doctor</Link>
                 </li>
-                 <li>
+                <li>
                   <Link href="/about-clinic">About Clinic</Link>
                 </li>
                 <li>
@@ -140,25 +140,25 @@ const Footer = () => {
               <div className={`${styles.title}`}>Treatments</div>
               <ul>
                 <li>
-                  <Link href="/">Anti Wrinkle Injection</Link>
+                  <Link href="/anti-wrinkle-injection-in-gurgaon">Anti Wrinkle Injection</Link>
                 </li>
                 <li>
-                  <Link href="/">Bridal Dermatology</Link>
+                  <Link href="/bridal-dermatology-treatment">Bridal Dermatology</Link>
                 </li>
                 <li>
-                  <Link href="/">Chemical Peels</Link>
+                  <Link href="/chemical-peel-treatment-in-gurgaon">Chemical Peels</Link>
                 </li>
                 <li>
-                  <Link href="/">Dermal Fillers</Link>
+                  <Link href="/dermal-fillers-treatment-in-gurgaon">Dermal Fillers</Link>
                 </li>
                 <li>
-                  <Link href="/">Exilis Elite</Link>
+                  <Link href="/exilis-elite">Exilis Elite</Link>
                 </li>
                 <li>
-                  <Link href="/">Eye Restore Therapy</Link>
+                  <Link href="/eye-restore">Eye Restore Therapy</Link>
                 </li>
                 <li>
-                  <Link href="/">Hair GFC</Link>
+                  <Link href="/gfc-hair-treatment-in-gurgaon">Hair GFC</Link>
                 </li>
                 <li className={styles.noBullet}>
                   <Link href="/treatments" className={styles.more}>
@@ -256,7 +256,7 @@ const Footer = () => {
         <div className="wrapper">
           <div className={styles.footerBottom}>
             <div className={styles.social}>
-               <Link href="/privacy-policy">Privacy Policy</Link>|<Link href="/terms-conditions">Terms & Conditions</Link>|<Link href="/refund-policy">Refund Policy</Link>|<Link href="/return-policy">Return Policy</Link>|<Link href="/explore">Explore</Link>
+              <Link href="/privacy-policy">Privacy Policy</Link>|<Link href="/terms-conditions">Terms & Conditions</Link>|<Link href="/refund-policy">Refund Policy</Link>|<Link href="/return-policy">Return Policy</Link>|<Link href="/explore">Explore</Link>
             </div>
             <div className={styles.right}>
               <span aria-label="Copyright">

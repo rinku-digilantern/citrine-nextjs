@@ -5,11 +5,21 @@ import styles from './ServiceVideoSection.module.css';
 import Modal from '../../common/Modal/Modal';
 import Link from 'next/link';
 
-const ServiceVideoSection = () => {
+interface VideoItem {
+  thumbnail: string;
+  alt: string;
+  videoUrl: string;
+}
+
+interface ServiceVideoSectionProps {
+  videos?: VideoItem[];
+}
+
+const ServiceVideoSection: React.FC<ServiceVideoSectionProps> = ({ videos: propVideos }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<string>('');
 
-  const videos = [
+  const defaultVideos = [
     {
       thumbnail: '/assets/images/home/videos01.webp',
       alt: 'Dr Niti Gaur and Heena Kapoor',
@@ -19,19 +29,10 @@ const ServiceVideoSection = () => {
       thumbnail: '/assets/images/home/videos02.webp',
       alt: 'Dr Niti Gaur and Jannat Arora',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-    },
-    {
-      thumbnail: '/assets/images/home/videos03.webp',
-      alt: 'Patient consultation video',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
-    },
-    {
-      thumbnail: '/assets/images/home/videos04.webp',
-      stats: { likes: 310, views: 480 },
-      alt: 'Pre Bridal Skincare Tips',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
     }
   ];
+
+  const videos = propVideos && propVideos.length > 0 ? propVideos : defaultVideos;
 
   const openModal = (videoUrl: string) => {
     setSelectedVideo(videoUrl);
@@ -59,20 +60,20 @@ const ServiceVideoSection = () => {
                   height={480}
                   className={styles.thumbnail}
                 />
-                <a 
-                  href="#" 
+                <button 
                   className={styles.overlay}
                   onClick={(e) => {
                     e.preventDefault();
                     openModal(video.videoUrl);
                   }}
+                  aria-label={`Play ${video.alt}`}
                 >
-                  <button className={styles.playButton} aria-label="Play Video">
+                  <div className={styles.playButton}>
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                       <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>
                     </svg>
-                  </button>
-                </a>
+                  </div>
+                </button>
               </div>
             </div>
           ))}
@@ -88,6 +89,7 @@ const ServiceVideoSection = () => {
           title="Video Player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          style={{ width: '100%', aspectRatio: '16/9', border: 'none' }}
         />
       </Modal>
     </section>
