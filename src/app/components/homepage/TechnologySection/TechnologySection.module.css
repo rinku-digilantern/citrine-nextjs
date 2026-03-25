@@ -243,6 +243,18 @@ transform: translate(-50%, -50%);
   background: url('/assets/images/home/techlist.webp') no-repeat center/contain;
 }
 
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.techSection {padding: 40px 0;}
+.container {max-width: 92%;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.techSection {padding: 40px 0;}
+.container {max-width: 92%;}
+}
+
 @media (max-width: 1024px) {
   .contentBox {
     flex-direction: column;

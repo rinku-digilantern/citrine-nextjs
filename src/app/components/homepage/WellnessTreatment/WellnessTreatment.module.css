@@ -195,6 +195,27 @@
   border-radius: 0;
 }
 
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.wellnessSection {padding: 40px 0 0;}
+.container {max-width: 92%;}
+.leftSection {max-width: 600px;}
+.rightSection {max-width: 600px;}
+.overlay {padding: 12px;}
+.overlay h3{font-size: 17px;letter-spacing: 0px;}
+}
+
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.wellnessSection {padding: 40px 0 0;}
+.container {max-width: 92%;}
+.leftSection {max-width: 570px;}
+.rightSection {max-width: 570px;}
+.overlay {padding: 12px;}
+.overlay h3{font-size: 17px;letter-spacing: 0px;}
+.container p {margin-bottom: 15px;font-size: 18px;}
+.navigation {gap: 8px;margin-top: 1rem;}
+}
+
+
 @media (max-width: 1024px) {
   .content {flex-direction: column;}
   .leftSection,

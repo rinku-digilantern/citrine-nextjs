@@ -50,6 +50,29 @@ export default function CitrineClinicSection() {
     if (percent >= 1) setEnabled(false);
   };
 
+  const aboutItems = [
+    {
+      title: 'Advanced, Technology-Driven Treatments:',
+      desc: 'Equipped with globally recognised, US FDA-approved technologies to deliver safe, precise, and effective results across skin and hair concerns.',
+    },
+    {
+      title: 'Personalised Treatment Protocols:',
+      desc: 'Every treatment plan is thoughtfully tailored to individual needs, ensuring outcomes that are natural, balanced, and long-lasting.',
+    },
+    {
+      title: 'Clinical Expertise You Can Trust:',
+      desc: 'Led by experienced dermatological guidance, the clinic upholds the highest standards of medical accuracy and ethical practice.',
+    },
+    {
+      title: 'Comfort-Focused Patient Experience:',
+      desc: 'Designed to offer privacy, ease, and a welcoming environment where patients feel at ease throughout their journey.',
+    },
+    {
+      title: 'Commitment to Continuous Innovation:',
+      desc: 'Regularly updated protocols and techniques that reflect the latest advancements in global dermatology and aesthetic medicine.',
+    }
+  ];
+
   return (
     <section className={styles.sectiontrack} ref={sectionRef} onClick={handleSectionClick}>
       <div className={styles.stickyelement}>
@@ -88,15 +111,15 @@ export default function CitrineClinicSection() {
 
                <div className={styles.citrinecontentbox}>
                   <h2 className={`mainHeading ${styles.mainHeading}`}>ABOUT CITRINE CLINIC</h2>
-                  <p className={styles.aboutdesc}>
-                    Lorem ipsum dolor sit amet consectetur adep elit morbe diam dues laoreet non ex element porta.
-                  </p>
+                  <p className={styles.aboutdesc}>Citrine Clinic is envisioned as a modern dermatology and aesthetic space where clinical excellence meets a deeply personalised approach to care.</p>
 
                   <ul className={styles.aboutlist}>
-                    {[1, 2, 3, 4].map((i) => (
-                      <li key={i} className={styles.aboutlistitem}>
-                          <Image src="/assets/images/home/techlist.webp" className={styles.aboutlisticon} width={24} height={24} alt="Checked" />
-                        Lorem ipsum dolor sit amet consectetur adipis elit cras sit amet pharetra.
+                    {aboutItems.map((item, idx) => (
+                      <li key={idx} className={styles.aboutlistitem}>
+                        <Image src="/assets/images/home/techlist.webp" className={styles.aboutlisticon} width={22} height={22} alt="Checked" />
+                        <div>
+                          <strong>{item.title}</strong> {item.desc}
+                        </div>
                       </li>
                     ))}
                   </ul>
