@@ -162,6 +162,18 @@
   font-size: 20px;
 }
 
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.testimonialsSection {padding: 40px 0;}
+.container {max-width: 84%;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.testimonialsSection {padding: 40px 0;}
+.container {max-width: 84%;}
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .testimonialsSection {padding: 2rem 0;}

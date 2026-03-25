@@ -167,6 +167,16 @@
   background: #f7ecd9;
 }
 
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.container {max-width: 92%;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.container {max-width: 92%;}
+}
+
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;

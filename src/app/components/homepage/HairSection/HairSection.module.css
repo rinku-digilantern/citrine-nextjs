@@ -7,7 +7,7 @@
 /* Left Content */
 .leftContent {
  background: var(--footer-bg);
-  padding: 0px 50px 0px 100px;
+  padding: 0px 50px 0px 105px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,6 +160,24 @@
   text-transform: uppercase;
   margin: 0;
   font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Left Content */
+@media (max-width: 1500.98px) and (min-width:1401px) {
+.hairSection {padding:50px 0;}
+.leftContent {padding: 0px 40px 0px 60px;}
+}
+
+/* Left Content */
+@media (max-width: 1400.98px) and (min-width:1301px) {
+.hairSection {padding:50px 0;}
+.leftContent {padding: 0px 40px 0px 60px;}
+}
+
+@media (max-width: 1300.98px) and (min-width:1201px) {
+.hairSection {padding:50px 0;}
+.leftContent {padding: 0px 40px 0px 60px;}
+.treatmentTitle {letter-spacing: 2%;font-size: 18px;}
 }
 
 /* Responsive Design */

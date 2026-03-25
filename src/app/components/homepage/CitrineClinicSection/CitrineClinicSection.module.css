@@ -53,18 +53,21 @@
 .aboutlist {
   list-style: none;
   padding: 0;
-  margin: 0 0 20px 0px;
-  max-height: 190px;
-  overflow: auto;
+  margin: 0 0 30px 0px;
+  max-height: 210px;
+  overflow: auto;padding-right: 10px;
+  position: relative;
 }
 .aboutlist::-webkit-scrollbar-track{box-shadow:inset 0 0 6px #0000004d;border-radius:5px;background-color:#ddd}
 .aboutlist::-webkit-scrollbar{width:5px;background-color:#f5f5f5}
 .aboutlist::-webkit-scrollbar-thumb{border-radius:5px;box-shadow:inset 0 0 6px #0000004d;background:var(--gradient-bg);}
 .aboutlistitem {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 8px;
+  align-items: start;
+  margin-bottom: 10px;
+  font-size: 18px;
   color: var(--default-color);
 }
 .heropanelCustom {
@@ -86,12 +89,12 @@
 .headingimage img{width: auto;}
 
 .aboutlisticon {
-  display: inline-flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  justify-self: center;
+  align-self: start;
+  object-fit: contain;
 }
 
 .aboutbtn {
@@ -244,6 +247,15 @@ overflow: hidden;
     position: absolute;
     inset: 0% auto 0% 0%;
 }
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.citrinecontentbox {width: 45vw;height: 100vh;margin-top: 100px;margin-right: 0;padding: 2rem;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.citrinecontentbox {width: 45vw;height: 100vh;margin-top: 100px;margin-right: 0;padding: 1.5rem;}
+}
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
@@ -256,8 +268,9 @@ overflow: hidden;
 .contentpanel {height:100vh;height: 100dvh;flex: unset;display: flex;flex-direction: column;justify-content: center;width: 100vw;}
 .bgwrap {width: 100vw;min-width: 100vw;height: 45vh; height: 45dvh;}
 .citrinecontentbox {width: 100%; margin: 15px auto 0 auto;margin-right: auto;padding: 12px;height: 55vh; height: 55dvh;}
-.aboutlist {margin: 0 0 10px 0px;max-height: 135px;}
-.aboutlistitem{margin-bottom: 3px;font-size: 15px;}
+.aboutlist {margin: 0 0 15px 0px;max-height: 140px;}
+.aboutlistitem{margin-bottom: 3px;font-size: 15px; grid-template-columns: 24px 1fr; gap: 8px;}
+.aboutlisticon{width:24px;height:24px}
 .aboutdesc {max-width: auto;margin-bottom: 10px;font-size: 15px;line-height: 1.8;}
 .stickyelement {height: 100vh;height: 100dvh;}
 .aboutbtn { margin-top: 12px;padding: 6px 18px;font-size: 15px;font-weight: 500;}
