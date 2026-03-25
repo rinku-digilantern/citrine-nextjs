@@ -377,3 +377,65 @@
 .treatmentTitle {margin-bottom: 5px;font-size: 20px;}
 .shareColumn {z-index: unset;flex-shrink: 0; margin: 0 auto;align-self: flex-start;width: 92%;position: relative;top: unset;}
 }
+
+/* Dynamic HTML content styles */
+.blogBody h2,
+.finalThoughts h2 {
+  font-size: 22px;
+  color: var(--default-color);
+  margin: 32px 0 12px 0;
+  font-weight: 600;
+}
+.blogBody p,
+.finalThoughts p {
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+}
+.blogBody ul,
+.blogBody ol,
+.finalThoughts ul,
+.finalThoughts ol {
+  margin: 0 0 24px 0;
+  padding-left: 25px;
+}
+.blogBody li,
+.finalThoughts li {
+  margin-bottom: 5px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: var(--default-color);
+}
+.blogBody strong,
+.finalThoughts strong { font-weight: 600; }
+.blogBody a,
+.finalThoughts a {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Prev / Next post navigation */
+.postNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+  gap: 12px;
+}
+.navPrev,
+.navNext {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 16px;
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.navPrev:hover,
+.navNext:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+

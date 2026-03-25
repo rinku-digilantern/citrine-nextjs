@@ -106,7 +106,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
             { name: 'Microneedling', link: '/' },
             { name: 'CO2 Fractional Laser', link: '/' },
             { name: 'Blood-Derived Growth Factors', link: '/' },
-            { name: 'Filler', link: '/' } 
+            { name: 'Filler', link: '/' }
           ]
         },
         {
@@ -175,7 +175,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
       ],
       imagePosition: 'left'
     },
-     {
+    {
       id: 'oily-skin',
       heading: 'Oily skin',
       description: 'Everyone has some oil on their skin. Under each of your pores is a sebaceous gland that produces a natural oil called sebum, keeping your skin hydrated and healthy. But the glands can produce too much oil, which makes oily skin.',
@@ -260,7 +260,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
       ],
       imagePosition: 'left'
     },
-     {
+    {
       id: 'rosacea',
       heading: 'ROSACEA',
       description: 'Rosacea refers to a chronic skin disease that is associated with fluctuating severity of flushing and redness of the central area of the face.',
@@ -339,44 +339,34 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                   />
                 </div>
                 <div className={styles.contentWrapper}>
-                  <h2 className={`mainHeading ${styles.mainHeading}`}>{section.heading}</h2>
-                  <p className={styles.description}>{section.description}</p>
-                  <div className={styles.treatmentSection}>                    
-                    {section.tabs ? (
-                      <>
-                        <div className={styles.tabsContainer}>
-                          {section.tabs.map((tab) => (
-                            <button
-                              key={tab.id}
-                              className={`${styles.tabButton} ${activeTab[section.id] === tab.id ? styles.activeTab : ''}`}
-                              onClick={() => handleTabClick(section.id, tab.id)}
-                            >
-                              {tab.label}
-                            </button>
-                          ))}
-                        </div>
-                        <div className={styles.tagsList}>
-                          {section.tabs
-                            .find(tab => tab.id === activeTab[section.id])?.treatments
-                            .map((treatment, idx) => (
-                              <Link key={idx} className={styles.tag} href={treatment.link}>
-                                {treatment.name}
-                              </Link>
-                            ))}
-                        </div>
-                      </>
-                    ) : (
-                      <div className={styles.tagsList}>
-                        {section.treatments?.map((treatment, idx) => (
-                          <Link key={idx} className={styles.tag} href={treatment.link}>
-                            {treatment.name}
-                          </Link>
+                  <h2 className={`${styles.mainHeading} treatmentrightheading`}>{section.heading}</h2>
+                  <div className={styles.description} dangerouslySetInnerHTML={{ __html: section.description }} />
+                  {section.tabs && section.tabs.length > 0 && (
+                    <div className={styles.treatmentSection}>
+                      <div className={styles.tabsContainer}>
+                        {section.tabs.map((tab) => (
+                          <button
+                            key={tab.id}
+                            className={`${styles.tabButton} ${activeTab[section.id] === tab.id ? styles.activeTab : ''}`}
+                            onClick={() => handleTabClick(section.id, tab.id)}
+                          >
+                            {tab.label}
+                          </button>
                         ))}
                       </div>
-                    )}
-                  </div>
-                  <div className={styles.buttonGroup}>
-                    {section.buttons.map((button, idx) => (
+                      <div className={styles.tagsList}>
+                        {section.tabs
+                          .find(tab => tab.id === activeTab[section.id])?.treatments
+                          .map((treatment, idx) => (
+                            <Link key={idx} className={styles.tag} href={treatment.link}>
+                              {treatment.name}
+                            </Link>
+                          ))}
+                      </div>
+                    </div>
+                  )}
+                  {/* <div className={styles.buttonGroup}>
+                    {section.buttons?.map((button: any, idx: number) => (
                       <Link
                         key={idx}
                         className={`${styles.actionButton} ${button.isActive ? styles.activeActionButton : ''}`}
@@ -385,51 +375,41 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                         {button.label}
                       </Link>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
               </>
             ) : (
               <>
                 <div className={styles.contentWrapper}>
-                  <h2 className={`mainHeading ${styles.mainHeading}`}>{section.heading}</h2>
-                  <p className={styles.description}>{section.description}</p>
-                  <div className={styles.treatmentSection}>
-                    {section.tabs ? (
-                      <>
-                        <div className={styles.tabsContainer}>
-                          {section.tabs.map((tab) => (
-                            <button
-                              key={tab.id}
-                              className={`${styles.tabButton} ${activeTab[section.id] === tab.id ? styles.activeTab : ''}`}
-                              onClick={() => handleTabClick(section.id, tab.id)}
-                            >
-                              {tab.label}
-                            </button>
-                          ))}
-                        </div>
-                        <div className={styles.tagsList}>
-                          {section.tabs
-                            .find(tab => tab.id === activeTab[section.id])?.treatments
-                            .map((treatment, idx) => (
-                              <Link key={idx} className={styles.tag} href={treatment.link}>
-                                {treatment.name}
-                              </Link>
-                            ))}
-                        </div>
-                      </>
-                    ) : (
-                      <div className={styles.tagsList}>
-                        {section.treatments?.map((treatment, idx) => (
-                          <Link key={idx} className={styles.tag} href={treatment.link}>
-                            {treatment.name}
-                          </Link>
+                  <h2 className={`${styles.mainHeading} treatmentleftheading`}>{section.heading}</h2>
+                  <div className={styles.description} dangerouslySetInnerHTML={{ __html: section.description }} />
+                  {section.tabs && section.tabs.length > 0 && (
+                    <div className={styles.treatmentSection}>
+                      <div className={styles.tabsContainer}>
+                        {section.tabs.map((tab) => (
+                          <button
+                            key={tab.id}
+                            className={`${styles.tabButton} ${activeTab[section.id] === tab.id ? styles.activeTab : ''}`}
+                            onClick={() => handleTabClick(section.id, tab.id)}
+                          >
+                            {tab.label}
+                          </button>
                         ))}
                       </div>
-                    )}
-                  </div>
-                  
-                  <div className={styles.buttonGroup}>
-                    {section.buttons.map((button, idx) => (
+                      <div className={styles.tagsList}>
+                        {section.tabs
+                          .find(tab => tab.id === activeTab[section.id])?.treatments
+                          .map((treatment, idx) => (
+                            <Link key={idx} className={styles.tag} href={treatment.link}>
+                              {treatment.name}
+                            </Link>
+                          ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* <div className={styles.buttonGroup}>
+                    {section.buttons?.map((button: any, idx: number) => (
                       <Link
                         key={idx}
                         className={`${styles.actionButton} ${button.isActive ? styles.activeActionButton : ''}`}
@@ -438,7 +418,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                         {button.label}
                       </Link>
                     ))}
-                  </div>
+                  </div> */}
                 </div>
                 <div className={styles.imageWrapper}>
                   <Image

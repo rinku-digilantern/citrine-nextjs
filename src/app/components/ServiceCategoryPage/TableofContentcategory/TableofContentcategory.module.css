@@ -19,7 +19,7 @@
 .container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 0px 0 0 100px;
+  padding: 0;
   position: relative;
 }
 
@@ -54,13 +54,17 @@
   display: flex;
   align-items: center;
   gap: 0;
-  justify-content: center;
+  /* IMPORTANT: Do NOT use justify-content: center here.
+     It causes a known browser bug where overflowing flex items
+     on the LEFT side get clipped and cannot be scrolled to. */
+  justify-content: flex-start;
   width: 100%;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 5% 0 5%;
   overflow-x: auto;
   overflow-y: hidden;
+  box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   scroll-behavior: auto;
