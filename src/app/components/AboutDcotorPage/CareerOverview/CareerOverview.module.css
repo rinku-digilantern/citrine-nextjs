@@ -13,7 +13,7 @@
   font-weight: 400;
   text-align: center;
   color: var(--default-color);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   text-transform: uppercase;
 }
 
@@ -25,7 +25,6 @@
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
 }
 
 .tab {
@@ -100,83 +99,75 @@
   line-height: 1.6;
   text-transform: uppercase;
 }
-
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .cardsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .tabsContainer {
-    max-width: 100%;
-  }
-
-  .tab {
-    font-size: 12px;
-    padding: 12px 15px;
-  }
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.careerSection {padding: 2rem 0;}
+.container {max-width: 92%;margin: 0 auto;}
 }
 
-@media (max-width: 768px) {
-  .careerSection {
-    padding: 40px 15px;
-  }
+/* Responsive Design */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.careerSection {padding: 2rem 0;}
+.container {max-width: 92%;margin: 0 auto;}
+}
 
-  .mainHeading {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
+/* Responsive Design */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.careerSection {padding: 2rem 0;}
+.container {max-width: 92%;margin: 0 auto;}
+.cardsGrid {gap: 15px;}
+.card { min-height: 200px;padding: 30px 20px;}
+}
 
-  .tabsContainer {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    justify-content: flex-start;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
+/* Responsive Design */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.careerSection {padding: 2rem 0;}
+.container {max-width: 92%;margin: 0 auto;}
+.cardsGrid {gap: 15px; grid-template-columns: repeat(2, 1fr);}
+.card { min-height: 200px;padding: 30px 20px;}
+ .tabsContainer {max-width: 100%;}
+.tab {font-size: 16px;padding: 12px 15px;}
+.cardDescription{font-size: 16px;}
+.cardTitle {font-size: 18px;font-weight: 600;letter-spacing: .2px;margin: 0 0 10px 0px;}
+}
 
-  .tabsContainer::-webkit-scrollbar {
-    display: none;
-  }
+/* Responsive Design */
+@media (max-width: 991.98px) and (min-width: 768px) {
+.careerSection {padding: 2rem 0;}
+.container {max-width: 92%;margin: 0 auto;}
+.cardsGrid {gap: 15px; grid-template-columns: repeat(2, 1fr);}
+.card { min-height: 200px;padding: 30px 20px;}
+ .tabsContainer {max-width: 100%;}
+.tab {font-size: 15px;padding: 12px 10px;}
+.cardDescription{font-size: 16px;}
+.cardTitle {font-size: 18px;font-weight: 600;letter-spacing: .2px;margin: 0 0 10px 0px;}
+}
 
-  .tab {
-    flex: 0 0 auto;
-    font-size: 11px;
-    padding: 12px 10px;
-    white-space: nowrap;
-  }
-
-  .cardsGrid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .card {
-    padding: 30px 20px;
-    min-height: 150px;
-  }
-
-  .cardTitle {
-    font-size: 16px;
-  }
-
-  .cardDescription {
-    font-size: 12px;
-  }
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px){
+  .careerSection {padding:1.5rem 0px;}
+  .mainHeading {font-size: 26px; margin-bottom: 15px;}
+  .container {max-width: 100%;width: 92%;margin: 0 auto;}
+  .tab {font-size: 14px;padding: 10px 5px;text-align: center;gap: 4px;justify-content: center;}
+  .tabsContainer {gap: 5px;margin-bottom: 20px;flex-wrap: nowrap;overflow-x: auto;overflow-y: hidden;justify-content: center;-webkit-overflow-scrolling: touch;scrollbar-width: none;}
+  .tabsContainer::-webkit-scrollbar {display: none;}
+  .cardsGrid {gap: 10px; grid-template-columns: repeat(2, 1fr);}
+  .card {padding: 15px 15px;min-height: 130px;}
+  .cardTitle {font-size: 16px; margin-bottom: 10px;letter-spacing: 0px;}
+  .cardDescription {font-size: 15px;}
+  .cardsGrid {gap: 5px;}
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px){
   .careerSection {padding:1.5rem 0px;}
   .mainHeading {font-size: 26px; margin-bottom: 15px;}
-  .container {max-width: 100%;width: 90%;margin: 0 auto;}
-  .tab {font-size: 15px;padding: 10px 12px;text-align: center;}
+  .container {max-width: 92%;width: 92%;margin: 0 auto;}
+  .tab {font-size: 15px;padding: 10px 12px;text-align: center;min-width: 140px;flex: 0 0 auto;box-sizing: border-box;}
   .tabsContainer {gap: 8px;margin-bottom: 20px;flex-wrap: nowrap;overflow-x: auto;overflow-y: hidden;justify-content: flex-start;-webkit-overflow-scrolling: touch;scrollbar-width: none;}
   .tabsContainer::-webkit-scrollbar {display: none;}
   .card {padding: 15px 15px;min-height: 130px;}
   .cardTitle {font-size: 16px; margin-bottom: 10px;letter-spacing: 0px;}
   .cardDescription {font-size: 15px;}
-  .cardsGrid {gap: 8px;}
+  .cardsGrid {gap: 8px; grid-template-columns: repeat(1, 1fr);}
 }

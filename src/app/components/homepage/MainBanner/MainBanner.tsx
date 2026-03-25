@@ -141,7 +141,7 @@ const MainBanner = () => {
                       <h1 className={`heading ${styles.heading}`}>REJUVENATE.<br/>TRANSFORM.<br/>GLOW.</h1>
                     </div>
                     <div className={styles.textContent}>
-                      <p className={styles.heroSubtitle}>Lorem ipsum dolor sit amet consectetur adipis elit morbe diam dues laoreet non ex elementum porta.</p>
+                      <p className={styles.heroSubtitle}>Rejuvenate your skin with treatments that restore health from within. Transform your confidence as you glow with results that are natural, refined, and truly radiant.</p>
                     </div>
                     <div className={styles.btnbox}>
                       <Link href="/book-an-appointment" className={styles.primaryBtn}>BOOK APPOINTMENT</Link>
@@ -160,8 +160,8 @@ const MainBanner = () => {
                 <div className={styles.secondrow}>
                   <div className={styles.secondleft}>
                     <div className={styles.secondheading}>Dr. A.P.J Abdul Kalam Inspirations Awards 2025</div>
-                    <div className={styles.loremheading}>Lorem ipsum dolor sit amet </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipis elit morbe diam dues laoreet non ex element.</p>
+                    <div className={styles.loremheading}>Honoured with the Prestigious Dr APJ Abdul Kalam Inspiration Awards 2025</div>
+                    <p>A proud recognition of excellence, dedication, and innovation in advancing aesthetic and dermatological care.</p>
                   </div>
                   <div className={styles.secondright}>
                     <Image src={`/assets/images/home/secondrightaward.webp`} width={500} height={547} alt="Second Banner Award" />

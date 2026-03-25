@@ -147,6 +147,7 @@ p,
   margin-bottom: var(--spacing-md);
 }
 
+/* Ensure semantic strong tags render with visible emphasis */
 strong {
   font-weight: 600;
 }

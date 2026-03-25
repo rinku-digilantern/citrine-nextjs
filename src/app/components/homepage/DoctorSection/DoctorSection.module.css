@@ -139,64 +139,26 @@
   object-fit: contain;
 }
 
+
+
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .contentWrapper {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .leftSection {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .doctorImageWrapper {
-    justify-content: center;
-  }
-
-  .circularText {
-    right: 50px;
-    width: 150px;
-    height: 150px;
-  }
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .contentWrapper {grid-template-columns: 1fr;gap: 40px;}
+  .leftSection {max-width: 600px;margin: 0 auto;}
+  .doctorImageWrapper {justify-content: center;}
+  .circularText {right: 50px;width: 150px;height: 150px;}
 }
 
-@media (max-width: 768px) {
-  .doctorSection {
-    min-height: auto;
-  }
-
-  .contentWrapper {
-    padding: 60px 20px;
-  }
-
-  .leftSection {
-    padding: 10px;
-  }
-
-  .contentCard {
-    padding: 40px 30px;
-  }
-
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .doctorSection {min-height: auto;}
+  .contentWrapper {padding:2rem 0px;}
+  .leftSection {padding: 10px;}
+  .contentCard {padding: 40px 30px;}
   .bracketTopLeft,
-  .bracketTopRight {
-    width: 30px;
-    height: 30px;
-    border-width: 4px;
-  }
-
-  .doctorName {
-    font-size: 19px;
-  }
-
-  .description {
-    font-size: 14px;
-  }
-
-  .circularText {
-    display: none;
-  }
+  .bracketTopRight {width: 30px;height: 30px;}
+  .doctorName {font-size: 19px;}
+  .description {font-size: 15px;}
+  .circularText {display: none;}
 }
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {

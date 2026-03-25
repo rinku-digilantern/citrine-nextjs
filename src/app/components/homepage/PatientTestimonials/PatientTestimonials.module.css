@@ -164,16 +164,17 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .testimonialsSection {padding: 2rem 0;}
   .emblaSlide {flex: 0 0 100%;padding: 0 20px;}
   .emblaSlide:not(:last-child)::after {display: none;}
-  .mainHeading { font-size: 38px;}
+  .mainHeading { margin-bottom: 15px;}
   .nextButtons {right: 20px;width: 50px;height: 50px;}
   .nextButtons svg {font-size: 18px;}
 }
 
 @media (max-width: 768px) {
   .testimonialsSection {padding: 2rem 15px;}
-  .mainHeading {font-size: 32px;margin-bottom: 40px;}
+  .mainHeading {font-size: 32px;margin-bottom: 15px;}
   .testimonialCard {padding: 30px 20px;min-height: auto;}
   .cardTitle {font-size: 15px;}
   .testimonialText {font-size: 15px;}

@@ -17,10 +17,9 @@ const AboutDoctorMarquee = () => {
   return (
     <section className={`${styles.AboutDoctorMarqueeSection} abcommon`}>
       <div className={styles.headingrow}>
-        <h2 className={`mainHeading ${styles.mainHeading}`}>
-          Lorem ipsum dolor sit<br/> amet bulum
-        </h2>
-        <p className={styles.discription}>Lorem ipsum dolor sit amet consectetur adipiscing elit. Integer ac risus quis lectus sollicitudin varius ac eras sed auctor pellentesque lectus at aliquet. Donec ac odio pulvinar tempor tellus in elementum dolor. Aliquam odio magna aliquam ut velit at, sollicitudin mattis neque. Duis quis sem eget purus imperdiet fringilla sed ut felis in risus rhoncus pellentesque magna a consectetur magna. Maecenas interdum blandit porttitor. Mauris mattis dignissim sed porta amet porttitor lectus id consequat dolor.</p>
+        <h2 className={`mainHeading ${styles.mainHeading}`}>The Visionary Behind Citrine Clinic</h2>
+        <p className={styles.discription}>Dr. Niti Gaur brings over 20 years of rich experience in clinical and aesthetic dermatology, with a practice defined by precision, consistency, and patient-centric care. Her approach blends deep clinical expertise with an evolved aesthetic sensibility, allowing her to deliver results that are both effective and naturally refined. Having trained across leading international institutions, she integrates global advancements with protocols tailored to individual skin needs.<br/><br/>
+Over the years, she has built a strong reputation for her ethical practice, attention to detail, and ability to create long-term treatment journeys rather than quick fixes. As a certified trainer in injectables, fillers, threads, and advanced laser technologies, she also contributes to elevating standards within the field of aesthetic medicine. Her work is further supported by continuous learning through international conferences and research.<br/><br/> At Citrine Clinic, her vision reflects in every detail—bringing together science, skill, and a thoughtful understanding of beauty to create outcomes that inspire confidence and trust.</p>
       </div>
 
       <div

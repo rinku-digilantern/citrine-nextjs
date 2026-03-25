@@ -32,11 +32,7 @@ const FourColumnSection = () => {
   return (
     <section className={styles.fourColumnSection}>
       <div className={styles.container}>
-        <h2 className={`mainHeading ${styles.mainHeading}`}>
-          LOREM IPSUM DOLOR CONSEC<br />
-          ADIPISCING ELIT.
-        </h2>
-
+        <h2 className={`mainHeading ${styles.mainHeading}`}>Thoughtfully Crafted Patient Experience</h2>
         <div className={styles.featuresGrid}>
           {features.map((feature) => (
             <div 

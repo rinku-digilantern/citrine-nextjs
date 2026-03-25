@@ -42,41 +42,13 @@ const TeamSection = () => {
     }
   ];
 
-  const teamData = [
-    {
-      id: 1,
-      name: 'TEAM MEMBER 1',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing.',
-      image: '/assets/images/about-clinic/team01.webp'
-    },
-    {
-      id: 2,
-      name: 'TEAM MEMBER 2',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing.',
-      image: '/assets/images/about-clinic/team02.webp'
-    },
-    {
-      id: 3,
-      name: 'TEAM MEMBER 3',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing.',
-      image: '/assets/images/about-clinic/team03.webp'
-    },
-    {
-      id: 4,
-      name: 'TEAM MEMBER 4',
-      description: 'Lorem ipsum dolor sit amet consectetur adipiscing.',
-      image: '/assets/images/about-clinic/team04.webp'
-    }
-  ];
+
 
   const getCurrentData = () => {
     switch(activeTab) {
       case 'founder':
         return founderData;
       case 'doctors':
-        return doctors;
-      case 'team':
-        return teamData;
       default:
         return doctors;
     }
@@ -104,12 +76,6 @@ const TeamSection = () => {
             onClick={() => setActiveTab('doctors')}
           >
             DOCTORS
-          </button>
-          <button
-            className={`${styles.tab} ${activeTab === 'team' ? styles.activeTab : ''}`}
-            onClick={() => setActiveTab('team')}
-          >
-            TEAM
           </button>
         </div>
 

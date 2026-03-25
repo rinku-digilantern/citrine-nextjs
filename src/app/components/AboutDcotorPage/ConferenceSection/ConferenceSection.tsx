@@ -12,12 +12,8 @@ const ConferenceSection = () => {
       <div className={styles.container}>
         {/* Left Side - Text Content */}
         <div className={styles.leftContent}>
-          <h2 className={`mainHeading ${styles.mainHeading}`}>
-            LOREM IPSUM DOLOR SIT AMET BULUM.
-          </h2>
-          <p className={styles.description}>
-            Lorem ipsum dolor sit amet consectetur adipiscing elit inte ger ac risus quis lectus sollicitudin varius ac eras sed ductor pellen tesque lectus at aliquet donec ac odio vulvinar temp tellus in elementum dolor. Aliquam odio magna aliquam ut velit at sollicitudin mattis neque duis quis semes euismod hendreat duis a volutpat dolor.
-          </p>
+          <h2 className={`mainHeading ${styles.mainHeading}`}>A Philosophy Rooted in Purposeful Care</h2>
+          <p className={styles.description}>At Citrine Clinic, Dr. Niti Gaur’s philosophy goes beyond treating skin—it is about understanding the individual behind it. She believes in educating patients about their skin and hair concerns, empowering them to make informed, confident decisions about their treatments. Her approach is deeply patient-centric, where listening, clarity, and trust form the foundation of every consultation.<br/><br/> Rather than addressing symptoms in isolation, she focuses on holistic, well-structured treatment journeys that are safe, effective, and aligned with long-term results. By integrating globally advanced technologies with research-backed skincare, she ensures outcomes that are both refined and reliable. For Dr. Gaur, aesthetic dermatology is not just about visible change—it is about creating a meaningful, reassuring experience where every patient feels heard, understood, and cared for.</p>
         </div>
 
         {/* Right Side - Video */}

@@ -1,4 +1,4 @@
-.BestDermatologistEightSection{padding: 40px 0px;background-color: #f6eadb}
+.BestDermatologistEightSection{padding: 40px 0px;background-color: #f6eadb;border-top: 1px solid #e5d7c3;}
 .container {max-width: 1320px;margin: 0 auto;}
 .mainHeading{text-transform: uppercase;margin-bottom: 10px;font-size: 35px;}
 .BestDermatologistEightSection p{font-size: 18px;line-height: 1.8;color: var(--default-color);}
@@ -30,17 +30,107 @@
   border-radius: 50%;
   display: inline-block;
 }
+.tableResponsive {
+	width: 100%;
+	overflow-x: auto;
+	margin-bottom: 1.5em;
+}
 
-@media (max-width: 600px) {
-  .BestDermatologistList li {
-    font-size: 0.98rem;
-    margin-bottom: 0.7em;
-    padding-left: 1.5em;
-  }
-  .BestDermatologistList li::before {
-    width: 0.5em;
-    height: 0.5em;
-    top: 0.4em;
-    left: 0.2em;
-  }
+.tableResponsive table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 100%;
+	background: #fffaf2;
+}
+.tableResponsive table tr{vertical-align: top;}
+.tableResponsive table th,
+.tableResponsive table td {
+	padding: 0.75em 1em;
+	border: 1px solid #d5c7b3;
+	text-align: left;
+	font-size: 18px;
+    color: var(--default-color);
+}
+
+.tableResponsive table th {
+	background: #fffaf2;
+	font-weight: 600;
+    color: var(--default-color);
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1400.98px) and (min-width: 1101px) {
+  .BestDermatologistEightSection {padding: 2rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistEightSection p{font-size: 16px}
+  .mainHeading{margin-bottom: 10px;font-size: 35px;}
+  .BestDermatologistList {margin: 0 0 10px 0px;}
+  .BestDermatologistList li {font-size: 16px;margin-bottom: 0.3em;padding-left:20px;}
+  .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.6em;left: 0.2em;}
+  .tableResponsive {margin-bottom: 10px;}
+
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .BestDermatologistEightSection {padding: 2rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistEightSection p{font-size: 16px}
+  .mainHeading{margin-bottom: 10px;font-size: 35px;}
+  .BestDermatologistList {margin: 0 0 10px 0px;}
+  .BestDermatologistList li {font-size: 16px;margin-bottom: 0.3em;padding-left:20px;}
+  .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.6em;left: 0.2em;}
+  .tableResponsive {margin-bottom: 10px;}
+.tableResponsive table {min-width: 100%;font-size: 16px;}
+.tableResponsive table tr{vertical-align: top;}
+.tableResponsive table th,
+.tableResponsive table td {padding: 0.5em 0.5em;font-size: 16px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .BestDermatologistEightSection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistEightSection p{font-size: 15px}
+  .mainHeading{margin-bottom: 10px;font-size: 35px;}
+  .BestDermatologistList {margin: 0 0 8px 0px;}
+  .BestDermatologistList li {font-size: 15px;margin-bottom: 0.3em;padding-left:20px;}
+  .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.6em;left: 0.2em;}
+  .tableResponsive {margin-bottom: 10px;}
+.tableResponsive table {min-width: 100%;font-size: 15px;}
+.tableResponsive table tr{vertical-align: top;}
+.tableResponsive table th,
+.tableResponsive table td {padding: 0.5em 0.5em;font-size: 15px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px) {
+  .BestDermatologistEightSection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistEightSection p{font-size: 15px}
+  .mainHeading{margin-bottom: 10px;font-size: 30px;}
+  .BestDermatologistList {margin: 0 0 8px 0px;}
+  .BestDermatologistList li {font-size: 15px;margin-bottom: 0.3em;padding-left:20px;}
+  .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.6em;left: 0.2em;}
+  .tableResponsive {margin-bottom: 10px;}
+.tableResponsive table {min-width: 100%;font-size: 15px;}
+.tableResponsive table tr{vertical-align: top;}
+.tableResponsive table th,
+.tableResponsive table td {padding: 0.5em 0.5em;font-size: 15px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .BestDermatologistEightSection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistEightSection p{font-size: 15px}
+  .mainHeading{margin-bottom: 5px;font-size: 26px;}
+  .BestDermatologistList {margin: 0 0 8px 0px;}
+  .BestDermatologistList li {font-size: 15px;margin-bottom: 0.3em;padding-left:20px;}
+  .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.6em;left: 0.2em;}
+  .tableResponsive {margin-bottom: 10px;}
+.tableResponsive table {min-width: 100%;font-size: 15px;}
+.tableResponsive table tr{vertical-align: top;}
+.tableResponsive table th,
+.tableResponsive table td {padding: 0.5em 0.5em;font-size: 15px;}
 }

@@ -18,12 +18,12 @@ const BestDermatologistFivethSection: React.FC<Props> = ({ section }) => {
       <div className={styles.container}>
         <div className={styles.doctorprofile}>
           <h2 className={`mainHeading ${styles.mainHeading}`}>{section.mainHeading}</h2>
-          {section.paragraph1 && <p><strong dangerouslySetInnerHTML={{ __html: section.paragraph1 }} /></p>}
+          {section.paragraph1 && <p dangerouslySetInnerHTML={{ __html: section.paragraph1 }} />}
           {section.list && (
             <ul className={styles.BestDermatologistList}>
-              {section.list.map((item: string, idx: number) => (
-                <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
+                {section.list.map((item, idx) => (
+                  <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
+                ))}
             </ul>
           )}
           {section.paragraph2 && <p dangerouslySetInnerHTML={{ __html: section.paragraph2 }} />}

@@ -2,7 +2,7 @@
   padding: 40px 0;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid #E5D7C3
+  border-top: 1px solid #E5D7C3;border-bottom: 1px solid #E5D7C3;
 }
 
 .backgroundImage {
@@ -40,7 +40,7 @@
   padding: 35px 30px;
   display: flex;
   flex-direction: column;
-  min-height: 350px;
+  min-height: 300px;
   position: relative;
 }
 
@@ -127,73 +127,94 @@
   color: var(--default-color);
   margin-top: 20px;
 }
-
 /* Responsive styles */
-@media (max-width: 992px) {
-  .testimonialSection {
-    padding: 60px 0;
-  }
-
-  .mainHeading {
-    font-size: 38px;
-    margin-bottom: 30px;
-  }
-
-  .testimonialsGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-  }
+@media (max-width: 1400.98px) and (min-width:1101px) {
+   .BestDermatologistTestimonialSection {padding: 2rem 0;}
+  .mainHeading {margin-bottom: 5px;font-size: 35px;}
+  .container {max-width: 92%;width:92%;padding:0px}
+  .testimonialCard {padding: 15px;}
+  .cardTitle {font-size: 16px;margin-bottom: 10px;}
+  .testimonialText {font-size: 16px;}
+  .desc {text-align: center;padding-bottom: 10px;}
+  .googleIcon img {width: 25px;height: 25px;}
+  .stars {gap: 2px;margin-bottom: 10px;}
+  .disclaimer {margin-top: 15px;font-size: 10px;}
+  .viewMoreBtn {padding: 8px 16px;font-size: 15px;}
+  .viewMoreWrapper {gap: 0px;margin-top: 15px;}
+  .servicefooter {margin-top: 15px;}
 }
 
-@media (max-width: 768px) {
-  .testimonialSection {
-    padding: 50px 0;
-  }
+/* Responsive styles */
+@media (max-width: 1100.98px) and (min-width:992px) {
+   .BestDermatologistTestimonialSection {padding: 2rem 0;}
+  .mainHeading {margin-bottom: 5px;font-size: 35px;}
+  .container {max-width: 92%;width:92%;padding:0px}
+  .testimonialCard {padding: 15px;}
+  .cardTitle {font-size: 16px;margin-bottom: 10px;}
+  .testimonialText {font-size: 15px;}
+  .desc {text-align: center;padding-bottom: 10px;}
+  .googleIcon img {width: 24px;height: 24px;}
+  .stars {gap: 2px;margin-bottom: 10px;}
+  .disclaimer {margin-top: 15px;font-size: 10px;}
+  .viewMoreBtn {padding: 8px 16px;font-size: 15px;}
+  .viewMoreWrapper {gap: 0px;margin-top: 15px;}
+  .servicefooter {margin-top: 15px;}
+}
 
-  .mainHeading {
-    font-size: 32px;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-  }
+/* Responsive styles */
+@media (max-width: 991.98px) and (min-width:768px) {
+   .BestDermatologistTestimonialSection {padding: 1.5rem 0;}
+  .mainHeading {margin-bottom: 5px;font-size: 35px;}
+  .container {max-width: 92%;width:92%;padding:0px}
+  .testimonialCard {padding: 15px;}
+  .cardTitle {font-size: 15px;margin-bottom: 10px;}
+  .testimonialText {font-size: 15px;}
+  .desc {text-align: center;padding-bottom: 10px;}
+  .googleIcon img {width: 24px;height: 24px;}
+  .testimonialsGrid {display: flex;flex-wrap: nowrap;gap: 8px;overflow-x: auto;overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;scroll-snap-type: x mandatory;margin-bottom: 0px;
+    touch-action: pan-x;scrollbar-width: none;-ms-overflow-style: none;}
+  .testimonialCard {flex: 0 0 48%;min-width: 48%;scroll-snap-align: start;}
+  .testimonialCard::-webkit-scrollbar{display:none}
+  .stars {gap: 2px;margin-bottom: 10px;}
+  .disclaimer {margin-top: 15px;font-size: 9px;}
+  .viewMoreBtn {padding: 8px 16px;font-size: 15px;}
+  .viewMoreWrapper {gap: 0px;margin-top: 15px;}
+  .servicefooter {margin-top: 15px;}
+}
 
-  .testimonialsGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .testimonialCard {
-    padding: 30px 25px;
-    min-height: auto;
-  }
-
-  .cardTitle {
-    font-size: 15px;
-  }
-
-  .testimonialText {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .author {
-    font-size: 12px;
-  }
-
-  .googleIcon img {
-    width: 28px;
-    height: 28px;
-  }
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px) {
+  .BestDermatologistTestimonialSection {padding: 1.5rem 0;}
+  .mainHeading {margin-bottom: 5px;font-size: 30px;}
+  .container {max-width: 92%;width:92%;padding:0px}
+  .testimonialCard {padding: 15px;}
+  .cardTitle {font-size: 15px;margin-bottom: 10px;}
+  .testimonialText {font-size: 15px;}
+  .desc {text-align: center;padding-bottom: 10px;}
+  .googleIcon img {width: 24px;height: 24px;}
+  .testimonialsGrid {display: flex;flex-wrap: nowrap;gap: 8px;overflow-x: auto;overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;scroll-snap-type: x mandatory;margin-bottom: 0px;
+    touch-action: pan-x;scrollbar-width: none;-ms-overflow-style: none;}
+  .testimonialCard {flex: 0 0 48%;min-width: 48%;scroll-snap-align: start;}
+  .testimonialCard::-webkit-scrollbar{display:none}
+  .stars {gap: 2px;margin-bottom: 10px;}
+  .disclaimer {margin-top: 15px;font-size: 9px;}
+  .viewMoreBtn {padding: 8px 16px;font-size: 15px;}
+  .viewMoreWrapper {gap: 0px;margin-top: 15px;}
+  .servicefooter {margin-top: 15px;}
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-  .testimonialSection {padding: 1.5rem 0;}
+  .BestDermatologistTestimonialSection {padding: 1.5rem 0;}
   .mainHeading {margin-bottom: 15px;font-size: 26px;}
-  .container {max-width: 100%;width:90%;padding:0px}
-  .mainHeading {font-size: 26px;margin-bottom: 15px;}
+  .container {max-width: 92%;width:92%;padding:0px}
+  .mainHeading {font-size: 26px;margin-bottom: 10px;}
   .testimonialCard {padding: 15px;}
   .cardTitle {font-size: 15px;margin-bottom: 10px;}
   .testimonialText {font-size: 15px;}
+  .desc {text-align: center;padding-bottom: 10px;}
   .googleIcon img {width: 24px;height: 24px;}
   .testimonialsGrid {display: flex;flex-wrap: nowrap;gap: 8px;overflow-x: auto;overflow-y: hidden;
     -webkit-overflow-scrolling: touch;scroll-snap-type: x mandatory;margin-bottom: 0px;

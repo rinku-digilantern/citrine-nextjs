@@ -17,8 +17,8 @@ const BestDermatologistNineSection: React.FC<Props> = ({ section }) => {
           {section.list && (
             <ul className={styles.BestDermatologistList}>
               {section.list.map((item, idx) => (
-                <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
-              ))}
+                 <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
+               ))}
             </ul>
           )}
         </div>

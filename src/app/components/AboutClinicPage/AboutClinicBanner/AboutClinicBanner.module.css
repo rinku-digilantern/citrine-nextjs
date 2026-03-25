@@ -30,8 +30,6 @@
   object-fit: cover;
   z-index: 0;
 }
-
-
 .bannerContainer {
   position: relative;
   z-index: 2;
