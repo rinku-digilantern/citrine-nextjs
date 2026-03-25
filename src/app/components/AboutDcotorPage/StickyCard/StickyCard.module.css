@@ -183,7 +183,7 @@
   font-weight: 400;
   color: #fff;
   line-height: 1.7;
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   text-align: center;
 }
 
@@ -271,154 +271,42 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .stickyCard {
-    min-height: 400px;
-  }
-
-  .cardContent {
-    height: 400px;
-  }
-
-  .joshWrapper {
-    min-height: 400px;
-  }
-
-  .podcastTitle {
-    font-size: 40px;
-    letter-spacing: 3px;
-  }
-
-  .podcastDescription {
-    font-size: 15px;
-    margin-bottom: 25px;
-  }
-
-  .joshTitle,
-  .tedxTitle {
-    font-size: 36px;
-  }
-
-  .joshDescription,
-  .tedxDescription {
-    font-size: 15px;
-    margin-bottom: 30px;
-  }
-
-  .rightContentSection,
-  .tedxLeftContent {
-    padding: 50px 40px;
-    text-align: center;
-  }
-
-  .watchButton {
-    padding: 13px 30px;
-    font-size: 13px;
-    letter-spacing: 1.2px;
-  }
-
-  .cardTitle {
-    font-size: 24px;
-  }
-
-  .cardDescription {
-    font-size: 15px;
-  }
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.container {max-width: 92%;}
 }
 
-@media (max-width: 768px) {
-  .stickySection {
-    padding: 60px 20px;
-  }
+/* Responsive Design */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.container {max-width: 92%;}
+.cardContent {width: 100%;height: 450px;}
+.stickyCard {min-height: 450px;}
+}
 
-  .stickyCard {
-    min-height: auto;
-    margin-bottom: 30px;
-  }
+/* Responsive Design */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.container {max-width: 92%;}
+.cardContent {width: 100%;height: 450px;}
+.stickyCard {min-height: 450px;}
+.podcastDescription {font-size: 15px;margin-bottom: 10px;}
+.mainHeading {margin: 0 0 5px 0px;}
+}
 
-  .cardContent {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .joshWrapper {
-    min-height: 500px;
-  }
-
-  .joshContentOverlay {
-    padding: 40px 30px;
-  }
-
-  .leftImageSection {
-    width: 100%;
-    height: 300px;
-  }
-
-  .rightContentSection {
-    width: 100%;
-    padding: 40px 30px;
-  }
-
-  .tedxLeftContent {
-    width: 100%;
-    padding: 40px 30px;
-  }
-
-  .tedxWrapper {
-    min-height: 500px;
-  }
-
-  .imageWrapper {
-    min-height: 400px;
-  }
-
-  .podcastTitle {
-    font-size: 34px;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-  }
-
-  .podcastDescription {
-    font-size: 14px;
-    margin-bottom: 22px;
-    line-height: 1.6;
-  }
-
-  .joshTitle,
-  .tedxTitle {
-    font-size: 30px;
-    letter-spacing: 1.5px;
-    margin-bottom: 20px;
-  }
-
-  .joshDescription,
-  .tedxDescription {
-    font-size: 14px;
-    margin-bottom: 25px;
-  }
-
-  .joshLogo {
-    height: 35px;
-  }
-
-  .tedxLogo {
-    height: 40px;
-  }
-
-  .watchButton {
-    padding: 12px 26px;
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
-
-  .playIcon {
-    width: 18px;
-    height: 18px;
-  }
+/* Responsive Design */
+@media (max-width: 991.98px) and (min-width: 768px) {
+.container {max-width: 95%;}
+.cardContent {width: 100%;height: 400px;}
+.stickyCard {min-height: 400px;}
+.overlay {width: 70%;left: 15%;}
+.joshContentOverlay {width: 50%;height: auto;padding: 20px 10px;}
+.tedxLeftContent {width: 50%;padding: 20px 10px;}
+.podcastDescription {font-size: 15px;margin-bottom: 10px;}
+.mainHeading {margin: 0 0 5px 0px;}
+.joshDescription {margin: 0 0 10px 0px;font-size: 15px;}
+.tedxDescription {margin: 0 0 10px 0px;font-size: 15px;}
 }
 
 /* Small devices (Phones in landscape mode) */
-@media (max-width: 599.98px) and (min-width: 320px){
+@media (max-width: 767.98px) and (min-width: 600px){
   .stickySection {padding:1.5rem 0px;}
   .container {max-width: 100%;width: 90%;margin: 0 auto;}
   .stickyCard {min-height: auto;position: unset;top:unset;margin-bottom: 15px;}
@@ -448,4 +336,76 @@
   .watchButton {padding: 11px 22px;font-size: 11px;gap: 7px;letter-spacing: 0px;}
   .playIcon {width: 16px;height: 16px}
   .tedxContentWrapper {margin-top: -7px;z-index: unset;position: unset;top: unset;left:unset;background:var(--default-color);}
+
+  /* added new stickycard ccss */
+.stickyCard {min-height: auto;margin-bottom: 30px;}
+  .cardContent {flex-direction: column;height: auto;}
+  .joshWrapper {min-height: 500px;}
+  .joshContentOverlay {padding: 40px 30px;}
+  .leftImageSection { width: 100%;height: 300px;}
+  .rightContentSection {width: 100%;padding: 40px 30px;}
+  .tedxLeftContent {width: 100%;padding: 40px 30px;}
+  .tedxWrapper {min-height: 500px;}
+  .imageWrapper {min-height: 400px;}
+  .podcastTitle {font-size: 30px;letter-spacing: 2px;margin-bottom: 15px;}
+  .podcastDescription {font-size: 14px;margin-bottom: 22px;line-height: 1.6;}
+  .joshTitle,
+  .tedxTitle { font-size: 30px; letter-spacing: 1px;margin-bottom: 20px; }
+  .joshDescription,
+  .tedxDescription {font-size: 14px;margin-bottom: 25px;}
+  .joshLogo {height: 35px;}
+  .tedxLogo {height: 40px;}
+
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px){
+  .stickySection {padding:1rem 0px;}
+  .container {max-width: 100%;width: 90%;margin: 0 auto;}
+  .stickyCard {min-height: auto;position: unset;top:unset;margin-bottom: 15px;}
+  .stickyCard:nth-child(n), .stickyCard:nth-child(2n), .stickyCard:nth-child(3n){top: unset;}
+  .joshWrapper {min-height: 400px;}
+  .joshContentOverlay {margin-top: -7px;background:var(--default-color);padding: 20px 15px;z-index: unset;width: 100%;height: 100%;display: flex;position: unset;top: unset;right: unset;}
+  .leftImageSection {height: 250px;}
+  .rightContentSection,
+  .tedxLeftContent { padding: 20px 15px;}
+  .tedxWrapper {min-height: 400px;}
+  .imageWrapper {min-height: auto;position: unset;}
+  .overlay {background:var(--default-color);border-radius:0px;width: 100%;height: 100%;position: unset;top: unset;left: unset;margin-top: -7px;}
+  .contentOverlay {margin-top: -6px;background:var(--default-color);z-index: unset;width: 100%;max-width: 100%;position: relative;top: unset;left: unset;transform:unset;
+  padding: 15px;}
+  .podcastTitle {font-size: 26px;letter-spacing: 0px;margin-bottom: 12px;}
+  .mainHeading{font-size: 26px;}
+  .podcastDescription {font-size: 15px;margin-bottom: 15px;line-height: 1.6;}
+  .podcastDescription br{display: none;}
+  .joshTitle,
+  .tedxTitle {font-size: 26px;letter-spacing: 0px;margin-bottom: 15px;}
+  .joshDescription,
+  .tedxDescription { font-size: 15px;margin-bottom: 15px;line-height: 1.6;}
+  .joshLogo {height: 30px;}
+  .tedxLogo {height: 35px;}
+  .logoWrapper,
+  .tedxLogoWrapper {margin-bottom: 20px;}
+  .watchButton {padding: 11px 22px;font-size: 11px;gap: 7px;letter-spacing: 0px;}
+  .playIcon {width: 18px;height: 18px}
+  .tedxContentWrapper {margin-top: -7px;z-index: unset;position: unset;top: unset;left:unset;background:var(--default-color);}
+
+/* added new stickycard ccss */
+.stickyCard {min-height: auto;margin-bottom: 30px;}
+  .cardContent {flex-direction: column;height: auto;}
+  .joshWrapper {min-height: 500px;}
+  .joshContentOverlay {padding: 40px 30px;}
+  .leftImageSection { width: 100%;height: 300px;}
+  .rightContentSection {width: 100%;padding: 40px 30px;}
+  .tedxLeftContent {width: 100%;padding: 40px 30px;}
+  .tedxWrapper {min-height: 500px;}
+  .imageWrapper {min-height: 400px;}
+  .podcastTitle {font-size: 30px;letter-spacing: 2px;margin-bottom: 15px;}
+  .podcastDescription {font-size: 14px;margin-bottom: 22px;line-height: 1.6;}
+  .joshTitle,
+  .tedxTitle { font-size: 30px; letter-spacing: 1px;margin-bottom: 20px; }
+  .joshDescription,
+  .tedxDescription {font-size: 14px;margin-bottom: 25px;}
+  .joshLogo {height: 35px;}
+  .tedxLogo {height: 40px;}
 }

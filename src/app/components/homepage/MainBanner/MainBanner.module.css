@@ -420,15 +420,14 @@ align-items: center;
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-.secondcontainer {max-width: 90%;width: 90%;}
+.secondcontainer {max-width: 92%;width: 92%;}
 .mb_sectiontrack {height: 300vh;height: 300dvh;}
 .stickywrapper {height: 300vh;height: 300dvh;}
 .sectiontrack {height: 300vh;height: 300dvh;}
 .hero.sectiontrack {height: 300vh;height: 300dvh;}
-.cardpanel {height: calc(-0px + 100vh);height: calc(-0px + 100dvh);top: 20px;}
+.cardpanel {height: calc(-30px + 100vh);height: calc(-30px + 100dvh);top: 20px;}
 .mb_stickyelement {height: calc(100vh - 0px);top: 20px;}
 .mb_thankspanelwrap{height: calc(100vh - 0px);height: calc(100dvh - 0px);}
-
 .wrapper{width: 95%; margin: 0 auto;text-align: center;}
 .hero{height: 60vh;}
 .bcard{height: calc(60vh - 20px);}
@@ -440,7 +439,7 @@ align-items: center;
 .desktopbanner { display: none; }
 .mobilebanner { display: block; }
 .secondrow{display: flex;flex-direction: column-reverse;}
-.secondright{width: 90%; margin: 0 auto;}
+.secondright{width: 80%; margin: 0 auto;}
 .secondleft{text-align: center; margin-top: 1.5rem;}
 .secondleft p{font-size: 15px;line-height: 1.8;}
 .secondheading{margin-bottom: 1rem;font-size: 32px;line-height: 1.3;}
@@ -451,7 +450,7 @@ align-items: center;
 .thirdright{width: 100%;margin-right: 0%;}
 .thirdheading{margin-bottom: 10px;line-height: 1.6;}
 .thirdrightDesc{font-size: 19px;}
-.launchBox{padding: 0.6rem 12px;margin-bottom: 1rem;}
+.launchBox{padding: 0.8rem 12px;margin-bottom: 2rem; margin-top: 1rem;}
 .launchClinic{font-size: 20px;}
 .launchSoon{font-size: 24px;}
 .sparkle img{width: 30px;}

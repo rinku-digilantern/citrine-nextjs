@@ -39,9 +39,9 @@ const BestDermatologistThirdSection: React.FC<Props> = ({ section }) => {
               {section.paragraph2 && <p><strong dangerouslySetInnerHTML={{ __html: section.paragraph2 }} /></p>}
               {section.list && (
                 <ul className={styles.BestDermatologistList}>
-                  {section.list.map((item: string, idx: number) => (
-                    <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
-                  ))}
+                   {section.list.map((item, idx) => (
+                     <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
+                    ))}
                 </ul>
               )}
               {section.paragraph3 && <p dangerouslySetInnerHTML={{ __html: section.paragraph3 }} />}

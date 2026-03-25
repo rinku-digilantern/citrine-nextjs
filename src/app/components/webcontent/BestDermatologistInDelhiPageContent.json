@@ -2,6 +2,7 @@
 "best-dermatologist-in-delhi": {
   "BestDermatologistBanner": {
     "image": "/assets/images/dermatologist/aboutpage-doctor-bg2.webp",
+    "mobileImage": "/assets/images/dermatologist/mbmobiledoctor.webp",
     "heading": "Best Dermatologist in Delhi",
     "altTag": "Best Dermatologist in Delhi"
   },
@@ -14,10 +15,10 @@
     "paragraph1": "When people search for the best skin clinic in Delhi, they are often looking for advanced expertise, personalised care, and long-term results. That’s exactly why so many Delhi residents visit Citrine Clinic in Gurgaon.\n\nLiving in Delhi means facing daily skin and hair challenges, from high pollution levels and extreme weather changes to stress and water quality issues, and our clinic is equipped to address each of these concerns with precision.",
     "paragraph2": "Here's why patients from Delhi trust us with their skin and hair:",
     "list": [
-      "Specialised expertise for Delhi's skin concerns - Years of experience in treating problems caused by pollution, dust, sun exposure, and seasonal changes unique to Delhi’s environment.",
-      "Advanced technology & techniques - We use modern, globally trusted equipment and methods for safe, effective treatments.",
-      "Truly personalised care - Every skin type reacts differently, so we design treatment plans exclusively for your needs and lifestyle.",
-      "Easy accessibility from Delhi - Located close to South and West Delhi, our clinic is just 30-40 minutes away by car or metro, making visits quick and convenient."
+      "<strong>Specialised expertise for Delhi's skin concerns -</strong> Years of experience in treating problems caused by pollution, dust, sun exposure, and seasonal changes unique to Delhi’s environment.",
+      "<strong>Advanced technology & techniques -</strong> We use modern, globally trusted equipment and methods for safe, effective treatments.",
+      "<strong>Truly personalised care -</strong> Every skin type reacts differently, so we design treatment plans exclusively for your needs and lifestyle.",
+      "<strong>Easy accessibility from Delhi -</strong> Located close to South and West Delhi, our clinic is just 30-40 minutes away by car or metro, making visits quick and convenient."
     ],
     "paragraph3": "At Citrine Clinic, you get the quality you'd expect from the <strong>best skin clinic in Delhi</strong>, with the added advantage of a calm, private, and well-equipped setting in Gurgaon."
   },
@@ -26,11 +27,11 @@
     "paragraph1": "Delhi has harsh environmental conditions. From high pollution levels and intense UV exposure to seasonal extremes, almost every weather can take a visible toll on skin and hair health.\n\nOver time, these factors not only affect appearance but also impact overall skin texture, hydration, and scalp health. Many of our patients from Delhi visit Citrine Clinic in Gurgaon to address these issues effectively and prevent further damage.",
     "paragraph2": "People living in Delhi often experience:",
     "list": [
-      "Pigmentation & tanning - Spending long hours in the sun and pollution cause uneven skin tone and dark spots.",
-      "Acne & clogged pores - Dust and pollution can trigger acne and leave behind marks that take time to fade.",
-      "Dryness in winters - Low humidity strips the skin of its natural oils, leaving it dry, flaky and itchy.",
-      "Hair fall & thinning - Hard water, stress, and pollution make hair roots weaker.",
-      "Premature ageing - Signs of ageing, like wrinkles and dullness, tend to appear earlier because of harsh environmental conditions."
+      "<strong>Pigmentation & tanning -</strong> Spending long hours in the sun and pollution cause uneven skin tone and dark spots.",
+      "<strong>Acne & clogged pores -</strong> Dust and pollution can trigger acne and leave behind marks that take time to fade.",
+      "<strong>Dryness in winters -</strong> Low humidity strips the skin of its natural oils, leaving it dry, flaky and itchy.",
+      "<strong>Hair fall & thinning -</strong> Hard water, stress, and pollution make hair roots weaker.",
+      "<strong>Premature ageing -</strong> Signs of ageing, like wrinkles and dullness, tend to appear earlier because of harsh environmental conditions."
     ],
     "paragraph3": "We at Citrine clinic address all these concerns using a combination of advanced technology, dermatological expertise, and safe, proven methods."
   },
@@ -74,11 +75,11 @@
     "mainHeading": "Advanced Dermatology Treatments at Citrine Clinic",
     "paragraph1": "Citrine clinic offers a wide range of skin & Hair treatments for people who visit us from Delhi:",
     "list": [
-      "Laser Treatments: These help with pigmentation, removing tattoos, tightening skin, and reducing unwanted hair.",
-      "Anti-Ageing Solutions: Dermal fillers, thread lifts, and non-surgical facelifts for a youthful look.",
-      "Skin Rejuvenation: Chemical peels, hydrafacials, microneedling, and mesotherapy for healthier, brighter-looking skin.",
-      "Hair Treatments: GFC therapy, mesotherapy, and customised hair regrowth plans.",
-      "Scar & Stretch Mark Reduction: Advanced resurfacing techniques for smoother skin."
+      "<strong>Laser Treatments:</strong> These help with pigmentation, removing tattoos, tightening skin, and reducing unwanted hair.",
+      "<strong>Anti-Ageing Solutions:</strong> Dermal fillers, thread lifts, and non-surgical facelifts for a youthful look.",
+      "<strong>Skin Rejuvenation:</strong> Chemical peels, hydrafacials, microneedling, and mesotherapy for healthier, brighter-looking skin.",
+      "<strong>Hair Treatments:</strong> GFC therapy, mesotherapy, and customised hair regrowth plans.",
+      "<strong>Scar & Stretch Mark Reduction:</strong> Advanced resurfacing techniques for smoother skin."
     ],
     "paragraph2": "Each procedure is performed under the supervision of the <strong>best dermatologist in Delhi</strong>, ensuring safety and effectiveness."
   },
@@ -86,11 +87,11 @@
     "mainHeading": "Your Treatment Journey: From First Visit to Results",
     "paragraph": "We keep things clear and focus on your comfort throughout:",
     "list": [
-      "Consultation: We take time to understand your skin or hair issues in detail.",
-      "Diagnosis: Understanding the root cause with modern diagnostic tools.",
-      "Custom Plan: We suggest treatments that match your needs and budget.",
-      "Treatment: Safe, advanced procedures with minimal downtime.",
-      "Follow-Up: Post-treatment care to maintain long-lasting results."
+      "<strong>Consultation:</strong> We take time to understand your skin or hair issues in detail.",
+      "<strong>Diagnosis:</strong> Understanding the root cause with modern diagnostic tools.",
+      "<strong>Custom Plan:</strong> We suggest treatments that match your needs and budget.",
+      "<strong>Treatment:</strong> Safe, advanced procedures with minimal downtime.",
+      "<strong>Follow-Up:</strong> Post-treatment care to maintain long-lasting results."
     ]
   },
   "BestDermatologistSevenSection": {
@@ -101,21 +102,21 @@
     "mainHeading": "Why Delhi Residents Choose Citrine Clinic in Gurgaon For Dermatology Concerns",
     "paragraph": "When deciding on the right dermatology clinic, patients from Delhi often weigh expertise, accessibility, comfort, and results. Citrine Clinic in Gurgaon checks all these boxes and more:",
     "list": [
-      "Quick & Convenient Travel – Located just 30–40 minutes from South and Central Delhi, with smooth road access and metro connectivity.",
-      "Proven Track Record – Consistent, visible results for hundreds of patients from across Delhi.",
-      "Advanced Technology – State-of-the-art equipment and globally trusted treatment techniques.",
-      "Personalised Care – One-on-one consultations and tailored treatment plans to match your unique skin and hair needs.",
-      "Flexible Scheduling – Evening and weekend slots to suit busy Delhi lifestyles.",
-      "Better Value – Competitive pricing for premium treatments without compromising on quality."
+      "<strong>Quick & Convenient Travel:</strong> Located just 30–40 minutes from South and Central Delhi, with smooth road access and metro connectivity.",
+      "<strong>Proven Track Record:</strong> Consistent, visible results for hundreds of patients from across Delhi.",
+      "<strong>Advanced Technology:</strong> State-of-the-art equipment and globally trusted treatment techniques.",
+      "<strong>Personalised Care:</strong> One-on-one consultations and tailored treatment plans to match your unique skin and hair needs.",
+      "<strong>Flexible Scheduling:</strong> Evening and weekend slots to suit busy Delhi lifestyles.",
+      "<strong>Better Value:</strong> Competitive pricing for premium treatments without compromising on quality."
     ]
   },
   "BestDermatologistNineSection": {
     "mainHeading": "How to Reach Citrine Clinic from Delhi",
     "paragraph": "Our clinic is located at <strong>SCO-19, Huda Market Road, Sector 15 Part 2 Market, Gurugram, Haryana 122001.</strong> Here are the best ways to reach us:",
     "list": [
-      "By Car: From South Delhi, take the MG Road (SH 8) or NH-48 route towards Gurugram. Estimated drive time is around 30–40 minutes, depending on traffic.",
-      "By Metro: Board the Yellow Line of the Delhi Metro towards HUDA City Centre. Get off at MG Road Metro Station, then it's a short 5–10 minute cab ride to the clinic.",
-      "By Public Transport / Cab: Regular cabs, app-based rides, and buses connect all major Delhi areas directly to Gurugram. Simply input the clinic’s address into your preferred ride-sharing app for accurate directions."
+      "<strong>By Car:</strong> From South Delhi, take the MG Road (SH 8) or NH-48 route towards Gurugram. Estimated drive time is around 30–40 minutes, depending on traffic.",
+      "<strong>By Metro:</strong> Board the Yellow Line of the Delhi Metro towards HUDA City Centre. Get off at MG Road Metro Station, then it's a short 5–10 minute cab ride to the clinic.",
+      "<strong>By Public Transport / Cab:</strong> Regular cabs, app-based rides, and buses connect all major Delhi areas directly to Gurugram. Simply input the clinic’s address into your preferred ride-sharing app for accurate directions."
     ]
   },
   "BestDermatologistTenthSection": {
@@ -187,5 +188,512 @@
       }
     ]
   }
+},
+
+"best-dermatologist-in-noida": {
+  "BestDermatologistBanner": {
+    "image": "/assets/images/dermatologist/aboutpage-doctor-bg2.webp",
+    "mobileImage": "/assets/images/dermatologist/mbmobiledoctor.webp",
+    "heading": "Best Dermatologist in Noida",
+    "altTag": "Best Dermatologist in Noida"
+  },
+  "BestDermatologistFirstSection": {
+    "mainHeading": "Best Dermatologist in Noida",
+    "paragraph": "If you are searching for the <strong>Best Dermatologist in Noida</strong>, you’ll be pleased to know that many Noida residents choose to visit Citrine Clinic in Gurgaon for exceptional skin and hair care. While the drive is a little longer compared to traveling within Noida, our patients say that the results are worth every kilometre.",
+    "paragraphs": "From different sectors across Noida, people make the trip for our advanced treatments, personalised attention, and visible improvements in concerns like skin issues, hair fall, dryness and frizziness, premature ageing and other medical and cosmetic skin care. Every procedure is tailored to your skin type and lifestyle, ensuring you achieve healthy, glowing results that last."
+  },
+  "BestDermatologistSecondSection": {
+    "mainHeading": "Why Patients from Noida Choose Citrine Clinic in Gurgaon",
+    "paragraph1": "When people search for the <strong>best skin doctor in Noida</strong> or the best skin specialist in Noida, they want more than just basic treatments. They want expertise, advanced technology, and results they can trust. That’s why many Noida residents travel to Citrine Clinic in Gurgaon, despite the longer distance.",
+    "paragraph2": "Noida’s environment comes with its own set of challenges: heavy dust from ongoing construction, high industrial pollution, scorching summers, and hard water that affects both skin and hair health. Our team has years of experience treating these exact concerns with precision and care.",
+    "paragraph3": "Here’s why patients from Noida say the trip is worth it:",
+    "list": [
+      "<strong>Expertise in Noida-specific skin issues –</strong> Proven results in tackling concerns caused by dust, pollution, hard water, and seasonal extremes.",
+      "<strong>Cutting-edge dermatology technology –</strong> Safe, advanced equipment and globally trusted methods for visible improvements.",
+      "<strong>Tailored care plans –</strong> Every treatment is designed for your skin type, lifestyle, and long-term goals.",
+      "<strong>Seamless travel options –</strong> Easily reachable via cab, metro or private cars."
+    ],
+    "paragraph4": "At Citrine Clinic, you receive the level of care you’d expect from the <strong>best skin specialist in Noida</strong>."
+  },
+  "BestDermatologistThirdSection": {
+    "mainHeading": "Skin & Hair Concerns Among Noida Residents",
+    "paragraph1": "Noida’s environment brings its own unique challenges for skin and hair health. Frequent dust from ongoing construction, high industrial emissions, hard water, and scorching summers can speed up skin damage and make certain conditions more stubborn. Many of our patients from Noida travel to Citrine Clinic in Gurgaon seeking advanced treatments that can reverse damage and restore skin vitality.",
+    "paragraph2": "People living in Noida often experience:",
+    "list": [
+      "<strong>Persistent dust-related dullness –</strong> Fine dust particles settle on the skin, making it appear tired and rough.",
+      "<strong>Uneven skin tone & tanning -</strong> Harsh summer sun and outdoor exposure lead to patchy pigmentation and darkening.",
+      "<strong>Itchy, flaky scalp -</strong> Hard water and heat can cause scalp dryness and dandruff that regular shampoos don’t fix.",
+      "<strong>Heat rashes & irritation -</strong> Prolonged exposure to high temperatures can trigger small bumps, redness, and discomfort.",
+      "<strong>Early fine lines & loss of skin elasticity -</strong> Long-term UV damage and dehydration accelerate the ageing process."
+    ],
+    "paragraph3": "At Citrine Clinic, we use advanced dermatology technology, proven treatment protocols, and personalised care plans to effectively address these Noida-specific concerns."
+  },
+  "BestDermatologistFourthSection": {
+    "mainHeading": "Popular Skin & Hair Treatments for Noida Residents",
+    "table": [
+      {
+        "Treatment": "OxyGeneoFacial",
+        "BestFor": "Dull & dry skin",
+        "Benefits": "Deep exfoliation, oxygenation, and nourishment for instantly refreshed skin"
+      },
+      {
+        "Treatment": "Q-Switched Laser",
+        "BestFor": "Stubborn pigmentation, tanning spots",
+        "Benefits": "Targets melanin to lighten pigmentation and even out skin tone"
+      },
+      {
+        "Treatment": "Scalp Mesotherapy",
+        "BestFor": "Hair thinning from hard water damage",
+        "Benefits": "Delivers vitamins and growth factors directly to the scalp for stronger hair"
+      },
+      {
+        "Treatment": "AquaGlow Therapy",
+        "BestFor": "Dehydrated skin in hot weather",
+        "Benefits": "Intense hydration, skin plumping, and improved softness"
+      },
+      {
+        "Treatment": "Radiofrequency Skin Tightening",
+        "BestFor": "Early fine lines, mild sagging",
+        "Benefits": "Stimulates collagen for firmer, youthful-looking skin"
+      },
+      {
+        "Treatment": "Carbon Laser Peel",
+        "BestFor": "Oily skin, enlarged pores",
+        "Benefits": "Reduces oiliness, refines pores, and brightens skin instantly"
+      }
+    ],
+    "paragraph": "Each treatment begins with a thorough skin and scalp assessment, ensuring it’s suited to your specific concerns and lifestyle."
+  },
+  "BestDermatologistFivethSection": {
+    "mainHeading": "Comprehensive Skin & Hair Solutions for Noida Patients",
+    "paragraph1": "At Citrine Clinic, we welcome many patients from Noida who are looking for advanced treatments that deliver visible, lasting results. Our services address the unique skin and hair challenges caused by Noida’s dust, hard water, and climate conditions.",
+    "list": [
+      "<strong>Pigmentation & Tanning Correction –</strong> Q-switched lasers, chemical peels, and advanced brightening protocols to restore an even skin tone.",
+      "<strong>Hair Strengthening & Regrowth –</strong> P-R-P therapy, scalp mesotherapy, and personalised plans to combat thinning caused by water quality and stress.",
+      "<strong>Hydration & Glow Boosters –</strong> Medifacials, glow therapy, and mesotherapy for instant radiance and deep skin nourishment.",
+      "<strong>Anti-Ageing Care –</strong> Non-surgical skin tightening, dermal fillers, and collagen-boosting treatments to keep skin firm and youthful.",
+      "<strong>Scar & Texture Improvement –</strong> Carbon laser peels and microneedling RF to smoothen scars, refine pores, and improve skin texture."
+    ],
+    "paragraph2": "Every procedure is performed under the guidance of the <strong>best skin specialist in Noida</strong>, with a focus on safety, precision, and personalised care."
+  },
+  "BestDermatologistSixthSection": {
+    "mainHeading": "Your Treatment Journey at Citrine Clinic",
+    "paragraph": "We make sure every step of your journey is transparent, comfortable, and results-driven:",
+    "list": [
+      "<strong>Initial Consultation –</strong> A one-on-one session to discuss your skin or hair concerns and goals.",
+      "<strong>Detailed Assessment –</strong> Using advanced tools to identify the exact cause of your condition. the root cause with modern diagnostic tools.",
+      "<strong>Personalised Treatment Plan –</strong> Tailored recommendations that fit your skin type, lifestyle, and budget.",
+      "<strong>Safe & Effective Procedures –</strong> Performed with modern technology to ensure comfort and minimal recovery time., advanced procedures with minimal downtime.",
+      "<strong>Ongoing Support –</strong> Regular follow-ups and guidance to help you maintain and enhance your results."
+    ]
+  },
+  "BestDermatologistEightSection": {
+    "mainHeading": "Why Noida Residents Choose Citrine Clinic in Gurgaon for Derma Concerns",
+    "paragraph": "For many in Noida, choosing the right dermatologist means finding expertise that delivers lasting results, even if it requires travelling a bit farther. Here’s why our Noida patients say the trip is worth it:",
+    "list": [
+      "<strong>Trusted Expertise –</strong> Many patients from Noida rely on our team for advanced skin and hair solutions.",
+      "<strong>Results That Speak for Themselves –</strong> Noticeable improvements in pigmentation, acne, and hair concerns, even in stubborn cases.",
+      "<strong>Advanced, Global-Standard Care –</strong> We use proven techniques and cutting-edge devices for safe, effective outcomes.",
+      "<strong>Personal Attention, Every Time –</strong> Your concerns are heard, your goals are understood, and your plan is made just for you.",
+      "<strong>Comfortable & Private Setting –</strong> A calm clinic environment away from the city’s hustle for a more relaxed experience.",
+      "<strong>Worth the Commute –</strong> Even with the longer drive, our patients say the quality of care outweighs the distance."
+    ]
+  },
+  "BestDermatologistNineSection": {
+    "mainHeading": "How to Reach Citrine Clinic from Noida",
+    "paragraph": "Our clinic is located at SCO-19, Huda Market Road, Sector 15 Part 2 Market, Gurugram, Haryana 122001. Here are the most convenient ways to get here from Noida:",
+    "list": [
+      "<strong>By Car:</strong> From Noida, take the DND Flyway or Noida–Greater Noida Expressway towards Ashram, then merge onto NH-48 towards Gurugram. Depending on your starting sector and traffic, the drive usually takes 60–90 minutes.",
+      "<strong>By Metro:</strong> Board the Blue Line from Noida City Centre or Sector 62 towards Rajiv Chowk. Change to the Yellow Line towards HUDA City Centre. Get off at MG Road Metro Station, and take a 5–10 minute cab ride to the clinic.",
+      "<strong>By Public Transport / Cab:</strong> App-based cabs (Ola, Uber) and intercity buses regularly operate between Noida and Gurugram. Simply enter the clinic’s address in your preferred ride-sharing app for the fastest route based on current traffic."
+    ]
+  },
+  "BestDermatologistTenthSection": {
+    "mainHeading": "Book Your Consultation with the Best Skin Specialist in Noida Today",
+    "paragraph": "If you’re searching for the <strong>Best Skin Specialist in Noida</strong>, make the short trip to our Gurgaon clinic and experience advanced skin and hair care designed around you. With cutting-edge technology, proven treatments, and a personalised approach, we’ve helped countless Noida patients achieve healthy, glowing results. Your journey to better skin starts with one consultation. Book yours today."
+  },
+  "BestDermatologistTestimonialSection": {
+    "mainHeading": "Real Patient Success Stories",
+    "paragraph": "We are proud to have helped hundreds of Noida patients achieve visible improvements in their skin and hair health.",
+    "testimonials": [
+      {
+        "id": 1,
+        "rating": 5,
+        "text": "I travelled from Noida to Citrine Clinic for my pigmentation problem, and it was the best decision. The customised laser sessions not only lightened my spots but also made my skin glow again. Totally worth the extra travel time!",
+        "author": "Radhika Mehra",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      },
+      {
+        "id": 2,
+        "rating": 5,
+        "text": "My hair fall was getting worse despite trying multiple local treatments in Noida. At Citrine Clinic, the P-R-P therapy and expert advice have shown visible improvement within months. The team truly knows what they’re doing.",
+        "author": "Ankit Sharma",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      },
+      {
+        "id": 3,
+        "rating": 5,
+        "text": "I was hesitant to travel so far for my fine lines and dullness, but the results after my dermal filler sessions were incredible. The staff made me feel comfortable, and the whole process was smooth from consultation to follow-up.",
+        "author": "Meenal Kapoor",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      }
+    ]
+  },
+  "BestDermatologistFaqSection": {
+    "mainHeading": "FAQs About Best Dermatologist in Noida",
+    "faqData": [
+      {
+        "id": 1,
+        "question": "Do I need to book an appointment in advance?",
+        "answer": "Yes, we recommend booking your appointment in advance to ensure you get your preferred time slot. This is especially important for patients traveling from Noida so that your visit is smooth and without delays."
+      },
+      {
+        "id": 2,
+        "question": "How much does treatment cost at Citrine Clinic?",
+        "answer": "The cost of treatment depends on several factors, including the specific procedure, the severity of your concern, and the number of sessions required. During your consultation, we’ll provide a detailed treatment plan with exact costs."
+      },
+      {
+        "id": 3,
+        "question": "Is it worth traveling from Noida to Gurgaon for treatment?",
+        "answer": "Absolutely. Many of our patients from Noida choose Citrine Clinic for our expertise, personalised care, and advanced facilities. Even though it’s a longer commute, patients appreciate the quality and long-term results they receive."
+      },
+      {
+        "id": 4,
+        "question": "What skin and hair issues do you treat?",
+        "answer": "We treat a wide variety of concerns including acne, pigmentation, hair loss, premature ageing, scars, stretch marks, dull skin, and more. All treatments are customised to your skin type and lifestyle."
+      }
+    ]
+  }
+},
+
+"best-dermatologist-in-india": {
+  "BestDermatologistBanner": {
+    "image": "/assets/images/dermatologist/aboutpage-doctor-bg2.webp",
+    "mobileImage": "/assets/images/dermatologist/mbmobiledoctor.webp",
+    "heading": "Best Dermatologist in India",
+    "altTag": "Best Dermatologist in India"
+  },
+  "BestDermatologistFirstSection": {
+    "mainHeading": "Best Dermatologist in India – Dr. Niti Gaur",
+    "paragraph": "Selecting the proper dermatologist is really tough. We know it can make a difference in the appearance and feel of your hair and skin. At Citrine Clinic, you are in the hands of India's finest dermatologists, who possess a wealth of clinical experience in both cosmetic and medical dermatology. From acne and pigmentation to anti-ageing and hair restoration, each treatment is engineered with precision, safety, and visible results in mind.",
+    "paragraphs": "What sets us apart? The answer is - our balance of cutting-edge technology and individualized care. Our dermatologists are not just highly experienced, but also committed to learning about each patient's specific needs prior to recommending the most optimal solutions. This patient-centric culture has made Citrine Clinic the destination of choice for anyone looking for the <strong>best dermatologist in India</strong> or the <strong>best skin specialist in India</strong>.",
+    "paragraph3": "With state-of-the-art infrastructure, FDA-approved treatments, and evidence-based treatment protocols, Citrine Clinic keeps upgrading to what is needed in the era of skin and hair treatments. Thousands of patients have entrusted us for years. This has been possible because of what we offer - long-term enhancement, natural outcomes, and empathetic care. With Citrine Clinic, you opt for expertise, innovation, and the assurance of healthier, brighter skin."
+  },
+  "BestDermatologistSecondSection": {
+    "mainHeading": "Best Skin Specialist in India: Dr. Niti Gaur's Journey",
+    "paragraph1": "Dr. Niti Gaur's career in dermatology has been shaped by her love for healthy skin and patient-centered care. With extensive experience and specialized training in clinical and cosmetic dermatology, she is very well considered now one of India's top dermatologists. At Citrine Clinic in Gurgaon, she has created a reliable platform for technology meet skin care. It has innovation, and brings in customized treatments to provide life-changing outcomes.",
+    "paragraph2": "Dr. Niti Gaur's career in dermatology has been shaped by her love for healthy skin and patient-centered care. With extensive experience and specialized training in clinical and cosmetic dermatology, she is very well considered now one of India's top dermatologists. At Citrine Clinic in Gurgaon, she has created a reliable platform for technology meet skin care. It has innovation, and brings in customized treatments to provide life-changing outcomes.",
+    "paragraph4": "Known for her commitment and expertise, Dr. Niti Gaur has emerged as a popular dermatologist not only in Gurgaon, but throughout India. Through Citrine Clinic, she extends her mission to empower people with confident, healthy-looking skin and boosted self-assurance."
+  },
+  "BestDermatologistThirdSection": {
+    "mainHeading": "Who is the Best Dermatologist in India?",
+    "paragraph1": "If you search for the best dermatologist in India, there is a fair chance that Dr. Niti Gaur's name is almost always there on top. She is the founder and Medical Director of Citrine Clinic, and she has developed her reputation through devoted practice. Her journey spans decades, super-specialized training, and patient-centric care. Holding an MD in Dermatology and super-specialization in cosmetic dermatology, she has led the way in providing evidence-based treatments that blend science, technology, and art.",
+    "paragraph3": "The trajectory of Dr. Niti Gaur's life in dermatology has been influenced by her mission to make available international standards of skin and hair care to India. Post-medical education, she had taken advanced courses and fellowships in cosmetic and aesthetic dermatology so that her patients could have world-class treatments without having to go out of the country. Now, her clinic in Gurgaon is known as one of the top skin clinics in India with patients coming from all over the country for treatment on acne, pigmentation, and anti-aging to laser hair elimination and hair regeneration.<br/><br/> Her unique approach of practice differentiates her from the majority of other dermatologists in India. Instead of providing short-term solutions, she aims to know the underlying reason behind skin issues and create tailored treatment approaches for permanent outcomes. With time, she has emerged as a reputable name not only as a cosmetic dermatologist but also as one of the top skin physicians in India, where she balances medical knowledge with empathy."
+  },
+  "BestDermatologistFourthSection": {
+    "mainHeading": "Celebrity Dermatologist India: Stars & Professionals' Choice and Trust",
+    "paragraphs": "When we talk of skin and beauty, trust is paramount. That's why when individuals search for a celebrity dermatologist in India, Dr. Niti Gaur emerges as a name that goes hand in hand with flawless results and unparalleled expertise.",
+    "paragraphs2": "Over time, she has become the go-to skin doctor of public figures, professionals, and celebrity clients. She did it all with her knack for boosting natural beauty without ever overdoing results. Celebrities, business titans, and social influencers are often seen visiting her clinic prior to red-carpet appearances and high-stakes events. For all the good reasons, she stands as one of the top dermatologists in India.",
+    "paragraphs3": "From anti-aging solutions, laser therapies, and scar treatment to personalized skincare regimes, Dr. Gaur provides effective treatments that address the specific lifestyle needs of her celebrity as well as non-celebrity clients. Her modern-age clinic is a blend of medical skill with luxurious care. It is a place where each individual receives world-class dermatology from India.",
+    "paragraphs4": "It is this combination of clinical skill, discretion, and aesthetic art that has made Dr. Niti Gaur a top celebrity dermatologist in India. And very well, she is popular not only with her patients but with the dermatology fraternity as well."
+  },
+  "BestDermatologistFivethSection": {
+    "mainHeading": "Celebrity Dermatologist in Gurgaon – The One Who Patients Across India Trust",
+    "paragraph1": "Gurgaon, a burgeoning lifestyle and healthcare hub, also boasts one of India's leading skin specialists – Dr. Niti Gaur. Renowned for her skill in cutting-edge dermatology and aesthetic procedures, she has established herself as a celebrity dermatologist in India, with a patient list comprising public figures, professionals, and families that depend on her for evident, natural-looking results.",
+    "paragraph2": "From acne and pigmentation to anti-aging procedures and hair transplantation, Dr. Gaur's clinic provides world-class dermatological treatments supported by the most advanced technology. With her emphasis on safety, ethics, and personalized care for Indian skin types, she is now a name patients in the entire country rely on for trustworthy skin and hair care."
+  },
+  "BestDermatologistSixthSection": {
+    "mainHeading": "Best Skin Specialist for Acne Treatment",
+    "paragraphs": "Acne's not solely a teenage problem – it can strike adults as well, causing scars and bruising self-esteem. Acne specialist Dr. Niti Gaur is highly respected in Gurgaon for her professional knowledge of acne treatment.",
+    "paragraphs2": "No two skins are the same and which is why she adopts customized treatments for unique concerns. Clients from all over India seek her consultation for long-term acne treatment. Her method marries science with compassion, promising visible changes.",
+    "paragraphs3": "Dr. Gaur presents a thorough acne treatment program that is more than creams and pills. She treats with advanced lasers, medical therapies, and skin-happy routines. She does not just treat the appearance but gets to the roots of acne. She treats active blemishes, and also, she works on preventing recurrence and reducing scars. Lifestyle and dietary advice are included in her integrated treatment plan. The outcome is clear, radiant, and healthy-looking skin that endures."
+  },
+  "BestDermatologistSevenSection": {
+    "mainHeading": "Why Dr. Niti Gaur is One of the Top Dermatologists in Gurgaon",
+    "list": [
+      "15+ Years of practice in dermatology & aesthetic medicine.",
+      "Specialization in progressive acne, treating pigmentation and hyperpigmentation.",
+      "Known best for her anti-aging skin procedures, laser hair reduction treatment.",
+      "Founded Citrine Clinic, which has now become a legacy in the world of skincare.",
+      "Known for customized, evidence-based treatment plans.",
+      "Trusted by patients for lucid, natural, and long-lasting outcomes."
+    ]
+  },
+  "BestDermatologistEightSection": {
+    "mainHeading": "How Citrine Clinic Stands Out From Other Clinics In India",
+    "table": [
+      {
+        "Treatment": "OxyGeneoFacial",
+        "BestFor": "Dull & dry skin",
+        "Benefits": "Deep exfoliation, oxygenation, and nourishment for instantly refreshed skin"
+      },
+      {
+        "Treatment": "Q-Switched Laser",
+        "BestFor": "Stubborn pigmentation, tanning spots",
+        "Benefits": "Targets melanin to lighten pigmentation and even out skin tone"
+      },
+      {
+        "Treatment": "Scalp Mesotherapy",
+        "BestFor": "Hair thinning from hard water damage",
+        "Benefits": "Delivers vitamins and growth factors directly to the scalp for stronger hair"
+      },
+      {
+        "Treatment": "AquaGlow Therapy",
+        "BestFor": "Dehydrated skin in hot weather",
+        "Benefits": "Intense hydration, skin plumping, and improved softness"
+      },
+      {
+        "Treatment": "Radiofrequency Skin Tightening",
+        "BestFor": "Early fine lines, mild sagging",
+        "Benefits": "Stimulates collagen for firmer, youthful-looking skin"
+      },
+      {
+        "Treatment": "Carbon Laser Peel",
+        "BestFor": "Oily skin, enlarged pores",
+        "Benefits": "Reduces oiliness, refines pores, and brightens skin instantly"
+      }
+    ]
+  },
+  "Conclusion": {
+    "mainHeading": "Conclusion",
+    "paragraph": "Healthy, radiant skin is more than skin-deep—it's about confidence and overall health. With more than two decades of experience, Dr. Niti Gaur brings to the table offers the ideal combination of all the important things - medical expertise, cutting-edge technology, and empathetic care to each patient she treats. From acne to pigmentation, and overall skin revival, her patient-focused care guarantees what you need - long-term outcomes you can rely on. If you are seeking the best skin doctor in India who really knows both the science as well as the art of skin care, Dr. Niti Gaur is the name you can trust."
+  },
+  "BestDermatologistTestimonialSection": {
+    "mainHeading": "Testimonials - Trusted by Patients Across India",
+    "paragraph": "We are proud to have helped hundreds of Noida patients achieve visible improvements in their skin and hair health.",
+    "testimonials": [
+      {
+        "id": 1,
+        "title": "Real Results & Confidence",
+        "rating": 5,
+        "text": "I struggled with persistent acne for years, but after consulting Dr. Niti Gaur, my skin has completely transformed. The treatment plan was customized, and the results are visible and long-lasting. I finally feel confident in my skin!",
+        "author": "Aarushi Singh, Delhi",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      },
+      {
+        "id": 2,
+        "title": "Professional & Caring Approach",
+        "rating": 5,
+        "text": "Dr. Niti Gaur is truly one of the best dermatologists in India. She explained every step of my pigmentation treatment clearly and provided follow-up guidance. The care and attention I received were exceptional.",
+        "author": "Rohit Kumar, Mumbai",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      },
+      {
+        "id": 3,
+        "title": "Celebrity-Level Expertise for Everyone",
+        "rating": 5,
+        "text": "I was amazed by the professionalism at Citrine Clinic. From anti-aging treatments to hair care, everything was handled with precision. The results look natural, and I feel rejuvenated. Highly recommend Dr. Niti Gaur!",
+        "author": "Simran Modi, Gurgaon",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      }
+    ]
+  },
+  "BestDermatologistFaqSection": {
+    "mainHeading": "FAQs About Best Dermatologist in India",
+    "faqData": [
+      {
+        "id": 1,
+        "question": "Who is the best dermatologist in India?",
+        "answer": "Dr. Niti Gaur, founder and Medical Director of Citrine Clinic, is regarded as one of the <strong>best dermatologists in India</strong>. With more than 15 years of experience, she specializes in advanced skin and hair treatments."
+      },
+      {
+        "id": 2,
+        "question": "Who is the best skin specialist in India for anti-ageing treatments?",
+        "answer": "If you are looking for safe and effective anti-ageing solutions, <strong>Dr. Niti Gaur is recognized as the best skin specialist in India</strong>, offering treatments such as laser therapies, fillers, and advanced skin rejuvenation."
+      },
+      {
+        "id": 3,
+        "question": "Who is the best skin specialist in India for anti-ageing treatments?",
+        "answer": "If you are looking for safe and effective anti-ageing solutions, <strong>Dr. Niti Gaur is recognized as the best skin specialist in India</strong>, offering treatments such as laser therapies, fillers, and advanced skin rejuvenation."
+      },
+      {
+        "id": 4,
+        "question": "Who is the best dermatologist in India for hair loss?",
+        "answer": "Dr. Gaur provides PRP therapy, hair restoration, and long-term hair loss management plans, making her one of the top choices for hair-related concerns."
+      },
+      {
+        "id": 5,
+        "question": "Which is the best clinic for skin treatment in India?",
+        "answer": "Citrine Clinic in Gurgaon is known for world-class skin and hair treatments with advanced technology and patient-focused care."
+      }
+    ]
+  }
+},
+
+"best-dermatologist-in-faridabad": {
+  "BestDermatologistBanner": {
+    "image": "/assets/images/dermatologist/aboutpage-doctor-bg2.webp",
+    "mobileImage": "/assets/images/dermatologist/mbmobiledoctor.webp",
+    "heading": "Best Dermatologist in Faridabad",
+    "altTag": "Best Dermatologist in Faridabad"
+  },
+  "BestDermatologistFirstSection": {
+    "mainHeading": "Best Dermatologist in Faridabad",
+    "paragraph": "If you’re searching for the <strong>Best Dermatologist in Faridabad</strong>, you’ll be glad to know that many Faridabad residents choose to visit Citrine Clinic in Gurgaon for world-class skin and hair treatments. While it may mean traveling a little outside the city, patients consistently tell us the exceptional results make the commute worthwhile.",
+    "paragraphs": "From different localities across Faridabad, people travel to our clinic for advanced treatments, personalised care, and noticeable improvements in issues such as acne, pigmentation, hair fall, dryness, premature ageing, and other medical and cosmetic skin concerns. Each procedure is carefully customised to your skin type and lifestyle, ensuring results that look natural and last long."
+  },
+  "BestDermatologistSecondSection": {
+    "mainHeading": "Why Patients from Faridabad Choose Citrine Clinic in Gurgaon",
+    "paragraph1": "When people search for the best skin doctor in Faridabad or the best skin dermatologist min Faridabad, they are looking for more than just standard care. They want expertise, advanced technology, and safe, effective results. That’s why many Faridabad residents make the short trip to Citrine Clinic in Gurgaon.",
+    "paragraph2": "Faridabad’s environment brings its own set of skin and hair challenges - industrial pollution, hard water, and extreme weather changes often lead to stubborn concerns that require expert care. Our dermatologists have years of experience in treating these issues with precision and care.",
+    "paragraph3": "Here’s why patients from Faridabad say the drive is worth it:",
+    "list": [
+      "<strong>Expertise in skin & hair issues –</strong> Proven treatments for pollution damage, tanning, hard water effects, and heat-related conditions.",
+      "<strong>Advanced dermatology technology –</strong> Globally trusted methods and cutting-edge equipment for faster, visible improvements.",
+      "<strong>Personalised treatment plans –</strong> Every solution is designed to suit your skin type, lifestyle, and long-term goals.",
+      "<strong>Easy commute from Faridabad –</strong> Well-connected by road, metro, and app-based cabs for hassle-free travel."
+    ],
+    "paragraph4": "At Citrine Clinic, you get the kind of care you’d expect from the <strong>best skin doctor in Faridabad</strong> with the added advantage of advanced facilities and experienced specialists in Gurgaon."
+  },
+  "BestDermatologistThirdSection": {
+    "mainHeading": "Skin & Hair Concerns Among Faridabad Residents",
+    "paragraph1": "Faridabad’s environment makes certain skin and hair problems more common and stubborn. Many of our patients from the city come to Citrine Clinic seeking advanced solutions to concerns caused by hard water, heat, and pollution.",
+    "paragraph2": "Some of the most common issues include:",
+    "list": [
+      "<strong>Persistent dullness –</strong> Industrial pollution and dust settle on the skin, causing roughness and loss of glow.",
+      "<strong>Pigmentation & tanning –</strong> Harsh sunlight and outdoor exposure cause uneven skin tone and dark patches.",
+      "<strong>Scalp dryness & dandruff –</strong> Hard water and rising temperatures affect scalp health, leading to itching and flakiness.",
+      "<strong>Heat rashes & irritation –</strong> Long summer months trigger redness, rashes, and discomfort.",
+      "<strong>Premature ageing signs –</strong> Continuous UV exposure and dehydration lead to fine lines and reduced elasticity."
+    ],
+    "paragraph3": "Our clinic uses proven dermatology technology, global-standard treatments, and customised plans to effectively address these skin and hair issues that most people living in Faridabad suffer from."
+  },
+  "BestDermatologistFourthSection": {
+    "mainHeading": "Popular Skin & Hair Treatments for Faridabad Residents",
+    "table": [
+      {
+        "Treatment": "Dermal Fillers",
+        "BestFor": "Fine lines, volume loss, sagging",
+        "Benefits": "Restores facial volume, smooths wrinkles, and enhances youthful contours"
+      },
+      {
+        "Treatment": "Microblading",
+        "BestFor": "Thin or uneven eyebrows",
+        "Benefits": "Semi-permanent eyebrow enhancement for fuller, natural-looking brows"
+      },
+      {
+        "Treatment": "Laser toning",
+        "BestFor": "Pigmentation, dullness, uneven tone",
+        "Benefits": "Evens skin tone, reduces pigmentation, and improves overall brightness"
+      },
+      {
+        "Treatment": "HIFU",
+        "BestFor": "Skin laxity, early sagging",
+        "Benefits": "Non-surgical facelift that tightens and lifts skin by stimulating collagen"
+      },
+      {
+        "Treatment": "ZO Obagi Medifacial",
+        "BestFor": "Dull, tired, or sun-damaged skin",
+        "Benefits": "Advanced medical-grade facial for deep nourishment, hydration, and glow"
+      },
+      {
+        "Treatment": "Laser Resurfacing",
+        "BestFor": "Scars, wrinkles, rough skin texture",
+        "Benefits": "Improves skin texture, reduces scars, and promotes smoother skin"
+      },
+       {
+        "Treatment": "Melasma Rescue Therapy",
+        "BestFor": "Stubborn pigmentation & melasma patches",
+        "Benefits": "Specialised treatment protocol to lighten melasma and restore even skin tone"
+      }
+    ]
+  },
+  "BestDermatologistFivethSection": {
+    "mainHeading": "Comprehensive Solutions for Faridabad Patients",
+    "paragraph1": "At Citrine Clinic, we welcome many patients from Faridabad who are seeking advanced, results-driven dermatology care. Our treatments cover a wide range of concerns:",
+    "list": [
+      "<strong>Pigmentation & Tanning Correction –</strong> Lasers, chemical peels, and brightening protocols.",
+      "<strong>Hair Regrowth & Strengthening –</strong> P-R-P therapy, mesotherapy, and customised hair fall programs.",
+      "<strong>Hydration & Glow Boosters –</strong> Medifacials, glow therapy, and mesotherapy.",
+      "<strong>Anti-Ageing Solutions –</strong> Non-surgical skin tightening, fillers, and collagen-stimulating procedures.",
+      "<strong>Scar & Texture Improvement –</strong> Microneedling RF and carbon laser peel to smoothen scars and refine pores."
+    ]
+  },
+  "BestDermatologistSixthSection": {
+    "mainHeading": "Your Treatment Journey at Citrine Clinic",
+    "paragraph": "We make your treatment experience comfortable and transparent:",
+    "list": [
+      "<strong>Consultation –</strong> Detailed discussion of your skin or hair concerns.",
+      "<strong>Assessment –</strong> Advanced tools to diagnose underlying issues.",
+      "<strong>Customised Plan –</strong> Tailored solutions for your needs and goals.",
+      "<strong>Safe Treatments –</strong> Performed using advanced technology with minimal downtime.",
+      "<strong>Follow-ups –</strong> Continued guidance to maintain results."
+    ]
+  },
+  "BestDermatologistEightSection": {
+    "mainHeading": "Why Faridabad Residents Prefer Citrine Clinic in Gurgaon",
+    "list": [
+      "<strong>Trusted Expertise –</strong> Patients rely on us for proven results.",
+      "<strong>Advanced Care –</strong> Global-standard technology ensures safety and precision.",
+      "<strong>Personalised Attention –</strong> Every concern is addressed individually.",
+      "<strong>Relaxed Environment –</strong> Calm and private clinic setting.",
+      "<strong>Worth the Commute –</strong> Patients say the results far outweigh the travel."
+    ]
+  },
+  "BestDermatologistNineSection": {
+    "mainHeading": "How to Reach Citrine Clinic from Faridabad",
+    "list": [
+      "<strong>Address:</strong> SCO-19, Huda Market Road, Sector 15 Part 2, Gurugram, Haryana – 122001",
+      "<strong>By Car:</strong> From Faridabad, take Mathura Road (NH-44) towards Delhi, then continue on NH-48 to reach Gurgaon. Drive time is usually 45–60 minutes depending on traffic.",
+      "<strong>By Metro:</strong> Board the Violet Line from Faridabad to Central Secretariat. Change to the Yellow Line towards HUDA City Centre. Get down at MG Road Metro Station and take a short cab ride.",
+      "<strong>By Cab:</strong> Ola and Uber are easily available for a direct, comfortable commute."
+    ]
+  },
+  "BestDermatologistTenthSection": {
+    "mainHeading": "Book Your Consultation with the Best Skin Specialist in Faridabad",
+    "paragraph": "If you’re looking for the Best Skin Doctors in Faridabad, make the short trip to Citrine Clinic in Gurgaon and experience advanced dermatology care. With expert doctors, proven treatments, and personalised plans, we’ve helped countless Faridabad patients achieve healthy, glowing skin and stronger hair.<br/><br/> Your journey to better skin begins with one consultation. Book your appointment today."
+  },
+  "BestDermatologistTestimonialSection": {
+    "mainHeading": "Real Patient Experiences",
+    "testimonials": [
+      {
+        "id": 1,
+        "rating": 5,
+        "text": "I travelled from Faridabad to Citrine Clinic for my pigmentation treatment. The laser sessions gave me a glow I couldn’t achieve elsewhere. Totally worth the travel!",
+        "author": "Priya S.",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      },
+      {
+        "id": 2,
+        "rating": 5,
+        "text": "My hair thinning due to hard water was getting worse. The mesotherapy at Citrine Clinic showed visible improvement within months.",
+        "author": "Rohit M.",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      },
+      {
+        "id": 3,
+        "rating": 5,
+        "text": "Travelling from Faridabad to Gurgaon seemed like a task at first, but the results of my skin tightening sessions were amazing. Highly recommend!",
+        "author": "Neha A.",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      }
+    ]
+  },
+  "BestDermatologistFaqSection": {
+    "mainHeading": "FAQs About Best Dermatologist in Faridabad",
+    "faqData": [
+      {
+        "id": 1,
+        "question": "Do I need to book in advance?",
+        "answer": "Yes, we recommend booking your slot in advance, especially if you’re travelling from Faridabad."
+      },
+      {
+        "id": 2,
+        "question": "Is it worth travelling from Faridabad to Gurgaon?",
+        "answer": "Absolutely. Many of our Faridabad patients choose Citrine Clinic for expert care, advanced technology, and lasting results."
+      },
+      {
+        "id": 3,
+        "question": "What issues do you treat?",
+        "answer": "We treat acne, pigmentation, scars, premature ageing, hair fall, dull skin, and more."
+      },
+      {
+        "id": 4,
+        "question": "How much does treatment cost?",
+        "answer": "Costs vary depending on the concern and sessions required. A detailed plan is shared during consultation."
+      }
+    ]
+  }
 }
+
 }

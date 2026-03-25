@@ -12,18 +12,13 @@ const CitrineDifferenceBanner = () => {
           alt="See The Citrine Difference"
           className={styles.bannerImageElement}
           loading="eager"
-          fetchPriority="high"
-        />
+          fetchPriority="high"/>
       </picture>
       <div className={styles.overlay}>
           <div className={styles.rightSide}>
           <div className={styles.content}>
             <h2 className={`mainHeading ${styles.mainHeading}`}>
-              SEE THE CITRINE<br />
-              DIFFERENCE YOUR<br />
-              SELF.
-            </h2>
-            
+              SEE THE CITRINE<br /> DIFFERENCE YOUR<br /> SELF.</h2>
             <p className={styles.description}>
               From first consultation to final results—our patients<br />
               share their real experiences.

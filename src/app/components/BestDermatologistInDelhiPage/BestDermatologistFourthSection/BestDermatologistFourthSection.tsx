@@ -6,6 +6,10 @@ interface TableRow { Treatment: string; BestFor: string; Benefits: string }
 interface Props {
   section: {
     mainHeading: string;
+    paragraphs?: string;
+    paragraphs2?: string;
+    paragraphs3?: string;
+    paragraphs4?: string;
     table?: TableRow[];
     paragraph?: string;
   } | null;
@@ -18,6 +22,10 @@ const BestDermatologistFourthSection: React.FC<Props> = ({ section }) => {
       <div className={styles.container}>
         <div className={styles.doctorprofile}>
           <h2 className={`mainHeading ${styles.mainHeading}`}>{section.mainHeading}</h2>
+          <p dangerouslySetInnerHTML={{ __html: section.paragraphs || "" }} />
+          <p dangerouslySetInnerHTML={{ __html: section.paragraphs2 || "" }} />
+          <p dangerouslySetInnerHTML={{ __html: section.paragraphs3 || "" }} />
+          <p dangerouslySetInnerHTML={{ __html: section.paragraphs4 || "" }} />
           <div className={styles.tableResponsive}>
             <table>
               <tbody>

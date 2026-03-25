@@ -18,13 +18,13 @@ import path from 'path';
 import BestDermatologistFaqSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistFaqSection/BestDermatologistFaqSection';
 
 export const metadata: Metadata = {
-  title: "Best Dermatologist in Delhi | Best Skin Specialist in Delhi",
-  description: "Searching for the best dermatologist in Delhi? At Citrine Clinic, our skin specialist understands Delhi’s skin concerns and our skin doctor uses advanced care for glowing, healthy results.",
+  title: "Best Dermatologist in Faridabad | Citrine Clinic",
+  description: "Seeking the best dermatologist in Faridabad? Citrine Clinic offers advanced skin and hair treatments with personalised care, ensuring natural, long-lasting results.",
   alternates: {
-    canonical: '/best-dermatologist-in-delhi',
+    canonical: '/best-dermatologist-in-faridabad',
   },
   openGraph: {
-    url: 'https://www.citrineclinic.com/best-dermatologist-in-delhi',
+    url: 'https://www.citrineclinic.com/best-dermatologist-in-faridabad',
   },
 };
 
@@ -33,11 +33,14 @@ function getPageData() {
   const filePath = path.join(process.cwd(), 'src','app', 'components', 'webcontent', 'BestDermatologistInDelhiPageContent.json');
   const raw = fs.readFileSync(filePath, 'utf8');
   const data = JSON.parse(raw);
-  return data["best-dermatologist-in-delhi"];
+  if (!data || !data["best-dermatologist-in-faridabad"]) {
+    throw new Error('best-dermatologist-in-faridabad content missing in JSON');
+  }
+  return data["best-dermatologist-in-faridabad"];
 }
 
 
-const BestDermatologistInDelhi = () => {
+const BestDermatologistInFaridabad = () => {
   const pageData = getPageData();
   return (
     <>
@@ -60,4 +63,4 @@ const BestDermatologistInDelhi = () => {
   );
 };
 
-export default BestDermatologistInDelhi;
+export default BestDermatologistInFaridabad;

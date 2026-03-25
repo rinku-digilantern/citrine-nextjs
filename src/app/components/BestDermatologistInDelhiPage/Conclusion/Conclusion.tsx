@@ -1,29 +1,25 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import styles from './BestDermatologistFirstSection.module.css';
+import styles from './Conclusion.module.css';
 interface Props {
   section: {
     mainHeading: string;
     paragraph: string;
-    paragraphs: string[];
-    paragraph3: string;
   };
 }
 
-const BestDermatologistFirstSection: React.FC<Props> = ({ section }) => {
+const Conclusion: React.FC<Props> = ({ section }) => {
   if (!section) return null;
   return (
-    <section className={styles.BestDermatologistFirstSection}>
+    <section className={styles.Conclusion}>
       <div className={styles.container}>
         <div className={styles.doctorprofile}>
           <h1 className={`mainHeading ${styles.mainHeading}`}>{section.mainHeading}</h1>
           <p dangerouslySetInnerHTML={{ __html: section.paragraph }} />
-          <p dangerouslySetInnerHTML={{ __html: section.paragraphs }} />
-          <p dangerouslySetInnerHTML={{ __html: section.paragraph3 }} />
         </div>
       </div>
     </section>
   );
 };
 
-export default BestDermatologistFirstSection;
+export default Conclusion;

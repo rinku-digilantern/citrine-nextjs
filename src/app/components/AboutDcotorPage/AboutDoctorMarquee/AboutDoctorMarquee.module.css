@@ -73,20 +73,60 @@
   }
 }
 
-@media (max-width: 768px) {
-  .headingrow h2 {
-    font-size: 28px;
-  }
-  
-  .googleReview {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .logoItem {
-    padding: 0 20px;
-    min-width: 120px;
-  }
+/* Responsive Design */
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.AboutDoctorMarqueeSection {padding: 3rem 0 2rem 0px;}
+.headingrow {width: 92%;margin: 0 auto;}
+}
+
+/* Responsive Design */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.AboutDoctorMarqueeSection {padding: 2rem 0 2rem 0px;}
+.headingrow {width: 92%;margin: 0 auto;}
+.mainHeading {font-size: 45px;}
+}
+
+/* Responsive Design */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.AboutDoctorMarqueeSection {padding: 2rem 0 2rem 0px;}
+.headingrow {width: 92%;margin: 0 auto;}
+.marqueeContainer{padding: 20px 0;}
+.mainHeading {font-size: 45px;}
+}
+
+/* Responsive Design */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.AboutDoctorMarqueeSection {padding: 2rem 0 2rem 0px;}
+.headingrow {width: 92%;margin: 0 auto;}
+.marqueeContainer{padding: 20px 0;}
+.discription {font-size: 1rem;}
+.mainHeading {font-size: 40px;}
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) and (min-width: 768px) {
+.AboutDoctorMarqueeSection {padding: 2rem 0 2rem 0px;}
+.headingrow {width: 92%;margin: 0 auto;}
+.marqueeContainer{padding: 20px 0;}
+.discription {font-size: 1rem;}
+.mainHeading {font-size: 40px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px) {
+  .AboutDoctorMarqueeSection {padding: 1.5rem 0 0 0px;}
+ .googleReview {flex-direction: row;gap: 5px;}
+ .reviewText {font-size: 14px;}
+ .googleReview {gap: 10px;margin: 0 auto 10px auto;padding: 8px 15px;}
+ .headingrow {width: 90%;margin:0 auto;}
+ .headingrow h2 {font-size: 26px;}
+ .logoItem {min-width: 100px;padding: 10px;}
+ .marquee {gap: 10px;}
+ .abcommon{padding: 0px;}
+ .marqueeContainer {padding: 20px 0 20px 0px;}
+ .mainHeading span{display: block;}
+ .mainHeading br{display: none;}
+ .discription {margin: 0 0 10px 0px;font-size: 15px;}
 }
 
 /* Small devices (Phones in landscape mode) */

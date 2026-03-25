@@ -11,16 +11,14 @@ const HappyPatientsGallery = () => {
           <div className={styles.galleryItem}>
             <div className={styles.contentWrapper}>
               <h2 className={`mainHeading ${styles.mainHeading}`}>
-                HAPPY PATIENT'S<br />
-                GALLERY
+                HAPPY PATIENT'S<br /> GALLERY
               </h2>
               
               <p className={styles.description}>
-                Lorem ipsum dolor sit amet consectetur adipiscing elit nesat
-                massa neque. Sed non luctus erat at imperdiet quam nullam
-                feugiat est auctor vulputat donec vestibulum aliquam ligula eu
-                lacinia purus a maur amare element.
-              </p>
+                Real stories. Visible transformations.
+Our patients are at the heart of everything we do, and their results reflect the care, precision, and trust we build every day.
+From subtle enhancements to confidence-boosting changes, every journey is personal, and every smile is earned.
+Because the most meaningful results are the ones our patients feel as much as they see.</p>
               
               <div className={styles.statsGrid}>
                 <div className={styles.statItem}>

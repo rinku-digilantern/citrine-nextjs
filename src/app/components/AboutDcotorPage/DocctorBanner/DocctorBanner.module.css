@@ -191,69 +191,66 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .bannerContainer {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
-
-  .leftContent,
-  .testimonialBox {
-    max-width: 100%;
-  }
-  
-  .breadcrumb {
-    left: 0;
-    padding: 0 1.5rem;
-    bottom: 1.2rem;
-  }
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.bannerSection {min-height: 500px;}
+.bannerContainer {gap: 1.5rem;max-width: 97%;margin: 0 auto 0;}
+.breadcrumb{max-width: 92%;padding: 0 3.5rem;font-size: 12px;bottom: 1rem;}
 }
 
-@media (max-width: 768px) {
-  .bannerSection {
-    min-height: 400px;
-    padding: 0 1.5rem 1.5rem 1.5rem;
-  }
+/* Responsive Design */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.bannerSection {min-height: 500px;}
+.bannerContainer {gap: 1rem;max-width: 97%;margin: 0 auto 0 auto;}
+.breadcrumb{max-width: 92%;padding: 0 3.5rem;font-size: 12px;bottom: 1.5rem;}
+.testimonialBox {max-width: 460px;padding: 1.5rem;}
+}
 
-  .bannerContainer {
-    margin-bottom: 2.5rem;
-  }
+/* Responsive Design */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.bannerSection {min-height: 440px;}
+.bannerContainer {gap: 1rem;max-width: 98%;margin: 0 auto 0 auto;}
+.breadcrumb{max-width: 92%;padding: 0 2.5rem;font-size: 12px;bottom: 1.5rem;}
+.testimonialBox {max-width: 400px;padding: 1.5rem;}
+}
 
-  .leftContent {
-    padding: 1.5rem;
-  }
+/* Responsive Design */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.bannerSection {min-height: 400px;}
+.bannerContainer {align-items: stretch;gap: 1rem;margin-bottom: 2rem;}
+.testimonialBox {max-width: 375px;padding: 1rem;}
+.leftContent {padding-top: 2rem;}
+.testimonialText {margin: 0 0 1rem;font-size: 1rem;}
+.specializationList li {font-size: 1rem;}
+.experienceText {font-size: 18px;padding: 10px 12px;margin: 0 0 1rem 0;letter-spacing: 0.2px;}
+}
 
-  .doctorName {
-    font-size: 32px;
-  }
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .bannerSection {min-height: 300px;padding: 0 1.5rem 1.5rem 1.5rem;}
+  .bannerContainer {margin-bottom: 0rem;}
+  .leftContent {padding: 2rem 0 0 0rem;}
+  .doctorName {font-size: 32px;}
+  .experienceText {font-size: 15px;margin: 0 0 10px 0px; }
+  .specializationList li {font-size: 15px;}
+  .quoteIcon {font-size: 60px; margin-bottom: 5px;}
+  .testimonialText {font-size: 15px;padding: 8px 10px;}
+  .testimonialBox {max-width: 290px;font-size: 15px;padding: 1rem;}
+  .breadcrumb {font-size: 11px;padding: 0 1rem;bottom: 1rem;}
+  .mainHeading { margin: 0 0 5px 0px;}
+}
 
-  .experienceText {
-    font-size: 12px;
-  }
-
-  .specializationList li {
-    font-size: 14px;
-  }
-
-  .testimonialBox {
-    padding: 2rem 1.5rem 1.2rem 1.5rem;
-  }
-
-  .quoteIcon {
-    font-size: 60px;
-  }
-
-  .testimonialText {
-    font-size: 14px;
-  }
-
-  .breadcrumb {
-    font-size: 11px;
-    padding: 0 1.5rem;
-    bottom: 1rem;
-  }
+/* Responsive Design */
+@media (max-width: 767.98px) and (min-width: 600px) {
+   .bannerSection {min-height: 250px;padding: 0 1rem 1rem 1rem;}
+  .bannerContainer {margin-bottom: 0rem;}
+  .leftContent {padding: 2rem 0 0 0rem;max-width: 40%;}
+  .doctorName {font-size: 26px;}
+  .experienceText {font-size: 13px;margin: 0 0 10px 0px;padding: 6px 5px; }
+  .specializationList li {font-size: 14px;}
+  .quoteIcon {font-size: 60px; margin-bottom: 5px;}
+  .testimonialText {font-size: 14px;padding: 8px 10px;}
+  .testimonialBox {max-width: 250px;font-size: 14px;padding: 10px;line-height: 1.6;}
+  .breadcrumb {font-size: 11px;padding: 0 1rem;bottom: 1rem;position: static;}
+   .mainHeading { margin: 0 0 5px 0px;font-size: 30px;}
 }
 
 /* Small devices (Phones in landscape mode) */
@@ -262,12 +259,12 @@
   .bannerSection::before {width: 100%;max-width: 100%;left: 0;right: 0;}
   .bannerImage {position: relative;top: auto;left: auto;width: 100%;
     height: auto;display: block;object-fit: contain;}
-  .bannerContainer {gap: 0px;margin: 0 auto;max-width: calc(100% - 10%);width: calc(100% - 10%);padding: 0;
-    position: relative;top: auto;left: auto;order: 3;}
+    .bannerContainer {display: flex;flex-direction: column;max-width: calc(100% - 10%);width: calc(100% - 10%);padding: 0rem;order: 3;gap:8px}
   .bannerSection picture {display: block;width: 100%;max-width: 100%;padding: 0;order: 1;}
-  .leftContent {padding: 0rem;width: 100%; margin:10px 0 0 0;min-width: 0;}
-  .testimonialBox {padding: 12px;width: 100%; margin: 12px 0 0 0;
+  .leftContent {padding: 0rem;width: 100%; margin:10px 0 0 0;min-width: 0;order:2}
+  .testimonialBox {padding: 12px;width: 100%; margin: 12px 0 0 0;order:3;
     flex: unset;max-width: 100%;min-width: 0;overflow-x: hidden;}
+      .breadcrumb {position: static;margin-top: 1rem;}
   .doctorName {font-size: 26px;}
   .experienceText {font-size: 15px;}
   .specializationList li {font-size: 15px;}
@@ -286,4 +283,5 @@
   .testimonialBox,
   .breadcrumb,
   .experienceText {box-sizing: border-box;}
+
 }

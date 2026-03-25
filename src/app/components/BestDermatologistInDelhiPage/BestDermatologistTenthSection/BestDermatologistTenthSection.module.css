@@ -2,3 +2,43 @@
 .container {max-width: 1320px;margin: 0 auto;}
 .mainHeading{text-transform: uppercase;margin-bottom: 10px;font-size: 35px;}
 .BestDermatologistTenthSection p{font-size: 18px;line-height: 1.8;color: var(--default-color);}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1400.98px) and (min-width: 1101px) {
+  .BestDermatologistTenthSection {padding: 2rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistTenthSection p{font-size: 16px}
+  .mainHeading{margin-bottom: 5px;font-size: 35px}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .BestDermatologistTenthSection {padding: 2rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistTenthSection p{font-size: 16px}
+  .mainHeading{margin-bottom: 5px;font-size: 35px}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .BestDermatologistTenthSection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistTenthSection p{font-size: 15px}
+  .mainHeading{margin-bottom: 5px;font-size: 35px}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px) {
+  .BestDermatologistTenthSection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistTenthSection p{font-size: 15px}
+  .mainHeading{margin-bottom: 5px;font-size: 30px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .BestDermatologistTenthSection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;}
+  .BestDermatologistTenthSection p{font-size: 15px}
+  .mainHeading{margin-bottom: 5px;font-size: 26px;}
+}
