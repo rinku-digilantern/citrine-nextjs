@@ -14,27 +14,27 @@ export const metadata: Metadata = {
   title: "Dr. Niti Gaur | Best Female Dermatologist in Gurgaon | Citrine Clinic",
   description: "Dr. Niti Gaur is the best female dermatologist in Gurgaon for advanced skin and hair treatments with proven results at an affordable cost. Book your appointment today!",
   alternates: {
-    canonical: '/about-doctor',
+    canonical: '/dr-niti-gaur',
   },
   openGraph: {
-    url: 'https://www.citrineclinic.com/about-doctor',
+    url: 'https://www.citrineclinic.com/dr-niti-gaur',
   },
 };
 
 
 const Aboutdoctor = () => {
-    return (
-        <>
-         <DocctorBanner/>
-         <AboutDoctorMarquee/>
-         <StickyCard/>
-         <MarqueeCenter/>
-         <ConferenceSection/>
-         <MyCommitment />
-         <CareerOverview />
-         <OurVideos />
-         <AppointmentSection />
-        </>
-    )
+  return (
+    <>
+      <DocctorBanner />
+      <AboutDoctorMarquee />
+      <StickyCard />
+      <MarqueeCenter />
+      <ConferenceSection />
+      <MyCommitment />
+      <CareerOverview />
+      <OurVideos />
+      <AppointmentSection />
+    </>
+  )
 }
 export default Aboutdoctor;
