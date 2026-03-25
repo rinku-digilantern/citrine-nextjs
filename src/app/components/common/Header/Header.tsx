@@ -145,7 +145,7 @@ const Header = () => {
                                     <li><Link href="/blogs" onClick={toggleMenu}>Blogs</Link></li>
                                     <li><Link href="/clinic-gallery" onClick={toggleMenu}>Gallery</Link></li>
                                     <li><Link href="/testimonials" onClick={toggleMenu}>Written Testimonials</Link></li>
-                                    <li><Link href="/results" onClick={toggleMenu}>Results</Link></li>
+                                    {/* <li><Link href="/results" onClick={toggleMenu}>Results</Link></li> */}
                                     <li><Link href="/technologies" onClick={toggleMenu}>Technologies</Link></li>
                                     <li><Link href="/videos" onClick={toggleMenu}>Videos</Link></li>
                                     <li><Link href="/media" onClick={toggleMenu}>Media</Link></li>
