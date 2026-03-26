@@ -17,16 +17,7 @@ import fs from 'fs';
 import path from 'path';
 import BestDermatologistFaqSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistFaqSection/BestDermatologistFaqSection';
 
-export const metadata: Metadata = {
-  title: "Best Dermatologist in Noida | Best Dermatology Care for Noida Residents",
-  description: "Looking for the best dermatologist in Noida? Many Noida residents trust Citrine Clinic in Gurgaon for expert skin and hair treatments, personalised care, and lasting results. Visit now.",
-  alternates: {
-    canonical: '/best-dermatologist-in-noida',
-  },
-  openGraph: {
-    url: 'https://www.citrineclinic.com/best-dermatologist-in-noida',
-  },
-};
+
 
 
 function getPageData() {
@@ -40,10 +31,53 @@ function getPageData() {
 }
 
 
-const BestDermatologistInNoida = () => {
+
+const API_BASE = 'https://api.citrineclinic.com/api';
+
+async function getSeoData(slug: string) {
+  try {
+    const res = await fetch(`${API_BASE}/seo-tag/${slug}`, { next: { revalidate: 3600 } });
+    if (!res.ok) return null;
+    const json = await res.json();
+    if (!json || !json.seo) return null;
+    return json.seo;
+  } catch {
+    return null;
+  }
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeoData('best-dermatologist-in-noida');
+  if (!seo) return { title: 'Citrine Clinic' };
+  return {
+    title: seo.title_tag || 'Citrine Clinic',
+    description: seo.description_tag || '',
+    keywords: seo.keyword_tag || undefined,
+    alternates: {
+      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/best-dermatologist-in-noida',
+    },
+    openGraph: {
+      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'best-dermatologist-in-noida'}`,
+      title: seo.title_tag || '',
+      description: seo.description_tag || '',
+    },
+  };
+}
+
+const BestDermatologistInNoida = async () => {
+  const seo = await getSeoData('best-dermatologist-in-noida');
+
   const pageData = getPageData();
   return (
     <>
+
+      {seo?.faq_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.faq_schema) }} />
+      )}
+      {seo?.bred_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.bred_schema) }} />
+      )}
+
       <BestDermatologistBanner section={pageData.BestDermatologistBanner} />
       <Breadcrumb />
       <BestDermatologistFirstSection section={pageData.BestDermatologistFirstSection} />

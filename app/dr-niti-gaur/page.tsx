@@ -10,21 +10,49 @@ import MyCommitment from '@/src/app/components/AboutDcotorPage/MyCommitment/MyCo
 import StickyCard from '@/src/app/components/AboutDcotorPage/StickyCard/StickyCard';
 import MarqueeCenter from '@/src/app/components/AboutDcotorPage/MarqueeCenter/MarqueeCenter';
 
-export const metadata: Metadata = {
-  title: "Dr. Niti Gaur | Best Female Dermatologist in Gurgaon | Citrine Clinic",
-  description: "Dr. Niti Gaur is the best female dermatologist in Gurgaon for advanced skin and hair treatments with proven results at an affordable cost. Book your appointment today!",
-  alternates: {
-    canonical: '/dr-niti-gaur',
-  },
-  openGraph: {
-    url: 'https://www.citrineclinic.com/dr-niti-gaur',
-  },
-};
+const API_BASE = 'https://api.citrineclinic.com/api';
 
+async function getSeoData(slug: string) {
+  try {
+    const res = await fetch(`${API_BASE}/seo-tag/${slug}`, { next: { revalidate: 3600 } });
+    if (!res.ok) return null;
+    const json = await res.json();
+    if (!json || !json.seo) return null;
+    return json.seo;
+  } catch {
+    return null;
+  }
+}
 
-const Aboutdoctor = () => {
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeoData('dr-niti-gaur');
+  if (!seo) return { title: 'Citrine Clinic' };
+  return {
+    title: seo.title_tag || 'Citrine Clinic',
+    description: seo.description_tag || '',
+    keywords: seo.keyword_tag || undefined,
+    alternates: {
+      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/dr-niti-gaur',
+    },
+    openGraph: {
+      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'dr-niti-gaur'}`,
+      title: seo.title_tag || '',
+      description: seo.description_tag || '',
+    },
+  };
+}
+
+const Aboutdoctor = async () => {
+  const seo = await getSeoData('dr-niti-gaur');
+
   return (
     <>
+      {seo?.faq_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.faq_schema) }} />
+      )}
+      {seo?.bred_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.bred_schema) }} />
+      )}
       <DocctorBanner />
       <AboutDoctorMarquee />
       <StickyCard />

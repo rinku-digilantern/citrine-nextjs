@@ -5,21 +5,55 @@ import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 import RefundPolicyPage from '@/src/app/components/RefundPolicyPage/RefundPolicyPage';
 
 
-export const metadata: Metadata = {
-  title: "Refund Policy | Citrine Clinic",
-  description: "Refund Policy | Citrine Clinic",
-  alternates: {
-    canonical: '/refund-policy',
-  },
-  openGraph: {
-    url: 'https://www.citrineclinic.com/refund-policy',
-  },
-};
 
 
-const RefundPolicy = () => {
+
+
+const API_BASE = 'https://api.citrineclinic.com/api';
+
+async function getSeoData(slug: string) {
+  try {
+    const res = await fetch(`${API_BASE}/seo-tag/${slug}`, { next: { revalidate: 3600 } });
+    if (!res.ok) return null;
+    const json = await res.json();
+    if (!json || !json.seo) return null;
+    return json.seo;
+  } catch {
+    return null;
+  }
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeoData('refund-policy');
+  if (!seo) return { title: 'Citrine Clinic' };
+  return {
+    title: seo.title_tag || 'Citrine Clinic',
+    description: seo.description_tag || '',
+    keywords: seo.keyword_tag || undefined,
+    alternates: {
+      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/refund-policy',
+    },
+    openGraph: {
+      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'refund-policy'}`,
+      title: seo.title_tag || '',
+      description: seo.description_tag || '',
+    },
+  };
+}
+
+const RefundPolicy = async () => {
+  const seo = await getSeoData('refund-policy');
+
     return (
         <>
+
+      {seo?.faq_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.faq_schema) }} />
+      )}
+      {seo?.bred_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.bred_schema) }} />
+      )}
+
           <Breadcrumb />
           <RefundPolicyPage/>
           <AppointmentSection />  

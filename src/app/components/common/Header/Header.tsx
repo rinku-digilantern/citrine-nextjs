@@ -140,8 +140,8 @@ const Header = () => {
                                     onClick={() => setActiveTab(activeTab === 'quicklinks' ? '' : 'quicklinks')}>
                                     <ul>
                                         <li><Link href="/" onClick={toggleMenu}>Home</Link></li>
-                                        <li><Link href="/about-doctor" onClick={toggleMenu}>About Doctor</Link></li>
-                                        <li><Link href="/about-clinic" onClick={toggleMenu}>About Clinic</Link></li>
+                                        <li><Link href="/dr-niti-gaur" onClick={toggleMenu}>About Doctor</Link></li>
+                                        <li><Link href="/skin-clinic-in-gurgaon" onClick={toggleMenu}>About Clinic</Link></li>
                                         <li><Link href="/blogs" onClick={toggleMenu}>Blogs</Link></li>
                                         <li><Link href="/clinic-gallery" onClick={toggleMenu}>Gallery</Link></li>
                                         <li><Link href="/testimonials" onClick={toggleMenu}>Written Testimonials</Link></li>
@@ -158,12 +158,12 @@ const Header = () => {
                                     <div className={styles.quicktext}>Quick Links</div>
                                     <ul>
                                         <li><Link href="/" onClick={toggleMenu}>Home</Link></li>
-                                        <li><Link href="/about-doctor" onClick={toggleMenu}>About Doctor</Link></li>
-                                        <li><Link href="/about-clinic" onClick={toggleMenu}>About Clinic</Link></li>
+                                        <li><Link href="/dr-niti-gaur" onClick={toggleMenu}>About Doctor</Link></li>
+                                        <li><Link href="/skin-clinic-in-gurgaon" onClick={toggleMenu}>About Clinic</Link></li>
                                         <li><Link href="/blog" onClick={toggleMenu}>Blogs</Link></li>
                                         <li><Link href="/clinic-gallery" onClick={toggleMenu}>Gallery</Link></li>
                                         <li><Link href="/testimonials" onClick={toggleMenu}>Written Testimonials</Link></li>
-                                        <li><Link href="/results" onClick={toggleMenu}>Results</Link></li>
+                                        {/* <li><Link href="/results" onClick={toggleMenu}>Results</Link></li> */}
                                         <li><Link href="/technologies" onClick={toggleMenu}>Technologies</Link></li>
                                         <li><Link href="/videos" onClick={toggleMenu}>Videos</Link></li>
                                         <li><Link href="/media" onClick={toggleMenu}>Media</Link></li>
@@ -183,42 +183,42 @@ const Header = () => {
                                         isOpen={activeTab === 'treatments'}
                                         onClick={() => setActiveTab(activeTab === 'treatments' ? '' : 'treatments')}>
                                         <ul>
-                                            <li><Link href="/" onClick={toggleMenu}>Anti Wrinkle Injection</Link></li>
+                                            <li><Link href="/anti-wrinkle-injection-in-gurgaon" onClick={toggleMenu}>Anti Wrinkle Injection</Link></li>
                                             <li><Link href="/" onClick={toggleMenu}>Laser Resurfacing</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Bridal Dermatology</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Microblading</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Chemical Peels</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Microneedling</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Dermal Fillers</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Pumpkin Medifacial</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Exilis Elite</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Blood-derived Growth Factors</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Eye Restore Therapy</Link></li>
+                                            <li><Link href="/bridal-dermatology-treatment" onClick={toggleMenu}>Bridal Dermatology</Link></li>
+                                            <li><Link href="/microblading" onClick={toggleMenu}>Microblading</Link></li>
+                                            <li><Link href="/chemical-peel-treatment-in-gurgaon" onClick={toggleMenu}>Chemical Peels</Link></li>
+                                            <li><Link href="/microneedling" onClick={toggleMenu}>Microneedling</Link></li>
+                                            <li><Link href="/dermal-fillers-treatment-in-gurgaon" onClick={toggleMenu}>Dermal Fillers</Link></li>
+                                            <li><Link href="/pumpkin-medi-facial" onClick={toggleMenu}>Pumpkin Medifacial</Link></li>
+                                            <li><Link href="/exilis-elite" onClick={toggleMenu}>Exilis Elite</Link></li>
+                                            <li><Link href="/blood-derived-growth-factors" onClick={toggleMenu}>Blood-derived Growth Factors</Link></li>
+                                            <li><Link href="/eye-restore" onClick={toggleMenu}>Eye Restore Therapy</Link></li>
                                             <li><Link href="/" onClick={toggleMenu}>PRF Therapy</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Hair GFC</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Repechage Medifacial</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>HIFU</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Tattoo Removal</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Hydrafacial MD</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Total Clearlift</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Laser Hair Reduction</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Zo Obagi Medifacial</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Morpheus8 Treatment</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Artiqa Body Contouring Treatment</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Laser Toning</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Exosomes Therapy</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>PDRN Therapy</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>SPMU</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Ultherapy</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Aptos Thread Lift</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Forma RF Skin Tightening</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Profhilo</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Aqua Restore 4D Facial</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>CO2 Fractional Laser Treatment</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Body Ballancer</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Intimate Area Lightening Treatment</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Rich Peel Advance</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Dermapen 4</Link></li>
+                                            <li><Link href="/gfc-hair-treatment-in-gurgaon" onClick={toggleMenu}>Hair GFC</Link></li>
+                                            <li><Link href="/repechage-medi-facial-in-gurgaon" onClick={toggleMenu}>Repechage Medifacial</Link></li>
+                                            <li><Link href="/hifu" onClick={toggleMenu}>HIFU</Link></li>
+                                            <li><Link href="/laser-tattoo-removal-treatment-in-gurgaon" onClick={toggleMenu}>Tattoo Removal</Link></li>
+                                            <li><Link href="/hydrafacial-md" onClick={toggleMenu}>Hydrafacial MD</Link></li>
+                                            <li><Link href="/clearlift-laser" onClick={toggleMenu}>Total Clearlift</Link></li>
+                                            <li><Link href="/laser-hair-reduction" onClick={toggleMenu}>Laser Hair Reduction</Link></li>
+                                            <li><Link href="/zo-obagi-medi-facial" onClick={toggleMenu}>Zo Obagi Medifacial</Link></li>
+                                            <li><Link href="/morpheus8-treatment-in-gurgaon" onClick={toggleMenu}>Morpheus8 Treatment</Link></li>
+                                            <li><Link href="/artiqa-body-contouring-treatment" onClick={toggleMenu}>Artiqa Body Contouring Treatment</Link></li>
+                                            <li><Link href="/laser-toning-in-gurgaon" onClick={toggleMenu}>Laser Toning</Link></li>
+                                            <li><Link href="/exosomes-therapy" onClick={toggleMenu}>Exosomes Therapy</Link></li>
+                                            <li><Link href="/pdrn-therapy" onClick={toggleMenu}>PDRN Therapy</Link></li>
+                                            <li><Link href="/spmu" onClick={toggleMenu}>SPMU</Link></li>
+                                            <li><Link href="/ultherapy" onClick={toggleMenu}>Ultherapy</Link></li>
+                                            <li><Link href="/aptos-thread-lift" onClick={toggleMenu}>Aptos Thread Lift</Link></li>
+                                            <li><Link href="/forma-rf-skin-tightening" onClick={toggleMenu}>Forma RF Skin Tightening</Link></li>
+                                            <li><Link href="/profhilo" onClick={toggleMenu}>Profhilo</Link></li>
+                                            <li><Link href="/aqua-restore-4d-facial-in-gurgaon" onClick={toggleMenu}>Aqua Restore 4D Facial</Link></li>
+                                            <li><Link href="/co2-fractional-laser-treatment" onClick={toggleMenu}>CO2 Fractional Laser Treatment</Link></li>
+                                            <li><Link href="/body-ballancer" onClick={toggleMenu}>Body Ballancer</Link></li>
+                                            <li><Link href="/intimate-area-lightening-treatment" onClick={toggleMenu}>Intimate Area Lightening Treatment</Link></li>
+                                            <li><Link href="/rich-peel-advance" onClick={toggleMenu}>Rich Peel Advance</Link></li>
+                                            <li><Link href="/dermapen-4" onClick={toggleMenu}>Dermapen 4</Link></li>
                                         </ul>
                                     </AccordionSection>
                                     <AccordionSection
@@ -226,16 +226,16 @@ const Header = () => {
                                         isOpen={activeTab === 'concerns'}
                                         onClick={() => setActiveTab(activeTab === 'concerns' ? '' : 'concerns')}>
                                         <ul className={styles.menuList}>
-                                            <li><Link href="/" onClick={toggleMenu}>Acne</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Pigmentation</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Ageing</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Excessive Hair Growth</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Hair Loss</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Eyes</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Lips</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Hands and Feet</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Body Contouring</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>General Dermatology</Link></li>
+                                            <li><Link href="/acne" onClick={toggleMenu}>Acne</Link></li>
+                                            <li><Link href="/pigmentation" onClick={toggleMenu}>Pigmentation</Link></li>
+                                            <li><Link href="/ageing" onClick={toggleMenu}>Ageing</Link></li>
+                                            <li><Link href="/excessive-hair-growth" onClick={toggleMenu}>Excessive Hair Growth</Link></li>
+                                            <li><Link href="/hair-loss" onClick={toggleMenu}>Hair Loss</Link></li>
+                                            <li><Link href="/eyes" onClick={toggleMenu}>Eyes</Link></li>
+                                            <li><Link href="/lips" onClick={toggleMenu}>Lips</Link></li>
+                                            <li><Link href="/hands-and-feet" onClick={toggleMenu}>Hands and Feet</Link></li>
+                                            <li><Link href="/body-contouring" onClick={toggleMenu}>Body Contouring</Link></li>
+                                            <li><Link href="/general-dermatology" onClick={toggleMenu}>General Dermatology</Link></li>
                                         </ul>
                                     </AccordionSection>
                                     <AccordionSection
@@ -251,8 +251,8 @@ const Header = () => {
                                             <li><Link href="/" onClick={toggleMenu}>Neofacial</Link></li>
                                             <li><Link href="/" onClick={toggleMenu}>Oxyglaze Medifacial</Link></li>
                                             <li><Link href="/" onClick={toggleMenu}>360 Medifacial</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Eye PRF Therapy</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Eye Restore Therapy</Link></li>
+                                            <li><Link href="/eye-pla-te-let-rich-fibrin-therapy" onClick={toggleMenu}>Eye PRF Therapy</Link></li>
+                                            <li><Link href="/eye-restore" onClick={toggleMenu}>Eye Restore Therapy</Link></li>
                                         </ul>
                                     </AccordionSection>
                                 </div>
@@ -278,57 +278,57 @@ const Header = () => {
                                     </div>
                                     {activeTab === 'concerns' && (
                                         <ul className={styles.menuList}>
-                                            <li><Link href="/" onClick={toggleMenu}>Acne</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Pigmentation</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Ageing</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Excessive Hair Growth</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Hair Loss</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Eyes</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Lips</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Hands and Feet</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Body Contouring</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>General Dermatology</Link></li>
+                                            <li><Link href="/acne" onClick={toggleMenu}>Acne</Link></li>
+                                            <li><Link href="/pigmentation" onClick={toggleMenu}>Pigmentation</Link></li>
+                                            <li><Link href="/ageing" onClick={toggleMenu}>Ageing</Link></li>
+                                            <li><Link href="/excessive-hair-growth" onClick={toggleMenu}>Excessive Hair Growth</Link></li>
+                                            <li><Link href="/hair-loss" onClick={toggleMenu}>Hair Loss</Link></li>
+                                            <li><Link href="/eyes" onClick={toggleMenu}>Eyes</Link></li>
+                                            <li><Link href="/lips" onClick={toggleMenu}>Lips</Link></li>
+                                            <li><Link href="/hands-and-feet" onClick={toggleMenu}>Hands and Feet</Link></li>
+                                            <li><Link href="/body-contouring" onClick={toggleMenu}>Body Contouring</Link></li>
+                                            <li><Link href="/general-dermatology" onClick={toggleMenu}>General Dermatology</Link></li>
                                         </ul>
                                     )}
                                     {activeTab === 'treatments' && (
                                         <div className={styles.treatmentList}>
                                             <ul>
-                                                <li><Link href="/" onClick={toggleMenu}>Anti Wrinkle Injection</Link></li>
+                                                <li><Link href="/anti-wrinkle-injection-in-gurgaon" onClick={toggleMenu}>Anti Wrinkle Injection</Link></li>
                                                 <li><Link href="/" onClick={toggleMenu}>Laser Resurfacing</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Bridal Dermatology</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Microblading</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Chemical Peels</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Microneedling</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Dermal Fillers</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Pumpkin Medifacial</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Exilis Elite</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Blood-derived Growth Factors</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Eye Restore Therapy</Link></li>
+                                                <li><Link href="/bridal-dermatology-treatment" onClick={toggleMenu}>Bridal Dermatology</Link></li>
+                                                <li><Link href="/microblading" onClick={toggleMenu}>Microblading</Link></li>
+                                                <li><Link href="/chemical-peel-treatment-in-gurgaon" onClick={toggleMenu}>Chemical Peels</Link></li>
+                                                <li><Link href="/microneedling" onClick={toggleMenu}>Microneedling</Link></li>
+                                                <li><Link href="/dermal-fillers-treatment-in-gurgaon" onClick={toggleMenu}>Dermal Fillers</Link></li>
+                                                <li><Link href="/pumpkin-medi-facial" onClick={toggleMenu}>Pumpkin Medifacial</Link></li>
+                                                <li><Link href="/exilis-elite" onClick={toggleMenu}>Exilis Elite</Link></li>
+                                                <li><Link href="/blood-derived-growth-factors" onClick={toggleMenu}>Blood-derived Growth Factors</Link></li>
+                                                <li><Link href="/eye-restore" onClick={toggleMenu}>Eye Restore Therapy</Link></li>
                                                 <li><Link href="/" onClick={toggleMenu}>PRF Therapy</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Hair GFC</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Repechage Medifacial</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>HIFU</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Tattoo Removal</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Hydrafacial MD</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Total Clearlift</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Laser Hair Reduction</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Zo Obagi Medifacial</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Morpheus8 Treatment</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Artiqa Body Contouring Treatment</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Laser Toning</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Exosomes Therapy</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>PDRN Therapy</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>SPMU</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Ultherapy</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Aptos Thread Lift</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Forma RF Skin Tightening</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Profhilo</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Aqua Restore 4D Facial</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>CO2 Fractional Laser Treatment</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Body Ballancer</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Intimate Area Lightening Treatment</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Rich Peel Advance</Link></li>
-                                                <li><Link href="/" onClick={toggleMenu}>Dermapen 4</Link></li>
+                                                <li><Link href="/gfc-hair-treatment-in-gurgaon" onClick={toggleMenu}>Hair GFC</Link></li>
+                                                <li><Link href="/repechage-medi-facial-in-gurgaon" onClick={toggleMenu}>Repechage Medifacial</Link></li>
+                                                <li><Link href="/hifu" onClick={toggleMenu}>HIFU</Link></li>
+                                                <li><Link href="/laser-tattoo-removal-treatment-in-gurgaon" onClick={toggleMenu}>Tattoo Removal</Link></li>
+                                                <li><Link href="/hydrafacial-md" onClick={toggleMenu}>Hydrafacial MD</Link></li>
+                                                <li><Link href="/clearlift-laser" onClick={toggleMenu}>Total Clearlift</Link></li>
+                                                <li><Link href="/laser-hair-reduction" onClick={toggleMenu}>Laser Hair Reduction</Link></li>
+                                                <li><Link href="/zo-obagi-medi-facial" onClick={toggleMenu}>Zo Obagi Medifacial</Link></li>
+                                                <li><Link href="/morpheus8-treatment-in-gurgaon" onClick={toggleMenu}>Morpheus8 Treatment</Link></li>
+                                                <li><Link href="/artiqa-body-contouring-treatment" onClick={toggleMenu}>Artiqa Body Contouring Treatment</Link></li>
+                                                <li><Link href="/laser-toning-in-gurgaon" onClick={toggleMenu}>Laser Toning</Link></li>
+                                                <li><Link href="/exosomes-therapy" onClick={toggleMenu}>Exosomes Therapy</Link></li>
+                                                <li><Link href="/pdrn-therapy" onClick={toggleMenu}>PDRN Therapy</Link></li>
+                                                <li><Link href="/spmu" onClick={toggleMenu}>SPMU</Link></li>
+                                                <li><Link href="/ultherapy" onClick={toggleMenu}>Ultherapy</Link></li>
+                                                <li><Link href="/aptos-thread-lift" onClick={toggleMenu}>Aptos Thread Lift</Link></li>
+                                                <li><Link href="/forma-rf-skin-tightening" onClick={toggleMenu}>Forma RF Skin Tightening</Link></li>
+                                                <li><Link href="/profhilo" onClick={toggleMenu}>Profhilo</Link></li>
+                                                <li><Link href="/aqua-restore-4d-facial-in-gurgaon" onClick={toggleMenu}>Aqua Restore 4D Facial</Link></li>
+                                                <li><Link href="/co2-fractional-laser-treatment" onClick={toggleMenu}>CO2 Fractional Laser Treatment</Link></li>
+                                                <li><Link href="/body-ballancer" onClick={toggleMenu}>Body Ballancer</Link></li>
+                                                <li><Link href="/intimate-area-lightening-treatment" onClick={toggleMenu}>Intimate Area Lightening Treatment</Link></li>
+                                                <li><Link href="/rich-peel-advance" onClick={toggleMenu}>Rich Peel Advance</Link></li>
+                                                <li><Link href="/dermapen-4" onClick={toggleMenu}>Dermapen 4</Link></li>
                                             </ul>
                                         </div>
                                     )}
@@ -342,8 +342,8 @@ const Header = () => {
                                             <li><Link href="/" onClick={toggleMenu}>Neofacial</Link></li>
                                             <li><Link href="/" onClick={toggleMenu}>Oxyglaze Medifacial</Link></li>
                                             <li><Link href="/" onClick={toggleMenu}>360 Medifacial</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Eye PRF Therapy</Link></li>
-                                            <li><Link href="/" onClick={toggleMenu}>Eye Restore Therapy</Link></li>
+                                            <li><Link href="/eye-pla-te-let-rich-fibrin-therapy" onClick={toggleMenu}>Eye PRF Therapy</Link></li>
+                                            <li><Link href="/eye-restore" onClick={toggleMenu}>Eye Restore Therapy</Link></li>
                                         </ul>
                                     )}
                                 </>

@@ -4,21 +4,55 @@ import AppointmentSection from '@/src/app/components/homepage/AppointmentSection
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 
 
-export const metadata: Metadata = {
-  title: "Book An Appointment | Dr. Niti Gaur | Citrine Clinic",
-  description: "Fix your appointment with Citrine Clinic and get yourself best treatments that give refreshed and rejuvenated skin.",
-  alternates: {
-    canonical: '/book-an-appointment',
-  },
-  openGraph: {
-    url: 'https://www.citrineclinic.com/book-an-appointment',
-  },
-};
 
 
-const BookAnAppointment = () => {
+
+
+const API_BASE = 'https://api.citrineclinic.com/api';
+
+async function getSeoData(slug: string) {
+  try {
+    const res = await fetch(`${API_BASE}/seo-tag/${slug}`, { next: { revalidate: 3600 } });
+    if (!res.ok) return null;
+    const json = await res.json();
+    if (!json || !json.seo) return null;
+    return json.seo;
+  } catch {
+    return null;
+  }
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeoData('book-an-appointment');
+  if (!seo) return { title: 'Citrine Clinic' };
+  return {
+    title: seo.title_tag || 'Citrine Clinic',
+    description: seo.description_tag || '',
+    keywords: seo.keyword_tag || undefined,
+    alternates: {
+      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/book-an-appointment',
+    },
+    openGraph: {
+      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'book-an-appointment'}`,
+      title: seo.title_tag || '',
+      description: seo.description_tag || '',
+    },
+  };
+}
+
+const BookAnAppointment = async () => {
+  const seo = await getSeoData('book-an-appointment');
+
     return (
         <>
+
+      {seo?.faq_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.faq_schema) }} />
+      )}
+      {seo?.bred_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.bred_schema) }} />
+      )}
+
           <Breadcrumb />
           <AppointmentSection />  
         </>

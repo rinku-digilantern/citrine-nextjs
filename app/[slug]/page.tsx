@@ -52,13 +52,33 @@ export default async function DynamicSlugPage({ params }: PageProps) {
   if (typeRes.type === "firstcategory") {
     const data = await getServiceCategoryData(slug);
     if (!data) return notFound();
-    return <CategoryTemplate data={data} />;
+    return (
+      <>
+        {data.seo?.faq_schema && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.faq_schema) }} />
+        )}
+        {data.seo?.bred_schema && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.bred_schema) }} />
+        )}
+        <CategoryTemplate data={data} />
+      </>
+    );
   } 
   
   if (typeRes.type === "service") {
     const data = await getServiceDetailData(slug);
     if (!data || !data.success) return notFound();
-    return <ServiceDetailTemplate data={data} />;
+    return (
+      <>
+        {data.seo?.faq_schema && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.faq_schema) }} />
+        )}
+        {data.seo?.bred_schema && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.bred_schema) }} />
+        )}
+        <ServiceDetailTemplate data={data} />
+      </>
+    );
   }
 
   return notFound();
