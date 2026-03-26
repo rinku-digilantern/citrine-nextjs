@@ -5,21 +5,55 @@ import FirstSection from '@/src/app/components/ServiceCategoryPage/FirstSection/
 import TableofContentcategory from '@/src/app/components/ServiceCategoryPage/TableofContentcategory/TableofContentcategory';
 import ColumnSection from '@/src/app/components/ServiceCategoryPage/ColumnSection/ColumnSection';
 
-export const metadata: Metadata = {
-  title: "Acne Treatment in Gurgaon | Citrine Clinic",
-  description: "Say goodbye to acne! Explore acne treatment in Gurgaon at Citrine Clinic. Transform your skin today for a radiant you. Contact Now!",
-  alternates: {
-    canonical: '/acne',
-  },
-  openGraph: {
-    url: 'https://www.citrineclinic.com/acne',
-  },
-};
 
 
-const ServiceCategory = () => {
+
+
+const API_BASE = 'https://api.citrineclinic.com/api';
+
+async function getSeoData(slug: string) {
+  try {
+    const res = await fetch(`${API_BASE}/seo-tag/${slug}`, { next: { revalidate: 3600 } });
+    if (!res.ok) return null;
+    const json = await res.json();
+    if (!json || !json.seo) return null;
+    return json.seo;
+  } catch {
+    return null;
+  }
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeoData('service-category');
+  if (!seo) return { title: 'Citrine Clinic' };
+  return {
+    title: seo.title_tag || 'Citrine Clinic',
+    description: seo.description_tag || '',
+    keywords: seo.keyword_tag || undefined,
+    alternates: {
+      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/service-category',
+    },
+    openGraph: {
+      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'service-category'}`,
+      title: seo.title_tag || '',
+      description: seo.description_tag || '',
+    },
+  };
+}
+
+const ServiceCategory = async () => {
+  const seo = await getSeoData('service-category');
+
     return (
         <>
+
+      {seo?.faq_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.faq_schema) }} />
+      )}
+      {seo?.bred_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.bred_schema) }} />
+      )}
+
           <FirstSection/>
           <TableofContentcategory />
           <ColumnSection/>

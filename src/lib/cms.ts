@@ -42,3 +42,16 @@ export async function getServiceDetailData(slug: string) {
     return null;
   }
 }
+
+export async function getSecondCategoryData(slug: string) {
+  try {
+    const res = await fetch(`${BASE_API_URL}/service-category/${slug}`, {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (error) {
+    console.error("Error fetching second category data:", error);
+    return null;
+  }
+}

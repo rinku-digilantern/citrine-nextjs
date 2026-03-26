@@ -27,6 +27,7 @@ interface ConcernItem {
 }
 
 interface ConcernPageProps {
+  title?: string;
   concernsData: ConcernItem[];
 }
 
@@ -36,7 +37,7 @@ const stripHtml = (html: string | null): string => {
   return html.replace(/<[^>]*>/g, '').trim();
 };
 
-const ConcernPage: React.FC<ConcernPageProps> = ({ concernsData }) => {
+const ConcernPage: React.FC<ConcernPageProps> = ({ title, concernsData }) => {
   const [visibleCount, setVisibleCount] = useState(6);
 
   // Safety check for undefined or null data
@@ -54,7 +55,7 @@ const ConcernPage: React.FC<ConcernPageProps> = ({ concernsData }) => {
       <div className={styles.wrapper}>
 
             <div className={styles.treatmentheader}>
-                <h1 className={`mainHeading ${styles.mainHeading}`}>Concerns</h1>
+                <h1 className={`mainHeading ${styles.mainHeading}`}>{title || "Concerns"}</h1>
             </div>
 
             <div className={styles.treatmentrow}>
