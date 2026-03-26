@@ -46,8 +46,12 @@ const MainBanner = () => {
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         const sectionHeight = section.offsetHeight;
+        
+        // Account for top spacing (header height)
+        const topSpacing = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-spacing') || '0', 10);
+        
         const scrollable = Math.max(sectionHeight - windowHeight, 0);
-        const scrolled = Math.min(Math.max(-rect.top, 0), scrollable);
+        const scrolled = Math.min(Math.max(-(rect.top - topSpacing), 0), scrollable);
         const percent = scrollable > 0 ? scrolled / scrollable : 0;
         const speed = 1;
         let fastPercent = percent * speed;
@@ -61,7 +65,8 @@ const MainBanner = () => {
           }
         }
         const nextX = -Math.round(fastPercent * maxTranslateRef.current);
-        targetXRef.current = scrolled <= 0 ? 0 : nextX;
+        const isReachedTop = (rect.top - topSpacing) <= 0;
+        targetXRef.current = !isReachedTop ? 0 : nextX;
       });
     };
 
@@ -138,14 +143,14 @@ const MainBanner = () => {
                 <div className={styles.wrapper}>
                   <div className={styles.content}>
                     <div className={styles.textContent}>
-                      <h1 className={`heading ${styles.heading}`}>REJUVENATE.<br />TRANSFORM.<br />GLOW.</h1>
+                      <h1 className={`heading ${styles.heading}`}>REJUVENATE.<br/>TRANSFORM.<br/>GLOW.</h1>
                     </div>
                     <div className={styles.textContent}>
                       <p className={styles.heroSubtitle}>Rejuvenate your skin with treatments that restore health from within. Transform your confidence as you glow with results that are natural, refined, and truly radiant.</p>
                     </div>
                     <div className={styles.btnbox}>
                       <Link href="/book-an-appointment" className={styles.primaryBtn}>BOOK APPOINTMENT</Link>
-                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -182,12 +187,12 @@ const MainBanner = () => {
                   </div>
                   <div className={styles.thirdright}>
                     <div className={styles.thirdrightContent}>
-                      <div className={`thirdheading ${styles.thirdheading}`}>DELHI, GET<br /> READY TO<br /> <span className={styles.glow}>GLOW</span> <span className={styles.sparkle}><Image src={`/assets/images/home/sparklestar.webp`} width={40} height={47} alt="Sparkle star" /></span></div>
+                      <div className={`thirdheading ${styles.thirdheading}`}>DELHI, GET<br/> READY TO<br/> <span className={styles.glow}>GLOW</span> <span className={styles.sparkle}><Image src={`/assets/images/home/sparklestar.webp`} width={40} height={47} alt="Sparkle star" /></span></div>
                       <div className={styles.launchBox}>
                         <div className={styles.launchClinic}>CITRINE CLINIC</div>
                         <div className={styles.launchSoon}>LAUNCHING SOON</div>
                       </div>
-                      <div className={styles.thirdrightDesc}>World-Class Skin, Hair & Body<br /> Treatments</div>
+                      <div className={styles.thirdrightDesc}>World-Class Skin, Hair & Body<br/> Treatments</div>
                     </div>
                   </div>
                 </div>
