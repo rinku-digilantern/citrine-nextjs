@@ -387,6 +387,8 @@ color: var(--default-color);margin: 15px 0 10px 0px;font-size: 22px;font-weight:
   background: var(--accent-color);
   color: #fff;
 }
+
+
 @media (max-width: 1400.98px) and (min-width: 1301px) {
 .container{width: 92%; margin: 0 auto;max-width: 92%;}
 }
@@ -557,6 +559,3 @@ color: var(--default-color);margin: 15px 0 10px 0px;font-size: 22px;font-weight:
 .postNavigation {gap: 8px;margin: 15px 0;}
 .shareColumn {z-index: unset;flex-shrink: 0; margin: 0 auto;align-self: flex-start;width: 92%;position: relative;top: unset;}
 }
-
-
-

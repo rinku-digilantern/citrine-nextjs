@@ -196,10 +196,10 @@
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-.testimonialsSection{padding: 1.5rem 10px 60px 10px;}
+.testimonialsSection{padding: 1.5rem 0px 60px 0px;}
 .mainHeading {letter-spacing: 0px;margin-bottom: 15px;}
 .mainHeading br{display: none;}
-.container{max-width: 100%;}
+.container{max-width: 92%;}
 .previousButtons {width: 50px;height: 30px;top:unset;left: 34%;bottom: -55px;}
 .nextButtons {width: 50px;height: 30px;right:34%;top:unset;bottom: -55px;}
 .emblaSlide {flex: 0 0 100%;padding: 0px;}

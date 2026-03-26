@@ -267,7 +267,7 @@ overflow: hidden;
 .heropanel{height: 100vh;height: 100dvh;width: 250vw;}
 .contentpanel {height:100vh;height: 100dvh;flex: unset;display: flex;flex-direction: column;justify-content: center;width: 100vw;}
 .bgwrap {width: 100vw;min-width: 100vw;height: 45vh; height: 45dvh;}
-.citrinecontentbox {width: 100%; margin: 15px auto 0 auto;margin-right: auto;padding: 12px;height: 55vh; height: 55dvh;}
+.citrinecontentbox {width: 100%; margin: 15px auto 0 auto;margin-right: auto;padding: 15px;height: 55vh; height: 55dvh;}
 .aboutlist {margin: 0 0 15px 0px;max-height: 140px;}
 .aboutlistitem{margin-bottom: 3px;font-size: 15px; grid-template-columns: 24px 1fr; gap: 8px;}
 .aboutlisticon{width:24px;height:24px}

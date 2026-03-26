@@ -164,6 +164,13 @@ address {float: right;width: 46%;text-align: right;margin-left: 1rem;}
 .innerfaqsection ul, .innerfaqsection ol {margin-bottom: 15px;}
 .innerfaqsection ul li, .innerfaqsection ol li {margin-bottom: 10px;font-size: 18px;}
 
+/* Start of table */
+.table-responsive {display: block;width: 100%;overflow-x: auto;-webkit-overflow-scrolling: touch;-ms-overflow-style: -ms-autohiding-scrollbar;}
+table { border: 1px solid #E5D7C3; border-collapse: collapse; border-spacing: 0; text-align: left; background-color: var(--footer-bg); margin: 12px 0; font-family: var(--font-poppins), sans-serif; }
+table th { font-weight: 600; background: rgb(246, 234, 219); vertical-align: top; font-size: 18px; }
+table td { padding: 8px 12px; vertical-align: top; border: 1px solid #E5D7C3; font-size: 18px; }
+/* Removed duplicate/invalid global table-row border rule that caused double borders */
+
 /* Wrapper */
 .wrapper {
   width: 100%;
@@ -845,7 +852,8 @@ address {float: right;width: 46%;text-align: right;margin-left: 1rem;}
   .mainHeading {
     font-size: 45px;
   }
-
+ table th{vertical-align: top;font-size: 16px;}
+ table td{padding: 6px 10px;font-size: 16px;}
   .subheading {
     margin-bottom: 15px;
     font-size: 45px;
@@ -857,7 +865,8 @@ address {float: right;width: 46%;text-align: right;margin-left: 1rem;}
   .mainHeading {
     font-size: 40px;
   }
-
+ table th{vertical-align: top;font-size: 16px;}
+ table td{padding: 6px 10px;font-size: 16px;}
   .subheading {
     margin-bottom: 15px;
     font-size: 40px;
@@ -869,7 +878,8 @@ address {float: right;width: 46%;text-align: right;margin-left: 1rem;}
   .mainHeading {
     font-size: 40px;
   }
-
+ table th{vertical-align: top;font-size: 16px;}
+ table td{padding: 6px 10px;font-size: 16px;}
   .subheading {
     margin-bottom: 15px;
     font-size: 40px;
@@ -891,6 +901,8 @@ address {float: right;width: 46%;text-align: right;margin-left: 1rem;}
     margin-bottom: 15px;
     font-size: 30px;
   }
+ table th{vertical-align: top;font-size: 15px;}
+ table td{padding: 5px 8px;font-size: 15px;}
 }
 
 /* Start of Iphone/Mobile Screen */
@@ -928,6 +940,9 @@ address {float: right;width: 46%;text-align: right;margin-left: 1rem;}
   .dblock {
     display: block;
   }
+ table { margin: 10px 0;}
+ table th{vertical-align: top;font-size: 15px;}
+ table td{padding: 5px 8px;font-size: 15px;}
   .marker a {padding: 7px 10px;font-size: 15px;}
   address {float: none;text-align: center;width: 100%;margin-left: 0rem; margin-bottom: 10px;}
   .innerfaqsection h3 {padding: 5px 10px;font-size: 16px !important;line-height: 1.4;}
