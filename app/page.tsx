@@ -51,7 +51,7 @@ export default async function Home() {
   const seo = await getSeoData('home');
 
   return (
-   <>
+    <>
 
       {seo?.faq_schema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.faq_schema) }} />
@@ -71,7 +71,7 @@ export default async function Home() {
       <Philosophy />
       <DoctorSection />
       <PatientTestimonials />
-      <CitrineClinicSection/>
+      <CitrineClinicSection />
       <OurVideos />
       <AppointmentSection />
     </>

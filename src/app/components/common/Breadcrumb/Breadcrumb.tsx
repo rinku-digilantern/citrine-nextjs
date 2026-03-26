@@ -19,14 +19,22 @@ const Breadcrumb = () => {
     paths.forEach((path) => {
       currentPath += `/${path}`;
       // Convert kebab-case to Title Case
-      const label = path
+      let label = path
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
       
+      let href = currentPath;
+
+      // Custom override for blog posts
+      if (path === 'blog-post') {
+        label = 'Blog';
+        href = '/blog';
+      }
+      
       breadcrumbs.push({
         label,
-        href: currentPath
+        href
       });
     });
 

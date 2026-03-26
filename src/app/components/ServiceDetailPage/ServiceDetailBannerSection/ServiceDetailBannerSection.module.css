@@ -8,6 +8,7 @@
   overflow: hidden;
   box-sizing: border-box;
 }
+
 .ServiceDetailBannerSection::before {
   content: '';
   position: absolute;
@@ -15,12 +16,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.02); 
+  background: rgba(0, 0, 0, 0.02);
   z-index: 0;
   display: none;
 }
 
-.bannerImage{
+.bannerImage {
   position: absolute;
   top: 0;
   left: 0;
@@ -29,44 +30,129 @@
   object-fit: cover;
   z-index: 1;
 }
-.container {max-width: 92%;margin: 0 0 0 7%;}
-.textSection {display: flex;align-items: center;justify-content: flex-start;height: 100%;position: relative;z-index: 2;}
-.mainHeading {color: var(--default-color);text-transform: uppercase;font-weight: 400;letter-spacing: 2px;font-size: 45px;}
+
+.container {
+  max-width: 92%;
+  margin: 0 0 0 7%;
+}
+
+.textSection {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  width: 55%;
+}
+
+.mainHeading {
+  color: var(--default-color);
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 45px;
+  line-height: 1.2;
+}
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 1500.98px) and (min-width: 1101px) {
-.ServiceDetailBannerSection {width: 100%;height: 380px;}
-.mainHeading {letter-spacing: 0px;font-size: 40px;}
-.container {max-width: 92%;margin: 0 0 0 4%;}
+  .ServiceDetailBannerSection {
+    width: 100%;
+    height: 380px;
+  }
+
+  .mainHeading {
+    letter-spacing: 0px;
+    font-size: 40px;
+  }
+
+  .container {
+    max-width: 92%;
+    margin: 0 0 0 4%;
+  }
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 1100.98px) and (min-width: 992px) {
-.ServiceDetailBannerSection {width: 100%;height: 300px;}
-.mainHeading {letter-spacing: 0px;font-size: 35px;}
-.container {max-width: 92%;margin: 0 0 0 3%;}
+  .ServiceDetailBannerSection {
+    width: 100%;
+    height: 300px;
+  }
+
+  .mainHeading {
+    letter-spacing: 0px;
+    font-size: 35px;
+  }
+
+  .container {
+    max-width: 92%;
+    margin: 0 0 0 3%;
+  }
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 991.98px) and (min-width: 768px) {
-.ServiceDetailBannerSection {width: 100%;height: 300px;}
-.mainHeading {letter-spacing: 0px;font-size: 30px;}
-.container {max-width: 92%;margin: 0 0 0 3%;}
+  .ServiceDetailBannerSection {
+    width: 100%;
+    height: 300px;
+  }
+
+  .mainHeading {
+    letter-spacing: 0px;
+    font-size: 30px;
+  }
+
+  .container {
+    max-width: 92%;
+    margin: 0 0 0 3%;
+  }
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 767.98px) and (min-width: 600px) {
-.ServiceDetailBannerSection {width: 100%;height: 280px;}
-.mainHeading {letter-spacing: 0px;font-size: 30px;}
-.container {max-width: 92%;margin: 0 0 0 3%;}
+  .ServiceDetailBannerSection {
+    width: 100%;
+    height: 280px;
+  }
+
+  .mainHeading {
+    letter-spacing: 0px;
+    font-size: 30px;
+  }
+
+  .container {
+    max-width: 92%;
+    margin: 0 0 0 3%;
+  }
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-.ServiceDetailBannerSection {width: 100%;height: 200px;}
-.mainHeading {letter-spacing: 0px;font-size: 20px;}
-.container {max-width: 92%;margin: 0 0 0 2%;}
-.ServiceDetailBannerSection{height: 130px;}
-.ServiceDetailFirstSection{padding: 1.5rem 0;}
-.textSection{width: 65%;}
+  .ServiceDetailBannerSection {
+    width: 100%;
+    height: 200px;
+  }
+
+  .mainHeading {
+    letter-spacing: 0px;
+    font-size: 20px;
+  }
+
+  .container {
+    max-width: 92%;
+    margin: 0 0 0 2%;
+  }
+
+  .ServiceDetailBannerSection {
+    height: 130px;
+  }
+
+  .ServiceDetailFirstSection {
+    padding: 1.5rem 0;
+  }
+
+  .textSection {
+    width: 65%;
+  }
 }

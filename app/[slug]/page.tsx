@@ -1,7 +1,10 @@
 import { Metadata } from 'next';
-import { getServiceType, getServiceCategoryData, getServiceDetailData } from '@/src/lib/cms';
+import { getServiceType, getServiceCategoryData, getServiceDetailData, getSecondCategoryData } from '@/src/lib/cms';
 import CategoryTemplate from '@/src/app/components/dynamic/CategoryTemplate';
 import ServiceDetailTemplate from '@/src/app/components/dynamic/ServiceDetailTemplate';
+import ConcernPage from '@/src/app/components/ConcernPage/ConcernPage';
+import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
+import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
 import { notFound } from 'next/navigation';
 
 interface PageProps {
@@ -17,6 +20,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   let seoData;
   if (typeRes.type === "firstcategory") {
     const data = await getServiceCategoryData(slug);
+    seoData = data?.seo;
+  } else if (typeRes.type === "secondcategory") {
+    const data = await getSecondCategoryData(slug);
     seoData = data?.seo;
   } else if (typeRes.type === "service") {
     const data = await getServiceDetailData(slug);
@@ -64,6 +70,38 @@ export default async function DynamicSlugPage({ params }: PageProps) {
       </>
     );
   } 
+
+  if (typeRes.type === "secondcategory") {
+    const data = await getSecondCategoryData(slug);
+    if (!data || !data.success) return notFound();
+
+    // Map the servicelist into the structure ConcernPage expects:
+    const mappedConcerns = data.data?.servicelist?.map((item: any) => ({
+      id: item.ser_id,
+      name: item.service_name,
+      image: item.service_image,
+      short_desc: item.short_desc || '',
+      alt_tag: item.alt_tag || item.service_name,
+      url: item.url,
+      description: item.short_desc || '',
+      design_type: '',
+      inner: []
+    })) || [];
+
+    return (
+      <>
+        {data.seo?.faq_schema && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.faq_schema) }} />
+        )}
+        {data.seo?.bred_schema && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.bred_schema) }} />
+        )}
+        <Breadcrumb />
+        <ConcernPage title={data.data?.service_name} concernsData={mappedConcerns} />
+        <AppointmentSection />
+      </>
+    );
+  }
   
   if (typeRes.type === "service") {
     const data = await getServiceDetailData(slug);
