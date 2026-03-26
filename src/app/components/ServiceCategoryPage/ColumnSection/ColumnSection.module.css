@@ -79,7 +79,7 @@
 }
 
 .mainHeading {
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 400;
   color: var(--default-color);
   margin: 0 0 10px 0;
@@ -95,6 +95,7 @@
   color: var(--default-color);
   margin: 0 0 25px 0;
 }
+.description p{ font-size: 18px;}
 
 .treatmentLabel {
   font-size: 14px;

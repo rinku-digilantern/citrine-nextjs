@@ -11,25 +11,25 @@ const OurVideos = () => {
 
   const videos = [
     {
-      thumbnail: '/assets/images/home/videos01.webp',
-      alt: 'Dr Niti Gaur and Heena Kapoor',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+      thumbnail: '/assets/images/home/video01.webp',
+      alt: 'Weight Loss के बाद Loose Skin से परेशान? बिना सर्जरी स्किन टाइट करें',
+      videoUrl: 'https://youtube.com/embed/ISq44JIxGow'
     },
     {
-      thumbnail: '/assets/images/home/videos02.webp',
-      alt: 'Dr Niti Gaur and Jannat Arora',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+      thumbnail: '/assets/images/home/video02.webp',
+      alt: 'Men vs Women: Who Really Ages Faster?',
+      videoUrl: 'https://youtube.com/embed/RLl6acl2IwQ'
     },
     {
-      thumbnail: '/assets/images/home/videos03.webp',
-      alt: 'Patient consultation video',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+      thumbnail: '/assets/images/home/video03.webp',
+      alt: 'Thread Lift — Natural Face Lift Without Surgery',
+      videoUrl: 'https://youtube.com/embed/twIBEOvdOyc'
     },
     {
-      thumbnail: '/assets/images/home/videos04.webp',
+      thumbnail: '/assets/images/home/video04.webp',
       stats: { likes: 310, views: 480 },
-      alt: 'Pre Bridal Skincare Tips',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+      alt: 'Proud to be part of the Skin Longevity Summit by Eucerin in Hamburg.',
+      videoUrl: 'https://youtube.com/embed/-RI94RR41P8'
     }
   ];
 
@@ -57,16 +57,14 @@ const OurVideos = () => {
                   alt={video.alt}
                   width={310}
                   height={480}
-                  className={styles.thumbnail}
-                />
+                  className={styles.thumbnail}/>
                 <a 
                   href="#" 
                   className={styles.overlay}
                   onClick={(e) => {
                     e.preventDefault();
                     openModal(video.videoUrl);
-                  }}
-                >
+                  }}>
                   <button className={styles.playButton} aria-label="Play Video">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
                       <path d="M8 5v14l11-7L8 5z" fill="currentColor"/>

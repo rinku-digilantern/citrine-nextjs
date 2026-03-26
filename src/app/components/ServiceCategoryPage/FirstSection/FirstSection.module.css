@@ -85,7 +85,7 @@
 }
 
 .mainHeading {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 400;
   text-transform: uppercase;
   font-family: var(--font-montserrat), sans-serif;
@@ -93,7 +93,6 @@
   line-height: 1.2;
   margin: 0 0 20px 0;
 }
-
 .description {
   font-size: 18px;
   font-weight: 400;
@@ -101,6 +100,7 @@
   line-height: 1.8;
   font-family: var(--font-poppins), sans-serif;
 }
+.description p{ font-size: 18px;}
 
 .rightContent {
   flex: 1;

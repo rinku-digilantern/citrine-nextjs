@@ -29,6 +29,7 @@ const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ data }) =
       <ServiceDetailFirstSection
         heading={service.service_name}
         description={service.description}
+        headingtag="h1"
       // image={service.service_image ? `https://api.citrineclinic.com/backend/service/section/${service.service_image}` : undefined}
       />
 
@@ -54,6 +55,7 @@ const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ data }) =
               heading={sec.section_heading}
               content={sec.section1}
               classAdd={sec.class_add}
+              headingtag={sec.heading_tag || 'div'}
             />
           );
         }
@@ -67,19 +69,24 @@ const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ data }) =
               description={sec.service_comman}
               section1={sec.type === 'imagetext' ? `<img src="${bgimageUrl + sec.image}" alt="${sec.section_heading}" />` : sec.section1}
               section2={sec.section2 || (sec.type === 'imagetext' ? sec.section1 : undefined)}
+              headingtag={sec.heading_tag || 'div'}
             />
           );
         }
 
         // Fallback to SecondSection (centered style) for other segments
+        if (['imagetext', 'rightimagetext'].includes(sec.type)) {
         return (
           <ServiceDetailSecondSection
             key={idx}
             heading={sec.section_heading}
             content={sec.section1}
             classAdd={sec.class_add}
+            image={sec.image ? `https://api.citrineclinic.com/backend/service/section/${sec.image}` : undefined}
+            headingtag={sec.heading_tag || 'div'}
           />
         );
+        }
       })}
 
       <AppointmentSection />

@@ -1,6 +1,6 @@
 .ServiceDetailFirstSection {
-  padding: 80px 0;
-  background: #f8f4ed; /* Light tan color from дизайн */
+  padding: 50px 0;
+  background: var(--footer-bg); 
 }
 
 .container {
@@ -24,9 +24,9 @@
 }
 
 .mainHeading {
-  font-size: 45px;
-  font-weight: 500;
-  margin-bottom: 25px;
+  font-size: 40px;
+  font-weight: 400;
+  margin-bottom: 10px;
   color: var(--default-color);
 }
 
@@ -40,33 +40,42 @@
 }
 
 .description big {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 500;
   color: var(--accent-color);
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   background: white;
   padding: 10px 20px;
   border: 1px solid #ddd;
   display: inline-block;
-  border-radius: 4px;
 }
-
-.description h3 {
-  font-size: 28px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+.description h2 {
+  font-size: 40px;
+  margin-top: 10px;font-weight: 400;
+  margin-bottom: 10px;color: var(--default-color);
   color: var(--default-color);
 }
-
-.description ul {
+.description h3 {
+  font-size: 40px;
+  margin-top: 10px;font-weight: 400;
+  margin-bottom: 10px;color: var(--default-color);
+  color: var(--default-color);
+}
+.description p{
+  font-size: 18px;
+  line-height: 1.8;
+}
+.description ul, .description ol {
   padding-left: 20px;
   margin-bottom: 25px;
 }
+.description big{margin-bottom: 0px;}
 
-.description li {
-  margin-bottom: 12px;
+.description ul li, .description ol li {
+  margin-bottom: 12px;font-size: 18px; color: var(--default-color); line-height: 1.8;
 }
+.description ul li::marker, .description ol li::marker{color: var(--accent-color);}
 
 .treatmentImage {
   width: 100%;
@@ -75,8 +84,63 @@
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-@media (max-width: 992px) {
-  .contentRow { flex-direction: column; }
-  .leftContent, .rightContent { max-width: 100%; }
-  .mainHeading { font-size: 32px; }
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+.ServiceDetailFirstSection{background: var(--footer-bg);padding:2rem 0;}
+.container {width: 92%;max-width: 92%;}
+.mainHeading { font-size: 30px;margin-bottom: 10px; }
+.description p {font-size: 16px;line-height: 1.8;}
+.description h2 {font-size: 30px;margin-top: 15px;margin-bottom: 10px;}
+.description h3 {font-size: 30px;margin-top: 15px;margin-bottom: 10px;}
+.description ul, .description ol {margin-bottom: 10px;}
+.description ul li, .description ol li {margin-bottom: 8px;font-size: 16px;}
+.description big {font-size: 16px;font-weight: 500;padding:5px 10px;}
+}
+
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.ServiceDetailFirstSection{background: var(--footer-bg);padding:2rem 0;}
+.container {width: 92%;max-width: 92%;}
+.mainHeading { font-size: 30px;margin-bottom: 10px; }
+.description p {font-size: 16px;line-height: 1.8;}
+.description h2 {font-size: 30px;margin-top: 15px;margin-bottom: 10px;}
+.description h3 {font-size: 30px;margin-top: 15px;margin-bottom: 10px;}
+.description ul, .description ol {margin-bottom: 10px;}
+.description ul li, .description ol li {margin-bottom: 8px;font-size: 16px;}
+.description big {font-size: 16px;font-weight: 500;padding:5px 10px;}
+}
+
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.ServiceDetailFirstSection{background: var(--footer-bg);padding:2rem 0;}
+.container {width: 92%;max-width: 92%;}
+.mainHeading { font-size: 30px;margin-bottom: 10px; }
+.description p {font-size: 16px;line-height: 1.8;}
+.description h2 {font-size: 30px;margin-top: 15px;margin-bottom: 10px;}
+.description h3 {font-size: 30px;margin-top: 15px;margin-bottom: 10px;}
+.description ul, .description ol {margin-bottom: 10px;}
+.description ul li, .description ol li {margin-bottom: 8px;font-size: 16px;}
+.description big {font-size: 16px;font-weight: 500;padding:5px 10px;}
+}
+
+@media (max-width: 991.98px) and (min-width: 320px) {
+.ServiceDetailFirstSection{background: var(--footer-bg);padding:2rem 0;}
+.container {width: 92%;max-width: 92%;}
+.mainHeading { font-size: 30px;margin-bottom: 10px; }
+.description p {font-size: 16px;line-height: 1.8;}
+.description h2 {font-size: 30px;margin-top: 15px;margin-bottom: 10px;}
+.description h3 {font-size: 30px;margin-top: 15px;margin-bottom: 10px;}
+.description ul, .description ol {margin-bottom: 10px;}
+.description ul li, .description ol li {margin-bottom: 8px;font-size: 16px;}
+.description big {font-size: 16px;font-weight: 500;padding:5px 10px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 320px) {
+.ServiceDetailFirstSection{background: var(--footer-bg);padding:1.5rem 0;}
+.container {width: 92%;max-width: 92%;}
+.mainHeading { font-size: 24px;margin-bottom: 8px; }
+.description p {font-size: 16px;line-height: 1.8;}
+.description h2 {font-size: 24px;margin-top: 15px;margin-bottom: 8px;}
+.description h3 {font-size: 24px;margin-top: 15px;margin-bottom: 8px;}
+.description ul, .description ol {margin-bottom: 10px;}
+.description ul li, .description ol li {margin-bottom: 5px;font-size: 16px;}
+.description big {font-size: 16px;font-weight: 500;padding:5px 10px;}
 }

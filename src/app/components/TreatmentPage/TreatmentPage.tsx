@@ -59,11 +59,11 @@ const TreatmentPage: React.FC<TreatmentPageProps> = ({ treatmentsData, categoryN
                     />
                   </div>
                   <div className={styles.details}>
-                    <Link href={`/treatments/${treatment.url}`}>
+                    <Link href={`/${treatment.url}`}>
                       <div className={styles.trtitle}>{treatment.name}</div>
                     </Link>
                     {/* <p>{treatment.short_desc ? stripHtml(treatment.short_desc) : stripHtml(treatment.description)}</p> */}
-                    <Link href={`/treatments/${treatment.url}`} className={styles.viewmore}>
+                    <Link href={`/${treatment.url}`} className={styles.viewmore}>
                       Read More
                     </Link>
                   </div>

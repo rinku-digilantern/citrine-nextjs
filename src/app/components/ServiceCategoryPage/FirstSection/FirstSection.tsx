@@ -34,7 +34,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({ data }) => {
             <h1 className={styles.mainHeading}>{content.name}</h1>
             <div className={styles.description} dangerouslySetInnerHTML={{ __html: content.description }} />
             <div className={styles.buttonrow}>
-              <Link href="/" aria-label="Book an Appointment" className={styles.bookbtn}>Book an Appointment</Link>
+              <Link href="/book-an-appointment" aria-label="Book an Appointment" className={styles.bookbtn}>Book an Appointment</Link>
             </div>
           </div>
           <div className={styles.rightContent}>

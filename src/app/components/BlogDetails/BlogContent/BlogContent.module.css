@@ -18,24 +18,7 @@
 .tocListWrapper {
   display: block;
 }
-@media (max-width: 900px) {
-  .tocTitle {
-    display: none;
-  }
-  .tocTitleMobile {
-    display: block;
-  }
-  .tocListWrapper {
-    display: none;
-    transition: max-height 0.3s;
-    overflow: hidden;
-    background: #fff;
-    border-bottom: 1px solid #e5d7c3;
-  }
-  .tocListWrapper.open {
-    display: block;
-  }
-}
+.blogBody h1{font-size: 28px; margin-bottom: 10px;font-weight: 600; color: var(--default-color);}
 .BlogContent{width: 100%;background: #fbf4ea;}
 .container{  max-width: 1320px;margin: 0 auto;padding: 0px;}
 .blogLayout {
@@ -120,10 +103,16 @@
   color: var(--default-color);
 }
 .contentColumn h2 {
-  font-size: 22px;
+  font-size: 26px;
   color: var(--default-color);
   margin: 32px 0 12px 0;
   font-weight: 600;
+}
+.blogBody h2, .finalThoughts h2, .contentColumn h2 {
+color: var(--default-color);margin: 15px 0 10px 0px;font-size: 24px;font-weight: 600;
+}
+.blogBody h3, .finalThoughts h3, .contentColumn h3{
+color: var(--default-color);margin: 15px 0 10px 0px;font-size: 22px;font-weight: 600;
 }
 .pigmentList {
   margin: 0 0 24px 0;
@@ -176,8 +165,8 @@
   width: 100%;
 }
 .faqsection{padding: 0px;}
-.faqsection h2{font-size: 22px;color: var(--default-color);margin: 20px 0 20px 0;font-weight: 600;}
-.faqsection h3{font-size: 20px;color: var(--default-color);margin: 20px 0 10px 0;font-weight: 600;}
+.faqsection h2{font-size: 25px;color: var(--default-color);margin: 20px 0 20px 0;font-weight: 600;}
+.faqsection h3{font-size: 18px;color: var(--default-color);margin: 20px 0 10px 0;font-weight: 600;}
 .faqsection p{margin-bottom: 15px;}
 .faqsection ul {
   margin: 0 0 24px 0;
@@ -201,8 +190,6 @@
   color: var(--default-color);
 }
 .faqsection ol li::before{font-weight:bold;color: var(--accent-color);}
-
-
 .authorSection {
   margin: 20px 0 24px 0;
 }
@@ -337,22 +324,214 @@
 .shareList a img {
   width: 24px;height: 24px;text-align: center;vertical-align: middle; margin-left: 10px;
 }
+.blogBody p,
+.contentColumn p,
+.finalThoughts p {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+}
+.blogBody ul,
+.blogBody ol,
+.finalThoughts ul,
+.finalThoughts ol {
+  margin: 0 0 10px 0;
+  padding-left: 24px;
+}
+.blogBody ul li,
+.finalThoughts ul li {
+  margin-bottom: 5px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: var(--default-color);
+}
+.blogBody ol li,
+.finalThoughts ol li {
+  margin-bottom: 5px;
+  line-height: 1.8;
+  font-size: 18px;
+  color: var(--default-color);
+}
+.blogBody li::marker,
+.finalThoughts li::marker{
+  color: var(--accent-color);
+}
+.blogBody strong,
+.finalThoughts strong { font-weight: 600; }
+.blogBody a,
+.finalThoughts a {
+  color: var(--default-color);
+  text-decoration: underline;
+}
+
+/* Prev / Next post navigation */
+.postNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  gap: 10px;
+}
+.navPrev,
+.navNext {
+  color: var(--accent-color);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 16px;font-family: var(--font-poppins);
+  padding: 10px 16px;
+  border: 1px solid var(--accent-color);
+  transition: background 0.2s, color 0.2s;
+}
+.navPrev:hover,
+.navNext:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.container{width: 92%; margin: 0 auto;max-width: 92%;}
+}
+
+@media (max-width: 1300.98px) and (min-width: 1101px) {
+.container{width: 92%; margin: 0 auto;max-width: 92%;}
+.blogBody p, .finalThoughts p, .contentColumn p {margin-bottom: 10px;font-size: 16px;}
+.blogBody h1 {font-size: 24px;}
+.blogBody ul li, 
+.finalThoughts ul li {margin-bottom: 5px;font-size: 16px;}
+.blogBody ol li, 
+.finalThoughts ol li {margin-bottom: 5px;font-size: 16px;}
+.blogBody h2, .contentColumn h2, .finalThoughts h2 {margin: 12px 0 12px 0px;font-size: 20px;}
+.authorSection {margin: 15px 0 15px 0;}
+.authorImage {width: 100px;height: 100px;}
+.authorInfo{align-items: flex-start;}
+.authorInfo img {width: 120px;height: 120px;}
+.authorName {font-size: 20px;margin-bottom: 5px;}
+.authorDesc {font-size: 16px;}
+}
+
+/* Start of Ipad Screen */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.tocTitle {display: none;}
+.tocTitleMobile {display: block;}
+.tocListWrapper {display: none;transition: max-height 0.3s; overflow: hidden;background: #fff;border-bottom: 1px solid #e5d7c3;}
+.tocListWrapper.open {display: block;}
+.container{width: 92%; margin: 0 auto;max-width: 92%;}
+.blogLayout {gap: 10px;padding: 120px 0px 20px;display: block;}
+.tocBox{padding-left: 12px; padding-right: 12px;}
+.tocColumn {z-index: 2;flex-shrink: 0;background: #fff;box-shadow: 0 2px 6px 0 rgba(99, 99, 99, .2);
+  align-self: flex-start;width: 100%;position: sticky;top: 74px; margin-bottom: 25px;}
+.tocTitle {margin-bottom: 12px;}
+.tocArrow {margin-left: 0px;font-size: 12px;margin-top: 4px;}
+.tocTitleMobile {border-bottom:0px;font-size: 16px;padding: 10px 0;}
+.tocList li {border-left: 1px solid #0000; margin-top: 10px;font-size: 16px;
+  padding: 2px 0;margin-bottom: 5px; margin-left: 12px; margin-right: 12px;}
+.contentColumn {flex: unset;max-width: 100%;padding: 0 0px 0 0;width: 100%; margin: 0 auto;}
+.blogBody p, .finalThoughts p, .contentColumn p {margin-bottom: 10px;font-size: 16px;}
+.blogBody h1 {font-size: 24px;}
+.blogBody ul li, 
+.finalThoughts ul li {margin-bottom: 5px;font-size: 16px;}
+.blogBody ol li, 
+.finalThoughts ol li {margin-bottom: 5px;font-size: 16px;}
+.blogBody h2, .contentColumn h2, .finalThoughts h2 {margin: 12px 0 12px 0px;font-size: 20px;}
+.pigmentList {margin: 0 0 15px 0px;padding-left: 20px;}
+.pigmentList li {margin-bottom: 3px;font-size: 16px;}
+.pigmentList li {margin-bottom: 3px;font-size: 16px;}
+.pigmentListdecimal ol{margin-top: 1rem;}
+.pigmentListdecimal li {margin-bottom: 5px;padding-left: 30px;font-size: 16px;}
+.pigmentListdecimal li:before {width: 22px;height: 22px;margin-right: 8px;font-size: 16px;}
+.faqsection h3 {margin: 12px 0 8px;font-size: 18px;}
+.faqsection ul {margin: 0 0 15px 0px;padding-left: 20px;}
+.faqsection ul li {margin-bottom: 3px;font-size: 16px;}
+.faqsection ol {margin: 0 0 15px 0px;padding-left: 20px;}
+.faqsection ol li {margin-bottom: 3px;font-size: 16px;}
+.authorSection {margin: 15px 0 15px 0;}
+.authorImage {width: 100px;height: 100px;}
+.authorInfo{align-items: flex-start;}
+.authorInfo img {width: 120px;height: 120px;}
+.authorName {font-size: 20px;margin-bottom: 5px;}
+.authorDesc {font-size: 16px;}
+.treatmentSection {min-height: auto;margin: 0 0 15px 0px;}
+.treatmentImage img{width: 100%;}
+.treatmentBox {padding: 15px 12px;}
+.treatmentTitle {margin-bottom: 5px;font-size: 20px;}
+.shareColumn {z-index: unset;flex-shrink: 0; margin: 0 auto;align-self: flex-start;width: 92%;position: relative;top: unset;}
+}
+
+/* Start of Ipad Screen */
+@media (max-width: 991.98px) and (min-width: 768px) {
+
+/* Start of table of content */
+.tocTitle {display: none;}
+.tocTitleMobile {display: block;}
+.tocListWrapper {display: none;transition: max-height 0.3s; overflow: hidden;background: #fff;border-bottom: 1px solid #e5d7c3;}
+.tocListWrapper.open {display: block;}
+
+.container{width: 92%; margin: 0 auto;max-width: 92%;}
+.blogLayout {gap: 10px;padding: 120px 0px 20px;display: block;}
+.tocBox{padding-left: 12px; padding-right: 12px;}
+.tocColumn {z-index: 2;flex-shrink: 0;background: #fff;box-shadow: 0 2px 6px 0 rgba(99, 99, 99, .2);
+  align-self: flex-start;width: 100%;position: sticky;top: 64px; margin-bottom: 25px;}
+.tocTitle {margin-bottom: 12px;}
+.tocArrow {margin-left: 0px;font-size: 12px;margin-top: 4px;}
+.tocTitleMobile {border-bottom:0px;font-size: 16px;padding: 10px 0;}
+.tocList li {border-left: 1px solid #0000; margin-top: 10px;font-size: 16px;
+  padding: 2px 0;margin-bottom: 5px; margin-left: 12px; margin-right: 12px;}
+.contentColumn {flex: unset;max-width: 100%;padding: 0 0px 0 0;width: 100%; margin: 0 auto;}
+.blogBody p, .finalThoughts p, .contentColumn p {margin-bottom: 10px;font-size: 16px;}
+.blogBody h1 {font-size: 24px;}
+.blogBody ul li, 
+.finalThoughts ul li {margin-bottom: 5px;font-size: 16px;}
+.blogBody ol li, 
+.finalThoughts ol li {margin-bottom: 5px;font-size: 16px;}
+.blogBody h2, .contentColumn h2, .finalThoughts h2 {margin: 12px 0 12px 0px;font-size: 20px;}
+.pigmentList {margin: 0 0 15px 0px;padding-left: 20px;}
+.pigmentList li {margin-bottom: 3px;font-size: 16px;}
+.pigmentList li {margin-bottom: 3px;font-size: 16px;}
+.pigmentListdecimal ol{margin-top: 1rem;}
+.pigmentListdecimal li {margin-bottom: 5px;padding-left: 30px;font-size: 16px;}
+.pigmentListdecimal li:before {width: 22px;height: 22px;margin-right: 8px;font-size: 16px;}
+.faqsection h3 {margin: 12px 0 8px;font-size: 18px;}
+.faqsection ul {margin: 0 0 15px 0px;padding-left: 20px;}
+.faqsection ul li {margin-bottom: 3px;font-size: 16px;}
+.faqsection ol {margin: 0 0 15px 0px;padding-left: 20px;}
+.faqsection ol li {margin-bottom: 3px;font-size: 16px;}
+.authorSection {margin: 15px 0 15px 0;}
+.authorImage {width: 100px;height: 100px;}
+.authorInfo{align-items: flex-start;}
+.authorInfo img {width: 120px;height: 120px;}
+.authorName {font-size: 20px;margin-bottom: 5px;}
+.authorDesc {font-size: 16px;}
+.treatmentSection {min-height: auto;margin: 0 0 15px 0px;}
+.treatmentImage img{width: 100%;}
+.treatmentBox {padding: 15px 12px;}
+.treatmentTitle {margin-bottom: 5px;font-size: 20px;}
+.shareColumn {z-index: unset;flex-shrink: 0; margin: 0 auto;align-self: flex-start;width: 92%;position: relative;top: unset;}
+}
 
 /* Small devices (Phones in landscape mode) */
-@media (max-width: 599.98px) and (min-width: 320px) {
+@media (max-width: 767.98px) and (min-width: 320px) {
+  /* Start of table of content */
+.tocTitle {display: none;}
+.tocTitleMobile {display: block;}
+.tocListWrapper {display: none;transition: max-height 0.3s; overflow: hidden;background: #fff;border-bottom: 1px solid #e5d7c3;}
+.tocListWrapper.open {display: block;}
 .container{width: 100%; margin: 0 auto;max-width: 100%;}
 .blogLayout {gap: 10px;padding: 120px 0px 20px;display: block;}
 .tocBox{padding-left: 12px; padding-right: 12px;}
 .tocColumn {z-index: 2;flex-shrink: 0;background: #fff;box-shadow: 0 2px 6px 0 rgba(99, 99, 99, .2);
-  align-self: flex-start;width: 100%;position: sticky;top: 50px; margin-bottom: 25px;}
+  align-self: flex-start;width: 100%;position: sticky;top: 64px; margin-bottom: 25px;}
 .tocTitle {margin-bottom: 12px;}
 .tocArrow {margin-left: 0px;font-size: 12px;margin-top: 4px;}
 .tocTitleMobile {border-bottom:0px;font-size: 16px;padding: 10px 0;}
 .tocList li {border-left: 1px solid #0000; margin-top: 10px;
   padding: 2px 0;margin-bottom: 5px; margin-left: 12px; margin-right: 12px;}
 .contentColumn {flex: unset;max-width: 92%;padding: 0 0px 0 0;width: 92%; margin: 0 auto;}
-.contentColumn p {margin-bottom: 10px;font-size: 15px;}
-.contentColumn h2 {margin: 12px 0 12px 0px;font-size: 20px;}
+.blogBody p, .finalThoughts p, .contentColumn p{margin-bottom: 10px;font-size: 15px;}
+.blogBody h1 {font-size: 24px;}
+.blogBody ul li, 
+.finalThoughts ul li {margin-bottom: 5px;font-size: 15px;}
+.blogBody ol li, 
+.finalThoughts ol li {margin-bottom: 5px;font-size: 15px;}
+.blogBody h2, .contentColumn h2, .finalThoughts h2 {margin: 12px 0 12px 0px;font-size: 20px;}
 .pigmentList {margin: 0 0 15px 0px;padding-left: 20px;}
 .pigmentList li {margin-bottom: 3px;font-size: 15px;}
 .pigmentList li {margin-bottom: 3px;font-size: 15px;}
@@ -375,67 +554,9 @@
 .treatmentImage img{width: 100%;}
 .treatmentBox {padding: 15px 12px;}
 .treatmentTitle {margin-bottom: 5px;font-size: 20px;}
+.postNavigation {gap: 8px;margin: 15px 0;}
 .shareColumn {z-index: unset;flex-shrink: 0; margin: 0 auto;align-self: flex-start;width: 92%;position: relative;top: unset;}
 }
 
-/* Dynamic HTML content styles */
-.blogBody h2,
-.finalThoughts h2 {
-  font-size: 22px;
-  color: var(--default-color);
-  margin: 32px 0 12px 0;
-  font-weight: 600;
-}
-.blogBody p,
-.finalThoughts p {
-  margin-bottom: 15px;
-  font-size: 18px;
-  line-height: 1.8;
-  color: var(--default-color);
-}
-.blogBody ul,
-.blogBody ol,
-.finalThoughts ul,
-.finalThoughts ol {
-  margin: 0 0 24px 0;
-  padding-left: 25px;
-}
-.blogBody li,
-.finalThoughts li {
-  margin-bottom: 5px;
-  line-height: 1.8;
-  font-size: 18px;
-  color: var(--default-color);
-}
-.blogBody strong,
-.finalThoughts strong { font-weight: 600; }
-.blogBody a,
-.finalThoughts a {
-  color: var(--accent-color);
-  text-decoration: underline;
-}
 
-/* Prev / Next post navigation */
-.postNavigation {
-  display: flex;
-  justify-content: space-between;
-  margin: 30px 0;
-  gap: 12px;
-}
-.navPrev,
-.navNext {
-  color: var(--accent-color);
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 10px 16px;
-  border: 1px solid var(--accent-color);
-  border-radius: 6px;
-  transition: background 0.2s, color 0.2s;
-}
-.navPrev:hover,
-.navNext:hover {
-  background: var(--accent-color);
-  color: #fff;
-}
 
