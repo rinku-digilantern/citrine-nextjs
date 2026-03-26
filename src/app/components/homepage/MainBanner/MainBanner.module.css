@@ -422,6 +422,7 @@
 .secondleft {
   flex: 0 0 auto;
   max-width: 500px;
+  margin-top: 1.5rem;
 }
 
 .secondheading {
@@ -446,15 +447,20 @@
 .secondleft p {
   margin-bottom: 0px;
   color: #fff;
+  line-height: 1.8;
 }
 
 .secondright {
   flex: 0 0 auto;
-  max-width: 500px;
+  max-width: 720px;
   justify-content: flex-start;
   display: flex;
-  margin-right: 15%;
-  align-items: flex-start;
+  margin-right: 5%;
+  align-items: center;
+}
+
+.secondright img {
+  margin-top: 10px;
 }
 
 .thirdrow {
@@ -485,8 +491,9 @@
 
 .thirdheading {
   margin-bottom: 25px;
-  line-height: 1.1;
+  line-height: 1.2;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .glow {
@@ -681,19 +688,20 @@
   }
 
   .cardpanel {
-    height: calc(0px + 100vh);
-    height: calc(0px + 100dvh);
-    top: 20px;
+    height: calc(100vh);
+    height: calc(100dvh);
+    top: var(--top-spacing);
   }
 
   .mb_stickyelement {
-    height: calc(100vh - 0px);
-    top: 20px;
+    height: calc(100vh);
+    height: calc(100dvh);
+    top: var(--top-spacing);
   }
 
   .mb_thankspanelwrap {
-    height: calc(100vh - 0px);
-    height: calc(100dvh - 0px);
+    height: calc(100vh);
+    height: calc(100dvh);
   }
 
   .wrapper {
@@ -750,24 +758,29 @@
     flex-direction: column-reverse;
   }
 
+  .secondcontainer {
+    max-width: 100%;
+    top: 10px;
+  }
+
   .secondright {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
 
   .secondleft {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
 
   .secondleft p {
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.8;
   }
 
   .secondheading {
     margin-bottom: 1rem;
-    font-size: 32px;
+    font-size: 40px;
     line-height: 1.3;
   }
 
@@ -784,14 +797,14 @@
 
   .thirdrightContent {
     padding: 0px;
-    width: 95%;
+    width: 100%;
     text-align: center;
     display: block;
   }
 
   .thirdleft {
-    width: 90%;
-    margin: 0 auto 1.5rem auto;
+    width: 100%;
+    margin: 0 auto 1rem auto;
   }
 
   .thirdright {
@@ -801,11 +814,12 @@
 
   .thirdheading {
     margin-bottom: 10px;
-    line-height: 1.6;
+    font-size: 46px;
+    line-height: 1.3;
   }
 
   .thirdrightDesc {
-    font-size: 19px;
+    font-size: 18px;
   }
 
   .launchBox {
@@ -826,7 +840,15 @@
     width: 30px;
   }
 
+  .secondright img {
+    margin-top: 0px;
+  }
+
   .thirdheading br {
+    display: none;
+  }
+
+  .thirdrightDesc br {
     display: none;
   }
 

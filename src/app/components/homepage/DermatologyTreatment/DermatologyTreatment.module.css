@@ -49,7 +49,7 @@
   border: 1px solid #E5D7C3;
   border-radius: 0;
   box-shadow: none;
-  padding: 30px 50px 0px 50px;
+  padding: 60px 50px 0px 50px;
   min-width: 600px;
   max-width: 700px;
   display: flex;
@@ -58,7 +58,7 @@
   margin-bottom: 40px;
 }
 .mainHeading {
-  margin-bottom: 15px;
+  margin-bottom: 22px;
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -69,7 +69,7 @@
 .desc {
   font-size: 20px;
   color: var(--default-color);
-  margin-bottom: 20px;text-transform: uppercase;
+  margin-bottom: 25px;text-transform: uppercase;
   letter-spacing: 5%;
 }
 .mbbtnrows{display: none;}
@@ -212,15 +212,17 @@
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
 .dermaSection {min-height: 100%;padding: 1.5rem 0 1.5rem 0px;}
-.container {display: block;}
+.container {display: block;max-width: 92%;}
 .leftCol{display: none;}
 .viewMoreLinks {padding: 7px 16px;}
-.sliderWrapper {width: 100%;max-width: 95%;margin: 10px auto 0 auto;}
+.sliderWrapper {width: 100%;max-width: 100%;margin: 10px auto 0 auto;}
 .contentBox {background:none;border: 0px;box-shadow: none;padding: 0px;text-align: center;min-width: 95%;max-width: 100%;display: block;margin-bottom: 0px;}
 .mainHeading {margin-bottom: 10px;}
 .desc {margin-bottom: 15px;font-size: 15px;}
+.thumbTitle {font-size: 14px;  padding: 0 0 12px 12px;}
 .mainHeading span {font-size: 25px;}
 .emblaContainer {gap: 8px;}
+.navBtn {width: 50px;height: 30px;font-size: 18px;}
 .rightCol {flex: unset;display: block;padding: 0 0 0px 0;}
 .navigation {justify-content: center;margin: 12px 0 0;}
 .btnrows{width: 100%;display: none;}

@@ -50,7 +50,7 @@
 
 .previousButton {
   background: #ffffff;
-  color: #8B6F47;
+  color: #8B6F47; border:1px solid #E5D7C3;
 }
 
 .previousButton:hover {
@@ -237,9 +237,9 @@
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
 .hairSection {padding: 1.5rem 0;}
-.container {width: 95%;margin: 0 auto;}
+.container {width: 92%;margin: 0 auto;}
 .leftContent {padding: 0rem 10px;text-align: center;}
-.rightCarousel{padding: 10px 10px 110px 10px;background: #FFFFFF80;border: 1px solid #E5D7C3;backdrop-filter: blur(20px)}
+.rightCarousel{padding: 10px 10px 60px 10px;background: #FFFFFF80;border: 1px solid #E5D7C3;backdrop-filter: blur(20px)}
 .mainHeading {font-size: 35px; margin-bottom: 5px;}
 .mainHeading span {font-size: 25px;}
 .description {margin-bottom: 0px;font-size: 15px;}
@@ -248,7 +248,8 @@
 .btnrow {width: 100%;margin-bottom: 0px;display: none;}
 .mbbtnrow{width: 100%;display: block; margin: 10px 0px 5px 0px;text-align: center;}
 .container {gap: 20px;}
-
+.treatmentTitle {font-size: 14px;letter-spacing: 5%;}
+.treatmentOverlay {padding: 15px 12px;}
 /* Treatment Card */
  .emblaSlide {flex: 0 0 82%;}
 .emblaContainer {gap: 8px;}
@@ -257,6 +258,6 @@
 .navigationButtons{align-items: center;justify-content: center;display: flex;}
 .dnone{display: none;}
 .dblock{display: block !important;}
-.dflex{display: flex !important; margin-top: 10px;}
+.dflex{display: flex !important; margin-top: 12px;}
 .viewMoreLink {padding: 6px 16px;}
 }

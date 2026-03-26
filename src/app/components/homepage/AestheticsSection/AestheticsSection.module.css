@@ -1,6 +1,6 @@
 .aestheticsSection {
   position: relative;
-  padding: 3rem 0 0 0;
+  padding: 3.2rem 0 0 0;
   /* overflow: hidden; */
   object-position: top;
   border-top: 1px solid #E5D7C3;
@@ -73,8 +73,8 @@
 .sliderWrapper {
   width: 100%;
   max-width: 725px;
-  margin-top: 40px;
-  position: static; margin-bottom: -40px;
+  margin-top: 50px;
+  position: static; margin-bottom: -50px;
 }
 .embla {
   overflow: hidden;
@@ -202,7 +202,7 @@
 .aestheticsSection {background: #FFE7C8;min-height: auto;padding: 1.5rem 0 1.5rem 0px;}
 .backgroundImage{display: none;}
 .mainHeading span{font-size: 25px;}
-.container {gap: 5px;max-width: 95%;display: block;}
+.container {gap: 5px;max-width: 92%;display: block;}
 .desc {max-width: 100%;font-size: 15px;padding-top: 10px;}
 .leftCol{display: block;text-align: center;}
 .emblaSlide {flex: 0 0 150px;}

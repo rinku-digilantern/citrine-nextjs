@@ -36,7 +36,7 @@ const MainBanner = () => {
     }
 
     // compute target position on scroll and set ref, actual DOM transform is animated in RAF loop
-    const handle = () => {
+   const handle = () => {
       if (ticking.current) return;
       ticking.current = true;
       window.requestAnimationFrame(() => {
@@ -69,7 +69,7 @@ const MainBanner = () => {
         targetXRef.current = !isReachedTop ? 0 : nextX;
       });
     };
-
+	
     window.addEventListener('scroll', handle, { passive: true });
     const resizeHandler = () => { measure(); handle(); };
     window.addEventListener('resize', resizeHandler);
@@ -126,7 +126,7 @@ const MainBanner = () => {
           className={styles.mb_track}
           ref={trackRef}>
           <div className={styles.mb_trackflex}>
-            <div className={styles.cardpanel}>
+            {/* <div className={styles.cardpanel}>
               <div className={styles.mb_heropanelimg}>
                 <video
                   aria-hidden="true"
@@ -154,22 +154,22 @@ const MainBanner = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className={styles.mb_contentpanel}>
               <picture>
-                <source media="(max-width: 600px)" srcSet={`/assets/images/home/mobilesecondbanner.webp`} />
-                <img src={`/assets/images/home/secondbanner.webp`} className={styles.bannerImage2} width={1440} height={700} alt="Slide 2" />
+                <source media="(max-width: 600px)" srcSet={`/assets/images/home/mobilesecondbanners.webp`} />
+                <img src={`/assets/images/home/citrinesecondbanner.webp`} className={styles.bannerImage2} width={1440} height={700} alt="Slide 2" />
               </picture>
               <div className={styles.secondcontainer}>
                 <div className={styles.secondrow}>
                   <div className={styles.secondleft}>
-                    <div className={styles.secondheading}>Dr. A.P.J Abdul Kalam Inspirations Awards 2025</div>
-                    <div className={styles.loremheading}>Honoured with the Prestigious Dr APJ Abdul Kalam Inspiration Awards 2025</div>
-                    <p>A proud recognition of excellence, dedication, and innovation in advancing aesthetic and dermatological care.</p>
+                    <div className={styles.secondheading}>Honouring Excellence in Aesthetics</div>
+                    <div className={styles.loremheading}>Recipient of Prestigious National Recognition</div>
+                    <p>Celebrated for her outstanding contribution to dermatology and aesthetic medicine, Dr. Niti Gaur stands among the most respected and awarded experts in the field.</p>
                   </div>
                   <div className={styles.secondright}>
-                    <Image src={`/assets/images/home/secondrightaward.webp`} width={500} height={547} alt="Second Banner Award" />
+                    <Image src={`/assets/images/home/2imagesaward.webp`} width={820} height={546} alt="Second Banner Award" />
                   </div>
                 </div>
               </div>
@@ -183,16 +183,13 @@ const MainBanner = () => {
               <div className={styles.secondcontainer}>
                 <div className={styles.thirdrow}>
                   <div className={styles.thirdleft}>
-                    <Image src={`/assets/images/home/thirdleftpic.webp`} width={680} height={550} alt="Third Banner Left" priority />
+                    <Image src={`/assets/images/home/thirdimg.webp`} width={760} height={630} alt="Third Banner Left" priority />
                   </div>
                   <div className={styles.thirdright}>
                     <div className={styles.thirdrightContent}>
-                      <div className={`thirdheading ${styles.thirdheading}`}>DELHI, GET<br/> READY TO<br/> <span className={styles.glow}>GLOW</span> <span className={styles.sparkle}><Image src={`/assets/images/home/sparklestar.webp`} width={40} height={47} alt="Sparkle star" /></span></div>
-                      <div className={styles.launchBox}>
-                        <div className={styles.launchClinic}>CITRINE CLINIC</div>
-                        <div className={styles.launchSoon}>LAUNCHING SOON</div>
-                      </div>
-                      <div className={styles.thirdrightDesc}>World-Class Skin, Hair & Body<br/> Treatments</div>
+                      <div className={`thirdheading ${styles.thirdheading}`}>Advanced<br/> <span className={styles.glow}>Technology,</span><br/> Superior Skin<br/> <span className={styles.glow}>Results</span> <span className={styles.sparkle}><Image src={`/assets/images/home/sparklers.webp`} width={40} height={47} alt="Sparkle star" /></span></div>
+
+                      <div className={styles.thirdrightDesc}>State-of-the-art equipment ensures<br/> precision, safety, and effective<br/> treatments.</div>
                     </div>
                   </div>
                 </div>
