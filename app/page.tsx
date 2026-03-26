@@ -67,7 +67,7 @@ export default async function Home() {
       <WellnessTreatment />
       <HairSection />
       <TechnologySection />
-      <OurOffer />
+      {/* <OurOffer /> */}
       <Philosophy />
       <DoctorSection />
       <PatientTestimonials />

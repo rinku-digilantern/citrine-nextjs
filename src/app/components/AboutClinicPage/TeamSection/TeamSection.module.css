@@ -55,7 +55,7 @@
 .teamGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 25px;justify-items: center;
 }
 
 .doctorCard {
@@ -90,14 +90,14 @@
 }
 
 .cardContent {
-  padding: 20px 15px 12px 15px;
+  padding: 20px 0px 12px 0px;
 }
 
 .doctorName {
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--default-color);
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-transform: uppercase;
 }
 
@@ -106,6 +106,16 @@
   color: var(--default-color);
   line-height: 1.6;
   margin: 0;
+}
+.doctorexperience {
+  font-size: 17px;
+  color: var(--default-color);
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.doctorexperience span {
+  font-weight: 600;
+  color: var(--accent-color);
 }
 
 /* Responsive Design */
@@ -132,6 +142,7 @@
   .tabsContainer {gap: 10px;margin-bottom: 5px;}
   .tab {padding: 10px 20px; font-size: 16px;}
   .teamGrid {gap: 10px;}
+  .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
   .cardContent {padding: 10px 10px 10px 10px;}
   .imageWrapper {height: 250px;}
 }
@@ -145,6 +156,7 @@
   .tabsContainer {gap: 10px;margin-bottom: 5px;}
   .tab {padding: 10px 20px; font-size: 16px;}
   .teamGrid {gap: 10px;}
+  .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
   .cardContent {padding: 10px 10px 10px 10px;}
   .imageWrapper {height: 250px;}
 }
@@ -155,6 +167,7 @@
   .mainHeading {margin-bottom: 10px;}
   .container {padding: 0px;margin:0 auto;width:92%}
   .tabsContainer {gap: 15px;margin-bottom: 15px;}
+  .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
   .tab {padding: 10px 20px; font-size: 16px;}
   .teamGrid {grid-template-columns:1fr 1fr;gap: 20px;}
   .imageWrapper {height: 320px;}
@@ -165,6 +178,7 @@
   .mainHeading {margin-bottom: 10px;}
   .container {padding: 0px;margin:0 auto;width:92%}
   .tabsContainer {gap: 10px;margin-bottom: 15px;}
+  .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
   .tab {padding: 10px 20px; font-size: 16px;}
   .teamGrid {grid-template-columns:1fr 1fr;gap: 10px;}
   .imageWrapper {height: 320px;}
@@ -175,6 +189,7 @@
   .mainHeading {margin-bottom: 10px;}
   .container {padding: 0px;margin:0 auto;width:92%}
   .tabsContainer {gap: 10px;margin-bottom: 15px;}
+  .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
   .tab {padding: 10px 20px; font-size: 16px;}
   .teamGrid {grid-template-columns:1fr 1fr;gap: 10px;}
   .imageWrapper {height: 320px;}
@@ -183,15 +198,18 @@
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px){
   .teamSection {padding:1.5rem 0px;}
-  .tabsContainer {gap: 5px;margin-bottom: 25px;}
+  .tabsContainer {gap: 5px;margin-bottom: 15px;}
   .container {padding: 0px;margin:0 auto;width:92%}
   .mainHeading {margin-bottom: 15px;font-size:26px}
   .mainHeading br{display: none;}
   .tabsContainer {flex-wrap: wrap;}
+  .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
   .tab {padding: 9px 12px;font-size: 14px;}
   .imageWrapper {height: 280px;}
   .doctorName {font-size: 18px; font-weight: 500; margin-bottom: 5px;}
   .doctorDescription {font-size: 15px;}
   .cardContent {padding: 10px 0px 0px 0px;}
-  .teamGrid {gap: 8px;grid-template-columns:1fr;}
+  .teamGrid {display: flex;overflow-x: auto;-webkit-overflow-scrolling: touch; gap: 8px;padding-bottom: 8px;}
+  .teamGrid::-webkit-scrollbar { display: none; }
+  .doctorCard { min-width: 280px; flex:unset; }
 }

@@ -1,5 +1,6 @@
 .philosophySection {
-  background-color: var(--footer-bg);
+  /* background-color: var(--footer-bg); */
+   background-color: var(--mediumyellowbg);
   padding: 60px 0px;
 }
 

@@ -60,9 +60,9 @@ const HairSection = () => {
             Advanced Trichology
           </h2>
           <p className={styles.description}>Led by Experience. Driven by Evidence.</p>
-          <div className={styles.btnrow}>
+          {/* <div className={styles.btnrow}>
             <Link href="/" className={styles.viewMoreLink}>View More</Link>
-          </div>
+          </div> */}
           {/* Navigation Buttons */}
           <div className={`${styles.navigationButtons} ${styles.dnone}`}>
             <button 
@@ -104,9 +104,9 @@ const HairSection = () => {
             </div>
           </div>
 
-           <div className={styles.mbbtnrow}>
+           {/* <div className={styles.mbbtnrow}>
             <Link href="/" className={styles.viewMoreLink}>View More</Link>
-          </div>
+          </div> */}
 
           <div className={`${styles.navigationButtons} ${styles.dflex} ${styles.dblock}`}>
             <button 

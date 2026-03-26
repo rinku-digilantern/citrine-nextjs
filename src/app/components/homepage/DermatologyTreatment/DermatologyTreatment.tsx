@@ -44,9 +44,9 @@ const DermatologyTreatment = () => {
           <div className={styles.contentBox}>
             <h2 className={`mainHeading ${styles.mainHeading}`}>Advance Clinical Dermatology</h2>
             <p className={styles.desc}>Led by Experience. Driven by Evidence.</p>
-             <div className={styles.btnrows}>
+             {/* <div className={styles.btnrows}>
                <Link href="/" className={styles.viewMoreLinks}>View More</Link>
-             </div>
+             </div> */}
             <div className={styles.sliderWrapper}>
               <div className={styles.embla} ref={emblaRef}>
                 <div className={styles.emblaContainer}>
@@ -60,9 +60,9 @@ const DermatologyTreatment = () => {
                   ))}
                 </div>
               </div>
-              <div className={styles.mbbtnrows}>
+              {/* <div className={styles.mbbtnrows}>
                <Link href="/" className={styles.viewMoreLinks}>View More</Link>
-             </div>
+             </div> */}
               <div className={styles.navigation}>
                 <button className={styles.navBtn} onClick={scrollPrev} aria-label="Previous">
                   <span>&larr;</span>

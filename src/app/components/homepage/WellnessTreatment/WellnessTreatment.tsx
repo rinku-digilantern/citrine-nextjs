@@ -152,9 +152,9 @@ const WellnessTreatment = () => {
                 aria-label="Next">
                 <span>&rarr;</span>
               </button>
-              <div className={styles.btnboxrow}>
+              {/* <div className={styles.btnboxrow}>
                <Link href="/" className={styles.viewMore}>View More</Link>
-             </div>
+             </div> */}
             </div>
           </div>
           {/* Right section: Static full image for selected treatment */}

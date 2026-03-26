@@ -78,9 +78,9 @@ const AestheticsSection = () => {
         <div className={styles.leftCol}>
           <h2 className={`mainHeading ${styles.mainHeading}`}>AESTHETICS<br/> <span>Artistry</span></h2>
           <p className={styles.desc}>The Art of Subtle Transformation</p>
-          <div className={styles.commonbtnbox}>
+          {/* <div className={styles.commonbtnbox}>
             <Link href="#" className={styles.viewmoreBtn}>View More</Link>
-          </div>
+          </div> */}
           <div className={styles.sliderWrapper}>
             <div className={styles.embla} ref={emblaRef}>
               <div className={styles.emblaContainer}>
@@ -91,9 +91,9 @@ const AestheticsSection = () => {
                 ))}
               </div>
             </div>
-            <div className={styles.commonbtn}>
+            {/* <div className={styles.commonbtn}>
                <Link href="#" className={styles.viewmoreBtn}>View More</Link>
-            </div>
+            </div> */}
             <div className={styles.navigation}>
               <button className={styles.navBtn} onClick={scrollPrev} aria-label="Previous">
                 <span>&larr;</span>

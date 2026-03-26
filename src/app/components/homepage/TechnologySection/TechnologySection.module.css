@@ -169,7 +169,7 @@ position: absolute;
 left: 50%;
 top: 50%;
 z-index: 99;
-cursor: pointer;
+cursor: pointer; 
 transform: translate(-50%, -50%);
 }
 
@@ -277,7 +277,7 @@ transform: translate(-50%, -50%);
 .heading{text-align: center;}
 .contentBox {flex-direction: column;min-width:unset;padding: 12px 8px;gap: 10px;position: relative;}
 .visible {padding-top: 0px;overflow-y: inherit;overflow-x: inherit;}
-.container {max-width: 95%;margin: 0 auto;display: block;}
+.container {max-width: 92%;margin: 0 auto;display: block;}
 .bulletList {gap: 5px;}
 .bulletList li {font-size: 15px;}
 .centerCol {width: 100%;max-width: 100%;order:3;height:100%}

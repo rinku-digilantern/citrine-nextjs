@@ -179,10 +179,10 @@
 }
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-.leftSection {max-width: 100%;margin: 0 auto;}
+.leftSection {max-width: 92%;margin: 0 auto;}
 .contentWrapper {grid-template-columns: 1fr;gap:0px;padding: 0rem 0px 1.5rem 0px;display: flex;flex-direction: column-reverse;}
 .doctorImageWrapper {margin-left: 0px;width: 100%;}
-.contentCard {padding: 30px 15px; margin-top: -25px;}
+.contentCard {padding: 30px 15px; margin-top: -15px;}
 .description {font-size: 15px;margin-bottom: 20px;}
 .specialties {font-size: 15px;}
 .specialties br{display: none;}
