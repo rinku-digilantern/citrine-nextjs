@@ -23,7 +23,7 @@ export default function Home() {
       <WellnessTreatment />
       <HairSection />
       <TechnologySection />
-      <OurOffer />
+      {/* <OurOffer /> */}
       <Philosophy />
       <DoctorSection />
       <PatientTestimonials />

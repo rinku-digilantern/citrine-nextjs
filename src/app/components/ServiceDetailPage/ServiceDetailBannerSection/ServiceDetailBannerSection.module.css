@@ -31,7 +31,7 @@
 }
 .container {max-width: 92%;margin: 0 0 0 7%;}
 .textSection {display: flex;align-items: center;justify-content: flex-start;height: 100%;position: relative;z-index: 2;}
-.mainHeading {color: var(--default-color);text-transform: uppercase;font-weight: 400;letter-spacing: 2px;font-size: 45px;}
+.mainHeading {color: var(--default-color);text-transform: uppercase;font-weight: 400;letter-spacing: 1px;font-size: 40px;}
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 1500.98px) and (min-width: 1101px) {

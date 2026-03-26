@@ -1,10 +1,8 @@
 "use client";
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState } from 'react';
 import Image from "next/image";
 import styles from './TechnologySection.module.css';
 import Modal from '../../common/Modal/Modal';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
 
 const TechnologySection = () => {
 
@@ -25,15 +23,8 @@ const TechnologySection = () => {
     setModalTitle('');
   };
 
-  // create slides by repeating the same contentBox — change repeatCount if you want more
-  const repeatCount = 3;
-  const slides = Array.from({ length: repeatCount });
+  // Render a single technology card (no repetition)
 
-  const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: true }));
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center', slidesToScroll: 1 }, [autoplay.current]);
-
-  const scrollPrev = useCallback(() => { if (emblaApi) emblaApi.scrollPrev(); }, [emblaApi]);
-  const scrollNext = useCallback(() => { if (emblaApi) emblaApi.scrollNext(); }, [emblaApi]);
 
   return (
     <section className={styles.techSection}>
@@ -45,47 +36,31 @@ const TechnologySection = () => {
         </div>
       </div>
       <div className={styles.container}>
-        <div className={styles.arrowLeft}>
-          <button className={styles.arrowBtn} aria-label="Previous" onClick={scrollPrev}>
-            <span>&larr;</span>
-          </button>
-        </div>
         <div className={styles.visible}>
-          <div className={`${styles.embla}`} ref={emblaRef}>
-            <div className={styles.emblaContainer}>
-              {slides.map((_, idx) => (
-                <div className={styles.emblaSlide} key={idx}>
-                  <div className={styles.contentBox}>
-                    <div className={styles.leftCol}>
-                      <h2 className={`heading ${styles.heading}`}>EXILIS ELITE</h2>
-                      <a href="#" className={styles.overlay} onClick={handleThumbClick('WMaanffs_Do', 'Exilis Elite')}>
-                        <div className={styles.play}>
-                          <Image src="/assets/images/home/techplay.webp" width={103} height={103} alt="play" />
-                        </div>
-                        <Image className={styles.deviceThumb} src="/assets/images/home/techhome.webp" width={480} height={360} alt={`Exilis Elite Thumbnail ${idx}`} />
-                      </a>
-                    </div>
-                    <div className={styles.centerCol}>
-                      <Image className={styles.deviceImg} src="/assets/images/home/tech01.webp" width={340} height={505} alt="Exilis Elite Device" />
-                    </div>
-                    <div className={styles.rightCol}>
-                      <ul className={styles.bulletList}>
-                        <li><b>Non-surgical treatment</b> for skin tightening and fat reduction on areas like face, neck, arms, abdomen, and thighs.</li>
-                        <li>Uses radiofrequency and <b>ultrasound energy to boost collagen</b> and shrink fat cells.</li>
-                        <li><b>No downtime —</b> quick, comfortable, and safe procedure.</li>
-                        <li><b>Ideal for skin firming</b> and contouring, not for major weight loss.</li>
-                      </ul>
-                    </div>
+          <div className={styles.slidesContainer}>
+            <div className={styles.contentBox}>
+              <div className={styles.leftCol}>
+                <h2 className={`heading ${styles.heading}`}>EXILIS ELITE</h2>
+                <a href="#" className={styles.overlay} onClick={handleThumbClick('WMaanffs_Do', 'Exilis Elite')}>
+                  <div className={styles.play}>
+                    <Image src="/assets/images/home/techplay.webp" width={103} height={103} alt="play" />
                   </div>
-                </div>
-              ))}
+                  <Image className={styles.deviceThumb} src="/assets/images/home/techhome.webp" width={480} height={360} alt="Exilis Elite Thumbnail" />
+                </a>
+              </div>
+              <div className={styles.centerCol}>
+                <Image className={styles.deviceImg} src="/assets/images/home/tech01.webp" width={340} height={505} alt="Exilis Elite Device" />
+              </div>
+              <div className={styles.rightCol}>
+                <ul className={styles.bulletList}>
+                  <li><b>Non-surgical treatment</b> for skin tightening and fat reduction on areas like face, neck, arms, abdomen, and thighs.</li>
+                  <li>Uses radiofrequency and <b>ultrasound energy to boost collagen</b> and shrink fat cells.</li>
+                  <li><b>No downtime —</b> quick, comfortable, and safe procedure.</li>
+                  <li><b>Ideal for skin firming</b> and contouring, not for major weight loss.</li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-        <div className={styles.arrowRight}>
-          <button className={styles.arrowBtns} aria-label="Next" onClick={scrollNext}>
-            <span>&rarr;</span>
-          </button>
         </div>
       </div>
       {/* Modal should be here, outside the slides */}
@@ -98,8 +73,7 @@ const TechnologySection = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}
-            />
+              style={{position: 'absolute', top: 0, left: 0, width: '100%', height: '100%'}}/>
           </div>
         )}
       </Modal>
