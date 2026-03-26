@@ -69,11 +69,11 @@ const ConcernPage: React.FC<ConcernPageProps> = ({ concernsData }) => {
                     />
                   </div>
                   <div className={styles.details}>
-                    <Link href={`/concerns/${concern.url}`}>
+                    <Link href={`/${concern.url}`}>
                       <div className={styles.trtitle}>{concern.name}</div>
                     </Link>
                     {/* <p>{stripHtml(concern.description)}</p> */}
-                    <Link href={`/concerns/${concern.url}`} className={styles.viewmore}>
+                    <Link href={`/${concern.url}`} className={styles.viewmore}>
                       Read More
                     </Link>
                   </div>

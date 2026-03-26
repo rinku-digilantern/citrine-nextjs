@@ -348,8 +348,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                           <button
                             key={tab.id}
                             className={`${styles.tabButton} ${activeTab[section.id] === tab.id ? styles.activeTab : ''}`}
-                            onClick={() => handleTabClick(section.id, tab.id)}
-                          >
+                            onClick={() => handleTabClick(section.id, tab.id)}>
                             {tab.label}
                           </button>
                         ))}

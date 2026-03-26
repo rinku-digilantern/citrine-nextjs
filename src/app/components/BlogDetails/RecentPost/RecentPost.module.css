@@ -49,10 +49,10 @@
   overflow: hidden;
 }
 .cardContent {
-  padding: 0 22px;
+  padding: 0 5px;
   text-align: left;
   width: 100%;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 .date {
   display: inline-block;
@@ -62,7 +62,7 @@
   font-weight: 600;
   font-family: var( --font-montserrat), sans-serif;
   padding: 5px 15px 5px 15px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   margin-top: 2px;
   border: 1px solid var(--accent-color);
 }
@@ -100,33 +100,56 @@
    background: var(--gradient-bg-hover);
 }
 
-@media (max-width: 1100px) {
-  .postsGrid {
-    gap: 18px;
-  }
-  .card {
-    width: 270px;
-  }
+/* Start of Ipad Screen */
+@media (max-width: 1400.98px) and (min-width: 1201px) {
+.recentPostsSection {padding: 2rem 0px;}
+.wrapper{width: 92%;max-width: 92%;}
+.mainHeading {margin-bottom: 15px;font-size: 30px;}
+.cardContent {margin-top: 10px;padding: 0 0px;}
+.title {margin-top: 0px;font-size: 16px;}
 }
-@media (max-width: 900px) {
-  .postsGrid {
-    flex-direction: column;
-    align-items: center;
-  }
-  .card {
-    width: 90vw;
-    max-width: 350px;
-  }
+
+/* Start of Ipad Screen */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.recentPostsSection {padding: 2rem 0px;}
+.wrapper{width: 94%;max-width: 94%;}
+.mainHeading {margin-bottom: 15px;font-size: 30px;}
+.cardContent {margin-top: 10px;padding: 0 0px;}
+.title {margin-top: 0px;font-size: 16px;}
+}
+
+/* Start of Ipad Screen */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.recentPostsSection {padding: 2rem 0px;}
+.wrapper{width: 94%;max-width: 94%;}
+.mainHeading {margin-bottom: 15px;font-size: 30px;}
+.postsGrid {gap: 15px;flex-direction: row;flex-wrap: nowrap;overflow-x: scroll;align-items: stretch;
+  padding-bottom: 8px;-webkit-overflow-scrolling: touch;}
+.card {min-width: 260px;max-width: 42vw;flex: 0 0 auto;}
+.cardContent {margin-top: 10px;padding: 0 0px;}
+.title {margin-top: 0px;font-size: 16px;}
+}
+
+/* Start of Ipad Screen */
+@media (max-width: 991.98px) and (min-width: 320px) {
+.recentPostsSection {padding: 2rem 0px;}
+.wrapper{width: 94%;max-width: 94%;}
+.mainHeading {margin-bottom: 15px;font-size: 30px;}
+.postsGrid {gap: 15px;flex-direction: row;flex-wrap: nowrap;overflow-x: scroll;align-items: stretch;
+  padding-bottom: 8px;-webkit-overflow-scrolling: touch;}
+.card {min-width: 260px;max-width: 42vw;flex: 0 0 auto;}
+.cardContent {margin-top: 10px;padding: 0 0px;}
+.title {margin-top: 0px;font-size: 16px;}
 }
 
 /* Small devices (Phones in landscape mode) */
-@media (max-width: 599.98px) and (min-width: 320px) {
+@media (max-width: 767.98px) and (min-width: 320px) {
 .recentPostsSection {padding: 1.5rem 0px;}
 .wrapper{width: 92%;max-width: 92%;}
 .mainHeading {margin-bottom: 15px;font-size: 24px;}
 .postsGrid {gap: 8px;flex-direction: row;flex-wrap: nowrap;overflow-x: scroll;align-items: stretch;
   padding-bottom: 8px;-webkit-overflow-scrolling: touch;}
-.card {min-width: 260px;max-width: 86vw;flex: 0 0 auto;}
+.card {min-width: 260px;max-width: 85vw;flex: 0 0 auto;}
 .cardContent {margin-top: 10px;padding: 0 0px;}
 .title {margin-top: 0px;font-size: 16px;}
 }

@@ -152,17 +152,17 @@ strong {
   font-weight: 600;
 }
 
-.graybg {
-  background: #f6eadb;
-}
+.graybg {background: #F6EADB !important;}
+.lightpink {background:#FFFAF2 !important;}
+.pinkbg {background:#F6EADB !important;}
 
-.lightpink {
-  background: #f8f4ed
-}
-
-.pinkbg {
-  background: #fffaf2;
-}
+.marker a{padding: 7px 20px;color: var(--default-color); font-size: 1rem;border: 1px solid var(--default-color);}
+.marker a:hover{background: var(--gradient-bg);border: 1px solid var(--accent-color);color:var(--white-color);}
+address {float: right;width: 46%;text-align: right;margin-left: 1rem;}
+.innerfaqsection{background: #F6EADB !important;}
+.innerfaqsection h3{font-size: 18px !important; font-weight: 600 !important;padding: 11px 12px;background: var(--footer-bg);}
+.innerfaqsection ul, .innerfaqsection ol {margin-bottom: 15px;}
+.innerfaqsection ul li, .innerfaqsection ol li {margin-bottom: 10px;font-size: 18px;}
 
 /* Wrapper */
 .wrapper {
@@ -713,9 +713,6 @@ strong {
   }
 }
 
-
-
-
 /* Mobile styles (Extra Small Devices) */
 @media (max-width: 575.98px) {
   :root {
@@ -744,7 +741,7 @@ strong {
 
   p,
   .para {
-    line-height: 24px;
+    line-height: 1.8rem;
   }
 }
 
@@ -931,4 +928,9 @@ strong {
   .dblock {
     display: block;
   }
+  .marker a {padding: 7px 10px;font-size: 15px;}
+  address {float: none;text-align: center;width: 100%;margin-left: 0rem; margin-bottom: 10px;}
+  .innerfaqsection h3 {padding: 5px 10px;font-size: 16px !important;line-height: 1.4;}
+  .innerfaqsection ul, .innerfaqsection ol {margin-bottom: 10px;}
+.innerfaqsection ul li, .innerfaqsection ol li {margin-bottom: 5px;font-size: 16px;}
 }

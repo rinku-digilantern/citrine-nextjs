@@ -6,13 +6,15 @@ interface Props {
   description?: string;
   section1?: string;
   section2?: string;
+  headingtag?: React.ElementType | string; // New prop to specify heading tag
 }
 
-export default function ServiceDetailThirdSection({ heading, description, section1, section2 }: Props) {
+export default function ServiceDetailThirdSection({ heading, description, section1, section2, headingtag }: Props) {
+  const HeadingTag = (headingtag ?? 'div') as React.ElementType;
 	return (
 		<section className={styles.ServiceDetailThirdSection}>
             <div className={styles.container}>
-			{heading && <h2 className={`mainHeading ${styles.mainHeading}`}>{heading}</h2>}
+			{heading && <HeadingTag className={`mainHeading ${styles.mainHeading}`}>{heading}</HeadingTag>}
 			{description && (
         <div className={styles.description} dangerouslySetInnerHTML={{ __html: description }} />
       )}

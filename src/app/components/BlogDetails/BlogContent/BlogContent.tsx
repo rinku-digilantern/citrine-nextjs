@@ -215,21 +215,21 @@ export default function BlogContent({
                 <li>
                   <a href={shareUrls.whatsapp} rel="nofollow" target="_blank" aria-label="Share on WhatsApp">
                     <Image
-                      src="/assets/images/blogdetail/instagram.webp"
+                      src="/assets/images/blogdetail/whatsapp.webp"
                       alt="WhatsApp"
-                      width={20}
-                      height={20}
+                      width={32}
+                      height={32}
                     />WhatsApp
                   </a>
                 </li>
                 <li>
                   <a href={shareUrls.twitter} rel="nofollow" target="_blank" aria-label="Share on X (Twitter)">
                     <Image
-                      src="/assets/images/blogdetail/youtube.webp"
-                      alt="X (Twitter)"
+                      src="/assets/images/blogdetail/twitter.webp"
+                      alt="Twitter"
                       width={32}
                       height={32}
-                    />X / Twitter
+                    />Twitter
                   </a>
                 </li>
               </ul>

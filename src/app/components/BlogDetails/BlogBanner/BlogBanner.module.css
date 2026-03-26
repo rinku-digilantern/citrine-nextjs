@@ -55,8 +55,41 @@ text-align: center;
   align-items: center;
 }
 
+/* Start of Mini Desktop */
+@media (max-width: 1400.98px) and (min-width: 1101px) {
+.bannerWrapper {text-align: left;padding: 1.5rem 0 0 0px;width:100%;}
+.tagsRow {margin:0 auto 0 auto;text-align: center;width: 92%;gap:8px}
+.mainHeading {text-align: center;max-width: 100%; margin: 15px auto;font-size: 30px;padding: 0px 15px;}
+.tagDate{display: inline-block;padding: 5px 12px;font-size: 13px;margin-top: 3px;}
+.tagClinic{display: inline-block; margin-right: 3px;padding: 5px 12px;font-size: 13px;margin-top: 3px;}
+.tagDoctor{display: inline-block; margin-top: 3px;padding: 5px 12px;font-size: 13px;}
+.bannerBox{width: 70%; max-width: 70%;padding: 5px;margin: 0 auto -250px auto}
+}
+
+/* Start of Ipad Pro Screen */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.bannerWrapper {text-align: left;padding: 1.5rem 0 0 0px;width:100%;}
+.tagsRow {margin:0 auto 0 auto;text-align: center;width: 92%;gap:8px}
+.mainHeading {text-align: center;max-width: 100%; margin: 15px auto;font-size: 30px;padding: 0px 15px;}
+.tagDate{display: inline-block;padding: 5px 12px;font-size: 13px;margin-top: 3px;}
+.tagClinic{display: inline-block; margin-right: 3px;padding: 5px 12px;font-size: 13px;margin-top: 3px;}
+.tagDoctor{display: inline-block; margin-top: 3px;padding: 5px 12px;font-size: 13px;}
+.bannerBox{width: 92%; max-width: 92%;padding: 5px;margin: 0 auto -100px auto}
+}
+
+/* Start of Ipad Screen */
+@media (max-width: 991.98px) and (min-width: 768px) {
+.bannerWrapper {text-align: left;padding: 1.5rem 0 0 0px;width:100%;}
+.tagsRow {margin:0 auto 0 auto;text-align: center;width: 92%;gap:8px}
+.mainHeading {text-align: center;max-width: 100%; margin: 15px auto;font-size: 28px;padding: 0px 15px;}
+.tagDate{display: inline-block;padding: 5px 12px;font-size: 13px;margin-top: 3px;}
+.tagClinic{display: inline-block; margin-right: 3px;padding: 5px 12px;font-size: 13px;}
+.tagDoctor{display: inline-block; margin-top: 3px;padding: 5px 12px;font-size: 13px;}
+.bannerBox{width: 92%; max-width: 92%;padding: 5px;margin: 0 auto -100px auto}
+}
+
 /* Small devices (Phones in landscape mode) */
-@media (max-width: 599.98px) and (min-width: 320px) {
+@media (max-width: 767.98px) and (min-width: 320px) {
 .bannerWrapper {text-align: left;padding: 1.5rem 0 0 0px;}
 .tagsRow {display: inline-block; margin:0 auto 0 auto;text-align: center;}
 .mainHeading {text-align: center;max-width: 100%; margin: 15px auto;font-size: 24px;padding: 0px 15px;}
