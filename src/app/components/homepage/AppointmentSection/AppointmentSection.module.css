@@ -3,6 +3,7 @@
   position: relative;
   background: linear-gradient(259.5deg, #9D835A 0%, #836940 37.87%, #634920 100%);
 }
+
 /* .bannerImage{
   position: absolute;
   top: 0;
@@ -22,7 +23,8 @@
 .formWrapper {
   background: #ffffff;
   padding: 40px 50px;
-  border-radius: 0px; height: 100%;
+  border-radius: 0px;
+  height: 100%;
   box-shadow: 0px 20px 50px 0px #0000001A;
   position: relative;
   z-index: 2;
@@ -142,14 +144,15 @@
 }
 
 /* Date Input Styling */
-.input[type="date"] {  
+.input[type="date"] {
   position: relative;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Crect x='3' y='4' width='18' height='18' rx='2' ry='2'%3E%3C/rect%3E%3Cline x1='16' y1='2' x2='16' y2='6'%3E%3C/line%3E%3Cline x1='8' y1='2' x2='8' y2='6'%3E%3C/line%3E%3Cline x1='3' y1='10' x2='21' y2='10'%3E%3C/line%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 20px center;
   cursor: pointer;
 }
- .input[type="date"]::-webkit-calendar-picker-indicator {
+
+.input[type="date"]::-webkit-calendar-picker-indicator {
   background: transparent;
   color: transparent;
   cursor: pointer;
@@ -163,7 +166,8 @@
   -webkit-box-shadow: none;
   box-shadow: none;
 }
- .input[type="date"]::before {
+
+.input[type="date"]::before {
   content: "";
   left: 10px;
   position: absolute;
@@ -175,9 +179,12 @@
 .captchaRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: flex-start;justify-content: center;
-  width: 44%;margin: 0 auto;
+  align-items: flex-start;
+  justify-content: center;
+  width: 44%;
+  margin: 0 auto;
 }
+
 .captchaBox {
   display: flex;
   align-items: center;
@@ -190,6 +197,7 @@
   box-sizing: border-box;
   overflow: hidden;
 }
+
 .captchaImg {
   height: 42px;
   width: auto;
@@ -197,8 +205,9 @@
   object-fit: contain;
   flex-shrink: 0;
 }
+
 .captchaRefresh {
-  background:var(--gradient-bg);
+  background: var(--gradient-bg);
   border: none;
   color: #fff;
   width: 50px;
@@ -213,15 +222,18 @@
   justify-content: center;
   flex-shrink: 0;
 }
+
 .captchaRefresh:hover {
   color: #fff;
 }
+
 .errorMsg {
   color: #d9534f;
   font-size: 14px;
   text-align: center;
   margin: 5px 0;
 }
+
 .successMsg {
   display: flex;
   flex-direction: column;
@@ -230,22 +242,26 @@
   text-align: center;
   padding: 30px 0;
 }
+
 .successMsg p {
   font-size: 16px;
   color: #444;
   max-width: 400px;
   line-height: 1.6;
 }
+
 /* Validation Specifics */
 .inputGroup {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
+
 .inputError {
   border-color: #d9534f !important;
   background-color: #fff9f9 !important;
 }
+
 .fieldError {
   color: #d9534f;
   font-size: 13px;
@@ -257,73 +273,291 @@
 
 /* Start of mini Desktop */
 @media (max-width: 1300px) and (min-width: 1200px) {
-.appointmentSection {padding: 2rem 20px;}
-.container {max-width: 92%;}
-.captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
-.captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
-.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
-.captchaRow {width: 35%; grid-template-columns: 50% 50%; gap: 8px;}
+  .appointmentSection {
+    padding: 2rem 20px;
+  }
+
+  .container {
+    max-width: 92%;
+  }
+
+  .captchaRefresh {
+    width: 35px;
+    height: 40px;
+    margin-left: 0px;
+  }
+
+  .captchaBox {
+    gap: 0px;
+    height: 46px;
+    padding: 0 3px;
+  }
+
+  .captchaImg {
+    object-fit: cover;
+    max-width: calc(100% - 40px);
+    height: 40px;
+  }
+
+  .captchaRow {
+    width: 35%;
+    grid-template-columns: 50% 50%;
+    gap: 8px;
+  }
 }
+
 /* Start of mini Desktop */
 @media (max-width: 1200.98px) and (min-width: 1101px) {
-.appointmentSection {padding: 2rem 20px;}
-.container {max-width: 92%;}
-.captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
-.captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
-.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
-.captchaRow {width: 40%; grid-template-columns: 50% 50%; gap: 8px;}
+  .appointmentSection {
+    padding: 2rem 20px;
+  }
+
+  .container {
+    max-width: 92%;
+  }
+
+  .captchaRefresh {
+    width: 35px;
+    height: 40px;
+    margin-left: 0px;
+  }
+
+  .captchaBox {
+    gap: 0px;
+    height: 46px;
+    padding: 0 3px;
+  }
+
+  .captchaImg {
+    object-fit: cover;
+    max-width: calc(100% - 40px);
+    height: 40px;
+  }
+
+  .captchaRow {
+    width: 40%;
+    grid-template-columns: 50% 50%;
+    gap: 8px;
+  }
 }
+
 /* Smtart of IPad Pro */
 @media (max-width: 1100.98px) and (min-width: 992px) {
-.appointmentSection {padding: 2rem 20px;}
-.container {max-width: 92%;}
-.captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
-.captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
-.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
-.captchaRow {width: 40%; grid-template-columns: 55% 45%; gap: 8px;}
+  .appointmentSection {
+    padding: 2rem 20px;
+  }
+
+  .container {
+    max-width: 92%;
+  }
+
+  .captchaRefresh {
+    width: 35px;
+    height: 40px;
+    margin-left: 0px;
+  }
+
+  .captchaBox {
+    gap: 0px;
+    height: 46px;
+    padding: 0 3px;
+  }
+
+  .captchaImg {
+    object-fit: cover;
+    max-width: calc(100% - 40px);
+    height: 40px;
+  }
+
+  .captchaRow {
+    width: 40%;
+    grid-template-columns: 55% 45%;
+    gap: 8px;
+  }
 }
+
 /* Smtart of IPad */
 @media (max-width: 991.98px) and (min-width: 768px) {
-.appointmentSection {padding: 2rem 20px;}
-.container {max-width: 92%;}
-.formWrapper {padding: 1.5rem 25px;}
-.title {font-size: 24px;margin-bottom: 30px;}
-.formRow {grid-template-columns: 1fr;gap: 15px;}
-.input,
-.select,
-.textarea {padding: 12px 15px;font-size: 14px;}
-.submitButton {padding: 12px 20px;font-size: 14px;}
-.captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
-.captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
-.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
-.captchaRow {width: 50%; grid-template-columns: 55% 45%; gap: 8px;}
+  .appointmentSection {
+    padding: 2rem 20px;
+  }
+
+  .container {
+    max-width: 92%;
+  }
+
+  .formWrapper {
+    padding: 1.5rem 25px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .input,
+  .select,
+  .textarea {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .captchaRefresh {
+    width: 35px;
+    height: 40px;
+    margin-left: 0px;
+  }
+
+  .captchaBox {
+    gap: 0px;
+    height: 46px;
+    padding: 0 3px;
+  }
+
+  .captchaImg {
+    object-fit: cover;
+    max-width: calc(100% - 40px);
+    height: 40px;
+  }
+
+  .captchaRow {
+    width: 50%;
+    grid-template-columns: 55% 45%;
+    gap: 8px;
+  }
 }
 
 /* Smtart of Mini IPad */
 @media (max-width: 767.98px) and (min-width: 600px) {
-.appointmentSection {padding: 1.5rem 20px;}
-.container {max-width: 92%;}
-  .formWrapper {padding: 1.5rem 25px;}
-  .title {font-size: 24px;margin-bottom: 30px;}
-  .formRow {grid-template-columns: 1fr;gap: 15px;}
+  .appointmentSection {
+    padding: 1.5rem 20px;
+  }
+
+  .container {
+    max-width: 92%;
+  }
+
+  .formWrapper {
+    padding: 1.5rem 25px;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
   .input,
   .select,
-  .textarea {padding: 12px 15px;font-size: 14px;}
-  .submitButton {padding: 12px 20px;font-size: 14px;}
-  .captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
-  .captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
-  .captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
-  .captchaRow {width: 60%; grid-template-columns: 60% 40%; gap: 8px;}
+  .textarea {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .captchaRefresh {
+    width: 35px;
+    height: 40px;
+    margin-left: 0px;
+  }
+
+  .captchaBox {
+    gap: 0px;
+    height: 46px;
+    padding: 0 3px;
+  }
+
+  .captchaImg {
+    object-fit: cover;
+    max-width: calc(100% - 40px);
+    height: 40px;
+  }
+
+  .captchaRow {
+    width: 60%;
+    grid-template-columns: 60% 40%;
+    gap: 8px;
+  }
 }
+
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-  .appointmentSection {padding: 1rem 0px;}
-  .container {max-width: 92%;}
-   .formWrapper {padding: 1rem 15px;}
-   .formRow {grid-template-columns: 1fr;gap: 8px;}
-   .subheading{letter-spacing: 0px;margin-bottom: 10px;}
-   .captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
-   .captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
-   .captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
-  .captchaRow {width: 100%; grid-template-columns: 60% 40%; gap: 8px;}
+  .appointmentSection {
+    padding: 1rem 0px;
+  }
+
+  .container {
+    max-width: 92%;
+  }
+
+  .formWrapper {
+    padding: 1rem 15px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .subheading {
+    letter-spacing: 0px;
+    margin-bottom: 10px;
+  }
+
+  .captchaRefresh {
+    width: 35px;
+    height: 40px;
+    margin-left: 0px;
+  }
+
+  .captchaBox {
+    gap: 0px;
+    height: 46px;
+    padding: 0 3px;
+  }
+
+  .captchaImg {
+    object-fit: cover;
+    max-width: calc(100% - 40px);
+    height: 40px;
+  }
+
+  .captchaRow {
+    width: 100%;
+    grid-template-columns: 60% 40%;
+    gap: 8px;
+  }
+
+  .formRow:nth-child(2) {
+    grid-template-columns: 1fr;
+  }
+
+  .dateInput input {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 45px;
+    max-height: 45px;
+    appearance: none;
+    line-height: 44px;
+  }
 }

@@ -3,6 +3,7 @@ import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/src/app/components/common/Header/Header";
 import Footer from "@/src/app/components/common/Footer/Footer";
+import Script from "next/script";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -45,19 +46,38 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children,}: Readonly<{children: React.ReactNode;}>) {
+export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       {/* <body className={`${montserrat.variable} ${poppins.variable} antialiased`}> */}
-        <head>
+      <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="robots" content="INDEX,FOLLOW" />
         <link rel="preconnect" href="https://api.citrineclinic.com/" />
         <link rel="dns-prefetch" href="https://api.citrineclinic.com/" />
         <meta name="google-site-verification" content="e7pE022ijodx3B0Hjo1h_4ckgYRcg11aPjyBCg1YRxE"></meta>
+        {/* Google Tag Manager Script */}
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-5R4CBF3');`,
+          }}
+        />
       </head>
       <body suppressHydrationWarning className={`font-sans ${montserrat.variable} ${poppins.variable} antialiased`}>
-         <Header />
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-5R4CBF3"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
+
+        <Header />
         {children}
         <Footer />
       </body>

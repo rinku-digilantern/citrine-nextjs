@@ -23,7 +23,7 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
     // Always initialize to 'concerns' for SSR consistency
-    const [activeTab, setActiveTab] = useState('concerns');
+    const [activeTab, setActiveTab] = useState('treatments');
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const Header = () => {
             setIsMobile(mobile);
             // Only update activeTab on mount (not on every resize)
             if (mobile) setActiveTab('quicklinks');
-            else setActiveTab('concerns');
+            else setActiveTab('treatments');
         };
         checkMobile();
         window.addEventListener('resize', checkMobile);

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ServiceDetailSecondSection.module.css";
 import Image from "next/image";
+import { wrapTablesInScrollDiv } from "@/src/lib/tableWrapper";
 
 interface Props {
   heading?: string;
@@ -23,7 +24,7 @@ const ServiceDetailSecondSection: React.FC<Props> = ({ heading, content, classAd
           {content && (
             <div 
               className={styles.description} 
-              dangerouslySetInnerHTML={{ __html: content }} />
+              dangerouslySetInnerHTML={{ __html: wrapTablesInScrollDiv(content) }} />
           )}
            </div>
           {image && (

@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ServiceDetailThirdSection.module.css';
+import { wrapTablesInScrollDiv } from '@/src/lib/tableWrapper';
 
 interface Props {
   heading?: string;
@@ -16,12 +17,12 @@ export default function ServiceDetailThirdSection({ heading, description, sectio
             <div className={styles.container}>
 			{heading && <HeadingTag className={`mainHeading ${styles.mainHeading}`}>{heading}</HeadingTag>}
 			{description && (
-        <div className={styles.description} dangerouslySetInnerHTML={{ __html: description }} />
+        <div className={styles.description} dangerouslySetInnerHTML={{ __html: wrapTablesInScrollDiv(description) }} />
       )}
 			<div className={`${styles.columns} ${section2 ? styles.twoColumns : styles.oneColumn}`}>
-				<div className={styles.column} dangerouslySetInnerHTML={{ __html: section1 || "" }} />
+				<div className={styles.column} dangerouslySetInnerHTML={{ __html: wrapTablesInScrollDiv(section1 || "") }} />
 				{section2 && (
-          <div className={styles.column} dangerouslySetInnerHTML={{ __html: section2 }} />
+          <div className={styles.column} dangerouslySetInnerHTML={{ __html: wrapTablesInScrollDiv(section2) }} />
         )}
 			  </div>
             </div>

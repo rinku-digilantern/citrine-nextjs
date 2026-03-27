@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./BlogContent.module.css";
+import { wrapTablesInScrollDiv } from "@/src/lib/tableWrapper";
 
 interface BlogContentProps {
   blogContent: string;      // HTML from API (blog_content)
@@ -93,9 +94,9 @@ export default function BlogContent({
     return () => window.removeEventListener("scroll", handleScroll);
   }, [allTocSections]);
 
-  // Inject IDs into content HTML
-  const contentWithIds       = useMemo(() => injectHeadingIds(blogContent), [blogContent]);
-  const finalThoughtsWithIds = useMemo(() => injectHeadingIds(finalThoughts), [finalThoughts]);
+  // Inject IDs into content HTML, then wrap tables for mobile scroll
+  const contentWithIds       = useMemo(() => wrapTablesInScrollDiv(injectHeadingIds(blogContent)), [blogContent]);
+  const finalThoughtsWithIds = useMemo(() => wrapTablesInScrollDiv(injectHeadingIds(finalThoughts)), [finalThoughts]);
 
   return (
     <div className={styles.BlogContent}>
@@ -158,7 +159,7 @@ export default function BlogContent({
             {faqContent && (
               <div className={styles.faqsection} id="faq">
                 {faqHeading && <h2>{faqHeading}</h2>}
-                <div dangerouslySetInnerHTML={{ __html: faqContent }} />
+                <div dangerouslySetInnerHTML={{ __html: wrapTablesInScrollDiv(faqContent) }} />
               </div>
             )}
 

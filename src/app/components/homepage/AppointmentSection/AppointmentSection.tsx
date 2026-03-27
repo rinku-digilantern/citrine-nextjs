@@ -21,8 +21,8 @@ interface FormState {
 
 type FormErrors = Partial<FormState>;
 
-const CAPTCHA_API   = 'https://api.citrineclinic.com/api/googlecaptcha';
-const APPT_API      = 'https://api.citrineclinic.com/api/appointment';
+const CAPTCHA_API = 'https://api.citrineclinic.com/api/googlecaptcha';
+const APPT_API = 'https://api.citrineclinic.com/api/appointment';
 
 const services = [
   'Skin Treatment',
@@ -37,17 +37,17 @@ const AppointmentSection = () => {
   const [formData, setFormData] = useState<FormState>({
     name: '', email: '', phone: '', service: '', date: '', message: '', captcha: '',
   });
-  const [errors, setErrors]         = useState<FormErrors>({});
-  const [captcha, setCaptcha]       = useState<CaptchaData | null>(null);
-  const [status, setStatus]         = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg]     = useState('');
-  const [minDate, setMinDate]       = useState('');
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [captcha, setCaptcha] = useState<CaptchaData | null>(null);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+  const [minDate, setMinDate] = useState('');
 
   // ── Fetch CAPTCHA ────────────────────────────────────────────────────────────
   const fetchCaptcha = useCallback(async () => {
     try {
       // Append a timestamp to perfectly avoid browser cache
-      const res  = await fetch(`${CAPTCHA_API}?t=${new Date().getTime()}`, { cache: 'no-store' });
+      const res = await fetch(`${CAPTCHA_API}?t=${new Date().getTime()}`, { cache: 'no-store' });
       const data = await res.json();
       setCaptcha(data);
       setFormData(prev => ({ ...prev, captcha: '' })); // clear captcha input on refresh
@@ -56,8 +56,8 @@ const AppointmentSection = () => {
     }
   }, []);
 
-  useEffect(() => { 
-    fetchCaptcha(); 
+  useEffect(() => {
+    fetchCaptcha();
     // Set today's date for the date picker minimum
     const today = new Date();
     // Offset to local timezone to avoid weird UTC date shifting bugs
@@ -144,23 +144,23 @@ const AppointmentSection = () => {
     setErrorMsg('');
 
     const payload = {
-      name:    formData.name,
-      phone:   formData.phone,
-      email:   formData.email,
-      date:    formData.date,
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      date: formData.date,
       captcha: formData.captcha,
-      uncode:  captcha.uniqid,
-      source:  'website',
+      uncode: captcha.uniqid,
+      source: 'website',
       referer: typeof window !== 'undefined' ? window.location.href : '',
       message: formData.message,
       service: formData.service,
     };
 
     try {
-      const res  = await fetch(APPT_API, {
-        method:  'POST',
+      const res = await fetch(APPT_API, {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(payload),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
 
@@ -188,8 +188,8 @@ const AppointmentSection = () => {
           {status === 'success' ? (
             <div className={styles.successMsg}>
               <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="24" fill="#DE9736" opacity="0.15"/>
-                <path d="M14 24l8 8 12-14" stroke="#DE9736" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                <circle cx="24" cy="24" r="24" fill="#DE9736" opacity="0.15" />
+                <path d="M14 24l8 8 12-14" stroke="#DE9736" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
               <p>Thank you! Your appointment request has been received. We&apos;ll contact you shortly.</p>
               <button className={styles.submitButton} onClick={() => setStatus('idle')}>
@@ -243,7 +243,7 @@ const AppointmentSection = () => {
                   </select>
                   {errors.service && <span className={styles.fieldError}>{errors.service}</span>}
                 </div>
-                <div className={styles.inputGroup}>
+                <div className={`${styles.inputGroup} ${styles.dateInput}`}>
                   <input
                     type="date" name="date" placeholder="Select date*"
                     value={formData.date} onChange={handleChange}
