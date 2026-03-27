@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Callback - Processing</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: transparent linear-gradient(251deg, #d29740, #ebd577, #d0913b 82%, #e7ca6d) 0% 0% no-repeat padding-box;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            border-top: 4px solid #d29740;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #d29740;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        h1 { color: #333; margin-bottom: 10px; font-size: 24px; }
+        p { color: #666; margin-bottom: 20px; line-height: 1.6; }
+        .result {
+            display: none;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .success {
+            background: linear-gradient(135deg, #FFF9E6 0%, #F5F3E8 100%);
+            border: 2px solid #d29740;
+            color: #155724;
+            box-shadow: 0 4px 15px rgba(210, 151, 64, 0.2);
+        }
+        .error {
+            background: #FFE8E8;
+            border: 2px solid #E57373;
+            color: #721c24;
+            box-shadow: 0 4px 15px rgba(229, 115, 115, 0.2);
+        }
+        .info {
+            background: linear-gradient(135deg, #FFF9E6 0%, #F5F3E8 100%);
+            border: 2px solid #d29740;
+            color: #856404;
+            box-shadow: 0 4px 15px rgba(210, 151, 64, 0.2);
+        }
+        .details {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            text-align: left;
+        }
+        .details strong { color: #333; }
+        .btn {
+            display: inline-block;
+            background: transparent linear-gradient(251deg, #d29740, #ebd577, #d0913b 82%, #e7ca6d) 0% 0% no-repeat padding-box;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 20px;
+            margin-right: 10px;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(210, 151, 64, 0.3);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(210, 151, 64, 0.5);
+            opacity: 0.95;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: left;
+            overflow-x: auto;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+        .logo { max-width: 180px; height: auto; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://www.citrineclinic.com/assets/images/img/logo.webp" alt="Citrine Clinic" class="logo">
+        <div id="loading">
+            <div class="loader"></div>
+            <h1>Processing Payment...</h1>
+            <p>Please wait while we verify your payment with Cashfree.</p>
+            <p id="orderIdDisplay" style="font-size: 12px; color: #999; margin-top: 10px;"></p>
+        </div>
+        
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        // Get order_id from URL (Cashfree can send multiple parameter names)
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('order_id') || 
+                        urlParams.get('orderId') || 
+                        urlParams.get('cf_order_id') ||
+                        urlParams.get('order_token');
+
+        console.log('Payment Callback Page Loaded');
+        console.log('Order ID:', orderId);
+        console.log('All URL Parameters:', Object.fromEntries(urlParams));
+
+        // Display order ID on loading screen
+        if (orderId) {
+            document.getElementById('orderIdDisplay').textContent = 'Order ID: ' + orderId;
+        }
+
+        // Retry counter for PENDING status
+        let retryCount = 0;
+        const MAX_RETRIES = 12; // 12 retries × 5 seconds = 1 minute
+
+        async function verifyPayment() {
+            if (!orderId) {
+                console.error('No order ID found in URL');
+                // Show all URL params for debugging
+                const allParams = {};
+                urlParams.forEach((value, key) => {
+                    allParams[key] = value;
+                });
+                
+                if (Object.keys(allParams).length === 0) {
+                    showResult('info', 'No Parameters Received', 
+                        'No parameters received from payment gateway. This might be a direct page access.',
+                        {'Info': 'Payment parameters are normally sent by Cashfree after completing the payment.'}
+                    );
+                } else {
+                    showResult('error', 'Order ID Not Found', 
+                        'Unable to find order ID in the callback parameters.',
+                        allParams
+                    );
+                }
+                return;
+            }
+
+            console.log('Verifying payment for order:', orderId);
+
+            try {
+                // Call the verify payment API with timeout
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
+                
+                const apiUrl = `https://api.citrineclinic.com/api/payment-verify?order_id=${orderId}`;
+                console.log('Calling API:', apiUrl);
+                
+                const response = await fetch(apiUrl, {
+                    signal: controller.signal
+                });
+                clearTimeout(timeoutId);
+                
+                console.log('API Response Status:', response.status);
+                const data = await response.json();
+                console.log('API Response Data:', data);
+
+                if (data.success) {
+                    console.log('Payment successful');
+                    showResult('success', 'Payment Successful! 🎉', 
+                        `Your payment has been completed successfully.`,
+                        {
+                            'Order ID': data.data.order_id,
+                            'Amount': '₹' + data.data.amount,
+                            'Reference Token': data.data.reference_token || 'N/A',
+                            'Status': data.data.payment_status
+                        }
+                    );
+                } else {
+                    console.log('Payment verification failed:', data.message);
+                    // Handle different error cases based on status
+                    if (data.error_code === 'DATA_NOT_FOUND') {
+                        showResult('error', 'Payment Data Not Found', 
+                            'Payment session has expired. Please contact support if payment was deducted.',
+                            {
+                                'Order ID': orderId,
+                                'Status': data.data?.payment_status || 'Unknown'
+                            },
+                            'new-payment'
+                        );
+                    } else if (data.data && data.data.payment_status) {
+                        const statusText = data.data.payment_status;
+                        const paymentData = data.data;
+                        
+                        // Handle each status appropriately
+                        if (statusText === 'PENDING' || statusText === 'ACTIVE') {
+                            retryCount++;
+                            
+                            if (retryCount >= MAX_RETRIES) {
+                                // Max retries reached
+                                showResult('info', 
+                                    'Payment Still Pending ⏳',
+                                    'Your payment is taking longer than expected. Please check back later or contact support.',
+                                    {
+                                        'Order ID': paymentData.order_id || orderId,
+                                        'Status': statusText,
+                                        'Message': 'You can safely close this page'
+                                    },
+                                    'contact-support'
+                                );
+                            } else {
+                                // Auto-retry for pending payments
+                                showResult('info', 
+                                    'Payment Pending ⏳',
+                                    'Your payment is being processed. We\'ll check the status automatically.',
+                                    {
+                                        'Order ID': paymentData.order_id || orderId,
+                                        'Status': statusText,
+                                        'Retry': `${retryCount} of ${MAX_RETRIES} (${retryCount * 5}s elapsed)`
+                                    },
+                                    'auto-retry'
+                                );
+                                // Retry after 5 seconds
+                                setTimeout(verifyPayment, 5000);
+                            }
+                        } else if (statusText === 'FAILED') {
+                            showResult('error', 
+                                'Payment Failed ❌',
+                                'Your payment could not be completed. Please try again with a different payment method.',
+                                {
+                                    'Order ID': paymentData.order_id || orderId,
+                                    'Status': statusText,
+                                    'Amount': '₹' + (paymentData.amount || 'N/A')
+                                },
+                                'retry'
+                            );
+                        } else if (statusText === 'CANCELLED' || statusText === 'USER_DROPPED') {
+                            showResult('info', 
+                                'Payment Cancelled',
+                                'You cancelled the payment. You can try again whenever you\'re ready.',
+                                {
+                                    'Order ID': paymentData.order_id || orderId,
+                                    'Status': statusText
+                                },
+                                'retry'
+                            );
+                        } else if (statusText === 'EXPIRED') {
+                            showResult('error', 
+                                'Payment Expired ⏰',
+                                'The payment session has expired. Please initiate a new payment.',
+                                {
+                                    'Order ID': paymentData.order_id || orderId,
+                                    'Status': statusText
+                                },
+                                'new-payment'
+                            );
+                        } else {
+                            // Unknown status
+                            showResult('error', 
+                                'Payment Status: ' + statusText,
+                                data.message || 'Payment was not successful.',
+                                {
+                                    'Order ID': paymentData.order_id || orderId,
+                                    'Status': statusText
+                                },
+                                'contact-support'
+                            );
+                        }
+                    } else {
+                        showResult('error', 'Payment Verification Failed', 
+                            data.message || 'Unable to verify payment status.',
+                            data.data || {'Order ID': orderId},
+                            'contact-support'
+                        );
+                    }
+                }
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    showResult('error', 'Request Timeout', 
+                        'Payment verification is taking too long. Your payment may still be processing.',
+                        {
+                            'Order ID': orderId,
+                            'Action': 'Please check back in a few minutes or contact support'
+                        }
+                    );
+                } else {
+                    showResult('error', 'Verification Error', 
+                        'Unable to connect to the payment verification service.',
+                        { 
+                            'Error': error.message,
+                            'Order ID': orderId
+                        }
+                    );
+                }
+            }
+        }
+
+        function showResult(type, title, message, details = null, action = null) {
+            document.getElementById('loading').style.display = 'none';
+            const resultDiv = document.getElementById('result');
+            resultDiv.className = `result ${type}`;
+            resultDiv.style.display = 'block';
+
+            // Extract reference_token from order_id for back link
+            const orderId = getUrlParameter('order_id');
+            let backToFormUrl = 'https://www.citrineclinic.com/payment/checkout.html';
+            if (orderId) {
+                // Order ID format: ORDER_{reference_token}_{timestamp}
+                const parts = orderId.split('_');
+                if (parts.length >= 3) {
+                    const referenceToken = parts.slice(1, -1).join('_'); // Get everything between ORDER_ and _timestamp
+                    backToFormUrl = `https://www.citrineclinic.com/payment/checkout.html?reference_token=${referenceToken}`;
+                }
+            }
+
+            let html = `
+                <h1>${title}</h1>
+                <p>${message}</p>
+            `;
+
+            if (details) {
+                html += '<div class="details">';
+                for (const [key, value] of Object.entries(details)) {
+                    html += `<p><strong>${key}:</strong> ${value}</p>`;
+                }
+                html += '</div>';
+            }
+
+            // Add action buttons based on action type
+            if (action === 'retry') {
+                html += `
+                    <a href="#" onclick="retryPayment(); return false;" class="btn" style="background: #007bff; margin-right: 10px;">Retry Payment</a>
+                    <a href="${backToFormUrl}" class="btn">Back to Form</a>
+                `;
+            } else if (action === 'new-payment') {
+                html += `<a href="${backToFormUrl}" class="btn">Start New Payment</a>`;
+            } else if (action === 'contact-support') {
+                html += `
+                    <a href="${backToFormUrl}" class="btn" style="background: #6c757d; margin-right: 10px;">Back to Form</a>
+                    <a href="mailto:support@example.com" class="btn">Contact Support</a>
+                `;
+            } else if (action !== 'auto-retry') {
+                // Default button
+                html += `<a href="${backToFormUrl}" class="btn">Back to Form</a>`;
+            }
+
+            resultDiv.innerHTML = html;
+        }
+
+        // Function to retry payment with same order
+        function retryPayment() {
+            // Get stored payment data from sessionStorage
+            const storedData = sessionStorage.getItem('lastPaymentData');
+            if (storedData) {
+                const paymentData = JSON.parse(storedData);
+                // Redirect back to form with data
+                const params = new URLSearchParams(paymentData);
+                window.location.href = `https://www.citrineclinic.com/payment/checkout.html?${params.toString()}`;
+            } else {
+                // Just go back to form
+                window.location.href = 'https://www.citrineclinic.com/payment/checkout.html';
+            }
+        }
+
+        // Helper function to get URL parameters
+        function getUrlParameter(name) {
+            return urlParams.get(name);
+        }
+
+        // Auto-verify on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('Page loaded, starting verification in 1 second...');
+            setTimeout(verifyPayment, 1000);
+        });
+    </script>
+</body>
+</html>
