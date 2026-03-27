@@ -775,7 +775,7 @@
 
   .secondleft p {
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.6;
   }
 
   .secondheading {
@@ -819,7 +819,8 @@
   }
 
   .thirdrightDesc {
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   .launchBox {
