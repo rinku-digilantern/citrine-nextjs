@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./BestDermatologistFourthSection.module.css";
 
-interface TableRow { Treatment: string; BestFor: string; Benefits: string }
+interface TableRow { [key: string]: string | number | null | undefined }
 interface Props {
   section: {
     mainHeading: string;
@@ -37,9 +37,17 @@ const BestDermatologistFourthSection: React.FC<Props> = ({ section }) => {
                 </tr>
                 {section.table && section.table.map((row: TableRow, idx: number) => (
                   <tr key={idx}>
-                    <td>{row.Treatment}</td>
-                    <td>{row.BestFor}</td>
-                    <td>{row.Benefits}</td>
+                    {Object.keys(row).map((key) => {
+                      const value = row[key];
+                      const isHtml = typeof value === 'string' && /<[^>]+>/.test(value);
+                      return (
+                        <td
+                          key={key}
+                          {...(isHtml ? { dangerouslySetInnerHTML: { __html: String(value) } } : {})}>
+                          {!isHtml ? String(value ?? '') : null}
+                        </td>
+                      );
+                    })}
                   </tr>
                 ))}
               </tbody>

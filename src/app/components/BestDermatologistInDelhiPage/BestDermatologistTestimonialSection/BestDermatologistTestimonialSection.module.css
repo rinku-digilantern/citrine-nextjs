@@ -70,8 +70,13 @@
   color: var(--default-color);
   margin-bottom: auto;
   font-family: var(--font-poppins), sans-serif;
-  flex: 1;
+  overflow: auto;
+  padding-right: 10px;
+  height: 200px;
 }
+.testimonialText::-webkit-scrollbar-track{box-shadow:inset 0 0 6px #0000004d;border-radius:5px;background-color:#ddd}
+.testimonialText::-webkit-scrollbar{width:5px;background-color:#f5f5f5}
+.testimonialText::-webkit-scrollbar-thumb{border-radius:5px;box-shadow:inset 0 0 6px #0000004d;background-color:var(--accent-color);}
 
 .servicefooter {
   display: flex;

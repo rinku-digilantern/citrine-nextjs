@@ -4,10 +4,6 @@ import AppointmentSection from '@/src/app/components/homepage/AppointmentSection
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 
 
-
-
-
-
 const API_BASE = 'https://api.citrineclinic.com/api';
 
 async function getSeoData(slug: string) {

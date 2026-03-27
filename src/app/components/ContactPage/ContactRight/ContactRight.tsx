@@ -36,7 +36,6 @@ const ContactRight = () => {
     <div className={styles.contactSidebar}>
       <div className={styles.contactHeader}>
         <h3>Get in Touch</h3>
-        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud.</p>
       </div>
 
       <div className={styles.contactMethods}>

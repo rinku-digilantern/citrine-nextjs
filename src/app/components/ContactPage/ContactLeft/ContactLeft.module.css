@@ -136,40 +136,6 @@
   transform: translateX(5px);
 }
 
-@media (max-width: 1100.98px) and (min-width: 768px) {
-  .row {grid-template-columns: 1fr;gap: 0;}
-  .contactFormContainer .formIntro h2 {font-size: 28px;}
-  .mainHeading{font-size: 30px;}
-  .contactFormContainer {padding: 30px 20px;}
-  .contactFormContainer .formIntro p {font-size: 16px;line-height: 1.8;}
-}
-
-@media (max-width: 991.98px) and (min-width: 768px) {
-  .row {grid-template-columns: 1fr;gap: 0;}
-   .mainHeading{font-size: 30px;}
-  .contactFormContainer .formIntro h2 {font-size: 28px;}
-  .contactFormContainer {padding: 30px 20px;}
-  .contactFormContainer .formIntro p {font-size: 16px;line-height: 1.8;}
-}
-/* Small devices (Phones in landscape mode) */
-@media (max-width: 767.98px) and (min-width: 600px) {
-.contactFormContainer {padding: 1rem 12px 1rem 12px;}
-.row {grid-template-columns: repeat(1, 1fr);gap: 10px;}
-.contactFormContainer .formIntro {margin-bottom: 15px;}
-.mainHeading { margin-bottom: 10px; font-size: 26px;font-weight: 500;}
-.contactFormContainer .formIntro p {font-size: 16px;line-height: 1.8;}
-.contactFormContainer .contactForm .sendButton {font-size: 15px;gap: 5px;padding: 5px 15px;}
-}
-
-/* Small devices (Phones in landscape mode) */
-@media (max-width: 599.98px) and (min-width: 320px) {
-.contactFormContainer {padding: 1rem 12px 1rem 12px;}
-.contactFormContainer .formIntro {margin-bottom: 15px;}
-.mainHeading { margin-bottom: 10px; font-size: 26px;font-weight: 500;}
-.contactFormContainer .formIntro p {font-size: 15px;line-height: 1.8;}
-.contactFormContainer .contactForm .sendButton {font-size: 15px;gap: 5px;padding: 5px 15px;}
-}
-
 /* Captcha & Validation Styles */
 .inputError {
   border-color: #d9534f !important;
@@ -183,42 +149,47 @@
   margin-top: 5px;
   font-family: var(--font-poppins), sans-serif;
 }
-
+/* Captcha & Feedback Styles */
 .captchaRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  align-items: center;
+  align-items: flex-start;justify-content: flex-start;
+  width:65%;gap: 5px;
 }
-
 .captchaBox {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: transparent;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  padding: 6px 12px;
-  height: 50px;
+  gap: 5px;
+  justify-content: space-between;
+  background: #FFFCF7;
+  border: 1px solid #E5D7C3;
+  padding: 0 6px;
+  height: 44px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-
 .captchaImg {
-  height: 36px;
+  height: 44px;
   width: auto;
+  max-width: calc(100% - 56px);
   object-fit: contain;
+  flex-shrink: 0;
 }
-
 .captchaRefresh {
-  background: none;
+  background:var(--gradient-bg);
   border: none;
-  color: var(--default-color);
+  color: #fff;
+  width: 50px;
+  height: 38px;
   font-size: 20px;
   cursor: pointer;
-  padding: 0 5px;
+  margin-left: 4px;
+  padding: 0;
   transition: color 0.2s;
-}
-
-.captchaRefresh:hover {
-  color: var(--accent-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .captchaInputBox {
@@ -234,9 +205,65 @@
   padding: 10px 15px;
   border-radius: 4px;
 }
+@media (max-width: 1400.98px) and (min-width: 1201px) {
+.captchaRow {width:65%;}
+.captchaRefresh {width: 35px;height: 38px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 44px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+}
 
-@media (max-width: 600px) {
-  .captchaRow {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 1200.98px) and (min-width: 1130px) {
+.captchaRow {width:72%;}
+.captchaRefresh {width: 35px;height: 38px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 44px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+}
+
+@media (max-width: 1100.98px) and (min-width: 768px) {
+  .row {grid-template-columns: 1fr;gap: 0;}
+  .contactFormContainer .formIntro h2 {font-size: 28px;}
+  .mainHeading{font-size: 30px;}
+  .contactFormContainer {padding: 30px 20px;}
+.captchaRow {width:72%;}
+.captchaRefresh {width: 35px;height: 38px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 44px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+.contactFormContainer .formIntro p {font-size: 16px;line-height: 1.8;}
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+.row {grid-template-columns: 1fr;gap: 0;}
+.mainHeading{font-size: 30px;}
+.contactFormContainer .formIntro h2 {font-size: 28px;}
+.contactFormContainer {padding: 30px 20px;}
+.captchaRow {width:60%;}
+.captchaRefresh {width: 35px;height: 38px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 44px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+.contactFormContainer .formIntro p {font-size: 16px;line-height: 1.8;}
+}
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px) {
+.contactFormContainer {padding: 1rem 12px 1rem 12px;}
+.row {grid-template-columns: repeat(1, 1fr);gap: 10px;}
+.contactFormContainer .formIntro {margin-bottom: 15px;}
+.captchaRefresh {width: 35px;height: 38px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 44px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+.mainHeading { margin-bottom: 10px; font-size: 26px;font-weight: 500;}
+.contactFormContainer .formIntro p {font-size: 16px;line-height: 1.8;}
+.contactFormContainer .contactForm .sendButton {font-size: 15px;gap: 5px;padding: 5px 15px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+.contactFormContainer {padding: 1rem 12px 1rem 12px;}
+.captchaRow {width:100%;gap:5px;}
+.contactFormContainer .formIntro {margin-bottom: 15px;}
+.mainHeading { margin-bottom: 10px; font-size: 26px;font-weight: 500;}
+.contactFormContainer .formIntro p {font-size: 15px;line-height: 1.8;}
+.captchaRefresh {width: 35px;height: 38px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 44px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+.contactFormContainer .contactForm .sendButton {font-size: 15px;gap: 5px;padding: 5px 15px;}
 }
