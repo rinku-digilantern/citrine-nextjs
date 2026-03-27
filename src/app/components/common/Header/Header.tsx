@@ -142,15 +142,16 @@ const Header = () => {
                                         <li><Link href="/" onClick={toggleMenu}>Home</Link></li>
                                         <li><Link href="/dr-niti-gaur" onClick={toggleMenu}>About Doctor</Link></li>
                                         <li><Link href="/skin-clinic-in-gurgaon" onClick={toggleMenu}>About Clinic</Link></li>
-                                        <li><Link href="/blogs" onClick={toggleMenu}>Blogs</Link></li>
+                                        <li><Link href="/blog" onClick={toggleMenu}>Blogs</Link></li>
                                         <li><Link href="/clinic-gallery" onClick={toggleMenu}>Gallery</Link></li>
                                         <li><Link href="/testimonials" onClick={toggleMenu}>Written Testimonials</Link></li>
                                         {/* <li><Link href="/results" onClick={toggleMenu}>Results</Link></li> */}
                                         <li><Link href="/technologies" onClick={toggleMenu}>Technologies</Link></li>
                                         <li><Link href="/videos" onClick={toggleMenu}>Videos</Link></li>
                                         <li><Link href="/media" onClick={toggleMenu}>Media</Link></li>
-                                        <li><Link href="/offers" onClick={toggleMenu}>Offers</Link></li>
+                                        {/* <li><Link href="/offers" onClick={toggleMenu}>Offers</Link></li> */}
                                         <li><Link href="/contact" onClick={toggleMenu}>Contact Us</Link></li>
+                                        <li><Link href="/explore" onClick={toggleMenu}>Explore</Link></li>
                                     </ul>
                                 </AccordionSection>
                             ) : (
@@ -167,8 +168,9 @@ const Header = () => {
                                         <li><Link href="/technologies" onClick={toggleMenu}>Technologies</Link></li>
                                         <li><Link href="/videos" onClick={toggleMenu}>Videos</Link></li>
                                         <li><Link href="/media" onClick={toggleMenu}>Media</Link></li>
-                                        <li><Link href="/offers" onClick={toggleMenu}>Offers</Link></li>
+                                        {/* <li><Link href="/offers" onClick={toggleMenu}>Offers</Link></li> */}
                                         <li><Link href="/contact" onClick={toggleMenu}>Contact Us</Link></li>
+                                        <li><Link href="/explore" onClick={toggleMenu}>Explore</Link></li>
                                     </ul>
                                 </div>
                             )}
