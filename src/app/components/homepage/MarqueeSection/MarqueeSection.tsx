@@ -10,8 +10,10 @@ const MarqueeSection = () => {
     { name: 'BRIDES', src: '/assets/images/home/marquee03.webp' },
     { name: 'Hauterrfly', src: '/assets/images/home/marquee04.webp' },
     { name: 'Onlymyhealth', src: '/assets/images/home/marquee05.webp' },
-    { name: 'CITIUPDATE', src: '/assets/images/home/marquee01.webp' },
-    { name: 'Dainik Bhaskar', src: '/assets/images/home/marquee02.webp' }
+    { name: 'Her Zindagi', src: '/assets/images/home/marquees06.webp' },
+    { name: 'Vogue Arabia', src: '/assets/images/home/marquees07.webp' },
+    { name: 'mansworld', src: '/assets/images/home/marquees08.webp' },
+    { name: 'TimesNow', src: '/assets/images/home/marquees09.webp' }
   ];
 
   return (

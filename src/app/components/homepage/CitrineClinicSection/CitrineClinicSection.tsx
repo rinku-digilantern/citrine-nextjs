@@ -98,9 +98,9 @@ export default function CitrineClinicSection() {
             <div className={styles.contentpanel} onClick={() => setEnabled(false)}>
               <div className={styles.bgwrap}>
                 <picture>
-                  <source media="(max-width: 599.98px)" srcSet="/assets/images/home/mbcitrineclinicbg.webp" />
+                  <source media="(max-width: 599.98px)" srcSet="/assets/images/home/mbcitrineclinicbgs.webp" />
                   <Image
-                    src="/assets/images/home/citrineclinicbg.webp"
+                    src="/assets/images/home/citrineclinicbgs.webp"
                     width={1500}
                     height={736}
                     alt="Citrine Clinic"

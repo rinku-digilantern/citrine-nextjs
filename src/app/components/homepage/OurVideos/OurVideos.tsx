@@ -16,7 +16,7 @@ const OurVideos = () => {
       videoUrl: 'https://youtube.com/embed/ISq44JIxGow'
     },
     {
-      thumbnail: '/assets/images/home/video02.webp',
+      thumbnail: '/assets/images/home/videos02.webp',
       alt: 'Men vs Women: Who Really Ages Faster?',
       videoUrl: 'https://youtube.com/embed/RLl6acl2IwQ'
     },
