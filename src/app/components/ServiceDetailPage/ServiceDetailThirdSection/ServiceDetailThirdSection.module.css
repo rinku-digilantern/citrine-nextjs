@@ -110,4 +110,6 @@
 .description p{font-size: 16px;}
 .column ul li, .column ol li {margin-bottom: 6px;font-size: 16px; }
 .twoColumns{grid-template-columns: 1fr;}
+
+
 }

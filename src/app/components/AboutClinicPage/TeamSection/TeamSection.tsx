@@ -58,7 +58,7 @@ const TeamSection = () => {
 
 
   const getCurrentData = () => {
-    switch(activeTab) {
+    switch (activeTab) {
       case 'founder':
         return founderData;
       case 'doctors':
@@ -73,8 +73,8 @@ const TeamSection = () => {
     <section className={styles.teamSection}>
       <div className={styles.container}>
         <h2 className={`mainHeading ${styles.mainHeading}`}>
-          A PROFESSIONAL TEAM OF<br />
-          EXPERIENCED
+          Expert Hands Behind <br />
+          Citrine Clinic
         </h2>
 
         <div className={styles.tabsContainer}>

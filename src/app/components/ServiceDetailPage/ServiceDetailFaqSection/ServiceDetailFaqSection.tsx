@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./ServiceDetailFaqSection.module.css";
+import { wrapTablesInScrollDiv } from "@/src/lib/tableWrapper";
 
 interface FaqItem {
   id: number;
@@ -29,7 +30,7 @@ const ServiceDetailFaqSection: React.FC<Props> = ({ faqData, heading, content, c
     <section id="faq" className={`${styles.ServiceDetailFaqSection} ${classAdd ? styles[classAdd] || classAdd : ''}`}>
       <div className={styles.container}>
         <h2 className={`mainHeading ${styles.mainHeading}`}>{heading || "FREQUENTLY ASKED QUESTIONS"}</h2>
-        {content && <div className={styles.faqContent} dangerouslySetInnerHTML={{ __html: content }} />}
+        {content && <div className={styles.faqContent} dangerouslySetInnerHTML={{ __html: wrapTablesInScrollDiv(content) }} />}
         
         <div className={styles.faqList}>
           {faqData.map((faq) => (
@@ -48,7 +49,7 @@ const ServiceDetailFaqSection: React.FC<Props> = ({ faqData, heading, content, c
               </button>
               {openId === faq.id && (
                 <div className={styles.faqAnswer}>
-                  <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
+                  <div dangerouslySetInnerHTML={{ __html: wrapTablesInScrollDiv(faq.answer) }} />
                 </div>
               )}
             </div>

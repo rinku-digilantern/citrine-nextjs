@@ -97,8 +97,21 @@
 .bredcontainer {max-width: 92%; margin: 0px auto;padding: 0px; width: 92%;}
 .breadcrumbList {padding: 0px;}
 }
-/* Small devices (Phones in landscape mode) */
-@media (max-width: 599.98px) and (min-width: 320px) {
-.breadcrumb{margin-top: 0px;padding: 5px 0;}
-.breadcrumbList {max-width: 100%;padding: 0 10px;gap: 2px;}
-}
+@media (max-width: 767.98px) {
+  .breadcrumb { padding: 8px 0; }
+  .breadcrumbList {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 15px;
+    gap: 10px;
+    scrollbar-width: none; /* Firefox */
+  }
+  .breadcrumbList::-webkit-scrollbar { display: none; } /* Safari/Chrome */
+  
+  .breadcrumbItem {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}

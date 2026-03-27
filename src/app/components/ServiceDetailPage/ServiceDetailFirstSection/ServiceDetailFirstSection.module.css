@@ -73,6 +73,7 @@
 .description ul li, .description ol li {margin-bottom: 12px;font-size: 18px; color: var(--default-color); line-height: 1.8;}
 .description ul li::marker, .description ol li::marker{color: var(--accent-color);}
 .description big{margin-bottom: 0px;}
+
 .treatmentImage {
   width: 100%;
   height: auto;
@@ -139,4 +140,6 @@
 .description ul, .description ol {margin-bottom: 10px;}
 .description ul li, .description ol li {margin-bottom: 5px;font-size: 16px;}
 .description big {font-size: 16px;font-weight: 500;padding:5px 10px;}
-}
+
+
+}
