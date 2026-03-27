@@ -159,7 +159,7 @@ const MainBanner = () => {
             <div className={styles.mb_contentpanel}>
               <picture>
                 <source media="(max-width: 600px)" srcSet={`/assets/images/home/mobilesecondbanners.webp`} />
-                <img src={`/assets/images/home/citrinesecondbanner.webp`} className={styles.bannerImage2} width={1440} height={700} alt="Slide 2" />
+                <img src={`/assets/images/home/citrinesecondbanner.webp`} className={styles.bannerImage2} width={1440} height={700} decoding="async" alt="Slide 2" />
               </picture>
               <div className={styles.secondcontainer}>
                 <div className={styles.secondrow}>
@@ -178,7 +178,7 @@ const MainBanner = () => {
             <div className={styles.mb_thankspanelwrap}>
               <picture>
                 <source media="(max-width: 600px)" srcSet={`/assets/images/home/mobilethirdbanner.webp`} />
-                <img src={`/assets/images/home/thirdbanner.webp`} className={styles.bannerImage2} width={1440} height={700} alt="Slide 3" />
+                <img src={`/assets/images/home/thirdbanner.webp`} className={styles.bannerImage2} width={1440} height={700} decoding="async" alt="Slide 3" />
               </picture>
               <div className={styles.secondcontainer}>
                 <div className={styles.thirdrow}>

@@ -485,7 +485,7 @@
 .logo{margin-left: 7%;}
 .logo img {height: auto;width: 110px;max-width: 110px;}
 .headerwrapper{width: 100%; margin: 0;float: none;}
-.contactInfo {gap: 5px;padding: 20px 5px;letter-spacing: 0px;border-left: 0px;}
+.contactInfo {gap: 5px;padding: 20px 10px;letter-spacing: 0px;border-left: 0px;}
 .contactInfo img{width: 16px;height: 16px;}
 .headerActions {align-items: center;margin-left: auto;display: flex;margin-right: 15px;gap: 0px;}
 .appointmentBtn {padding: 15px 5px;display: none;}
