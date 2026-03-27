@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0 auto;;
 }
+.for-mobile{display: none;}
 .contactInfoTitle {
     font-size: 1.6rem;
     font-weight: 600;
@@ -522,6 +523,116 @@ display: flex;
     color: #fff;
 }
 .fixedText {display: inline-block; line-height: 1;}
-    .footerfixed .fixedText { font-size: 12px;}
-    .footerfixed .fixedCol { padding: 4px 10px 4px 10px;flex-direction: column; gap: 4px;}
+.footerfixed .fixedText { font-size: 12px;}
+.footerfixed .fixedCol { padding: 4px 10px 4px 10px;flex-direction: column; gap: 4px;}
+
+/*-- CTA --*/
+#CtaWrapper {
+    padding: 0px 0px 0px 0px;
+    -webkit-box-shadow: 0 -10px 17px #d4d4d466;
+    -moz-box-shadow: 0px -10px 17px 0px rgba(212, 212, 212, 0.4);
+    box-shadow: 0 -10px 17px #d4d4d466;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+    transition: 0.5s;
+}
+#CtaWrapper .ctafooter {
+    display: flex;
+    justify-content: space-around;
+}
+#CtaWrapper .ctafooter .commonctawrap {
+    text-align: center;width: 50%;padding: 6px 0px 2px 0px;
+}
+#CtaWrapper .ctafooter .commonctawrap a {
+    text-align: center;
+    display: inline-block;
+    /* align-items: center;
+    justify-content: center; */
+    height: 30px;
+    line-height:30px;
+    margin: 0 auto;text-decoration: none;
+}
+#CtaWrapper .ctafooter .commonctawrap a .realcolo2 {
+    display: none;
+}
+#CtaWrapper .col-12{padding: 0px;margin: 0px;}
+#CtaWrapper .ctafooter .commonctawrap a i{color: #000; font-size: 24px;}
+#CtaWrapper .ctafooter .commonctawrap a p {
+    margin: 0px;
+    color: var(--default-color);
+    font-size: 12px; line-height: 12px;
+    font-weight: bold;text-decoration: none;
+}
+.commonctawrap.green{ background-color: #25d366;}
+.commonctawrap.green p{color: #fff;}
+#CtaWrapper .ctafooter .commonctawrap.active a {
+    background: #222;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+    width: 30px;
+}
+#CtaWrapper .ctafooter .commonctawrap.active a .realcolo2 {
+    display: block;
+}
+#CtaWrapper .ctafooter .commonctawrap.active a img.realcolor {
+    display: none !important;
+}
+.showphonenumber {
+    display: block;
+}
+.callnumberwrap {
+    position: relative;
+    background: var(--default-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.callnumberwrap img {
+    width: 25px;
+    padding: 2px;
+}
+.cliktoopennumber {
+    position: fixed;
+    bottom: 76px;
+    left: 10px;z-index: 9;
+    text-align: center;
+    border-radius: 50%;
+}
+.cliktoopennumber .number-menu {
+    position: absolute;
+    bottom: 44px;
+    width: 155px;
+    left: 10px;
+}
+.cliktoopennumber .number-menu ul {
+    position: relative;padding-left: 0px;list-style: none;
+}
+.cliktoopennumber .number-menu ul li {
+    background: var(--default-color);
+    padding: 4px 0px;
+    font-family: var(--font-poppins);
+    margin-bottom: 2px;
+}
+.cliktoopennumber .number-menu ul li a {
+    color: #fff;text-decoration: none;
+}
+.cliktoopennumber .number-menu ul::before {
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid var(--default-color);
+    position: absolute;
+    bottom: -10px;
+    left: 0px;
+}
 }
