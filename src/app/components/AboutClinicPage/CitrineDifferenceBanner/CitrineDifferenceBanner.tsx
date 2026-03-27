@@ -24,9 +24,9 @@ const CitrineDifferenceBanner = () => {
               share their real experiences.
             </p>
             
-            <Link href="/testimonials" className={styles.ctaButton}>
-              EXPLORE REAL RESULTS
-            </Link>
+              {/* <Link href="/testimonials" className={styles.ctaButton}>
+                EXPLORE REAL RESULTS
+              </Link> */}
           </div>
         </div>
       </div>

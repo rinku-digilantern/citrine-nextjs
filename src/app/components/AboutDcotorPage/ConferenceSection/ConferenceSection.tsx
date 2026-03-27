@@ -26,7 +26,7 @@ const ConferenceSection = () => {
               height={450}
               className={styles.videoImage}
             />
-            <button 
+            {/* <button 
               className={styles.playButton}
               onClick={() => setIsPlaying(true)}
               aria-label="Play video"
@@ -35,7 +35,7 @@ const ConferenceSection = () => {
                 <circle cx="30" cy="30" r="30" fill="white" fillOpacity="0.9"/>
                 <path d="M24 18L42 30L24 42V18Z" fill="#333"/>
               </svg>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
