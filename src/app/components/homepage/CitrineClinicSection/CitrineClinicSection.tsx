@@ -7,48 +7,86 @@ import React, { useRef, useEffect, useState } from 'react';
 export default function CitrineClinicSection() {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
-  const [scrollX, setScrollX] = useState(0);
-  const [enabled, setEnabled] = useState(true);
+  const targetXRef = useRef<number>(0);
+  const currentXRef = useRef<number>(0);
+  const rafRef = useRef<number | null>(null);
+  const ticking = useRef(false);
+  const [panelCount, setPanelCount] = useState(0);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
+
+    // Count panels for height calculation
+    const track = trackRef.current;
+    if (track) {
+      const trackFlex = track.children[0];
+      if (trackFlex) {
+        setPanelCount(trackFlex.children.length);
+      }
+    }
+
     const handleScroll = () => {
-      if (!sectionRef.current || !trackRef.current) return;
-      const section = sectionRef.current;
+      if (ticking.current) return;
+      ticking.current = true;
+      window.requestAnimationFrame(() => {
+        ticking.current = false;
+        if (!sectionRef.current || !trackRef.current) return;
+        
+        const section = sectionRef.current;
+        const track = trackRef.current;
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const sectionHeight = section.offsetHeight;
+        
+        const topSpacing = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-spacing') || '0', 10);
+        
+        const scrollable = Math.max(sectionHeight - windowHeight, 0);
+        const scrolled = Math.min(Math.max(-(rect.top - topSpacing), 0), scrollable);
+        const percent = scrollable > 0 ? scrolled / scrollable : 0;
+        
+        const trackWidth = track.scrollWidth;
+        const viewportWidth = window.innerWidth;
+        const maxTranslate = Math.max(trackWidth - viewportWidth, 0);
+        
+        const nextX = -(percent * maxTranslate);
+        const isReachedTop = (rect.top - topSpacing) <= 0;
+        targetXRef.current = !isReachedTop ? 0 : nextX;
+      });
+    };
+
+    const animate = () => {
       const track = trackRef.current;
-      const rect = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const sectionHeight = section.offsetHeight;
-      const scrollable = Math.max(sectionHeight - windowHeight, 0);
-      const scrolled = Math.min(Math.max(-rect.top, 0), scrollable);
-      const percent = scrollable > 0 ? scrolled / scrollable : 0;
-      const trackWidth = track.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      const maxTranslate = Math.max(trackWidth - viewportWidth, 0);
-      const speed = 1.5;
-      let fastPercent = percent * speed;
-      if (fastPercent > 1) fastPercent = 1;
-      // If mapping is enabled, update horizontal translate (allow smooth both directions)
-      if (enabled) setScrollX(-fastPercent * maxTranslate);
+      if (!track) {
+        rafRef.current = window.requestAnimationFrame(animate);
+        return;
+      }
+      
+      const target = targetXRef.current || 0;
+      const current = currentXRef.current || 0;
+      const diff = target - current;
+
+      if (Math.abs(diff) > 0.1) {
+        currentXRef.current = current + diff * 0.15;
+      } else {
+        currentXRef.current = target;
+      }
+
+      track.style.transform = `translate3d(${currentXRef.current}px, 0, 0)`;
+      rafRef.current = window.requestAnimationFrame(animate);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [enabled]);
+    window.addEventListener('resize', handleScroll);
+    rafRef.current = window.requestAnimationFrame(animate);
 
-  const handleSectionClick = () => {
-    // When user clicks the section, if mapping is active and we've reached the end, disable mapping.
-    if (!sectionRef.current || !trackRef.current) return;
-    const section = sectionRef.current;
-    const rect = section.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const sectionHeight = section.offsetHeight;
-    const scrollable = Math.max(sectionHeight - windowHeight, 0);
-    const scrolled = Math.min(Math.max(-rect.top, 0), scrollable);
-    const percent = scrollable > 0 ? scrolled / scrollable : 0;
-    if (percent >= 1) setEnabled(false);
-  };
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+      if (rafRef.current) window.cancelAnimationFrame(rafRef.current);
+    };
+  }, [panelCount]);
 
   const aboutItems = [
     {
@@ -74,12 +112,14 @@ export default function CitrineClinicSection() {
   ];
 
   return (
-    <section className={styles.sectiontrack} ref={sectionRef} onClick={handleSectionClick}>
+    <section 
+      className={styles.sectiontrack} 
+      ref={sectionRef}
+      style={{ height: `${(panelCount || 2.5) * 100}vh` }}>
       <div className={styles.stickyelement}>
         <div
           className={styles.track}
-          ref={trackRef}
-          style={{ transform: `translateX(${scrollX}px)`, transition: 'transform 0.3s cubic-bezier(0.4,0,0.2,1)' }}>
+          ref={trackRef}>
           <div className={styles.trackflex}>
             {/* Left Heading Image Panel */}
             <div className={`${styles.heropanel} ${styles.heropanelCustom}`}>
@@ -95,7 +135,7 @@ export default function CitrineClinicSection() {
             </div>
 
             {/* Right Reception Image + About Box */}
-            <div className={styles.contentpanel} onClick={() => setEnabled(false)}>
+            <div className={styles.contentpanel}>
               <div className={styles.bgwrap}>
                 <picture>
                   <source media="(max-width: 599.98px)" srcSet="/assets/images/home/mbcitrineclinicbg.webp" />

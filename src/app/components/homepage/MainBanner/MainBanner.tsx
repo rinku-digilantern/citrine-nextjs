@@ -13,15 +13,26 @@ const MainBanner = () => {
   const targetXRef = useRef<number>(0);
   const currentXRef = useRef<number>(0);
   const rafRef = useRef<number | null>(null);
+  const [panelCount, setPanelCount] = React.useState(0);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    if (typeof window === "undefined") return;
 
-    // measure track width and update maxTranslateRef
+    // Count panels for height calculation
+    const track = trackRef.current;
+    if (track) {
+      const trackFlex = track.children[0];
+      if (trackFlex) {
+        setPanelCount(trackFlex.children.length);
+      }
+    }
+
+    // Measure track width and update maxTranslateRef
     const measure = () => {
       const track = trackRef.current;
       if (!track) return;
-      const trackWidth = track.scrollWidth || Math.round(track.getBoundingClientRect().width);
+      // Using getBoundingClientRect().width for sub-pixel precision if needed
+      const trackWidth = track.scrollWidth;
       const viewportWidth = window.innerWidth;
       maxTranslateRef.current = Math.max(trackWidth - viewportWidth, 0);
     };
@@ -30,33 +41,37 @@ const MainBanner = () => {
 
     // ResizeObserver to react to image loads or content changes inside track
     let ro: ResizeObserver | null = null;
-    if (typeof ResizeObserver !== 'undefined' && trackRef.current) {
+    if (typeof ResizeObserver !== "undefined" && trackRef.current) {
       ro = new ResizeObserver(() => measure());
       ro.observe(trackRef.current);
     }
 
-    // compute target position on scroll and set ref, actual DOM transform is animated in RAF loop
-   const handle = () => {
+    // Compute target position on scroll
+    const handle = () => {
       if (ticking.current) return;
       ticking.current = true;
       window.requestAnimationFrame(() => {
         ticking.current = false;
         if (!sectionRef.current || !trackRef.current) return;
+        
         const section = sectionRef.current;
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         const sectionHeight = section.offsetHeight;
         
-        // Account for top spacing (header height)
-        const topSpacing = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-spacing') || '0', 10);
+        // CSS variable for header height
+        const topSpacing = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--top-spacing") || "0", 10);
         
         const scrollable = Math.max(sectionHeight - windowHeight, 0);
+        // Calculate progress based on how much of the section has passed the header line
         const scrolled = Math.min(Math.max(-(rect.top - topSpacing), 0), scrollable);
         const percent = scrollable > 0 ? scrolled / scrollable : 0;
+        
         const speed = 1;
         let fastPercent = percent * speed;
         if (fastPercent > 1) fastPercent = 1;
-        // ensure maxTranslateRef has a sensible fallback if measurement failed
+
+        // Fallback for measurement
         if (!maxTranslateRef.current) {
           const track = trackRef.current;
           const kids = track ? track.children.length : 0;
@@ -64,48 +79,64 @@ const MainBanner = () => {
             maxTranslateRef.current = Math.max(kids * window.innerWidth - window.innerWidth, 0);
           }
         }
-        const nextX = -Math.round(fastPercent * maxTranslateRef.current);
+
+        const nextX = -(fastPercent * maxTranslateRef.current);
         const isReachedTop = (rect.top - topSpacing) <= 0;
         targetXRef.current = !isReachedTop ? 0 : nextX;
       });
     };
-	
-    window.addEventListener('scroll', handle, { passive: true });
-    const resizeHandler = () => { measure(); handle(); };
-    window.addEventListener('resize', resizeHandler);
 
-    // initial call
+    window.addEventListener("scroll", handle, { passive: true });
+    const resizeHandler = () => {
+      measure();
+      handle();
+    };
+    window.addEventListener("resize", resizeHandler);
+
+    // Initial call
     handle();
 
     // RAF loop to smoothly interpolate between currentX and targetX
-    const lerp = (a: number, b: number, n: number) => (1 - n) * a + n * b;
     const animate = () => {
       const track = trackRef.current;
-      if (!track) return;
+      if (!track) {
+        rafRef.current = window.requestAnimationFrame(animate);
+        return;
+      }
+
       const target = targetXRef.current || 0;
       const current = currentXRef.current || 0;
-      // lerp factor controls smoothing (0.1 - 0.2 is smooth)
-      const next = lerp(current, target, 0.12);
-      currentXRef.current = Math.abs(next) < 0.5 ? 0 : next;
-      track.style.transform = `translate3d(${currentXRef.current}px,0,0)`;
-      if (wrapperRef.current) {
-        wrapperRef.current.style.transform = `translate3d(${currentXRef.current}px,0,0)`;
+      
+      // Interpolation (lerp) for smooth movement
+      const diff = target - current;
+      if (Math.abs(diff) > 0.1) {
+        // Smooth factor: 0.15 is smooth but responsive
+        currentXRef.current = current + diff * 0.15;
+      } else {
+        currentXRef.current = target;
       }
+
+      track.style.transform = `translate3d(${currentXRef.current}px, 0, 0)`;
+      if (wrapperRef.current) {
+        wrapperRef.current.style.transform = `translate3d(${currentXRef.current}px, 0, 0)`;
+      }
+
       rafRef.current = window.requestAnimationFrame(animate);
     };
-    // start RAF
-    if (rafRef.current == null) rafRef.current = window.requestAnimationFrame(animate);
+
+    // Start RAF
+    rafRef.current = window.requestAnimationFrame(animate);
 
     return () => {
-      window.removeEventListener('scroll', handle);
-      window.removeEventListener('resize', resizeHandler);
+      window.removeEventListener("scroll", handle);
+      window.removeEventListener("resize", resizeHandler);
       if (ro) ro.disconnect();
       if (rafRef.current) {
         window.cancelAnimationFrame(rafRef.current);
         rafRef.current = null;
       }
     };
-  }, []);
+  }, [panelCount]); // Re-run if panelCount changes (measure might shift)
 
   const handleSectionClick = () => {
     if (!sectionRef.current) return;
@@ -116,11 +147,14 @@ const MainBanner = () => {
     const scrollable = Math.max(sectionHeight - windowHeight, 0);
     const scrolled = Math.min(Math.max(-rect.top, 0), scrollable);
     const percent = scrollable > 0 ? scrolled / scrollable : 0;
-    // noop: clicking shouldn't permanently disable the animation
   };
 
   return (
-    <section className={styles.mb_sectiontrack} ref={sectionRef} onClick={handleSectionClick}>
+    <section 
+      className={styles.mb_sectiontrack} 
+      ref={sectionRef} 
+      onClick={handleSectionClick}
+      style={{ height: `${(panelCount || 2.5) * 100}vh` }}>
       <div className={styles.mb_stickyelement}>
         <div
           className={styles.mb_track}

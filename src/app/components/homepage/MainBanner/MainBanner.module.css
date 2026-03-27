@@ -660,54 +660,67 @@
   }
 }
 
-/* Small devices (Phones in landscape mode) */
-@media (max-width: 599.98px) and (min-width: 320px) {
-  .secondcontainer {
-    max-width: 92%;
-    width: 92%;
-  }
-
+/* Mobile / Tablet: Restore Horizontal sticky scroll */
+@media (max-width: 991.98px) {
   .mb_sectiontrack {
-    height: 300vh;
-    height: 300dvh;
+    position: relative;
+    /* Height is handled dynamically in JSX to match panel count */
   }
-
-  .stickywrapper {
-    height: 300vh;
-    height: 300dvh;
-  }
-
-  .sectiontrack {
-    height: 300vh;
-    height: 300dvh;
-  }
-
-  .hero.sectiontrack {
-    height: 300vh;
-    height: 300dvh;
-  }
-
-  .cardpanel {
-    height: calc(100vh);
-    height: calc(100dvh);
-    top: var(--top-spacing);
-  }
-
+  
   .mb_stickyelement {
-    height: calc(100vh);
-    height: calc(100dvh);
+    position: sticky;
     top: var(--top-spacing);
+    height: calc(100vh - var(--top-spacing, 0px));
+    height: calc(100dvh - var(--top-spacing, 0px));
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 100%;
+    z-index: 2;
+    overflow: hidden;
   }
-
+  
+  .mb_track {
+    flex: none;
+    height: 100%;
+    position: relative;
+    will-change: transform;
+  }
+  
+  .mb_trackflex {
+    flex-direction: row !important;
+    display: flex;
+    height: 100%;
+    width: auto;
+    margin-right: -100vw;
+  }
+  
+  .mb_contentpanel, 
   .mb_thankspanelwrap {
-    height: calc(100vh);
-    height: calc(100dvh);
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100% !important;
+    flex: none;
+    position: relative;
+    padding: 0;
   }
 
   .wrapper {
+    position: absolute;
     width: 95%;
     margin: 0 auto;
-    text-align: center;
+    bottom: 30px;
+    left: 5%;
+    transform: none;
+    text-align: left;
+    z-index: 10;
+  }
+
+  .content {
+    display: block;
+    transform: none;
+    text-align: left;
   }
 
   .hero {
@@ -723,11 +736,6 @@
     text-align: center;
     font-size: 15px;
     padding-bottom: 10px;
-  }
-
-  .content {
-    display: block;
-    transform: translateY(-40%);
   }
 
   .heading {
@@ -858,3 +866,4 @@
     margin: 0px auto 0px auto;
   }
 }
+

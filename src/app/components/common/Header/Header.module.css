@@ -408,7 +408,7 @@
 .accordionContent ul li::marker{color: var(--accent-color);}
 /* Fixed accordionBtn for possible use in JSX */
 .boxborder{border-bottom: 1px solid #E5D7C3;}
-.accordionBtn {width: 100%;text-align: left;padding: 15px 15px;background: none;border: none;font-weight: 600;font-size: 15px;cursor: pointer;display: flex;align-items: center;font-family: var( --font-montserrat), sans-serif; justify-content: space-between;}
+.accordionBtn {width: 100%;text-align: left;padding: 15px 15px;background: none;border: none;font-weight: 600;font-size: 15px;cursor: pointer;display: flex;align-items: center;font-family: var( --font-montserrat), sans-serif; justify-content: space-between;color: var(--default-color);}
 .accordionIcon {display: inline-block;margin-left: 5px;width: 8px;height: 8px;border: solid #524635;border-width: 0 2px 2px 0;transform: rotate(-45deg);transition: transform 0.2s;}
 .accordionIconOpen {transform: rotate(45deg);}
 .accordionContent:first-child{margin-left: 0px;}
