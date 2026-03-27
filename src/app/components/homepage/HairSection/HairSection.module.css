@@ -1,12 +1,27 @@
-.hairSection {background: var(--footer-bg);padding: 60px 0;overflow: hidden;}
-.container {display: grid;grid-template-columns: 500px 1fr;gap: 50px;}
+.hairSection {
+  background: var(--footer-bg);
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 50px;
+}
+
 /* Hide .dblock and show .dnone by default (desktop) */
-.dnone{display: block;}
-.dblock{display: none !important;}
+.dnone {
+  display: block;
+}
+
+.dblock {
+  display: none !important;
+}
 
 /* Left Content */
 .leftContent {
- background: var(--footer-bg);
+  background: var(--footer-bg);
   padding: 0px 50px 0px 105px;
   display: flex;
   flex-direction: column;
@@ -19,10 +34,17 @@
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-.mainHeading span{font-weight: 400;font-size: 50px;display: block;} 
+
+.mainHeading span {
+  font-weight: 400;
+  font-size: 45px;
+  display: block;
+}
+
 .description {
   font-size: 20px;
-  line-height: 1.6;text-transform: uppercase;
+  line-height: 1.6;
+  text-transform: uppercase;
   color: var(--default-color);
   margin-bottom: 20px;
   font-weight: 500;
@@ -50,7 +72,8 @@
 
 .previousButton {
   background: #ffffff;
-  color: #8B6F47; border:1px solid #E5D7C3;
+  color: #8B6F47;
+  border: 1px solid #E5D7C3;
 }
 
 .previousButton:hover {
@@ -68,8 +91,17 @@
   transform: translateX(3px);
   box-shadow: 0 6px 20px rgba(224, 157, 58, 0.4);
 }
-.btnrow{width: 50%; margin-bottom: 30px;}
-.mbbtnrow{width: 50%;display: none;}
+
+.btnrow {
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+.mbbtnrow {
+  width: 50%;
+  display: none;
+}
+
 .viewMoreLink {
   display: inline-block;
   color: #fff;
@@ -81,6 +113,7 @@
   font-weight: 500;
   transition: background 0.3s ease, color 0.3s ease;
 }
+
 .viewMoreLink:hover {
   background: var(--gradient-bg-hover);
   color: #fff
@@ -98,7 +131,8 @@
 
 .emblaContainer {
   display: flex;
-  height: 100%;gap: 25px;
+  height: 100%;
+  gap: 25px;
 }
 
 .emblaSlide {
@@ -114,14 +148,14 @@
   height: 480px;
   overflow: hidden;
   border: 1px solid #E5D7C3;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.3s, border 0.3s;
 }
 
 .treatmentCard .zoomWrapper {
   width: 100%;
   height: 100%;
-  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
 
@@ -132,7 +166,7 @@
 
 .treatmentCard:hover {
   z-index: 2;
-  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.10);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
 }
 
 .treatmentImage {
@@ -147,7 +181,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 50%, transparent 100%);
   padding: 25px;
   /* box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.8); */
 }
@@ -164,20 +198,39 @@
 
 /* Left Content */
 @media (max-width: 1500.98px) and (min-width:1401px) {
-.hairSection {padding:50px 0;}
-.leftContent {padding: 0px 40px 0px 60px;}
+  .hairSection {
+    padding: 50px 0;
+  }
+
+  .leftContent {
+    padding: 0px 40px 0px 60px;
+  }
 }
 
 /* Left Content */
 @media (max-width: 1400.98px) and (min-width:1301px) {
-.hairSection {padding:50px 0;}
-.leftContent {padding: 0px 40px 0px 60px;}
+  .hairSection {
+    padding: 50px 0;
+  }
+
+  .leftContent {
+    padding: 0px 40px 0px 60px;
+  }
 }
 
 @media (max-width: 1300.98px) and (min-width:1201px) {
-.hairSection {padding:50px 0;}
-.leftContent {padding: 0px 40px 0px 60px;}
-.treatmentTitle {letter-spacing: 2%;font-size: 18px;}
+  .hairSection {
+    padding: 50px 0;
+  }
+
+  .leftContent {
+    padding: 0px 40px 0px 60px;
+  }
+
+  .treatmentTitle {
+    letter-spacing: 2%;
+    font-size: 18px;
+  }
 }
 
 /* Responsive Design */
@@ -236,28 +289,118 @@
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-.hairSection {padding: 1.5rem 0;}
-.container {width: 92%;margin: 0 auto;}
-.leftContent {padding: 0rem 10px;text-align: center;}
-.rightCarousel{padding: 10px 10px 60px 10px;background: #FFFFFF80;border: 1px solid #E5D7C3;backdrop-filter: blur(20px)}
-.mainHeading {font-size: 35px; margin-bottom: 5px;}
-.mainHeading span {font-size: 25px;}
-.description {margin-bottom: 0px;font-size: 15px;}
-.navigationButtons {gap: 10px;justify-content: center;display: flex;}
-.previousButton, .nextButton {width: 50px;height:30px;font-size: 18px;}
-.btnrow {width: 100%;margin-bottom: 0px;display: none;}
-.mbbtnrow{width: 100%;display: block; margin: 10px 0px 5px 0px;text-align: center;}
-.container {gap: 20px;}
-.treatmentTitle {font-size: 14px;letter-spacing: 5%;}
-.treatmentOverlay {padding: 15px 12px;}
-/* Treatment Card */
- .emblaSlide {flex: 0 0 82%;}
-.emblaContainer {gap: 8px;}
-.treatmentCard {width: 100%;height: 100%;}
-.rightCarousel {min-height: 400px;}
-.navigationButtons{align-items: center;justify-content: center;display: flex;}
-.dnone{display: none;}
-.dblock{display: block !important;}
-.dflex{display: flex !important; margin-top: 12px;}
-.viewMoreLink {padding: 6px 16px;}
+  .hairSection {
+    padding: 1.5rem 0;
+  }
+
+  .container {
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  .leftContent {
+    padding: 0rem 10px;
+    text-align: center;
+  }
+
+  .rightCarousel {
+    padding: 10px 10px 60px 10px;
+    background: #FFFFFF80;
+    border: 1px solid #E5D7C3;
+    backdrop-filter: blur(20px)
+  }
+
+  .mainHeading {
+    font-size: 35px;
+    margin-bottom: 5px;
+  }
+
+  .mainHeading span {
+    font-size: 25px;
+  }
+
+  .description {
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
+
+  .navigationButtons {
+    gap: 10px;
+    justify-content: center;
+    display: flex;
+  }
+
+  .previousButton,
+  .nextButton {
+    width: 50px;
+    height: 30px;
+    font-size: 18px;
+  }
+
+  .btnrow {
+    width: 100%;
+    margin-bottom: 0px;
+    display: none;
+  }
+
+  .mbbtnrow {
+    width: 100%;
+    display: block;
+    margin: 10px 0px 5px 0px;
+    text-align: center;
+  }
+
+  .container {
+    gap: 20px;
+  }
+
+  .treatmentTitle {
+    font-size: 14px;
+    letter-spacing: 5%;
+  }
+
+  .treatmentOverlay {
+    padding: 15px 12px;
+  }
+
+  /* Treatment Card */
+  .emblaSlide {
+    flex: 0 0 82%;
+  }
+
+  .emblaContainer {
+    gap: 8px;
+  }
+
+  .treatmentCard {
+    width: 100%;
+    height: 100%;
+  }
+
+  .rightCarousel {
+    min-height: 400px;
+  }
+
+  .navigationButtons {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+
+  .dnone {
+    display: none;
+  }
+
+  .dblock {
+    display: block !important;
+  }
+
+  .dflex {
+    display: flex !important;
+    margin-top: 12px;
+  }
+
+  .viewMoreLink {
+    padding: 6px 16px;
+  }
 }

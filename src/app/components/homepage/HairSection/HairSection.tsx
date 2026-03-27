@@ -15,7 +15,7 @@ const hairTreatments = [
   },
   {
     id: 2,
-    title: "PRP THERAPY",
+    title: "P-R-P THERAPY",
     image: "/assets/images/home/ht02.webp"
   },
   {
@@ -30,14 +30,14 @@ const hairTreatments = [
   },
   {
     id: 5,
-    title: "PRP THERAPY",
+    title: "P-R-P THERAPY",
     image: "/assets/images/home/ht02.webp"
   },
 ];
 
 const HairSection = () => {
   const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: true }));
-  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+  const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: 'start',
     slidesToScroll: 1
@@ -65,15 +65,15 @@ const HairSection = () => {
           </div> */}
           {/* Navigation Buttons */}
           <div className={`${styles.navigationButtons} ${styles.dnone}`}>
-            <button 
-              className={styles.previousButton} 
-              onClick={scrollPrevious} 
+            <button
+              className={styles.previousButton}
+              onClick={scrollPrevious}
               aria-label="Previous treatment">
               <span>&larr;</span>
             </button>
-            <button 
-              className={styles.nextButton} 
-              onClick={scrollNext} 
+            <button
+              className={styles.nextButton}
+              onClick={scrollNext}
               aria-label="Next treatment">
               <span>&rarr;</span>
             </button>
@@ -88,15 +88,15 @@ const HairSection = () => {
                 <div key={treatment.id} className={styles.emblaSlide}>
                   <div className={styles.treatmentCard}>
                     <div className={styles.zoomWrapper}>
-                    <Image 
-                      src={treatment.image} 
-                      alt={treatment.title}
-                      fill
-                      className={styles.treatmentImage}
-                    />
-                    <div className={styles.treatmentOverlay}>
-                      <h3 className={styles.treatmentTitle}>{treatment.title}</h3>
-                    </div>
+                      <Image
+                        src={treatment.image}
+                        alt={treatment.title}
+                        fill
+                        className={styles.treatmentImage}
+                      />
+                      <div className={styles.treatmentOverlay}>
+                        <h3 className={styles.treatmentTitle}>{treatment.title}</h3>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -104,25 +104,25 @@ const HairSection = () => {
             </div>
           </div>
 
-           {/* <div className={styles.mbbtnrow}>
+          {/* <div className={styles.mbbtnrow}>
             <Link href="/" className={styles.viewMoreLink}>View More</Link>
           </div> */}
 
           <div className={`${styles.navigationButtons} ${styles.dflex} ${styles.dblock}`}>
-            <button 
-              className={styles.previousButton} 
-              onClick={scrollPrevious} 
+            <button
+              className={styles.previousButton}
+              onClick={scrollPrevious}
               aria-label="Previous treatment">
               <span>&larr;</span>
             </button>
-            <button 
-              className={styles.nextButton} 
-              onClick={scrollNext} 
+            <button
+              className={styles.nextButton}
+              onClick={scrollNext}
               aria-label="Next treatment">
               <span>&rarr;</span>
             </button>
           </div>
-          
+
         </div>
       </div>
     </section>

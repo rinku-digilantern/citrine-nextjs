@@ -31,23 +31,23 @@ export default function CitrineClinicSection() {
       window.requestAnimationFrame(() => {
         ticking.current = false;
         if (!sectionRef.current || !trackRef.current) return;
-        
+
         const section = sectionRef.current;
         const track = trackRef.current;
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         const sectionHeight = section.offsetHeight;
-        
+
         const topSpacing = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--top-spacing') || '0', 10);
-        
+
         const scrollable = Math.max(sectionHeight - windowHeight, 0);
         const scrolled = Math.min(Math.max(-(rect.top - topSpacing), 0), scrollable);
         const percent = scrollable > 0 ? scrolled / scrollable : 0;
-        
+
         const trackWidth = track.scrollWidth;
         const viewportWidth = window.innerWidth;
         const maxTranslate = Math.max(trackWidth - viewportWidth, 0);
-        
+
         const nextX = -(percent * maxTranslate);
         const isReachedTop = (rect.top - topSpacing) <= 0;
         targetXRef.current = !isReachedTop ? 0 : nextX;
@@ -60,7 +60,7 @@ export default function CitrineClinicSection() {
         rafRef.current = window.requestAnimationFrame(animate);
         return;
       }
-      
+
       const target = targetXRef.current || 0;
       const current = currentXRef.current || 0;
       const diff = target - current;
@@ -112,8 +112,8 @@ export default function CitrineClinicSection() {
   ];
 
   return (
-    <section 
-      className={styles.sectiontrack} 
+    <section
+      className={styles.sectiontrack}
       ref={sectionRef}
       style={{ height: `${(panelCount || 2.5) * 100}vh` }}>
       <div className={styles.stickyelement}>
@@ -130,7 +130,7 @@ export default function CitrineClinicSection() {
                   height={185}
                   alt="Citrine Clinic heading"
                   priority
-                  className={styles.headingimage}/>
+                  className={styles.headingimage} />
               </div>
             </div>
 
@@ -145,26 +145,26 @@ export default function CitrineClinicSection() {
                     height={736}
                     alt="Citrine Clinic"
                     priority
-                    className={styles.backgroundImage}/>
+                    className={styles.backgroundImage} />
                 </picture>
               </div>
 
-               <div className={styles.citrinecontentbox}>
-                  <h2 className={`mainHeading ${styles.mainHeading}`}>ABOUT CITRINE CLINIC</h2>
-                  <p className={styles.aboutdesc}>Citrine Clinic is envisioned as a modern dermatology and aesthetic space where clinical excellence meets a deeply personalised approach to care.</p>
+              <div className={styles.citrinecontentbox}>
+                <h2 className={`mainHeading ${styles.mainHeading}`}>ABOUT CITRINE CLINIC</h2>
+                <p className={styles.aboutdesc}>Citrine Clinic is envisioned as a modern dermatology and aesthetic space where clinical excellence meets a deeply personalised approach to care.</p>
 
-                  <ul className={styles.aboutlist}>
-                    {aboutItems.map((item, idx) => (
-                      <li key={idx} className={styles.aboutlistitem}>
-                        <Image src="/assets/images/home/techlist.webp" className={styles.aboutlisticon} width={22} height={22} alt="Checked" />
-                        <div>
-                          <strong>{item.title}</strong> {item.desc}
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/about-clinic" className={styles.aboutbtn}>READ MORE</Link>
-                </div>
+                <ul className={styles.aboutlist}>
+                  {aboutItems.map((item, idx) => (
+                    <li key={idx} className={styles.aboutlistitem}>
+                      <Image src="/assets/images/home/techlist.webp" className={styles.aboutlisticon} width={22} height={22} alt="Checked" />
+                      <div>
+                        <strong>{item.title}</strong> {item.desc}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <Link href="/skin-clinic-in-gurgaon" className={styles.aboutbtn}>READ MORE</Link>
+              </div>
             </div>
           </div>
         </div>
