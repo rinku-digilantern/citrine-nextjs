@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import styles from "./Footer.module.css";
 import Link from "next/link";
 import Image from "next/image";
@@ -288,7 +288,54 @@ const Footer = () => {
           <span className={styles.fixedText}>WhatsApp</span>
         </a>
       </div>
+
+
+        {/* Click-to-open phone numbers (mobile) */}
+        <PhoneNumbers />
+
     </>
   );
 };
 export default Footer;
+
+function PhoneNumbers() {
+  const [open, setOpen] = useState(false);
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const numbers = [
+    '+919868649805',
+    '+918065060900',
+    '+919810652808',
+    '01244116808',
+    '01244114808',
+  ];
+
+  return (
+    <div ref={wrapperRef} className={`${styles.cliktoopennumber} ${styles['for-mobile']}`}>
+      <div className={styles.callnumberwrap} onClick={() => setOpen((s) => !s)} role="button" aria-label="Open phone numbers">
+        <Image src="/assets/images/phone-white.webp" width={26} height={26} className={styles.realcolo2} alt="call" />
+      </div>
+      {open && (
+        <div className={styles['number-menu']}>
+          <ul>
+            {numbers.map((n) => (
+              <li key={n}>
+                <a href={`tel:${n.replace(/\s|-/g, '')}`}>{n}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
