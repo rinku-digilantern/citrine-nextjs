@@ -505,7 +505,7 @@
 .menuColumnsTabs {max-width: 100vw;}
 .menuOverlay {top: 64px;}
 .menuNav {top: 64px;left: unset;transform: translateX(-100%);right: 0;flex-direction: column;left: unset;display: block;}
-.menuColumnsTabs {width: 85vw;max-width: 100%;min-height: 100vh;margin: 0px;display: block;}
+.menuColumnsTabs {width: 98vw;max-width: 100%;min-height: 100vh;margin: 0px;display: block;}
 .menuColTabfirst {border-right: 0px;flex: 0 0 100%;max-width: 100%;height: auto;}
 .menuNav {transform: translateX(-100%);}
 .menuList {margin-top: 0px;margin-left: 12px;}
@@ -525,7 +525,7 @@
 .accordionContent ul li::marker{color: var(--accent-color);}
 /* Fixed accordionBtn for possible use in JSX */
 .boxborder{border-bottom: 1px solid #E5D7C3;}
-.accordionBtn {width: 100%;text-align: left;padding: 15px 15px;background: none;border: none;font-weight: 600;font-size: 15px;cursor: pointer;display: flex;align-items: center;font-family: var( --font-montserrat), sans-serif; justify-content: space-between;}
+.accordionBtn {width: 100%;text-align: left;padding: 15px 15px;background: none;border: none;font-weight: 600;font-size: 15px;cursor: pointer;display: flex;align-items: center;font-family: var( --font-montserrat), sans-serif; justify-content: space-between;color:var(--default-color)}
 .accordionIcon {display: inline-block;margin-left: 5px;width: 8px;height: 8px;border: solid #524635;border-width: 0 2px 2px 0;transform: rotate(-45deg);transition: transform 0.2s;}
 .accordionIconOpen {transform: rotate(45deg);}
 .accordionContent:first-child{margin-left: 0px;}

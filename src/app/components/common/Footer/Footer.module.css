@@ -34,7 +34,7 @@
 .footer {
     background: var(--footer-bg);
 }
-
+.desktophide{display: none;}
 .footerCols {
     gap: 15px; 
     display: grid;place-items: center;align-items: stretch; 
@@ -353,6 +353,32 @@ display: flex;
   pointer-events: auto;
 }
 
+.dkwhatsapplink {
+    line-height: 50px;
+    position: fixed;
+    left: 12px;display: flex;align-items: center;
+    bottom: 30px;;
+    height: 48px;width: 48px;
+    border-radius: 50%;
+    background-color: #25d366;
+    padding: 0;
+    z-index: 99;justify-content: center;
+    transform: translatey(0);
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 0 0 #42db87;
+    animation: pulsing 1.25s cubic-bezier(.66,0,0,1) infinite;
+    font-family: sans-serif;
+    text-decoration: none;
+    transition: all .3s ease-in-out
+}
+
+@keyframes pulsing {
+    to {box-shadow: 0 0 0 15px rgba(232,76,61,0)}
+}
+
+.dkwhatsapplink img {color: #fff}
+
+
 /* Extra Large devices (Large Desktops) */
 @media (max-width: 1200px) and (min-width: 1399.98px) {
 }
@@ -421,6 +447,7 @@ display: flex;
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
+    .footer{padding-bottom: 50px;}
     .heroWrapper {min-height:340px;align-items: flex-start;padding-top: 2rem;}
     .heroGrid .textBlock {width: 100%;}
     .heroContent {padding: 1rem;max-width: 92%;border: 1px solid #fff;}
@@ -463,4 +490,38 @@ display: flex;
     .conCard {gap: 5px;padding: 5px 0%;display: block;}
     .socialIcons {margin-bottom: 10px;}
     .contactInfo .wrapper {gap: 5px;padding: 10px 15px;}
+
+/* Fixed two-column footer quick actions */
+.footerfixed {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    z-index: 11;width: 100%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+.mobilenone{display: none;}
+.footerfixed .fixedCol {
+    display: flex;
+    align-items: center;
+    gap: 10px;width: 50%;
+    padding: 5px 14px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+}
+.footerfixed .left {
+    background: #ffffff;
+    color: var(--default-color);
+    border: 1px solid rgba(0,0,0,0.06);
+}
+.footerfixed .right {
+    background: #07c160; /* WhatsApp green */
+    color: #fff;
+}
+.fixedText {display: inline-block; line-height: 1;}
+    .footerfixed .fixedText { font-size: 12px;}
+    .footerfixed .fixedCol { padding: 4px 10px 4px 10px;flex-direction: column; gap: 4px;}
 }
