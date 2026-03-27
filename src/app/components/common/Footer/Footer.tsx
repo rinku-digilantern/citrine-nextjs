@@ -273,6 +273,21 @@ const Footer = () => {
         onClick={handleScrollTop}>
         <BsArrowUpShort aria-hidden="true" />
       </button>
+
+  <a target="_blank" title="Citrine Clinic" href="https://api.whatsapp.com/send?phone=919289980157&text=Hello, I have contacted you through Citrine Clinic website." aria-label="Whatsapp" className={`${styles.dkwhatsapplink} ${styles.mobilenone}`} rel="noopener noreferrer">
+    <Image src="/assets/images/fwhatsapp.webp" width="32" height="32" alt="Whatsapp"/>
+  </a>
+
+      <div className={`${styles.footerfixed} ${styles.desktophide}`}>
+        <a href="/book-an-appointment" className={styles.fixedCol + ' ' + styles.left} aria-label="Request An Appointment">
+          <Image src="/assets/images/fcalendar.webp" alt="Request An Appointment" width={28} height={28} />
+          <span className={styles.fixedText}>Request An Appointment</span>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=919868649805&text=Hello Doctor, I have contacted you through Citrine Clinic website." target="_blank" rel="noopener noreferrer" className={styles.fixedCol + ' ' + styles.right} aria-label="WhatsApp">
+          <Image src="/assets/images/fwhatsapp.webp" alt="WhatsApp" width={28} height={28} />
+          <span className={styles.fixedText}>WhatsApp</span>
+        </a>
+      </div>
     </>
   );
 };
