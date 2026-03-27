@@ -74,4 +74,5 @@
 @media (max-width: 599.98px) and (min-width: 320px){
   .headingrow {width: 90%;margin:0 auto;}
   .marqueeText {font-size: 35px;padding: 0 15px}
+  .marqueeContainer {padding: 10px 0 10px 0px;}
 }

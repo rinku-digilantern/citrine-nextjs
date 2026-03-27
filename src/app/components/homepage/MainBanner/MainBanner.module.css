@@ -454,15 +454,15 @@ align-items: center;
 .secondrow{display: flex;flex-direction: column-reverse;}
 .secondcontainer {max-width: 100%;top: 10px;}
 .secondright{width: 100%; margin: 0 auto;}
-.secondleft{text-align: center; margin-top: 2rem;}
+.secondleft{text-align: center; margin-top: 10px;}
 .secondleft p{font-size: 18px;line-height: 1.8;}
-.secondheading{margin-bottom: 1rem;font-size: 40px;line-height: 1.3;}
-.loremheading{padding: 6px 12px; margin-bottom: 1rem;font-size: 15px;display: inline-block;}
+.secondheading{margin-bottom: 1rem;font-size: 40px;line-height: 1.26;}
+.loremheading{padding: 6px 12px; margin-bottom: 12px;font-size: 15px;display: inline-block;}
 .thirdrow{display: block;}
 .thirdrightContent{padding: 0px;width: 100%;text-align: center;display: block;}
-.thirdleft{width: 100%; margin: 0 auto 1rem auto;}
+.thirdleft{width: 100%; margin: 0 auto 5px auto;}
 .thirdright{width: 100%;margin-right: 0%;}
-.thirdheading{margin-bottom: 10px;font-size: 46px;line-height: 1.3;}
+.thirdheading{margin-bottom: 10px;font-size: 46px;line-height: 1.26;}
 .thirdrightDesc{font-size: 18px;}
 .launchBox{padding: 0.8rem 12px;margin-bottom: 2rem; margin-top: 1rem;}
 .launchClinic{font-size: 20px;}
