@@ -149,8 +149,9 @@ const Header = () => {
                                         <li><Link href="/technologies" onClick={toggleMenu}>Technologies</Link></li>
                                         <li><Link href="/videos" onClick={toggleMenu}>Videos</Link></li>
                                         <li><Link href="/media" onClick={toggleMenu}>Media</Link></li>
-                                        <li><Link href="/offers" onClick={toggleMenu}>Offers</Link></li>
+                                        {/* <li><Link href="/offers" onClick={toggleMenu}>Offers</Link></li> */}
                                         <li><Link href="/contact" onClick={toggleMenu}>Contact Us</Link></li>
+                                        <li><Link href="/explore" onClick={toggleMenu}>Explore</Link></li>
                                     </ul>
                                 </AccordionSection>
                             ) : (
@@ -167,8 +168,9 @@ const Header = () => {
                                         <li><Link href="/technologies" onClick={toggleMenu}>Technologies</Link></li>
                                         <li><Link href="/videos" onClick={toggleMenu}>Videos</Link></li>
                                         <li><Link href="/media" onClick={toggleMenu}>Media</Link></li>
-                                        <li><Link href="/offers" onClick={toggleMenu}>Offers</Link></li>
+                                        {/* <li><Link href="/offers" onClick={toggleMenu}>Offers</Link></li> */}
                                         <li><Link href="/contact" onClick={toggleMenu}>Contact Us</Link></li>
+                                        <li><Link href="/explore" onClick={toggleMenu}>Explore</Link></li>
                                     </ul>
                                 </div>
                             )}
