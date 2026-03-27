@@ -1,3 +1,78 @@
+/* Main Banner Hybrid System: Desktop Base Styles */
+.mb_sectiontrack {
+  position: relative;
+  width: 100%;
+  overflow-y: visible;
+  background-color: #000;
+}
+
+.mb_stickyelement {
+  position: sticky;
+  top: var(--top-spacing, 0px);
+  height: calc(100vh - var(--top-spacing, 0px));
+  height: calc(100dvh - var(--top-spacing, 0px));
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.mb_track {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  will-change: transform;
+}
+
+.mb_trackflex {
+  display: flex;
+  height: 100%;
+  width: max-content;
+  flex-direction: row;
+}
+
+.mb_contentpanel,
+.mb_thankspanelwrap {
+  width: 100vw;
+  height: 100%;
+  flex: 0 0 100vw;
+  position: relative;
+}
+
+.mb_bgwrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.mb_bgwrap img,
+.mb_bgwrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.7) 100%);
+  z-index: 1;
+}
+
+.wrapper {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 1400px;
+  z-index: 10;
+  text-align: center;
+}
+
 /* Default: desktop shows desktop image, hides mobile image */
 .desktopbanner {
   display: block;
@@ -660,39 +735,45 @@
   }
 }
 
-/* Mobile / Tablet: Restore Horizontal sticky scroll */
+/* Mobile / Tablet: Convert to Native Swipe Slider */
 @media (max-width: 991.98px) {
   .mb_sectiontrack {
+    height: auto !important;
     position: relative;
-    /* Height is handled dynamically in JSX to match panel count */
+    display: block;
+    overflow: visible;
   }
   
   .mb_stickyelement {
-    position: sticky;
-    top: var(--top-spacing);
-    height: calc(100vh - var(--top-spacing, 0px));
-    height: calc(100dvh - var(--top-spacing, 0px));
-    display: flex;
-    justify-content: flex-start;
-    align-items: stretch;
-    width: 100%;
+    position: relative;
+    top: 0;
+    height: auto !important;
+    display: block;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    width: 100vw;
     z-index: 2;
-    overflow: hidden;
+    scrollbar-width: none; /* Firefox */
   }
+  .mb_stickyelement::-webkit-scrollbar { display: none; } /* Chrome/Safari */
   
   .mb_track {
-    flex: none;
-    height: 100%;
+    height: auto !important;
+    width: auto !important;
+    transform: none !important;
     position: relative;
-    will-change: transform;
+    display: block;
   }
   
   .mb_trackflex {
     flex-direction: row !important;
     display: flex;
-    height: 100%;
-    width: auto;
-    margin-right: -100vw;
+    height: auto;
+    width: max-content;
+    margin-right: 0;
   }
   
   .mb_contentpanel, 
@@ -700,10 +781,14 @@
     width: 100vw !important;
     min-width: 100vw !important;
     max-width: 100vw !important;
+    flex: 0 0 100vw;
     height: 100% !important;
-    flex: none;
+    min-height: 80vh;
+    min-height: 80dvh;
     position: relative;
     padding: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .wrapper {
@@ -711,7 +796,7 @@
     width: 95%;
     margin: 0 auto;
     bottom: 30px;
-    left: 5%;
+    left: 15px;
     transform: none;
     text-align: left;
     z-index: 10;
@@ -721,6 +806,32 @@
     display: block;
     transform: none;
     text-align: left;
+  }
+
+  .mobileDots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 20;
+  }
+
+  .dot {
+    width: 60px; /* Long bar style like premium sliders */
+    height: 3px;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+
+  .activeDot {
+    background: var(--primary-gold-color, #E1B15F);
+    width: 80px;
   }
 
   .hero {
