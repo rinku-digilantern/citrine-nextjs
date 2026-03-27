@@ -635,4 +635,5 @@ display: flex;
     bottom: -10px;
     left: 0px;
 }
+.for-mobile{display: block;}
 }
