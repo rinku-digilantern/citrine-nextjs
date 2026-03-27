@@ -156,7 +156,6 @@ const ContactLeft = () => {
     <div className={styles.contactFormContainer}>
       <div className={styles.formIntro}>
         <h1 className={`mainHeading ${styles.mainHeading}`}>Send us a message</h1>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
       </div>
 
       <form onSubmit={handleSubmit} className={`${styles.phpEmailForm} ${styles.contactForm}`} noValidate autoComplete="off">

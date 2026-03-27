@@ -107,8 +107,7 @@ const TeamSection = () => {
                 {member.experience && (
                   <p
                     className={styles.doctorexperience}
-                    dangerouslySetInnerHTML={{ __html: member.experience }}
-                  />
+                    dangerouslySetInnerHTML={{ __html: member.experience }}/>
                 )}
                 <p className={styles.doctorDescription}>{member.description}</p>
               </div>

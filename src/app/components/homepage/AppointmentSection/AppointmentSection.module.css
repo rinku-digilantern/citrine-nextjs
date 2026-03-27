@@ -171,85 +171,50 @@
   transform: translateY(-50%);
 }
 
-/* Start of mini Desktop */
-@media (max-width: 1300px) and (min-width: 1200px) {
-.appointmentSection {padding: 2rem 20px;}
-.container {max-width: 92%;}
-}
-/* Start of mini Desktop */
-@media (max-width: 1200.98px) and (min-width: 1101px) {
-.appointmentSection {padding: 2rem 20px;}
-.container {max-width: 92%;}
-}
-/* Smtart of IPad Pro */
-@media (max-width: 1100.98px) and (min-width: 992px) {
-.appointmentSection {padding: 2rem 20px;}
-.container {max-width: 92%;}
-}
-/* Smtart of IPad */
-@media (max-width: 991.98px) and (min-width: 768px) {
-.appointmentSection {padding: 2rem 20px;}
-.container {max-width: 92%;}
-.formWrapper {padding: 1.5rem 25px;}
-.title {font-size: 24px;margin-bottom: 30px;}
-.formRow {grid-template-columns: 1fr;gap: 15px;}
-.input,
-.select,
-.textarea {padding: 12px 15px;font-size: 14px;}
-.submitButton {padding: 12px 20px;font-size: 14px;}
-}
-
-/* Smtart of Mini IPad */
-@media (max-width: 767.98px) and (min-width: 600px) {
-.appointmentSection {padding: 1.5rem 20px;}
-.container {max-width: 92%;}
-  .formWrapper {padding: 1.5rem 25px;}
-  .title {font-size: 24px;margin-bottom: 30px;}
-  .formRow {grid-template-columns: 1fr;gap: 15px;}
-  .input,
-  .select,
-  .textarea {padding: 12px 15px;font-size: 14px;}
-  .submitButton {padding: 12px 20px;font-size: 14px;}
-}
-/* Small devices (Phones in landscape mode) */
-@media (max-width: 599.98px) and (min-width: 320px) {
-  .appointmentSection {padding: 1rem 0px;}
-  .container {max-width: 92%;}
-   .formWrapper {padding: 1rem 15px;}
-   .formRow {grid-template-columns: 1fr;gap: 8px;}
-   .subheading{letter-spacing: 0px;margin-bottom: 10px;}
-}
-
 /* Captcha & Feedback Styles */
 .captchaRow {
-  grid-template-columns: 1fr 1fr !important;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;justify-content: center;
+  width: 44%;margin: 0 auto;
 }
 .captchaBox {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  justify-content: space-between;
   background: #FFFCF7;
   border: 1px solid #E5D7C3;
-  padding: 6px 12px;
-  height: 45px;
+  padding: 0 6px;
+  height: 44px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 .captchaImg {
-  height: 32px;
+  height: 42px;
   width: auto;
+  max-width: calc(100% - 56px);
   object-fit: contain;
+  flex-shrink: 0;
 }
 .captchaRefresh {
-  background: none;
+  background:var(--gradient-bg);
   border: none;
-  color: #AF9E85;
+  color: #fff;
+  width: 50px;
+  height: 40px;
   font-size: 20px;
   cursor: pointer;
-  padding: 0 5px;
+  margin-left: 2px;
+  padding: 0;
   transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 .captchaRefresh:hover {
-  color: #DE9736;
+  color: #fff;
 }
 .errorMsg {
   color: #d9534f;
@@ -271,12 +236,6 @@
   max-width: 400px;
   line-height: 1.6;
 }
-@media (max-width: 600px) {
-  .captchaRow {
-    grid-template-columns: 1fr !important;
-  }
-}
-
 /* Validation Specifics */
 .inputGroup {
   display: flex;
@@ -293,4 +252,78 @@
   margin-top: -2px;
   font-family: var(--font-poppins), sans-serif;
   letter-spacing: 0.2px;
-}
+}
+
+
+/* Start of mini Desktop */
+@media (max-width: 1300px) and (min-width: 1200px) {
+.appointmentSection {padding: 2rem 20px;}
+.container {max-width: 92%;}
+.captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+.captchaRow {width: 35%; grid-template-columns: 50% 50%; gap: 8px;}
+}
+/* Start of mini Desktop */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.appointmentSection {padding: 2rem 20px;}
+.container {max-width: 92%;}
+.captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+.captchaRow {width: 40%; grid-template-columns: 50% 50%; gap: 8px;}
+}
+/* Smtart of IPad Pro */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+.appointmentSection {padding: 2rem 20px;}
+.container {max-width: 92%;}
+.captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+.captchaRow {width: 40%; grid-template-columns: 55% 45%; gap: 8px;}
+}
+/* Smtart of IPad */
+@media (max-width: 991.98px) and (min-width: 768px) {
+.appointmentSection {padding: 2rem 20px;}
+.container {max-width: 92%;}
+.formWrapper {padding: 1.5rem 25px;}
+.title {font-size: 24px;margin-bottom: 30px;}
+.formRow {grid-template-columns: 1fr;gap: 15px;}
+.input,
+.select,
+.textarea {padding: 12px 15px;font-size: 14px;}
+.submitButton {padding: 12px 20px;font-size: 14px;}
+.captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
+.captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
+.captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+.captchaRow {width: 50%; grid-template-columns: 55% 45%; gap: 8px;}
+}
+
+/* Smtart of Mini IPad */
+@media (max-width: 767.98px) and (min-width: 600px) {
+.appointmentSection {padding: 1.5rem 20px;}
+.container {max-width: 92%;}
+  .formWrapper {padding: 1.5rem 25px;}
+  .title {font-size: 24px;margin-bottom: 30px;}
+  .formRow {grid-template-columns: 1fr;gap: 15px;}
+  .input,
+  .select,
+  .textarea {padding: 12px 15px;font-size: 14px;}
+  .submitButton {padding: 12px 20px;font-size: 14px;}
+  .captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
+  .captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
+  .captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+  .captchaRow {width: 60%; grid-template-columns: 60% 40%; gap: 8px;}
+}
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .appointmentSection {padding: 1rem 0px;}
+  .container {max-width: 92%;}
+   .formWrapper {padding: 1rem 15px;}
+   .formRow {grid-template-columns: 1fr;gap: 8px;}
+   .subheading{letter-spacing: 0px;margin-bottom: 10px;}
+   .captchaRefresh {width: 35px;height: 40px;margin-left: 0px;}
+   .captchaBox {gap: 0px;height: 46px;padding: 0 3px;}
+   .captchaImg {object-fit: cover;max-width: calc(100% - 40px);height: 40px;}
+  .captchaRow {width: 100%; grid-template-columns: 60% 40%; gap: 8px;}
+}

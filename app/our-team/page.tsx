@@ -2,8 +2,7 @@ import React from 'react'
 import { Metadata } from 'next/dist/types';
 import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
-import ExplorePage from '@/src/app/components/ExplorePage/ExplorePage';
-
+import OurTeamPage from '@/src/app/components/OurTeamPage/OurTeamPage';
 
 const API_BASE = 'https://api.citrineclinic.com/api';
 
@@ -20,25 +19,25 @@ async function getSeoData(slug: string) {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seo = await getSeoData('explore');
+  const seo = await getSeoData('our-team');
   if (!seo) return { title: 'Citrine Clinic' };
   return {
     title: seo.title_tag || 'Citrine Clinic',
     description: seo.description_tag || '',
     keywords: seo.keyword_tag || undefined,
     alternates: {
-      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/explore',
+      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/our-team',
     },
     openGraph: {
-      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'explore'}`,
+      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'our-team'}`,
       title: seo.title_tag || '',
       description: seo.description_tag || '',
     },
   };
 }
 
-const Explore = async () => {
-  const seo = await getSeoData('explore');
+const OurTeam = async () => {
+  const seo = await getSeoData('our-team');
 
     return (
         <>
@@ -51,9 +50,9 @@ const Explore = async () => {
       )}
 
           <Breadcrumb />
-          <ExplorePage/>
+          <OurTeamPage/>
           <AppointmentSection />  
         </>
     )
 }
-export default Explore;
+export default OurTeam;
