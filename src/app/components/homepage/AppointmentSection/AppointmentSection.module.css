@@ -496,16 +496,6 @@
     grid-template-columns: 60% 40%;
     gap: 8px;
   }
-
-  .dateInput>input {
-    display: flex;
-    flex-shrink: 0;
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 44px;
-    max-height: 44px;
-    min-width: 100px;
-  }
 }
 
 /* Small devices (Phones in landscape mode) */
@@ -554,5 +544,20 @@
     width: 100%;
     grid-template-columns: 60% 40%;
     gap: 8px;
+  }
+
+  .formRow:nth-child(2) {
+    grid-template-columns: 1fr;
+  }
+
+  .dateInput input {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 45px;
+    max-height: 45px;
+    appearance: none;
+    line-height: 44px;
   }
 }
