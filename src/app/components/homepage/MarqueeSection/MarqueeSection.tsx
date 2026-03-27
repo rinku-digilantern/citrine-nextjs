@@ -20,7 +20,7 @@ const MarqueeSection = () => {
     <section className={`${styles.marqueeSection} common`}>
       <div className={styles.googleReview}>
         <div className={styles.googleLogo}>
-            <Image src="/assets/images/home/google.webp" width={240} height={81} alt="Google Logo" />
+          <Image src="/assets/images/home/google.webp" width={240} height={81} alt="Google Logo" />
         </div>
         <div className={styles.stars}>
           <span>★</span>

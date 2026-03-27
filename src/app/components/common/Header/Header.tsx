@@ -259,6 +259,9 @@ const Header = () => {
                                             <li><Link href="/eye-restore" onClick={toggleMenu}>Eye Restore Therapy</Link></li>
                                         </ul>
                                     </AccordionSection>
+                                    <Link href="/book-an-appointment" className={styles.mobileAppointmentBtn} onClick={toggleMenu}>
+                                        REQUEST AN APPOINTMENT
+                                    </Link>
                                 </div>
                             ) : (
                                 // Tabs for desktop
