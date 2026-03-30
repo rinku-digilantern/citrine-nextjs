@@ -72,10 +72,12 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
 
   useEffect(() => { 
     fetchCaptcha(); 
-    // Set today for date picker minimum
+    // Set today's date for the date picker minimum in local timezone
     const today = new Date();
-    const localDate = new Date(today.getTime() - (today.getTimezoneOffset() * 60000));
-    setMinDate(localDate.toISOString().split('T')[0]);
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    setMinDate(`${yyyy}-${mm}-${dd}`);
   }, [fetchCaptcha]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -124,6 +126,9 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
 
     if (!formData.date) {
       newErrors.date = 'Date is required';
+      isValid = false;
+    } else if (minDate && formData.date < minDate) {
+      newErrors.date = 'Please select today or a future date';
       isValid = false;
     }
 
@@ -280,6 +285,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
             <div className={styles.formGroup}>
               <label className={styles.label}>Select Date</label>
               <input
+                key={minDate}
                 className={`${styles.input} ${errors.date ? styles.inputError : ''}`}
                 type="date"
                 name="date"
@@ -288,7 +294,6 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
                 onChange={handleChange}
                 min={minDate}
                 required
-                onFocus={e => (e.target.type = 'date')}
               />
               {errors.date && <span className={styles.fieldError}>{errors.date}</span>}
             </div>

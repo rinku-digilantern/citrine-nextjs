@@ -242,7 +242,15 @@
         // Initialize on page load
         window.addEventListener('DOMContentLoaded', () => {
             const urlReferenceToken = getUrlParameter('reference_token') || getUrlParameter('ref');
-            // Auth token is static - not from URL, only reference_token comes from URL
+            
+            // Set min date for the picker
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const minDate = `${yyyy}-${mm}-${dd}`;
+            const dateInput = document.getElementById('paymentDate');
+            if (dateInput) dateInput.setAttribute('min', minDate);
             
             if (urlReferenceToken) {
                 document.getElementById('referenceId').value = urlReferenceToken;

@@ -58,11 +58,12 @@ const AppointmentSection = () => {
 
   useEffect(() => {
     fetchCaptcha();
-    // Set today's date for the date picker minimum
+    // Set today's date for the date picker minimum in local timezone
     const today = new Date();
-    // Offset to local timezone to avoid weird UTC date shifting bugs
-    const localDate = new Date(today.getTime() - (today.getTimezoneOffset() * 60000));
-    setMinDate(localDate.toISOString().split('T')[0]);
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate()).padStart(2, '0');
+    setMinDate(`${yyyy}-${mm}-${dd}`);
   }, [fetchCaptcha]);
 
   // ── Input handler ────────────────────────────────────────────────────────────
@@ -121,6 +122,9 @@ const AppointmentSection = () => {
 
     if (!formData.date) {
       newErrors.date = 'Date is required';
+      isValid = false;
+    } else if (minDate && formData.date < minDate) {
+      newErrors.date = 'Please select today or a future date';
       isValid = false;
     }
 
@@ -245,6 +249,7 @@ const AppointmentSection = () => {
                 </div>
                 <div className={`${styles.inputGroup} ${styles.dateInput}`}>
                   <input
+                    key={minDate}
                     type="date" name="date" placeholder="Select date*"
                     value={formData.date} onChange={handleChange}
                     min={minDate}
