@@ -30,7 +30,7 @@
   --font-md: 25px;
   --font-lg: 35px;
   --font-xl: 45px;
-  --font-xxl: 55px;
+  --font-xxl: 50px;
 
   /* Spacing */
   --spacing-sm: 8px;
@@ -585,7 +585,7 @@ table td {
 
   .tableWrapper {
     overflow-x: auto;
-    max-width: 400px;
+    max-width: 380px;
     -webkit-overflow-scrolling: touch;
   }
 }

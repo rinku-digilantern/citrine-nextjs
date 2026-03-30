@@ -1,7 +1,7 @@
 import React from 'react'
 import { Metadata } from 'next';
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
-import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
+import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import VideoPage from '@/src/app/components/VideoPage/VideoPage';
 
 const API_BASE = 'https://api.citrineclinic.com/api';
@@ -53,4 +53,4 @@ export default async function Videos() {
           <AppointmentSection />  
         </>
     )
-}
+}

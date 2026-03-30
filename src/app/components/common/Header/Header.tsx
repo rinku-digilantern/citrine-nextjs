@@ -89,9 +89,7 @@ const Header = () => {
                         <div className={styles.headerActions}>
                             <div className={styles.contactInfo}>
                                 <Image src='/assets/images/call.webp' alt={"Phone Call"} width={20} height={20} />
-                                <a href="tel:+919868649805" className={styles.phoneNumber} aria-label="Citrine Clinic Phone Number">
-                                    +91-9868649805
-                                </a>
+                                <a href="tel:+918065060900" className={styles.phoneNumber} aria-label="Citrine Clinic Phone Number"> +91-8065060900</a>
                             </div>
                             <Link href="/book-an-appointment" className={styles.appointmentBtn} aria-label="Request an appointment">
                                 REQUEST AN APPOINTMENT

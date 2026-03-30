@@ -2,7 +2,7 @@ import React from 'react'
 import { Metadata } from 'next/dist/types';
 import DocctorBanner from '@/src/app/components/AboutDcotorPage/DocctorBanner/DocctorBanner';
 import AboutDoctorMarquee from '@/src/app/components/AboutDcotorPage/AboutDoctorMarquee/AboutDoctorMarquee';
-import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
+import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import OurVideos from '@/src/app/components/homepage/OurVideos/OurVideos';
 import CareerOverview from '@/src/app/components/AboutDcotorPage/CareerOverview/CareerOverview';
 import ConferenceSection from '@/src/app/components/AboutDcotorPage/ConferenceSection/ConferenceSection';

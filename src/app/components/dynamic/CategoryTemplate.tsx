@@ -1,5 +1,5 @@
 import React from 'react';
-import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
+import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import FirstSection from '@/src/app/components/ServiceCategoryPage/FirstSection/FirstSection';
 import TableofContentcategory from '@/src/app/components/ServiceCategoryPage/TableofContentcategory/TableofContentcategory';
 import ColumnSection from '@/src/app/components/ServiceCategoryPage/ColumnSection/ColumnSection';

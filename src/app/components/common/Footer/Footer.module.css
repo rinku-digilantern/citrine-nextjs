@@ -448,7 +448,7 @@ display: flex;
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-    .footer{padding-bottom: 50px;}
+    .footer{padding-bottom: 55px;}
     .heroWrapper {min-height:340px;align-items: flex-start;padding-top: 2rem;}
     .heroGrid .textBlock {width: 100%;}
     .heroContent {padding: 1rem;max-width: 92%;border: 1px solid #fff;}
@@ -497,7 +497,7 @@ display: flex;
     position: fixed;
     right: 0px;
     bottom: 0px;
-    display: flex;
+    display: flex;justify-content: center;
     align-items: stretch;
     overflow: hidden;
     z-index: 11;width: 100%;
@@ -505,17 +505,17 @@ display: flex;
 }
 .mobilenone{display: none;}
 .footerfixed .fixedCol {
-    display: flex;
+    display: flex;justify-content: center;
     align-items: center;
     gap: 10px;width: 50%;
     padding: 5px 14px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 13px;
 }
 .footerfixed .left {
-    background: #ffffff;
-    color: var(--default-color);
+    background: #ffffff;width: 100%;
+    color: var(--default-color);text-align: center;
     border: 1px solid rgba(0,0,0,0.06);
 }
 .footerfixed .right {
@@ -523,8 +523,8 @@ display: flex;
     color: #fff;
 }
 .fixedText {display: inline-block; line-height: 1;}
-.footerfixed .fixedText { font-size: 12px;}
-.footerfixed .fixedCol { padding: 4px 10px 4px 10px;flex-direction: column; gap: 4px;}
+.footerfixed .fixedText { font-size: 13px;text-align: center;}
+.footerfixed .fixedCol { padding: 5px 10px 5px 10px;flex-direction: column; gap: 5px;}
 
 /*-- CTA --*/
 #CtaWrapper {

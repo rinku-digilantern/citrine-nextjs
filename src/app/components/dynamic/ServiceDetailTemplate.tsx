@@ -5,7 +5,7 @@ import ServiceDetailFirstSection from '@/src/app/components/ServiceDetailPage/Se
 import ServiceDetailSecondSection from '@/src/app/components/ServiceDetailPage/ServiceDetailSecondSection/ServiceDetailSecondSection';
 import ServiceDetailThirdSection from '@/src/app/components/ServiceDetailPage/ServiceDetailThirdSection/ServiceDetailThirdSection';
 import ServiceDetailFaqSection from '@/src/app/components/ServiceDetailPage/ServiceDetailFaqSection/ServiceDetailFaqSection';
-import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
+import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 
 interface ServiceDetailTemplateProps {
   data: any;

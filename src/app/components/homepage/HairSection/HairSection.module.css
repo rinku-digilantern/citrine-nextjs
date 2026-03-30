@@ -22,7 +22,7 @@
 /* Left Content */
 .leftContent {
   background: var(--footer-bg);
-  padding: 0px 50px 0px 105px;
+  padding: 0px 20px 0px 105px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -187,10 +187,10 @@
 }
 
 .treatmentTitle {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
-  color: #4a4a4a;
-  letter-spacing: 10%;
+  color: var(--default-color);
+  letter-spacing: 5%;
   text-transform: uppercase;
   margin: 0;
   font-family: var(--font-montserrat), sans-serif;
@@ -198,38 +198,20 @@
 
 /* Left Content */
 @media (max-width: 1500.98px) and (min-width:1401px) {
-  .hairSection {
-    padding: 50px 0;
-  }
-
-  .leftContent {
-    padding: 0px 40px 0px 60px;
-  }
+  .hairSection {padding: 50px 0;}
+  .leftContent {padding: 0px 40px 0px 60px;}
 }
 
 /* Left Content */
 @media (max-width: 1400.98px) and (min-width:1301px) {
-  .hairSection {
-    padding: 50px 0;
-  }
-
-  .leftContent {
-    padding: 0px 40px 0px 60px;
-  }
+  .hairSection {padding: 50px 0;}
+  .leftContent {padding: 0px 40px 0px 60px;}
 }
 
 @media (max-width: 1300.98px) and (min-width:1201px) {
-  .hairSection {
-    padding: 50px 0;
-  }
-
-  .leftContent {
-    padding: 0px 40px 0px 60px;
-  }
-
-  .treatmentTitle {
-    letter-spacing: 2%;
-    font-size: 18px;
+  .hairSection {padding: 50px 0;}
+  .leftContent {padding: 0px 40px 0px 60px;}
+  .treatmentTitle {letter-spacing: 2%;font-size: 18px;
   }
 }
 
@@ -333,8 +315,8 @@
   .previousButton,
   .nextButton {
     width: 50px;
-    height: 30px;
-    font-size: 18px;
+    height: 36px;
+    font-size: 24px;
   }
 
   .btnrow {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next/dist/types';
 import { notFound } from 'next/navigation';
-import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
+import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 import BlogBanner from '@/src/app/components/BlogDetails/BlogBanner/BlogBanner';
 import BlogContent from '@/src/app/components/BlogDetails/BlogContent/BlogContent';

@@ -96,10 +96,10 @@ const AestheticsSection = () => {
             </div> */}
             <div className={styles.navigation}>
               <button className={styles.navBtn} onClick={scrollPrev} aria-label="Previous">
-                <span>&larr;</span>
+                <span><Image src="/assets/images/home/previcon.webp" alt="Previous" width={32} height={14} /></span>
               </button>
               <button className={styles.navBtn + ' ' + styles.active} onClick={scrollNext} aria-label="Next">
-                <span>&rarr;</span>
+                <span><Image src="/assets/images/home/nexticon.webp" alt="Next" width={32} height={14} /></span>
               </button>
             </div>
           </div>

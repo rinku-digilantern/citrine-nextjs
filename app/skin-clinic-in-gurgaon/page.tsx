@@ -5,7 +5,7 @@ import RedefiningSection from '@/src/app/components/AboutClinicPage/RedefiningSe
 import FourColumnSection from '@/src/app/components/AboutClinicPage/FourColumnSection/FourColumnSection';
 import CitrineDifferenceBanner from '@/src/app/components/AboutClinicPage/CitrineDifferenceBanner/CitrineDifferenceBanner';
 import TeamSection from '@/src/app/components/AboutClinicPage/TeamSection/TeamSection';
-import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
+import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import PatientTestimonials from '@/src/app/components/homepage/PatientTestimonials/PatientTestimonials';
 import OurVideos from '@/src/app/components/homepage/OurVideos/OurVideos';
 import HappyPatientsGallery from '@/src/app/components/AboutClinicPage/HappyPatientsGallery/HappyPatientsGallery';

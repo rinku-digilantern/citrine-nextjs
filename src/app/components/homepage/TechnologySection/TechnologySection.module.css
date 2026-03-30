@@ -281,7 +281,7 @@ transform: translate(-50%, -50%);
 .bulletList {gap: 5px;}
 .bulletList li {font-size: 15px;}
 .centerCol {width: 100%;max-width: 100%;order:3;height:100%}
-.centerCol img{height:250px;width: 60%; margin:0 auto;}
+.centerCol img{height:286px;width: 60%; margin:0 auto;}
 .leftCol{order:1;align-items: center;}
 .rightCol{order:2}
 .deviceImg {width: 100%;height: 100%;position: relative; top: unset;left: unset;transform: unset;z-index: unset;  object-fit: unset;}

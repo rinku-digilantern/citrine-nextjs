@@ -33,25 +33,25 @@ const WellnessTreatment = () => {
       alttag: 'Stretch Marks Removal Treatment'
     },
     { 
-      id: 1, 
+      id: 5, 
       title: 'ARM LIFT', 
       thumb: '/assets/images/home/thumb01.webp',
       alttag: 'Arm Lift Treatment'
     },
     { 
-      id: 2, 
+      id: 6, 
       title: 'THIGH LIFT', 
       thumb: '/assets/images/home/thumb02.webp',
       alttag: 'Thigh Lift Treatment'
     },
     { 
-      id: 3, 
+      id: 7, 
       title: 'BUTTOCK LIFT', 
       thumb: '/assets/images/home/thumb03.webp',
       alttag: 'Buttock Lift Treatment'
     },
     { 
-      id: 4, 
+      id: 8, 
       title: 'STRETCH MARKS REMOVAL', 
       thumb: '/assets/images/home/thumb04.webp',
       alttag: 'Stretch Marks Removal Treatment'
@@ -61,6 +61,7 @@ const WellnessTreatment = () => {
   const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: true }));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [itemsPerSlide, setItemsPerSlide] = React.useState(4);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -94,6 +95,17 @@ const WellnessTreatment = () => {
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
 
+  useEffect(() => {
+    const updateItems = () => {
+      const w = typeof window !== 'undefined' ? window.innerWidth : 1400;
+      // match CSS breakpoint: mobile <= 599.98px -> 2 per slide, otherwise 4
+      setItemsPerSlide(w <= 600 ? 2 : 4);
+    };
+    updateItems();
+    window.addEventListener('resize', updateItems);
+    return () => window.removeEventListener('resize', updateItems);
+  }, []);
+
   // Autoplay handled by Embla Autoplay plugin
 
   return (
@@ -108,12 +120,14 @@ const WellnessTreatment = () => {
             <div className={styles.embla} ref={emblaRef}>
               <div className={styles.emblaContainer}>
                 {/* Group every 4 thumbnails into a single slide (2x2 grid per slide) */}
-                {Array.from({ length: Math.ceil(treatments.length / 4) }).map((_, slideIdx) => {
-                  const startIdx = slideIdx * 4;
-                  const slideTreatments = treatments.slice(startIdx, startIdx + 4);
+                {Array.from({ length: Math.ceil(treatments.length / itemsPerSlide) }).map((_, slideIdx) => {
+                  const startIdx = slideIdx * itemsPerSlide;
+                  const slideTreatments = treatments.slice(startIdx, startIdx + itemsPerSlide);
                   return (
                     <div className={styles.emblaSlide} key={slideIdx}>
-                      {[0, 1].map(row => (
+                      {itemsPerSlide === 4 ? (
+                        // desktop layout: 2x2 grid inside a slide
+                        [0, 1].map(row => (
                           <div key={row} className={styles.gridRow}>
                             {[0, 1].map(col => {
                               const index = row * 2 + col;
@@ -133,7 +147,24 @@ const WellnessTreatment = () => {
                               );
                             })}
                           </div>
-                        ))}
+                        ))
+                      ) : (
+                        // mobile layout: one item per slide (or flexible)
+                        slideTreatments.map((treatment, idx) => {
+                          const globalIndex = startIdx + idx;
+                          return (
+                            <div
+                              key={treatment.id + '-' + globalIndex}
+                              className={`${styles.treatmentCard} ${selectedIndex === globalIndex ? styles.active : ''}`}
+                              onClick={() => handleThumbClick(globalIndex)}>
+                              <Image src={treatment.thumb} width={300} height={200} alt={treatment.alttag} />
+                              <div className={styles.overlay}>
+                                <h3>{treatment.title}</h3>
+                              </div>
+                            </div>
+                          );
+                        })
+                      )}
                     </div>
                   );
                 })}
@@ -144,13 +175,13 @@ const WellnessTreatment = () => {
                 className={styles.navButton}
                 onClick={scrollPrev}
                 aria-label="Previous">
-                <span>&larr;</span>
+                <span><Image src="/assets/images/home/previcon.webp" alt="Previous" width={32} height={14} /></span>
               </button>
               <button
                 className={`${styles.navButton} ${styles.active}`}
                 onClick={scrollNext}
                 aria-label="Next">
-                <span>&rarr;</span>
+                <span><Image src="/assets/images/home/nexticon.webp" alt="Next" width={32} height={14} /></span>
               </button>
               {/* <div className={styles.btnboxrow}>
                <Link href="/" className={styles.viewMore}>View More</Link>

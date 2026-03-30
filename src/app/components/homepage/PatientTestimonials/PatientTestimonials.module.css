@@ -200,8 +200,8 @@
 .mainHeading {letter-spacing: 0px;margin-bottom: 15px;}
 .mainHeading br{display: none;}
 .container{max-width: 92%;}
-.previousButtons {width: 50px;height: 30px;top:unset;left: 34%;bottom: -55px;}
-.nextButtons {width: 50px;height: 30px;right:34%;top:unset;bottom: -55px;}
+.previousButtons {width: 50px;height: 36px;top:unset;left: 34%;bottom: -65px;}
+.nextButtons {width: 50px;height: 36px;right:34%;top:unset;bottom: -65px;}
 .emblaSlide {flex: 0 0 100%;padding: 0px;}
 .testimonialCard{border-left: 0px;}
 }

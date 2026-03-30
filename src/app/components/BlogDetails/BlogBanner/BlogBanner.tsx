@@ -18,7 +18,7 @@ export default function BlogBanner({ title, date, image, imageAlt }: BlogBannerP
           <Image src="/assets/images/blogdetail/email.webp" alt="Date" width={20} height={14} />
           {' '}{date}
         </div>
-        <div className={styles.tagDoctor}>Medically Reviewed by <span className={styles.hightlight}>Dr. NB Gaur</span></div>
+        <div className={styles.tagDoctor}>Medically Reviewed by <span className={styles.hightlight}>Dr. Niti Gaur</span></div>
       </div>
       {/* Main heading */}
       <h1 className={`mainHeading ${styles.mainHeading}`}>{title}</h1>
