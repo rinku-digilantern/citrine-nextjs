@@ -146,7 +146,7 @@
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
 .videosSection {padding: 1.5rem 0px 1.5rem 15px;}
-.mainHeading {margin-bottom: 15px;}
+.mainHeading {margin-bottom: 10px;}
 .videosGrid {grid-template-columns: 1fr;overflow-x: auto;display: flex;gap: 10px;scroll-snap-type: x mandatory;}
 .videoCard {min-width: 42vw;scroll-snap-align: start;}
 .viewBtn {padding: 6px 16px;}

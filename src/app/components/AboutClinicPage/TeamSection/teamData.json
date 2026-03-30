@@ -1,0 +1,48 @@
+{
+  "founder": [
+    {
+      "id": 1,
+      "name": "DR. NITI GAUR",
+      "description": "MBBS, MD - DERMATOLOGY, VENEREOLOGY & LEPROLOGY DERMATOLOGIST, COSMETOLOGIST, TRICHOLOGIST, TEDx SPEAKER",
+      "image": "/assets/images/about-clinic/founderdoctor01.webp",
+      "experienceNumber": "20+",
+      "experienceText": "years of experience",
+      "link": "/dr-niti-gaur"
+    }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "name": "DR. NITI GAUR",
+      "description": "MBBS, MD - DERMATOLOGY, VENEREOLOGY & LEPROLOGY DERMATOLOGIST, COSMETOLOGIST, TRICHOLOGIST, TEDx SPEAKER",
+      "image": "/assets/images/about-clinic/doctor01.webp",
+      "experienceNumber": "20+",
+      "experienceText": "years of experience",
+      "link": "/dr-niti-gaur"
+    },
+    {
+      "id": 2,
+      "name": "Dr. Isheeta RVM",
+      "description": "MBBS, MD - Dermatology , Venereology & Leprosy Board Certified Dermatologist Laser,Injectable & Energy- Based Device expert",
+      "image": "/assets/images/about-clinic/doctor02.webp",
+      "experienceNumber": "10+",
+      "experienceText": "years of experience"
+    },
+    {
+      "id": 3,
+      "name": "Dr Guneet Bedi",
+      "description": "MBBS - Dermatology, Venereology & Leprosy (DVL).",
+      "image": "/assets/images/about-clinic/doctor03.webp",
+      "experienceNumber": "10+",
+      "experienceText": "years of experience"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Nitika Yadav",
+      "description": "MBBS, MD (Dermatology)",
+      "image": "/assets/images/about-clinic/doctor04.webp",
+      "experienceNumber": "6+",
+      "experienceText": "years of clinical experience"
+    }
+  ]
+}

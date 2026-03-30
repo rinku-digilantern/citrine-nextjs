@@ -38,12 +38,11 @@ const Footer = () => {
             <div className={styles.footerCol}>
               <div className={`${styles.title}`}>
                 <Link href="/">
-                  <Image
+                    <Image
                     src="/assets/images/logo.webp"
                     alt={"Citrine Clinic"}
-                    width={250}
-                    height={70}
-                  />
+                    width={180}
+                    height={50}/>
                 </Link>
               </div>
               <p>

@@ -183,10 +183,10 @@
 .contentWrapper {grid-template-columns: 1fr;gap:0px;padding: 0rem 0px 1.5rem 0px;display: flex;flex-direction: column-reverse;}
 .doctorImageWrapper {margin-left: 0px;width: 100%;}
 .contentCard {padding: 30px 15px; margin-top: -15px;}
-.description {font-size: 16px;margin-bottom: 20px;font-weight: 500; line-height: 27px;}
+.description {font-size: 16px;margin-bottom: 20px;font-weight: 500; line-height: 27px;padding: 8px;}
 .specialties {font-size: 16px;line-height: 26px;font-weight: 500;}
 .doctorName {font-size: 18px;margin-bottom: 10px;}
 .specialties br{display: none;}
 .comma {left: 5%;}
-.circularText {width: 90px;height: 90px;right: unset;left: 15px;display: block;position: absolute;top:-300px}
+.circularText {width: 90px;height: 90px;right: unset;left: 0px;display: block;position: absolute;top:-335px}
 }

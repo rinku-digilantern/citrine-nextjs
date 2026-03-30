@@ -1,6 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next/dist/types';
-import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
+import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import TopSection from '@/src/app/components/ServiceInnerPage/TopSection/TopSection';
 import TableOfContent from '@/src/app/components/ServiceInnerPage/TableOfContent/TableOfContent';
 import FirstSection from '@/src/app/components/ServiceInnerPage/FirstSection/FirstSection';

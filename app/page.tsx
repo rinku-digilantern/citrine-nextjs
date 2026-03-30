@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import AestheticsSection from "@/src/app/components/homepage/AestheticsSection/AestheticsSection";
-import AppointmentSection from "@/src/app/components/homepage/AppointmentSection/AppointmentSection";
+import AppointmentSection from "@/src/app/components/common/AppointmentSection/AppointmentSection";
 import CitrineClinicSection from "@/src/app/components/homepage/CitrineClinicSection/CitrineClinicSection";
 import DermatologyTreatment from "@/src/app/components/homepage/DermatologyTreatment/DermatologyTreatment";
 import DoctorSection from "@/src/app/components/homepage/DoctorSection/DoctorSection";

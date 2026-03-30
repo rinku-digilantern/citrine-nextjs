@@ -203,7 +203,7 @@
 .backgroundImage{display: none;}
 .mainHeading span{font-size: 25px;}
 .container {gap: 5px;max-width: 92%;display: block;}
-.desc {max-width: 100%;font-size: 15px;padding-top: 10px;}
+.desc {max-width: 100%;font-size: 15px;padding-top: 5px;}
 .leftCol{display: block;text-align: center;}
 .emblaSlide {flex: 0 0 150px;}
 .emblaContainer{gap: 8px;}
@@ -213,12 +213,12 @@
   background: #FFFFFF80;
   border: 1px solid #E5D7C3;
   max-width: 100%;
-  margin-top: 10px;padding: 6px 6px 3rem 6px;
+  margin-top: 10px;padding: 6px 6px 3.5rem 6px;
   margin-bottom:0px;
 }
 .commonbtn{width: 100%;display: block; margin: 10px 0px 5px 0px;}
 .commonbtnbox{width: 100%;display: none;}
 .thumbTitle {font-size: 14px;padding: 0 0 10px 5px;}
-.navigation {gap: 10px;margin: 0px 0 0 0;bottom:-5px;right: 21%;transform: translate(-50%, -50%);}
-.navBtn {width: 50px;height:30px;font-size: 18px;}
+.navigation {gap: 10px;margin: 0px 0 0 0;bottom:-8px;right: 21%;transform: translate(-50%, -50%);}
+.navBtn {width: 50px;height:36px;font-size: 24px;}
 }

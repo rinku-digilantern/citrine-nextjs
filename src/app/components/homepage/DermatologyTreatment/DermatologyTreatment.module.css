@@ -217,12 +217,12 @@
 .viewMoreLinks {padding: 7px 16px;}
 .sliderWrapper {width: 100%;max-width: 100%;margin: 10px auto 0 auto;}
 .contentBox {background:none;border: 0px;box-shadow: none;padding: 0px;text-align: center;min-width: 95%;max-width: 100%;display: block;margin-bottom: 0px;}
-.mainHeading {margin-bottom: 10px;}
+.mainHeading {margin-bottom: 5px;}
 .desc {margin-bottom: 15px;font-size: 15px;}
 .thumbTitle {font-size: 14px;  padding: 0 0 12px 12px;}
 .mainHeading span {font-size: 25px;}
 .emblaContainer {gap: 8px;}
-.navBtn {width: 50px;height: 30px;font-size: 18px;}
+.navBtn {width: 50px;height: 36px;font-size: 24px;}
 .rightCol {flex: unset;display: block;padding: 0 0 0px 0;}
 .navigation {justify-content: center;margin: 12px 0 0;}
 .btnrows{width: 100%;display: none;}

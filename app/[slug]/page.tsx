@@ -4,7 +4,7 @@ import CategoryTemplate from '@/src/app/components/dynamic/CategoryTemplate';
 import ServiceDetailTemplate from '@/src/app/components/dynamic/ServiceDetailTemplate';
 import ConcernPage from '@/src/app/components/ConcernPage/ConcernPage';
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
-import AppointmentSection from '@/src/app/components/homepage/AppointmentSection/AppointmentSection';
+import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import { notFound } from 'next/navigation';
 
 interface PageProps {

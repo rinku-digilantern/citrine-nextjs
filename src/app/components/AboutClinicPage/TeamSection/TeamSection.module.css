@@ -97,7 +97,7 @@
   font-size: 20px;
   font-weight: 500;
   color: var(--default-color);
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   text-transform: uppercase;
 }
 
@@ -110,13 +110,109 @@
 .doctorexperience {
   font-size: 17px;
   color: var(--default-color);
-  margin-top: 8px;
+  margin-top: 5px;
   margin-bottom: 8px;
 }
 .doctorexperience span {
   font-weight: 600;
   color: var(--accent-color);
 }
+
+/* Founder specific styles */
+.founderSection {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin: 30px 0 0 0;
+}
+.founderCard {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  background: #FFF9F0;
+  padding: 24px;
+  border: 1px solid #E5D7C3;
+  width: 100%;
+  max-width: 1100px;
+}
+.founderImageWrapper {
+  flex: 0 0 420px;
+  height: 500px;
+  overflow: hidden;
+}
+.founderImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.founderContent {
+  flex: 1 1 auto;
+}
+.founderName {
+  font-size: 35px;
+  font-weight: 600;
+  color: var(--default-color);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.founderExperience {
+  font-size: 20px;
+  color: var(--default-color);
+  margin-bottom: 12px;
+}
+.founderExperience span { color: var(--accent-color); font-weight: 700; }
+.founderDescription {
+  font-size: 18px;
+  color: var(--default-color);
+  line-height: 1.8; margin-bottom: 10px;
+}
+.founderDescription{ font-size: 18px;font-weight: 500;}
+.founderContent p{  font-size: 18px;
+  color: var(--default-color);
+  line-height: 1.8;
+
+}
+  .learnMoreLink {
+  display: inline-block;
+  background: var(--gradient-bg);
+  color: #ffffff;
+  padding: 12px 25px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.learnMoreLink:hover {
+  background: var(--gradient-bg-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+}
+
+.readmore{
+  display: inline-block;
+  background:transparent;
+  color: var(--accent-color);
+  padding: 7px 20px; margin-top: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--accent-color);
+  cursor: pointer;
+}
+.readmore:hover {
+  background: var(--gradient-bg-hover);
+  transform: translateY(-2px);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 1500.98px) and (min-width: 1401px){
@@ -141,10 +237,11 @@
   .container {padding: 0px;margin:0 auto;width:92%}
   .tabsContainer {gap: 10px;margin-bottom: 5px;}
   .tab {padding: 10px 20px; font-size: 16px;}
-  .teamGrid {gap: 10px;}
+  .teamGrid {gap: 10px; margin-top: 15px;}
   .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
   .cardContent {padding: 10px 10px 10px 10px;}
-  .imageWrapper {height: 250px;}
+  .imageWrapper {height: auto}
+   .founderSection {margin: 15px 0px 0px;}
 }
 
 
@@ -155,10 +252,14 @@
   .container {padding: 0px;margin:0 auto;width:92%}
   .tabsContainer {gap: 10px;margin-bottom: 5px;}
   .tab {padding: 10px 20px; font-size: 16px;}
-  .teamGrid {gap: 10px;}
+  .teamGrid {gap: 10px; margin-top: 15px;}
   .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
   .cardContent {padding: 10px 10px 10px 10px;}
-  .imageWrapper {height: 250px;}
+  .imageWrapper {height: auto;}
+   .founderSection {margin: 15px 0px 0px;}
+  .founderName { font-size: 30px; }
+  .founderContent p {font-size: 16px;}
+   .doctorDescription {font-size: 16px;}
 }
 
 /* Responsive Design */
@@ -170,7 +271,11 @@
   .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
   .tab {padding: 10px 20px; font-size: 16px;}
   .teamGrid {grid-template-columns:1fr 1fr;gap: 20px;}
-  .imageWrapper {height: 320px;}
+  .founderSection {margin: 15px 0px 0px;}
+  .imageWrapper {height: auto;}
+  .founderName { font-size: 26px; }
+  .founderContent p {font-size: 16px;line-height: 1.6;}
+  .doctorDescription {font-size: 16px;}
 }
 
 @media (max-width:991.98px) and (min-width: 768px){
@@ -179,9 +284,16 @@
   .container {padding: 0px;margin:0 auto;width:92%}
   .tabsContainer {gap: 10px;margin-bottom: 15px;}
   .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
-  .tab {padding: 10px 20px; font-size: 16px;}
-  .teamGrid {grid-template-columns:1fr 1fr;gap: 10px;}
-  .imageWrapper {height: 320px;}
+  .tab {padding: 10px 20px; font-size: 18px;}
+  .teamGrid {grid-template-columns:1fr 1fr;gap: 10px;flex-direction: column;}
+  .imageWrapper {height: auto;}
+  .founderContent p {font-size: 16px;line-height: 1.6;}
+  .founderCard { flex-direction: column; gap: 16px; padding: 16px; }
+  .founderImageWrapper { width: 100%; height:auto; flex: unset; }
+  .founderName { font-size: 26px; }
+  .founderExperience { font-size: 18px; }
+  .learnMoreLink {padding: 9px 20px;font-size: 16px;}
+  .doctorDescription {font-size: 16px;}
 }
 
 @media (max-width:767.98px) and (min-width: 600px){
@@ -190,26 +302,40 @@
   .container {padding: 0px;margin:0 auto;width:92%}
   .tabsContainer {gap: 10px;margin-bottom: 15px;}
   .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
-  .tab {padding: 10px 20px; font-size: 16px;}
-  .teamGrid {grid-template-columns:1fr 1fr;gap: 10px;}
-  .imageWrapper {height: 320px;}
+  .tab {padding: 10px 20px; font-size: 17px;}
+  .teamGrid {grid-template-columns:1fr 1fr;gap: 10px;flex-direction: column;}
+  .founderContent p {font-size: 16px;line-height: 1.6;}
+  .founderCard { flex-direction: column; gap: 16px; padding: 16px; }
+  .founderImageWrapper { width: 100%; height: auto; flex: unset; }
+  .founderName { font-size: 26px; }
+  .founderExperience { font-size: 18px; }
+  .learnMoreLink {padding: 8px 20px;font-size: 15px;}
+   .doctorDescription {font-size: 16px;}
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px){
   .teamSection {padding:1.5rem 0px;}
-  .tabsContainer {gap: 5px;margin-bottom: 15px;}
+  .tabsContainer {gap: 5px;margin-bottom: 10px;}
   .container {padding: 0px;margin:0 auto;width:92%}
   .mainHeading {margin-bottom: 15px;font-size:26px}
   .mainHeading br{display: none;}
   .tabsContainer {flex-wrap: wrap;}
   .doctorexperience {margin-top: 5px;margin-bottom: 5px;font-size: 16px;}
-  .tab {padding: 9px 12px;font-size: 14px;}
+  .tab {padding: 9px 18px;font-size: 16px;}
   .imageWrapper {height: 280px;}
+  .founderSection {margin: 15px 0 0 0px;}
   .doctorName {font-size: 18px; font-weight: 500; margin-bottom: 5px;}
   .doctorDescription {font-size: 15px;}
   .cardContent {padding: 10px 0px 0px 0px;}
-  .teamGrid {display: flex;overflow-x: auto;-webkit-overflow-scrolling: touch; gap: 8px;padding-bottom: 8px;}
+  .teamGrid {overflow-x: auto;-webkit-overflow-scrolling: touch; margin-top: 15px;
+     gap: 8px;padding-bottom: 8px;}
   .teamGrid::-webkit-scrollbar { display: none; }
-  .doctorCard { min-width: 280px; flex:unset; }
+  .doctorCard {flex:unset;width: 80vw;}
+  .founderContent p {font-size: 15px;line-height: 1.6;}
+  .founderCard { flex-direction: column; gap: 8px; padding: 8px; }
+  .founderImageWrapper { width: 100%; height: auto; flex: unset; }
+  .founderName { font-size: 26px; }
+  .founderExperience { font-size: 18px; }
+  .learnMoreLink {padding: 8px 20px;font-size: 15px;}
 }

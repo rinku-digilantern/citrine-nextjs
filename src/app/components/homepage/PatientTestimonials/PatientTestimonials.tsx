@@ -82,7 +82,7 @@ const PatientTestimonials = () => {
         </h2>
 
         {/* Carousel Wrapper */}
-        <button className={styles.previousButtons} onClick={scrollPrevious} aria-label="Previous testimonial"><span>&larr;</span></button>
+        <button className={styles.previousButtons} onClick={scrollPrevious} aria-label="Previous testimonial"><span><Image src="/assets/images/home/previcon.webp" alt="Previous" width={32} height={14} /></span></button>
         <div className={styles.embla} ref={emblaRef}>
           <div className={styles.emblaContainer}>
             {testimonials.map((testimonial) => (
@@ -94,7 +94,7 @@ const PatientTestimonials = () => {
         </div>
 
         {/* Next Button */}
-        <button className={styles.nextButtons} onClick={scrollNext} aria-label="Next testimonial"><span>&rarr;</span></button>
+        <button className={styles.nextButtons} onClick={scrollNext} aria-label="Next testimonial"><span><Image src="/assets/images/home/nexticon.webp" alt="Next" width={32} height={14} /></span></button>
       </div>
     </section>
   );

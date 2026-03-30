@@ -30,8 +30,23 @@ const hairTreatments = [
   },
   {
     id: 5,
+    title: "HAIR FALL",
+    image: "/assets/images/home/ht01.webp"
+  },
+  {
+    id: 6,
     title: "P-R-P THERAPY",
     image: "/assets/images/home/ht02.webp"
+  },
+  {
+    id: 7,
+    title: "MESOTHERAPY",
+    image: "/assets/images/home/ht03.webp"
+  },
+  {
+    id: 8,
+    title: "SCALP TREATMENT",
+    image: "/assets/images/home/ht01.webp"
   },
 ];
 
@@ -69,13 +84,13 @@ const HairSection = () => {
               className={styles.previousButton}
               onClick={scrollPrevious}
               aria-label="Previous treatment">
-              <span>&larr;</span>
+              <span><Image src="/assets/images/home/previcon.webp" alt="Previous" width={32} height={14} /></span>
             </button>
             <button
               className={styles.nextButton}
               onClick={scrollNext}
               aria-label="Next treatment">
-              <span>&rarr;</span>
+              <span><Image src="/assets/images/home/nexticon.webp" alt="Next" width={32} height={14} /></span>
             </button>
           </div>
         </div>
@@ -113,13 +128,13 @@ const HairSection = () => {
               className={styles.previousButton}
               onClick={scrollPrevious}
               aria-label="Previous treatment">
-              <span>&larr;</span>
+              <span><Image src="/assets/images/home/previcon.webp" alt="Previous" width={32} height={14} /></span>
             </button>
             <button
               className={styles.nextButton}
               onClick={scrollNext}
               aria-label="Next treatment">
-              <span>&rarr;</span>
+              <span><Image src="/assets/images/home/nexticon.webp" alt="Next" width={32} height={14} /></span>
             </button>
           </div>
 
