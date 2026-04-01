@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -255,7 +256,7 @@
                     </div>
                 </div>
 
-                 <!--<div class="item-service">
+                <!--<div class="item-service">
                     <div class="service-bx">
                         <img src="images/lp/aa04.webp" loading="lazy" width="500" height="354"
                             alt="Fillers in Gurgaon" />
@@ -290,11 +291,11 @@
                             <h3 class="title-service">Wrinkle Treatment</h3>
                         </div>
                         <!-- <p>Wrinkle treatment plans vary Muscle Relaxant offers quick results in one session, while lasers need several.</p>  -->
-                         <ul>
+                        <ul>
                             <li>Anti-wrinkle injection ranging from ₹5,000 to ₹30,000.</li>
                             <li>Best suited for forehead, frown lines, necklines, crow’s feet</li>
                             <li>No to very minimal downtime</li>
-                         </ul>
+                        </ul>
                     </div>
                 </div>
 
@@ -525,17 +526,20 @@
                 <div class="accordion-item">
                     <div class="accordion-header">5. What is the cost of HIFU treatment? <span
                             class="accordion-icon">+</span></div>
-                    <div class="accordion-content">HIFU treatment in Gurgaon typically starts at ₹15,000 per session.</div>
+                    <div class="accordion-content">HIFU treatment in Gurgaon typically starts at ₹15,000 per session.
+                    </div>
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-header">6. How many HIFU sessions are needed? <span
                             class="accordion-icon">+</span></div>
-                    <div class="accordion-content">Most individuals require two sessions per cycle, spaced about two weeks apart for optimal results.</div>
+                    <div class="accordion-content">Most individuals require two sessions per cycle, spaced about two
+                        weeks apart for optimal results.</div>
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-header">7. Is there any downtime after HIFU treatment? <span
                             class="accordion-icon">+</span></div>
-                    <div class="accordion-content">HIFU involves no downtime, allowing you to return to your normal activities immediately.</div>
+                    <div class="accordion-content">HIFU involves no downtime, allowing you to return to your normal
+                        activities immediately.</div>
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-header">8. Is HIFU treatment safe and does it have any side effects? <span
@@ -553,12 +557,14 @@
                 <div class="accordion-item">
                     <div class="accordion-header">10. How many Morpheus8 sessions are needed? <span
                             class="accordion-icon">+</span></div>
-                    <div class="accordion-content">For optimal results, 4–5 sessions are generally recommended, spaced 4–6 weeks apart.</div>
+                    <div class="accordion-content">For optimal results, 4–5 sessions are generally recommended, spaced
+                        4–6 weeks apart.</div>
                 </div>
                 <div class="accordion-item">
                     <div class="accordion-header">11. Is there any downtime after Morpheus8 treatment? <span
                             class="accordion-icon">+</span></div>
-                    <div class="accordion-content">Downtime is minimal, with most people resuming normal activities and applying makeup within 1–3 days.</div>
+                    <div class="accordion-content">Downtime is minimal, with most people resuming normal activities and
+                        applying makeup within 1–3 days.</div>
                 </div>
             </div>
             <!-- // End of accordion -->
@@ -582,7 +588,8 @@
     <div id="videoModal" class="modal" style="display:none;">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <iframe id="videoFrame" allow="autoplay" width="700" height="420" frameborder="0" allowfullscreen sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation"></iframe>
+            <iframe id="videoFrame" allow="autoplay" width="700" height="420" frameborder="0" allowfullscreen
+                sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation"></iframe>
         </div>
     </div>
 
@@ -671,7 +678,7 @@
                         }
                     }
                 } catch (e) {
-                    console.log('Nominatim failed, trying alternative...');
+                    // console.log('Nominatim failed, trying alternative...');
                 }
 
                 // Option 2: BigDataCloud (free tier available)
@@ -685,7 +692,7 @@
                         }
                     }
                 } catch (e) {
-                    console.log('BigDataCloud failed, trying alternative...');
+                    // console.log('BigDataCloud failed, trying alternative...');
                 }
 
                 // Option 3: IP-based location as fallback
@@ -698,7 +705,7 @@
                         }
                     }
                 } catch (e) {
-                    console.log('IP-based location failed');
+                    // console.log('IP-based location failed');
                 }
 
                 return null;
@@ -719,7 +726,7 @@
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
-                    function(position) {
+                    function (position) {
                         const lat = position.coords.latitude;
                         const lng = position.coords.longitude;
 
@@ -778,9 +785,9 @@
                                 locationSelect.options[1].disabled = false;
                             });
                     },
-                    function(error) {
+                    function (error) {
                         let errorMsg = 'Location access denied. Please select manually.';
-                        switch(error.code) {
+                        switch (error.code) {
                             case error.PERMISSION_DENIED:
                                 errorMsg = 'Location access denied. Please select manually.';
                                 break;
@@ -882,7 +889,7 @@
 
                         // Return this part and possibly the previous one
                         if (i > 0) {
-                            return `${parts[i-1]}, ${parts[i]}`;
+                            return `${parts[i - 1]}, ${parts[i]}`;
                         } else {
                             return parts[i];
                         }
@@ -926,10 +933,10 @@
         }
 
         // Add event listener for location select dropdown
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const locationSelect = document.getElementById('locationSelect');
 
-            locationSelect.addEventListener('change', function() {
+            locationSelect.addEventListener('change', function () {
                 if (this.value === 'auto-detect') {
                     detectCurrentLocation();
                     // Reset to placeholder after detection starts

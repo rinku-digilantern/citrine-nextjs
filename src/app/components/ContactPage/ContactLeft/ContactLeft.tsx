@@ -4,8 +4,8 @@ import { useRouter } from 'next/navigation';
 import styles from './ContactLeft.module.css';
 
 interface CaptchaData {
-  captchashow: string;     
-  captchashows: string;    
+  captchashow: string;
+  captchashows: string;
   uniqid: string;
 }
 
@@ -27,7 +27,7 @@ const ContactLeft = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '', email: '', phone: '', message: '', captcha: ''
   });
-  
+
   const [errors, setErrors] = useState<FormErrors>({});
   const [captcha, setCaptcha] = useState<CaptchaData | null>(null);
   const [loading, setLoading] = useState(false);
@@ -36,7 +36,7 @@ const ContactLeft = () => {
   // ── Fetch CAPTCHA 
   const fetchCaptcha = useCallback(async () => {
     try {
-      const res  = await fetch(`${CAPTCHA_API}?t=${new Date().getTime()}`, { cache: 'no-store' });
+      const res = await fetch(`${CAPTCHA_API}?t=${new Date().getTime()}`, { cache: 'no-store' });
       const data = await res.json();
       setCaptcha(data);
       setFormData(prev => ({ ...prev, captcha: '' }));
@@ -61,7 +61,7 @@ const ContactLeft = () => {
     }
 
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear the specific error when user types
     if (errors[name as keyof FormData]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -118,13 +118,13 @@ const ContactLeft = () => {
     setErrorMsg('');
 
     const payload = {
-      name:    formData.name,
-      phone:   formData.phone,
-      email:   formData.email,
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
       captcha: formData.captcha,
       message: formData.message,
-      uncode:  captcha.uniqid,
-      source:  'website',
+      uncode: captcha.uniqid,
+      source: 'website',
       referer: typeof window !== 'undefined' ? window.location.href : ''
     };
 
@@ -139,7 +139,7 @@ const ContactLeft = () => {
 
       if (response.ok && (data.success || data.status === 'success' || data.title === 'Success')) {
         setFormData({ name: '', email: '', phone: '', message: '', captcha: '' });
-        router.push('/thank-you');
+        router.push('/thankyou');
       } else {
         setErrorMsg(data.message || 'Submission failed. Please check your captcha and try again.');
         fetchCaptcha();
@@ -190,7 +190,7 @@ const ContactLeft = () => {
                 value={formData.email}
                 onChange={handleChange}
                 autoComplete="off"
-                required 
+                required
               />
               {errors.email && <span className={styles.fieldError}>{errors.email}</span>}
             </div>
@@ -222,7 +222,7 @@ const ContactLeft = () => {
             placeholder="Tell us about your project"
             value={formData.message}
             onChange={handleChange}
-            required 
+            required
           />
           {errors.message && <span className={styles.fieldError}>{errors.message}</span>}
         </div>
@@ -251,12 +251,12 @@ const ContactLeft = () => {
           </div>
           <div className={styles.captchaInputBox}>
             <input
-              type="text" 
-              name="captcha" 
+              type="text"
+              name="captcha"
               placeholder="Enter Captcha*"
-              value={formData.captcha} 
+              value={formData.captcha}
               onChange={handleChange}
-              className={`${styles.formInput} ${errors.captcha ? styles.inputError : ''}`} 
+              className={`${styles.formInput} ${errors.captcha ? styles.inputError : ''}`}
               required
               autoComplete="off"
             />

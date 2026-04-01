@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Callback - Processing</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: transparent linear-gradient(251deg, #d29740, #ebd577, #d0913b 82%, #e7ca6d) 0% 0% no-repeat padding-box;
             min-height: 100vh;
             display: flex;
@@ -15,16 +21,18 @@
             justify-content: center;
             padding: 20px;
         }
+
         .container {
             background: white;
             border-radius: 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
             padding: 40px;
             max-width: 600px;
             width: 100%;
             text-align: center;
             border-top: 4px solid #d29740;
         }
+
         .loader {
             border: 4px solid #f3f3f3;
             border-top: 4px solid #d29740;
@@ -34,36 +42,57 @@
             animation: spin 1s linear infinite;
             margin: 0 auto 20px;
         }
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        h1 { color: #333; margin-bottom: 10px; font-size: 24px; }
-        p { color: #666; margin-bottom: 20px; line-height: 1.6; }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
         .result {
             display: none;
             padding: 20px;
             border-radius: 8px;
             margin-top: 20px;
         }
+
         .success {
             background: linear-gradient(135deg, #FFF9E6 0%, #F5F3E8 100%);
             border: 2px solid #d29740;
             color: #155724;
             box-shadow: 0 4px 15px rgba(210, 151, 64, 0.2);
         }
+
         .error {
             background: #FFE8E8;
             border: 2px solid #E57373;
             color: #721c24;
             box-shadow: 0 4px 15px rgba(229, 115, 115, 0.2);
         }
+
         .info {
             background: linear-gradient(135deg, #FFF9E6 0%, #F5F3E8 100%);
             border: 2px solid #d29740;
             color: #856404;
             box-shadow: 0 4px 15px rgba(210, 151, 64, 0.2);
         }
+
         .details {
             background: #f8f9fa;
             padding: 15px;
@@ -71,7 +100,11 @@
             margin-top: 15px;
             text-align: left;
         }
-        .details strong { color: #333; }
+
+        .details strong {
+            color: #333;
+        }
+
         .btn {
             display: inline-block;
             background: transparent linear-gradient(251deg, #d29740, #ebd577, #d0913b 82%, #e7ca6d) 0% 0% no-repeat padding-box;
@@ -87,11 +120,13 @@
             letter-spacing: 0.5px;
             box-shadow: 0 4px 15px rgba(210, 151, 64, 0.3);
         }
+
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(210, 151, 64, 0.5);
             opacity: 0.95;
         }
+
         pre {
             background: #f8f9fa;
             padding: 15px;
@@ -101,9 +136,15 @@
             margin-top: 15px;
             font-size: 12px;
         }
-        .logo { max-width: 180px; height: auto; margin-bottom: 20px; }
+
+        .logo {
+            max-width: 180px;
+            height: auto;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <img src="https://www.citrineclinic.com/assets/images/img/logo.webp" alt="Citrine Clinic" class="logo">
@@ -113,21 +154,21 @@
             <p>Please wait while we verify your payment with Cashfree.</p>
             <p id="orderIdDisplay" style="font-size: 12px; color: #999; margin-top: 10px;"></p>
         </div>
-        
+
         <div id="result" class="result"></div>
     </div>
 
     <script>
         // Get order_id from URL (Cashfree can send multiple parameter names)
         const urlParams = new URLSearchParams(window.location.search);
-        const orderId = urlParams.get('order_id') || 
-                        urlParams.get('orderId') || 
-                        urlParams.get('cf_order_id') ||
-                        urlParams.get('order_token');
+        const orderId = urlParams.get('order_id') ||
+            urlParams.get('orderId') ||
+            urlParams.get('cf_order_id') ||
+            urlParams.get('order_token');
 
-        console.log('Payment Callback Page Loaded');
-        console.log('Order ID:', orderId);
-        console.log('All URL Parameters:', Object.fromEntries(urlParams));
+        // console.log('Payment Callback Page Loaded');
+        // console.log('Order ID:', orderId);
+        // console.log('All URL Parameters:', Object.fromEntries(urlParams));
 
         // Display order ID on loading screen
         if (orderId) {
@@ -146,14 +187,14 @@
                 urlParams.forEach((value, key) => {
                     allParams[key] = value;
                 });
-                
+
                 if (Object.keys(allParams).length === 0) {
-                    showResult('info', 'No Parameters Received', 
+                    showResult('info', 'No Parameters Received',
                         'No parameters received from payment gateway. This might be a direct page access.',
-                        {'Info': 'Payment parameters are normally sent by Cashfree after completing the payment.'}
+                        { 'Info': 'Payment parameters are normally sent by Cashfree after completing the payment.' }
                     );
                 } else {
-                    showResult('error', 'Order ID Not Found', 
+                    showResult('error', 'Order ID Not Found',
                         'Unable to find order ID in the callback parameters.',
                         allParams
                     );
@@ -161,28 +202,28 @@
                 return;
             }
 
-            console.log('Verifying payment for order:', orderId);
+            // console.log('Verifying payment for order:', orderId);
 
             try {
                 // Call the verify payment API with timeout
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
-                
+
                 const apiUrl = `https://api.citrineclinic.com/api/payment-verify?order_id=${orderId}`;
-                console.log('Calling API:', apiUrl);
-                
+                // console.log('Calling API:', apiUrl);
+
                 const response = await fetch(apiUrl, {
                     signal: controller.signal
                 });
                 clearTimeout(timeoutId);
-                
-                console.log('API Response Status:', response.status);
+
+                // console.log('API Response Status:', response.status);
                 const data = await response.json();
-                console.log('API Response Data:', data);
+                // console.log('API Response Data:', data);
 
                 if (data.success) {
-                    console.log('Payment successful');
-                    showResult('success', 'Payment Successful! 🎉', 
+                    // console.log('Payment successful');
+                    showResult('success', 'Payment Successful! 🎉',
                         `Your payment has been completed successfully.`,
                         {
                             'Order ID': data.data.order_id,
@@ -192,10 +233,10 @@
                         }
                     );
                 } else {
-                    console.log('Payment verification failed:', data.message);
+                    // console.log('Payment verification failed:', data.message);
                     // Handle different error cases based on status
                     if (data.error_code === 'DATA_NOT_FOUND') {
-                        showResult('error', 'Payment Data Not Found', 
+                        showResult('error', 'Payment Data Not Found',
                             'Payment session has expired. Please contact support if payment was deducted.',
                             {
                                 'Order ID': orderId,
@@ -206,14 +247,14 @@
                     } else if (data.data && data.data.payment_status) {
                         const statusText = data.data.payment_status;
                         const paymentData = data.data;
-                        
+
                         // Handle each status appropriately
                         if (statusText === 'PENDING' || statusText === 'ACTIVE') {
                             retryCount++;
-                            
+
                             if (retryCount >= MAX_RETRIES) {
                                 // Max retries reached
-                                showResult('info', 
+                                showResult('info',
                                     'Payment Still Pending ⏳',
                                     'Your payment is taking longer than expected. Please check back later or contact support.',
                                     {
@@ -225,7 +266,7 @@
                                 );
                             } else {
                                 // Auto-retry for pending payments
-                                showResult('info', 
+                                showResult('info',
                                     'Payment Pending ⏳',
                                     'Your payment is being processed. We\'ll check the status automatically.',
                                     {
@@ -239,7 +280,7 @@
                                 setTimeout(verifyPayment, 5000);
                             }
                         } else if (statusText === 'FAILED') {
-                            showResult('error', 
+                            showResult('error',
                                 'Payment Failed ❌',
                                 'Your payment could not be completed. Please try again with a different payment method.',
                                 {
@@ -250,7 +291,7 @@
                                 'retry'
                             );
                         } else if (statusText === 'CANCELLED' || statusText === 'USER_DROPPED') {
-                            showResult('info', 
+                            showResult('info',
                                 'Payment Cancelled',
                                 'You cancelled the payment. You can try again whenever you\'re ready.',
                                 {
@@ -260,7 +301,7 @@
                                 'retry'
                             );
                         } else if (statusText === 'EXPIRED') {
-                            showResult('error', 
+                            showResult('error',
                                 'Payment Expired ⏰',
                                 'The payment session has expired. Please initiate a new payment.',
                                 {
@@ -271,7 +312,7 @@
                             );
                         } else {
                             // Unknown status
-                            showResult('error', 
+                            showResult('error',
                                 'Payment Status: ' + statusText,
                                 data.message || 'Payment was not successful.',
                                 {
@@ -282,16 +323,16 @@
                             );
                         }
                     } else {
-                        showResult('error', 'Payment Verification Failed', 
+                        showResult('error', 'Payment Verification Failed',
                             data.message || 'Unable to verify payment status.',
-                            data.data || {'Order ID': orderId},
+                            data.data || { 'Order ID': orderId },
                             'contact-support'
                         );
                     }
                 }
             } catch (error) {
                 if (error.name === 'AbortError') {
-                    showResult('error', 'Request Timeout', 
+                    showResult('error', 'Request Timeout',
                         'Payment verification is taking too long. Your payment may still be processing.',
                         {
                             'Order ID': orderId,
@@ -299,9 +340,9 @@
                         }
                     );
                 } else {
-                    showResult('error', 'Verification Error', 
+                    showResult('error', 'Verification Error',
                         'Unable to connect to the payment verification service.',
-                        { 
+                        {
                             'Error': error.message,
                             'Order ID': orderId
                         }
@@ -384,9 +425,10 @@
 
         // Auto-verify on page load
         window.addEventListener('DOMContentLoaded', () => {
-            console.log('Page loaded, starting verification in 1 second...');
+            // console.log('Page loaded, starting verification in 1 second...');
             setTimeout(verifyPayment, 1000);
         });
     </script>
 </body>
+
 </html>

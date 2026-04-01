@@ -5,8 +5,8 @@ import { useRouter } from 'next/navigation';
 import styles from './OfferDetails.module.css';
 
 interface CaptchaData {
-  captchashow: string;     
-  captchashows: string;    
+  captchashow: string;
+  captchashows: string;
   uniqid: string;
 }
 
@@ -22,7 +22,7 @@ interface FormData {
 type FormErrors = Partial<FormData>;
 
 const CAPTCHA_API = 'https://api.citrineclinic.com/api/googlecaptcha';
-const APPT_API    = 'https://api.citrineclinic.com/api/appointment';
+const APPT_API = 'https://api.citrineclinic.com/api/appointment';
 
 interface OfferDetailsProps {
   offer: {
@@ -51,7 +51,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
   const [formData, setFormData] = useState<FormData>({
     name: '', email: '', phone: '', date: '', message: '', captcha: ''
   });
-  
+
   const [errors, setErrors] = useState<FormErrors>({});
   const [captcha, setCaptcha] = useState<CaptchaData | null>(null);
   const [loading, setLoading] = useState(false);
@@ -70,8 +70,8 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
     }
   }, []);
 
-  useEffect(() => { 
-    fetchCaptcha(); 
+  useEffect(() => {
+    fetchCaptcha();
     // Set today's date for the date picker minimum in local timezone
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -92,7 +92,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
     }
 
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     if (errors[name as keyof FormData]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
     }
@@ -151,13 +151,13 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
     setErrorMsg('');
 
     const payload = {
-      name:    formData.name,
-      phone:   formData.phone,
-      email:   formData.email,
-      date:    formData.date,
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      date: formData.date,
       captcha: formData.captcha,
-      uncode:  captcha.uniqid,
-      source:  'website',
+      uncode: captcha.uniqid,
+      source: 'website',
       referer: typeof window !== 'undefined' ? window.location.href : '',
       message: formData.message,
       service: `Offer: ${offer.offer_name}`, // Map offer name into service
@@ -174,7 +174,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
 
       if (res.ok && (data.success || data.status === 'success' || data.title === 'Success')) {
         setFormData({ name: '', email: '', phone: '', date: '', message: '', captcha: '' });
-        router.push('/thank-you');
+        router.push('/thankyou');
       } else {
         setErrorMsg(data.message || 'Submission failed. Please check your captcha and try again.');
         fetchCaptcha();
@@ -197,7 +197,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
             alt={offer.alt_tag || offer.offer_name || "Offer Image"}
             width={540}
             height={540}
-            className={styles.offerImage} 
+            className={styles.offerImage}
           />
           <div className={styles.discountTag}>{offer.offer_code || "Offer"}</div>
           <div className={styles.offerTitle}>{offer.offer_name || "Offer Title"}</div>
@@ -231,7 +231,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
               />
               <span className={styles.selectedOfferIcon}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.013 2.987a2.25 2.25 0 1 1 3.182 3.182l-1.06 1.06-3.182-3.182 1.06-1.06ZM2.5 14.792l8.94-8.94 3.182 3.182-8.94 8.94a1.25 1.25 0 0 1-.53.316l-3.182.91a.25.25 0 0 1-.308-.308l.91-3.182a1.25 1.25 0 0 1 .316-.53Z" fill="#e2b76a"/>
+                  <path d="M14.013 2.987a2.25 2.25 0 1 1 3.182 3.182l-1.06 1.06-3.182-3.182 1.06-1.06ZM2.5 14.792l8.94-8.94 3.182 3.182-8.94 8.94a1.25 1.25 0 0 1-.53.316l-3.182.91a.25.25 0 0 1-.308-.308l.91-3.182a1.25 1.25 0 0 1 .316-.53Z" fill="#e2b76a" />
                 </svg>
               </span>
             </div>
@@ -302,7 +302,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
               <label className={styles.label}>Type Message</label>
               <textarea
                 className={styles.textarea}
-                name="message" 
+                name="message"
                 rows={4}
                 placeholder="Type Message..."
                 value={formData.message}
@@ -334,12 +334,12 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
               </div>
               <div className={styles.captchaInputBox}>
                 <input
-                  type="text" 
-                  name="captcha" 
+                  type="text"
+                  name="captcha"
                   placeholder="Enter Captcha*"
-                  value={formData.captcha} 
+                  value={formData.captcha}
                   onChange={handleChange}
-                  className={`${styles.input} ${errors.captcha ? styles.inputError : ''}`} 
+                  className={`${styles.input} ${errors.captcha ? styles.inputError : ''}`}
                   required
                   autoComplete="off"
                 />

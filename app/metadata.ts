@@ -19,7 +19,7 @@ const metadataConfig: Record<string, { title: string; description: string; robot
     description:
       "",
   },
-  "/thank-you": {
+  "/thankyou": {
     title: "",
     description:
       "",

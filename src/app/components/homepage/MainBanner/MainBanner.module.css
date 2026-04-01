@@ -566,7 +566,8 @@
 
 .thirdheading {
   margin-bottom: 25px;
-  line-height: 1.2; font-size: 60px;
+  line-height: 1.2;
+  font-size: 60px;
   text-align: center;
   text-transform: uppercase;
 }
@@ -789,8 +790,8 @@
     max-width: 100vw !important;
     flex: 0 0 100vw;
     height: 100% !important;
-    min-height: 75vh;
-    min-height: 75dvh;
+    min-height: 85vh;
+    min-height: 85dvh;
     position: relative;
     padding: 0;
     scroll-snap-align: start;

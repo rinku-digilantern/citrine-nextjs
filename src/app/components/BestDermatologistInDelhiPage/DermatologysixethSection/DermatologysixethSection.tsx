@@ -15,22 +15,22 @@ interface Props {
 
 const DermatologysixethSection: React.FC<Props> = ({ section }) => {
   if (!section) return null;
-  console.log("Sixth Section Data:", section);
+  // console.log("Sixth Section Data:", section);
   return (
     <section className={styles.DermatologysixethSection}>
       <div className={styles.container}>
         <div className={styles.doctorprofile}>
           <h2 className={`mainHeading ${styles.mainHeading}`}>{section.mainHeading}</h2>
-            <>
-              {section.paragraph && <p dangerouslySetInnerHTML={{ __html: section.paragraph }} />}
-              {section.list && (
-                <ul className={styles.BestDermatologistList}>
-                   {section.list.map((item, idx) => (
-                     <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
-                    ))}
-                </ul>
-              )}
-            </>
+          <>
+            {section.paragraph && <p dangerouslySetInnerHTML={{ __html: section.paragraph }} />}
+            {section.list && (
+              <ul className={styles.BestDermatologistList}>
+                {section.list.map((item, idx) => (
+                  <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
+                ))}
+              </ul>
+            )}
+          </>
         </div>
       </div>
     </section>

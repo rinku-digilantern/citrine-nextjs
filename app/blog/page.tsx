@@ -38,18 +38,18 @@ async function getBlogData(): Promise<BlogApiResponse> {
     const res = await fetch('https://api.citrineclinic.com/api/blog', {
       cache: 'no-store'
     });
-    
+
     // console.log('Blog API Response status:', res.status);
-    
+
     if (!res.ok) {
       throw new Error('Failed to fetch blog data');
     }
-    
+
     const data = await res.json();
     // console.log('Blog data fetched successfully, items count:', data.data?.length);
     return data;
   } catch (error) {
-    console.error('Error fetching blog data:', error);
+    // console.error('Error fetching blog data:', error);
     return {
       title: 'Success',
       data: [],
@@ -68,7 +68,7 @@ async function getBlogData(): Promise<BlogApiResponse> {
 
 export async function generateMetadata(): Promise<Metadata> {
   const blogData = await getBlogData();
-  
+
   return {
     title: blogData.seo.title_tag,
     description: blogData.seo.description_tag,
@@ -84,14 +84,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Blog = async () => {
-    const blogData = await getBlogData();
-    
-    return (
-        <>
-          <Breadcrumb />
-          <Blogpage blogsData={blogData.data} />
-          <AppointmentSection />  
-        </>
-    )
+  const blogData = await getBlogData();
+
+  return (
+    <>
+      <Breadcrumb />
+      <Blogpage blogsData={blogData.data} />
+      <AppointmentSection />
+    </>
+  )
 }
 export default Blog;

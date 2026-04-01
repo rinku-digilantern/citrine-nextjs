@@ -26,10 +26,10 @@ export async function generateMetadata(): Promise<Metadata> {
     description: seo.description_tag || '',
     keywords: seo.keyword_tag || undefined,
     alternates: {
-      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/thank-you',
+      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/thankyou',
     },
     openGraph: {
-      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'thank-you'}`,
+      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'thankyou'}`,
       title: seo.title_tag || '',
       description: seo.description_tag || '',
     },
@@ -52,7 +52,7 @@ export default async function ThankYou() {
         <div className="wrapper">
           <div className={`row ${styles.row}`}>
             <div className={`col col-12 col-md-8 col-lg-7 ${styles.col}`}>
-              <AiFillCheckCircle/>
+              <AiFillCheckCircle />
               <h1 className={`mainHeading ${styles.mainHeading}`}>Thank You!</h1>
               <p className="para">We have received your request. We will get in touch with you shortly.</p>
               <Link href="/" className={styles.gohome}>Go Home</Link>

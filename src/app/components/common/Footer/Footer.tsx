@@ -38,11 +38,11 @@ const Footer = () => {
             <div className={styles.footerCol}>
               <div className={`${styles.title}`}>
                 <Link href="/">
-                    <Image
+                  <Image
                     src="/assets/images/logo.webp"
                     alt={"Citrine Clinic"}
                     width={180}
-                    height={50}/>
+                    height={50} />
                 </Link>
               </div>
               <p>
@@ -61,7 +61,7 @@ const Footer = () => {
                     <FaFacebookF />
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link
                     href="#"
                     target="_blank"
@@ -78,7 +78,7 @@ const Footer = () => {
                     rel="noopener noreferrer">
                     <FaLinkedinIn />
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link
                     href="https://www.instagram.com/citrinedermatologyclinic/"
@@ -273,9 +273,9 @@ const Footer = () => {
         <BsArrowUpShort aria-hidden="true" />
       </button>
 
-  <a target="_blank" title="Citrine Clinic" href="https://api.whatsapp.com/send?phone=919289980157&text=Hello, I have contacted you through Citrine Clinic website." aria-label="Whatsapp" className={`${styles.dkwhatsapplink} ${styles.mobilenone}`} rel="noopener noreferrer">
-    <Image src="/assets/images/fwhatsapp.webp" width="32" height="32" alt="Whatsapp"/>
-  </a>
+      <a target="_blank" title="Citrine Clinic" href="https://api.whatsapp.com/send?phone=919289980157&text=Hello, I have contacted you through Citrine Clinic website." aria-label="Whatsapp" className={`${styles.dkwhatsapplink} ${styles.mobilenone}`} rel="noopener noreferrer">
+        <Image src="/assets/images/fwhatsapp.webp" width="32" height="32" alt="Whatsapp" />
+      </a>
 
       <div className={`${styles.footerfixed} ${styles.desktophide}`}>
         <a href="/book-an-appointment" className={styles.fixedCol + ' ' + styles.left} aria-label="Request An Appointment">
@@ -289,8 +289,8 @@ const Footer = () => {
       </div>
 
 
-        {/* Click-to-open phone numbers (mobile) */}
-        <PhoneNumbers />
+      {/* Click-to-open phone numbers (mobile) */}
+      <PhoneNumbers />
 
     </>
   );

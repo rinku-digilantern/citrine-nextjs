@@ -15,15 +15,15 @@ export async function POST(request: NextRequest) {
 
     // TODO: Add your email sending logic here
     // For example, using nodemailer, SendGrid, Resend, etc.
-    
-    console.log('Contact form submission:', {
-      name,
-      email,
-      phone,
-      subject,
-      message,
-      timestamp: new Date().toISOString()
-    });
+
+    // console.log('Contact form submission:', {
+    //   name,
+    //   email,
+    //   phone,
+    //   subject,
+    //   message,
+    //   timestamp: new Date().toISOString()
+    // });
 
     // Simulate email sending (replace with actual email service)
     // Example with nodemailer or your preferred service:

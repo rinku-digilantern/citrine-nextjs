@@ -46,17 +46,17 @@ interface TreatmentsApiResponse {
 
 async function getTreatmentsData(): Promise<TreatmentsApiResponse> {
   try {
-    console.log('Fetching treatments data from API...');
+    // console.log('Fetching treatments data from API...');
     const res = await fetch('https://api.citrineclinic.com/api/service/treatments', {
       cache: 'no-store'
     });
-    
+
     // console.log('Treatments API Response status:', res.status);
-    
+
     if (!res.ok) {
       throw new Error('Failed to fetch treatments data');
     }
-    
+
     const data = await res.json();
     // console.log('Treatments data fetched successfully, items count:', data.data?.length);
     return data;
@@ -92,7 +92,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const treatmentsData = await getTreatmentsData();
   const title = treatmentsData.seo?.title_tag || 'Skin Treatments in Gurgaon | Skin Specialist | Citrine Clinic';
   const description = treatmentsData.seo?.description_tag || 'Are you looking for the best skin treatments clinic in Gurgaon? Visit Citrine Clinic, we are offering affordable skin problem treatments in Gurgaon.';
-  
+
   return {
     title,
     description,
@@ -108,16 +108,16 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Treatments = async () => {
-    const treatmentsData = await getTreatmentsData();
-    
-    return (
-        <>
-          <Breadcrumb />
-          <TreatmentPage 
-            treatmentsData={treatmentsData.data}
-            categoryName={treatmentsData.cat?.name || 'Treatments'}/>
-          <AppointmentSection />  
-        </>
-    )
+  const treatmentsData = await getTreatmentsData();
+
+  return (
+    <>
+      <Breadcrumb />
+      <TreatmentPage
+        treatmentsData={treatmentsData.data}
+        categoryName={treatmentsData.cat?.name || 'Treatments'} />
+      <AppointmentSection />
+    </>
+  )
 }
 export default Treatments;

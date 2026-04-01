@@ -46,7 +46,7 @@ async function getVideoDetails(slug: string): Promise<ApiResponse | null> {
     // console.log('Fetching video details for slug:', slug);
     const url = `https://api.citrineclinic.com/api/video-details/${slug}`;
     // console.log('API URL:', url);
-    
+
     const res = await fetch(url, {
       cache: 'no-store' // Disable cache for debugging
     });
@@ -56,7 +56,7 @@ async function getVideoDetails(slug: string): Promise<ApiResponse | null> {
 
     if (!res.ok) {
       const errorText = await res.text();
-    //   console.error('API Error Response:', errorText);
+      //   console.error('API Error Response:', errorText);
       return null;
     }
 
@@ -102,14 +102,14 @@ const VideoDetails = async ({ params }: PageProps) => {
   const { slug } = await Promise.resolve(params);
   const videoData = await getVideoDetails(slug);
 
-  console.log('VideoDetails component - slug:', slug);
-  console.log('VideoDetails component - videoData:', videoData);
+  // console.log('VideoDetails component - slug:', slug);
+  // console.log('VideoDetails component - videoData:', videoData);
 
   if (!videoData || !videoData.success) {
     return (
       <>
         <Breadcrumb />
-        <div style={{ textAlign: 'center'}}>Slug: {slug}</div>
+        <div style={{ textAlign: 'center' }}>Slug: {slug}</div>
         <AppointmentSection />
       </>
     );

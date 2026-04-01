@@ -171,7 +171,7 @@ const AppointmentSection = () => {
       if (res.ok && (data.success || data.status === 'success' || data.title === 'Success')) {
         setStatus('success');
         setFormData({ name: '', email: '', phone: '', service: '', date: '', message: '', captcha: '' });
-        router.push('/thank-you');
+        router.push('/thankyou');
       } else {
         setStatus('error');
         setErrorMsg(data.message || 'Submission failed. Please check your captcha and try again.');
