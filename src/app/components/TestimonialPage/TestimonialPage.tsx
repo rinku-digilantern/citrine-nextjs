@@ -64,7 +64,7 @@ const TestimonialPage: React.FC<TestimonialPageProps> = ({ testimonialsData }) =
               <span>{renderStars(item.rating)}</span>
               <div className={styles.description} dangerouslySetInnerHTML={{ __html: item.description }} />
               <div className={styles.person}>✱ Opinions/Results may vary from person to person.</div>
-              <div className={styles.wauthor}>—— {item.short_name}</div>
+              {/* <div className={styles.wauthor}>—— {item.short_name}</div> */}
             </div>
           ))}
         </div>

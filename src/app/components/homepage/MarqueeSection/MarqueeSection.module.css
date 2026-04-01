@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 8px;
   background: #FFFAF3;
   margin: 0 auto 20px auto;
   border: 1px solid #DDDAD6;
@@ -128,27 +128,31 @@
   }
 }
 
-@media (max-width: 768px) {
-  .heading h2 {
-    font-size: 28px;
-  }
-  
-  .googleReview {
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .logoItem {
-    padding: 0 20px;
-    min-width: 120px;
-  }
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .heading h2 {font-size: 30px;}
+  .logoItem {padding: 0 12px;min-width: 120px;}
+}
+
+@media (max-width:767.98px) and (min-width:600px) {
+  .googleReview {flex-direction: row;gap: 5px;}
+ .reviewText {font-size: 14px;}
+ .googleReview {gap: 8px;margin: 0 auto 10px auto;padding: 8px 15px;}
+ .heading {padding: 0px 10px;}
+ .heading h2 {font-size: 30px;}
+ .heading h2 br{display: none;}
+ .logoItem {min-width: 100px;padding: 10px;}
+ .marquee {gap: 10px;}
+ .marqueeContainer {padding: 20px 0 20px 0px;}
+ .subheading span{display: block;}
+ .subheading br{display: none;}
+ .highlight:after {background-size: contain;width: 32%;bottom: -8px;left: 210px;}
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
  .googleReview {flex-direction: row;gap: 5px;}
  .reviewText {font-size: 14px;}
- .googleReview {gap: 10px;margin: 0 auto 10px auto;padding: 8px 15px;}
+ .googleReview {gap: 5px;margin: 0 auto 10px auto;padding: 8px 10px;}
  .heading {padding: 0px 10px;}
  .heading h2 {font-size: 26px;}
  .logoItem {min-width: 100px;padding: 10px;}

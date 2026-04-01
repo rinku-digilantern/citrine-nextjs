@@ -23,7 +23,7 @@
 /* Circular Text */
 .circularText {
   position: absolute;
-  top: -55px;
+  top: -35px;
   right: -50px;
   width: 140px;
   height: 140px;
@@ -140,14 +140,16 @@
 }
 /* Responsive Design */
 @media (max-width: 1500.98px) and (min-width: 1401px) {
-.leftSection {margin-left: 8%;}
+.leftSection {margin-left: 7%;}
+.circularText {top: 12px;}
 }
 
 /* Responsive Design */
 @media (max-width: 1400.98px) and (min-width: 1301px) {
-.circularText {top: 12px;}
+.circularText {top: -50px;}
 .contentCard {padding: 50px 80px 50px 40px;}
-.leftSection {max-width: 600px;margin-left: 7%;}
+.leftSection {max-width: 710px;margin-left: 7%;}
+.doctorImageWrapper {margin-left: -100px;}
 }
 
 /* Responsive Design */
@@ -159,24 +161,52 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+.leftSection {margin-left: 7%;max-width: 600px;}
+.circularText {top: -20px;}
+.contentCard {padding: 50px 80px 50px 40px;}
+.contentWrapper {grid-template-columns: 625px 1fr;}
+.circularText {width: 100px;height: 100px;}
+.specialties {font-size: 16px;}
+.description {margin-bottom: 20px;font-size: 16px;}
+}
+
+/* Responsive Design */
 @media (max-width: 1100.98px) and (min-width: 992px) {
-.contentWrapper {grid-template-columns: 1fr;gap: 40px;}
-.leftSection {max-width: 600px;margin: 0 auto;}
-.doctorImageWrapper {justify-content: center;}
+.contentWrapper {grid-template-columns: 1fr;gap:0px;padding: 0rem 0px 1.5rem 0px;display: flex;flex-direction: column-reverse;}
+.leftSection {max-width: 92%;margin: 0 auto;}
+.doctorImageWrapper {justify-content: center;margin-left:0px;width: 100%;}
 .circularText {right: 50px;width: 150px;height: 150px;}
+.description {font-size: 18px;margin-bottom: 20px;font-weight: 500; line-height:1.8;padding: 15px;}
 }
 
 @media (max-width: 991.98px) and (min-width: 768px) {
-  .doctorSection {min-height: auto;}
-  .contentWrapper {padding:2rem 0px;}
-  .leftSection {padding: 10px;}
-  .contentCard {padding: 40px 30px;}
-  .bracketTopLeft,
-  .bracketTopRight {width: 30px;height: 30px;}
-  .doctorName {font-size: 19px;}
-  .description {font-size: 15px;}
-  .circularText {display: none;}
+.leftSection {max-width: 92%;margin: 0 auto;}
+.contentWrapper {grid-template-columns: 1fr;gap:0px;padding: 0rem 0px 1.5rem 0px;display: flex;flex-direction: column-reverse;}
+.doctorImageWrapper {margin-left: 0px;width: 100%;}
+.contentCard {padding: 30px 15px; margin-top: -15px;}
+.description {font-size: 16px;margin-bottom: 20px;font-weight: 500; line-height: 27px;padding: 8px;}
+.specialties {font-size: 16px;line-height: 26px;font-weight: 500;}
+.doctorName {font-size: 18px;margin-bottom: 10px;}
+.specialties br{display: none;}
+.comma {left: 5%;}
+.circularText {width: 90px;height: 90px;right: unset;left: 0px;display: block;position: absolute;top:-305px}
 }
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 600px) {
+.leftSection {max-width: 92%;margin: 0 auto;}
+.contentWrapper {grid-template-columns: 1fr;gap:0px;padding: 0rem 0px 1.5rem 0px;display: flex;flex-direction: column-reverse;}
+.doctorImageWrapper {margin-left: 0px;width: 100%;}
+.contentCard {padding: 30px 15px; margin-top: -15px;}
+.description {font-size: 16px;margin-bottom: 20px;font-weight: 500; line-height: 27px;padding: 8px;}
+.specialties {font-size: 16px;line-height: 26px;font-weight: 500;}
+.doctorName {font-size: 18px;margin-bottom: 10px;}
+.specialties br{display: none;}
+.comma {left: 5%;}
+.circularText {width: 90px;height: 90px;right: unset;left: 0px;display: block;position: absolute;top:-305px}
+}
+
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
 .leftSection {max-width: 92%;margin: 0 auto;}
@@ -188,5 +218,5 @@
 .doctorName {font-size: 18px;margin-bottom: 10px;}
 .specialties br{display: none;}
 .comma {left: 5%;}
-.circularText {width: 90px;height: 90px;right: unset;left: 0px;display: block;position: absolute;top:-335px}
+.circularText {width: 90px;height: 90px;right: unset;left: 0px;display: block;position: absolute;top:-305px}
 }

@@ -138,8 +138,8 @@ const Header = () => {
                                     onClick={() => setActiveTab(activeTab === 'quicklinks' ? '' : 'quicklinks')}>
                                     <ul>
                                         <li><Link href="/" onClick={toggleMenu}>Home</Link></li>
-                                        <li><Link href="/dr-niti-gaur" onClick={toggleMenu}>About Doctor</Link></li>
-                                        <li><Link href="/skin-clinic-in-gurgaon" onClick={toggleMenu}>About Clinic</Link></li>
+                                        <li><Link href="/about-doctor" onClick={toggleMenu}>About Doctor</Link></li>
+                                        <li><Link href="/about-clinic" onClick={toggleMenu}>About Clinic</Link></li>
                                         <li><Link href="/blog" onClick={toggleMenu}>Blogs</Link></li>
                                         <li><Link href="/clinic-gallery" onClick={toggleMenu}>Gallery</Link></li>
                                         <li><Link href="/testimonials" onClick={toggleMenu}>Written Testimonials</Link></li>
@@ -158,8 +158,8 @@ const Header = () => {
                                     <div className={styles.quicktext}>Quick Links</div>
                                     <ul>
                                         <li><Link href="/" onClick={toggleMenu}>Home</Link></li>
-                                        <li><Link href="/dr-niti-gaur" onClick={toggleMenu}>About Doctor</Link></li>
-                                        <li><Link href="/skin-clinic-in-gurgaon" onClick={toggleMenu}>About Clinic</Link></li>
+                                        <li><Link href="/about-doctor" onClick={toggleMenu}>About Doctor</Link></li>
+                                        <li><Link href="/about-clinic" onClick={toggleMenu}>About Clinic</Link></li>
                                         <li><Link href="/blog" onClick={toggleMenu}>Blogs</Link></li>
                                         <li><Link href="/clinic-gallery" onClick={toggleMenu}>Gallery</Link></li>
                                         <li><Link href="/testimonials" onClick={toggleMenu}>Written Testimonials</Link></li>

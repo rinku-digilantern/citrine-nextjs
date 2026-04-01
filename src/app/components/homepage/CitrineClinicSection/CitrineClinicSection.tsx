@@ -131,6 +131,10 @@ export default function CitrineClinicSection() {
                   alt="Citrine Clinic heading"
                   priority
                   className={styles.headingimage} />
+                <div className={styles.mobileHeadingWrapper}>
+                  <span className={styles.mobileWelcome}>WELCOME TO</span>
+                  <h2 className={styles.mobileClinicName}>CITRINE CLINIC</h2>
+                </div>
               </div>
             </div>
 

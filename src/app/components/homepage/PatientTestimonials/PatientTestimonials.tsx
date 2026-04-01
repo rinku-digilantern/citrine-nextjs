@@ -67,7 +67,7 @@ const PatientTestimonials = () => {
           ))}
         </div>
         <p className={styles.testimonialText}>{testimonial.text}</p>
-        <p className={styles.author}>—— {testimonial.author}</p>
+        <p className={styles.author}>— {testimonial.author}</p>
       </div>
     );
   });

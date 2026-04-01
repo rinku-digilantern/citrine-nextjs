@@ -31,7 +31,9 @@
 .mainHeading {
   line-height: 1.2;
   margin-bottom: 20px;
-  letter-spacing: 2px;
+  font-weight: 400;
+  font-family: var(--font-montserrat), sans-serif;
+  letter-spacing: 0px;
   text-transform: uppercase;
 }
 
@@ -215,174 +217,113 @@
   }
 }
 
+@media (max-width: 1200.98px) and (min-width:1101px) {
+  .hairSection {padding: 2rem 0;}
+  .leftContent {padding: 0px 20px 0px 40px;}
+  .treatmentTitle {letter-spacing: 2%;font-size: 18px;}
+  .mainHeading {font-size: 40px;}
+  .emblaSlide {flex: 0 0 45%;}
+  .rightCarousel {min-height: 380px;}
+  .container {grid-template-columns: 360px 1fr;gap: 15px;}
+  .treatmentCard {width: 100%;height: 380px;}
+}
+
 /* Responsive Design */
-@media (max-width: 1024px) {
-  .container {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .leftContent {
-    padding: 60px 40px;
-  }
-
-  .mainHeading {
-    font-size: 50px;
-  }
-
-  .emblaSlide {
-    flex: 0 0 100%;
-  }
-
-  .rightCarousel {
-    min-height: 500px;
-  }
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .hairSection {padding: 2rem 0;}
+  .container {grid-template-columns: 1fr;justify-content: center;min-height: auto;width: 92%; margin: 0 auto;}
+  .leftContent {padding: 0px 0 0 40px;align-items: flex-start;}
+  .mainHeading {font-size: 40px;}
+  .emblaSlide {flex: 0 0 47%;}
+  .rightCarousel {min-height: 380px;}
+  .container {grid-template-columns: 360px 1fr;gap: 20px;}
+  .treatmentCard {width: 100%;height: 380px;}
 }
 
-@media (max-width: 768px) {
-  .leftContent {
-    padding: 50px 30px;
-  }
-
-  .mainHeading {
-    font-size: 42px;
-  }
-
-  .description {
-    font-size: 15px;
-    margin-bottom: 35px;
-  }
-
+@media (max-width: 991.98px) and (min-width: 768px) {
+.hairSection {padding: 2rem 0;}
+  .container {grid-template-columns: 1fr;justify-content: center;min-height: auto;width: 92%; margin: 0 auto;}
+  .leftContent {padding: 0rem 10px;text-align: center;}
+  .rightCarousel {padding: 15px 15px 60px 15px;background: #FFFFFF80;border: 1px solid #E5D7C3;backdrop-filter: blur(20px)}
+  .mainHeading {font-size: 35px;margin-bottom: 5px;}
+  .mainHeading span {font-size: 35px;}
+  .description {margin-bottom: 0px;font-size: 16px;}
+  .navigationButtons {gap: 15px;justify-content: center;display: flex;}
   .previousButton,
-  .nextButton {
-    width: 70px;
-    height: 50px;
-    font-size: 18px;
-  }
+  .nextButton {width: 50px;height: 36px;font-size: 24px;}
+  .btnrow {width: 100%;margin-bottom: 0px;display: none;}
+  .mbbtnrow {width: 100%;display: block;margin: 10px 0px 5px 0px;text-align: center;}
+  .container {gap: 20px;}
+  .treatmentTitle {font-size: 16px;letter-spacing: 5%;}
+  .treatmentOverlay {padding: 15px 12px;}
 
-  .treatmentTitle {
-    font-size: 20px;
-  }
-
-  .rightCarousel {
-    min-height: 400px;
-  }
+  /* Treatment Card */
+  .emblaSlide {flex: 0 0 45%;}
+  .emblaContainer {gap: 12px;}
+  .treatmentCard {width: 100%;height: 100%;}
+  .rightCarousel {min-height: 480px;}
+  .navigationButtons {align-items: center;justify-content: center;display: flex;}
+  .dnone {display: none;}
+  .dblock {display: block !important;}
+  .dflex {display: flex !important;margin-top: 12px;}
+  .viewMoreLink {padding: 6px 16px;}
 }
+
+@media (max-width:767.98px) and (min-width: 600px){
+  .hairSection {padding: 1.5rem 0;}
+  .container {grid-template-columns: 1fr;justify-content: center;min-height: auto;width: 92%; margin: 0 auto;}
+  .leftContent {padding: 0rem 10px;text-align: center;}
+  .rightCarousel {padding: 10px 10px 60px 10px;background: #FFFFFF80;border: 1px solid #E5D7C3;backdrop-filter: blur(20px)}
+  .mainHeading {font-size: 30px;margin-bottom: 5px;}
+  .mainHeading span {font-size: 30px;}
+  .description {margin-bottom: 0px;font-size: 16px;}
+  .navigationButtons {gap: 10px;justify-content: center;display: flex;}
+  .previousButton,
+  .nextButton {width: 50px;height: 36px;font-size: 24px;}
+  .btnrow {width: 100%;margin-bottom: 0px;display: none;}
+  .mbbtnrow {width: 100%;display: block;margin: 10px 0px 5px 0px;text-align: center;}
+  .container {gap: 20px;}
+  .treatmentTitle {font-size: 16px;letter-spacing: 5%;}
+  .treatmentOverlay {padding: 15px 12px;}
+
+  /* Treatment Card */
+  .emblaSlide {flex: 0 0 45%;}
+  .emblaContainer {gap: 12px;}
+  .treatmentCard {width: 100%;height: 100%;}
+  .rightCarousel {min-height: 400px;}
+  .navigationButtons {align-items: center;justify-content: center;display: flex;}
+  .dnone {display: none;}
+  .dblock {display: block !important;}
+  .dflex {display: flex !important;margin-top: 12px;}
+  .viewMoreLink {padding: 6px 16px;}
+} 
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-  .hairSection {
-    padding: 1.5rem 0;
-  }
-
-  .container {
-    width: 92%;
-    margin: 0 auto;
-  }
-
-  .leftContent {
-    padding: 0rem 10px;
-    text-align: center;
-  }
-
-  .rightCarousel {
-    padding: 10px 10px 60px 10px;
-    background: #FFFFFF80;
-    border: 1px solid #E5D7C3;
-    backdrop-filter: blur(20px)
-  }
-
-  .mainHeading {
-    font-size: 35px;
-    margin-bottom: 5px;
-  }
-
-  .mainHeading span {
-    font-size: 25px;
-  }
-
-  .description {
-    margin-bottom: 0px;
-    font-size: 15px;
-  }
-
-  .navigationButtons {
-    gap: 10px;
-    justify-content: center;
-    display: flex;
-  }
-
+  .hairSection {padding: 1.5rem 0;}
+  .container {grid-template-columns: 1fr;justify-content: center;min-height: auto;width: 92%; margin: 0 auto;}
+  .leftContent {padding: 0rem 10px;text-align: center;}
+  .rightCarousel {padding: 10px 10px 60px 10px;background: #FFFFFF80;border: 1px solid #E5D7C3;backdrop-filter: blur(20px)}
+  .mainHeading {font-size: 35px;margin-bottom: 5px;}
+  .mainHeading span {font-size: 25px;}
+  .description {margin-bottom: 0px;font-size: 15px;}
+  .navigationButtons {gap: 10px;justify-content: center;display: flex;}
   .previousButton,
-  .nextButton {
-    width: 50px;
-    height: 36px;
-    font-size: 24px;
-  }
-
-  .btnrow {
-    width: 100%;
-    margin-bottom: 0px;
-    display: none;
-  }
-
-  .mbbtnrow {
-    width: 100%;
-    display: block;
-    margin: 10px 0px 5px 0px;
-    text-align: center;
-  }
-
-  .container {
-    gap: 20px;
-  }
-
-  .treatmentTitle {
-    font-size: 14px;
-    letter-spacing: 5%;
-  }
-
-  .treatmentOverlay {
-    padding: 15px 12px;
-  }
+  .nextButton {width: 50px;height: 36px;font-size: 24px;}
+  .btnrow {width: 100%;margin-bottom: 0px;display: none;}
+  .mbbtnrow {width: 100%;display: block;margin: 10px 0px 5px 0px;text-align: center;}
+  .container {gap: 20px;}
+  .treatmentTitle {font-size: 14px;letter-spacing: 5%;}
+  .treatmentOverlay {padding: 15px 12px;}
 
   /* Treatment Card */
-  .emblaSlide {
-    flex: 0 0 82%;
-  }
-
-  .emblaContainer {
-    gap: 8px;
-  }
-
-  .treatmentCard {
-    width: 100%;
-    height: 100%;
-  }
-
-  .rightCarousel {
-    min-height: 400px;
-  }
-
-  .navigationButtons {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-  }
-
-  .dnone {
-    display: none;
-  }
-
-  .dblock {
-    display: block !important;
-  }
-
-  .dflex {
-    display: flex !important;
-    margin-top: 12px;
-  }
-
-  .viewMoreLink {
-    padding: 6px 16px;
-  }
+  .emblaSlide {flex: 0 0 82%;}
+  .emblaContainer {gap: 8px;}
+  .treatmentCard {width: 100%;height: 100%;}
+  .rightCarousel {min-height: 400px;}
+  .navigationButtons {align-items: center;justify-content: center;display: flex;}
+  .dnone {display: none;}
+  .dblock {display: block !important;}
+  .dflex {display: flex !important;margin-top: 12px;}
+  .viewMoreLink {padding: 6px 16px;}
 }

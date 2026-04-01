@@ -1,16 +1,23 @@
 import React from 'react'
 import { Metadata } from 'next/dist/types';
-import DocctorBanner from '@/src/app/components/AboutDcotorPage/DocctorBanner/DocctorBanner';
-import AboutDoctorMarquee from '@/src/app/components/AboutDcotorPage/AboutDoctorMarquee/AboutDoctorMarquee';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
-import OurVideos from '@/src/app/components/homepage/OurVideos/OurVideos';
-import CareerOverview from '@/src/app/components/AboutDcotorPage/CareerOverview/CareerOverview';
-import ConferenceSection from '@/src/app/components/AboutDcotorPage/ConferenceSection/ConferenceSection';
-import MyCommitment from '@/src/app/components/AboutDcotorPage/MyCommitment/MyCommitment';
-import StickyCard from '@/src/app/components/AboutDcotorPage/StickyCard/StickyCard';
-import MarqueeCenter from '@/src/app/components/AboutDcotorPage/MarqueeCenter/MarqueeCenter';
-
+import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
+import DrNitiGaurBanner from '@/src/app/components/DrNitiGaurPage/DrNitiGaurBanner/DrNitiGaurBanner';
+import fs from 'fs';
+import path from 'path';
+import DrNitiGaurFirstSection from '@/src/app/components/DrNitiGaurPage/DrNitiGaurFirstSection/DrNitiGaurFirstSection';
+import PhilosophySection from '@/src/app/components/DrNitiGaurPage/PhilosophySection/PhilosophySection';
+import DrNitiFaqSection from '@/src/app/components/DrNitiGaurPage/DrNitiFaqSection/DrNitiFaqSection';
+import DrNitiGaurTestimonialSection from '@/src/app/components/DrNitiGaurPage/DrNitiGaurTestimonialSection/DrNitiGaurTestimonialSection';
 const API_BASE = 'https://api.citrineclinic.com/api';
+
+function getPageData() {
+  const filePath = path.join(process.cwd(), 'src', 'app', 'components', 'webcontent', 'drnitigaur.json');
+  const raw = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(raw);
+  // JSON uses key 'dr-niti-gaur'
+  return data['dr-niti-gaur'];
+}
 
 async function getSeoData(slug: string) {
   try {
@@ -26,6 +33,7 @@ async function getSeoData(slug: string) {
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoData('dr-niti-gaur');
+  const pageData = getPageData();
   if (!seo) return { title: 'Citrine Clinic' };
   return {
     title: seo.title_tag || 'Citrine Clinic',
@@ -42,8 +50,9 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const Aboutdoctor = async () => {
+const DrNitiGaur = async () => {
   const seo = await getSeoData('dr-niti-gaur');
+  const pageData = getPageData();
 
   return (
     <>
@@ -53,16 +62,14 @@ const Aboutdoctor = async () => {
       {seo?.bred_schema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.bred_schema) }} />
       )}
-      <DocctorBanner />
-      <AboutDoctorMarquee />
-      <StickyCard />
-      <MarqueeCenter />
-      <ConferenceSection />
-      <MyCommitment />
-      <CareerOverview />
-      <OurVideos />
+      <DrNitiGaurBanner section={pageData.DrNitiGaurBanner} />
+      <Breadcrumb />
+      <DrNitiGaurFirstSection section={pageData.DrNitiGaurFirstSection} />
+      <PhilosophySection section={pageData.PhilosophySection} />
+      <DrNitiGaurTestimonialSection section={pageData.DrNitiGaurTestimonialSection} />
+      <DrNitiFaqSection section={pageData.DrNitiFaqSection} />
       <AppointmentSection />
     </>
   )
 }
-export default Aboutdoctor;
+export default DrNitiGaur;

@@ -1,0 +1,74 @@
+.PhilosophySection{
+  padding: 60px 0px;
+  background-color: #f6eadb;
+}
+.container {max-width: 1320px;margin: 0 auto;}
+.philosophybox{
+  width: 1200px;
+  max-width: 92%;
+  margin: 0 auto;
+  background: var(--footer-bg);
+  padding: 40px 40px;
+  box-sizing: border-box;
+  position: relative;
+  border: 12px solid #d6a64a;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.03);
+}
+.mainHeading{
+  text-transform: uppercase;
+  margin: 0 0 14px 0;
+  font-size: 45px;
+  text-align: center;
+  color: var(--default-color);
+  position: relative;
+  font-weight: 400;
+}
+.PhilosophySection p{
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin: 0 0 15px 0;
+  text-align: justify;
+}
+
+/* Large screens */
+@media (max-width: 1400.98px) and (min-width:1101px) {
+  .PhilosophySection {padding:2rem 0px;}
+  .container {max-width: 92%;}
+  .mainHeading{font-size: 35px;}
+  .philosophybox{width: 90%;max-width: 90%;padding: 2rem;border: 8px solid #d6a64a;}
+  .PhilosophySection p {font-size: 16px;}
+}
+
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .PhilosophySection {padding:2rem 0px;}
+  .container {max-width: 92%;}
+  .mainHeading{font-size: 35px;}
+  .philosophybox{width: 90%;max-width: 90%;padding: 2rem;border: 8px solid #d6a64a;}
+  .PhilosophySection p {font-size: 16px;}
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .PhilosophySection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;}
+  .mainHeading{font-size: 30px;}
+  .philosophybox{width: 100%;max-width: 100%;padding: 2rem;border: 5px solid #d6a64a;}
+  .PhilosophySection p {font-size: 15px;}
+  .philosophybox{width: 100%;max-width: 100%;padding: 1rem;border: 5px solid #d6a64a;}
+}
+
+@media (max-width: 767.98px) and (min-width: 600px) {
+  .PhilosophySection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;}
+  .mainHeading{font-size: 30px;}
+  .philosophybox{width: 100%;max-width: 100%;padding: 1rem;border: 5px solid #d6a64a;}
+  .PhilosophySection p {font-size: 15px;}
+}
+
+@media (max-width: 599.98px) and (min-width: 320px) {
+  .PhilosophySection {padding: 1.5rem 0px;}
+  .container {max-width: 92%;}
+  .philosophybox{width: 100%;max-width: 100%;padding: 1rem;border: 3px solid #d6a64a;}
+  .mainHeading{font-size: 26px !important; margin-bottom: 5px;}
+  .PhilosophySection p {font-size: 15px;}
+}

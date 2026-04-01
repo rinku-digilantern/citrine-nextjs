@@ -76,7 +76,7 @@ const ServiceTestimonialSection: React.FC<ServiceTestimonialSectionProps> = ({
               </div>
               
               <div className={styles.servicefooter}>
-                <p className={styles.author}>—— {testimonial.author}</p>
+                <p className={styles.author}>— {testimonial.author}</p>
                 <div className={styles.googleIcon}>
                   <Image 
                     src="/assets/images/serviceinnerpage/google.webp" 

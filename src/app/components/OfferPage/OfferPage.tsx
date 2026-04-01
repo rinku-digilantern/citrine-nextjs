@@ -96,11 +96,11 @@ export default function OfferPage() {
                     <div className={styles.imagebox}>
                       <Image src={offer.offer_image} alt={offer.alt_tag || offer.offer_name} width={540} height={540} />
                     </div>
-                    <div className={styles.offercontent}>
+                    {/* <div className={styles.offercontent}>
                       <div className={styles.uptobtn}>{offer.offer_code}</div>
                       <div className={styles.title}>{offer.offer_name}</div>
                       <Link href={`/offers/${offer.offer_id}`} className={styles.bookBtn}>BOOK NOW</Link>
-                    </div>
+                    </div> */}
                   </div>
                 ))
               ) : (
