@@ -11,14 +11,14 @@
 .contactInfoTitle {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #3a332b;
+    color: var(--default-color);
     margin-bottom: 15px;
 }
 
 .contactInfoRow {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
+    gap: 10px;
     margin-bottom: 15px;
 }
 
@@ -26,6 +26,7 @@
     background: var(--gradient-bg);
     border-radius: 50%;
     width: 32px;
+    line-height: 16px;
     height: 32px;
     flex-shrink: 0;
     display: flex;
@@ -41,6 +42,15 @@
     color: var(--default-color);
     font-size: 1rem;
     font-weight: 400;
+}
+
+.contactInfoText a {
+    color: var(--default-color);
+    text-decoration: none;
+}
+
+.contactInfoText a:hover {
+    color: var(--accent-color);
 }
 
 .footer {
@@ -235,8 +245,9 @@
 }
 
 .conCard strong {
+    margin-top: 2px;
     font-family: var(--font-montserrat);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -725,7 +736,7 @@
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
     .footer {
-        padding-bottom: 55px;
+        padding-bottom: 35px;
     }
 
     .heroWrapper {
@@ -884,6 +895,10 @@
         width: 235px;
     }
 
+    .conCard strong {
+        margin-top: 0px;
+    }
+
     .conCard p {
         font-size: 13px;
         line-height: 20px;
@@ -900,6 +915,7 @@
         height: 36px;
         font-size: 36px;
         right: 10px;
+        bottom: 76px;
     }
 
     .contactInfoIcon {
@@ -953,11 +969,15 @@
     }
 
     .footerfixed .left {
-        background: #ffffff;
+        background: var(--gradient-bg);
         width: 100%;
-        color: var(--default-color);
+        color: var(--white-color);
         text-align: center;
         border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .footerfixed .left img {
+        filter: brightness(0) invert(1);
     }
 
     .footerfixed .right {
@@ -978,7 +998,6 @@
 
     .footerfixed .fixedCol {
         padding: 5px 10px 5px 10px;
-        flex-direction: column;
         gap: 5px;
     }
 
@@ -1010,8 +1029,6 @@
     #CtaWrapper .ctafooter .commonctawrap a {
         text-align: center;
         display: inline-block;
-        /* align-items: center;
-    justify-content: center; */
         height: 30px;
         line-height: 30px;
         margin: 0 auto;
@@ -1075,8 +1092,8 @@
         position: relative;
         background: var(--default-color);
         border-radius: 50%;
-        width: 36px;
-        height: 36px;
+        width: 44px;
+        height: 44px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1099,7 +1116,7 @@
 
     .cliktoopennumber .number-menu {
         position: absolute;
-        bottom: 44px;
+        bottom: 55px;
         width: 155px;
         left: 10px;
     }

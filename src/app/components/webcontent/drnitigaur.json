@@ -1,0 +1,88 @@
+{
+"dr-niti-gaur": {
+  "DrNitiGaurBanner": {
+    "image": "/assets/images/dermatologist/aboutpage-doctor-bgnew.webp",
+    "mobileImage": "/assets/images/dermatologist/mobiledermatology.webp",
+    "heading": "DR.NITI GAUR",
+    "altTag": "DR.NITI GAUR"
+  },
+  "DrNitiGaurFirstSection": {
+    "mainHeading": "DR.NITI GAUR",
+    "paragraph": "Dr. Niti Gaur is the medical director and founder of Citrine Clinic. Dr. Gaur is a board-certified Dermatologist. She has completed her MBBS and MD (Dermatology) at the premier institutes in the country. She is an alumnus of B J Medical College, Pune, and Lady Hardinge Medical College, New Delhi. She is a renowned <a href='/dermatologist-in-gurgaon'>dermatologist</a>, having more than 20 years of experience in clinical and cosmetic dermatology and wellness. Post her MD, she has done her Senior Residency at LHMC, New Delhi.",
+    "paragraph2": "She has been trained in the best institutes in Europe, America, and Singapore. She was a Senior Consultant Dermatologist at Kaya Skin Clinic and various other hospitals in Gurgaon before starting her dream work, ‘CITRINE CLINIC’. She has several research publications to her credit.",
+    "paragraph3": "The Doctor is highly passionate about her work. She regularly attends national and international conferences and workshops to keep abreast of the latest treatment protocols and technologies.",
+    "paragraph4": "An esteemed member of various national and international Dermatology associations, she ensures the latest and best US FDA-approved treatments and technologies are available at her clinic. The best dermatologist is also a medical trainer for anti-wrinkle injections, fillers, threads, and lasers.",
+    "paragraph5": "Dr. Niti Gaur started CITRINE CLINIC to offer the best treatments in Dermatology, Aesthetics, and Wellness. She has numerous satisfied clients who vouch for her high ethics, compassionate nature, and results. Her dedication has allowed Citrine Clinic to develop into Gurgaon's best State of Art Dermatology and Wellness clinic."
+  },
+  "PhilosophySection": {
+    "mainHeading": "PHILOSOPHY",
+    "paragraph": "At Citrine Clinic, you get more than just skincare. Dr. Niti Gaur started Citrine Clinic to transform the field of aesthetics and dermatology. Dr. Niti Gaur's mission is to educate patients worldwide about their skin and hair issues and to encourage them to comprehend the treatments they may be experiencing. Dr. Niti Gaur believes in treating the individual, not just the symptom. She likes establishing a connection with her patients, a pleasant doctor-patient relationship. This makes her known as the best skin specialist. They are listened to, their questions are answered, they are assisted in making an informed decision about their therapy, and finally, they are successfully treated. I believe in providing my patients with the most modern and effective skin and hair treatments accessible worldwide. Patented research goods and skincare brands with a solid research foundation aid in reaching the required effects in a safe, rapid, and efficient manner. Welcome to my realm of beauty attained by cutting-edge scientific research. Welcome to Citrine Clinic to make the journey toward beauty successful!"
+  },
+   "DrNitiGaurTestimonialSection": {
+    "mainHeading": "What Our Patients Say",
+    "testimonials": [
+      {
+        "id": 1,
+        "rating": 5,
+        "text": "Doctor Niti is a very experienced doctor. I have been visiting her for a long time now and every time my experience is very nice . She takes care of issues very professionally. She is very patient and humble. Looking forward to my next appointment with her!!",
+        "author": "Bhumika",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      },
+      {
+        "id": 2,
+        "rating": 5,
+        "text": "Dr. Niti gaur is very kind and the staff are so good. Dr. Niti suggested me the best skin care. Whoever has acne problem or any skin issue must come to citrine clinic.",
+        "author": "Meghna",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      },
+      {
+        "id": 3,
+        "rating": 5,
+        "text": "I'm very happy with Dr. Niti mam's treatment. It's been 8 years that I still prefer Dr Niti for my skin issues a day I would recommend everyone to visit Dr. Niti Gaur for skin and hair concern.",
+        "author": "Tanya",
+        "google": "/assets/images/serviceinnerpage/google.webp"
+      }
+    ]
+  },
+  "DrNitiFaqSection": {
+    "mainHeading": "FAQs About Dr. Niti Gaur",
+    "faqData": [
+      {
+        "id": 1,
+        "question": "Where is Dr. Niti Gaur’s clinic located?",
+        "answer": "Citrine Clinic is located in Gurgaon Sector 15, Haryana."
+      },
+      {
+        "id": 2,
+        "question": "How can I take Dr. Niti Gaur's appointment?",
+        "answer": "You can book an appointment with Dr. Niti Gaur online through the website or visit the clinic."
+      },
+      {
+        "id": 3,
+        "question": "Why do patients visit Dr. Niti Gaur?",
+        "answer": "Patients visit Dr. Niti Gaur for expert dermatological care and advanced aesthetic procedures."
+      },
+      {
+        "id": 4,
+        "question": "What do patients say about Dr. Niti Gaur?",
+        "answer": "Patients highly appreciate Dr. Niti Gaur for her expertise, professionalism, and compassionate approach. Many reviews highlight her ability to diagnose and treat skin and hair concerns efficiently."
+      },
+      {
+        "id": 5,
+        "question": "What is Dr. Niti Gaur's education qualification?",
+        "answer": "Dr. Niti Gaur has the following qualifications - MBBS, MD - Dermatology , Venereology & Leprology. You can book an appointment through the website with her."
+      },
+      {
+        "id": 6,
+        "question": "Who is the best female dermatologist in Gurgaon?",
+        "answer": "Dr. Niti Gaur is considered among the leading female dermatologists in Gurgaon for medical and aesthetic dermatology. She is known for detailed consultations and evidence-based treatments."
+      },
+      {
+        "id": 7,
+        "question": "Does Dr. Niti Gaur offer laser treatments?",
+        "answer": "Yes, Dr. Niti Gaur provides advanced laser treatments for skin rejuvenation, hair removal, and pigmentation."
+      }
+    ]
+  }
+}
+}

@@ -162,7 +162,7 @@ const ContactLeft = () => {
         <div className={styles.row}>
           <div className={styles.colMd6}>
             <div className={styles.formField}>
-              <label htmlFor="userName" className={styles.fieldLabel}>Name</label>
+              <label htmlFor="userName" className={styles.fieldLabel}>Name<span>*</span></label>
               <input
                 type="text"
                 name="name"
@@ -180,7 +180,7 @@ const ContactLeft = () => {
 
           <div className={styles.colMd6}>
             <div className={styles.formField}>
-              <label htmlFor="userEmail" className={styles.fieldLabel}>Email</label>
+              <label htmlFor="userEmail" className={styles.fieldLabel}>Email<span>*</span></label>
               <input
                 type="email"
                 className={`${styles.formInput} ${errors.email ? styles.inputError : ''}`}
@@ -198,7 +198,7 @@ const ContactLeft = () => {
         </div>
 
         <div className={styles.formField}>
-          <label htmlFor="userPhone" className={styles.fieldLabel}>Phone</label>
+          <label htmlFor="userPhone" className={styles.fieldLabel}>Phone<span>*</span></label>
           <input
             type="tel"
             className={`${styles.formInput} ${errors.phone ? styles.inputError : ''}`}

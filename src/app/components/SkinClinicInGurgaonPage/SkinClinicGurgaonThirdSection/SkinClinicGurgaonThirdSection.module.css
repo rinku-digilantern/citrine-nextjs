@@ -1,0 +1,63 @@
+.SkinClinicGurgaonThirdSection{background: #faf3e6;padding: 60px 0;}
+.container{max-width:1320px;margin:0 auto;}
+.image{width:100%;height:auto;}
+.boxcontent{display:grid;grid-template-columns:50% 50%;gap:30px;align-items:flex-start}
+.imagebox{display:block}
+.image{width:100%;height:auto;box-shadow:0 2px 0 rgba(0,0,0,0.04);}
+.textrightcontent{padding:0px}
+.heading{ text-transform:uppercase; font-size:45px; text-align:left; color:var(--default-color); margin:0 0 10px 0; font-weight:400;}
+.textrightcontent p{font-size:18px;line-height:1.8;color:var(--default-color);margin:0}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+  .boxcontent{gap: 25px;}
+  .heading{font-size:35px;text-align:left}
+  .SkinClinicGurgaonThirdSection{padding:2rem 0;}
+  .container{max-width:92%;margin:0 auto;}
+  .textrightcontent p {font-size: 16px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1300.98px) and (min-width: 1201px) {
+  .boxcontent{gap: 25px;}
+  .heading{font-size:35px;text-align:left}
+  .SkinClinicGurgaonThirdSection{padding:2rem 0;}
+  .container{max-width:92%;margin:0 auto;}
+  .textrightcontent p {font-size: 16px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1200.98px) and (min-width: 1101px) {
+  .boxcontent{gap: 25px;}
+  .heading{font-size:35px;text-align:left}
+  .SkinClinicGurgaonThirdSection{padding:2rem 0;}
+  .container{max-width:92%;margin:0 auto;}
+  .textrightcontent p {font-size: 16px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .boxcontent{gap: 25px;}
+  .heading{font-size:35px;text-align:left}
+  .SkinClinicGurgaonThirdSection{padding:2rem 0;}
+  .container{max-width:92%;margin:0 auto;}
+  .textrightcontent p {font-size: 16px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 991.98px) and (min-width: 768px) {
+  .boxcontent{grid-template-columns:1fr;gap: 10px;}
+  .heading{font-size:30px;text-align:center}
+  .SkinClinicGurgaonThirdSection{padding:1.5rem 0;}
+  .container{max-width:92%;margin:0 auto;}
+  .textrightcontent p {font-size: 15px;}
+}
+
+/* Small devices (Phones in landscape mode) */
+@media (max-width: 767.98px) and (min-width: 320px) {
+  .boxcontent{grid-template-columns:1fr;gap: 10px;}
+  .heading{font-size:26px;text-align:center}
+  .SkinClinicGurgaonThirdSection{padding:1rem 0;}
+  .container{max-width:92%;margin:0 auto;}
+  .textrightcontent p {font-size: 15px;}
+}

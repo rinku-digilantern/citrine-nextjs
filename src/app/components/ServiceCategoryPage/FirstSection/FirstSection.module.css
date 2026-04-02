@@ -113,7 +113,7 @@
   object-fit: cover;
   border-radius: 0;
 }
-
+.rightContent{width: 100%;}
 .buttonrow{margin-top: 2rem;}
 .bookbtn{
   padding: 11px 30px; 

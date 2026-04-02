@@ -100,8 +100,18 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1400.98px) and (min-width: 1301px) {
+.videosSection {padding: 2rem 0% 2rem 0%;}
+.container{max-width: 92%;}
+.mainHeading {margin-bottom: 15px;}
+.viewBtn {padding: 6px 15px;}
+.viewbtnrow {margin-top: 10px;}
+}
+
+/* Responsive Design */
 @media (max-width: 1300.98px) and (min-width: 1201px) {
-.videosSection {padding: 2rem 3% 2rem 3%;}
+.videosSection {padding: 2rem 0% 2rem 0%;}
+.container{max-width: 92%;}
 .mainHeading {margin-bottom: 15px;}
 .viewBtn {padding: 6px 15px;}
 .viewbtnrow {margin-top: 10px;}
@@ -109,14 +119,16 @@
 
 /* Responsive Design */
 @media (max-width: 1200.98px) and (min-width: 1100px) {
-.videosSection {padding: 2rem 3% 2rem 3%;}
+.videosSection {padding: 2rem 0% 2rem 0%;}
+.container{max-width: 92%;}
 .mainHeading {margin-bottom: 15px;}
 .viewBtn {padding: 6px 15px;}
 .viewbtnrow {margin-top: 10px;}
 }
 
 @media (max-width: 1100.98px) and (min-width: 992px) {
-.videosSection {padding: 2rem 0 2rem 3%;}
+.videosSection {padding: 2rem 0% 2rem 0%;}
+.container{max-width: 92%;}
 .mainHeading {margin-bottom: 15px;}
 .videosGrid {grid-template-columns: 1fr;overflow-x: auto;display: flex;gap: 10px;scroll-snap-type: x mandatory;}
 .videoCard {min-width: 31vw;scroll-snap-align: start;}
@@ -125,7 +137,8 @@
 }
 
 @media (max-width: 991.98px) and (min-width: 768px) {
-.videosSection {padding: 2rem 0 2rem 15px;}
+.videosSection {padding: 2rem 0% 2rem 0%;}
+.container{max-width: 92%;}
 .mainHeading {margin-bottom: 15px;}
 .videosGrid {grid-template-columns: 1fr;overflow-x: auto;display: flex;gap: 10px;scroll-snap-type: x mandatory;}
 .videoCard {min-width: 40vw;scroll-snap-align: start;}

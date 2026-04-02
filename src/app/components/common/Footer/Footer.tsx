@@ -45,12 +45,7 @@ const Footer = () => {
                     height={50} />
                 </Link>
               </div>
-              <p>
-                Dr. Niti Gaur has set up Citrine Clinic and Aesthetics to
-                provide the highest quality of skin care with the transparent
-                and ethical practices of dermatology. At the clinic, you will
-                experience the best skincare.
-              </p>
+              <p>Citrine Clinic, led by Dr. Niti Gaur, is built on the belief that aesthetic treatments should enhance, not change, who you are. We combine clinical expertise with a thoughtful, patient-first approach to deliver results that are natural, balanced, and tailored to you.</p>
               <ul className={styles.socialIcons}>
                 <li>
                   <Link
@@ -61,24 +56,6 @@ const Footer = () => {
                     <FaFacebookF />
                   </Link>
                 </li>
-                {/* <li>
-                  <Link
-                    href="#"
-                    target="_blank"
-                    aria-label="Citrine Twitter page"
-                    rel="noopener noreferrer">
-                    <RiTwitterXLine />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    target="_blank"
-                    aria-label="Citrine Linkedin page"
-                    rel="noopener noreferrer">
-                    <FaLinkedinIn />
-                  </Link>
-                </li> */}
                 <li>
                   <Link
                     href="https://www.instagram.com/citrinedermatologyclinic/"
@@ -106,10 +83,10 @@ const Footer = () => {
                   <Link href="/">Home</Link>
                 </li>
                 <li>
-                  <Link href="/dr-niti-gaur">About Doctor</Link>
+                  <Link href="/about-doctor">About Doctor</Link>
                 </li>
                 <li>
-                  <Link href="/skin-clinic-in-gurgaon">About Clinic</Link>
+                  <Link href="/about-clinic">About Clinic</Link>
                 </li>
                 <li>
                   <Link href="/concerns">Concerns</Link>
@@ -128,6 +105,9 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link href="/blog">Blogs</Link>
+                </li>
+                <li>
+                  <Link href="/videos">Videos</Link>
                 </li>
                 <li>
                   <Link href="/contact">Contact Us</Link>
@@ -198,7 +178,7 @@ const Footer = () => {
                       </span>
                     </div>
                     <div className={styles.contactInfoText}>
-                      Phone: +91-9868649805 | +91-9810652808 | +91-8065060900
+                      Phone: <Link href="tel:+91-8065060900">+91-8065060900</Link> | <Link href="tel:+91-9868649805">+91-9868649805</Link> | <Link href="tel:+91-9810652808">+91-9810652808</Link>
                     </div>
                   </div>
                   <div className={styles.contactInfoRow}>
@@ -213,7 +193,7 @@ const Footer = () => {
                       </span>
                     </div>
                     <div className={styles.contactInfoText}>
-                      Landline: 0124 411 6808,
+                      Landline: <Link href="tel:+01244116808">0124 411 6808</Link>
                     </div>
                   </div>
                   <div className={styles.contactInfoRow}>
@@ -228,7 +208,7 @@ const Footer = () => {
                       </span>
                     </div>
                     <div className={styles.contactInfoText}>
-                      Email: info@citrineclinic.com
+                      Email: <Link href="mailto:info@citrineclinic.com">info@citrineclinic.com</Link>
                     </div>
                   </div>
                 </div>
@@ -287,11 +267,8 @@ const Footer = () => {
           <span className={styles.fixedText}>WhatsApp</span>
         </a>
       </div>
-
-
       {/* Click-to-open phone numbers (mobile) */}
       <PhoneNumbers />
-
     </>
   );
 };
@@ -312,8 +289,8 @@ function PhoneNumbers() {
   }, []);
 
   const numbers = [
-    '+919868649805',
     '+918065060900',
+    '+919868649805',
     '+919810652808',
     '01244116808',
     '01244114808',
@@ -322,7 +299,7 @@ function PhoneNumbers() {
   return (
     <div ref={wrapperRef} className={`${styles.cliktoopennumber} ${styles['for-mobile']}`}>
       <div className={styles.callnumberwrap} onClick={() => setOpen((s) => !s)} role="button" aria-label="Open phone numbers">
-        <Image src="/assets/images/phone-white.webp" width={26} height={26} className={styles.realcolo2} alt="call" />
+        <Image src="/assets/images/footercallicon.webp" width={24} height={24} className={styles.realcolo2} alt="call" />
       </div>
       {open && (
         <div className={styles['number-menu']}>

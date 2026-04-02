@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import Image from "next/image";
+import Link from 'next/link';
 import styles from './TechnologySection.module.css';
 import Modal from '../../common/Modal/Modal';
 
@@ -32,7 +33,6 @@ const TechnologySection = () => {
       <div className={styles.marqueeWrapper}>
         <div className={styles.marquee}>
           <span>US-FDA Approved  -  International Standards  -  Gold-Standard Devices</span>
-          <span>US-FDA Approved  -  International Standards  -  Gold-Standard Devices</span>
         </div>
       </div>
       <div className={styles.container}>
@@ -58,6 +58,7 @@ const TechnologySection = () => {
                   <li><b>No downtime —</b> quick, comfortable, and safe procedure.</li>
                   <li><b>Ideal for skin firming</b> and contouring, not for major weight loss.</li>
                 </ul>
+                <Link href="/technologies" className={styles.viewmoreBtn}>Read More</Link>
               </div>
             </div>
           </div>

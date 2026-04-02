@@ -1,4 +1,3 @@
-
 .contentpanel {
   flex: 1;
   display: flex;
@@ -8,18 +7,23 @@
   position: relative;
   overflow: hidden;
 }
-.bgwrap{
+
+.bgwrap {
   min-width: 55vw;
-  width: 55vw;height: 100vh;
+  width: 55vw;
+  height: 100vh;
 }
-.citrinecontentbox{
+
+.citrinecontentbox {
   background: #FFFFFFCC;
-  padding:3rem;
+  padding: 3rem;
   margin-right: 0rem;
-  width: 45vw;height: 100vh;
+  width: 45vw;
+  height: 100vh;
   backdrop-filter: blur(110px);
-  margin-top:150px;
+  margin-top: 150px;
 }
+
 .backgroundImage {
   position: absolute;
   top: 0;
@@ -47,7 +51,8 @@
   color: var(--default-color);
   font-size: 1.25rem;
   margin-bottom: 1.5rem;
-  max-width: 600px;line-height: 1.8;
+  max-width: 600px;
+  line-height: 1.8;
 }
 
 .aboutlist {
@@ -55,12 +60,28 @@
   padding: 0;
   margin: 0 0 30px 0px;
   max-height: 210px;
-  overflow: auto;padding-right: 10px;
+  overflow: auto;
+  padding-right: 10px;
   position: relative;
 }
-.aboutlist::-webkit-scrollbar-track{box-shadow:inset 0 0 6px #0000004d;border-radius:5px;background-color:#ddd}
-.aboutlist::-webkit-scrollbar{width:5px;background-color:#f5f5f5}
-.aboutlist::-webkit-scrollbar-thumb{border-radius:5px;box-shadow:inset 0 0 6px #0000004d;background:var(--gradient-bg);}
+
+.aboutlist::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #0000004d;
+  border-radius: 5px;
+  background-color: #ddd
+}
+
+.aboutlist::-webkit-scrollbar {
+  width: 5px;
+  background-color: #f5f5f5
+}
+
+.aboutlist::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px #0000004d;
+  background: var(--gradient-bg);
+}
+
 .aboutlistitem {
   display: grid;
   grid-template-columns: 22px 1fr;
@@ -70,6 +91,7 @@
   font-size: 18px;
   color: var(--default-color);
 }
+
 .heropanelCustom {
   width: 100vw;
   display: flex;
@@ -77,19 +99,25 @@
   justify-content: flex-end;
   background: #F5F1E8;
 }
+
 .heropanelimgCustom {
   width: 100%;
   margin-right: 0vw;
 }
+
 .headingimage {
   width: 100%;
   height: auto;
   object-fit: contain;
 }
+
 .mobileHeadingWrapper {
   display: none;
 }
-.headingimage img{width: auto;}
+
+.headingimage img {
+  width: auto;
+}
 
 .aboutlisticon {
   display: block;
@@ -112,24 +140,25 @@
   cursor: pointer;
   letter-spacing: 1px;
 }
+
 .sectiontrack {
   height: 300vh;
   border-top: 1px solid #E5D7C3;
   border-bottom: 1px solid #E5D7C3;
-  position: relative; 
+  position: relative;
   background: var(--citrinecliniccolor);
 }
 
 .stickyelement {
-z-index: 2;
-justify-content: flex-start;
-align-items: stretch;
-width: 100%;
-height: 100vh;
-display: flex;
-position: sticky;
-inset: 0% 0% auto;
-overflow: hidden;
+  z-index: 2;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: sticky;
+  inset: 0% 0% auto;
+  overflow: hidden;
 }
 
 .track {
@@ -140,20 +169,20 @@ overflow: hidden;
 }
 
 .trackflex {
-justify-content: flex-start;
-align-items: stretch;
-height: 100%;
-margin-right: -100vw;
-display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  height: 100%;
+  margin-right: -100vw;
+  display: flex;
 }
 
 .heropanel {
-flex: none;
-width: 175vw;
-height: 100vh;
-position: sticky;
-right: 0;
-overflow: hidden;
+  flex: none;
+  width: 175vw;
+  height: 100vh;
+  position: sticky;
+  right: 0;
+  overflow: hidden;
 }
 
 .heropanelimg {
@@ -162,22 +191,26 @@ overflow: hidden;
   position: relative;
   inset: 0% auto 0% 0%;
   /* transform: scale(1); */
-  display: flex;align-items: center;justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
+
 .horizonimage {
-    object-fit: cover;
-    object-position: 50% 50%;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    inset: 0%;
+  object-fit: cover;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
 }
+
 .thankspanelwrap {
-    z-index: 3;
-    flex: none;
-    width: 225vw;
-    height: 100vh;
-    position: relative;
+  z-index: 3;
+  flex: none;
+  width: 225vw;
+  height: 100vh;
+  position: relative;
 }
 
 .thankspanelwrap.is-wide {
@@ -238,36 +271,81 @@ overflow: hidden;
 .heroimage.isimage_4 {
   z-index: 4;
 }
+
 .imageanimationcontent {
-    background-color: var(--base-color-neutral--blue);
-    justify-content: flex-start;
-    align-items: center;
-    width: auto;
-    height: 100%;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    display: flex;
-    position: absolute;
-    inset: 0% auto 0% 0%;
+  background-color: var(--base-color-neutral--blue);
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 100%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  display: flex;
+  position: absolute;
+  inset: 0% auto 0% 0%;
 }
+
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 1400.98px) and (min-width: 1301px) {
-.citrinecontentbox {width: 45vw;height: 100vh;margin-top: 100px;margin-right: 0;padding: 2rem;}
+  .citrinecontentbox {
+    width: 45vw;
+    height: 100vh;
+    margin-top: 100px;
+    margin-right: 0;
+    padding: 2rem;
+  }
 }
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 1300.98px) and (min-width: 1201px) {
-.citrinecontentbox {width: 45vw;height: 100vh;margin-top: 100px;margin-right: 0;padding: 1.5rem;}
+  .citrinecontentbox {
+    width: 48vw;
+    height: 100vh;
+    margin-top: 100px;
+    margin-right: 0;
+    padding: 1.5rem;
+  }
 }
 
-/* Mobile / Tablet: Stacked Vertical View */
+@media (max-width: 1100.98px) and (min-width: 992px) {
+  .citrinecontentbox {
+    width: 48vw;
+    height: 100vh;
+    margin-top: 100px;
+    margin-right: 0;
+    padding: 1.5rem;
+  }
+
+  .aboutdesc {
+    max-width: 100%;
+    margin-bottom: 1rem;
+    font-size: 16px;
+  }
+
+  .aboutlist {
+    font-size: 16px;
+    max-height: 330px;
+  }
+
+  .aboutlistitem {
+    font-size: 16px;
+  }
+
+  .mainHeading {
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    font-size: 35px;
+  }
+}
+
+/* Mobile / Tablet: Balanced Horizontal Sticky Scroll */
 @media (max-width: 991.98px) {
   .sectiontrack {
     height: auto !important;
     position: relative;
-    padding: 40px 0;
+    padding: 1.5rem 0;
   }
-  
+
   .stickyelement {
     position: relative !important;
     top: 0 !important;
@@ -275,13 +353,13 @@ overflow: hidden;
     display: block !important;
     overflow: visible !important;
   }
-  
+
   .track {
     transform: none !important;
     height: auto !important;
     width: 100% !important;
   }
-  
+
   .trackflex {
     flex-direction: column !important;
     height: auto !important;
@@ -292,7 +370,7 @@ overflow: hidden;
   .headingimage {
     display: none !important;
   }
-  
+
   .mobileHeadingWrapper {
     display: flex !important;
     flex-direction: column;
@@ -304,18 +382,19 @@ overflow: hidden;
   }
 
   .mobileWelcome {
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: #836940;
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: var(--default-color);
     font-weight: 500;
     font-family: var(--font-poppins), sans-serif;
   }
 
   .mobileClinicName {
     font-size: clamp(28px, 8vw, 42px);
-    font-weight: 400;
+    font-weight: 500;
+    padding-bottom: 15px;
     font-family: var(--font-montserrat), sans-serif;
-    background: linear-gradient(106.1deg, #DE9736 0%, #ECC851 100%);
+    background: var(--accent-color);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -324,17 +403,16 @@ overflow: hidden;
     margin: 0;
   }
 
-  .heropanel, 
+  .heropanel,
   .heropanelCustom {
     width: 100% !important;
     min-width: 100% !important;
     height: auto !important;
-    background: #F5F1E8;
     display: block !important;
-    padding: 40px 20px 40px !important;
+    padding: 0px 0px 0px 0px !important;
     flex: none;
   }
-  
+
   .heropanelimg,
   .heropanelimgCustom {
     width: 100%;
@@ -366,7 +444,7 @@ overflow: hidden;
     z-index: 1;
     flex-shrink: 0;
   }
-  
+
   .backgroundImage {
     position: relative !important;
     width: 100% !important;
@@ -390,37 +468,45 @@ overflow: hidden;
   .mainHeading {
     margin-bottom: 15px;
     line-height: 1.2;
-    font-size: 28px !important;
+    font-size: 30px !important;
   }
 
   .aboutdesc {
     font-size: 16px;
     margin-bottom: 20px;
     line-height: 1.6;
-    color: #444;
+    color: var(--default-color);
+  }
+
+  .aboutbtn {
+    letter-spacing: 0px;
+    margin-top: 0rem;
+    padding: 10px 20px;
   }
 
   .aboutlist {
     max-height: none !important;
     overflow: visible !important;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     padding-right: 0;
   }
 
   /* Custom themed scrollbar for mobile about-list */
-  .aboutlist::-webkit-scrollbar-track { 
-    box-shadow: inset 0 0 6px #00000022; 
-    border-radius: 5px; 
-    background-color: #eee; 
+  .aboutlist::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #00000022;
+    border-radius: 5px;
+    background-color: #eee;
   }
-  .aboutlist::-webkit-scrollbar { 
-    width: 4px; 
-    background-color: #f5f5f5; 
+
+  .aboutlist::-webkit-scrollbar {
+    width: 4px;
+    background-color: #f5f5f5;
   }
-  .aboutlist::-webkit-scrollbar-thumb { 
-    border-radius: 5px; 
-    box-shadow: inset 0 0 6px #00000022; 
-    background: var(--gradient-bg); 
+
+  .aboutlist::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    box-shadow: inset 0 0 6px #00000022;
+    background: var(--gradient-bg);
   }
 
   .aboutlistitem {
@@ -432,11 +518,15 @@ overflow: hidden;
 
   .aboutbtn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 9px 20px;
     font-size: 15px;
     font-weight: 600;
-    width: 100%;
+    width: 50%;
     text-align: center;
+  }
+
+  .heropanelCustom {
+    background: transparent;
   }
 
   .desktopImage {

@@ -1,6 +1,7 @@
 'use client'
 import React from 'react';
 import Image from "next/image";
+import Link from 'next/link';
 import styles from './MarqueeSection.module.css';
 
 const MarqueeSection = () => {
@@ -29,7 +30,7 @@ const MarqueeSection = () => {
           <span>★</span>
           <span>★</span>
         </div>
-        <div className={styles.reviewText}>1,182 Google reviews</div>
+        <Link href="https://share.google/MN5DbvOxltDl0JdDM" target="_blank" className={styles.reviewText}>1,243 Google reviews</Link>
       </div>
 
       <div className={styles.heading}>

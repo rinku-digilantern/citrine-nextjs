@@ -10,8 +10,10 @@ const ExplorePage = () => {
 		<div className={styles.flexrow}>
 		<div className={styles.flexList}>
 			<ul>
+				<li><Link href="/skin-clinic-in-gurgaon">Skin Clinic in Gurgaon</Link></li>
 				<li><Link href="/carbon-peel-treatment-in-gurgaon">Carbon Peel in Gurgaon</Link></li>
-				 <li><Link href="/acne-treatment-in-gurgaon">Acne Treatment in Gurgaon</Link></li>
+				<li><Link href="/skin-clinic-in-gurgaon">Skin Clinic in Gurgaon</Link></li>
+				<li><Link href="/acne-treatment-in-gurgaon">Acne Treatment in Gurgaon</Link></li>
 				<li><Link href="/acne-scar-treatment-in-gurgaon">Acne Scar Treatment in Gurgaon</Link></li>
 				<li><Link href="/hyperpigmentation-treatment-in-gurgaon">Pigmentation Treatment in Gurgaon</Link></li>
 				<li><Link href="/dark-circles-treatment-gurgaon">Dark Circles Treatment in Gurgaon</Link></li>
@@ -28,6 +30,8 @@ const ExplorePage = () => {
 			</div>
 			<div className={styles.flexList}>
 			<ul>
+
+				<li><Link href="/dr-niti-gaur">Dr. Niti Gaur</Link></li>
 				<li><Link href="/laser-hair-removal-in-gurgaon">Laser Hair Removal in Gurgaon</Link></li>
 				<li><Link href="/stretch-marks-treatment-in-gurgaon">Stretch Marks Treatment in Gurgaon</Link></li>
 				<li><Link href="/anti-wrinkle-injection-in-gurgaon">Anti Wrinkle Injection in Gurgaon</Link></li>

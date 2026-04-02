@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "DR. NITI GAUR",
-      "description": "MBBS, MD - DERMATOLOGY, VENEREOLOGY & LEPROLOGY DERMATOLOGIST, COSMETOLOGIST, TRICHOLOGIST, TEDx SPEAKER",
+      "description": "MBBS, MD - DERMATOLOGY, VENEREOLOGY & LEPROLOGY DERMATOLOGIST, TRICHOLOGIST, TEDx SPEAKER",
       "image": "/assets/images/about-clinic/founderdoctor01.webp",
       "experienceNumber": "20+",
       "experienceText": "years of experience",
@@ -14,7 +14,7 @@
     {
       "id": 1,
       "name": "DR. NITI GAUR",
-      "description": "MBBS, MD - DERMATOLOGY, VENEREOLOGY & LEPROLOGY DERMATOLOGIST, COSMETOLOGIST, TRICHOLOGIST, TEDx SPEAKER",
+      "description": "MBBS, MD - DERMATOLOGY, VENEREOLOGY & LEPROLOGY DERMATOLOGIST, TRICHOLOGIST, TEDx SPEAKER",
       "image": "/assets/images/about-clinic/doctor01.webp",
       "experienceNumber": "20+",
       "experienceText": "years of experience",
@@ -30,7 +30,7 @@
     },
     {
       "id": 3,
-      "name": "Dr Guneet Bedi",
+      "name": "Dr. Guneet Bedi",
       "description": "MBBS - Dermatology, Venereology & Leprosy (DVL).",
       "image": "/assets/images/about-clinic/doctor03.webp",
       "experienceNumber": "10+",

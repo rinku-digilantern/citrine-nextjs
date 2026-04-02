@@ -25,11 +25,20 @@ const CAPTCHA_API = 'https://api.citrineclinic.com/api/googlecaptcha';
 const APPT_API = 'https://api.citrineclinic.com/api/appointment';
 
 const services = [
-  'Skin Treatment',
-  'Hair Treatment',
-  'Laser Treatment',
+  'Acne/Pimple',
+  'Acne Scars',
+  'Pigmentation &amp; Skin Glow',
   'Anti-Aging Treatment',
-  'Other Services',
+  'Stretch Marks',
+  'General Skin Concern',
+  'Non-Surgical',
+  'Infections',
+  'Plastic Surgery',
+  'Hair Transplant',
+  'Hairfall/Hair Loss',
+  'Laser Hair Reduction',
+  'Body Contouring Treatment',
+  'Other Services'
 ];
 
 const AppointmentSection = () => {
@@ -205,7 +214,9 @@ const AppointmentSection = () => {
 
               {/* Row 1: Name, Email, Phone */}
               <div className={styles.formRow}>
+                
                 <div className={styles.inputGroup}>
+                  <label className={styles.label}>Full Name<span>*</span></label>
                   <input
                     type="text" name="name" placeholder="Enter Name*"
                     value={formData.name} onChange={handleChange}
@@ -215,6 +226,7 @@ const AppointmentSection = () => {
                   {errors.name && <span className={styles.fieldError}>{errors.name}</span>}
                 </div>
                 <div className={styles.inputGroup}>
+                  <label className={styles.label}>Email Address<span>*</span></label>
                   <input
                     type="email" name="email" placeholder="Email Address*"
                     value={formData.email} onChange={handleChange}
@@ -224,6 +236,7 @@ const AppointmentSection = () => {
                   {errors.email && <span className={styles.fieldError}>{errors.email}</span>}
                 </div>
                 <div className={styles.inputGroup}>
+                  <label className={styles.label}>Phone No.<span>*</span></label>
                   <input
                     type="tel" name="phone" placeholder="Phone Number*"
                     value={formData.phone} onChange={handleChange}
@@ -237,17 +250,18 @@ const AppointmentSection = () => {
               {/* Row 2: Service, Date */}
               <div className={styles.formRow}>
                 <div className={styles.inputGroup}>
+                  <label className={styles.label}>Select Service<span>*</span></label>
                   <select
                     id="appointmentType" name="service" aria-label="Select appointment type"
                     value={formData.service} onChange={handleChange}
-                    className={`${styles.select} ${errors.service ? styles.inputError : ''}`} required
-                  >
+                    className={`${styles.select} ${errors.service ? styles.inputError : ''}`} required>
                     <option value="">Select Service*</option>
                     {services.map((s, i) => <option key={i} value={s}>{s}</option>)}
                   </select>
                   {errors.service && <span className={styles.fieldError}>{errors.service}</span>}
                 </div>
                 <div className={`${styles.inputGroup} ${styles.dateInput}`}>
+                  <label className={styles.label}>Select Date<span>*</span></label>
                   <input
                     key={minDate}
                     type="date" name="date" placeholder="Select date*"
@@ -262,6 +276,7 @@ const AppointmentSection = () => {
               {/* Row 3: Message */}
               <div className={styles.formRow}>
                 <div className={styles.inputGroup}>
+                  <label className={styles.label}>Message Here</label>
                   <textarea
                     name="message" placeholder="Type Message"
                     value={formData.message} onChange={handleChange}

@@ -1,20 +1,27 @@
 import React from 'react'
 import { Metadata } from 'next/dist/types';
-import AboutClinicBanner from '../../src/app/components/AboutClinicPage/AboutClinicBanner/AboutClinicBanner';
-import RedefiningSection from '@/src/app/components/AboutClinicPage/RedefiningSection/RedefiningSection';
-import FourColumnSection from '@/src/app/components/AboutClinicPage/FourColumnSection/FourColumnSection';
-import CitrineDifferenceBanner from '@/src/app/components/AboutClinicPage/CitrineDifferenceBanner/CitrineDifferenceBanner';
-import TeamSection from '@/src/app/components/AboutClinicPage/TeamSection/TeamSection';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
-import PatientTestimonials from '@/src/app/components/homepage/PatientTestimonials/PatientTestimonials';
-import OurVideos from '@/src/app/components/homepage/OurVideos/OurVideos';
-import HappyPatientsGallery from '@/src/app/components/AboutClinicPage/HappyPatientsGallery/HappyPatientsGallery';
-
-
-
-
+import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
+import fs from 'fs';
+import path from 'path';
+import SkinClinicGurgaonBanner from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonBanner/SkinClinicGurgaonBanner';
+import SkinClinicGurgaonFaqSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonFaqSection/SkinClinicGurgaonFaqSection';
+import SkinClinicGurgaonFirstSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonFirstSection/SkinClinicGurgaonFirstSection';
+import SkinClinicGurgaonSecondSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonSecondSection/SkinClinicGurgaonSecondSection';
+import SkinClinicGurgaonThirdSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonThirdSection/SkinClinicGurgaonThirdSection';
+import SkinClinicGurgaonFourthSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonFourthSection/SkinClinicGurgaonFourthSection';
+import SkinClinicGurgaonSeventhSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonSeventhSection/SkinClinicGurgaonSeventhSection';
+import SkinClinicGurgaonSixthSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonSixthSection/SkinClinicGurgaonSixthSection';
+import SkinClinicGurgaonFivethSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonFivethSection/SkinClinicGurgaonFivethSection';
 
 const API_BASE = 'https://api.citrineclinic.com/api';
+
+function getPageData() {
+  const filePath = path.join(process.cwd(), 'src', 'app', 'components', 'webcontent', 'SkinClinicGurgaon.json');
+  const raw = fs.readFileSync(filePath, 'utf8');
+  const data = JSON.parse(raw);
+  return data['skin-clinic-in-gurgaon'];
+}
 
 async function getSeoData(slug: string) {
   try {
@@ -30,6 +37,14 @@ async function getSeoData(slug: string) {
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoData('skin-clinic-in-gurgaon');
+  const pageData = getPageData();
+  const thirdSection = pageData?.SkinClinicGurgaonThirdSection
+    ? {
+        image: pageData.SkinClinicGurgaonThirdSection.image,
+        heading: pageData.SkinClinicGurgaonThirdSection.mainHeading || pageData.SkinClinicGurgaonThirdSection.heading,
+        paragraph: pageData.SkinClinicGurgaonThirdSection.paragraph1 || pageData.SkinClinicGurgaonThirdSection.paragraph,
+      }
+    : null;
   if (!seo) return { title: 'Citrine Clinic' };
   return {
     title: seo.title_tag || 'Citrine Clinic',
@@ -46,29 +61,31 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const About = async () => {
+const SkinClinicInGurgaon = async () => {
   const seo = await getSeoData('skin-clinic-in-gurgaon');
+  const pageData = getPageData();
 
   return (
     <>
-
       {seo?.faq_schema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.faq_schema) }} />
       )}
       {seo?.bred_schema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(seo.bred_schema) }} />
       )}
-
-      <AboutClinicBanner />
-      <RedefiningSection />
-      <FourColumnSection />
-      <HappyPatientsGallery />
-      <TeamSection />
-      <PatientTestimonials />
-      <CitrineDifferenceBanner />
-      <OurVideos />
+       
+      <SkinClinicGurgaonBanner section={pageData?.SkinClinicGurgaonBanner} />
+      <Breadcrumb />
+      <SkinClinicGurgaonFirstSection section={pageData?.SkinClinicGurgaonFirstSection} />
+      <SkinClinicGurgaonSecondSection section={pageData?.SkinClinicGurgaonSecondSection} />
+      <SkinClinicGurgaonThirdSection section={pageData?.SkinClinicGurgaonThirdSection} />
+      <SkinClinicGurgaonFourthSection section={pageData?.SkinClinicGurgaonFourthSection} />
+      <SkinClinicGurgaonFivethSection section={pageData?.SkinClinicGurgaonFivethSection} />
+      <SkinClinicGurgaonSixthSection section={pageData?.SkinClinicGurgaonSixthSection} />
+      <SkinClinicGurgaonSeventhSection section={pageData?.SkinClinicGurgaonSeventhSection} />
+      <SkinClinicGurgaonFaqSection section={pageData?.SkinClinicGurgaonFaqSection} />
       <AppointmentSection />
     </>
   )
 }
-export default About;
+export default SkinClinicInGurgaon;

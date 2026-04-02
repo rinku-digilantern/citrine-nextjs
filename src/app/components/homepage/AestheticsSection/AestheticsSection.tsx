@@ -76,7 +76,7 @@ const AestheticsSection = () => {
         />
       <div className={styles.container}>
         <div className={styles.leftCol}>
-          <h2 className={`mainHeading ${styles.mainHeading}`}>AESTHETICS<br/> <span>Artistry</span></h2>
+          <h2 className={`mainHeading ${styles.mainHeading}`}>AESTHETICS<br/> Artistry</h2>
           <p className={styles.desc}>The Art of Subtle Transformation</p>
           {/* <div className={styles.commonbtnbox}>
             <Link href="#" className={styles.viewmoreBtn}>View More</Link>

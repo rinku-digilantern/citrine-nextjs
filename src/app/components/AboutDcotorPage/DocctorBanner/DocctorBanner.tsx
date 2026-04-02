@@ -62,8 +62,7 @@ const AboutClinicBanner = () => {
           <p className={styles.experienceText}>OVER 20 YEARS OF EXPERIENCE IN</p>
           <ul className={styles.specializationList}>
             <li>Dermatology, Venereology & Leprosy</li>
-            <li>Dermatologist, Cosmetologist,</li>
-            <li>Trichologist</li>
+            <li>Dermatologist, Trichologist</li>
           </ul>
         </div>
 

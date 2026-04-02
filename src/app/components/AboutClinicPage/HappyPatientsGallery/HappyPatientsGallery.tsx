@@ -11,7 +11,7 @@ const HappyPatientsGallery = () => {
           <div className={styles.galleryItem}>
             <div className={styles.contentWrapper}>
               <h2 className={`mainHeading ${styles.mainHeading}`}>
-                HAPPY PATIENT'S<br /> GALLERY
+                HAPPY PATIENTS'<br /> GALLERY
               </h2>
               
               <p className={styles.description}>
@@ -23,17 +23,17 @@ Because the most meaningful results are the ones our patients feel as much as th
               <div className={styles.statsGrid}>
                 <div className={styles.statItem}>
                   <h3 className={styles.statNumber}>15,000+</h3>
-                  <p className={styles.statLabel}>Procedures<br />Performed Safely</p>
+                  <p className={styles.statLabel}>Procedures<br /> Performed Safely</p>
                 </div>
                 
                 <div className={styles.statItem}>
                   <h3 className={styles.statNumber}>100%</h3>
-                  <p className={styles.statLabel}>Focus on Patient<br />Safety & Hygiene</p>
+                  <p className={styles.statLabel}>Focus on Patient<br /> Safety & Hygiene</p>
                 </div>
                 
                 <div className={styles.statItem}>
                   <h3 className={styles.statNumber}>5,000+</h3>
-                  <p className={styles.statLabel}>Happy & Satisfied<br />Patients</p>
+                  <p className={styles.statLabel}>Happy & Satisfied<br /> Patients</p>
                 </div>
               </div>
             </div>
