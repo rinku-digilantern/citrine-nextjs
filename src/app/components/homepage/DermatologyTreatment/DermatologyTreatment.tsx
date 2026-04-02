@@ -2,17 +2,17 @@
 import React, { useCallback, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from './DermatologyTreatment.module.css';
-import Link from 'next/link';
 
 const treatments = [
-  { title: 'ACNE', img: '/assets/images/home/dtthumb01.webp' },
-  { title: 'SCAR', img: '/assets/images/home/dtthumb02.webp' },
-  { title: 'MELASMA', img: '/assets/images/home/dtthumb03.webp' },
-  { title: 'ACNE', img: '/assets/images/home/dtthumb01.webp' },
-  { title: 'SCAR', img: '/assets/images/home/dtthumb02.webp' },
-  { title: 'MELASMA', img: '/assets/images/home/dtthumb03.webp' },
+  { title: 'ACNE', img: '/assets/images/home/dtthumb01.webp', url: 'acne-treatment-in-gurgaon' },
+  { title: 'SCAR', img: '/assets/images/home/dtthumb02.webp', url: '/acne-scar-treatment-in-gurgaon' },
+  { title: 'MELASMA', img: '/assets/images/home/dtthumb03.webp', url: 'melasma-treatment-in-gurgaon' },
+    { title: 'ACNE', img: '/assets/images/home/dtthumb01.webp', url: 'acne-treatment-in-gurgaon' },
+  { title: 'SCAR', img: '/assets/images/home/dtthumb02.webp', url: '/acne-scar-treatment-in-gurgaon' },
+  { title: 'MELASMA', img: '/assets/images/home/dtthumb03.webp', url: 'melasma-treatment-in-gurgaon' }
 ];
 
 const DermatologyTreatment = () => {
@@ -54,7 +54,9 @@ const DermatologyTreatment = () => {
                     <div className={styles.emblaSlide} key={idx}>
                       <div className={styles.thumbCard}>
                         <Image src={t.img} alt={t.title} width={157} height={187} className={styles.thumbImg} />
-                        <div className={styles.thumbTitle}>{t.title}</div>
+                        <Link href={t.url} className={styles.thumbTitle}>
+                          {t.title}
+                        </Link>
                       </div>
                     </div>
                   ))}

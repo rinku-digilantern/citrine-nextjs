@@ -2,51 +2,67 @@
 
 import React, { useRef } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import styles from './HairSection.module.css';
-import Link from 'next/link';
 
 const hairTreatments = [
   {
     id: 1,
     title: "HAIR FALL",
-    image: "/assets/images/home/ht01.webp"
+    image: "/assets/images/home/ht01.webp",
+    alttag: "Hair Fall Treatment",
+    url: "/hair-loss"
   },
   {
     id: 2,
     title: "P-R-P THERAPY",
-    image: "/assets/images/home/ht02.webp"
+    image: "/assets/images/home/ht02.webp",
+    alttag: "P-R-P Therapy",
+    url: "/"
   },
   {
     id: 3,
     title: "MESOTHERAPY",
-    image: "/assets/images/home/ht03.webp"
+    image: "/assets/images/home/ht03.webp",
+    alttag: "Mesotherapy",
+    url: "/"
   },
   {
     id: 4,
     title: "SCALP TREATMENT",
-    image: "/assets/images/home/ht01.webp"
+    image: "/assets/images/home/ht01.webp",
+    alttag: "Scalp Treatment",
+    url: "/"
   },
   {
     id: 5,
     title: "HAIR FALL",
-    image: "/assets/images/home/ht01.webp"
+    image: "/assets/images/home/ht01.webp",
+    alttag: "Hair Fall Treatment",
+    url: "/hair-loss"
   },
   {
     id: 6,
     title: "P-R-P THERAPY",
-    image: "/assets/images/home/ht02.webp"
+    image: "/assets/images/home/ht02.webp",
+    alttag: "P-R-P Therapy",
+    url: "/"
   },
   {
     id: 7,
     title: "MESOTHERAPY",
-    image: "/assets/images/home/ht03.webp"
+    image: "/assets/images/home/ht03.webp",
+    alttag: "Mesotherapy",
+    url: "/"
   },
   {
     id: 8,
     title: "SCALP TREATMENT",
-    image: "/assets/images/home/ht01.webp"
+    image: "/assets/images/home/ht01.webp",
+    alttag: "Scalp Treatment",
+    url: "/"
   },
 ];
 
@@ -105,12 +121,11 @@ const HairSection = () => {
                     <div className={styles.zoomWrapper}>
                       <Image
                         src={treatment.image}
-                        alt={treatment.title}
+                        alt={treatment.alttag}
                         fill
-                        className={styles.treatmentImage}
-                      />
+                        className={styles.treatmentImage}/>
                       <div className={styles.treatmentOverlay}>
-                        <h3 className={styles.treatmentTitle}>{treatment.title}</h3>
+                        <Link href={treatment.url} className={styles.treatmentTitle}>{treatment.title}</Link>
                       </div>
                     </div>
                   </div>

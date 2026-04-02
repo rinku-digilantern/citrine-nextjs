@@ -167,7 +167,7 @@ export default function CitrineClinicSection() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/skin-clinic-in-gurgaon" className={styles.aboutbtn}>READ MORE</Link>
+                <Link href="/about-clinic" className={styles.aboutbtn}>READ MORE</Link>
               </div>
             </div>
           </div>

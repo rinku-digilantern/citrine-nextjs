@@ -10,35 +10,43 @@ const treatments = [
   {
     title: 'ANTI AGING',
     img: '/assets/images/home/aes01.webp',
+    url: 'ageing'
   },
   {
     title: 'PIGMENTATION',
     img: '/assets/images/home/aes02.webp',
+    url: 'hyperpigmentation-treatment-in-gurgaon'
   },
   {
     title: 'MEDI FACIALS',
     img: '/assets/images/home/aes03.webp',
+    url: 'medifacial-for-pigmentation'
   },
   {
     title: 'ANTI AGING',
     img: '/assets/images/home/aes01.webp',
+    url: 'ageing'
   },
   {
     title: 'PIGMENTATION',
     img: '/assets/images/home/aes02.webp',
+    url: 'hyperpigmentation-treatment-in-gurgaon'
   },
   {
     title: 'MEDI FACIALS',
     img: '/assets/images/home/aes03.webp',
+    url: 'medifacial-for-pigmentation'
   },
   // Add more if needed
 ];
 
-const ThumbCard = memo(function ThumbCard({ img, title }: { img: string; title: string }) {
+const ThumbCard = memo(function ThumbCard({ img, title, url }: { img: string; title: string; url: string }) {
   return (
     <div className={styles.thumbCard}>
       <Image src={img} alt={title} width={301} height={351} className={styles.thumbImg} />
-      <div className={styles.thumbTitle}>{title}</div>
+      <Link href={url} className={styles.thumbTitle}>
+        {title}
+      </Link>
     </div>
   );
 });
@@ -86,7 +94,7 @@ const AestheticsSection = () => {
               <div className={styles.emblaContainer}>
                 {slides.map((t, idx) => (
                   <div className={styles.emblaSlide} key={idx}>
-                    <ThumbCard img={t.img} title={t.title} />
+                    <ThumbCard img={t.img} title={t.title} url={t.url} />
                   </div>
                 ))}
               </div>

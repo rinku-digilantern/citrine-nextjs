@@ -67,7 +67,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #d4a044;
+  background: var(--gradient-bg);
   border: none;
   display: flex;
   align-items: center;
@@ -79,6 +79,7 @@
 }
 
 .playButton:hover {
+  background: var(--gradient-bg-hover);
   transform: scale(1.1);
 }
 

@@ -126,16 +126,17 @@
   right: 0;
   padding: 20px;
   /* background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); */
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
-.overlay h3 {
+.overlay .title {
   color: var(--default-color);
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
+  font-family: var(--font-montserrat), sans-serif;
   line-height: 1.4;
 }
 
@@ -203,7 +204,7 @@
 .leftSection {max-width: 600px;}
 .rightSection {max-width: 600px;}
 .overlay {padding: 12px;}
-.overlay h3{font-size: 17px;letter-spacing: 0px;}
+.overlay .title{font-size: 17px;letter-spacing: 0px;}
 }
 
 @media (max-width: 1300.98px) and (min-width: 1201px) {
@@ -212,7 +213,7 @@
 .leftSection {max-width: 570px;}
 .rightSection {max-width: 570px;}
 .overlay {padding: 12px;}
-.overlay h3{font-size: 17px;letter-spacing: 0px;}
+.overlay .title{font-size: 17px;letter-spacing: 0px;}
 .container p {margin-bottom: 15px;font-size: 18px;}
 .navigation {gap: 8px;margin-top: 1rem;}
 }
@@ -224,7 +225,7 @@
 .leftSection {max-width: 570px;}
 .rightSection {max-width: 570px;}
 .overlay {padding: 12px;}
-.overlay h3{font-size: 17px;letter-spacing: 0px;}
+.overlay .title{font-size: 17px;letter-spacing: 0px;}
 .container p {margin-bottom: 15px;font-size: 16px;}
 .navigation {gap: 8px;margin-top: 1rem;}
 .content {gap:20px}
@@ -249,7 +250,7 @@
   .rightSection{display: none;}
   .title {font-size: 28px;letter-spacing: 2px;margin-bottom: 20px;}
  .treatmentCard{height: 220px;width: calc(50% - 10px);}
-  .overlay h3 {font-size: 16px; padding: 10px;}
+  .overlay .title {font-size: 16px; padding: 10px;}
   .navButton {width: 45px;height: 45px;}
   .overlay {padding: 10px;}
   .navigation {margin-top: 1rem;justify-content: center;display: flex;width: 100%;align-items: center;}
@@ -268,7 +269,7 @@
 .treatmentGrid {margin-bottom: 10px;}
 .treatmentCard{height: 170px;width: 100%;}
 .overlay {padding: 10px;}
-.overlay h3 {font-size: 14px;}
+.overlay .title {font-size: 14px;}
 .emblaSlide {gap: 12px; min-width: inherit;}
 .navigation {margin-top: 1rem;justify-content: center;}
 .navButton {width: 50px;height: 36px;}
@@ -278,7 +279,7 @@
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
 .wellnessSection {padding: 1.5rem 0px}
-.treatmentCard{height: 160px;width: calc(50% - 8px);}
+.treatmentCard{height: 158px;width: calc(50% - 5px);}
 .container {padding: 0px;width: 92%;}
 .mainImageWrapper{display: none;}
 .mainHeading {margin-bottom: 5px;line-height: 1;}
@@ -287,10 +288,9 @@
 .container p {margin-bottom: 1rem;font-size: 18px;}
 .leftSection{width: 100%;background: #60483880;border: 1px solid #E5D7C380;backdrop-filter: blur(20px);padding: 8px;}
 .treatmentGrid {margin-bottom: 10px;}
-.treatmentCard{height: 170px;width: 100%;}
 .overlay {padding: 10px;}
-.overlay h3 {font-size: 14px;}
-.emblaSlide {gap: 8px;  flex-direction: row;min-width: inherit;}
+.overlay .title {font-size: 14px; line-height: 20px;}
+.emblaSlide {gap: 0px;flex-direction: row;min-width: inherit;}
 .navigation {margin-top: 1rem;justify-content: center;}
 .navButton {width: 50px;height: 36px;}
 .viewMore {padding: 6px 16px;}

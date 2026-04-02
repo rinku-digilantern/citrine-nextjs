@@ -1,60 +1,76 @@
 'use client';
 import Image from "next/image";
+import Link from "next/link";
 import React, { useCallback, useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import styles from './WellnessTreatment.module.css';
-import Link from "next/link";
+
+interface Treatment {
+  id: number;
+  title: string;
+  thumb: string;
+  alttag: string;
+  url: string;
+}
 
 const WellnessTreatment = () => {
-  const treatments = [
+  const treatments: Treatment[] = [
     { 
       id: 1, 
       title: 'ARM LIFT', 
       thumb: '/assets/images/home/thumb01.webp',
-      alttag: 'Arm Lift Treatment'
+      alttag: 'Arm Lift Treatment',
+      url:'/'
     },
     { 
       id: 2, 
       title: 'THIGH LIFT', 
       thumb: '/assets/images/home/thumb02.webp',
-      alttag: 'Thigh Lift Treatment'
+      alttag: 'Thigh Lift Treatment',
+      url:'/'
     },
     { 
       id: 3, 
       title: 'BUTTOCK LIFT', 
       thumb: '/assets/images/home/thumb03.webp',
-      alttag: 'Buttock Lift Treatment'
+      alttag: 'Buttock Lift Treatment',
+      url:'/'
     },
     { 
       id: 4, 
       title: 'STRETCH MARKS REMOVAL', 
       thumb: '/assets/images/home/thumb04.webp',
-      alttag: 'Stretch Marks Removal Treatment'
+      alttag: 'Stretch Marks Removal Treatment',
+      url:'/stretch-marks-treatment-in-delhi'
     },
     { 
       id: 5, 
       title: 'ARM LIFT', 
       thumb: '/assets/images/home/thumb01.webp',
-      alttag: 'Arm Lift Treatment'
+      alttag: 'Arm Lift Treatment',
+      url:'/'
     },
     { 
       id: 6, 
       title: 'THIGH LIFT', 
       thumb: '/assets/images/home/thumb02.webp',
-      alttag: 'Thigh Lift Treatment'
+      alttag: 'Thigh Lift Treatment',
+      url:'/'
     },
     { 
       id: 7, 
       title: 'BUTTOCK LIFT', 
       thumb: '/assets/images/home/thumb03.webp',
-      alttag: 'Buttock Lift Treatment'
+      alttag: 'Buttock Lift Treatment',
+      url:'/'
     },
     { 
       id: 8, 
       title: 'STRETCH MARKS REMOVAL', 
       thumb: '/assets/images/home/thumb04.webp',
-      alttag: 'Stretch Marks Removal Treatment'
+      alttag: 'Stretch Marks Removal Treatment',
+      url:'/stretch-marks-treatment-in-delhi'
     },
   ];
 
@@ -141,7 +157,9 @@ const WellnessTreatment = () => {
                                   onClick={() => handleThumbClick(globalIndex)}>
                                   <Image src={treatment.thumb} width={300} height={200} alt={treatment.alttag} />
                                   <div className={styles.overlay}>
-                                    <h3>{treatment.title}</h3>
+                                    <Link href={treatment.url} className={styles.title}>
+                                      {treatment.title}
+                                    </Link>
                                   </div>
                                 </div>
                               );
@@ -159,7 +177,9 @@ const WellnessTreatment = () => {
                               onClick={() => handleThumbClick(globalIndex)}>
                               <Image src={treatment.thumb} width={300} height={200} alt={treatment.alttag} />
                               <div className={styles.overlay}>
-                                <h3>{treatment.title}</h3>
+                                <Link href={treatment.url} className={styles.title}>
+                                  {treatment.title}
+                                </Link>
                               </div>
                             </div>
                           );

@@ -43,7 +43,7 @@ const TechnologySection = () => {
                 <h2 className={`heading ${styles.heading}`}>EXILIS ELITE</h2>
                 <a href="#" className={styles.overlay} onClick={handleThumbClick('WMaanffs_Do', 'Exilis Elite')}>
                   <div className={styles.play}>
-                    <Image src="/assets/images/home/techplay.webp" width={103} height={103} alt="play" />
+                    <Image src="/assets/images/home/playtechs.webp" width={48} height={48} alt="play" />
                   </div>
                   <Image className={styles.deviceThumb} src="/assets/images/home/techhome.webp" width={480} height={360} alt="Exilis Elite Thumbnail" />
                 </a>
