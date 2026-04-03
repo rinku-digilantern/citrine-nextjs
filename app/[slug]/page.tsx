@@ -15,7 +15,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const typeRes = await getServiceType(slug);
-  
+
   if (!typeRes || typeRes.title !== "Success") return {};
 
   let seoData;
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function DynamicSlugPage({ params }: PageProps) {
   const { slug } = await params;
-  
+
   // Step 1: Identify type
   const typeRes = await getServiceType(slug);
   if (!typeRes || typeRes.title !== "Success") {
@@ -74,7 +74,7 @@ export default async function DynamicSlugPage({ params }: PageProps) {
         <CategoryTemplate data={data} />
       </>
     );
-  } 
+  }
 
   if (typeRes.type === "secondcategory") {
     const data = await getSecondCategoryData(slug);
@@ -107,11 +107,11 @@ export default async function DynamicSlugPage({ params }: PageProps) {
       </>
     );
   }
-  
+
   if (typeRes.type === "service") {
     const data = await getServiceInnerData(slug);
     if (!data || !data.success) return notFound();
-    
+
     // Using ServiceInnerTemplate exclusively after merging logic
     return (
       <>

@@ -85,19 +85,106 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
       {parsedSections.map((sec: any, index: number) => {
         const desc = sec.desc;
         const type = desc.type;
+        const classAdd = desc.class_add || '';
         const sectionId = desc.service_section_id || toSlug(desc.section_heading || desc.service_heading || `section-${index}`);
 
+        // Helper to extract list items (used by multiple types/classes)
+        const getListItems = () => (desc.threeparagraph_new?.contents || [])
+          .filter(Boolean)
+          .map((c: string, idx: number) => ({
+            id: idx,
+            text: c.replace(/<[^>]+>/g, '').trim()
+          }));
+
+        // Option 1: Component selection based on classAdd
+        if (classAdd.includes('firstSection')) {
+          return (
+            <div key={index} id={sectionId}>
+              <FirstSection
+                title={desc.section_heading}
+                items={getListItems()}
+                headingtag={desc.heading_tag}
+              />
+            </div>
+          );
+        }
+
+        if (classAdd.includes('secondSection')) {
+          return (
+            <div key={index} id={sectionId}>
+              <SecondSection
+                title={desc.section_heading}
+                content={desc.content_top ? [desc.content_top] : undefined}
+                image={desc.image ? `${imageBase}${desc.image}` : undefined}
+                videoUrl={desc.video_url}
+                headingtag={desc.heading_tag}
+              />
+            </div>
+          );
+        }
+
+        if (classAdd.includes('fullTextSection')) {
+          return (
+            <div key={index} id={sectionId}>
+              <ServiceDetailFirstSection
+                heading={desc.section_heading}
+                content={desc.content_top}
+                headingtag={desc.heading_tag || 'h2'}
+              />
+            </div>
+          );
+        }
+
+        if (classAdd.includes('twoParagraphSection')) {
+          return (
+            <div key={index} id={sectionId}>
+              <ServiceDetailThirdSection
+                heading={desc.section_heading}
+                section1={desc.content_top}
+                section2={desc.content_bottom}
+                headingtag={desc.heading_tag}
+              />
+            </div>
+          );
+        }
+
+        if (classAdd.includes('columnSection')) {
+          const treatments = (desc.button_multinames || []).map((name: string, i: number) => ({
+            name: name.toUpperCase(),
+            link: desc.button_multiurls?.[i] ? `/${desc.button_multiurls[i]}` : '#'
+          }));
+
+          return (
+            <div key={index} id={sectionId}>
+              <ColumnSection
+                sections={[{
+                  id: sectionId,
+                  heading: (desc.section_heading || desc.service_heading || '').toUpperCase(),
+                  description: desc.content_top || '',
+                  image: desc.right_image ? `${imageBase}${desc.right_image}` : (desc.left_image ? `${imageBase}${desc.left_image}` : ''),
+                  imageAlt: desc.section_heading || '',
+                  imagePosition: type === 'rightimageleftcontentsection' ? 'right' : 'left',
+                  tabs: treatments.length > 0 ? [{
+                    id: 'related',
+                    label: 'RELATED TREATMENTS',
+                    treatments: treatments
+                  }] : [],
+                  buttons: [],
+                  headingtag: desc.heading_tag
+                }]}
+              />
+            </div>
+          );
+        }
+
+        // Option 2: Fallback to type-based selection
         switch (type) {
           case 'quickoverview':
-            const overviewItems = desc.threeparagraph_new?.contents?.map((c: string, idx: number) => ({
-              id: idx,
-              text: c.replace(/<[^>]+>/g, '').trim()
-            })) || [];
             return (
               <div key={index} id={sectionId}>
                 <FirstSection
                   title={desc.section_heading}
-                  items={overviewItems.length > 0 ? overviewItems : undefined}
+                  items={getListItems()}
                   headingtag={desc.heading_tag}
                 />
               </div>
@@ -128,25 +215,18 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
             );
 
           case 'threeparagraphsection':
-            // If it has contents in threeparagraph_new, it's a list
-            if (desc.threeparagraph_new?.contents?.some((c: any) => c)) {
-              const listItems = desc.threeparagraph_new.contents
-                .filter(Boolean)
-                .map((c: string, idx: number) => ({
-                  id: idx,
-                  text: c.replace(/<[^>]+>/g, '').trim()
-                }));
+            const items = getListItems();
+            if (items.length > 0) {
               return (
                 <div key={index} id={sectionId}>
                   <FirstSection
                     title={desc.section_heading}
-                    items={listItems}
+                    items={items}
                     headingtag={desc.heading_tag}
                   />
                 </div>
               );
             }
-            // Fallback to a simple text section
             return (
               <div key={index} id={sectionId}>
                 <ServiceDetailFirstSection
