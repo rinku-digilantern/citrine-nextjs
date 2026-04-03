@@ -14,12 +14,15 @@ interface Testimonial {
 interface ServiceTestimonialSectionProps {
   title?: string;
   testimonials?: Testimonial[];
+  headingtag?: string;
 }
 
 const ServiceTestimonialSection: React.FC<ServiceTestimonialSectionProps> = ({ 
   title, 
-  testimonials 
+  testimonials,
+  headingtag
 }) => {
+  const HeadingTag = (headingtag || 'h2') as keyof React.JSX.IntrinsicElements;
   // Default data if not provided via props
   const defaultTestimonials: Testimonial[] = [
     {
@@ -57,7 +60,7 @@ const ServiceTestimonialSection: React.FC<ServiceTestimonialSectionProps> = ({
         className={styles.backgroundImage}/>
       
       <div className={styles.container}>
-        <h2 className={styles.mainHeading}>{sectionTitle}</h2>
+        <HeadingTag className={styles.mainHeading}>{sectionTitle}</HeadingTag>
         
         <div className={styles.testimonialsGrid}>
           {testimonialItems.map((testimonial) => (
@@ -70,7 +73,7 @@ const ServiceTestimonialSection: React.FC<ServiceTestimonialSectionProps> = ({
                 ))}
               </div>
               
-              <p className={styles.testimonialText}>{testimonial.text}</p>
+              <div className={styles.testimonialText} dangerouslySetInnerHTML={{ __html: testimonial.text }} />
               <div className={styles.disclaimer}>
                 ✱ Opinions/Results may vary from person to person.
               </div>

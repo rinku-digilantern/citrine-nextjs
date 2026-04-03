@@ -8,6 +8,7 @@ interface SecondSectionProps {
   image?: string;
   imageAlt?: string;
   videoUrl?: string;
+  headingtag?: string;
 }
 
 const SecondSection: React.FC<SecondSectionProps> = ({
@@ -15,10 +16,12 @@ const SecondSection: React.FC<SecondSectionProps> = ({
   content,
   image,
   imageAlt,
-  videoUrl
+  videoUrl,
+  headingtag
 }) => {
+  const HeadingTag = (headingtag || 'h2') as keyof React.JSX.IntrinsicElements;
   const sectionTitle = title || 'WHAT IS LASER TONING?';
-  
+
   const defaultContent = [
     'Laser toning is a dermatological procedure that uses low-energy laser technology to target melanin deposits in the skin and improve overall complexion. The laser energy works beneath the skin surface to break down excess pigment while also stimulating collagen production, which helps improve skin texture and brightness.',
     'The treatment is widely used for people dealing with uneven skin tone, dullness, melasma, and stubborn pigmentation. Because it is a non-invasive procedure with minimal downtime, laser toning has become a popular skin rejuvenation treatment. When performed by experienced dermatologists such as those at Citrine Clinic, the treatment is carefully tailored to ensure safe and natural-looking results.'
@@ -33,9 +36,9 @@ const SecondSection: React.FC<SecondSectionProps> = ({
       <div className={styles.contentWrapper}>
         {/* Left Content */}
         <div className={styles.leftContent}>
-          <h2 className={styles.mainHeading}>{sectionTitle}</h2>
+          <HeadingTag className={styles.mainHeading}>{sectionTitle}</HeadingTag>
           {paragraphs.map((paragraph, index) => (
-            <p key={index} className={styles.paragraph}>{paragraph}</p>
+            <div key={index} className={styles.paragraph} dangerouslySetInnerHTML={{ __html: paragraph }} />
           ))}
         </div>
 

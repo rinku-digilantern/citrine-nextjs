@@ -62,6 +62,10 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.imagesWrapper.singleImage {
+  grid-template-columns: 1fr;
+}
+
 .imageContainer {
   position: relative;
   width: 100%;

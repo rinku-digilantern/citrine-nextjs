@@ -9,11 +9,10 @@ interface Props {
   content?: string;
   image?: string;
   headingtag?: React.ElementType | string;
-  costRange?: string;
   classAdd?: string;
 }
 
-export default function ServiceDetailFirstSection({ heading, description, content, image, costRange, classAdd, headingtag }: Props) {
+export default function ServiceDetailFirstSection({ heading, description, content, image, classAdd, headingtag }: Props) {
   const displayContent = wrapTablesInScrollDiv(content || description || '');
   const HeadingTag = (headingtag ?? 'div') as React.ElementType;
 
@@ -24,12 +23,6 @@ export default function ServiceDetailFirstSection({ heading, description, conten
           <div className={styles.leftContent}>
             {heading && (
               <HeadingTag className={`mainHeading ${styles.mainHeading}`}>{heading}</HeadingTag>
-            )}
-
-            {costRange && (
-              <div className={styles.costBox}>
-                <em>Price Range: <b>{costRange}</b></em>
-              </div>
             )}
 
             <div

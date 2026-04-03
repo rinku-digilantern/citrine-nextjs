@@ -11,6 +11,7 @@ interface FaqItem {
 
 interface FaqSectionProps {
   faqData?: FaqItem[];
+  headingtag?: string;
 }
 
 const defaultFaqs: FaqItem[] = [
@@ -26,7 +27,8 @@ const defaultFaqs: FaqItem[] = [
   },
 ];
 
-const FaqSection: React.FC<FaqSectionProps> = ({ faqData }) => {
+const FaqSection: React.FC<FaqSectionProps> = ({ faqData, headingtag }) => {
+  const HeadingTag = (headingtag || 'h2') as keyof React.JSX.IntrinsicElements;
   const [openId, setOpenId] = useState<number | null>(1);
   const data = faqData && faqData.length > 0 ? faqData : defaultFaqs;
 
@@ -37,7 +39,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({ faqData }) => {
   return (
     <section id="faq" className={styles.faqSection}>
       <div className={styles.container}>
-        <h2 className={`mainHeading ${styles.mainHeading}`}>FREQUENTLY ASKED QUESTIONS</h2>
+        <HeadingTag className={`mainHeading ${styles.mainHeading}`}>FREQUENTLY ASKED QUESTIONS</HeadingTag>
         <div className={styles.faqList}>
           {data.map((faq) => (
             <div key={faq.id} className={`${styles.faqItem} ${openId === faq.id ? styles.active : ''}`}>

@@ -1,7 +1,8 @@
+import React from 'react';
 import { Metadata } from 'next';
-import { getServiceType, getServiceCategoryData, getServiceDetailData, getSecondCategoryData } from '@/src/lib/cms';
+import { getServiceType, getServiceCategoryData, getServiceInnerData, getSecondCategoryData } from '@/src/lib/cms';
 import CategoryTemplate from '@/src/app/components/dynamic/CategoryTemplate';
-import ServiceDetailTemplate from '@/src/app/components/dynamic/ServiceDetailTemplate';
+import ServiceInnerTemplate from '@/src/app/components/dynamic/ServiceInnerTemplate';
 import ConcernPage from '@/src/app/components/ConcernPage/ConcernPage';
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
@@ -25,22 +26,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const data = await getSecondCategoryData(slug);
     seoData = data?.seo;
   } else if (typeRes.type === "service") {
-    const data = await getServiceDetailData(slug);
-    seoData = data?.seo;
+    const data = await getServiceInnerData(slug);
+    seoData = data?.seo || (data?.data ? {
+      title_tag: data.data.title_tag,
+      description_tag: data.data.description_tag,
+      canonical_tag: data.data.canonical_tag
+    } : null);
   }
 
   if (!seoData) return {};
 
   return {
-    title: seoData.title_tag,
-    description: seoData.description_tag,
+    title: seoData.title_tag || 'Citrine Clinic',
+    description: seoData.description_tag || '',
     alternates: {
-      canonical: seoData.canonical_tag,
+      canonical: seoData.canonical_tag ? `/${seoData.canonical_tag}` : undefined,
     },
     openGraph: {
-      title: seoData.title_tag,
-      description: seoData.description_tag,
-      url: seoData.canonical_tag,
+      title: seoData.title_tag || '',
+      description: seoData.description_tag || '',
+      url: seoData.canonical_tag ? `/${seoData.canonical_tag}` : undefined,
     },
   };
 }
@@ -104,8 +109,10 @@ export default async function DynamicSlugPage({ params }: PageProps) {
   }
   
   if (typeRes.type === "service") {
-    const data = await getServiceDetailData(slug);
+    const data = await getServiceInnerData(slug);
     if (!data || !data.success) return notFound();
+    
+    // Using ServiceInnerTemplate exclusively after merging logic
     return (
       <>
         {data.seo?.faq_schema && (
@@ -114,7 +121,7 @@ export default async function DynamicSlugPage({ params }: PageProps) {
         {data.seo?.bred_schema && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.bred_schema) }} />
         )}
-        <ServiceDetailTemplate data={data} />
+        <ServiceInnerTemplate data={data} />
       </>
     );
   }

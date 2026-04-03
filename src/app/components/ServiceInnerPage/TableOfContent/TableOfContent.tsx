@@ -40,12 +40,12 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
   ];
 
   const menuSections = sections || defaultSections;
-
+  // console.log(menuSections);
   // Handle mouse drag scrolling
   const handleMouseDown = (e: React.MouseEvent) => {
     const menuList = menuListRef.current;
     if (!menuList) return;
-    
+
     setIsDragging(true);
     setHasDragged(false);
     setStartX(e.pageX - menuList.offsetLeft);
@@ -58,15 +58,15 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
     if (!isDragging) return;
     const menuList = menuListRef.current;
     if (!menuList) return;
-    
+
     e.preventDefault();
     const x = e.pageX - menuList.offsetLeft;
     const walk = (x - startX) * 2; // Multiply by 2 for faster scroll
-    
+
     if (Math.abs(walk) > 5) {
       setHasDragged(true);
     }
-    
+
     menuList.scrollLeft = scrollLeft - walk;
   };
 
@@ -115,10 +115,10 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
 
     menuList.addEventListener('wheel', handleWheel, { passive: false });
     menuList.addEventListener('scroll', updateGradients);
-    
+
     // Initial check
     updateGradients();
-    
+
     // Check on resize
     window.addEventListener('resize', updateGradients);
 
@@ -136,13 +136,13 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
 
       // Detect active section
       const scrollPosition = window.scrollY + 150;
-      
+
       for (const section of menuSections) {
         const element = document.getElementById(section.id);
         if (element) {
           const offsetTop = element.offsetTop;
           const offsetBottom = offsetTop + element.offsetHeight;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
             setActiveSection(section.id);
             break;
@@ -160,7 +160,7 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
     if (hasDragged) {
       return;
     }
-    
+
     const element = document.getElementById(sectionId);
     if (element) {
       const offset = 120; // Offset for sticky header
@@ -178,8 +178,8 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
         <div className={styles.menuWrapper}>
           {showLeftGradient && <div className={styles.gradientLeft} />}
           {showRightGradient && <div className={styles.gradientRight} />}
-          <ul 
-            ref={menuListRef} 
+          <ul
+            ref={menuListRef}
             className={styles.menuList}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}

@@ -13,9 +13,11 @@ interface VideoItem {
 
 interface ServiceVideoSectionProps {
   videos?: VideoItem[];
+  headingtag?: string;
 }
 
-const ServiceVideoSection: React.FC<ServiceVideoSectionProps> = ({ videos: propVideos }) => {
+const ServiceVideoSection: React.FC<ServiceVideoSectionProps> = ({ videos: propVideos, headingtag }) => {
+  const HeadingTag = (headingtag || 'div') as keyof React.JSX.IntrinsicElements;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<string>('');
 
@@ -47,7 +49,7 @@ const ServiceVideoSection: React.FC<ServiceVideoSectionProps> = ({ videos: propV
   return (
     <section id="videos" className={styles.videosSection}>
       <div className={styles.container}>
-        <div className={`mainHeading ${styles.mainHeading}`}>OUR VIDEOS</div>
+        <HeadingTag className={`mainHeading ${styles.mainHeading}`}>OUR VIDEOS</HeadingTag>
         
         <div className={styles.videosGrid}>
           {videos.map((video, index) => (

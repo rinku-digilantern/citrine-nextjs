@@ -32,6 +32,7 @@ interface Section {
   treatments?: Treatment[];
   buttons: Button[];
   imagePosition: 'left' | 'right';
+  headingtag?: string;
 }
 
 interface ColumnSectionProps {
@@ -339,7 +340,10 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                   />
                 </div>
                 <div className={styles.contentWrapper}>
-                  <h2 className={`${styles.mainHeading} treatmentrightheading`}>{section.heading}</h2>
+                  {(() => {
+                    const HeadingTag = (section.headingtag || 'h2') as keyof React.JSX.IntrinsicElements;
+                    return <HeadingTag className={`${styles.mainHeading} treatmentrightheading`}>{section.heading}</HeadingTag>;
+                  })()}
                   <div className={styles.description} dangerouslySetInnerHTML={{ __html: section.description }} />
                   {section.tabs && section.tabs.length > 0 && (
                     <div className={styles.treatmentSection}>
@@ -380,7 +384,10 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
             ) : (
               <>
                 <div className={styles.contentWrapper}>
-                  <h2 className={`${styles.mainHeading} treatmentleftheading`}>{section.heading}</h2>
+                  {(() => {
+                    const HeadingTag = (section.headingtag || 'h2') as keyof React.JSX.IntrinsicElements;
+                    return <HeadingTag className={`${styles.mainHeading} treatmentleftheading`}>{section.heading}</HeadingTag>;
+                  })()}
                   <div className={styles.description} dangerouslySetInnerHTML={{ __html: section.description }} />
                   {section.tabs && section.tabs.length > 0 && (
                     <div className={styles.treatmentSection}>

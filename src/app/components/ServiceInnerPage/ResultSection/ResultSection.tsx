@@ -18,13 +18,16 @@ interface ResultSectionProps {
   title?: string;
   results?: ResultItem[];
   showViewMore?: boolean;
+  headingtag?: string;
 }
 
 const ResultSection: React.FC<ResultSectionProps> = ({ 
   title, 
   results,
-  showViewMore = true 
+  showViewMore = true,
+  headingtag
 }) => {
+  const HeadingTag = (headingtag || 'h2') as keyof React.JSX.IntrinsicElements;
   // Default data if not provided via props
   const defaultResults: ResultItem[] = [
     {
@@ -62,7 +65,7 @@ const ResultSection: React.FC<ResultSectionProps> = ({
   return (
     <section id="result" className={styles.resultSection}>
       <div className={styles.container}>
-        <h2 className={styles.mainHeading}>{sectionTitle}</h2>
+        <HeadingTag className={styles.mainHeading}>{sectionTitle}</HeadingTag>
         
         <div className={styles.resultsGrid}>
           {resultItems.map((item) => (
@@ -72,25 +75,28 @@ const ResultSection: React.FC<ResultSectionProps> = ({
                 <div className={styles.ageInfo}>Age: {item.age}</div>
               </div>
               
-              <div className={styles.imagesWrapper}>
+              <div className={`${styles.imagesWrapper} ${item.images.before === item.images.after ? styles.singleImage : ''}`}>
                 <div className={styles.imageContainer}>
                   <Image
                     src={item.images.before}
                     alt={`${item.treatment} Before`}
-                    width={378}
+                    width={item.images.before === item.images.after ? 756 : 378}
                     height={465}
                     className={styles.resultImage}
                   />
                 </div>
                 
-                <div className={styles.imageContainer}>
-                  <Image
-                    src={item.images.after}
-                    alt={`${item.treatment} After`}
-                    width={378}
-                    height={465}
-                    className={styles.resultImage}/>
-                </div>
+                {item.images.before !== item.images.after && (
+                  <div className={styles.imageContainer}>
+                    <Image
+                      src={item.images.after}
+                      alt={`${item.treatment} After`}
+                      width={378}
+                      height={465}
+                      className={styles.resultImage}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           ))}

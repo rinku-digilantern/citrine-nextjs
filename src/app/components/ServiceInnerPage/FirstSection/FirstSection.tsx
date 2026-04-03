@@ -10,9 +10,11 @@ interface OverviewItem {
 interface FirstSectionProps {
   title?: string;
   items?: OverviewItem[];
+  headingtag?: string;
 }
 
-const FirstSection: React.FC<FirstSectionProps> = ({ title, items }) => {
+const FirstSection: React.FC<FirstSectionProps> = ({ title, items, headingtag }) => {
+  const HeadingTag = (headingtag || 'h2') as keyof React.JSX.IntrinsicElements;
   // Default data if not provided via props
   const defaultItems: OverviewItem[] = [
     { id: 1, text: 'Non-invasive laser procedure' },
@@ -32,7 +34,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({ title, items }) => {
   return (
     <section className={styles.firstSection} id="overview">
       <div className={styles.container}>
-        <h2 className={styles.mainHeading}>{sectionTitle}</h2>
+        <HeadingTag className={styles.mainHeading}>{sectionTitle}</HeadingTag>
         <div className={styles.overviewGrid}>
           {overviewItems.map((item) => (
             <div key={item.id} className={styles.overviewItem}>
