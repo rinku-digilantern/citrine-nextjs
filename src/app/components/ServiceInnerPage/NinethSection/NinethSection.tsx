@@ -1,72 +1,74 @@
 import React from "react";
 import styles from "./NinethSection.module.css";
+import Link from "next/link";
 
-const NinethSection: React.FC = () => {
-  const conditions = [
-    {
-      id: 1,
-      text: "Temporary redness or mild swelling after the session",
-      borderType: "top",
-    },
-    {
-      id: 2,
-      text: "Sunspots and age spots",
-      borderType: "bottom",
-    },
-    {
-      id: 3,
-      text: "Uneven skin tone and dull complexion",
-      borderType: "top",
-    },
-    {
-      id: 4,
-      text: "Post-acne pigmentation and marks",
-      borderType: "bottom",
-    },
-    {
-      id: 5,
-      text: "Freckles and superficial pigmentation",
-      borderType: "top",
-    },
-    {
-      id: 6,
-      text: "Mild skin texture irregularities",
-      borderType: "bottom",
-    },
-  ];
+interface NinethSectionProps {
+  data?: any;
+  headingtag?: string;
+}
+
+const NinethSection: React.FC<NinethSectionProps> = ({ data, headingtag = 'h2' }) => {
+  if (!data) return null;
+  const HeadingTag = (headingtag || 'h2') as any;
+
+  const conditions = (data.threeparagraph_new?.contents || []).filter(Boolean).map((text: string, idx: number) => ({
+    id: idx + 1,
+    text: text.replace(/<[^>]+>/g, "").trim(),
+    borderType: idx % 2 === 0 ? "top" : "bottom",
+  }));
 
   return (
     <section id="skincondition" className={styles.ninethSection}>
       <div className={styles.container}>
         <div className={styles.contentWrapper}>
           <div className={styles.leftContent}>
-            <h2 className={`mainHeading ${styles.mainHeading}`}>
-              SKIN CONDITIONS THAT CAN BE TREATED WITH LASER TONING
-            </h2>
-            <p className={styles.description}>
-              Laser toning is commonly used to treat a range of cosmetic skin concerns.
-            </p>
-            <p className={styles.description}>
-              Dermatologists at Citrine Clinic often combine laser toning with other skin treatments to enhance results for certain conditions.
-            </p>
+            {data.section_heading && (
+              <HeadingTag className={`mainHeading ${styles.mainHeading}`}>
+                {data.section_heading}
+              </HeadingTag>
+            )}
+            
+            {data.content_top && (
+              <div 
+                className={styles.dynamicContent}
+                dangerouslySetInnerHTML={{ __html: data.content_top }}
+              />
+            )}
+            
+            {data.content_bottom && (
+              <div 
+                className={styles.dynamicContent}
+                dangerouslySetInnerHTML={{ __html: data.content_bottom }}
+              />
+            )}
+
+            {data.button_type === 'Yes' && data.button_url && (
+              <div className={styles.buttonrow}>
+                  <Link href={`/${data.button_url}`} aria-label={data.button_name || "Book an Appointment"} className={styles.bookbtn}>
+                    {data.button_name || "Book an Appointment"}
+                  </Link>
+              </div>
+            )}
           </div>
 
-          <div className={styles.rightContent}>
-            <div className={styles.conditionsGrid}>
-              {conditions.map((condition) => (
-                <div
-                  key={condition.id}
-                  className={`${styles.conditionCard} ${
-                    condition.borderType === "top"
-                      ? styles.topBorder
-                      : styles.bottomBorder
-                  }`}
-                >
-                  <p className={styles.conditionText}>{condition.text}</p>
-                </div>
-              ))}
+          {conditions.length > 0 && (
+            <div className={styles.rightContent}>
+              <div className={styles.conditionsGrid}>
+                {conditions.map((condition: any) => (
+                  <div
+                    key={condition.id}
+                    className={`${styles.conditionCard} ${
+                      condition.borderType === "top"
+                        ? styles.topBorder
+                        : styles.bottomBorder
+                    }`}
+                  >
+                    <p className={styles.conditionText}>{condition.text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>

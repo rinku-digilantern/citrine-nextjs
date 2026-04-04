@@ -1,67 +1,67 @@
 import React from "react";
 import styles from "./FivethSection.module.css";
 
-const FivethSection: React.FC = () => {
-  const risks = [
-    {
-      id: 1,
-      text: "Temporary redness or mild swelling after the session",
-      borderType: "left",
-    },
-    {
-      id: 2,
-      text: "Slight warmth or tingling sensation in the treated area",
-      borderType: "bottom",
-    },
-    {
-      id: 3,
-      text: "Mild dryness or sensitivity for a short period",
-      borderType: "top",
-    },
-    {
-      id: 4,
-      text: "Temporary darkening of pigmented spots before fading",
-      borderType: "bottom",
-    },
-    {
-      id: 5,
-      text: "Rare risk of irritation if post-treatment care is not followed properly",
-      borderType: "top",
-    },
-  ];
+interface FivethSectionProps {
+  data?: any;
+  headingtag?: string;
+}
+
+const FivethSection: React.FC<FivethSectionProps> = ({ data, headingtag = 'h2' }) => {
+  if (!data) return null;
+  const HeadingTag = (headingtag || 'h2') as any;
+
+  const getBorderType = (idx: number) => {
+    if (idx === 0) return "left";
+    return idx % 2 === 1 ? "bottom" : "top";
+  };
+
+  const risks = (data.threeparagraph_new?.contents || []).filter(Boolean).map((text: string, idx: number) => ({
+    id: idx + 1,
+    text: text.replace(/<[^>]+>/g, "").trim(),
+    borderType: getBorderType(idx),
+  }));
 
   return (
     <section id="risk-side-effects" className={styles.fivethSection}>
       <div className={styles.container}>
-        <h2 className={`mainHeading ${styles.mainHeading}`}>
-          RISKS AND SIDE EFFECTS OF LASER TONING
-        </h2>
-        <p className={styles.description}>
-          Although laser toning is generally safe when performed by qualified dermatologists,
-          some mild side effects may occasionally occur.
-        </p>
+        {data.section_heading && (
+          <HeadingTag className={`mainHeading ${styles.mainHeading}`}>
+            {data.section_heading}
+          </HeadingTag>
+        )}
+        
+        {data.content_top && (
+          <div 
+            className={styles.description}
+            dangerouslySetInnerHTML={{ __html: data.content_top }}
+          />
+        )}
 
-        <div className={styles.risksGrid}>
-          {risks.map((risk) => (
-            <div
-              key={risk.id}
-              className={`${styles.riskCard} ${
-                risk.borderType === "left"
-                  ? styles.leftBorder
-                  : risk.borderType === "top"
-                  ? styles.topBorder
-                  : styles.bottomBorder
-              }`}
-            >
-              <p className={styles.riskText}>{risk.text}</p>
-            </div>
-          ))}
-        </div>
+        {risks.length > 0 && (
+          <div className={styles.risksGrid}>
+            {risks.map((risk: any) => (
+              <div
+                key={risk.id}
+                className={`${styles.riskCard} ${
+                  risk.borderType === "left"
+                    ? styles.leftBorder
+                    : risk.borderType === "top"
+                    ? styles.topBorder
+                    : styles.bottomBorder
+                }`}
+              >
+                <p className={styles.riskText}>{risk.text}</p>
+              </div>
+            ))}
+          </div>
+        )}
 
-        <p className={styles.footerText}>
-          These effects are usually temporary and resolve quickly when the procedure is
-          performed under professional supervision.
-        </p>
+        {data.content_bottom && (
+          <div 
+            className={styles.footerText}
+            dangerouslySetInnerHTML={{ __html: data.content_bottom }}
+          />
+        )}
       </div>
     </section>
   );

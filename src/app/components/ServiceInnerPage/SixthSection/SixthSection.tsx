@@ -3,34 +3,40 @@ import Image from "next/image";
 import Link from 'next/link';
 import styles from "./SixthSection.module.css";
 
-const SixthSection: React.FC = () => {
-  const candidatesLeft = [
-    "Individuals with uneven skin tone or dull complexion",
-    "People dealing with melasma or pigmentation patches",
-    "Those with acne marks or post-inflammatory pigmentation",
-    "Individuals looking for non-surgical skin rejuvenation",
-  ];
+interface SixthSectionProps {
+  data?: any;
+  headingtag?: string;
+}
 
-  const candidatesRight = [
-    "People who want brighter and clearer skin texture",
-    "Adults with mild to moderate sun damage",
-    "Individuals with realistic expectations from treatment",
-  ];
+const SixthSection: React.FC<SixthSectionProps> = ({ data, headingtag = 'h2' }) => {
+  if (!data) return null;
+  const HeadingTag = (headingtag || 'h2') as any;
+
+  const contents = (data.threeparagraph_new?.contents || []).filter(Boolean).map((t: string) => t.replace(/<[^>]+>/g, '').trim());
+  const half = Math.ceil(contents.length / 2);
+  const candidatesLeft = contents.slice(0, half);
+  const candidatesRight = contents.slice(half);
 
   return (
     <section id="undergo" className={styles.sixthSection}>
       <div className={styles.container}>
-        <h2 className={`mainHeading ${styles.mainHeading}`}>
-          WHO CAN UNDERGO LASER TONING
-        </h2>
-        <p className={styles.subtitle}>
-          Laser toning is suitable for many individuals looking to improve skin tone and clarity.
-        </p>
+        {data.section_heading && (
+          <HeadingTag className={`mainHeading ${styles.mainHeading}`}>
+            {data.section_heading}
+          </HeadingTag>
+        )}
+        
+        {data.content_top && (
+          <div 
+            className={styles.subtitle}
+            dangerouslySetInnerHTML={{ __html: data.content_top }}
+          />
+        )}
 
         <div className={styles.candidatesGrid}>
           <div className={styles.columnLeft}>
-            {candidatesLeft.map((candidate, index) => (
-              <div key={index} className={styles.candidateItem}>
+            {candidatesLeft.map((candidate: string, index: number) => (
+              <div key={`left-${index}`} className={styles.candidateItem}>
                 <span className={styles.arrow}>
                   <Image src="/assets/images/serviceinnerpage/arrow.webp" alt="Check Icon" width={28} height={20} />
                 </span>
@@ -40,8 +46,8 @@ const SixthSection: React.FC = () => {
           </div>
 
           <div className={styles.columnRight}>
-            {candidatesRight.map((candidate, index) => (
-              <div key={index} className={styles.candidateItem}>
+            {candidatesRight.map((candidate: string, index: number) => (
+              <div key={`right-${index}`} className={styles.candidateItem}>
                 <span className={styles.arrow}>
                   <Image src="/assets/images/serviceinnerpage/arrow.webp" alt="Check Icon" width={28} height={20} />
                 </span>
@@ -51,13 +57,20 @@ const SixthSection: React.FC = () => {
           </div>
         </div>
 
-        <p className={styles.footerText}>
-          However, a dermatologist consultation is essential to determine whether the treatment
-          is appropriate for a particular skin type.
-        </p>
-        <div className={styles.buttonrow}>
-            <Link href="/" aria-label="Book an Appointment" className={styles.bookbtn}>Book an Appointment</Link>
-        </div>
+        {data.content_bottom && (
+          <div 
+            className={styles.footerText}
+            dangerouslySetInnerHTML={{ __html: data.content_bottom }}
+          />
+        )}
+
+        {data.button_type === 'Yes' && data.button_url && (
+          <div className={styles.buttonrow}>
+              <Link href={`/${data.button_url}`} aria-label={data.button_name || "Book an Appointment"} className={styles.bookbtn}>
+                {data.button_name || "Book an Appointment"}
+              </Link>
+          </div>
+        )}
       </div>
     </section>
   );

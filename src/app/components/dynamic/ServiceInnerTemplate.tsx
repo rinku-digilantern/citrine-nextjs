@@ -10,11 +10,21 @@ import ResultSection from '@/src/app/components/ServiceInnerPage/ResultSection/R
 import ServiceVideoSection from '@/src/app/components/ServiceInnerPage/ServiceVideoSection/ServiceVideoSection';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import ColumnSection from '@/src/app/components/ServiceCategoryPage/ColumnSection/ColumnSection';
-import ServiceDetailFirstSection from '@/src/app/components/ServiceDetailPage/ServiceDetailFirstSection/ServiceDetailFirstSection';
-import ServiceDetailThirdSection from '@/src/app/components/ServiceDetailPage/ServiceDetailThirdSection/ServiceDetailThirdSection';
+
 import ServiceTechnologySection from '@/src/app/components/ServiceInnerPage/ServiceTechnologySection/ServiceTechnologySection';
 import ServiceTestimonialSection from '@/src/app/components/ServiceInnerPage/ServiceTestimonialSection/ServiceTestimonialSection';
 
+
+import ThirdSection from '@/src/app/components/ServiceInnerPage/ThirdSection/ThirdSection';
+import FourthSection from '@/src/app/components/ServiceInnerPage/FourthSection/FourthSection';
+import FivethSection from '@/src/app/components/ServiceInnerPage/FivethSection/FivethSection';
+import SixthSection from '@/src/app/components/ServiceInnerPage/SixthSection/SixthSection';
+import SeventhSection from '@/src/app/components/ServiceInnerPage/SeventhSection/SeventhSection';
+import EightSection from '@/src/app/components/ServiceInnerPage/EightSection/EightSection';
+import NinethSection from '@/src/app/components/ServiceInnerPage/NinethSection/NinethSection';
+import EleventhSection from '@/src/app/components/ServiceInnerPage/EleventhSection/EleventhSection';
+import TwelveSection from '@/src/app/components/ServiceInnerPage/TwelveSection/TwelveSection';
+import ThirteenSection from '@/src/app/components/ServiceInnerPage/ThirteenSection/ThirteenSection';
 
 interface ServiceInnerTemplateProps {
   data: any;
@@ -63,8 +73,8 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
   if (service.faq) tocSections.push({ id: 'faq', title: 'FAQs' });
   if (data.result && data.result.length > 0) tocSections.push({ id: 'result', title: 'RESULTS' });
   if (data.video && data.video.length > 0) tocSections.push({ id: 'videos', title: 'VIDEOS' });
-  if (service.technology && service.technology.length > 0) tocSections.push({ id: 'technology', title: 'TECHNOLOGY' });
-  if (service.testimonial && service.testimonial.length > 0) tocSections.push({ id: 'testimonial', title: 'TESTIMONIALS' });
+  if (data.technology && data.technology.length > 0) tocSections.push({ id: 'technology', title: 'TECHNOLOGY' });
+  if (data.testimonial && data.testimonial.length > 0) tocSections.push({ id: 'testimonial', title: 'TESTIMONIALS' });
 
 
   const imageBase = 'http://localhost:8000/backend/service/section/';
@@ -88,6 +98,9 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
         const classAdd = desc.class_add || '';
         const sectionId = desc.service_section_id || toSlug(desc.section_heading || desc.service_heading || `section-${index}`);
 
+        // Count previous occurrences of this type to distinguish repeated types
+        const typeIndex = parsedSections.slice(0, index).filter((s: any) => s.desc?.type === type).length;
+
         // Helper to extract list items (used by multiple types/classes)
         const getListItems = () => (desc.threeparagraph_new?.contents || [])
           .filter(Boolean)
@@ -96,156 +109,101 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
             text: c.replace(/<[^>]+>/g, '').trim()
           }));
 
-        // Option 1: Component selection based on classAdd
-        if (classAdd.includes('firstSection')) {
+        if (classAdd.includes('eleventhSection')) {
           return (
             <div key={index} id={sectionId}>
-              <FirstSection
-                title={desc.section_heading}
-                items={getListItems()}
-                headingtag={desc.heading_tag}
-              />
+              <EleventhSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
             </div>
           );
         }
 
-        if (classAdd.includes('secondSection')) {
-          return (
-            <div key={index} id={sectionId}>
-              <SecondSection
-                title={desc.section_heading}
-                content={desc.content_top ? [desc.content_top] : undefined}
-                image={desc.image ? `${imageBase}${desc.image}` : undefined}
-                videoUrl={desc.video_url}
-                headingtag={desc.heading_tag}
-              />
-            </div>
-          );
-        }
-
-        if (classAdd.includes('ThirteenSection')) {
-          return (
-            <div key={index} id={sectionId}>
-              <ServiceDetailFirstSection
-                heading={desc.section_heading}
-                content={desc.content_top}
-                headingtag={desc.heading_tag || 'h2'}
-              />
-            </div>
-          );
-        }
-
-        if (classAdd.includes('twoParagraphSection')) {
-          return (
-            <div key={index} id={sectionId}>
-              <ServiceDetailThirdSection
-                heading={desc.section_heading}
-                section1={desc.content_top}
-                section2={desc.content_bottom}
-                headingtag={desc.heading_tag}
-              />
-            </div>
-          );
-        }
-
-        if (classAdd.includes('columnSection')) {
-          const treatments = (desc.button_multinames || []).map((name: string, i: number) => ({
-            name: name.toUpperCase(),
-            link: desc.button_multiurls?.[i] ? `/${desc.button_multiurls[i]}` : '#'
-          }));
-
-          return (
-            <div key={index} id={sectionId}>
-              <ColumnSection
-                sections={[{
-                  id: sectionId,
-                  heading: (desc.section_heading || desc.service_heading || '').toUpperCase(),
-                  description: desc.content_top || '',
-                  image: desc.right_image ? `${imageBase}${desc.right_image}` : (desc.left_image ? `${imageBase}${desc.left_image}` : ''),
-                  imageAlt: desc.section_heading || '',
-                  imagePosition: type === 'rightimageleftcontentsection' ? 'right' : 'left',
-                  tabs: treatments.length > 0 ? [{
-                    id: 'related',
-                    label: 'RELATED TREATMENTS',
-                    treatments: treatments
-                  }] : [],
-                  buttons: [],
-                  headingtag: desc.heading_tag
-                }]}
-              />
-            </div>
-          );
-        }
-
-        // Option 2: Fallback to type-based selection
         switch (type) {
           case 'quickoverview':
-            return (
-              <div key={index} id={sectionId}>
-                <FirstSection
-                  title={desc.section_heading}
-                  items={getListItems()}
-                  headingtag={desc.heading_tag}
-                />
-              </div>
-            );
+            if (typeIndex === 0 || classAdd.includes('firstSection')) {
+              return (
+                <div key={index} id={sectionId}>
+                  <FirstSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                </div>
+              );
+            } else {
+              return (
+                <div key={index} id={sectionId}>
+                  <SixthSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                </div>
+              );
+            }
 
           case 'videosection':
-            return (
-              <div key={index} id={sectionId}>
-                <SecondSection
-                  title={desc.section_heading}
-                  content={desc.content_top ? [desc.content_top] : undefined}
-                  image={desc.image ? `${imageBase}${desc.image}` : undefined}
-                  videoUrl={desc.video_url}
-                  headingtag={desc.heading_tag}
-                />
-              </div>
-            );
+            if (classAdd.includes('secondSection') || type === 'videosection') {
+              return (
+                <div key={index} id={sectionId}>
+                  <SecondSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                </div>
+              );
+            }
+            break;
 
           case 'fulltext':
             return (
               <div key={index} id={sectionId}>
-                <ServiceDetailFirstSection
-                  heading={desc.section_heading}
-                  content={desc.content_top}
-                  headingtag={desc.heading_tag || 'h2'}
-                />
+                <ThirdSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
               </div>
             );
 
-          case 'threeparagraphsection':
-            const items = getListItems();
-            if (items.length > 0) {
+          case 'threeparagraphnoheading':
+            if (typeIndex === 0) {
               return (
                 <div key={index} id={sectionId}>
-                  <FirstSection
-                    title={desc.section_heading}
-                    items={items}
-                    headingtag={desc.heading_tag}
-                  />
+                  <ThirteenSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                </div>
+              );
+            } else {
+              return (
+                <div key={index} id={sectionId}>
+                  <FourthSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
                 </div>
               );
             }
+
+          case 'threeparagraphdifferentlayout':
             return (
               <div key={index} id={sectionId}>
-                <ServiceDetailFirstSection
-                  heading={desc.section_heading}
-                  content={desc.content_top}
-                  headingtag={desc.heading_tag}
-                />
+                <FivethSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+              </div>
+            );
+
+          case 'tabparagraphsection':
+            return (
+              <div key={index} id={sectionId}>
+                <SeventhSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+              </div>
+            );
+
+          case 'fulltextdifferentlayout':
+            return (
+              <div key={index} id={sectionId}>
+                <EightSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+              </div>
+            );
+
+          case 'threeparagraphleftheading':
+            return (
+              <div key={index} id={sectionId}>
+                <NinethSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
               </div>
             );
 
           case 'twoparagraphsection':
             return (
               <div key={index} id={sectionId}>
-                <ServiceDetailThirdSection
-                  heading={desc.section_heading}
-                  section1={desc.content_top}
-                  section2={desc.content_bottom}
-                  headingtag={desc.heading_tag}
-                />
+                <EleventhSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+              </div>
+            );
+
+          case 'threeparagraphsection':
+            return (
+              <div key={index} id={sectionId}>
+                <TwelveSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
               </div>
             );
 
@@ -307,17 +265,17 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
         </div>
       )}
 
-      {service.technology && service.technology.length > 0 && (
+      {data.technology && data.technology.length > 0 && (
         <div id="technology">
-          <ServiceTechnologySection technology={service.technology} headingtag={service.heading_tag} />
+          <ServiceTechnologySection technology={data.technology} headingtag={service.heading_tag} />
         </div>
       )}
 
-      {service.testimonial && service.testimonial.length > 0 && (
+      {data.testimonial && data.testimonial.length > 0 && (
         <div id="testimonial">
           <ServiceTestimonialSection
             title="DON'T JUST TAKE OUR WORD FOR IT"
-            testimonials={service.testimonial.map((t: any) => ({
+            testimonials={data.testimonial.map((t: any) => ({
               id: t.id,
               title: "PATIENT TESTIMONIAL",
               text: t.description,

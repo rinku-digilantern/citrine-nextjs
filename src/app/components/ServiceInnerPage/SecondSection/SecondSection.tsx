@@ -1,65 +1,108 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import styles from './SecondSection.module.css';
+import Modal from '../../common/Modal/Modal';
 
 interface SecondSectionProps {
-  title?: string;
-  content?: string[];
-  image?: string;
-  imageAlt?: string;
-  videoUrl?: string;
+  data?: any;
   headingtag?: string;
 }
 
-const SecondSection: React.FC<SecondSectionProps> = ({
-  title,
-  content,
-  image,
-  imageAlt,
-  videoUrl,
-  headingtag
-}) => {
-  const HeadingTag = (headingtag || 'h2') as keyof React.JSX.IntrinsicElements;
-  const sectionTitle = title || 'WHAT IS LASER TONING?';
+const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }) => {
+  const [modalOpen, setModalOpen] = useState(false);
 
-  const defaultContent = [
-    'Laser toning is a dermatological procedure that uses low-energy laser technology to target melanin deposits in the skin and improve overall complexion. The laser energy works beneath the skin surface to break down excess pigment while also stimulating collagen production, which helps improve skin texture and brightness.',
-    'The treatment is widely used for people dealing with uneven skin tone, dullness, melasma, and stubborn pigmentation. Because it is a non-invasive procedure with minimal downtime, laser toning has become a popular skin rejuvenation treatment. When performed by experienced dermatologists such as those at Citrine Clinic, the treatment is carefully tailored to ensure safe and natural-looking results.'
-  ];
+  if (!data) return null;
+  const HeadingTag = (headingtag || 'h2') as any;
 
-  const paragraphs = content || defaultContent;
-  const treatmentImage = image || '/assets/images/serviceinnerpage/lasertonings.webp';
-  const altText = imageAlt || 'Laser Treatment Process';
+  const imageBase = 'http://localhost:8000/backend/service/section/';
+  const treatmentImage = data.image ? `${imageBase}${data.image}` : '/assets/images/serviceinnerpage/lasertonings.webp';
+
+  // Extract YouTube video ID from embed URL
+  const getVideoId = (url: string | null) => {
+    if (!url) return null;
+    if (url.includes('youtube.com/embed/')) {
+      return url.split('youtube.com/embed/')[1].split('?')[0];
+    }
+    if (url.includes('youtu.be/')) {
+      return url.split('youtu.be/')[1].split('?')[0];
+    }
+    return null;
+  };
+
+  const videoId = getVideoId(data.video_url);
 
   return (
     <section className={styles.secondSection} id="what-is">
       <div className={styles.contentWrapper}>
         {/* Left Content */}
         <div className={styles.leftContent}>
-          <HeadingTag className={styles.mainHeading}>{sectionTitle}</HeadingTag>
-          {paragraphs.map((paragraph, index) => (
-            <div key={index} className={styles.paragraph} dangerouslySetInnerHTML={{ __html: paragraph }} />
-          ))}
+          {data.section_heading && (
+            <HeadingTag className={styles.mainHeading}>
+              {data.section_heading}
+            </HeadingTag>
+          )}
+
+          {data.content_top && (
+            <div
+              className={styles.paragraph}
+              dangerouslySetInnerHTML={{ __html: data.content_top }}
+            />
+          )}
+
+          {data.content_bottom && (
+            <div
+              className={styles.paragraph}
+              dangerouslySetInnerHTML={{ __html: data.content_bottom }}
+            />
+          )}
         </div>
 
-        {/* Right Image */}
+        {/* Right Image with Play Button */}
         <div className={styles.rightContent}>
           <div className={styles.imageWrapper}>
             <Image
               src={treatmentImage}
-              alt={altText}
+              alt={data.alttag || data.section_heading || 'Service Video Thumbnail'}
               width={600}
               height={400}
               className={styles.treatmentImage}
             />
-            <div className={styles.playButton}>
-              <div className={styles.playIcon}>▶</div>
-            </div>
+            {videoId && (
+              <div
+                className={styles.playButton}
+                onClick={() => setModalOpen(true)}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className={styles.playIcon}>▶</div>
+              </div>
+            )}
           </div>
         </div>
       </div>
+
+      {/* Video Popup Modal */}
+      <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title={data.section_heading || ''}
+      >
+        {videoId && (
+          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+              title={data.section_heading || 'Service Video'}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', borderRadius: '8px' }}
+            />
+          </div>
+        )}
+      </Modal>
     </section>
   );
 };
 
-export default SecondSection;
+export default SecondSection;

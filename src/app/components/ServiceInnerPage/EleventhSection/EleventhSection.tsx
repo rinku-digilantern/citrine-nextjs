@@ -1,53 +1,32 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './EleventhSection.module.css';
-
-interface CareItem {
-  text: string;
-}
+import Link from 'next/link';
 
 interface EleventhSectionProps {
-  title?: string;
-  subtitle?: string;
-  careManagement?: CareItem[];
-  treatmentOptions?: CareItem[];
-  footerNote?: string;
+  data?: any;
+  headingtag?: string;
 }
 
-const EleventhSection: React.FC<EleventhSectionProps> = ({
-  title,
-  subtitle,
-  careManagement,
-  treatmentOptions,
-  footerNote
-}) => {
-  // Default data
-  const defaultCareManagement: CareItem[] = [
-    { text: 'Regular use of broad-spectrum sunscreen with high SPF' },
-    { text: 'Gentle skincare routine to avoid irritation or inflammation' },
-    { text: 'Using ingredients like vitamin C, niacinamide, kojic acid, or arbutin' },
-    { text: 'Avoiding excessive sun exposure and tanning' },
-    { text: 'Following daily skin care and nutrition for healthy skin' }
-  ];
-
-  const defaultTreatmentOptions: CareItem[] = [
-    { text: 'Chemical peels to exfoliate pigmented skin layers' },
-    { text: 'Medical facials designed to improve skin tone' },
-    { text: 'Prescription topical treatments that regulate melanin production' },
-    { text: 'Advanced dermatological procedures recommended by specialists' }
-  ];
-
-  const sectionTitle = title || 'CARE AND TREATMENT';
-  const sectionSubtitle = subtitle || 'Managing pigmentation usually requires a combination of skincare practices and medical procedures depending on skin type and severity.';
-  const careItems = careManagement || defaultCareManagement;
-  const treatmentItems = treatmentOptions || defaultTreatmentOptions;
-  const footer = footerNote || 'At Citrine Clinic in Gurgaon, dermatologists analyze the type and depth of pigmentation before recommending personalized treatment.';
+const EleventhSection: React.FC<EleventhSectionProps> = ({ data, headingtag = 'h2' }) => {
+  if (!data) return null;
+  const HeadingTag = (headingtag || 'h2') as any;
 
   return (
     <section className={styles.eleventhSection}>
       <div className={styles.container}>
-        <h2 className={styles.mainHeading}>{sectionTitle}</h2>
-        <p className={styles.subtitle}>{sectionSubtitle}</p>
+        {data.section_heading && (
+          <HeadingTag className={styles.mainHeading}>
+            {data.section_heading}
+          </HeadingTag>
+        )}
+        
+        {data.content_top && (
+          <div 
+            className={styles.subtitle}
+            dangerouslySetInnerHTML={{ __html: data.content_top }}
+          />
+        )}
 
         <div className={styles.contentGrid}>
           {/* Left Column - Care Management */}
@@ -56,16 +35,16 @@ const EleventhSection: React.FC<EleventhSectionProps> = ({
               <div className={styles.iconWrapper}>
                 <Image src="/assets/images/serviceinnerpage/icon01.webp" alt="Care Management Icon" width={64} height={64} />
               </div>
-              <h3 className={styles.columnTitle}>CARE MANAGEMENT</h3>
+              <h3 className={styles.columnTitle}>
+                {data.left_heading || 'CARE MANAGEMENT'}
+              </h3>
             </div>
-            <ul className={styles.itemList}>
-              {careItems.map((item, index) => (
-                <li key={index} className={styles.item}>
-                  <span className={styles.bullet}>•</span>
-                  <span className={styles.itemText}>{item.text}</span>
-                </li>
-              ))}
-            </ul>
+            {data.left_content && (
+              <div 
+                className={styles.itemListContent}
+                dangerouslySetInnerHTML={{ __html: data.left_content }}
+              />
+            )}
           </div>
 
           {/* Right Column - Treatment Options */}
@@ -74,28 +53,33 @@ const EleventhSection: React.FC<EleventhSectionProps> = ({
               <div className={styles.iconWrapper}>
                 <Image src="/assets/images/serviceinnerpage/icon02.webp" alt="Treatment Options Icon" width={64} height={64} />
               </div>
-              <h3 className={styles.columnTitle}>TREATMENT OPTIONS</h3>
+              <h3 className={styles.columnTitle}>
+                {data.right_heading || 'TREATMENT OPTIONS'}
+              </h3>
             </div>
-            <ul className={styles.itemList}>
-              {treatmentItems.map((item, index) => (
-                <li key={index} className={styles.item}>
-                  <span className={styles.bullet}>•</span>
-                  <span className={styles.itemText}>
-                    {index === 0 && item.text.includes('Chemical peels') ? (
-                      <>
-                        <span className={styles.linkText}>Chemical peels</span> to exfoliate pigmented skin layers
-                      </>
-                    ) : (
-                      item.text
-                    )}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            {data.right_content && (
+              <div 
+                className={styles.itemListContent}
+                dangerouslySetInnerHTML={{ __html: data.right_content }}
+              />
+            )}
           </div>
         </div>
 
-        <p className={styles.footerNote}>{footer}</p>
+        {data.content_bottom && (
+          <div 
+            className={styles.footerNote}
+            dangerouslySetInnerHTML={{ __html: data.content_bottom }}
+          />
+        )}
+
+        {data.button_type === 'Yes' && data.button_url && (
+          <div className={styles.buttonrow}>
+            <Link href={`/${data.button_url}`} aria-label={data.button_name || "Book an Appointment"} className={styles.bookbtn}>
+              {data.button_name || "Book an Appointment"}
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

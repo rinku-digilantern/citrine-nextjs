@@ -1,83 +1,66 @@
 import React from 'react';
 import styles from './TwelveSection.module.css';
-
-interface ConsultCard {
-  id: number;
-  text: string;
-  borderType: 'top' | 'bottom';
-}
+import Link from 'next/link';
 
 interface TwelveSectionProps {
-  title?: string;
-  subtitle?: string;
-  subtitles?: string;
-  cards?: ConsultCard[];
+  data?: any;
+  headingtag?: string;
 }
 
-const TwelveSection: React.FC<TwelveSectionProps> = ({
-  title,
-  subtitle,
-  subtitles,
-  cards
-}) => {
-  // Default data
-  const defaultCards: ConsultCard[] = [
-    { 
-      id: 1, 
-      text: 'Pigmented patches are spreading or becoming darker',
-      borderType: 'top'
-    },
-    { 
-      id: 2, 
-      text: 'Over-the-counter skincare products show little or no improvement',
-      borderType: 'bottom'
-    },
-    { 
-      id: 3, 
-      text: 'Pigmentation appears suddenly without a clear cause',
-      borderType: 'top'
-    },
-    { 
-      id: 4, 
-      text: 'Dark spots remain for several months after acne heals',
-      borderType: 'bottom'
-    },
-    { 
-      id: 5, 
-      text: 'Skin discoloration affects confidence or daily appearance',
-      borderType: 'top'
-    },
-    { 
-      id: 6, 
-      text: 'Pigmented patches are accompanied by itching or irritation',
-      borderType: 'bottom'
-    }
-  ];
+const TwelveSection: React.FC<TwelveSectionProps> = ({ data, headingtag = 'h2' }) => {
+  if (!data) return null;
+  const HeadingTag = (headingtag || 'h2') as any;
 
-  const sectionTitle = title || 'WHEN TO CONSULT<br/> A DOCTOR FOR PIGMENTATION TREATMENT';
-  const sectionSubtitle = subtitle || 'While mild pigmentation can sometimes fade on its own, certain signs indicate that professional care may be needed.';
-    const sectionSubtitles = subtitles || 'In such cases, consulting a dermatologist at Citrine Clinic can help identify the exact cause and recommend the most suitable pigmentation treatment in Gurgaon.';
-  const consultCards = cards || defaultCards;
+  const risks = (data.threeparagraph_new?.headings || []).filter(Boolean).map((heading: string, idx: number) => ({
+    id: idx + 1,
+    title: heading,
+    text: data.threeparagraph_new?.contents?.[idx]?.replace(/<[^>]+>/g, '').trim() || '',
+    borderType: idx === 0 ? "left" : (idx % 2 === 1 ? "bottom" : "top"),
+    url: data.threeparagraph_new?.urls?.[idx],
+    url_name: data.threeparagraph_new?.url_names?.[idx] || 'know more'
+  }));
 
   return (
     <section className={styles.twelveSection}>
       <div className={styles.container}>
-        <h2 className={styles.mainHeading} dangerouslySetInnerHTML={{ __html: sectionTitle }}></h2>
-        <p className={styles.subtitle}>{sectionSubtitle}</p>
-        <p className={styles.subtitle}>{sectionSubtitle}</p>
+        {data.section_heading && (
+          <HeadingTag className={styles.mainHeading} dangerouslySetInnerHTML={{ __html: data.section_heading }}></HeadingTag>
+        )}
+        
+        {data.content_top && (
+          <div 
+            className={styles.subtitle}
+            dangerouslySetInnerHTML={{ __html: data.content_top }}
+          />
+        )}
 
-        <div className={styles.cardsGrid}>
-          {consultCards.map((card) => (
-            <div 
-              key={card.id} 
-              className={`${styles.consultCard} ${
-                card.borderType === 'top' ? styles.topBorder : styles.bottomBorder
-              }`}
-            >
-              <p className={styles.cardText}>{card.text}</p>
-            </div>
-          ))}
-        </div>
+        {risks.length > 0 && (
+          <div className={styles.cardsGrid}>
+            {risks.map((risk: any) => (
+              <div 
+                key={risk.id} 
+                className={`${styles.consultCard} ${
+                  risk.borderType === 'left' ? styles.leftBorder : risk.borderType === 'top' ? styles.topBorder : styles.bottomBorder
+                }`}
+              >
+                <div className={styles.riskTitle}>{risk.title}</div>
+                <p className={styles.cardText}>{risk.text}</p>
+                {risk.url && (
+                  <Link href={`/${risk.url}`} className={styles.knowmore}>
+                    {risk.url_name}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+        
+        {data.content_bottom && (
+          <div 
+            className={styles.subtitle}
+            dangerouslySetInnerHTML={{ __html: data.content_bottom }}
+          />
+        )}
       </div>
     </section>
   );
