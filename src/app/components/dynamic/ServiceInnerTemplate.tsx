@@ -123,7 +123,7 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
           );
         }
 
-        if (classAdd.includes('fullTextSection')) {
+        if (classAdd.includes('ThirteenSection')) {
           return (
             <div key={index} id={sectionId}>
               <ServiceDetailFirstSection
