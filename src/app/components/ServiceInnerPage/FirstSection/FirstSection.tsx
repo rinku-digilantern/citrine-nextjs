@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import styles from './FirstSection.module.css';
+import { stripHtml } from '@/src/app/utils/htmlUtils';
 
 interface FirstSectionProps {
   data?: any;
@@ -13,7 +14,7 @@ const FirstSection: React.FC<FirstSectionProps> = ({ data, headingtag = 'h2' }) 
 
   const overviewItems = (data.threeparagraph_new?.contents || []).filter(Boolean).map((t: string, idx: number) => ({
     id: idx + 1,
-    text: t.replace(/<[^>]+>/g, '').trim()
+    text: stripHtml(t)
   }));
 
   return (

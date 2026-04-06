@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './TwelveSection.module.css';
 import Link from 'next/link';
+import { stripHtml } from '@/src/app/utils/htmlUtils';
 
 interface TwelveSectionProps {
   data?: any;
@@ -14,7 +15,7 @@ const TwelveSection: React.FC<TwelveSectionProps> = ({ data, headingtag = 'h2' }
   const risks = (data.threeparagraph_new?.headings || []).filter(Boolean).map((heading: string, idx: number) => ({
     id: idx + 1,
     title: heading,
-    text: data.threeparagraph_new?.contents?.[idx]?.replace(/<[^>]+>/g, '').trim() || '',
+    text: stripHtml(data.threeparagraph_new?.contents?.[idx] || ''),
     borderType: idx === 0 ? "left" : (idx % 2 === 1 ? "bottom" : "top"),
     url: data.threeparagraph_new?.urls?.[idx],
     url_name: data.threeparagraph_new?.url_names?.[idx] || 'know more'

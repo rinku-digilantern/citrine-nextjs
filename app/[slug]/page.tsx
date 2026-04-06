@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import { getServiceType, getServiceCategoryData, getServiceInnerData, getSecondCategoryData } from '@/src/lib/cms';
-import CategoryTemplate from '@/src/app/components/dynamic/CategoryTemplate';
+import ServiceCategoryPage from '@/src/app/components/ServiceCategoryPage/ServiceCategoryPage';
 import ServiceInnerTemplate from '@/src/app/components/dynamic/ServiceInnerTemplate';
 import ConcernPage from '@/src/app/components/ConcernPage/ConcernPage';
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
@@ -71,7 +71,7 @@ export default async function DynamicSlugPage({ params }: PageProps) {
         {data.seo?.bred_schema && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.bred_schema) }} />
         )}
-        <CategoryTemplate data={data} />
+        <ServiceCategoryPage data={data} />
       </>
     );
   }

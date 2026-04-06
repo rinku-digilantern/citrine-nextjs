@@ -5,6 +5,7 @@ import EmblaCarousel from "../../common/EmblaCarousel/EmblaCarousel";
 import Autoplay from "embla-carousel-autoplay";
 import styles from "./SeventhSection.module.css";
 import Modal from "../../common/Modal/Modal";
+import { stripHtml } from '@/src/app/utils/htmlUtils';
 
 interface SeventhSectionProps {
   data?: any;
@@ -21,7 +22,7 @@ const SeventhSection: React.FC<SeventhSectionProps> = ({ data, headingtag = 'h2'
     id: idx + 1,
     stepNumber: `0${idx + 1}`.slice(-2),
     title: heading,
-    description: data.tabparagraph_new?.contents?.[idx]?.replace(/<[^>]+>/g, '').trim() || '',
+    description: stripHtml(data.tabparagraph_new?.contents?.[idx] || ''),
   }));
 
   const autoplayOptions = {

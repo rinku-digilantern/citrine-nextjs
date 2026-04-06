@@ -127,7 +127,62 @@
   margin-right: auto;
 }
 
-/* Responsive styles */
+/* Styles for dangerouslySetInnerHTML rendered ul/li lists inside columns */
+.itemListContent {
+  padding: 10px 30px;
+  margin-top: 1rem;
+}
+
+.itemListContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.itemListContent ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  font-family: var(--font-poppins), sans-serif;
+}
+
+.itemListContent ul li::before {
+  content: "•";
+  color: var(--default-color);
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+  line-height: 1.6;
+}
+
+.buttonrow {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.bookbtn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--gradient-bg);
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: var(--font-montserrat), sans-serif;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+
+.bookbtn:hover {
+  opacity: 0.85;
+}
+
+
 @media (max-width: 992px) {
   .contentGrid {
     grid-template-columns: 1fr;

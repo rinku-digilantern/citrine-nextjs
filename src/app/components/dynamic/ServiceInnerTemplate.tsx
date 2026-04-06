@@ -3,6 +3,7 @@
 import React from 'react';
 import TopSection from '@/src/app/components/ServiceInnerPage/TopSection/TopSection';
 import TableOfContent from '@/src/app/components/ServiceInnerPage/TableOfContent/TableOfContent';
+import { extractCity, replaceCity } from '@/src/app/utils/htmlUtils';
 import FirstSection from '@/src/app/components/ServiceInnerPage/FirstSection/FirstSection';
 import SecondSection from '@/src/app/components/ServiceInnerPage/SecondSection/SecondSection';
 import FaqSection from '@/src/app/components/ServiceInnerPage/FaqSection/FaqSection';
@@ -53,14 +54,38 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
   const service = data.data || {};
   const sectionList = service.section || [];
 
-  const parsedSections = sectionList.map((sec: any) => {
-    try {
-      return { ...sec, desc: JSON.parse(sec.section_desc) };
-    } catch (e) {
-      console.error("Failed to parse section_desc", e);
-      return { ...sec, desc: {} };
+  const parsedSections = sectionList
+    .map((sec: any) => {
+      try {
+        return { ...sec, desc: JSON.parse(sec.section_desc) };
+      } catch (e) {
+        console.error("Failed to parse section_desc", e);
+        return { ...sec, desc: {} };
+      }
+    })
+    .sort((a: any, b: any) => {
+      const orderA = a.desc?.secorderby != null ? parseInt(a.desc.secorderby) : 9999;
+      const orderB = b.desc?.secorderby != null ? parseInt(b.desc.secorderby) : 9999;
+      return orderA - orderB;
+    });
+
+  // Extract city name from name_desc (e.g. "Pigmentation Treatment in Gurgaon" → "Gurgaon")
+  const cityName = extractCity(service.name_desc) || 'Delhi';
+
+  // Helper: apply city replacement to a desc object's string fields
+  const applyCity = (desc: any): any => {
+    const fields = ['section_heading','service_heading','content_top','content_middle','content_bottom','left_content','right_content'];
+    const updated = { ...desc };
+    fields.forEach(f => { if (updated[f]) updated[f] = replaceCity(updated[f], cityName); });
+    if (updated.threeparagraph_new?.contents) {
+      updated.threeparagraph_new = {
+        ...updated.threeparagraph_new,
+        contents: updated.threeparagraph_new.contents.map((c: string | null) => c ? replaceCity(c, cityName) : c),
+        headings: updated.threeparagraph_new.headings?.map((h: string | null) => h ? replaceCity(h, cityName) : h)
+      };
     }
-  });
+    return updated;
+  };
 
   // Build Table of Contents sections
   const tocSections = parsedSections
@@ -82,18 +107,18 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
   return (
     <>
       <TopSection data={{
-        name: service.service_name,
-        bannerTitle: service.service_name,
+        name: replaceCity(service.service_name, cityName),
+        bannerTitle: replaceCity(service.service_name, cityName),
         image: service.service_banner_image ? `http://localhost:8000/backend/service/banner/${service.service_banner_image}` : '',
         rightImage: service.service_banner_image ? `http://localhost:8000/backend/service/banner/${service.service_banner_image}` : (service.service_image ? `http://localhost:8000/backend/service/image/${service.service_image}` : ''),
-        description: service.description2 || '',
+        description: replaceCity(service.description2 || '', cityName),
         headingtag: service.heading_tag
       }} />
 
       <TableOfContent sections={tocSections} />
 
       {parsedSections.map((sec: any, index: number) => {
-        const desc = sec.desc;
+        const desc = applyCity(sec.desc);
         const type = desc.type;
         const classAdd = desc.class_add || '';
         const sectionId = desc.service_section_id || toSlug(desc.section_heading || desc.service_heading || `section-${index}`);
@@ -209,10 +234,49 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
 
           case 'rightimageleftcontentsection':
           case 'leftimageleftcontentsection':
-            const treatments = (desc.button_multinames || []).map((name: string, i: number) => ({
-              name: name.toUpperCase(),
-              link: desc.button_multiurls?.[i] ? `/${desc.button_multiurls[i]}` : '#'
-            }));
+            // Parse tabs (multi_heading_section)
+            let finalTabs: any[] = [];
+            if (desc.multi_heading_section && desc.multi_heading_section.headings) {
+              const multi = desc.multi_heading_section;
+              Object.keys(multi.headings).forEach(key => {
+                const label = multi.headings[key];
+                const subHeadings = multi.sub_headings?.[key] || [];
+                const subUrls = multi.sub_urls?.[key] || [];
+                const t = subHeadings.map((name: string, i: number) => ({
+                  name: (name || '').toUpperCase(),
+                  link: subUrls[i] ? `/${subUrls[i]}` : '#'
+                })).filter((item: any) => item.name);
+
+                if (t.length > 0) {
+                  finalTabs.push({
+                    id: key,
+                    label: (label || '').toUpperCase(),
+                    treatments: t
+                  });
+                }
+              });
+            } else {
+              // Fallback to button_multinames
+              const treatments = (desc.button_multinames || []).map((name: string, i: number) => ({
+                name: (name || '').toUpperCase(),
+                link: desc.button_multiurls?.[i] ? `/${desc.button_multiurls[i]}` : '#'
+              })).filter((t: any) => t.name);
+
+              if (treatments.length > 0) {
+                finalTabs.push({
+                  id: 'related',
+                  label: 'RELATED TREATMENTS',
+                  treatments: treatments
+                });
+              }
+            }
+
+            // Parse buttons (button_multinames)
+            const finalButtons = (desc.button_multinames || []).map((name: string, i: number) => ({
+              label: (name || '').toUpperCase(),
+              link: desc.button_multiurls?.[i] ? `/${desc.button_multiurls[i]}` : '#',
+              isActive: i === 0 // Make the first button active by default for styling
+            })).filter((b: any) => b.label);
 
             return (
               <div key={index} id={sectionId}>
@@ -224,12 +288,8 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
                     image: desc.right_image ? `${imageBase}${desc.right_image}` : (desc.left_image ? `${imageBase}${desc.left_image}` : ''),
                     imageAlt: desc.section_heading || '',
                     imagePosition: type === 'rightimageleftcontentsection' ? 'right' : 'left',
-                    tabs: treatments.length > 0 ? [{
-                      id: 'related',
-                      label: 'RELATED TREATMENTS',
-                      treatments: treatments
-                    }] : [],
-                    buttons: [],
+                    tabs: finalTabs,
+                    buttons: finalButtons,
                     headingtag: desc.heading_tag
                   }]}
                 />

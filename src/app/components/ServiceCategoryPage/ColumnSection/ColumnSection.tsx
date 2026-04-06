@@ -368,7 +368,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                       </div>
                     </div>
                   )}
-                  {/* <div className={styles.buttonGroup}>
+                  <div className={styles.buttonGroup}>
                     {section.buttons?.map((button: any, idx: number) => (
                       <Link
                         key={idx}
@@ -378,7 +378,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                         {button.label}
                       </Link>
                     ))}
-                  </div> */}
+                  </div>
                 </div>
               </>
             ) : (
@@ -414,7 +414,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                     </div>
                   )}
 
-                  {/* <div className={styles.buttonGroup}>
+                  <div className={styles.buttonGroup}>
                     {section.buttons?.map((button: any, idx: number) => (
                       <Link
                         key={idx}
@@ -424,7 +424,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                         {button.label}
                       </Link>
                     ))}
-                  </div> */}
+                  </div>
                 </div>
                 <div className={styles.imageWrapper}>
                   <Image

@@ -120,6 +120,83 @@
   font-weight: bold;
 }
 
+/* Styles for dynamic content injected via dangerouslySetInnerHTML */
+.dynamicContent {
+  width: 85%;
+  margin: 0 auto 30px auto;
+}
+
+.dynamicContent table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #C2B8A8;
+  background: #FFFAF2;
+  margin-bottom: 20px;
+}
+
+.dynamicContent th {
+  padding: 16px 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--default-color);
+  font-weight: 600;
+  text-align: left;
+  border-bottom: 1px solid #D5C7B3;
+  border-right: 1px solid #D5C7B3;
+  background: #FDF5EA; /* Subtle header background */
+}
+
+.dynamicContent td {
+  padding: 16px 20px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--default-color);
+  border-right: 1px solid #D5C7B3;
+  border-bottom: 1px solid #D5C7B3;
+}
+
+.dynamicContent tr:last-child td {
+  border-bottom: none;
+}
+
+.dynamicContent td:last-child, 
+.dynamicContent th:last-child {
+  border-right: none;
+}
+
+.dynamicContent p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  margin-bottom: 15px;
+}
+
+.dynamicContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 40px;
+}
+
+.dynamicContent li {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--default-color);
+  padding-left: 20px;
+  position: relative;
+}
+
+.dynamicContent li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 22px;
+  color: var(--default-color);
+  font-weight: bold;
+}
+
 /* Responsive styles */
 @media (max-width: 992px) {
   .tipsList {

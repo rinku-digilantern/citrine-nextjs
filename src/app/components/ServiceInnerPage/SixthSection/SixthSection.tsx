@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from 'next/link';
 import styles from "./SixthSection.module.css";
+import { stripHtml } from '@/src/app/utils/htmlUtils';
 
 interface SixthSectionProps {
   data?: any;
@@ -12,7 +13,7 @@ const SixthSection: React.FC<SixthSectionProps> = ({ data, headingtag = 'h2' }) 
   if (!data) return null;
   const HeadingTag = (headingtag || 'h2') as any;
 
-  const contents = (data.threeparagraph_new?.contents || []).filter(Boolean).map((t: string) => t.replace(/<[^>]+>/g, '').trim());
+  const contents = (data.threeparagraph_new?.contents || []).filter(Boolean).map((t: string) => stripHtml(t));
   const half = Math.ceil(contents.length / 2);
   const candidatesLeft = contents.slice(0, half);
   const candidatesRight = contents.slice(half);
