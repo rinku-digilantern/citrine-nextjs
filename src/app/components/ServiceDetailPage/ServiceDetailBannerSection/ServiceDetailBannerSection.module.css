@@ -46,7 +46,7 @@
   width: 55%;
 }
 
-.mainHeading {
+.mainheading {
   color: var(--default-color);
   text-transform: uppercase;
   font-weight: 400;
@@ -62,7 +62,7 @@
     height: 380px;
   }
 
-  .mainHeading {
+  .mainheading {
     letter-spacing: 0px;
     font-size: 40px;
   }
@@ -80,7 +80,7 @@
     height: 300px;
   }
 
-  .mainHeading {
+  .mainheading {
     letter-spacing: 0px;
     font-size: 35px;
   }
@@ -98,7 +98,7 @@
     height: 300px;
   }
 
-  .mainHeading {
+  .mainheading {
     letter-spacing: 0px;
     font-size: 30px;
   }
@@ -116,9 +116,9 @@
     height: 280px;
   }
 
-  .mainHeading {
+  .mainheading {
     letter-spacing: 0px;
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .container {
@@ -134,7 +134,7 @@
     height: 200px;
   }
 
-  .mainHeading {
+  .mainheading {
     letter-spacing: 0px;
     font-size: 20px;
   }

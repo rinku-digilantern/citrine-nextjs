@@ -20,7 +20,7 @@ export default function ServiceDetailBannerSection({ title, image }: Props) {
         />
 			<div className={styles.container}>
             <div className={styles.textSection}>
-			          <div className={`mainHeading ${styles.mainHeading}`}>{title || "Laser Toning"}</div>
+			          <div className={`mainheading ${styles.mainheading}`}>{title || "Laser Toning"}</div>
 			      </div>
       </div>
 		</section>
