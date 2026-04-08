@@ -228,7 +228,7 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
           case 'threeparagraphsection':
             return (
               <div key={index} id={sectionId}>
-                <TwelveSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                <TwelveSection data={desc} headingtag={desc.heading_tag || service.heading_tag} subheadingtag={desc.sub_heading_tag} />
               </div>
             );
 
