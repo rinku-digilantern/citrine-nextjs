@@ -41,19 +41,12 @@ async function getGalleryData(): Promise<GalleryApiResponse> {
   }
 }
 
+import { getSeoData } from '@/src/lib/cms';
+import { resolveMetadata } from '@/src/lib/seo-utils';
+
 export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: "Clinic Gallery | Citrine Clinic",
-    description: "Explore our state-of-the-art dermatology clinic through our gallery. See our modern facilities, advanced equipment, and welcoming environment.",
-    alternates: {
-      canonical: '/clinic-gallery',
-    },
-    openGraph: {
-      url: 'https://www.citrineclinic.com/clinic-gallery',
-      title: "Clinic Gallery | Citrine Clinic",
-      description: "Explore our state-of-the-art dermatology clinic through our gallery. See our modern facilities, advanced equipment, and welcoming environment.",
-    },
-  };
+  const seo = await getSeoData('clinic-gallery');
+  return resolveMetadata('clinic-gallery', seo, "Clinic Gallery | Citrine Clinic");
 }
 
 const ClinicGallery = async () => {

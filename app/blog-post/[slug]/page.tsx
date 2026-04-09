@@ -27,31 +27,14 @@ async function getBlogData(slug: string) {
 
 // ── Dynamic Metadata ──────────────────────────────────────────────────────────
 // Next.js 16: params is a Promise — must be awaited
+import { resolveMetadata } from '@/src/lib/seo-utils';
+
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params;
   const json = await getBlogData(slug);
-  if (!json) return { title: 'Blog | Citrine Clinic' };
-
-  const blog = json.data;
-  const seo = json.seo || {};
-
-  return {
-    title: seo.title_tag || blog.title_tag || 'Blog | Citrine Clinic',
-    description: seo.description_tag || blog.description_tag || '',
-    keywords: seo.keyword_tag || blog.keyword_tag || undefined,
-    alternates: {
-      canonical: blog.canonical_tag
-        ? `/blog-post/${blog.canonical_tag}`
-        : `/blog-post/${slug}`,
-    },
-    openGraph: {
-      url: `https://www.citrineclinic.com/blog-post/${slug}`,
-      title: seo.title_tag || blog.title_tag || '',
-      description: seo.description_tag || blog.description_tag || '',
-    },
-  };
+  return resolveMetadata('blog-post/' + slug, json?.seo, 'Blog | Citrine Clinic');
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────

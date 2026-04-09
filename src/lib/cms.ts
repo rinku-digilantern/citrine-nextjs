@@ -55,3 +55,16 @@ export async function getSecondCategoryData(slug: string) {
     return null;
   }
 }
+export async function getSeoData(slug: string) {
+  try {
+    const res = await fetch(`${BASE_API_URL}/seo-tag/${slug}`, {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return null;
+    const json = await res.json();
+    return json?.seo || null;
+  } catch (error) {
+    console.error("Error fetching SEO data:", error);
+    return null;
+  }
+}

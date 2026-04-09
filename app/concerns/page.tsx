@@ -74,20 +74,12 @@ async function getConcernsData(): Promise<ConcernsApiResponse | null> {
   }
 }
 
-// Generate metadata dynamically
+import { getSeoData } from '@/src/lib/cms';
+import { resolveMetadata } from '@/src/lib/seo-utils';
+
 export async function generateMetadata(): Promise<Metadata> {
-  const concernsData = await getConcernsData();
-  
-  return {
-    title: concernsData?.seo?.title_tag || "Concerns | Citrine Clinic",
-    description: concernsData?.seo?.description_tag || "Citrine Clinic: Dermatology clinic offering acne treatment, pigmentation treatment, laser hair removal & more. Committed to providing high-quality skincare using ethical practices.",
-    alternates: {
-      canonical: concernsData?.seo?.canonical_tag || '/concerns',
-    },
-    openGraph: {
-      url: concernsData?.seo?.canonical_tag || 'https://www.citrineclinic.com/concerns',
-    },
-  };
+  const seo = await getSeoData('concerns');
+  return resolveMetadata('concerns', seo, "Concerns | Citrine Clinic");
 }
 
 const Concerns = async () => {

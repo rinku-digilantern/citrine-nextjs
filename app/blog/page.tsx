@@ -66,21 +66,12 @@ async function getBlogData(): Promise<BlogApiResponse> {
   }
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  const blogData = await getBlogData();
+import { getSeoData } from '@/src/lib/cms';
+import { resolveMetadata } from '@/src/lib/seo-utils';
 
-  return {
-    title: blogData.seo.title_tag,
-    description: blogData.seo.description_tag,
-    alternates: {
-      canonical: '/blog',
-    },
-    openGraph: {
-      url: blogData.seo.canonical_tag,
-      title: blogData.seo.title_tag,
-      description: blogData.seo.description_tag,
-    },
-  };
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeoData('blog');
+  return resolveMetadata('blog', seo);
 }
 
 const Blog = async () => {

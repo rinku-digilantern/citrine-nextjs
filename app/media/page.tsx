@@ -45,19 +45,12 @@ async function getMediaData(): Promise<MediaApiResponse> {
   }
 }
 
+import { getSeoData } from '@/src/lib/cms';
+import { resolveMetadata } from '@/src/lib/seo-utils';
+
 export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: "News & Media",
-    description: "Stay updated with the latest news, articles, and media coverage featuring Citrine Clinic's expert dermatology insights and aesthetic treatments.",
-    alternates: {
-      canonical: 'media',
-    },
-    openGraph: {
-      url: 'https://www.citrineclinic.com/media',
-      title: "News & Media",
-      description: "Stay updated with the latest news, articles, and media coverage featuring Citrine Clinic's expert dermatology insights and aesthetic treatments.",
-    },
-  };
+  const seo = await getSeoData('media');
+  return resolveMetadata('media', seo, 'News & Media');
 }
 
 const Media = async () => {

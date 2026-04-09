@@ -4,6 +4,8 @@ import OfferDetails from '@/src/app/components/OfferDetails/OfferDetails';
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 
 
+import { resolveMetadata } from '@/src/lib/seo-utils';
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   try {
@@ -11,33 +13,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const apiData = res.ok ? await res.json() : null;
     const offer = apiData?.data;
 
-    if (!offer) {
-      return {
-        title: "Offer Detail | Dr. Niti Gaur | Citrine Clinic",
-        description: "Fix your appointment with Citrine Clinic and get yourself best treatments that give refreshed and rejuvenated skin.",
-      };
-    }
+    const seoData = offer ? {
+      title_tag: offer.seo_title || offer.title || offer.offer_name,
+      description_tag: offer.seo_description || offer.description,
+      canonical_tag: offer.canonical_tag
+    } : null;
 
-    const title = offer.seo_title || offer.title || offer.offer_name || "Offer Detail | Dr. Niti Gaur | Citrine Clinic";
-    const description = offer.seo_description || offer.description || "Fix your appointment with Citrine Clinic and get yourself best treatments that give refreshed and rejuvenated skin.";
-
-    return {
-      title,
-      description,
-      alternates: {
-        canonical: `/offers/${slug}`,
-      },
-      openGraph: {
-        url: `https://www.citrineclinic.com/offers/${slug}`,
-        title,
-        description,
-      },
-    };
+    return resolveMetadata('offers/' + slug, seoData, "Offer Detail | Dr. Niti Gaur | Citrine Clinic");
   } catch {
-    return {
-      title: "Offer Detail | Dr. Niti Gaur | Citrine Clinic",
-      description: "Fix your appointment with Citrine Clinic and get yourself best treatments that give refreshed and rejuvenated skin.",
-    };
+    return resolveMetadata('offers/' + slug, null, "Offer Detail | Dr. Niti Gaur | Citrine Clinic");
   }
 }
 

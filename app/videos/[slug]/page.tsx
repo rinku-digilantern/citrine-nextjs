@@ -69,32 +69,13 @@ async function getVideoDetails(slug: string): Promise<ApiResponse | null> {
   }
 }
 
+import { resolveMetadata } from '@/src/lib/seo-utils';
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await Promise.resolve(params);
   const videoData = await getVideoDetails(slug);
 
-  if (!videoData || !videoData.success) {
-    return {
-      title: 'Video Not Found',
-      description: 'The requested video could not be found.',
-    };
-  }
-
-  const { data } = videoData;
-
-  return {
-    title: data.title_tag || data.name,
-    description: data.description_tag || data.description || data.name,
-    keywords: data.keyword_tag || undefined,
-    alternates: {
-      canonical: data.canonical_tag || `/videos/${slug}`,
-    },
-    openGraph: {
-      url: `https://www.citrineclinic.com/videos/${slug}`,
-      title: data.title_tag || data.name,
-      description: data.description_tag || data.description || data.name,
-    },
-  };
+  return resolveMetadata('videos/' + slug, videoData?.data);
 }
 
 const VideoDetails = async ({ params }: PageProps) => {

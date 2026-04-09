@@ -20,12 +20,6 @@ export const metadata: Metadata = {
   title: "Best Skin Doctor in Gurgaon | Dr. Niti Gaur | Citrine Clinic",
   description: "Dr. Niti Gaur is the best skin doctor in Gurgaon, offers advanced, personalised skin and cosmetic treatments at Citrine Clinic. Schedule your consultation now.",
   metadataBase: new URL('https://www.citrineclinic.com'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/',
-    },
-  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

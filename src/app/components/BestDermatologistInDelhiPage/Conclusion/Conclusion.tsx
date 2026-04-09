@@ -14,7 +14,7 @@ const Conclusion: React.FC<Props> = ({ section }) => {
     <section className={styles.Conclusion}>
       <div className={styles.container}>
         <div className={styles.doctorprofile}>
-          <h1 className={`mainHeading ${styles.mainHeading}`}>{section.mainHeading}</h1>
+          <h2 className={`mainHeading ${styles.mainHeading}`}>{section.mainHeading}</h2>
           <p dangerouslySetInnerHTML={{ __html: section.paragraph }} />
         </div>
       </div>

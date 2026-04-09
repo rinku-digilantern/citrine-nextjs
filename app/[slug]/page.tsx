@@ -7,6 +7,8 @@ import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import { notFound } from 'next/navigation';
 
+import { resolveMetadata } from '@/src/lib/seo-utils';
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -15,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const typeRes = await getServiceType(slug);
   
-  if (!typeRes || typeRes.title !== "Success") return {};
+  if (!typeRes || typeRes.title !== "Success") return resolveMetadata(slug, null);
 
   let seoData;
   if (typeRes.type === "firstcategory") {
@@ -29,20 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     seoData = data?.seo;
   }
 
-  if (!seoData) return {};
-
-  return {
-    title: seoData.title_tag,
-    description: seoData.description_tag,
-    alternates: {
-      canonical: seoData.canonical_tag,
-    },
-    openGraph: {
-      title: seoData.title_tag,
-      description: seoData.description_tag,
-      url: seoData.canonical_tag,
-    },
-  };
+  return resolveMetadata(slug, seoData);
 }
 
 export default async function DynamicSlugPage({ params }: PageProps) {

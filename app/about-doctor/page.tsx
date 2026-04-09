@@ -10,36 +10,12 @@ import MyCommitment from '@/src/app/components/AboutDcotorPage/MyCommitment/MyCo
 import StickyCard from '@/src/app/components/AboutDcotorPage/StickyCard/StickyCard';
 import MarqueeCenter from '@/src/app/components/AboutDcotorPage/MarqueeCenter/MarqueeCenter';
 
-const API_BASE = 'https://api.citrineclinic.com/api';
-
-async function getSeoData(slug: string) {
-  try {
-    const res = await fetch(`${API_BASE}/seo-tag/${slug}`, { next: { revalidate: 3600 } });
-    if (!res.ok) return null;
-    const json = await res.json();
-    if (!json || !json.seo) return null;
-    return json.seo;
-  } catch {
-    return null;
-  }
-}
+import { getSeoData } from '@/src/lib/cms';
+import { resolveMetadata } from '@/src/lib/seo-utils';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoData('about-doctor');
-  if (!seo) return { title: 'Citrine Clinic' };
-  return {
-    title: seo.title_tag || 'Citrine Clinic',
-    description: seo.description_tag || '',
-    keywords: seo.keyword_tag || undefined,
-    alternates: {
-      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/about-doctor',
-    },
-    openGraph: {
-      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'about-doctor'}`,
-      title: seo.title_tag || '',
-      description: seo.description_tag || '',
-    },
-  };
+  return resolveMetadata('about-doctor', seo);
 }
 
 const Aboutdoctor = async () => {
