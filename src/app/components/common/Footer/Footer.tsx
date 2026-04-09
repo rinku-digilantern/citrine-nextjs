@@ -262,7 +262,7 @@ const Footer = () => {
           <Image src="/assets/images/fcalendar.webp" alt="Request An Appointment" width={28} height={28} />
           <span className={styles.fixedText}>Request An Appointment</span>
         </a>
-        <a href="https://api.whatsapp.com/send?phone=919868649805&text=Hello Doctor, I have contacted you through Citrine Clinic website." target="_blank" rel="noopener noreferrer" className={styles.fixedCol + ' ' + styles.right} aria-label="WhatsApp">
+        <a href="https://api.whatsapp.com/send?phone=919289980157&text=Hello, I have contacted you through Citrine Clinic website." target="_blank" rel="noopener noreferrer" className={styles.fixedCol + ' ' + styles.right} aria-label="WhatsApp">
           <Image src="/assets/images/fwhatsapp.webp" alt="WhatsApp" width={28} height={28} />
           <span className={styles.fixedText}>WhatsApp</span>
         </a>
