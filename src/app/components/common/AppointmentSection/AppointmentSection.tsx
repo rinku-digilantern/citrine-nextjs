@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 import styles from './AppointmentSection.module.css';
 
 interface CaptchaData {
@@ -43,6 +43,8 @@ const services = [
 
 const AppointmentSection = () => {
   const router = useRouter();
+  const pathname = usePathname();
+  const isBookAppointmentPage = pathname === '/book-an-appointment';
   const [formData, setFormData] = useState<FormState>({
     name: '', email: '', phone: '', service: '', date: '', message: '', captcha: '',
   });
@@ -196,7 +198,11 @@ const AppointmentSection = () => {
     <section id="appointment" className={styles.appointmentSection}>
       <div className={styles.container}>
         <div className={styles.formWrapper}>
-          <h2 className={`subheading ${styles.subheading}`}>REQUEST AN APPOINTMENT</h2>
+          {isBookAppointmentPage ? (
+            <h1 className={`subheading ${styles.subheading}`}>REQUEST AN APPOINTMENT</h1>
+          ) : (
+            <h2 className={`subheading ${styles.subheading}`}>REQUEST AN APPOINTMENT</h2>
+          )}
 
           {status === 'success' ? (
             <div className={styles.successMsg}>

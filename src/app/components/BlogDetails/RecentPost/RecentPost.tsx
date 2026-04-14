@@ -41,7 +41,7 @@ const RecentPost = ({ posts = [] }: RecentPostProps) => {
           ))}
         </div>
         <div className={styles.buttonWrapper}>
-          <Link href="/blogs" className={styles.readMoreBtn}>READ MORE BLOGS</Link>
+          <Link href="/blog" className={styles.readMoreBtn}>READ MORE BLOGS</Link>
         </div>
       </div>
     </section>

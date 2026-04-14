@@ -53,37 +53,12 @@ async function getTestimonials(): Promise<TestimonialsApiResponse | null> {
   }
 }
 
+import { getSeoData } from '@/src/lib/cms';
+import { resolveMetadata } from '@/src/lib/seo-utils';
+
 export async function generateMetadata(): Promise<Metadata> {
-  const testimonialsData = await getTestimonials();
-
-  if (!testimonialsData || !testimonialsData.seo) {
-    return {
-      title: "Citrine Clinic Testimonials | Real Patient Reviews & Feedback",
-      description: "Read real patient testimonials for Citrine Clinic. See how Dr. Niti Gaur & team have helped people transform their skin, health & confidence with proven results.",
-      alternates: {
-        canonical: '/testimonials',
-      },
-      openGraph: {
-        url: 'https://www.citrineclinic.com/testimonials',
-      },
-    };
-  }
-
-  const { seo } = testimonialsData;
-
-  return {
-    title: seo.title_tag,
-    description: seo.description_tag,
-    keywords: seo.keyword_tag || undefined,
-    alternates: {
-      canonical: seo.canonical_tag,
-    },
-    openGraph: {
-      url: seo.canonical_tag,
-      title: seo.title_tag,
-      description: seo.description_tag,
-    },
-  };
+  const seo = await getSeoData('testimonials');
+  return resolveMetadata('testimonials', seo, "Citrine Clinic Testimonials | Real Patient Reviews & Feedback");
 }
 
 const Testimonials = async () => {

@@ -88,23 +88,12 @@ async function getTreatmentsData(): Promise<TreatmentsApiResponse> {
   }
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  const treatmentsData = await getTreatmentsData();
-  const title = treatmentsData.seo?.title_tag || 'Skin Treatments in Gurgaon | Skin Specialist | Citrine Clinic';
-  const description = treatmentsData.seo?.description_tag || 'Are you looking for the best skin treatments clinic in Gurgaon? Visit Citrine Clinic, we are offering affordable skin problem treatments in Gurgaon.';
+import { getSeoData } from '@/src/lib/cms';
+import { resolveMetadata } from '@/src/lib/seo-utils';
 
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: '/treatments',
-    },
-    openGraph: {
-      url: 'https://www.citrineclinic.com/treatments',
-      title,
-      description,
-    },
-  };
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeoData('treatments');
+  return resolveMetadata('treatments', seo, 'Skin Treatments in Gurgaon | Skin Specialist | Citrine Clinic');
 }
 
 const Treatments = async () => {

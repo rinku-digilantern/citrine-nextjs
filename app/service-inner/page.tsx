@@ -8,16 +8,16 @@ import ServiceInnerTemplate from '@/src/app/components/dynamic/ServiceInnerTempl
 // or tell the user how to use it dynamically with segments.
 
 const ServiceInner = async () => {
-    // Defaulting to pigmentation for visualization, 
-    // but in a real dynamic setup this should be a dynamic route like [slug]/page.tsx
-    const data = await getServiceInnerData('pigmentation-treatment-in-gurgaon');
-    
-    if (!data || !data.success) {
-      return notFound();
-    }
+  // Defaulting to pigmentation for visualization, 
+  // but in a real dynamic setup this should be a dynamic route like [slug]/page.tsx
+  const data = await getServiceInnerData('pigmentation-treatment-in-gurgaon');
 
-    return (
-        <ServiceInnerTemplate data={data} />
-    )
+  if (!data || !data.success) {
+    return notFound();
+  }
+
+  return (
+    <ServiceInnerTemplate data={data} />
+  )
 }
 export default ServiceInner;

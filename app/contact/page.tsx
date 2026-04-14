@@ -8,36 +8,12 @@ import ContactPage from '@/src/app/components/ContactPage/ContactPage';
 
 
 
-const API_BASE = 'https://api.citrineclinic.com/api';
-
-async function getSeoData(slug: string) {
-  try {
-    const res = await fetch(`${API_BASE}/seo-tag/${slug}`, { next: { revalidate: 3600 } });
-    if (!res.ok) return null;
-    const json = await res.json();
-    if (!json || !json.seo) return null;
-    return json.seo;
-  } catch {
-    return null;
-  }
-}
+import { getSeoData } from '@/src/lib/cms';
+import { resolveMetadata } from '@/src/lib/seo-utils';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoData('contact');
-  if (!seo) return { title: 'Citrine Clinic' };
-  return {
-    title: seo.title_tag || 'Citrine Clinic',
-    description: seo.description_tag || '',
-    keywords: seo.keyword_tag || undefined,
-    alternates: {
-      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/contact',
-    },
-    openGraph: {
-      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'contact'}`,
-      title: seo.title_tag || '',
-      description: seo.description_tag || '',
-    },
-  };
+  return resolveMetadata('contact', seo);
 }
 
 const Contact = async () => {

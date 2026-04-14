@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 // Redirect /blog-post → /blogs (or keep as landing)
 const BlogPost = () => {
-  redirect('/blogs');
+  redirect('/blog');
 };
 
 export default BlogPost;

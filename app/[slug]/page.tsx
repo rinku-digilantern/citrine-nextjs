@@ -8,6 +8,8 @@ import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import { notFound } from 'next/navigation';
 
+import { resolveMetadata } from '@/src/lib/seo-utils';
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }

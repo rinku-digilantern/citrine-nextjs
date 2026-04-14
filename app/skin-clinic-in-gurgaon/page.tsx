@@ -14,7 +14,8 @@ import SkinClinicGurgaonSeventhSection from '@/src/app/components/SkinClinicInGu
 import SkinClinicGurgaonSixthSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonSixthSection/SkinClinicGurgaonSixthSection';
 import SkinClinicGurgaonFivethSection from '@/src/app/components/SkinClinicInGurgaonPage/SkinClinicGurgaonFivethSection/SkinClinicGurgaonFivethSection';
 
-const API_BASE = 'https://api.citrineclinic.com/api';
+import { getSeoData } from '@/src/lib/cms';
+import { resolveMetadata } from '@/src/lib/seo-utils';
 
 function getPageData() {
   const filePath = path.join(process.cwd(), 'src', 'app', 'components', 'webcontent', 'SkinClinicGurgaon.json');
@@ -23,42 +24,9 @@ function getPageData() {
   return data['skin-clinic-in-gurgaon'];
 }
 
-async function getSeoData(slug: string) {
-  try {
-    const res = await fetch(`${API_BASE}/seo-tag/${slug}`, { next: { revalidate: 3600 } });
-    if (!res.ok) return null;
-    const json = await res.json();
-    if (!json || !json.seo) return null;
-    return json.seo;
-  } catch {
-    return null;
-  }
-}
-
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoData('skin-clinic-in-gurgaon');
-  const pageData = getPageData();
-  const thirdSection = pageData?.SkinClinicGurgaonThirdSection
-    ? {
-        image: pageData.SkinClinicGurgaonThirdSection.image,
-        heading: pageData.SkinClinicGurgaonThirdSection.mainHeading || pageData.SkinClinicGurgaonThirdSection.heading,
-        paragraph: pageData.SkinClinicGurgaonThirdSection.paragraph1 || pageData.SkinClinicGurgaonThirdSection.paragraph,
-      }
-    : null;
-  if (!seo) return { title: 'Citrine Clinic' };
-  return {
-    title: seo.title_tag || 'Citrine Clinic',
-    description: seo.description_tag || '',
-    keywords: seo.keyword_tag || undefined,
-    alternates: {
-      canonical: seo.canonical_tag ? `/${seo.canonical_tag}` : '/skin-clinic-in-gurgaon',
-    },
-    openGraph: {
-      url: `https://www.citrineclinic.com/${seo.canonical_tag || 'skin-clinic-in-gurgaon'}`,
-      title: seo.title_tag || '',
-      description: seo.description_tag || '',
-    },
-  };
+  return resolveMetadata('skin-clinic-in-gurgaon', seo);
 }
 
 const SkinClinicInGurgaon = async () => {

@@ -6,7 +6,7 @@ const RedefiningSection = () => {
   return (
     <section className={styles.redefiningSection}>
       <div className={styles.container}>
-        <h2 className={`mainHeading ${styles.mainHeading}`}>REDEFINING THE LEGACY OF<br /> DERMATOLOGY & AESTHETIC<br /> EXCELLENCE</h2>
+        <h1 className={`mainHeading ${styles.mainHeading}`}>REDEFINING THE LEGACY OF<br /> DERMATOLOGY & AESTHETIC<br /> EXCELLENCE</h1>
         <p className={styles.description}>At Citrine Clinic by Dr. Niti Gaur, dermatology is approached with a refined balance of clinical precision and aesthetic sensibility. Every treatment is thoughtfully curated, combining advanced technology with protocols that are rooted in evidence and tailored to individual skin needs. The focus remains on delivering results that are subtle, consistent, and aligned with long-term skin health rather than temporary change. With an unwavering commitment to safety, expertise, and patient trust, the clinic continues to set a new benchmark in modern aesthetic care.</p>
         <div className={styles.achievementsGrid}>
           <div className={`${styles.achievementCard} ${styles.cardBeige}`}>

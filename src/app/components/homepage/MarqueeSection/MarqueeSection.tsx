@@ -34,10 +34,10 @@ const MarqueeSection = () => {
       </div>
 
       <div className={styles.heading}>
-        <h2 className={`subheading ${styles.subheading}`}>
+        <h1 className={`subheading ${styles.subheading}`}>
           <span className={styles.highlight}>Two Decades</span> in Dermatology & Aesthetics.<br />
           We've got skin in the game!
-        </h2>
+        </h1>
       </div>
 
       <div
