@@ -47,7 +47,7 @@ interface TreatmentsApiResponse {
 async function getTreatmentsData(): Promise<TreatmentsApiResponse> {
   try {
     // console.log('Fetching treatments data from API...');
-    const res = await fetch('https://api.citrineclinic.com/api/service/treatments', {
+    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/service/treatments`, {
       cache: 'no-store'
     });
 

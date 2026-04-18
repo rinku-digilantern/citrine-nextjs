@@ -42,7 +42,7 @@ const Blogpage: React.FC<BlogpageProps> = ({ blogsData }) => {
               <div className={`${styles.postImg} postimg`}>
                 <Link href={`/blog-post/${blg.url}`}>
                   <Image
-                    src={`https://api.citrineclinic.com/backend/blog/${blg.image}`}
+                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/blog/${blg.image}`}
                     className="img-fluid"
                     width={550}
                     height={365}

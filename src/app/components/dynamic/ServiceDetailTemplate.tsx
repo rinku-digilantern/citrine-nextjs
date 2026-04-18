@@ -14,13 +14,13 @@ interface ServiceDetailTemplateProps {
 const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ data }) => {
   const service = data.data;
   const sections = service.section || [];
-  const bgimageUrl = 'https://api.citrineclinic.com/backend/service/section/';
+  const bgimageUrl = `\${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/`;
 
   return (
     <>
       <ServiceDetailBannerSection
         title={service.name_desc || service.service_name}
-        image={service.service_banner_image ? `https://api.citrineclinic.com/backend/service/banner/${service.service_banner_image}` : undefined}
+        image={service.service_banner_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/banner/${service.service_banner_image}` : undefined}
       />
 
       <Breadcrumb />
@@ -30,7 +30,7 @@ const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ data }) =
         heading={service.service_name}
         description={service.description}
         headingtag="h1"
-      // image={service.service_image ? `https://api.citrineclinic.com/backend/service/section/${service.service_image}` : undefined}
+      // image={service.service_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/${service.service_image}` : undefined}
       />
 
       {sections.map((sec: any, idx: number) => {
@@ -82,7 +82,7 @@ const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ data }) =
             heading={sec.section_heading}
             content={sec.section1}
             classAdd={sec.class_add}
-            image={sec.image ? `https://api.citrineclinic.com/backend/service/section/${sec.image}` : undefined}
+            image={sec.image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/${sec.image}` : undefined}
             headingtag={sec.heading_tag || 'div'}
           />
         );

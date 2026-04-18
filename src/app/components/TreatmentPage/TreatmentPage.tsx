@@ -52,7 +52,7 @@ const TreatmentPage: React.FC<TreatmentPageProps> = ({ treatmentsData, categoryN
                 <div key={treatment.id} className={styles.serviceitem}>
                   <div className={styles.img}>
                     <Image 
-                      src={`https://api.citrineclinic.com/backend/service/image/${treatment.image}`}
+                      src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${treatment.image}`}
                       alt={treatment.alt_tag || treatment.name}
                       width={600} 
                       height={450} 

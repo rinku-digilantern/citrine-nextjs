@@ -16,8 +16,9 @@ const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }
   if (!data) return null;
   const HeadingTag = (headingtag || 'h2') as any;
 
-  const imageBase = 'http://localhost:8000/backend/service/section/';
-  const treatmentImage = data.image ? `${imageBase}${data.image}` : '/assets/images/serviceinnerpage/lasertonings.webp';
+  const imageBase = `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/`;
+  const hasImage = !!(data.image && data.image.trim());
+  const treatmentImage = hasImage ? `${imageBase}${data.image}` : '';
 
   // Extract YouTube video ID from embed URL
   const getVideoId = (url: string | null) => {
@@ -35,7 +36,7 @@ const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }
 
   return (
     <section className={styles.secondSection} id="what-is">
-      <div className={styles.contentWrapper}>
+      <div className={`${styles.contentWrapper} ${!hasImage ? styles.noImage : ''}`}>
         {/* Left Content */}
         <div className={styles.leftContent}>
           {data.section_heading && (
@@ -60,26 +61,28 @@ const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }
         </div>
 
         {/* Right Image with Play Button */}
-        <div className={styles.rightContent}>
-          <div className={styles.imageWrapper}>
-            <Image
-              src={treatmentImage}
-              alt={data.alttag || data.section_heading || 'Service Video Thumbnail'}
-              width={600}
-              height={400}
-              className={styles.treatmentImage}
-            />
-            {videoId && (
-              <div
-                className={styles.playButton}
-                onClick={() => setModalOpen(true)}
-                style={{ cursor: 'pointer' }}
-              >
-                <div className={styles.playIcon}>▶</div>
-              </div>
-            )}
+        {hasImage && (
+          <div className={styles.rightContent}>
+            <div className={styles.imageWrapper}>
+              <Image
+                src={treatmentImage}
+                alt={data.alttag || data.section_heading || 'Service Video Thumbnail'}
+                width={600}
+                height={400}
+                className={styles.treatmentImage}
+              />
+              {videoId && (
+                <div
+                  className={styles.playButton}
+                  onClick={() => setModalOpen(true)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <div className={styles.playIcon}>▶</div>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Video Popup Modal */}

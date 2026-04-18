@@ -7,7 +7,7 @@ import BlogBanner from '@/src/app/components/BlogDetails/BlogBanner/BlogBanner';
 import BlogContent from '@/src/app/components/BlogDetails/BlogContent/BlogContent';
 import RecentPost from '@/src/app/components/BlogDetails/RecentPost/RecentPost';
 
-const API_BASE = 'https://api.citrineclinic.com/api';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
 // ── Data Fetcher ──────────────────────────────────────────────────────────────
 // API shape: { success, data: {...}, seo: {...}, recent: [...], prev_url, next_url }
@@ -17,9 +17,12 @@ async function getBlogData(slug: string) {
       next: { revalidate: 3600 }
     });
     if (!res.ok) return null;
-    const json = await res.json();
-    if (!json.success || !json.data) return null;
-    return json;
+    const text = await res.text();
+    try {
+      const json = JSON.parse(text);
+      if (!json.success || !json.data) return null;
+      return json;
+    } catch { return null; }
   } catch {
     return null;
   }
@@ -62,7 +65,7 @@ export default async function BlogPostPage(
         title={blog.blog_name || ''}
         date={blog.date || ''}
         image={blog.thumb_image
-          ? `https://api.citrineclinic.com/backend/blog/${blog.thumb_image}`
+          ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/blog/${blog.thumb_image}`
           : '/assets/images/blogdetail/blogbanners.webp'}
         imageAlt={blog.alt_tag || blog.blog_name || ''}
       />

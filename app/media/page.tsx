@@ -23,7 +23,7 @@ interface MediaApiResponse {
 async function getMediaData(): Promise<MediaApiResponse> {
   try {
     // console.log('Fetching media data from API...');
-    const res = await fetch('https://api.citrineclinic.com/api/pressmedia-category', {
+    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/pressmedia-category`, {
       cache: 'no-store'
     });
     

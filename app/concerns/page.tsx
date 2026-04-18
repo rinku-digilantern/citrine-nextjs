@@ -57,7 +57,7 @@ interface ConcernsApiResponse {
 // Fetch concerns data from API
 async function getConcernsData(): Promise<ConcernsApiResponse | null> {
   try {
-    const res = await fetch('https://api.citrineclinic.com/api/service/concerns', {
+    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/service/concerns`, {
       cache: 'no-store',
     });
     

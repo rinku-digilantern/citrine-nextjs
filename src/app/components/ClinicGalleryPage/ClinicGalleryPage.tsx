@@ -41,7 +41,7 @@ const ClinicGalleryPage: React.FC<ClinicGalleryPageProps> = ({ galleryData }) =>
                 <div key={item.id} className={styles.galleryItem}>
                   <div className={styles.imageWrapper}>
                     <Image
-                      src={`https://api.citrineclinic.com/backend/gallery/${item.gallery_image}`}
+                      src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/gallery/${item.gallery_image}`}
                       alt={item.alt_tag}
                       width={720}
                       height={470}

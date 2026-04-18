@@ -37,7 +37,7 @@ interface TestimonialsApiResponse {
 async function getTestimonials(): Promise<TestimonialsApiResponse | null> {
   try {
     // console.log('Fetching testimonials from API...');
-    const res = await fetch('https://api.citrineclinic.com/api/testimonials', {
+    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/testimonials`, {
       cache: 'no-store' // Disable cache for now to test
     });
 

@@ -73,7 +73,7 @@ const ServiceTechnologySection: React.FC<ServiceTechnologySectionProps> = ({ tec
                   <div className={styles.imageWrapper}>
                     <Image 
                       className={styles.deviceThumb} 
-                      src={`http://localhost:8000/backend/technology/image/${item.image}`} 
+                      src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/technology/image/${item.image}`} 
                       width={480} 
                       height={360} 
                       alt={item.alt_tag || item.name} 

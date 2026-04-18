@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 
 const nextConfig: NextConfig = {
+  experimental: {
+    workerThreads: false,
+    cpus: 1,
+  },
   images: {
     remotePatterns: [
       {
@@ -10,7 +14,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'api.citrineclinic.com',
+        hostname: 'web.digifolio.co.in',
       },
       {
         protocol: 'http',

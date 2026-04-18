@@ -25,6 +25,8 @@
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5R4CBF3');</script>
 <!-- End Google Tag Manager -->
 
+
+    <script src="/api-config.js"></script>
 </head>
 
 <body>
@@ -503,7 +505,7 @@
             submitButton.textContent = 'Submitting...';
 
             // Send data to API
-            fetch('https://api.citrineclinic.com/api/callback', {
+            fetch(window.CITRINE_API_URL + '/callback', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

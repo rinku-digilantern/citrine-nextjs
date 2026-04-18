@@ -26,7 +26,7 @@ const RecentPost = ({ posts = [] }: RecentPostProps) => {
             <Link href={`/blog-post/${post.url}`} key={idx} className={styles.card}>
               <div className={styles.cardImageWrapper}>
                 <img
-                  src={`https://api.citrineclinic.com/backend/blog/${post.blog_image}`}
+                  src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/blog/${post.blog_image}`}
                   alt={post.alt_tag}
                   className={styles.cardImage}
                   width={392}

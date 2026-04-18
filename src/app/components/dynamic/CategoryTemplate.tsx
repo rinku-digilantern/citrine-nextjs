@@ -85,7 +85,7 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ data }) => {
       <FirstSection data={{
         name: category.name || '',
         image: category.image
-          ? `https://api.citrineclinic.com/backend/service/image/${category.image}`
+          ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${category.image}`
           : '/assets/images/servicecategory/acne.webp',
         description: category.description || ''
       }} />
@@ -120,7 +120,7 @@ const CategoryTemplate: React.FC<CategoryTemplateProps> = ({ data }) => {
           heading: safeName.toUpperCase(),
           description: item?.short_desc || '',   // HTML – rendered via dangerouslySetInnerHTML
           image: item?.image
-            ? `https://api.citrineclinic.com/backend/service/image/${item.image}`
+            ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${item.image}`
             : '/assets/images/servicecategory/acne.webp',
           imageAlt: item?.alt_tag || safeName,
           tabs,

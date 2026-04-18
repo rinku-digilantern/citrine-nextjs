@@ -9,7 +9,7 @@ import { resolveMetadata } from '@/src/lib/seo-utils';
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   try {
-    const res = await fetch(`https://api.citrineclinic.com/api/offers/${slug}`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/offers/${slug}`, { cache: 'no-store' });
     const apiData = res.ok ? await res.json() : null;
     const offer = apiData?.data;
 
@@ -33,7 +33,7 @@ interface PageProps {
 
 async function getOfferDetails(offer_id: string) {
   try {
-    const res = await fetch(`https://api.citrineclinic.com/api/offers/${offer_id}`, { cache: 'no-store' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/offers/${offer_id}`, { cache: 'no-store' });
     if (!res.ok) return null;
     const data = await res.json();
     return data;

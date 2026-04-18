@@ -32,7 +32,7 @@ const VideoPage = () => {
     const fetchVideos = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://api.citrineclinic.com/api/videos');
+        const response = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/videos`);
         if (!response.ok) {
           throw new Error('Failed to fetch videos');
         }
@@ -71,7 +71,7 @@ const VideoPage = () => {
                 <div key={video.id} className={styles.serviceitem}>
                   <div className={styles.img}>
                     <Image 
-                      src={`https://api.citrineclinic.com/backend/service_video/image/${video.image}`}
+                      src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service_video/image/${video.image}`}
                       alt={video.alt_tag} 
                       width={480} 
                       height={360} 

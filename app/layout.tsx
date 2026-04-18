@@ -47,8 +47,8 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
       <head>
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name="robots" content="INDEX,FOLLOW" />
-        <link rel="preconnect" href="https://api.citrineclinic.com/" />
-        <link rel="dns-prefetch" href="https://api.citrineclinic.com/" />
+        <link rel="preconnect" href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/`} />
+        <link rel="dns-prefetch" href={`${process.env.NEXT_PUBLIC_BACKEND_URL}/`} />
         <meta name="google-site-verification" content="e7pE022ijodx3B0Hjo1h_4ckgYRcg11aPjyBCg1YRxE"></meta>
         {/* Google Tag Manager Script */}
         <Script

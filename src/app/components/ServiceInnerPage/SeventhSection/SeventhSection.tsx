@@ -30,7 +30,8 @@ const SeventhSection: React.FC<SeventhSectionProps> = ({ data, headingtag = 'h2'
     stopOnInteraction: false,
   };
 
-  const imageBase = 'http://localhost:8000/backend/service/section/';
+  const imageBase = `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/`;
+  const hasImage = !!(data.image && data.image.trim());
 
   // Extract YouTube video ID
   const getVideoId = (url: string | null) => {
@@ -58,32 +59,34 @@ const SeventhSection: React.FC<SeventhSectionProps> = ({ data, headingtag = 'h2'
           />
         )}
 
-        <div className={styles.contentGrid}>
+        <div className={`${styles.contentGrid} ${!hasImage ? styles.noImageGrid : ''}`}>
           {/* Left Column - Video/Image */}
-          <div className={styles.videoColumn}>
-            <div className={styles.videoWrapper}>
-              <Image
-                src={data.image ? `${imageBase}${data.image}` : "/assets/images/serviceinnerpage/lasertonings.webp"}
-                alt={data.alttag || data.section_heading || "Procedure"}
-                width={600}
-                height={400}
-                className={styles.videoImage}
-              />
-              {videoId && (
-                <div
-                  className={styles.playButtonWrapper}
-                  onClick={() => setModalOpen(true)}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <div className={styles.playButton}>
-                    <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M2 2L22 14L2 26V2Z" fill="currentColor"/>
-                    </svg>
+          {hasImage && (
+            <div className={styles.videoColumn}>
+              <div className={styles.videoWrapper}>
+                <Image
+                  src={`${imageBase}${data.image}`}
+                  alt={data.alttag || data.section_heading || "Procedure"}
+                  width={600}
+                  height={400}
+                  className={styles.videoImage}
+                />
+                {videoId && (
+                  <div
+                    className={styles.playButtonWrapper}
+                    onClick={() => setModalOpen(true)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <div className={styles.playButton}>
+                      <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 2L22 14L2 26V2Z" fill="currentColor"/>
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Right Column - Steps Carousel */}
           <div className={styles.carouselColumn}>

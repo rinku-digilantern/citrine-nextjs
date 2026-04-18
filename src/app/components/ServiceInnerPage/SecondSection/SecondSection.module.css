@@ -12,6 +12,15 @@
   flex: 1;
 }
 
+.contentWrapper.noImage .leftContent {
+  padding: 60px 15%;
+  text-align: center;
+}
+
+.contentWrapper.noImage .mainHeading {
+  text-align: center;
+}
+
 .leftContent {
   flex: 1;
   background: #F6EADB;

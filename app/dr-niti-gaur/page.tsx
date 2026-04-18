@@ -9,7 +9,7 @@ import DrNitiGaurFirstSection from '@/src/app/components/DrNitiGaurPage/DrNitiGa
 import PhilosophySection from '@/src/app/components/DrNitiGaurPage/PhilosophySection/PhilosophySection';
 import DrNitiFaqSection from '@/src/app/components/DrNitiGaurPage/DrNitiFaqSection/DrNitiFaqSection';
 import DrNitiGaurTestimonialSection from '@/src/app/components/DrNitiGaurPage/DrNitiGaurTestimonialSection/DrNitiGaurTestimonialSection';
-const API_BASE = 'https://api.citrineclinic.com/api';
+const API_BASE = process.env.NEXT_PUBLIC_API_URL;
 
 function getPageData() {
   const filePath = path.join(process.cwd(), 'src', 'app', 'components', 'webcontent', 'drnitigaur.json');

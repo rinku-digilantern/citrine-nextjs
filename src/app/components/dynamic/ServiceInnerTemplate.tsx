@@ -102,15 +102,15 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
   if (data.testimonial && data.testimonial.length > 0) tocSections.push({ id: 'testimonial', title: 'TESTIMONIALS' });
 
 
-  const imageBase = 'http://localhost:8000/backend/service/section/';
+  const imageBase = `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/`;
 
   return (
     <>
       <TopSection data={{
         name: replaceCity(service.service_name, cityName),
         bannerTitle: replaceCity(service.service_name, cityName),
-        image: service.service_banner_image ? `http://localhost:8000/backend/service/banner/${service.service_banner_image}` : '',
-        rightImage: service.service_banner_image ? `http://localhost:8000/backend/service/banner/${service.service_banner_image}` : (service.service_image ? `http://localhost:8000/backend/service/image/${service.service_image}` : ''),
+        image: service.service_banner_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/banner/${service.service_banner_image}` : '',
+        rightImage: service.service_banner_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/banner/${service.service_banner_image}` : (service.service_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${service.service_image}` : ''),
         description: replaceCity(service.description2 || '', cityName),
         headingtag: service.heading_tag
       }} />
@@ -316,8 +316,8 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
               treatment: service.service_name,
               age: '',
               images: {
-                before: `http://localhost:8000/backend/result/${r.image}`,
-                after: `http://localhost:8000/backend/result/${r.image}`
+                before: `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/result/${r.image}`,
+                after: `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/result/${r.image}`
               }
             }))}
             headingtag={service.heading_tag}
@@ -351,7 +351,7 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
         <div id="videos">
           <ServiceVideoSection
             videos={data.video.map((v: any) => ({
-              thumbnail: `http://localhost:8000/backend/service_video/image/${v.image}`,
+              thumbnail: `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service_video/image/${v.image}`,
               alt: v.alt_tag || v.title || service.service_name,
               videoUrl: v.video
             }))}

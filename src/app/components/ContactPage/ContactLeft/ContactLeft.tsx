@@ -19,8 +19,8 @@ interface FormData {
 
 type FormErrors = Partial<FormData>;
 
-const CAPTCHA_API = 'https://api.citrineclinic.com/api/googlecaptcha';
-const CONTACT_API = 'https://api.citrineclinic.com/api/contacts';
+const CAPTCHA_API = `\${process.env.NEXT_PUBLIC_API_URL}/googlecaptcha`;
+const CONTACT_API = `\${process.env.NEXT_PUBLIC_API_URL}/contacts`;
 
 const ContactLeft = () => {
   const router = useRouter();

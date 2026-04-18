@@ -85,7 +85,7 @@ const VideoDetailsPage: React.FC<VideoDetailsPageProps> = ({ videoData }) => {
                 <div key={video.id} className={styles.serviceitem}>
                   <div className={styles.img}>
                     <Image 
-                      src={`https://api.citrineclinic.com/backend/service_video/inner/${video.image}`}
+                      src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service_video/inner/${video.image}`}
                       alt={video.alt_tag} 
                       width={480} 
                       height={360}/>

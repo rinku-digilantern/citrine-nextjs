@@ -143,6 +143,8 @@
             margin-bottom: 20px;
         }
     </style>
+
+    <script src="/api-config.js"></script>
 </head>
 
 <body>
@@ -209,7 +211,7 @@
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
 
-                const apiUrl = `https://api.citrineclinic.com/api/payment-verify?order_id=${orderId}`;
+                const apiUrl = window.CITRINE_API_URL + `/payment-verify?order_id=${orderId}`;
                 // console.log('Calling API:', apiUrl);
 
                 const response = await fetch(apiUrl, {

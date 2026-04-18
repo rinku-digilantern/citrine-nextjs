@@ -46,7 +46,7 @@ const ServiceCategoryPage: React.FC<ServiceCategoryPageProps> = ({ data }) => {
         <>
             <FirstSection data={{
                 name: data.cat?.name || '',
-                image: data.cat?.image ? `https://api.citrineclinic.com/backend/service/image/${data.cat.image}` : '',
+                image: data.cat?.image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${data.cat.image}` : '',
                 description: data.cat?.description || ''
             }} />
             <TableofContentcategory sections={data.data.map((item: any) => ({
@@ -57,7 +57,7 @@ const ServiceCategoryPage: React.FC<ServiceCategoryPageProps> = ({ data }) => {
                 id: item.url || toSlug(item.name),
                 heading: (item.name || '').toUpperCase(),
                 description: item.short_desc || '',
-                image: item.image ? `https://api.citrineclinic.com/backend/service/image/${item.image}` : '',
+                image: item.image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${item.image}` : '',
                 imageAlt: item.alt_tag || item.name,
                 imagePosition: (item.design_type === 'right' ? 'right' : 'left'),
                 tabs: [],
@@ -68,7 +68,7 @@ const ServiceCategoryPage: React.FC<ServiceCategoryPageProps> = ({ data }) => {
       );
   }
 
-  const imageBase = 'http://localhost:8000/backend/service/section/';
+  const imageBase = `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/`;
 
   const formattedSections = sectionList.map((sec: any, index: number) => {
     let desc: any = {};
@@ -139,7 +139,7 @@ const ServiceCategoryPage: React.FC<ServiceCategoryPageProps> = ({ data }) => {
     <>
       <FirstSection data={{
         name: service.service_name,
-        image: service.service_banner_image ? `http://localhost:8000/backend/service/banner/${service.service_banner_image}` : (service.service_image ? `http://localhost:8000/backend/service/image/${service.service_image}` : ''),
+        image: service.service_banner_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/banner/${service.service_banner_image}` : (service.service_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${service.service_image}` : ''),
         description: service.description2 || ''
       }} />
       <TableofContentcategory sections={formattedSections.map((s: any) => ({ id: s.id, title: s.heading }))} />
@@ -160,8 +160,8 @@ const ServiceCategoryPage: React.FC<ServiceCategoryPageProps> = ({ data }) => {
               treatment: service.service_name,
               age: '',
               images: {
-                before: `http://localhost:8000/backend/result/${r.image}`,
-                after: `http://localhost:8000/backend/result/${r.image}`
+                before: `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/result/${r.image}`,
+                after: `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/result/${r.image}`
               }
             }))}
             headingtag={service.heading_tag}
@@ -195,7 +195,7 @@ const ServiceCategoryPage: React.FC<ServiceCategoryPageProps> = ({ data }) => {
         <div id="videos">
           <ServiceVideoSection
             videos={data.video.map((v: any) => ({
-              thumbnail: `http://localhost:8000/backend/service_video/image/${v.image}`,
+              thumbnail: `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service_video/image/${v.image}`,
               alt: v.alt_tag || v.title || service.service_name,
               videoUrl: v.video
             }))}

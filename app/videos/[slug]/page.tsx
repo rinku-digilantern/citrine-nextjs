@@ -44,7 +44,7 @@ interface ApiResponse {
 async function getVideoDetails(slug: string): Promise<ApiResponse | null> {
   try {
     // console.log('Fetching video details for slug:', slug);
-    const url = `https://api.citrineclinic.com/api/video-details/${slug}`;
+    const url = `${process.env.NEXT_PUBLIC_API_URL}/video-details/${slug}`;
     // console.log('API URL:', url);
 
     const res = await fetch(url, {

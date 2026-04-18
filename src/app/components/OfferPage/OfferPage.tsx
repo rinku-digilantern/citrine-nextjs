@@ -40,7 +40,7 @@ export default function OfferPage() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch("https://api.citrineclinic.com/api/offers");
+        const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/offers`);
         if (!res.ok) throw new Error("Failed to fetch offers");
         const data = await res.json();
         if (data && Array.isArray(data.data)) {

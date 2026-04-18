@@ -36,6 +36,20 @@
   align-items: start;
 }
 
+.contentGrid.noImageGrid {
+  grid-template-columns: 1fr;
+  padding-right: 85px;
+}
+
+.noImageGrid .emblaSlide {
+  flex: 0 0 30%;
+}
+
+.noImageGrid .footerText {
+  margin-right: auto;
+  text-align: center;
+}
+
 .videoColumn {
   position: relative;
 }

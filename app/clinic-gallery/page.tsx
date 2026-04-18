@@ -19,7 +19,7 @@ interface GalleryApiResponse {
 async function getGalleryData(): Promise<GalleryApiResponse> {
   try {
     // console.log('Fetching gallery data from API...');
-    const res = await fetch('https://api.citrineclinic.com/api/gallery', {
+    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/gallery`, {
       cache: 'no-store'
     });
     

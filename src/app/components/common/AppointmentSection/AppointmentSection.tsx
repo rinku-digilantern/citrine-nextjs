@@ -21,8 +21,8 @@ interface FormState {
 
 type FormErrors = Partial<FormState>;
 
-const CAPTCHA_API = 'https://api.citrineclinic.com/api/googlecaptcha';
-const APPT_API = 'https://api.citrineclinic.com/api/appointment';
+const CAPTCHA_API = `\${process.env.NEXT_PUBLIC_API_URL}/googlecaptcha`;
+const APPT_API = `\${process.env.NEXT_PUBLIC_API_URL}/appointment`;
 
 const services = [
   'Acne/Pimple',
