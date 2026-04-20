@@ -16,7 +16,7 @@
   margin-bottom: 15px;
 }
 
-.description {
+.description p{
   text-align: center;
   font-size: 18px;
   line-height: 1.8;
@@ -182,13 +182,13 @@
 }
 .riskText {
   font-size: 18px;
-  line-height: 1.8; margin-bottom: 1.5rem;
+  line-height: 1.6; margin-bottom: 1.5rem;
   color: var(--default-color);
 }
 .knowmore{color:var(--accent-color);text-transform: uppercase;text-decoration: underline;
   font-weight: 600;letter-spacing: 5%;}
 
-.footerText {
+.footerText p{
   text-align: center;
   font-size: 18px;
   line-height: 1.8;

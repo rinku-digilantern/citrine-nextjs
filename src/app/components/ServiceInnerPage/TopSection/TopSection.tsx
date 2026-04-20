@@ -54,7 +54,9 @@ const TopSection: React.FC<TopSectionProps> = ({ data }) => {
               </div>
 
               <HeadingTag className={styles.mainHeading}>{content.name}</HeadingTag>
-              <div className={styles.description} dangerouslySetInnerHTML={{ __html: content.description }} />
+              <div className={styles.contentscroll}>
+                <div className={styles.description} dangerouslySetInnerHTML={{ __html: content.description }} />
+              </div>
               <div className={styles.buttonrow}>
                 <Link href="/book-an-appointment" aria-label="Book an Appointment" className={styles.bookbtn}>Book an Appointment</Link>
               </div>

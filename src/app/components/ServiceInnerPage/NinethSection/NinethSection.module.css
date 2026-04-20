@@ -28,7 +28,7 @@
   line-height: 1.2;
 }
 
-.description {
+.dynamicContent p {
   font-size: 18px;
   line-height: 1.8;
   color: var(--default-color);

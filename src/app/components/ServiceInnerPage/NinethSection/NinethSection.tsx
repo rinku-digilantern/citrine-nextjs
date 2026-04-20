@@ -29,10 +29,7 @@ const NinethSection: React.FC<NinethSectionProps> = ({ data, headingtag = 'h2' }
             )}
             
             {data.content_top && (
-              <div 
-                className={styles.dynamicContent}
-                dangerouslySetInnerHTML={{ __html: data.content_top }}
-              />
+              <div className={styles.dynamicContent} dangerouslySetInnerHTML={{ __html: data.content_top }}/>
             )}
             
             {data.content_bottom && (

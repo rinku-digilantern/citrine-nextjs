@@ -16,7 +16,7 @@
   margin-bottom: 15px;
 }
 
-.description {
+.description p{
   text-align: center;
   font-size: 18px;
   line-height: 1.8;
@@ -28,6 +28,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  margin-bottom: 20px;
 }
 
 .benefitCard {

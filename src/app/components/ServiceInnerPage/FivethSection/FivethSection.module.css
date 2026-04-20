@@ -16,7 +16,7 @@
   margin-bottom: 15px;
 }
 
-.description {
+.description p{
   text-align: center;
   font-size: 18px;
   line-height: 1.8;
@@ -181,7 +181,7 @@
   color: var(--default-color);
 }
 
-.footerText {
+.footerText p {
   text-align: center;
   font-size: 18px;
   line-height: 1.8;

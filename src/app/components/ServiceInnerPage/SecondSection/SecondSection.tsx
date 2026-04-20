@@ -44,20 +44,15 @@ const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }
               {data.section_heading}
             </HeadingTag>
           )}
+          <div className={styles.contentscroll}>
+            {data.content_top && (
+              <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.content_top }}/>
+            )}
 
-          {data.content_top && (
-            <div
-              className={styles.paragraph}
-              dangerouslySetInnerHTML={{ __html: data.content_top }}
-            />
-          )}
-
-          {data.content_bottom && (
-            <div
-              className={styles.paragraph}
-              dangerouslySetInnerHTML={{ __html: data.content_bottom }}
-            />
-          )}
+            {data.content_bottom && (
+              <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.content_bottom }}/>
+            )}
+          </div>
         </div>
 
         {/* Right Image with Play Button */}
@@ -108,4 +103,4 @@ const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }
   );
 };
 
-export default SecondSection;
+export default SecondSection;

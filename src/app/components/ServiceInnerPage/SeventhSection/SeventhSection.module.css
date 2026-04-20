@@ -18,7 +18,7 @@
   margin-bottom: 15px;
 }
 
-.subtitle {
+.subtitle p{
   text-align: center;
   font-size: 18px;
   line-height: 1.8;
@@ -47,7 +47,6 @@
 
 .noImageGrid .footerText {
   margin-right: auto;
-  text-align: center;
 }
 
 .videoColumn {
@@ -131,6 +130,7 @@
 .emblaContainer {
   display: flex;
   gap: 20px;
+  padding-left: 20px;padding-right: 20px;
 
 }
 
@@ -172,7 +172,7 @@
   background: var(--gradient-bg);
   color: white;
   padding: 8px 20px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.5px;
   width: fit-content;
@@ -180,20 +180,21 @@
 }
 
 .stepDescription {
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.8;
   color: var(--default-color);
   margin: 0;
   text-align: center;
 }
 
-.footerText {
+.footerText p {
   font-size: 18px;
   line-height: 1.8;
   color: var(--default-color);
   max-width: 800px;
   margin-left: auto;
-  margin-right: 4rem;
+  text-align: center;
+  margin-right: auto;
   padding: 0px;
 }
 

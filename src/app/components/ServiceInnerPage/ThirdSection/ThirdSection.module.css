@@ -28,7 +28,7 @@
 }
 
 .description {
-  text-align: center;
+  text-align: left;
   font-size: 18px;
   line-height: 1.8;
   color: var(--default-color);
@@ -94,6 +94,33 @@
   position: absolute;
   left: 0;top:-5px;
   color: var(--default-color);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Start of service page */
+.contentBox p{text-align: left;font-size: 18px;line-height: 1.8;}
+.contentBox ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0px;
+}
+
+.contentBox ul li {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  padding-left: 18px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  position: relative;
+}
+
+.contentBox ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;top:-5px;
+  color: var(--primary-color);
   font-size: 25px;
   font-weight: bold;
 }

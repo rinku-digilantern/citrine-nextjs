@@ -16,7 +16,7 @@
   margin-bottom: 15px;
 }
 
-.subtitle {
+.subtitle p{
   text-align: center;
   font-size: 18px;
   line-height: 1.8;
@@ -74,7 +74,7 @@
   margin: 0;
 }
 
-.footerText {
+.footerText p{
   text-align: center;
   font-size: 18px;
   line-height: 1.8;

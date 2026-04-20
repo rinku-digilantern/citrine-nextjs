@@ -28,7 +28,7 @@
 }
 
 .timelineTable {
-  width: 85%; margin: auto;
+  width: 100%; margin: auto;
   margin-bottom: 30px;
   border-collapse: collapse;
   border: 1px solid #C2B8A8;
@@ -66,7 +66,7 @@
 }
 
 .tableCell {
-  padding: 16px 20px;
+  padding: 8px 15px;
   font-size: 18px;
   line-height: 1.6;
   color: var(--default-color);
@@ -81,7 +81,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 85%; margin: auto;
+  width: 100%; margin: auto;
 }
 
 .tipsHeading {
@@ -122,9 +122,10 @@
 
 /* Styles for dynamic content injected via dangerouslySetInnerHTML */
 .dynamicContent {
-  width: 85%;
+  width: 100%;
   margin: 0 auto 30px auto;
 }
+.dynamicContent p{text-align: center;}
 
 .dynamicContent table {
   width: 100%;
@@ -135,7 +136,7 @@
 }
 
 .dynamicContent th {
-  padding: 16px 20px;
+  padding: 13px 15px;
   font-size: 18px;
   line-height: 1.6;
   color: var(--default-color);
@@ -145,11 +146,13 @@
   border-right: 1px solid #D5C7B3;
   background: #FDF5EA; /* Subtle header background */
 }
+.dynamicContent th p{margin-bottom: 0px;text-align: left; font-size: 18px;}
+.dynamicContent td p{margin-bottom: 0px;text-align: left; font-size: 18px;}
 
 .dynamicContent td {
-  padding: 16px 20px;
+  padding: 13px 15px;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 1.6;text-align: left;
   color: var(--default-color);
   border-right: 1px solid #D5C7B3;
   border-bottom: 1px solid #D5C7B3;
@@ -182,7 +185,7 @@
 
 .dynamicContent li {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: var(--default-color);
   padding-left: 20px;
   position: relative;
@@ -196,6 +199,57 @@
   color: var(--default-color);
   font-weight: bold;
 }
+.footerText {display: inline-block;}
+.footerText p{font-size: 18px;line-height: 1.8;}
+
+/* Target first / second column specifically */
+.footerText ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: grid;
+}
+.footerText ul li {
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 3px 0px;
+  color: var(--default-color);
+  padding-left: 20px;
+  position: relative;
+}
+.footerText ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top:0px;
+  font-size: 22px;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+/* .footerText:last-child  ul { 
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  display: grid;
+}
+.footerText:last-child ul li {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--default-color);
+  padding-left: 20px;
+  position: relative;
+}
+.footerText:last-child ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+    top:0px;
+  font-size: 22px;
+  color: var(--default-color);
+  font-weight: bold;
+} */
+
+
 
 /* Responsive styles */
 @media (max-width: 992px) {

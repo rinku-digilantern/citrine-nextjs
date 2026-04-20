@@ -21,17 +21,11 @@ const EightSection: React.FC<EightSectionProps> = ({ data, headingtag = 'h2' }) 
         )}
 
         {data.content_top && (
-          <div 
-            className={styles.dynamicContent}
-            dangerouslySetInnerHTML={{ __html: data.content_top }}
-          />
+          <div className={styles.dynamicContent} dangerouslySetInnerHTML={{ __html: data.content_top }}/>
         )}
         
         {data.content_bottom && (
-          <div 
-            className={styles.footerText}
-            dangerouslySetInnerHTML={{ __html: data.content_bottom }}
-          />
+          <div className={styles.footerText} dangerouslySetInnerHTML={{ __html: data.content_bottom }}/>
         )}
 
         {data.button_type === 'Yes' && data.button_url && (
