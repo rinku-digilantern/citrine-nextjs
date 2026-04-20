@@ -20,6 +20,15 @@ const nextConfig: NextConfig = {
     ],
   },
   allowedDevOrigins: ['192.168.1.20'],
+  async redirects() {
+    return [
+      {
+        source: '/about-doctor',
+        destination: '/dr-niti-gaur',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
