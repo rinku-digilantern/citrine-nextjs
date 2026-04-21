@@ -34,87 +34,73 @@ const Footer = () => {
     <>
       <footer className={styles.footer}>
         <div className="wrapper">
-          <div className={styles.footerCols}>
-            <div className={styles.footerCol}>
-              <div className={`${styles.title}`}>
-                <Link href="/">
-                  <Image
-                    src="/assets/images/logo.webp"
-                    alt={"Citrine Clinic"}
-                    width={180}
-                    height={50} />
+          <div className={styles.footerTop}>
+            <div className={styles.footerLogo}>
+              <Link href="/">
+                <Image
+                  src="/assets/images/logo.webp"
+                  alt={"Citrine Clinic"}
+                  width={250}
+                  height={70}
+                />
+              </Link>
+            </div>
+            <p className={styles.footerDescription}>
+              Citrine Clinic, led by Dr. Niti Gaur, is built on the belief that
+              aesthetic treatments should enhance, not change, who you are. We
+              combine clinical expertise with a thoughtful, patient-first approach
+              to deliver results that are natural, balanced, and tailored to you.
+            </p>
+            <ul className={styles.socialIconsCentered}>
+              <li>
+                <Link
+                  href="https://www.facebook.com/citrineclinicbydrniti/"
+                  target="_blank"
+                  aria-label="Citrine Facebook page"
+                  rel="noopener noreferrer"
+                >
+                  <FaFacebookF />
                 </Link>
-              </div>
-              <p>Citrine Clinic, led by Dr. Niti Gaur, is built on the belief that aesthetic treatments should enhance, not change, who you are. We combine clinical expertise with a thoughtful, patient-first approach to deliver results that are natural, balanced, and tailored to you.</p>
-              <ul className={styles.socialIcons}>
-                <li>
-                  <Link
-                    href="https://www.facebook.com/citrineclinicbydrniti/"
-                    target="_blank"
-                    aria-label="Citrine Facebook page"
-                    rel="noopener noreferrer">
-                    <FaFacebookF />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://www.instagram.com/citrinedermatologyclinic/"
-                    target="_blank"
-                    aria-label="Citrine Instagram page"
-                    rel="noopener noreferrer">
-                    <FaInstagram />
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://www.youtube.com/channel/UC9Oo0M9EtAcWcNXN1_e6gsQ"
-                    target="_blank"
-                    aria-label="Citrine YouTube page"
-                    rel="noopener noreferrer">
-                    <FaYoutube />
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className={styles.footerCol}>
-              <div className={`${styles.title}`}>Quick Links</div>
+              </li>
+              <li>
+                <Link
+                  href="https://www.instagram.com/citrinedermatologyclinic/"
+                  target="_blank"
+                  aria-label="Citrine Instagram page"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="https://www.youtube.com/channel/UC9Oo0M9EtAcWcNXN1_e6gsQ"
+                  target="_blank"
+                  aria-label="Citrine YouTube page"
+                  rel="noopener noreferrer"
+                >
+                  <FaYoutube />
+                </Link>
+              </li>
+            </ul>
+            <div className={styles.horizontalQuickLinks}>
               <ul>
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-                <li>
-                  <Link href="/dr-niti-gaur">About Doctor</Link>
-                </li>
-                <li>
-                  <Link href="/about-clinic">About Clinic</Link>
-                </li>
-                <li>
-                  <Link href="/concerns">Concerns</Link>
-                </li>
-                <li>
-                  <Link href="/">Citrine Exclusive</Link>
-                </li>
-                <li>
-                  <Link href="/offers">Offers</Link>
-                </li>
-                <li>
-                  <Link href="/testimonials">Testimonials</Link>
-                </li>
-                <li>
-                  <Link href="/media">Media</Link>
-                </li>
-                <li>
-                  <Link href="/blog">Blogs</Link>
-                </li>
-                <li>
-                  <Link href="/videos">Videos</Link>
-                </li>
-                <li>
-                  <Link href="/contact">Contact Us</Link>
-                </li>
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/dr-niti-gaur">About Doctor</Link></li>
+                <li><Link href="/about-clinic">About Clinic</Link></li>
+                <li><Link href="/concerns">Concerns</Link></li>
+                <li><Link href="/technologies">Technologies</Link></li>
+                <li><Link href="/offers">Offers</Link></li>
+                <li><Link href="/testimonials">Testimonials</Link></li>
+                <li><Link href="/media">Media</Link></li>
+                <li><Link href="/blog">Blogs</Link></li>
+                <li><Link href="/videos">Videos</Link></li>
+                <li><Link href="/contact">Contact Us</Link></li>
               </ul>
             </div>
+          </div>
 
+          <div className={styles.footerCols}>
             <div className={styles.footerCol}>
               <div className={`${styles.title}`}>Treatments</div>
               <ul>
@@ -146,6 +132,26 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
+
+            <div className={styles.footerCol}>
+              <div className={`${styles.title}`}>Concerns</div>
+              <ul>
+                <li><Link href="/acne">Acne</Link></li>
+                <li><Link href="/pigmentation">Pigmentation</Link></li>
+                <li><Link href="/ageing">Ageing</Link></li>
+                <li><Link href="/excessive-hair-growth">Excessive Hair Growth</Link></li>
+                <li><Link href="/hair-loss">Hair Loss</Link></li>
+                <li><Link href="/eyes">Eyes</Link></li>
+                <li><Link href="/lips">Lips</Link></li>
+                <li className={styles.noBullet}>
+                  <Link href="/concerns" className={styles.more}>
+                    More
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+
             <div className={styles.footerCol}>
               <div className={`${styles.title}`}>Contact Info.</div>
               <ul>
@@ -213,6 +219,22 @@ const Footer = () => {
                   </div>
                 </div>
               </ul>
+            </div>
+
+            <div className={styles.footerCol}>
+              <div className={`${styles.title}`}>Locate Us</div>
+              <div className={styles.mapWrapper}>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.726092509854!2d77.0446401!3d28.457672199999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19a3645dcd1b%3A0x55620b9e51afd7a6!2sCitrine%20Clinic%20by%20Dr%20Niti%20Gaur!5e0!3m2!1sen!2sin!4v1776685779838!5m2!1sen!2sin"
+                  width="100%"
+                  height="250"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Citrine Clinic Location"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

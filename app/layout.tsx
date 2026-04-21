@@ -88,25 +88,23 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "Dermatology",
-              "name": "Citrine Clinic",
-              "image": "https://www.citrineclinic.com/assets/images/homeclnic.webp",
+              "@type": "LocalBusiness",
+              "name": "Citrine Clinic by Dr Niti Gaur",
+              "image": "https://www.citrineclinic.com/_next/image?url=%2Fassets%2Fimages%2Fabout-doctor%2Four-facilitybg.webp&w=750&q=75",
               "@id": "",
               "url": "https://www.citrineclinic.com/",
-              "telephone": "+91-9868 649 805",
-              "currenciesAccepted": "INR",
-              "priceRange": "INR",
+              "telephone": "098686 49805",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "SCO- 19, Huda Market Rd, Sector 15 Part 2, Market",
-                "addressLocality": "Gurugram",
+                "streetAddress": "SCO- 19, Huda Market Rd, Sector 15 Part 2, Market, Gurugram, Haryana",
+                "addressLocality": "Gurgaon",
                 "postalCode": "122001",
                 "addressCountry": "IN"
               },
               "geo": {
                 "@type": "GeoCoordinates",
-                "latitude": 28.458395405106106,
-                "longitude": 77.04476313069293
+                "latitude": 28.4576722,
+                "longitude": 77.0446401
               },
               "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
@@ -120,12 +118,12 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
                   "Sunday"
                 ],
                 "opens": "09:00",
-                "closes": "18:00"
+                "closes": "20:00"
               },
               "sameAs": [
                 "https://www.facebook.com/citrineclinicbydrniti/",
-                "https://www.instagram.com/citrineclinic/",
-                "https://www.youtube.com/@citrineclinicbydr.nitigaur2957"
+                "https://www.instagram.com/citrinedermatologyclinic/",
+                "https://www.youtube.com/channel/UC9Oo0M9EtAcWcNXN1_e6gsQ"
               ]
             }),
           }}
