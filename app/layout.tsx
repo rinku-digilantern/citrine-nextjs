@@ -58,6 +58,102 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             __html: `(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-5R4CBF3');`,
           }}
         />
+
+        {/* Organization Schema */}
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Citrine Clinic",
+              "url": "https://www.citrineclinic.com",
+              "logo": "https://www.citrineclinic.com/assets/images/logo.svg",
+              "sameAs": [
+                "https://www.facebook.com/citrineclinicbydrniti/",
+                "https://www.instagram.com/citrineclinic/",
+                "https://www.youtube.com/@citrineclinicbydr.nitigaur2957"
+              ]
+            }),
+          }}
+        />
+
+        {/* Local Business Schema */}
+        <Script
+          id="local-business-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Citrine Clinic by Dr Niti Gaur",
+              "image": "https://www.citrineclinic.com/_next/image?url=%2Fassets%2Fimages%2Fabout-doctor%2Four-facilitybg.webp&w=750&q=75",
+              "@id": "",
+              "url": "https://www.citrineclinic.com/",
+              "telephone": "098686 49805",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "SCO- 19, Huda Market Rd, Sector 15 Part 2, Market, Gurugram, Haryana",
+                "addressLocality": "Gurgaon",
+                "postalCode": "122001",
+                "addressCountry": "IN"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 28.4576722,
+                "longitude": 77.0446401
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+                ],
+                "opens": "09:00",
+                "closes": "20:00"
+              },
+              "sameAs": [
+                "https://www.facebook.com/citrineclinicbydrniti/",
+                "https://www.instagram.com/citrinedermatologyclinic/",
+                "https://www.youtube.com/channel/UC9Oo0M9EtAcWcNXN1_e6gsQ"
+              ]
+            }),
+          }}
+        />
+
+        {/* Person Schema */}
+        <Script
+          id="person-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "Person",
+              "name": "Dr. Niti Gaur",
+              "url": "https://www.citrineclinic.com/dermatologist-in-gurgaon",
+              "image": "https://www.citrineclinic.com/assets/images/home-doctor-bg.webp",
+              "sameAs": [
+                "https://www.facebook.com/citrineclinicbydrniti/",
+                "https://www.instagram.com/citrineclinic/",
+                "https://www.youtube.com/@citrineclinicbydr.nitigaur2957"
+              ],
+              "jobTitle": "Dermatologist, Cosmetologist, Trichologist",
+              "worksFor": {
+                "@type": "Organization",
+                "name": "Citrine Clinic"
+              }
+            }),
+          }}
+        />
       </head>
       <body suppressHydrationWarning className={`font-sans ${montserrat.variable} ${poppins.variable} antialiased`}>
         {/* Google Tag Manager (noscript) */}

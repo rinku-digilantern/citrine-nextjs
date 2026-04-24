@@ -22,8 +22,8 @@ const contactMethods: ContactMethod[] = [
   {
     icon: '/assets/images/contact/phone.webp',
     label: 'Phone',
-    content: '<a href="tel:+919868649805">+91-9868649805</a>, <a href="tel:+919810652808">+91-9810652808</a>, <a href="tel:+918042302681">+91-8042302681</a>'
-},
+    content: '<a href="tel:+918065060900">+91-8065060900</a>, <a href="tel:+919868649805">+91-9868649805</a>, <a href="tel:+919810652808">+91-9810652808</a>'
+  },
   {
     icon: '/assets/images/contact/timing.webp',
     label: 'Hours',
@@ -40,7 +40,7 @@ const ContactRight = () => {
 
       <div className={styles.contactMethods}>
         {contactMethods.map((method, index) => (
-          <div 
+          <div
             key={index}
             className={`${styles.contactMethod}`}>
             <div className={styles.contactIcon}>

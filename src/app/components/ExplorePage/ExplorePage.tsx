@@ -29,8 +29,6 @@ const ExplorePage = () => {
 					</div>
 					<div className={styles.flexList}>
 						<ul>
-
-							<li><Link href="/dr-niti-gaur">Dr. Niti Gaur</Link></li>
 							<li><Link href="/laser-hair-removal-in-gurgaon">Laser Hair Removal in Gurgaon</Link></li>
 							<li><Link href="/stretch-marks-treatment-in-gurgaon">Stretch Marks Treatment in Gurgaon</Link></li>
 							<li><Link href="/anti-wrinkle-injection-in-gurgaon">Anti Wrinkle Injection in Gurgaon</Link></li>
