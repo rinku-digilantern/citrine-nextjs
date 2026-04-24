@@ -22,7 +22,7 @@
 }
 
 .blogBody h1 {
-  font-size: 28px;
+  font-size: 32px;
   margin-bottom: 10px;
   font-weight: 600;
   color: var(--default-color);
@@ -144,8 +144,8 @@
 .finalThoughts h2,
 .contentColumn h2 {
   color: var(--default-color);
-  margin: 15px 0 10px 0px;
-  font-size: 24px;
+  margin: 40px 0 20px 0px;
+  font-size: 30px;
   font-weight: 600;
 }
 
@@ -153,8 +153,8 @@
 .finalThoughts h3,
 .contentColumn h3 {
   color: var(--default-color);
-  margin: 15px 0 10px 0px;
-  font-size: 22px;
+  margin: 32px 0 16px 0px;
+  font-size: 24px;
   font-weight: 600;
 }
 
@@ -224,16 +224,16 @@
 }
 
 .faqsection h2 {
-  font-size: 25px;
+  font-size: 30px;
   color: var(--default-color);
-  margin: 20px 0 20px 0;
+  margin: 40px 0 20px 0;
   font-weight: 600;
 }
 
 .faqsection h3 {
-  font-size: 18px;
+  font-size: 24px;
   color: var(--default-color);
-  margin: 20px 0 10px 0;
+  margin: 32px 0 16px 0;
   font-weight: 600;
 }
 
@@ -433,7 +433,7 @@
 .blogBody p,
 .contentColumn p,
 .finalThoughts p {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 18px;
   line-height: 1.8;
   color: var(--default-color);
@@ -443,7 +443,7 @@
 .blogBody ol,
 .finalThoughts ul,
 .finalThoughts ol {
-  margin: 0 0 10px 0;
+  margin: 0 0 20px 0;
   padding-left: 24px;
 }
 
@@ -556,7 +556,7 @@
   .blogBody p,
   .finalThoughts p,
   .contentColumn p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 16px;
   }
 
@@ -566,21 +566,28 @@
 
   .blogBody ul li,
   .finalThoughts ul li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 16px;
   }
 
   .blogBody ol li,
   .finalThoughts ol li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 16px;
   }
 
   .blogBody h2,
   .contentColumn h2,
   .finalThoughts h2 {
-    margin: 12px 0 12px 0px;
-    font-size: 20px;
+    margin: 32px 0 16px 0px;
+    font-size: 26px;
+  }
+
+  .blogBody h3,
+  .contentColumn h3,
+  .finalThoughts h3 {
+    margin: 24px 0 12px 0px;
+    font-size: 22px;
   }
 
   .authorSection {
@@ -699,7 +706,7 @@
   .blogBody p,
   .finalThoughts p,
   .contentColumn p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 16px;
   }
 
@@ -709,20 +716,27 @@
 
   .blogBody ul li,
   .finalThoughts ul li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 16px;
   }
 
   .blogBody ol li,
   .finalThoughts ol li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 16px;
   }
 
   .blogBody h2,
   .contentColumn h2,
   .finalThoughts h2 {
-    margin: 12px 0 12px 0px;
+    margin: 28px 0 14px 0px;
+    font-size: 24px;
+  }
+
+  .blogBody h3,
+  .contentColumn h3,
+  .finalThoughts h3 {
+    margin: 20px 0 10px 0px;
     font-size: 20px;
   }
 
@@ -758,9 +772,14 @@
     font-size: 16px;
   }
 
+  .faqsection h2 {
+    margin: 32px 0 16px;
+    font-size: 26px;
+  }
+
   .faqsection h3 {
-    margin: 12px 0 8px;
-    font-size: 18px;
+    margin: 24px 0 12px;
+    font-size: 22px;
   }
 
   .faqsection ul {
@@ -929,7 +948,7 @@
   .blogBody p,
   .finalThoughts p,
   .contentColumn p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 16px;
   }
 
@@ -939,21 +958,28 @@
 
   .blogBody ul li,
   .finalThoughts ul li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 16px;
   }
 
   .blogBody ol li,
   .finalThoughts ol li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 16px;
   }
 
   .blogBody h2,
   .contentColumn h2,
   .finalThoughts h2 {
-    margin: 12px 0 12px 0px;
-    font-size: 20px;
+    margin: 24px 0 12px 0px;
+    font-size: 22px;
+  }
+
+  .blogBody h3,
+  .contentColumn h3,
+  .finalThoughts h3 {
+    margin: 18px 0 8px 0px;
+    font-size: 18px;
   }
 
   .pigmentList {
@@ -988,8 +1014,13 @@
     font-size: 16px;
   }
 
+  .faqsection h2 {
+    margin: 24px 0 12px;
+    font-size: 22px;
+  }
+
   .faqsection h3 {
-    margin: 12px 0 8px;
+    margin: 18px 0 8px;
     font-size: 18px;
   }
 
@@ -1158,7 +1189,7 @@
   .blogBody p,
   .finalThoughts p,
   .contentColumn p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 15px;
   }
 
@@ -1168,21 +1199,28 @@
 
   .blogBody ul li,
   .finalThoughts ul li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 15px;
   }
 
   .blogBody ol li,
   .finalThoughts ol li {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 15px;
   }
 
   .blogBody h2,
   .contentColumn h2,
   .finalThoughts h2 {
-    margin: 12px 0 12px 0px;
+    margin: 24px 0 12px 0px;
     font-size: 20px;
+  }
+
+  .blogBody h3,
+  .contentColumn h3,
+  .finalThoughts h3 {
+    margin: 18px 0 8px 0px;
+    font-size: 18px;
   }
 
   .pigmentList {
@@ -1217,8 +1255,13 @@
     font-size: 15px;
   }
 
+  .faqsection h2 {
+    margin: 24px 0 12px;
+    font-size: 20px;
+  }
+
   .faqsection h3 {
-    margin: 12px 0 8px;
+    margin: 18px 0 8px;
     font-size: 18px;
   }
 
