@@ -77,13 +77,12 @@ const TechFaqSection: React.FC = () => {
           {faqData.map((faq) => (
             <div key={faq.id} className={`${styles.faqItem} ${openId === faq.id ? styles.active : ''}`}>
               <button
-                className={`${styles.faqQuestion} ${
-                  openId === faq.id ? styles.active : ""
-                }`}
+                className={`${styles.faqQuestion} ${openId === faq.id ? styles.active : ""
+                  }`}
                 onClick={() => toggleFaq(faq.id)}
                 aria-expanded={openId === faq.id}
               >
-                <span>{faq.question}</span>
+                <h3>{faq.question}</h3>
                 <span className={styles.icon}>
                   {openId === faq.id ? "−" : "+"}
                 </span>

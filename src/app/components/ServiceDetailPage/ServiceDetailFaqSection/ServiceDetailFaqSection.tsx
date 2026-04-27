@@ -31,18 +31,17 @@ const ServiceDetailFaqSection: React.FC<Props> = ({ faqData, heading, content, c
       <div className={styles.container}>
         <h2 className={`mainHeading ${styles.mainHeading}`}>{heading || "FREQUENTLY ASKED QUESTIONS"}</h2>
         {content && <div className={styles.faqContent} dangerouslySetInnerHTML={{ __html: wrapTablesInScrollDiv(content) }} />}
-        
+
         <div className={styles.faqList}>
           {faqData.map((faq) => (
             <div key={faq.id} className={`${styles.faqItem} ${openId === faq.id ? styles.active : ''}`}>
               <button
-                className={`${styles.faqQuestion} ${
-                  openId === faq.id ? styles.active : ""
-                }`}
+                className={`${styles.faqQuestion} ${openId === faq.id ? styles.active : ""
+                  }`}
                 onClick={() => toggleFaq(faq.id)}
                 aria-expanded={openId === faq.id}
               >
-                <span>{faq.question}</span>
+                <h3>{faq.question}</h3>
                 <span className={styles.icon}>
                   {openId === faq.id ? "−" : "+"}
                 </span>
