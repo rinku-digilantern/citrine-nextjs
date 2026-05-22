@@ -24,7 +24,8 @@ async function fetchWithTimeout(url: string, options: any = {}, timeout = 10000)
 export async function getServiceType(slug: string) {
   try {
     const res = await fetchWithTimeout(`${BASE_API_URL}/service-type/${slug}`, {
-      next: { revalidate: 3600 }, // Revalidate every hour
+      // next: { revalidate: 3600 }, // Revalidate every hour
+      next: { revalidate: 10 },
     });
     if (!res.ok) return null;
     const text = await res.text();
@@ -38,7 +39,8 @@ export async function getServiceType(slug: string) {
 export async function getServiceCategoryData(slug: string) {
   try {
     const res = await fetchWithTimeout(`${BASE_API_URL}/service/${slug}`, {
-      next: { revalidate: 3600 },
+      // next: { revalidate: 3600 },
+      next: { revalidate: 10 },
     });
     if (!res.ok) return null;
     const text = await res.text();
@@ -52,7 +54,8 @@ export async function getServiceCategoryData(slug: string) {
 export async function getServiceInnerData(slug: string) {
   try {
     const res = await fetchWithTimeout(`${BASE_API_URL}/service-details/${slug}`, {
-      next: { revalidate: 3600 },
+      // next: { revalidate: 3600 },
+      next: { revalidate: 10 },
     });
     if (!res.ok) return null;
     const text = await res.text();
@@ -66,7 +69,8 @@ export async function getServiceInnerData(slug: string) {
 export async function getSecondCategoryData(slug: string) {
   try {
     const res = await fetchWithTimeout(`${BASE_API_URL}/service-category/${slug}`, {
-      next: { revalidate: 3600 },
+      // next: { revalidate: 3600 },
+      next: { revalidate: 10 },
     });
     if (!res.ok) return null;
     const text = await res.text();
@@ -79,13 +83,14 @@ export async function getSecondCategoryData(slug: string) {
 export async function getSeoData(slug: string) {
   try {
     const res = await fetchWithTimeout(`${BASE_API_URL}/seo-tag/${slug}`, {
-      next: { revalidate: 3600 },
+      // next: { revalidate: 3600 },
+      next: { revalidate: 10 },
     });
     if (!res.ok) return null;
     const text = await res.text();
     try {
-        const json = JSON.parse(text);
-        return json?.seo || null;
+      const json = JSON.parse(text);
+      return json?.seo || null;
     } catch { return null; }
   } catch (error) {
     console.error("Error fetching SEO data:", error);

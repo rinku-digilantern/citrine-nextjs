@@ -32,11 +32,11 @@ const VideoPage = () => {
     const fetchVideos = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/videos`);
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/videos`);
         if (!response.ok) {
           throw new Error('Failed to fetch videos');
         }
-        
+
         const result: ApiResponse = await response.json();
         setVideoData(result.data);
         setError(null);
@@ -70,11 +70,11 @@ const VideoPage = () => {
               {visibleVideos.map((video) => (
                 <div key={video.id} className={styles.serviceitem}>
                   <div className={styles.img}>
-                    <Image 
+                    <Image
                       src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service_video/image/${video.image}`}
-                      alt={video.alt_tag} 
-                      width={480} 
-                      height={360} 
+                      alt={video.alt_tag}
+                      width={480}
+                      height={360}
                     />
                   </div>
                   <div className={styles.details}>

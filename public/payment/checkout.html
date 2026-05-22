@@ -145,6 +145,7 @@
         }
 
         .form-group input,
+        .form-group select,
         .form-group textarea {
             width: 100%;
             padding: 12px;
@@ -152,6 +153,7 @@
             border-radius: 6px;
             font-size: 14px;
             font-family: inherit;
+            background-color: white;
         }
 
         .form-group input:focus,
@@ -296,8 +298,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://www.citrineclinic.com/assets/images/img/logo.webp" alt="Citrine Clinic"
-                class="header-logo">
+            <img src="https://www.citrineclinic.com/assets/images/logo.png" alt="Citrine Clinic" class="header-logo">
 
             <p class="subtitle"></p>
         </div>
@@ -312,50 +313,83 @@
             <!-- Alert Messages -->
             <div id="alertMessage" class="alert"></div>
 
-            <!-- View Mode -->
-            <div id="detailsView" class="details-view">
+            <!-- Details Form (Main View) -->
+            <div id="paymentForm" class="active">
                 <h3 style="color: #333; margin-bottom: 20px; font-size: 20px;">Payment Details</h3>
 
-                <div class="detail-row">
-                    <div class="detail-label">Patient Name:</div>
-                    <div class="detail-value" id="viewName">-</div>
-                </div>
-                <div class="detail-row">
-                    <div class="detail-label">Email:</div>
-                    <div class="detail-value" id="viewEmail">-</div>
-                </div>
-                <div class="detail-row">
-                    <div class="detail-label">Phone:</div>
-                    <div class="detail-value" id="viewPhone">-</div>
-                </div>
-                <div class="detail-row">
-                    <div class="detail-label">Age:</div>
-                    <div class="detail-value" id="viewAge">-</div>
-                </div>
-                <div class="detail-row">
-                    <div class="detail-label">Service:</div>
-                    <div class="detail-value" id="viewService">-</div>
-                </div>
-                <div class="detail-row">
-                    <div class="detail-label">Appointment Date:</div>
-                    <div class="detail-value" id="viewDate">-</div>
-                </div>
-                <div class="detail-row"
-                    style="border-bottom: none; padding-top: 20px; margin-top: 10px; border-top: 2px solid #667eea;">
-                    <div class="detail-label">Amount to Pay:</div>
-                    <div class="detail-value amount-highlight" id="viewAmount">₹ 0</div>
+                <!-- Hidden Fields -->
+                <input type="hidden" id="paymentId">
+                <input type="hidden" id="referenceToken">
+                <input type="hidden" id="clinicLocationId">
+
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Full Name <span style="color: #dc3545;">*</span></label>
+                        <input type="text" id="paymentName" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Email <span style="color: #dc3545;">*</span></label>
+                        <input type="email" id="paymentEmail" required readonly>
+                    </div>
                 </div>
 
-                <!-- Coupon Code Section in View Mode -->
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Phone <span style="color: #dc3545;">*</span></label>
+                        <input type="text" id="paymentPhone" maxlength="10" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Service <span style="color: #dc3545;">*</span></label>
+                        <input type="text" id="paymentService" required readonly>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Appointment Date <span style="color: #dc3545;">*</span></label>
+                        <input type="date" id="paymentDate" required onchange="fetchSlots()">
+                    </div>
+                    <div class="form-group">
+                        <label>Select Doctor <span style="color: #dc3545;">*</span></label>
+                        <select id="paymentDoctor" required onchange="onDoctorChange()">
+                            <option value="">Select Doctor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Select Time Slot <span style="color: #dc3545;">*</span></label>
+                        <select id="paymentSlot" required>
+                            <option value="">Select Time Slot</option>
+                        </select>
+                    </div>
+                    <div class="form-group"
+                        style="background: #f8f9fa; padding: 15px; border-radius: 6px; border: 2px solid #e9ecef;">
+                        <label style="color: #6c757d;">Amount (INR)</label>
+                        <input type="number" id="paymentPrice" disabled
+                            style="font-size: 18px; font-weight: 600; color: #d29740;">
+                        <p id="doctorHoursInfo" style="font-size: 12px; color: #888; margin-top: 6px; display: none;">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group" style="display: none;">
+                    <label>Additional Notes</label>
+                    <textarea id="paymentMessage" rows="2"
+                        placeholder="Any special requirements or notes..."></textarea>
+                </div>
+
+                <!-- Coupon Code Section -->
                 <div class="form-group"
-                    style="background: #FFF9E6; padding: 15px; border-radius: 6px; border: 2px solid #ebd577; margin-top: 20px;">
+                    style="display: none; background: #FFF9E6; padding: 15px; border-radius: 6px; border: 2px solid #ebd577; margin-top: 10px;">
                     <label style="color: #d29740; font-weight: 600;">🎟️ Have a Coupon Code?</label>
                     <div style="display: flex; gap: 10px; margin-top: 8px;">
-                        <input type="text" id="couponCodeView" placeholder="Enter coupon code (e.g., APP10)"
+                        <input type="text" id="couponCodeView" placeholder="Enter coupon code"
                             style="flex: 1; text-transform: uppercase; padding: 12px; border: 1px solid #ced4da; border-radius: 6px; font-size: 14px;"
                             maxlength="50">
                         <button type="button" class="btn" id="applyCouponBtn" onclick="applyCouponView()"
-                            style="width: auto; padding: 12px 25px; background: linear-gradient(135deg, #52c41a, #73d13d);">Apply</button>
+                            style="width: auto; padding: 12px 25px; background: linear-gradient(135deg, #52c41a, #73d13d); border-radius: 6px;">Apply</button>
                     </div>
                     <div id="couponMessageView"
                         style="margin-top: 10px; font-size: 14px; padding: 10px; border-radius: 4px; display: none;">
@@ -383,81 +417,114 @@
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn btn-outline" onclick="toggleEditMode()">✏️ Edit Details</button>
-                    <button class="btn" onclick="proceedToPayment()">💳 Pay Now</button>
+                    <button class="btn" onclick="proceedToPayment()" id="payNowBtn">💳 Pay Now</button>
                 </div>
             </div>
 
             <!-- Edit Mode -->
-            <div id="formEdit" class="form-edit">
-                <h3 style="color: #333; margin-bottom: 20px; font-size: 20px;">Edit Payment Details</h3>
 
-                <!-- Hidden Fields -->
-                <input type="hidden" id="paymentId">
-                <input type="hidden" id="referenceToken">
-                <input type="hidden" id="authToken" value="1a26495729bbc804007b72e98803cab4">
-                <input type="hidden" id="clinicLocationId">
-
-                <div class="grid">
-                    <div class="form-group">
-                        <label>Full Name <span style="color: #dc3545;">*</span></label>
-                        <input type="text" id="paymentName" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Age <span style="color: #dc3545;">*</span></label>
-                        <input type="number" id="paymentAge" required>
-                    </div>
-                </div>
-
-                <div class="grid">
-                    <div class="form-group">
-                        <label>Email <span style="color: #dc3545;">*</span></label>
-                        <input type="email" id="paymentEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone <span style="color: #dc3545;">*</span></label>
-                        <input type="text" id="paymentPhone" maxlength="10" required>
-                    </div>
-                </div>
-
-                <div class="grid">
-                    <div class="form-group">
-                        <label>Service <span style="color: #dc3545;">*</span></label>
-                        <input type="text" id="paymentService" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Appointment Date <span style="color: #dc3545;">*</span></label>
-                        <input type="date" id="paymentDate" required>
-                    </div>
-                </div>
-
-                <div class="form-group"
-                    style="background: #f8f9fa; padding: 15px; border-radius: 6px; border: 2px solid #e9ecef;">
-                    <label style="color: #6c757d;">Amount (INR) - Fixed</label>
-                    <input type="number" id="paymentPrice" disabled
-                        style="font-size: 18px; font-weight: 600; color: #667eea;">
-                </div>
-
-                <div class="form-group">
-                    <label>Additional Notes</label>
-                    <textarea id="paymentMessage" rows="3"
-                        placeholder="Any special requirements or notes..."></textarea>
-                </div>
-
-                <div class="btn-group">
-                    <button class="btn btn-outline" onclick="cancelEdit()">❌ Cancel</button>
-                    <button class="btn" onclick="saveAndProceed()">💾 Save & Continue</button>
-                </div>
-            </div>
 
             <!-- Debug Sections (Hidden) -->
-            <input type="hidden" id="apiBaseUrl" value="https://web.digifolio.co.in:8090/api">
+            <input type="hidden" id="apiBaseUrl" value="https://api.citrineclinic.com/api">
             <input type="hidden" id="referenceId" value="MDAwMDAwMDQ0NDY2">
         </div>
     </div>
 
     <script>
         let paymentData = {};
+        let doctorsList = [];
+
+        // Local price & hours map (fallback if API does not return price/hours)
+        const DOCTOR_PRICE_MAP = {
+            'dr niti': 2000,
+            'dr niti gaur': 2000,
+            'default': 1200
+        };
+
+        const DOCTOR_HOURS_MAP = {
+            'dr niti gaur': '10 AM – 5 PM',
+            'dr guneet bedi': '10 AM – 6 PM',
+            'dr raheel khan': '11 AM – 8 PM',
+            'moonis khan': '11 AM – 8 PM'
+        };
+
+        function getDoctorPrice(doctor) {
+            if (!doctor) return null;
+            const nameLower = (doctor.name || '').toLowerCase();
+            // Force Niti to be 2000 as per instruction
+            if (nameLower.includes('niti')) {
+                return 2000;
+            }
+            // Use API price if available
+            if (doctor.price !== undefined && doctor.price !== null && doctor.price !== '') {
+                return parseFloat(doctor.price);
+            }
+            return DOCTOR_PRICE_MAP['default'];
+        }
+
+        function getDoctorHours(doctor) {
+            if (!doctor) return null;
+            // Use API working_hours if available
+            if (doctor.working_hours) return doctor.working_hours;
+            const nameLower = (doctor.name || '').toLowerCase();
+            return DOCTOR_HOURS_MAP[nameLower] || null;
+        }
+
+        function isSlotWithinAllowedHours(doctorName, slotStartTime) {
+            if (!doctorName || !slotStartTime) return true;
+            const nameLower = doctorName.toLowerCase();
+
+            let startLimit = null;
+            let endLimit = null;
+
+            if (nameLower.includes('niti')) {
+                startLimit = "10:00";
+                endLimit = "17:00";
+            } else if (nameLower.includes('guneet')) {
+                startLimit = "10:00";
+                endLimit = "18:00";
+            } else if (nameLower.includes('raheel')) {
+                startLimit = "11:00";
+                endLimit = "20:00";
+            } else if (nameLower.includes('moonis')) {
+                startLimit = "11:00";
+                endLimit = "20:00";
+            }
+
+            if (startLimit && endLimit) {
+                return slotStartTime >= startLimit && slotStartTime < endLimit;
+            }
+
+            return true;
+        }
+
+        function onDoctorChange() {
+            const doctorId = document.getElementById('paymentDoctor').value;
+            const doctor = doctorsList.find(d => String(d.id) === String(doctorId));
+
+            if (doctor) {
+                const price = getDoctorPrice(doctor);
+                if (price !== null) {
+                    document.getElementById('paymentPrice').value = price;
+                    // Also update paymentData so coupon logic uses the correct base price
+                    paymentData.amount = price;
+                }
+                const hours = getDoctorHours(doctor);
+                const hoursEl = document.getElementById('doctorHoursInfo');
+                if (hours) {
+                    hoursEl.textContent = '🕐 Consultation Hours: ' + hours;
+                    hoursEl.style.display = 'block';
+                } else {
+                    hoursEl.style.display = 'none';
+                }
+            } else {
+                document.getElementById('paymentPrice').value = '';
+                paymentData.amount = '';
+                document.getElementById('doctorHoursInfo').style.display = 'none';
+            }
+
+            fetchSlots();
+        }
 
         // Extract reference_token from URL on page load
         function getUrlParameter(name) {
@@ -471,14 +538,22 @@
 
             // Set min date for the picker
             const today = new Date();
-            const yyyy = today.getFullYear();
-            const mm = String(today.getMonth() + 1).padStart(2, '0');
-            const dd = String(today.getDate()).padStart(2, '0');
+            const tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1);
+            const yyyy = tomorrow.getFullYear();
+            const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            const dd = String(tomorrow.getDate()).padStart(2, '0');
             const minDate = `${yyyy}-${mm}-${dd}`;
             const dateInput = document.getElementById('paymentDate');
             if (dateInput) dateInput.setAttribute('min', minDate);
 
             if (urlReferenceToken) {
+                if (localStorage.getItem('payment_completed_' + urlReferenceToken) === 'true') {
+                    hideLoading();
+                    showAlert('error', 'This payment link has already been used.');
+                    return;
+                }
+
                 document.getElementById('referenceId').value = urlReferenceToken;
 
                 // Automatically load data in background
@@ -496,13 +571,6 @@
             return document.getElementById('referenceId').value;
         }
 
-        function getAuthToken() {
-            // Return static auth token - not from URL
-            return '1a26495729bbc804007b72e98803cab4';
-        }
-
-
-
         function showAlert(type, message) {
             const alert = document.getElementById('alertMessage');
             alert.className = `alert alert-${type} show`;
@@ -514,8 +582,7 @@
 
         function showLoading() {
             document.getElementById('loadingState').style.display = 'block';
-            document.getElementById('detailsView').classList.remove('active');
-            document.getElementById('formEdit').classList.remove('active');
+            document.getElementById('paymentForm').classList.remove('active');
         }
 
         function hideLoading() {
@@ -528,30 +595,169 @@
             // Store data globally
             paymentData = data;
 
-            // Populate view mode
-            document.getElementById('viewName').textContent = data.name || '-';
-            document.getElementById('viewEmail').textContent = data.email || '-';
-            document.getElementById('viewPhone').textContent = data.phone || '-';
-            document.getElementById('viewAge').textContent = data.age || '-';
-            document.getElementById('viewService').textContent = data.service || '-';
-            document.getElementById('viewDate').textContent = data.appointment_date || '-';
-            document.getElementById('viewAmount').textContent = `₹ ${data.amount || 0}`;
-
-            // Populate hidden/edit fields
+            // Populate form directly
             document.getElementById('paymentId').value = data.id || '';
             document.getElementById('referenceToken').value = data.reference_token || getReferenceId();
             document.getElementById('paymentName').value = data.name || '';
             document.getElementById('paymentEmail').value = data.email || '';
             document.getElementById('paymentPhone').value = data.phone || '';
-            document.getElementById('paymentAge').value = data.age || '';
             document.getElementById('paymentService').value = data.service || '';
             document.getElementById('paymentDate').value = data.appointment_date || '';
-            document.getElementById('paymentPrice').value = data.amount || '';
+// Validate that the appointment date is not today
+const todayStr = new Date().toISOString().split('T')[0];
+if (data.appointment_date && data.appointment_date === todayStr) {
+    showAlert('error', 'Today Appointment Slot not available Please select the future Date for Appointment.');
+    document.getElementById('paymentDate').value = '';
+};
+
+            // Prefill price only if a doctor is already set/preselected, otherwise leave blank
+            const priceVal = data.doctor_id ? (data.amount || '') : '';
+            document.getElementById('paymentPrice').value = priceVal;
+            paymentData.amount = priceVal;
+
             document.getElementById('clinicLocationId').value = data.clinic_location_id || '1';
             document.getElementById('paymentMessage').value = data.message || '';
 
-            // Show view mode
-            document.getElementById('detailsView').classList.add('active');
+            // Set doctor and trigger slots fetch if needed
+            if (data.doctor_id) {
+                document.getElementById('paymentDoctor').value = data.doctor_id;
+                fetchSlots(data.time_slot);
+            }
+
+            document.getElementById('paymentForm').classList.add('active');
+        }
+
+        async function loadDoctors() {
+            try {
+                const response = await fetch(`${getApiUrl()}/get-doctor-list`);
+                const result = await response.json();
+
+                if ((result.status === "success" || result.success === true) && result.data) {
+                    doctorsList = result.data;
+                    const doctorSelect = document.getElementById('paymentDoctor');
+
+                    // Clear existing options except the first one
+                    doctorSelect.innerHTML = '<option value="">Select Doctor</option>';
+
+                    doctorsList.forEach(doc => {
+                        const option = document.createElement('option');
+                        option.value = doc.id;
+                        option.textContent = doc.name;
+                        doctorSelect.appendChild(option);
+                    });
+
+                    // If we already have a doctor_id in paymentData, select it and update price
+                    if (paymentData.doctor_id) {
+                        doctorSelect.value = paymentData.doctor_id;
+                        const doctor = doctorsList.find(d => String(d.id) === String(paymentData.doctor_id));
+                        if (doctor) {
+                            const price = getDoctorPrice(doctor);
+                            // Only set price from doctor if no explicit amount was already set
+                            if (price !== null && (!paymentData.amount || paymentData.amount == 0)) {
+                                document.getElementById('paymentPrice').value = price;
+                                paymentData.amount = price;
+                            }
+                            const hours = getDoctorHours(doctor);
+                            const hoursEl = document.getElementById('doctorHoursInfo');
+                            if (hours) {
+                                hoursEl.textContent = '🕐 Consultation Hours: ' + hours;
+                                hoursEl.style.display = 'block';
+                            }
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading doctors:', error);
+            }
+        }
+
+        async function fetchSlots(preSelectedSlot = null) {
+            const doctorId = document.getElementById('paymentDoctor').value;
+            const date = document.getElementById('paymentDate').value;
+            const slotSelect = document.getElementById('paymentSlot');
+
+            // Disallow selecting today’s date
+            const todayStr = new Date().toISOString().split('T')[0];
+            if (date === todayStr) {
+                showAlert('error', 'Today Appointment Slot not available Please select the future Date for Appointment.');
+                slotSelect.innerHTML = '<option value="">Select Time Slot</option>';
+                return;
+            }
+
+            if (!doctorId || !date) {
+                slotSelect.innerHTML = '<option value="">Select Time Slot</option>';
+                return;
+            }
+
+            slotSelect.innerHTML = '<option value="">Loading slots...</option>';
+
+            try {
+                const response = await fetch(`${getApiUrl()}/get-doctor-slots`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        doctor_id: doctorId,
+                        date: date
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success && result.slots) {
+                    slotSelect.innerHTML = '<option value="">Select Time Slot*</option>';
+                    let hasSlots = false;
+
+                    const periods = [
+                        { key: 'morning', label: 'Morning' },
+                        { key: 'afternoon', label: 'Afternoon' },
+                        { key: 'evening', label: 'Evening' }
+                    ];
+
+                    const doctor = doctorsList.find(d => String(d.id) === String(doctorId));
+                    const doctorName = doctor ? doctor.name : '';
+
+                    periods.forEach(period => {
+                        const periodSlots = result.slots[period.key];
+                        if (Array.isArray(periodSlots) && periodSlots.length > 0) {
+                            const optgroup = document.createElement('optgroup');
+                            optgroup.label = period.label;
+
+                            let periodHasSlots = false;
+                            periodSlots.forEach(slot => {
+                                // Filter slot by doctor allowed working hours
+                                if (isSlotWithinAllowedHours(doctorName, slot.start_time)) {
+                                    hasSlots = true;
+                                    periodHasSlots = true;
+                                    const option = document.createElement('option');
+                                    // Use display for both value and text as it's user-friendly
+                                    option.value = slot.display;
+                                    option.textContent = slot.display;
+                                    optgroup.appendChild(option);
+                                }
+                            });
+
+                            if (periodHasSlots) {
+                                slotSelect.appendChild(optgroup);
+                            }
+                        }
+                    });
+
+                    if (hasSlots && preSelectedSlot) {
+                        slotSelect.value = preSelectedSlot;
+                    }
+
+                    if (!hasSlots) {
+                        slotSelect.innerHTML = '<option value="">No slots available for this date</option>';
+                    }
+                } else {
+                    slotSelect.innerHTML = '<option value="">No slots available</option>';
+                }
+            } catch (error) {
+                console.error('Error fetching slots:', error);
+                slotSelect.innerHTML = '<option value="">Error loading slots</option>';
+            }
         }
 
         async function loadPaymentData() {
@@ -574,15 +780,19 @@
                     return;
                 }
 
-                // Fetch form data with static auth token
-                const response = await fetch(`${getApiUrl()}/payment-form-data?reference_token=${getReferenceId()}&auth_token=${getAuthToken()}`, {
-                    headers: {
-                        'Authorization': `Bearer ${getAuthToken()}`
-                    }
-                });
+                // Fetch form data
+                const response = await fetch(`${getApiUrl()}/payment-form-data?reference_token=${getReferenceId()}`);
                 const data = await response.json();
 
                 if (data.success && data.data) {
+                    // Restricted access check (Temporary)
+                    // if (data.data.phone !== '9205636456' || data.data.phone !== '9689946290' || data.data.phone !== '6395333436') {
+                    //     hideLoading();
+                    //     showAlert('error', 'This page is currently restricted for testing.');
+                    //     return;
+                    // }
+                    // Load doctors first, then show details
+                    await loadDoctors();
                     showDetailsView(data.data);
                 } else {
                     hideLoading();
@@ -594,32 +804,7 @@
             }
         }
 
-        function toggleEditMode() {
-            document.getElementById('detailsView').classList.remove('active');
-            document.getElementById('formEdit').classList.add('active');
-        }
 
-        function cancelEdit() {
-            document.getElementById('formEdit').classList.remove('active');
-            document.getElementById('detailsView').classList.add('active');
-        }
-
-        function saveAndProceed() {
-            // Update paymentData with edited values
-            paymentData.name = document.getElementById('paymentName').value;
-            paymentData.email = document.getElementById('paymentEmail').value;
-            paymentData.phone = document.getElementById('paymentPhone').value;
-            paymentData.age = document.getElementById('paymentAge').value;
-            paymentData.service = document.getElementById('paymentService').value;
-            paymentData.appointment_date = document.getElementById('paymentDate').value;
-            paymentData.message = document.getElementById('paymentMessage').value;
-
-            // Update view
-            showDetailsView(paymentData);
-
-            // Proceed to payment
-            proceedToPayment();
-        }
 
         let appliedCoupon = null;
         let originalPriceValue = 0;
@@ -673,7 +858,6 @@
                     document.getElementById('discountAmountView').textContent = '-₹' + data.data.discount_amount;
                     document.getElementById('finalAmountView').textContent = '₹' + data.data.final_amount;
                     document.getElementById('discountInfoView').style.display = 'block';
-                    document.getElementById('viewAmount').textContent = '₹ ' + data.data.final_amount;
 
                     // Update hidden payment price
                     document.getElementById('paymentPrice').value = data.data.final_amount;
@@ -707,7 +891,6 @@
             // Restore original price
             if (viewModeAmount > 0) {
                 document.getElementById('paymentPrice').value = viewModeAmount;
-                document.getElementById('viewAmount').textContent = '₹ ' + viewModeAmount;
                 paymentData.amount = viewModeAmount;
             }
 
@@ -748,8 +931,25 @@
         }
 
         async function proceedToPayment() {
+            const dateVal = document.getElementById('paymentDate').value;
+            const doctorVal = document.getElementById('paymentDoctor').value;
+            const slotVal = document.getElementById('paymentSlot').value;
+
+            if (!dateVal) {
+                showAlert('error', 'Please select an appointment date.');
+                return;
+            }
+            if (!doctorVal) {
+                showAlert('error', 'Please select a doctor.');
+                return;
+            }
+            if (!slotVal) {
+                showAlert('error', 'Please select an appointment time slot.');
+                return;
+            }
+
             // Get button reference - try to find it by ID or from event
-            const btn = document.querySelector('.btn-group .btn:last-child') || event?.target;
+            const btn = document.getElementById('payNowBtn') || document.querySelector('.btn-group .btn:last-child') || event?.target;
             if (btn) {
                 btn.disabled = true;
                 btn.textContent = 'Processing...';
@@ -764,11 +964,11 @@
                     phone: document.getElementById('paymentPhone').value,
                     appointment_date: document.getElementById('paymentDate').value,
                     service: document.getElementById('paymentService').value,
+                    doctor_id: document.getElementById('paymentDoctor').value,
+                    time_slot: document.getElementById('paymentSlot').value,
                     message: document.getElementById('paymentMessage').value,
                     amount: document.getElementById('paymentPrice').value,
-                    age: document.getElementById('paymentAge').value,
                     clinic_location_id: document.getElementById('clinicLocationId').value,
-                    auth_token: getAuthToken(),
                     coupon_code: appliedCoupon ? appliedCoupon.coupon_code : null
                 };
 
@@ -778,7 +978,6 @@
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${getAuthToken()}`
                     },
                     body: JSON.stringify(paymentPayload)
                 });
@@ -793,8 +992,7 @@
 
                     // Store payment form data for retry functionality
                     sessionStorage.setItem('lastPaymentData', JSON.stringify({
-                        reference_token: paymentPayload.reference_token,
-                        auth_token: paymentPayload.auth_token
+                        reference_token: paymentPayload.reference_token
                     }));
 
                     // Open Cashfree checkout

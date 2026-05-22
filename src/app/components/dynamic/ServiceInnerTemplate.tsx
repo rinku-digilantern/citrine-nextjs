@@ -236,14 +236,18 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
           case 'leftimageleftcontentsection':
             // Parse tabs (multi_heading_section)
             let finalTabs: any[] = [];
-            if (desc.multi_heading_section && desc.multi_heading_section.headings) {
-              const multi = desc.multi_heading_section;
-              Object.keys(multi.headings).forEach(key => {
+            const multi = desc.multi_heading_section;
+            
+            if (multi && multi.headings) {
+              const keys = Object.keys(multi.headings);
+              keys.forEach(key => {
                 const label = multi.headings[key];
-                const subHeadings = multi.sub_headings?.[key] || [];
-                const subUrls = multi.sub_urls?.[key] || [];
-                const t = subHeadings.map((name: string, i: number) => ({
-                  name: (name || '').toUpperCase(),
+                const rawSubHeadings = multi.sub_headings?.[key];
+                const subHeadings = Array.isArray(rawSubHeadings) ? rawSubHeadings : [];
+                const subUrls = Array.isArray(multi.sub_urls?.[key]) ? multi.sub_urls[key] : [];
+                
+                const t = subHeadings.map((name: any, i: number) => ({
+                  name: (name && typeof name === 'string' ? name : '').toUpperCase(),
                   link: subUrls[i] ? `/${subUrls[i]}` : '#'
                 })).filter((item: any) => item.name);
 
@@ -255,8 +259,10 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
                   });
                 }
               });
-            } else {
-              // Fallback to button_multinames
+            }
+
+            // Fallback to button_multinames if no tabs from multi_heading_section
+            if (finalTabs.length === 0) {
               const treatments = (desc.button_multinames || []).map((name: string, i: number) => ({
                 name: (name || '').toUpperCase(),
                 link: desc.button_multiurls?.[i] ? `/${desc.button_multiurls[i]}` : '#'

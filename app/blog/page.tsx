@@ -35,7 +35,7 @@ interface BlogApiResponse {
 async function getBlogData(): Promise<BlogApiResponse> {
   try {
     // console.log('Fetching blog data from API...');
-    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/blog`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
       cache: 'no-store'
     });
 

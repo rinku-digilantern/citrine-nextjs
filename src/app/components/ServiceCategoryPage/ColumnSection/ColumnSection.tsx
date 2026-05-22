@@ -326,18 +326,22 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
     <section className={styles.columnSection}>
       <div className={styles.container}>
         {sectionData.map((section, index) => (
-          <div key={section.id} id={section.id} className={`${styles.row} ${styles.topspace}`}>
+          <div key={section.id} id={section.id} className={`${styles.row} ${styles.topspace} ${section.imagePosition === 'left' ? styles.imageLeft : styles.imageRight}`}>
             {/* Image Left or Content Left based on imagePosition */}
             {section.imagePosition === 'left' ? (
               <>
                 <div className={styles.imageWrapper}>
-                  <Image
-                    src={section.image}
-                    alt={section.imageAlt}
-                    width={600}
-                    height={500}
-                    className={styles.sectionImage}
-                  />
+                  {section.image ? (
+                    <Image
+                      src={section.image}
+                      alt={section.imageAlt}
+                      width={600}
+                      height={500}
+                      className={styles.sectionImage}
+                    />
+                  ) : (
+                    <div className={styles.imagePlaceholder}></div>
+                  )}
                 </div>
                 <div className={styles.contentWrapper}>
                   {(() => {
@@ -360,7 +364,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                       <div className={styles.tagsList}>
                         {section.tabs
                           .find(tab => tab.id === activeTab[section.id])?.treatments
-                          .map((treatment, idx) => (
+                          ?.map((treatment, idx) => (
                             <Link key={idx} className={styles.tag} href={treatment.link}>
                               {treatment.name}
                             </Link>
@@ -405,7 +409,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                       <div className={styles.tagsList}>
                         {section.tabs
                           .find(tab => tab.id === activeTab[section.id])?.treatments
-                          .map((treatment, idx) => (
+                          ?.map((treatment, idx) => (
                             <Link key={idx} className={styles.tag} href={treatment.link}>
                               {treatment.name}
                             </Link>
@@ -427,13 +431,17 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                   </div>
                 </div>
                 <div className={styles.imageWrapper}>
-                  <Image
-                    src={section.image}
-                    alt={section.imageAlt}
-                    width={600}
-                    height={500}
-                    className={styles.sectionImage}
-                  />
+                  {section.image ? (
+                    <Image
+                      src={section.image}
+                      alt={section.imageAlt}
+                      width={600}
+                      height={500}
+                      className={styles.sectionImage}
+                    />
+                  ) : (
+                    <div className={styles.imagePlaceholder}></div>
+                  )}
                 </div>
               </>
             )}

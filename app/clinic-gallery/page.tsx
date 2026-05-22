@@ -19,16 +19,16 @@ interface GalleryApiResponse {
 async function getGalleryData(): Promise<GalleryApiResponse> {
   try {
     // console.log('Fetching gallery data from API...');
-    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/gallery`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/gallery`, {
       cache: 'no-store'
     });
-    
+
     // console.log('Gallery API Response status:', res.status);
-    
+
     if (!res.ok) {
       throw new Error('Failed to fetch gallery data');
     }
-    
+
     const data = await res.json();
     // console.log('Gallery data fetched successfully, items count:', data.data?.length);
     return data;
@@ -50,14 +50,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const ClinicGallery = async () => {
-    const galleryData = await getGalleryData();
-    
-    return (
-        <>
-          <Breadcrumb />
-          <ClinicGalleryPage galleryData={galleryData.data} />
-          <AppointmentSection />  
-        </>
-    )
+  const galleryData = await getGalleryData();
+
+  return (
+    <>
+      <Breadcrumb />
+      <ClinicGalleryPage galleryData={galleryData.data} />
+      <AppointmentSection />
+    </>
+  )
 }
 export default ClinicGallery;

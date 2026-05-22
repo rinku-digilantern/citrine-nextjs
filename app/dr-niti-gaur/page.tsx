@@ -13,7 +13,6 @@ import fs from 'fs';
 import path from 'path';
 import DrNitiGaurFirstSection from '@/src/app/components/DrNitiGaurPage/DrNitiGaurFirstSection/DrNitiGaurFirstSection';
 import PhilosophySection from '@/src/app/components/DrNitiGaurPage/PhilosophySection/PhilosophySection';
-import DrNitiFaqSection from '@/src/app/components/DrNitiGaurPage/DrNitiFaqSection/DrNitiFaqSection';
 import DrNitiGaurTestimonialSection from '@/src/app/components/DrNitiGaurPage/DrNitiGaurTestimonialSection/DrNitiGaurTestimonialSection';
 const API_BASE = 'https://api.citrineclinic.com/api';
 

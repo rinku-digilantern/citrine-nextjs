@@ -23,16 +23,16 @@ interface MediaApiResponse {
 async function getMediaData(): Promise<MediaApiResponse> {
   try {
     // console.log('Fetching media data from API...');
-    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/pressmedia-category`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/pressmedia-category`, {
       cache: 'no-store'
     });
-    
+
     // console.log('Media API Response status:', res.status);
-    
+
     if (!res.ok) {
       throw new Error('Failed to fetch media data');
     }
-    
+
     const data = await res.json();
     // console.log('Media data fetched successfully, items count:', data.data?.length);
     return data;
@@ -54,14 +54,14 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Media = async () => {
-    const mediaData = await getMediaData();
-    
-    return (
-        <>
-          <Breadcrumb />
-          <MediaPage mediaData={mediaData.data} />
-          <AppointmentSection />  
-        </>
-    )
+  const mediaData = await getMediaData();
+
+  return (
+    <>
+      <Breadcrumb />
+      <MediaPage mediaData={mediaData.data} />
+      <AppointmentSection />
+    </>
+  )
 }
 export default Media;

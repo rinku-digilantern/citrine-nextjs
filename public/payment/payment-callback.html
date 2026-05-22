@@ -149,7 +149,7 @@
 
 <body>
     <div class="container">
-        <img src="https://www.citrineclinic.com/assets/images/img/logo.webp" alt="Citrine Clinic" class="logo">
+        <img src="https://www.citrineclinic.com/assets/images/logo.png" alt="Citrine Clinic" class="logo">
         <div id="loading">
             <div class="loader"></div>
             <h1>Processing Payment...</h1>
@@ -211,7 +211,7 @@
                 const controller = new AbortController();
                 const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 second timeout
 
-                const apiUrl = window.CITRINE_API_URL + `/payment-verify?order_id=${orderId}`;
+                const apiUrl = 'https://api.citrineclinic.com/api' + `/payment-verify?order_id=${orderId}`;
                 // console.log('Calling API:', apiUrl);
 
                 const response = await fetch(apiUrl, {
@@ -225,6 +225,22 @@
 
                 if (data.success) {
                     // console.log('Payment successful');
+                    
+                    // Store payment completion status locally for this user
+                    let refToken = data.data?.reference_token;
+                    if (!refToken && orderId) {
+                        const parts = orderId.split('_');
+                        if (parts.length >= 3) {
+                            refToken = parts.slice(1, -1).join('_');
+                        }
+                    }
+                    if (refToken) {
+                        localStorage.setItem('payment_completed_' + refToken, 'true');
+                    }
+
+                    // Share payment details with Nectar webhook
+                    sharePaymentDetails(data.data, orderId);
+
                     showResult('success', 'Payment Successful! 🎉',
                         `Your payment has been completed successfully.`,
                         {
@@ -350,6 +366,32 @@
                         }
                     );
                 }
+            }
+        }
+
+        async function sharePaymentDetails(paymentData, orderId) {
+            try {
+                const webhookUrl = 'https://studio.nectarsolution.com/webhook/paymentstatus';
+                const response = await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        event: 'payment.success',
+                        timestamp: new Date().toISOString(),
+                        order_id: orderId,
+                        data: paymentData || {}
+                    })
+                });
+                
+                if (response.ok) {
+                    console.log('Payment details successfully shared with webhook.');
+                } else {
+                    console.error('Failed to share payment details with webhook:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Error sharing payment details with webhook:', error);
             }
         }
 

@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reschedule Appointment | Citrine Clinic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        :root {
+            --primary: #D4AF37;
+            /* Citrine/Gold */
+            --primary-dark: #B8860B;
+            --secondary: #1A1A1A;
+            --bg: #0F0F0F;
+            --card-bg: #1A1A1A;
+            --text: #F5F5F5;
+            --text-muted: #A0A0A0;
+            --accent: #FFD700;
+            --error: #FF4D4D;
+            --success: #00E676;
+            --border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(26, 26, 26, 0.8);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-outfit {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        header img {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--primary);
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 32px;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 12px;
+        }
+
+        .step-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .step-dot.active {
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            width: 24px;
+            border-radius: 5px;
+        }
+
+        .step-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .patient-item,
+        .appointment-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .patient-item:hover,
+        .appointment-item:hover {
+            border-color: var(--primary);
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .patient-item.selected,
+        .appointment-item.selected {
+            border-color: var(--primary);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .item-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .item-sub {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            left: 16px;
+            color: var(--primary);
+            width: 18px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px 16px 14px 48px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+        }
+
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #000;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+            filter: brightness(1.1);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-muted);
+            margin-top: 15px;
+        }
+
+        .btn-ghost:hover {
+            color: var(--text);
+        }
+
+        .slots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .slot-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .slot-btn:hover {
+            border-color: var(--primary);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .slot-btn.selected {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .slot-btn.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .slot-period {
+            margin-top: 18px;
+        }
+
+        .slot-period-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .slot-period-label .period-icon {
+            font-size: 1rem;
+        }
+
+        .slot-period-label .period-count {
+            margin-left: auto;
+            font-size: 0.7rem;
+            color: var(--primary);
+            opacity: 0.8;
+        }
+
+        .loader-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 3px solid var(--border);
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+
+        .loader::after {
+            content: '';
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary);
+            width: 16px;
+            height: 16px;
+            transform: translate(-50%, 50%);
+            border-radius: 50%;
+        }
+
+        .status-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .status-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .status-icon.success {
+            background: rgba(0, 230, 118, 0.1);
+            color: var(--success);
+        }
+
+        .status-icon.error {
+            background: rgba(255, 77, 77, 0.1);
+            color: var(--error);
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .badge {
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-left: 8px;
+        }
+
+        .badge-pending {
+            background: rgba(212, 175, 55, 0.2);
+            color: var(--primary);
+        }
+
+        .badge-confirmed {
+            background: rgba(0, 230, 118, 0.2);
+            color: var(--success);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Skeleton Loading */
+        .skeleton {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.05) 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        .skeleton-text {
+            height: 16px;
+            margin-bottom: 8px;
+            width: 80%;
+        }
+
+        .skeleton-sub {
+            height: 12px;
+            width: 40%;
+        }
+
+        .patient-summary {
+            margin-bottom: 24px;
+            padding: 16px;
+            background: rgba(212, 175, 55, 0.08);
+            border-radius: 16px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .patient-summary i {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .patient-summary-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .patient-summary-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .patient-summary-number {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <img src="https://www.citrineclinic.com/assets/images/logo.png" alt="Citrine Clinic Logo">
+        </header>
+
+        <div class="card">
+            <div class="step-indicator" id="stepIndicator">
+                <div class="step-dot active"></div>
+                <div class="step-dot"></div>
+                <div class="step-dot"></div>
+                <div class="step-dot"></div>
+            </div>
+
+            <div id="loader" class="loader-wrapper hidden">
+                <span class="loader"></span>
+                <p style="margin-top: 15px; color: var(--text-muted);" id="loaderText">Fetching data...</p>
+            </div>
+
+            <!-- Step 1: Select Patient -->
+            <div id="step1" class="step-content active">
+                <h2 class="section-title"><i data-lucide="user"></i> Select Patient</h2>
+                <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Multiple patients found for
+                    this number. Please select one to proceed.</p>
+                <div id="patientList">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Step 2: Select Appointment -->
+            <div id="step2" class="step-content">
+                <div class="patient-summary">
+                    <i data-lucide="user"></i>
+                    <div class="patient-summary-details">
+                        <span class="patient-summary-name" id="patientNameStep2"></span>
+                        <span class="patient-summary-number" id="patientNumberStep2"></span>
+                    </div>
+                </div>
+                <h2 class="section-title"><i data-lucide="calendar"></i> Choose Appointment</h2>
+                <div id="appointmentList">
+                    <!-- Loaded dynamically -->
+                </div>
+                <button class="btn btn-ghost" onclick="app.goStep(1)"><i data-lucide="arrow-left"></i> Change
+                    Patient</button>
+            </div>
+
+            <!-- Step 3: Reschedule Form -->
+            <div id="step3" class="step-content">
+                <div class="patient-summary">
+                    <i data-lucide="user"></i>
+                    <div class="patient-summary-details">
+                        <span class="patient-summary-name" id="patientNameStep3"></span>
+                        <span class="patient-summary-number" id="patientNumberStep3"></span>
+                    </div>
+                </div>
+                <h2 class="section-title"><i data-lucide="clock"></i> Reschedule Details</h2>
+
+                <div class="form-group">
+                    <label>Select Doctor</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="stethoscope"></i>
+                        <select id="doctorSelect" onchange="app.onDoctorChange()" style="padding-left: 48px;">
+                            <option value="">Loading doctors...</option>
+                        </select>
+                    </div>
+                    <!-- Consultation fee & hours info -->
+                    <div id="doctorInfoBox" style="display:none; margin-top: 10px; padding: 12px 16px; background: rgba(212,175,55,0.08); border: 1px solid rgba(212,175,55,0.3); border-radius: 12px;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">💰 Consultation Fee</span>
+                            <span id="doctorFeeDisplay" style="font-size: 1.1rem; font-weight: 700; color: var(--primary);">₹0</span>
+                        </div>
+                        <div id="doctorHoursDisplay" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 6px; display:none;">🕐 Available: <span id="doctorHoursText"></span></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Select New Date</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="calendar-days"></i>
+                        <input type="text" id="rescheduleDate" placeholder="Choose a date">
+                    </div>
+                </div>
+
+                <div id="slotSection" class="hidden">
+                    <label
+                        style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 4px; display: block;">Available
+                        Slots</label>
+                    <div id="slotsGrid">
+                        <!-- Loaded dynamically (grouped by morning / afternoon / evening) -->
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <button class="btn btn-primary" id="submitBtn" disabled onclick="app.submitReschedule()">
+                        Confirm Reschedule <i data-lucide="check-circle"></i>
+                    </button>
+                    <button class="btn btn-ghost" onclick="app.goStep(2)"><i data-lucide="arrow-left"></i> Back to
+                        Appointments</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Success/Error -->
+            <div id="step4" class="step-content">
+                <div id="statusResult">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px; font-size: 0.8rem; color: var(--text-muted);">
+            &copy; 2026 Citrine Clinic. All rights reserved. Secure PMS Integration.
+        </p>
+    </div>
+
+    <script>
+        // Lucide Icons Initialization
+        lucide.createIcons();
+
+        // API Base URL - Pointing to the backend domain
+        const API_BASE = 'https://api.citrineclinic.com';
+
+        // Local price & hours maps (fallback if API does not return these fields)
+        const DOCTOR_PRICE_MAP = {
+            'dr niti':      2000,
+            'dr niti gaur': 2000,
+            'default':      1200
+        };
+
+        const DOCTOR_HOURS_MAP = {
+            'dr niti gaur':   '11 AM – 6 PM',
+            'dr guneet bedi': '10 AM – 6 PM',
+            'dr raheel khan': '11 AM – 8 PM',
+            'moonis khan':    '11 AM – 8 PM'
+        };
+
+        function getDoctorPrice(doctor) {
+            if (!doctor) return null;
+            const nameLower = (doctor.name || '').toLowerCase();
+            // Force Niti to be 2000 as per instruction
+            if (nameLower.includes('niti')) {
+                return 2000;
+            }
+            if (doctor.price !== undefined && doctor.price !== null && doctor.price !== '') {
+                return parseFloat(doctor.price);
+            }
+            return DOCTOR_PRICE_MAP['default'];
+        }
+
+        function getDoctorHours(doctor) {
+            if (!doctor) return null;
+            if (doctor.working_hours) return doctor.working_hours;
+            const nameLower = (doctor.name || '').toLowerCase();
+            return DOCTOR_HOURS_MAP[nameLower] || null;
+        }
+
+        function isSlotWithinAllowedHours(doctorName, slotStartTime) {
+            if (!doctorName || !slotStartTime) return true;
+            const nameLower = doctorName.toLowerCase();
+            
+            let startLimit = null;
+            let endLimit = null;
+            
+            if (nameLower.includes('niti')) {
+                startLimit = "11:00";
+                endLimit = "18:00";
+            } else if (nameLower.includes('guneet')) {
+                startLimit = "10:00";
+                endLimit = "18:00";
+            } else if (nameLower.includes('raheel')) {
+                startLimit = "11:00";
+                endLimit = "20:00";
+            } else if (nameLower.includes('moonis')) {
+                startLimit = "11:00";
+                endLimit = "20:00";
+            }
+            
+            if (startLimit && endLimit) {
+                return slotStartTime >= startLimit && slotStartTime < endLimit;
+            }
+            
+            return true;
+        }
+
+        const app = {
+            state: {
+                step: 1,
+                mobile: '',
+                token: '',
+                patients: [],
+                selectedPatient: null,
+                appointments: [],
+                selectedAppointment: null,
+                slots: [],
+                selectedSlot: null,
+                newDate: null,
+                doctors: [],
+                selectedDoctorId: null
+            },
+
+            async init() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const payload = urlParams.get('payload');
+                
+                if (payload) {
+                    await this.fetchDecryptedData(payload);
+                } else {
+                    this.state.mobile = urlParams.get('mobile');
+                    this.state.token = urlParams.get('token');
+                }
+
+                if (!this.state.mobile || !this.state.token) {
+                    this.showError("Invalid URL parameters. Mobile and Token are required.");
+                    return;
+                }
+
+                // Restricted access check (Temporary)
+                if (this.state.mobile !== '9205636456') {
+                    this.showError("This page is currently restricted for testing.");
+                    return;
+                }
+
+                this.fetchPatients();
+            },
+
+            async fetchDecryptedData(payload) {
+                this.showLoader(true, "Decrypting secure link...");
+                try {
+                    const response = await axios.post(`${API_BASE}/api/pms-decrypt-payload`, {
+                        payload: payload
+                    });
+                    if (response.data.success && response.data.data) {
+                        this.state.mobile = response.data.data.mobile;
+                        this.state.token = response.data.data.token;
+                    }
+                } catch (err) {
+                    console.error("Decryption failed:", err);
+                    this.showError("Security check failed. The link may be invalid or expired.");
+                }
+            },
+
+            async fetchPatients() {
+                this.showLoader(true, "Searching for patients...");
+                try {
+                    const response = await axios.post(`${API_BASE}/api/pms-search-patient`, {
+                        phone: this.state.mobile,
+                        token: this.state.token
+                    });
+
+                    if (response.data.success && response.data.data) {
+                        this.state.patients = Array.isArray(response.data.data) ? response.data.data : [response.data.data];
+                        this.renderPatients();
+                        this.showLoader(false);
+
+                        // If only one patient, auto-select
+                        if (this.state.patients.length === 1) {
+                            this.selectPatient(this.state.patients[0].id);
+                        }
+                    } else {
+                        this.showError("No patient found for this number.");
+                    }
+                } catch (err) {
+                    this.showError("Failed to fetch patient data. Please try again later.");
+                    console.error(err);
+                }
+            },
+
+            renderPatients() {
+                const list = document.getElementById('patientList');
+                list.innerHTML = this.state.patients.map(p => `
+                    <div class="patient-item" onclick="app.selectPatient('${p.id}')">
+                        <div class="item-info">
+                            <span class="item-name">${p.name || 'Unknown Patient'}</span>
+                            <span class="item-sub">${p.email || 'No email'} | ${p.gender || ''}</span>
+                        </div>
+                        <i data-lucide="chevron-right"></i>
+                    </div>
+                `).join('');
+                lucide.createIcons();
+            },
+
+            async selectPatient(id) {
+                // Find with string conversion to handle both number and string IDs
+                this.state.selectedPatient = this.state.patients.find(p => String(p.id) === String(id));
+                
+                if (!this.state.selectedPatient) {
+                    console.error("Patient not found:", id);
+                    this.showError("Unable to load patient details. Please refresh and try again.");
+                    return;
+                }
+                
+                // Populate patient info in Step 2 and Step 3
+                const name = this.state.selectedPatient.name || 'Unknown Patient';
+                const number = this.state.mobile;
+                
+                document.getElementById('patientNameStep2').innerText = name;
+                document.getElementById('patientNumberStep2').innerText = number;
+                document.getElementById('patientNameStep3').innerText = name;
+                document.getElementById('patientNumberStep3').innerText = number;
+
+                this.goStep(2);
+                this.fetchAppointments(id);
+            },
+
+            async fetchAppointments(patientId) {
+                this.showLoader(true, "Fetching appointments...");
+                try {
+                    const response = await axios.post(`${API_BASE}/api/pms-patient-appointments`, {
+                        phone: this.state.mobile,
+                        patient_id: patientId,
+                        token: this.state.token
+                    });
+
+                    if (response.data.success) {
+                        const allApps = response.data.data || [];
+                        const today = new Date();
+                        today.setHours(0, 0, 0, 0);
+
+                        // Filter: Today/Future, has Doctor, not Pending
+                        this.state.appointments = allApps.filter(a => {
+                            if (!a.dateAP) return false;
+                            const appDate = new Date(a.dateAP);
+                            const isFuture = appDate >= today;
+                            const hasDoctor = a.doctorName || a.practice_name_doc_id;
+                            const isNotPending = a.status && a.status.toLowerCase() !== 'pending';
+                            
+                            return isFuture && hasDoctor && isNotPending;
+                        });
+
+                        this.renderAppointments();
+                        this.showLoader(false);
+
+                        if (this.state.appointments.length === 0) {
+                            document.getElementById('appointmentList').innerHTML = `
+                                <div style="text-align:center; padding: 30px; color: var(--text-muted);">
+                                    <i data-lucide="calendar-x" style="margin-bottom: 10px; opacity: 0.5;"></i>
+                                    <p>No eligible future appointments found for rescheduling.</p>
+                                </div>`;
+                            lucide.createIcons();
+                        }
+                    } else {
+                        this.showError("Could not retrieve appointments.");
+                    }
+                } catch (err) {
+                    this.showError("Error fetching appointments.");
+                }
+            },
+
+            renderAppointments() {
+                const list = document.getElementById('appointmentList');
+                list.innerHTML = this.state.appointments.map(a => `
+                    <div class="appointment-item" onclick="app.selectAppointment('${a.id}')">
+                        <div class="item-info">
+                            <span class="item-name">${a.treatments || 'Consultation'}</span>
+                            <span class="item-sub">${a.dateAP} ${a.timeAP || ''} | ${a.doctorName || 'TBD'}</span>
+                        </div>
+                        <span class="badge ${a.status === 'confirm' || a.status === 'confirmed' ? 'badge-confirmed' : 'badge-pending'}">${a.status || 'Pending'}</span>
+                    </div>
+                `).join('');
+                lucide.createIcons();
+            },
+
+            selectAppointment(id) {
+                // Find with string conversion to avoid type mismatch
+                const found = this.state.appointments.find(a => String(a.id) === String(id));
+                
+                if (!found) {
+                    console.error("Appointment not found:", id);
+                    this.showError("Unable to load appointment details. Please refresh and try again.");
+                    return;
+                }
+
+                this.state.selectedAppointment = found;
+                this.goStep(3);
+                this.loadDoctors();
+                this.initDatePicker();
+            },
+
+            async loadDoctors() {
+                const sel = document.getElementById('doctorSelect');
+                sel.innerHTML = '<option value="">Loading doctors...</option>';
+                try {
+                    const response = await axios.get(`${API_BASE}/api/get-doctor-list`);
+                    const result = response.data;
+                    if ((result.status === 'success' || result.success === true) && result.data) {
+                        this.state.doctors = result.data;
+                        sel.innerHTML = '<option value="">Select Doctor</option>';
+                        result.data.forEach(doc => {
+                            const opt = document.createElement('option');
+                            opt.value = doc.id;
+                            opt.textContent = doc.name;
+                            // Pre-select doctor from appointment if name matches
+                            if (this.state.selectedAppointment &&
+                                (String(doc.id) === String(this.state.selectedAppointment.practice_name_doc_id) ||
+                                 doc.name === this.state.selectedAppointment.doctorName)) {
+                                opt.selected = true;
+                                this.state.selectedDoctorId = doc.id;
+                            }
+                            sel.appendChild(opt);
+                        });
+                        // Trigger info update for pre-selected doctor
+                        if (this.state.selectedDoctorId) this.onDoctorChange();
+                    } else {
+                        // Fallback: show appointment's doctor as the only option
+                        sel.innerHTML = '';
+                        const opt = document.createElement('option');
+                        const apptDoctor = this.state.selectedAppointment;
+                        opt.value = apptDoctor ? (apptDoctor.practice_name_doc_id || '') : '';
+                        opt.textContent = apptDoctor ? (apptDoctor.doctorName || 'Unknown Doctor') : 'Unknown Doctor';
+                        opt.selected = true;
+                        sel.appendChild(opt);
+                        this.state.selectedDoctorId = opt.value;
+                    }
+                } catch (err) {
+                    console.error('Error loading doctors:', err);
+                    // Fallback: show appointment's doctor
+                    sel.innerHTML = '';
+                    const opt = document.createElement('option');
+                    const apptDoctor = this.state.selectedAppointment;
+                    opt.value = apptDoctor ? (apptDoctor.practice_name_doc_id || '') : '';
+                    opt.textContent = apptDoctor ? (apptDoctor.doctorName || 'Unknown Doctor') : 'Unknown Doctor';
+                    opt.selected = true;
+                    sel.appendChild(opt);
+                    this.state.selectedDoctorId = opt.value;
+                }
+            },
+
+            onDoctorChange() {
+                const sel = document.getElementById('doctorSelect');
+                const doctorId = sel.value;
+                this.state.selectedDoctorId = doctorId;
+
+                const doctor = this.state.doctors.find(d => String(d.id) === String(doctorId));
+                const infoBox = document.getElementById('doctorInfoBox');
+
+                if (doctor) {
+                    const price = getDoctorPrice(doctor);
+                    document.getElementById('doctorFeeDisplay').textContent = price !== null ? '₹' + price : 'N/A';
+                    infoBox.style.display = 'block';
+
+                    const hours = getDoctorHours(doctor);
+                    const hoursDiv = document.getElementById('doctorHoursDisplay');
+                    if (hours) {
+                        document.getElementById('doctorHoursText').textContent = hours;
+                        hoursDiv.style.display = 'block';
+                    } else {
+                        hoursDiv.style.display = 'none';
+                    }
+                } else {
+                    infoBox.style.display = 'none';
+                }
+
+                // Re-fetch slots for newly selected doctor if a date is already chosen
+                if (this.state.newDate) this.fetchSlots(this.state.newDate);
+            },
+
+            initDatePicker() {
+                flatpickr("#rescheduleDate", {
+                    minDate: "today",
+                    dateFormat: "Y-m-d",
+                    disable: [
+                        function (date) {
+                            return (date.getDay() === 0); // Disable Sundays if needed
+                        }
+                    ],
+                    onChange: (selectedDates, dateStr) => {
+                        this.state.newDate = dateStr;
+                        this.fetchSlots(dateStr);
+                    }
+                });
+            },
+
+            async fetchSlots(date) {
+                // Use the doctor selected from the dropdown, fall back to appointment's doctor
+                const doctorId = this.state.selectedDoctorId ||
+                    (this.state.selectedAppointment ? this.state.selectedAppointment.practice_name_doc_id : null) ||
+                    "7";
+                document.getElementById('slotSection').classList.remove('hidden');
+                const grid = document.getElementById('slotsGrid');
+                grid.innerHTML = '<div class="loader" style="width:20px; height:20px; grid-column: 1/-1; margin: 20px auto;"></div>';
+
+                try {
+                    const response = await axios.post(`${API_BASE}/api/get-doctor-slots`, {
+                        doctor_id: doctorId,
+                        date: date,
+                        auth_token: 'c9ab83f09006371cb3f745a03b1f8c64'
+                    });
+
+                    const slotsData = response.data;
+                    this.renderSlots(slotsData);
+                } catch (err) {
+                    grid.innerHTML = '<p style="color:var(--error); grid-column:1/-1;">Failed to load slots.</p>';
+                }
+            },
+
+            renderSlots(data) {
+                const container = document.getElementById('slotsGrid');
+
+                if (!data.success || !data.slots) {
+                    container.innerHTML = '<p style="text-align: center; color: var(--text-muted); padding: 20px 0;">No slots available.</p>';
+                    return;
+                }
+
+                const periods = [
+                    { key: 'morning',   label: 'Morning',   icon: '🌅' },
+                    { key: 'afternoon', label: 'Afternoon', icon: '☀️' },
+                    { key: 'evening',   label: 'Evening',   icon: '🌆' }
+                ];
+
+                let hasAny = false;
+                let html = '';
+
+                // Get selected doctor name to apply filtering
+                const doctorId = this.state.selectedDoctorId ||
+                    (this.state.selectedAppointment ? this.state.selectedAppointment.practice_name_doc_id : null) ||
+                    "7";
+                const doctor = this.state.doctors.find(d => String(d.id) === String(doctorId));
+                const doctorName = doctor ? (doctor.name || '') : '';
+
+                periods.forEach(period => {
+                    const group = data.slots[period.key];
+                    if (!group || group.length === 0) return;
+
+                    // Filter slots based on doctor allowed working hours
+                    const filteredGroup = group.filter(slot => isSlotWithinAllowedHours(doctorName, slot.start_time));
+                    if (filteredGroup.length === 0) return;
+                    
+                    hasAny = true;
+
+                    // Period header
+                    html += `
+                        <div class="slot-period">
+                            <div class="slot-period-label">
+                                <span class="period-icon">${period.icon}</span>
+                                ${period.label}
+                                <span class="period-count">${filteredGroup.length} slot${filteredGroup.length !== 1 ? 's' : ''}</span>
+                            </div>
+                            <div class="slots-grid">`;
+
+                    // Slot buttons for this period
+                    filteredGroup.forEach(slot => {
+                        html += `<div class="slot-btn" onclick="app.selectSlot('${slot.start_time}', this)">${slot.display}</div>`;
+                    });
+
+                    html += `</div></div>`; // close slots-grid + slot-period
+                });
+
+                if (!hasAny) {
+                    container.innerHTML = '<p style="text-align: center; color: var(--text-muted); padding: 20px 0;">No slots available for this date.</p>';
+                } else {
+                    container.innerHTML = html;
+                }
+            },
+
+            selectSlot(slot, el) {
+                this.state.selectedSlot = slot;
+                document.querySelectorAll('.slot-btn').forEach(btn => btn.classList.remove('selected'));
+                el.classList.add('selected');
+                document.getElementById('submitBtn').disabled = false;
+            },
+
+            async submitReschedule() {
+                const btn = document.getElementById('submitBtn');
+                btn.disabled = true;
+                btn.innerHTML = '<span class="loader" style="width:18px; height:18px; border-width:2px;"></span> Processing...';
+
+                try {
+                    const selectedDoctorId = this.state.selectedDoctorId ||
+                        (this.state.selectedAppointment ? this.state.selectedAppointment.practice_name_doc_id : null);
+                    const selectedDoctor = this.state.doctors.find(d => String(d.id) === String(selectedDoctorId));
+
+                    const payload = {
+                        appointment_id: this.state.selectedAppointment.id,
+                        patient_id: this.state.selectedAppointment.patient_id,
+                        new_date: this.state.newDate,
+                        time_slot: this.state.selectedSlot,
+                        doctor_name: selectedDoctor ? selectedDoctor.name : this.state.selectedAppointment.doctorName,
+                        doctor_id: selectedDoctorId,
+                        token: this.state.token
+                    };
+
+                    const response = await axios.post(`${API_BASE}/api/pms-reschedule-appointment`, payload);
+
+                    if (response.data.success) {
+                        this.showSuccess("Your appointment has been successfully rescheduled to " + this.state.newDate + " at " + this.state.selectedSlot + ".");
+                    } else {
+                        this.showErrorResult(response.data.message || "Failed to reschedule. Please try again.");
+                    }
+                } catch (err) {
+                    this.showErrorResult("An error occurred during submission.");
+                }
+            },
+
+            goStep(n) {
+                this.state.step = n;
+                document.querySelectorAll('.step-content').forEach(c => c.classList.remove('active'));
+                document.getElementById(`step${n}`).classList.add('active');
+
+                const dots = document.querySelectorAll('.step-dot');
+                dots.forEach((dot, idx) => {
+                    if (idx < n) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                });
+            },
+
+            showLoader(show, text = "Loading...") {
+                const loader = document.getElementById('loader');
+                const content = document.getElementById(`step${this.state.step}`);
+                document.getElementById('loaderText').innerText = text;
+
+                if (show) {
+                    loader.classList.remove('hidden');
+                    content.classList.add('hidden');
+                } else {
+                    loader.classList.add('hidden');
+                    content.classList.remove('hidden');
+                }
+            },
+
+            showError(msg) {
+                this.showLoader(false);
+                this.goStep(4);
+                document.getElementById('statusResult').innerHTML = `
+                    <div class="status-card">
+                        <div class="status-icon error"><i data-lucide="alert-circle" size="32"></i></div>
+                        <h2 style="margin-bottom: 10px;">Error</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 30px;">${msg}</p>
+                        <button class="btn btn-primary" onclick="window.location.reload()">Try Again</button>
+                    </div>
+                `;
+                lucide.createIcons();
+            },
+
+            showErrorResult(msg) {
+                this.goStep(4);
+                document.getElementById('statusResult').innerHTML = `
+                    <div class="status-card">
+                        <div class="status-icon error"><i data-lucide="x-circle" size="32"></i></div>
+                        <h2 style="margin-bottom: 10px;">Submission Failed</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 30px;">${msg}</p>
+                        <button class="btn btn-primary" onclick="app.goStep(3)">Back to Form</button>
+                    </div>
+                `;
+                lucide.createIcons();
+            },
+
+            showSuccess(msg) {
+                this.goStep(4);
+                document.getElementById('statusResult').innerHTML = `
+                    <div class="status-card">
+                        <div class="status-icon success"><i data-lucide="check-circle-2" size="32"></i></div>
+                        <h2 style="margin-bottom: 10px; color: var(--success);">Success!</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 30px;">${msg}</p>
+                        <button class="btn btn-primary" onclick="window.close()">Close Window</button>
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+        };
+
+        window.onload = () => app.init();
+    </script>
+</body>
+
+</html>

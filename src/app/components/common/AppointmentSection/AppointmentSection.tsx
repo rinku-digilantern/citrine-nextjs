@@ -94,6 +94,7 @@ const AppointmentSection = () => {
     }
 
     setFormData(prev => ({ ...prev, [name]: value }));
+
     // Clear the specific error when user types
     if (errors[name as keyof FormState]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -181,7 +182,9 @@ const AppointmentSection = () => {
 
       if (res.ok && (data.success || data.status === 'success' || data.title === 'Success')) {
         setStatus('success');
-        setFormData({ name: '', email: '', phone: '', service: '', date: '', message: '', captcha: '' });
+        setFormData({ 
+          name: '', email: '', phone: '', service: '', date: '', message: '', captcha: '',
+        });
         router.push('/thankyou');
       } else {
         setStatus('error');
