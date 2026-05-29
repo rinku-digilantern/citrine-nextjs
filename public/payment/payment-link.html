@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: transparent linear-gradient(251deg, #d29740, #ebd577, #d0913b 82%, #e7ca6d) 0% 0% no-repeat padding-box;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            border-top: 4px solid #d29740;
+        }
+
+        .header {
+            background: #fbfbfb;
+            color: white;
+            padding: 30px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .header-logo {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 0px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .subtitle {
+            opacity: 0.9;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px 20px;
+            color: #d29740;
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #d29740;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .header {
+            color: #333;
+        }
+
+        /* View Mode */
+        .details-view {
+            display: none;
+        }
+
+        .details-view.active {
+            display: block;
+        }
+
+        .detail-row {
+            display: flex;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+            align-items: center;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #d29740;
+            width: 180px;
+            flex-shrink: 0;
+        }
+
+        .detail-value {
+            color: #212529;
+            flex: 1;
+            font-size: 16px;
+        }
+
+        .amount-highlight {
+            font-size: 32px;
+            font-weight: 700;
+            color: #d29740;
+        }
+
+        /* Edit Mode */
+        .form-edit {
+            display: none;
+        }
+
+        .form-edit.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            background-color: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d29740;
+            box-shadow: 0 0 0 3px rgba(210, 151, 64, 0.1);
+        }
+
+        .form-group input:disabled {
+            background: #e9ecef;
+            color: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            background: transparent linear-gradient(251deg, #d29740, #ebd577, #d0913b 82%, #e7ca6d) 0% 0% no-repeat padding-box;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(210, 151, 64, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(210, 151, 64, 0.5);
+            opacity: 0.95;
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn:disabled {
+            background: #adb5bd;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-outline {
+            background: white;
+            color: #d29740;
+            border: 2px solid #d29740;
+        }
+
+        .btn-outline:hover {
+            background: #FFF9E6;
+        }
+
+        /* Alert Messages */
+        .alert {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert.show {
+            display: block;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        /* Hidden debug sections */
+        .debug-section {
+            display: none;
+        }
+
+        @media only screen and (max-width:600px) {
+            .content {
+                padding: 15px;
+            }
+
+            .header {
+                padding: 15px;
+            }
+
+            .detail-label {
+                width: 125px;
+                font-size: 13px;
+            }
+
+            .detail-value {
+                font-size: 13px;
+                word-break: break-all;
+            }
+
+            .amount-highlight {
+                text-align: right;
+                font-size: 24px;
+            }
+
+        }
+    </style>
+
+    <script src="/api-config.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://www.citrineclinic.com/assets/images/logo.png" alt="Citrine Clinic" class="header-logo">
+
+            <p class="subtitle"></p>
+        </div>
+
+        <div class="content">
+            <!-- Loading State -->
+            <div id="loadingState" class="loading">
+                <div class="loader"></div>
+                <p>Loading your payment details...</p>
+            </div>
+
+            <!-- Alert Messages -->
+            <div id="alertMessage" class="alert"></div>
+
+            <!-- Details Form (Main View) -->
+            <div id="paymentForm" class="active">
+                <h3 style="color: #333; margin-bottom: 20px; font-size: 20px;">Payment Details</h3>
+
+                <!-- Hidden Fields -->
+                <input type="hidden" id="paymentId">
+                <input type="hidden" id="referenceToken">
+                <input type="hidden" id="clinicLocationId">
+
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Full Name <span style="color: #dc3545;">*</span></label>
+                        <input type="text" id="paymentName" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Email <span style="color: #dc3545;">*</span></label>
+                        <input type="email" id="paymentEmail" required readonly>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Phone <span style="color: #dc3545;">*</span></label>
+                        <input type="text" id="paymentPhone" maxlength="10" required readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Service <span style="color: #dc3545;">*</span></label>
+                        <input type="text" id="paymentService" required readonly>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Appointment Date <span style="color: #dc3545;">*</span></label>
+                        <input type="date" id="paymentDate" required onchange="fetchSlots()">
+                    </div>
+                    <div class="form-group">
+                        <label>Select Doctor <span style="color: #dc3545;">*</span></label>
+                        <select id="paymentDoctor" required onchange="onDoctorChange()">
+                            <option value="">Select Doctor</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Select Time Slot <span style="color: #dc3545;">*</span></label>
+                        <select id="paymentSlot" required>
+                            <option value="">Select Time Slot</option>
+                        </select>
+                    </div>
+                    <div class="form-group"
+                        style="background: #f8f9fa; padding: 15px; border-radius: 6px; border: 2px solid #e9ecef;">
+                        <label style="color: #6c757d;">Amount (INR)</label>
+                        <input type="number" id="paymentPrice" disabled
+                            style="font-size: 18px; font-weight: 600; color: #d29740;">
+                        <p id="doctorHoursInfo" style="font-size: 12px; color: #888; margin-top: 6px; display: none;">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group" style="display: none;">
+                    <label>Additional Notes</label>
+                    <textarea id="paymentMessage" rows="2"
+                        placeholder="Any special requirements or notes..."></textarea>
+                </div>
+
+                <!-- Coupon Code Section -->
+                <div class="form-group"
+                    style="display: none; background: #FFF9E6; padding: 15px; border-radius: 6px; border: 2px solid #ebd577; margin-top: 10px;">
+                    <label style="color: #d29740; font-weight: 600;">≡ƒÄƒ∩╕Å Have a Coupon Code?</label>
+                    <div style="display: flex; gap: 10px; margin-top: 8px;">
+                        <input type="text" id="couponCodeView" placeholder="Enter coupon code"
+                            style="flex: 1; text-transform: uppercase; padding: 12px; border: 1px solid #ced4da; border-radius: 6px; font-size: 14px;"
+                            maxlength="50">
+                        <button type="button" class="btn" id="applyCouponBtn" onclick="applyCouponView()"
+                            style="width: auto; padding: 12px 25px; background: linear-gradient(135deg, #52c41a, #73d13d); border-radius: 6px;">Apply</button>
+                    </div>
+                    <div id="couponMessageView"
+                        style="margin-top: 10px; font-size: 14px; padding: 10px; border-radius: 4px; display: none;">
+                    </div>
+                    <div id="discountInfoView"
+                        style="margin-top: 10px; padding: 10px; background: white; border-radius: 6px; display: none;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>Original Amount:</span>
+                            <span id="originalAmountView" style="font-weight: 600;">Γé╣0</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px; color: #52c41a;">
+                            <span>Discount:</span>
+                            <span id="discountAmountView" style="font-weight: 600;">-Γé╣0</span>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; padding-top: 8px; border-top: 2px solid #ebd577;">
+                            <span style="font-weight: 600;">Final Amount:</span>
+                            <span id="finalAmountView"
+                                style="font-weight: 700; color: #d29740; font-size: 18px;">Γé╣0</span>
+                        </div>
+                        <button type="button" onclick="removeCouponView()"
+                            style="margin-top: 10px; padding: 5px 10px; background: #ff4d4f; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">Remove
+                            Coupon</button>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button class="btn" onclick="proceedToPayment()" id="payNowBtn">≡ƒÆ│ Pay Now</button>
+                </div>
+            </div>
+
+            <!-- Edit Mode -->
+
+
+            <!-- Debug Sections (Hidden) -->
+            <input type="hidden" id="apiBaseUrl" value="https://api.citrineclinic.com/api">
+            <input type="hidden" id="referenceId" value="MDAwMDAwMDQ0NDY2">
+            <input type="hidden" id="uniqueType" value="">
+        </div>
+    </div>
+
+    <script>
+        let paymentData = {};
+        let doctorsList = [];
+
+        // Local price & hours map (fallback if API does not return price/hours)
+        const DOCTOR_PRICE_MAP = {
+            'dr niti': 2000,
+            'dr niti gaur': 2000,
+            'default': 1200
+        };
+
+        const DOCTOR_HOURS_MAP = {
+            'dr niti gaur': '10 AM ΓÇô 5 PM',
+            'dr guneet bedi': '10 AM ΓÇô 6 PM',
+            'dr raheel khan': '11 AM ΓÇô 8 PM',
+            'moonis khan': '11 AM ΓÇô 8 PM'
+        };
+
+        function getDoctorPrice(doctor) {
+            if (!doctor) return null;
+            const nameLower = (doctor.name || '').toLowerCase();
+            // Force Niti to be 2000 as per instruction
+            if (nameLower.includes('niti')) {
+                return 2000;
+            }
+            // Use API price if available
+            if (doctor.price !== undefined && doctor.price !== null && doctor.price !== '') {
+                return parseFloat(doctor.price);
+            }
+            return DOCTOR_PRICE_MAP['default'];
+        }
+
+        function getDoctorHours(doctor) {
+            if (!doctor) return null;
+            // Use API working_hours if available
+            if (doctor.working_hours) return doctor.working_hours;
+            const nameLower = (doctor.name || '').toLowerCase();
+            return DOCTOR_HOURS_MAP[nameLower] || null;
+        }
+
+        function isSlotWithinAllowedHours(doctorName, slotStartTime) {
+            if (!doctorName || !slotStartTime) return true;
+            const nameLower = doctorName.toLowerCase();
+
+            let startLimit = null;
+            let endLimit = null;
+
+            if (nameLower.includes('niti')) {
+                startLimit = "10:00";
+                endLimit = "17:00";
+            } else if (nameLower.includes('guneet')) {
+                startLimit = "10:00";
+                endLimit = "18:00";
+            } else if (nameLower.includes('raheel')) {
+                startLimit = "11:00";
+                endLimit = "20:00";
+            } else if (nameLower.includes('moonis')) {
+                startLimit = "11:00";
+                endLimit = "20:00";
+            }
+
+            if (startLimit && endLimit) {
+                return slotStartTime >= startLimit && slotStartTime < endLimit;
+            }
+
+            return true;
+        }
+
+        function onDoctorChange() {
+            const doctorId = document.getElementById('paymentDoctor').value;
+            const doctor = doctorsList.find(d => String(d.id) === String(doctorId));
+
+            if (doctor) {
+                const price = getDoctorPrice(doctor);
+                if (price !== null) {
+                    document.getElementById('paymentPrice').value = price;
+                    // Also update paymentData so coupon logic uses the correct base price
+                    paymentData.amount = price;
+                }
+                const hours = getDoctorHours(doctor);
+                const hoursEl = document.getElementById('doctorHoursInfo');
+                if (hours) {
+                    hoursEl.textContent = '≡ƒòÉ Consultation Hours: ' + hours;
+                    hoursEl.style.display = 'block';
+                } else {
+                    hoursEl.style.display = 'none';
+                }
+            } else {
+                document.getElementById('paymentPrice').value = '';
+                paymentData.amount = '';
+                document.getElementById('doctorHoursInfo').style.display = 'none';
+            }
+
+            fetchSlots();
+        }
+
+        // Extract reference_token from URL on page load
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlReferenceToken = getUrlParameter('reference_token') || getUrlParameter('ref') || getUrlParameter('mobile');
+            const urlUniqueType = getUrlParameter('unique_type');
+
+            // Set min date for the picker
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(today.getDate() + 1);
+            const yyyy = tomorrow.getFullYear();
+            const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            const dd = String(tomorrow.getDate()).padStart(2, '0');
+            const minDate = `${yyyy}-${mm}-${dd}`;
+            const dateInput = document.getElementById('paymentDate');
+            if (dateInput) dateInput.setAttribute('min', minDate);
+
+            if (urlReferenceToken) {
+                if (localStorage.getItem('payment_completed_' + urlReferenceToken) === 'true') {
+                    hideLoading();
+                    showAlert('error', 'This payment link has already been used.');
+                    return;
+                }
+
+                document.getElementById('referenceId').value = urlReferenceToken;
+                if (urlUniqueType) {
+                    document.getElementById('uniqueType').value = urlUniqueType;
+                }
+
+                // Automatically load data in background
+                loadPaymentData();
+            } else {
+                showAlert('error', 'Invalid payment link. Reference token or mobile number is missing.');
+            }
+        });
+
+        function getApiUrl() {
+            return document.getElementById('apiBaseUrl').value;
+        }
+
+        function getReferenceId() {
+            return document.getElementById('referenceId').value;
+        }
+
+        function getUniqueType() {
+            return document.getElementById('uniqueType').value;
+        }
+
+        function showAlert(type, message) {
+            const alert = document.getElementById('alertMessage');
+            alert.className = `alert alert-${type} show`;
+            alert.textContent = message;
+            setTimeout(() => {
+                alert.classList.remove('show');
+            }, 5000);
+        }
+
+        function showLoading() {
+            document.getElementById('loadingState').style.display = 'block';
+            document.getElementById('paymentForm').classList.remove('active');
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingState').style.display = 'none';
+        }
+
+        function showDetailsView(data) {
+            hideLoading();
+
+            // Store data globally
+            paymentData = data;
+
+            // Populate form directly
+            document.getElementById('paymentId').value = data.id || '';
+            document.getElementById('referenceToken').value = data.reference_token || getReferenceId();
+            document.getElementById('paymentName').value = data.name || '';
+            document.getElementById('paymentEmail').value = data.email || '';
+            document.getElementById('paymentPhone').value = data.phone || '';
+            document.getElementById('paymentService').value = data.service || '';
+            document.getElementById('paymentDate').value = data.appointment_date || '';
+// Validate that the appointment date is not today
+const todayStr = new Date().toISOString().split('T')[0];
+if (data.appointment_date && data.appointment_date === todayStr) {
+    showAlert('error', 'Today Appointment Slot not available Please select the future Date for Appointment.');
+    document.getElementById('paymentDate').value = '';
+};
+
+            // Prefill price only if a doctor is already set/preselected, otherwise leave blank
+            let priceVal = data.doctor_id ? (data.amount || '') : '';
+            if (data.doctor_id && (!priceVal || priceVal == 0)) {
+                const doctor = doctorsList.find(d => String(d.id) === String(data.doctor_id));
+                if (doctor) {
+                    priceVal = getDoctorPrice(doctor);
+                }
+            }
+            document.getElementById('paymentPrice').value = priceVal;
+            paymentData.amount = priceVal;
+
+            document.getElementById('clinicLocationId').value = data.clinic_location_id || '1';
+            document.getElementById('paymentMessage').value = data.message || '';
+
+            // Set doctor and trigger slots fetch if needed
+            if (data.doctor_id) {
+                document.getElementById('paymentDoctor').value = data.doctor_id;
+                fetchSlots(data.time_slot);
+            }
+
+            document.getElementById('paymentForm').classList.add('active');
+        }
+
+        async function loadDoctors() {
+            try {
+                const response = await fetch(`${getApiUrl()}/get-doctor-list`);
+                const result = await response.json();
+
+                if ((result.status === "success" || result.success === true) && result.data) {
+                    doctorsList = result.data;
+                    const doctorSelect = document.getElementById('paymentDoctor');
+
+                    // Clear existing options except the first one
+                    doctorSelect.innerHTML = '<option value="">Select Doctor</option>';
+
+                    doctorsList.forEach(doc => {
+                        const option = document.createElement('option');
+                        option.value = doc.id;
+                        option.textContent = doc.name;
+                        doctorSelect.appendChild(option);
+                    });
+
+                    // If we already have a doctor_id in paymentData, select it and update price
+                    if (paymentData.doctor_id) {
+                        doctorSelect.value = paymentData.doctor_id;
+                        const doctor = doctorsList.find(d => String(d.id) === String(paymentData.doctor_id));
+                        if (doctor) {
+                            const price = getDoctorPrice(doctor);
+                            // Only set price from doctor if no explicit amount was already set
+                            if (price !== null && (!paymentData.amount || paymentData.amount == 0)) {
+                                document.getElementById('paymentPrice').value = price;
+                                paymentData.amount = price;
+                            }
+                            const hours = getDoctorHours(doctor);
+                            const hoursEl = document.getElementById('doctorHoursInfo');
+                            if (hours) {
+                                hoursEl.textContent = '≡ƒòÉ Consultation Hours: ' + hours;
+                                hoursEl.style.display = 'block';
+                            }
+                        }
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading doctors:', error);
+            }
+        }
+
+        async function fetchSlots(preSelectedSlot = null) {
+            const doctorId = document.getElementById('paymentDoctor').value;
+            const date = document.getElementById('paymentDate').value;
+            const slotSelect = document.getElementById('paymentSlot');
+
+            // Disallow selecting todayΓÇÖs date
+            const todayStr = new Date().toISOString().split('T')[0];
+            if (date === todayStr) {
+                showAlert('error', 'Today Appointment Slot not available Please select the future Date for Appointment.');
+                slotSelect.innerHTML = '<option value="">Select Time Slot</option>';
+                return;
+            }
+
+            if (!doctorId || !date) {
+                slotSelect.innerHTML = '<option value="">Select Time Slot</option>';
+                return;
+            }
+
+            slotSelect.innerHTML = '<option value="">Loading slots...</option>';
+
+            try {
+                const response = await fetch(`${getApiUrl()}/get-doctor-slots`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        doctor_id: doctorId,
+                        date: date
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success && result.slots) {
+                    slotSelect.innerHTML = '<option value="">Select Time Slot*</option>';
+                    let hasSlots = false;
+
+                    const periods = [
+                        { key: 'morning', label: 'Morning' },
+                        { key: 'afternoon', label: 'Afternoon' },
+                        { key: 'evening', label: 'Evening' }
+                    ];
+
+                    const doctor = doctorsList.find(d => String(d.id) === String(doctorId));
+                    const doctorName = doctor ? doctor.name : '';
+
+                    periods.forEach(period => {
+                        const periodSlots = result.slots[period.key];
+                        if (Array.isArray(periodSlots) && periodSlots.length > 0) {
+                            const optgroup = document.createElement('optgroup');
+                            optgroup.label = period.label;
+
+                            let periodHasSlots = false;
+                            periodSlots.forEach(slot => {
+                                // Filter slot by doctor allowed working hours
+                                if (isSlotWithinAllowedHours(doctorName, slot.start_time)) {
+                                    hasSlots = true;
+                                    periodHasSlots = true;
+                                    const option = document.createElement('option');
+                                    // Use display for both value and text as it's user-friendly
+                                    option.value = slot.display;
+                                    option.textContent = slot.display;
+                                    optgroup.appendChild(option);
+                                }
+                            });
+
+                            if (periodHasSlots) {
+                                slotSelect.appendChild(optgroup);
+                            }
+                        }
+                    });
+
+                    if (hasSlots && preSelectedSlot) {
+                        let matchedOption = Array.from(slotSelect.options).find(opt => opt.value === preSelectedSlot || opt.value.startsWith(preSelectedSlot));
+                        if (matchedOption) {
+                            slotSelect.value = matchedOption.value;
+                        }
+                    }
+
+                    if (!hasSlots) {
+                        slotSelect.innerHTML = '<option value="">No slots available for this date</option>';
+                    }
+                } else {
+                    slotSelect.innerHTML = '<option value="">No slots available</option>';
+                }
+            } catch (error) {
+                console.error('Error fetching slots:', error);
+                slotSelect.innerHTML = '<option value="">Error loading slots</option>';
+            }
+        }
+
+        async function loadPaymentData() {
+            showLoading();
+
+            try {
+                // Check link status first
+                const statusResponse = await fetch(`${getApiUrl()}/payment-link-status?reference_token=${getReferenceId()}`);
+                const statusData = await statusResponse.json();
+
+                if (statusData.success && statusData.link_status === 'used') {
+                    hideLoading();
+                    showAlert('error', 'This payment link has already been used.');
+                    return;
+                }
+
+                if (statusData.success && statusData.link_status === 'expired') {
+                    hideLoading();
+                    showAlert('error', 'This payment link has expired. Please request a new link.');
+                    return;
+                }
+
+                // Fetch form data
+                let formDataUrl = `${getApiUrl()}/payment-form-data?reference_token=${getReferenceId()}`;
+                const uniqueType = getUniqueType();
+                if (uniqueType) {
+                    formDataUrl += `&unique_type=${encodeURIComponent(uniqueType)}`;
+                }
+
+                const response = await fetch(formDataUrl);
+                const data = await response.json();
+
+                if (data.success && data.data) {
+                    // Restricted access check (Temporary)
+                    // if (data.data.phone !== '9205636456' || data.data.phone !== '9689946290' || data.data.phone !== '6395333436') {
+                    //     hideLoading();
+                    //     showAlert('error', 'This page is currently restricted for testing.');
+                    //     return;
+                    // }
+                    // Load doctors first, then show details
+                    await loadDoctors();
+                    showDetailsView(data.data);
+                } else {
+                    hideLoading();
+                    showAlert('error', data.message || 'Unable to load payment details.');
+                }
+            } catch (error) {
+                hideLoading();
+                showAlert('error', 'Failed to connect to the server. Please try again.');
+            }
+        }
+
+
+
+        let appliedCoupon = null;
+        let originalPriceValue = 0;
+        let viewModeAmount = 0;
+
+        async function applyCouponView() {
+            const couponCode = document.getElementById('couponCodeView').value.trim().toUpperCase();
+            const amount = paymentData.amount || document.getElementById('paymentPrice').value;
+            viewModeAmount = amount;
+            const phone = paymentData.phone || document.getElementById('paymentPhone').value;
+            const email = paymentData.email || document.getElementById('paymentEmail').value;
+            const applyBtn = document.getElementById('applyCouponBtn');
+
+            if (!couponCode) {
+                showCouponMessageView('ΓÜá∩╕Å Please enter a coupon code.', 'error');
+                return;
+            }
+
+            if (!amount || amount <= 0) {
+                showCouponMessageView('ΓÜá∩╕Å Invalid amount.', 'error');
+                return;
+            }
+
+            // Disable button and show loading
+            applyBtn.disabled = true;
+            applyBtn.textContent = 'Validating...';
+
+            try {
+                const response = await fetch(`${getApiUrl()}/validate-coupon`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        coupon_code: couponCode,
+                        amount: amount,
+                        phone: phone,
+                        email: email
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    appliedCoupon = data.data;
+                    appliedCoupon.coupon_code = couponCode;
+                    originalPriceValue = amount;
+
+                    // Update view mode UI
+                    document.getElementById('originalAmountView').textContent = 'Γé╣' + data.data.original_amount;
+                    document.getElementById('discountAmountView').textContent = '-Γé╣' + data.data.discount_amount;
+                    document.getElementById('finalAmountView').textContent = 'Γé╣' + data.data.final_amount;
+                    document.getElementById('discountInfoView').style.display = 'block';
+
+                    // Update hidden payment price
+                    document.getElementById('paymentPrice').value = data.data.final_amount;
+                    paymentData.amount = data.data.final_amount;
+
+                    showCouponMessageView(`Γ£à ${data.message} You saved Γé╣${data.data.savings}!`, 'success');
+
+                    // Disable coupon input
+                    document.getElementById('couponCodeView').disabled = true;
+                    applyBtn.textContent = 'Applied Γ£ô';
+                } else {
+                    // Show detailed error message from backend
+                    const errorMsg = data.message || 'Invalid coupon code.';
+                    showCouponMessageView('Γ¥î ' + errorMsg, 'error');
+                    // Don't call removeCouponView() here - it hides the error message
+                    applyBtn.disabled = false;
+                    applyBtn.textContent = 'Apply';
+                }
+            } catch (error) {
+                console.error('Coupon validation error:', error);
+                showCouponMessageView('Γ¥î Failed to validate coupon. Please check your connection and try again.', 'error');
+                applyBtn.disabled = false;
+                applyBtn.textContent = 'Apply';
+            }
+        }
+
+        function removeCouponView() {
+            appliedCoupon = null;
+            const applyBtn = document.getElementById('applyCouponBtn');
+
+            // Restore original price
+            if (viewModeAmount > 0) {
+                document.getElementById('paymentPrice').value = viewModeAmount;
+                paymentData.amount = viewModeAmount;
+            }
+
+            // Reset UI (don't clear error message - user might want to see it)
+            document.getElementById('couponCodeView').value = '';
+            document.getElementById('couponCodeView').disabled = false;
+            document.getElementById('discountInfoView').style.display = 'none';
+            // Hide error message after clearing
+            setTimeout(() => {
+                document.getElementById('couponMessageView').style.display = 'none';
+            }, 500);
+            applyBtn.disabled = false;
+            applyBtn.textContent = 'Apply';
+        }
+
+        function showCouponMessageView(message, type) {
+            const msgDiv = document.getElementById('couponMessageView');
+            msgDiv.style.display = 'block';
+            msgDiv.textContent = message;
+            msgDiv.style.fontWeight = '600';
+
+            if (type === 'success') {
+                msgDiv.style.color = '#155724';
+                msgDiv.style.backgroundColor = '#d4edda';
+                msgDiv.style.borderLeft = '4px solid #28a745';
+            } else {
+                msgDiv.style.color = '#721c24';
+                msgDiv.style.backgroundColor = '#f8d7da';
+                msgDiv.style.borderLeft = '4px solid #dc3545';
+            }
+
+            // Auto-hide error messages after 5 seconds
+            if (type === 'error') {
+                setTimeout(() => {
+                    msgDiv.style.display = 'none';
+                }, 5000);
+            }
+        }
+
+        async function proceedToPayment() {
+            const dateVal = document.getElementById('paymentDate').value;
+            const doctorVal = document.getElementById('paymentDoctor').value;
+            const slotVal = document.getElementById('paymentSlot').value;
+            const emailVal = document.getElementById('paymentEmail').value.trim();
+
+            if (!emailVal) {
+                showAlert('error', 'Please enter your email address.');
+                return;
+            }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(emailVal)) {
+                showAlert('error', 'Please enter a valid email address.');
+                return;
+            }
+
+            if (!dateVal) {
+                showAlert('error', 'Please select an appointment date.');
+                return;
+            }
+            if (!doctorVal) {
+                showAlert('error', 'Please select a doctor.');
+                return;
+            }
+            if (!slotVal) {
+                showAlert('error', 'Please select an appointment time slot.');
+                return;
+            }
+
+            // Get button reference - try to find it by ID or from event
+            const btn = document.getElementById('payNowBtn') || document.querySelector('.btn-group .btn:last-child') || event?.target;
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+            }
+
+            try {
+                const paymentPayload = {
+                    reference_token: document.getElementById('referenceToken').value || getReferenceId(),
+                    id: document.getElementById('paymentId').value,
+                    name: document.getElementById('paymentName').value,
+                    email: document.getElementById('paymentEmail').value,
+                    phone: document.getElementById('paymentPhone').value,
+                    appointment_date: document.getElementById('paymentDate').value,
+                    service: document.getElementById('paymentService').value,
+                    doctor_id: document.getElementById('paymentDoctor').value,
+                    time_slot: document.getElementById('paymentSlot').value,
+                    message: document.getElementById('paymentMessage').value,
+                    amount: document.getElementById('paymentPrice').value,
+                    clinic_location_id: document.getElementById('clinicLocationId').value,
+                    unique_type: document.getElementById('uniqueType').value,
+                    coupon_code: appliedCoupon ? appliedCoupon.coupon_code : null
+                };
+
+                // console.log('Payment Payload:', paymentPayload);
+
+                const response = await fetch(`${getApiUrl()}/payment-initialize`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(paymentPayload)
+                });
+
+                const data = await response.json();
+                // console.log('Payment Response:', data);
+
+                if (data.success && data.data.payment_session_id) {
+                    // Store order_id and payment data for later use
+                    const orderId = data.data.order_id;
+                    sessionStorage.setItem('pending_order_id', orderId);
+
+                    // Store payment form data for retry functionality
+                    sessionStorage.setItem('lastPaymentData', JSON.stringify({
+                        reference_token: paymentPayload.reference_token,
+                        unique_type: paymentPayload.unique_type
+                    }));
+
+                    // Open Cashfree checkout
+                    openCashfreeCheckout(data.data.payment_session_id, data.data.environment, orderId);
+                } else {
+                    const errorMsg = data.message || 'Failed to initialize payment.';
+                    console.error('Payment initialization error:', errorMsg);
+                    showAlert('error', errorMsg);
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.textContent = '≡ƒÆ│ Pay Now';
+                    }
+                }
+            } catch (error) {
+                console.error('Payment initialization exception:', error);
+                showAlert('error', 'Payment initialization failed: ' + error.message);
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = '≡ƒÆ│ Pay Now';
+                }
+            }
+        }
+
+        function openCashfreeCheckout(sessionId, environment, orderId) {
+            const cashfree = Cashfree({
+                mode: environment === 'production' ? 'production' : 'sandbox'
+            });
+
+            const checkoutOptions = {
+                paymentSessionId: sessionId,
+                returnUrl: `https://www.citrineclinic.com/payment/payment-callback.html?order_id=${orderId}`,
+                redirectTarget: '_self'
+            };
+
+            cashfree.checkout(checkoutOptions).then((result) => {
+                if (result.error) {
+                    console.error('Payment error:', result.error);
+                    showAlert('error', 'Payment failed: ' + result.error.message);
+                }
+                if (result.paymentDetails) {
+                    // console.log('Payment completed:', result.paymentDetails);
+                    // Redirect to callback page with order_id
+                    window.location.href = `https://www.citrineclinic.com/payment/payment-callback.html?order_id=${orderId}`;
+                }
+            }).catch((error) => {
+                console.error('Checkout error:', error);
+                showAlert('error', 'Payment checkout failed.');
+            });
+        }
+    </script>
+</body>
+
+</html>

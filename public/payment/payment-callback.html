@@ -238,8 +238,8 @@
                         localStorage.setItem('payment_completed_' + refToken, 'true');
                     }
 
-                    // Share payment details with Nectar webhook
-                    sharePaymentDetails(data.data, orderId);
+                    // Share payment details with Nectar webhook (handled by backend now)
+                    // sharePaymentDetails(data.data, orderId);
 
                     showResult('success', 'Payment Successful! 🎉',
                         `Your payment has been completed successfully.`,
@@ -403,14 +403,27 @@
 
             // Extract reference_token from order_id for back link
             const orderId = getUrlParameter('order_id');
-            let backToFormUrl = 'https://www.citrineclinic.com/payment/checkout.html';
+            let backToFormUrl = 'https://www.citrineclinic.com/payment/payment-link.html';
             if (orderId) {
                 // Order ID format: ORDER_{reference_token}_{timestamp}
                 const parts = orderId.split('_');
                 if (parts.length >= 3) {
                     const referenceToken = parts.slice(1, -1).join('_'); // Get everything between ORDER_ and _timestamp
-                    backToFormUrl = `https://www.citrineclinic.com/payment/checkout.html?reference_token=${referenceToken}`;
+                    backToFormUrl = `https://www.citrineclinic.com/payment/payment-link.html?reference_token=${referenceToken}`;
                 }
+            }
+
+            try {
+                const storedData = sessionStorage.getItem('lastPaymentData');
+                if (storedData) {
+                    const pd = JSON.parse(storedData);
+                    if (pd.unique_type) {
+                        // Append unique_type, using ? if URL doesn't have query params, or & if it does
+                        backToFormUrl += (backToFormUrl.includes('?') ? '&' : '?') + `unique_type=${pd.unique_type}`;
+                    }
+                }
+            } catch (e) {
+                console.error('Error reading from sessionStorage:', e);
             }
 
             let html = `
@@ -437,7 +450,7 @@
             } else if (action === 'contact-support') {
                 html += `
                     <a href="${backToFormUrl}" class="btn" style="background: #6c757d; margin-right: 10px;">Back to Form</a>
-                    <a href="mailto:support@example.com" class="btn">Contact Support</a>
+                    <a href="mailto:info@citrineclinic.com" class="btn">Contact Support</a>
                 `;
             } else if (action !== 'auto-retry') {
                 // Default button
@@ -455,10 +468,10 @@
                 const paymentData = JSON.parse(storedData);
                 // Redirect back to form with data
                 const params = new URLSearchParams(paymentData);
-                window.location.href = `https://www.citrineclinic.com/payment/checkout.html?${params.toString()}`;
+                window.location.href = `https://www.citrineclinic.com/payment/payment-link.html?${params.toString()}`;
             } else {
                 // Just go back to form
-                window.location.href = 'https://www.citrineclinic.com/payment/checkout.html';
+                window.location.href = 'https://www.citrineclinic.com/payment/payment-link.html';
             }
         }
 

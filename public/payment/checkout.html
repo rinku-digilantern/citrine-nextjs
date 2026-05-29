@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment – Citrine Clinic</title>
     <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
     <style>
         * {
@@ -30,7 +31,7 @@
 
         .header {
             background: #fbfbfb;
-            color: white;
+            color: #333;
             padding: 30px;
             border-radius: 12px 12px 0 0;
             text-align: center;
@@ -75,70 +76,28 @@
         }
 
         @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .header {
-            color: #333;
-        }
-
-        /* View Mode */
-        .details-view {
-            display: none;
-        }
-
-        .details-view.active {
-            display: block;
-        }
-
-        .detail-row {
-            display: flex;
-            padding: 15px 0;
-            border-bottom: 1px solid #e9ecef;
-            align-items: center;
-        }
-
-        .detail-label {
-            font-weight: 600;
+        .form-section-title {
             color: #d29740;
-            width: 180px;
-            flex-shrink: 0;
-        }
-
-        .detail-value {
-            color: #212529;
-            flex: 1;
-            font-size: 16px;
-        }
-
-        .amount-highlight {
-            font-size: 32px;
+            font-size: 13px;
             font-weight: 700;
-            color: #d29740;
-        }
-
-        /* Edit Mode */
-        .form-edit {
-            display: none;
-        }
-
-        .form-edit.active {
-            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 20px 0 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #f0e5cc;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
             font-weight: 600;
             color: #495057;
             font-size: 14px;
@@ -154,19 +113,22 @@
             font-size: 14px;
             font-family: inherit;
             background-color: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
         }
 
         .form-group input:focus,
+        .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: #d29740;
             box-shadow: 0 0 0 3px rgba(210, 151, 64, 0.1);
         }
 
+        .form-group input[readonly],
         .form-group input:disabled {
-            background: #e9ecef;
-            color: #6c757d;
-            cursor: not-allowed;
+            background: #f5f5f5;
+            color: #555;
+            cursor: default;
         }
 
         .grid {
@@ -176,9 +138,7 @@
         }
 
         @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
+            .grid { grid-template-columns: 1fr; }
         }
 
         /* Buttons */
@@ -210,24 +170,13 @@
             opacity: 0.95;
         }
 
-        .btn:active {
-            transform: translateY(0);
-        }
+        .btn:active { transform: translateY(0); }
 
         .btn:disabled {
             background: #adb5bd;
             cursor: not-allowed;
             transform: none;
-        }
-
-        .btn-outline {
-            background: white;
-            color: #d29740;
-            border: 2px solid #d29740;
-        }
-
-        .btn-outline:hover {
-            background: #FFF9E6;
+            box-shadow: none;
         }
 
         /* Alert Messages */
@@ -238,9 +187,7 @@
             display: none;
         }
 
-        .alert.show {
-            display: block;
-        }
+        .alert.show { display: block; }
 
         .alert-error {
             background: #f8d7da;
@@ -260,35 +207,104 @@
             border: 1px solid #bee5eb;
         }
 
-        /* Hidden debug sections */
-        .debug-section {
+        /* Amount box */
+        .amount-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border: 2px solid #e9ecef;
+        }
+
+        .amount-box label { color: #6c757d; }
+
+        .amount-box input {
+            font-size: 18px;
+            font-weight: 600;
+            color: #d29740;
+            background: transparent;
+            border: none;
+            padding: 4px 0;
+        }
+
+        .amount-box input:focus {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+
+        /* Coupon */
+        .coupon-box {
+            background: #FFF9E6;
+            padding: 15px;
+            border-radius: 6px;
+            border: 2px solid #ebd577;
+            margin-top: 10px;
+        }
+
+        .coupon-box label { color: #d29740; font-weight: 600; }
+
+        .coupon-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .coupon-row input {
+            flex: 1;
+            text-transform: uppercase;
+            padding: 12px;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .btn-apply {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #52c41a, #73d13d);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .btn-apply:disabled { background: #adb5bd; cursor: not-allowed; }
+
+        #couponMessageView {
+            margin-top: 10px;
+            font-size: 14px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+            font-weight: 600;
+        }
+
+        #discountInfoView {
+            margin-top: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 6px;
             display: none;
         }
 
+        .discount-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .discount-total {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 8px;
+            border-top: 2px solid #ebd577;
+            font-weight: 600;
+        }
+
         @media only screen and (max-width:600px) {
-            .content {
-                padding: 15px;
-            }
-
-            .header {
-                padding: 15px;
-            }
-
-            .detail-label {
-                width: 125px;
-                font-size: 13px;
-            }
-
-            .detail-value {
-                font-size: 13px;
-                word-break: break-all;
-            }
-
-            .amount-highlight {
-                text-align: right;
-                font-size: 24px;
-            }
-
+            .content { padding: 15px; }
+            .header { padding: 15px; }
         }
     </style>
 
@@ -299,59 +315,69 @@
     <div class="container">
         <div class="header">
             <img src="https://www.citrineclinic.com/assets/images/logo.png" alt="Citrine Clinic" class="header-logo">
-
-            <p class="subtitle"></p>
+            <p class="subtitle">Book Your Appointment</p>
         </div>
 
         <div class="content">
             <!-- Loading State -->
-            <div id="loadingState" class="loading">
+            <div id="loadingState" class="loading" style="display:none;">
                 <div class="loader"></div>
-                <p>Loading your payment details...</p>
+                <p id="loadingText">Submitting your query...</p>
             </div>
 
             <!-- Alert Messages -->
             <div id="alertMessage" class="alert"></div>
 
-            <!-- Details Form (Main View) -->
-            <div id="paymentForm" class="active">
-                <h3 style="color: #333; margin-bottom: 20px; font-size: 20px;">Payment Details</h3>
+            <!-- ========== QUERY FORM ========== -->
+            <div id="queryForm">
+                <h3 style="color: #333; margin-bottom: 6px; font-size: 20px;">Book Appointment</h3>
+                <p style="color:#888; font-size:13px; margin-bottom:20px;">Fill in your details and we'll confirm your slot.</p>
 
                 <!-- Hidden Fields -->
-                <input type="hidden" id="paymentId">
-                <input type="hidden" id="referenceToken">
-                <input type="hidden" id="clinicLocationId">
+                <input type="hidden" id="pmsUniqueId">
+                <input type="hidden" id="localTransactionId">
+                <input type="hidden" id="clinicLocationId" value="133">
+
+                <div class="form-section-title">Personal Details</div>
 
                 <div class="grid">
                     <div class="form-group">
-                        <label>Full Name <span style="color: #dc3545;">*</span></label>
-                        <input type="text" id="paymentName" required readonly>
+                        <label>Full Name <span style="color:#dc3545;">*</span></label>
+                        <input type="text" id="qName" placeholder="Your full name" required>
                     </div>
                     <div class="form-group">
-                        <label>Email <span style="color: #dc3545;">*</span></label>
-                        <input type="email" id="paymentEmail" required readonly>
+                        <label>Phone <span style="color:#dc3545;">*</span></label>
+                        <input type="tel" id="qPhone" maxlength="10" placeholder="10-digit mobile number" required>
                     </div>
                 </div>
 
-                <div class="grid">
-                    <div class="form-group">
-                        <label>Phone <span style="color: #dc3545;">*</span></label>
-                        <input type="text" id="paymentPhone" maxlength="10" required readonly>
-                    </div>
-                    <div class="form-group">
-                        <label>Service <span style="color: #dc3545;">*</span></label>
-                        <input type="text" id="paymentService" required readonly>
-                    </div>
+                <div class="form-group">
+                    <label>Email <span style="color:#dc3545;">*</span></label>
+                    <input type="email" id="qEmail" placeholder="your@email.com" required>
                 </div>
+
+                <div class="form-section-title">Appointment Details</div>
+
+                <div class="form-group">
+                    <label>Service / Concern <span style="color:#dc3545;">*</span></label>
+                    <input type="text" id="qService" placeholder="e.g. Hair Fall, Skin Treatment, Laser" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Message / Notes</label>
+                    <textarea id="qMessage" rows="2" placeholder="Any specific details or requirements..."></textarea>
+                </div>
+
+                <div class="form-section-title">Schedule</div>
 
                 <div class="grid">
                     <div class="form-group">
-                        <label>Appointment Date <span style="color: #dc3545;">*</span></label>
-                        <input type="date" id="paymentDate" required onchange="fetchSlots()">
+                        <label>Preferred Date <span style="color:#dc3545;">*</span></label>
+                        <input type="date" id="qDate" required onchange="fetchSlots()">
                     </div>
                     <div class="form-group">
-                        <label>Select Doctor <span style="color: #dc3545;">*</span></label>
-                        <select id="paymentDoctor" required onchange="onDoctorChange()">
+                        <label>Select Doctor <span style="color:#dc3545;">*</span></label>
+                        <select id="qDoctor" required onchange="onDoctorChange()">
                             <option value="">Select Doctor</option>
                         </select>
                     </div>
@@ -359,82 +385,66 @@
 
                 <div class="grid">
                     <div class="form-group">
-                        <label>Select Time Slot <span style="color: #dc3545;">*</span></label>
-                        <select id="paymentSlot" required>
+                        <label>Select Time Slot <span style="color:#dc3545;">*</span></label>
+                        <select id="qSlot" required>
                             <option value="">Select Time Slot</option>
                         </select>
                     </div>
-                    <div class="form-group"
-                        style="background: #f8f9fa; padding: 15px; border-radius: 6px; border: 2px solid #e9ecef;">
-                        <label style="color: #6c757d;">Amount (INR)</label>
-                        <input type="number" id="paymentPrice" disabled
-                            style="font-size: 18px; font-weight: 600; color: #d29740;">
-                        <p id="doctorHoursInfo" style="font-size: 12px; color: #888; margin-top: 6px; display: none;">
-                        </p>
+                    <div class="form-group amount-box">
+                        <label>Amount (INR)</label>
+                        <input type="number" id="qPrice" disabled placeholder="—">
+                        <p id="doctorHoursInfo" style="font-size:12px; color:#888; margin-top:6px; display:none;"></p>
                     </div>
                 </div>
 
-                <div class="form-group" style="display: none;">
-                    <label>Additional Notes</label>
-                    <textarea id="paymentMessage" rows="2"
-                        placeholder="Any special requirements or notes..."></textarea>
-                </div>
-
-                <!-- Coupon Code Section -->
-                <div class="form-group"
-                    style="display: none; background: #FFF9E6; padding: 15px; border-radius: 6px; border: 2px solid #ebd577; margin-top: 10px;">
-                    <label style="color: #d29740; font-weight: 600;">🎟️ Have a Coupon Code?</label>
-                    <div style="display: flex; gap: 10px; margin-top: 8px;">
-                        <input type="text" id="couponCodeView" placeholder="Enter coupon code"
-                            style="flex: 1; text-transform: uppercase; padding: 12px; border: 1px solid #ced4da; border-radius: 6px; font-size: 14px;"
-                            maxlength="50">
-                        <button type="button" class="btn" id="applyCouponBtn" onclick="applyCouponView()"
-                            style="width: auto; padding: 12px 25px; background: linear-gradient(135deg, #52c41a, #73d13d); border-radius: 6px;">Apply</button>
+                <!-- Coupon Section -->
+                <div class="coupon-box" id="couponSection" style="display:none;">
+                    <label>🎟️ Have a Coupon Code?</label>
+                    <div class="coupon-row">
+                        <input type="text" id="couponCodeInput" placeholder="Enter coupon code" maxlength="50">
+                        <button type="button" class="btn-apply" id="applyCouponBtn" onclick="applyCoupon()">Apply</button>
                     </div>
-                    <div id="couponMessageView"
-                        style="margin-top: 10px; font-size: 14px; padding: 10px; border-radius: 4px; display: none;">
-                    </div>
-                    <div id="discountInfoView"
-                        style="margin-top: 10px; padding: 10px; background: white; border-radius: 6px; display: none;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <div id="couponMessageView"></div>
+                    <div id="discountInfoView">
+                        <div class="discount-row">
                             <span>Original Amount:</span>
-                            <span id="originalAmountView" style="font-weight: 600;">₹0</span>
+                            <span id="originalAmountView" style="font-weight:600;">₹0</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px; color: #52c41a;">
+                        <div class="discount-row" style="color:#52c41a;">
                             <span>Discount:</span>
-                            <span id="discountAmountView" style="font-weight: 600;">-₹0</span>
+                            <span id="discountAmountView" style="font-weight:600;">-₹0</span>
                         </div>
-                        <div
-                            style="display: flex; justify-content: space-between; padding-top: 8px; border-top: 2px solid #ebd577;">
-                            <span style="font-weight: 600;">Final Amount:</span>
-                            <span id="finalAmountView"
-                                style="font-weight: 700; color: #d29740; font-size: 18px;">₹0</span>
+                        <div class="discount-total">
+                            <span>Final Amount:</span>
+                            <span id="finalAmountView" style="color:#d29740; font-size:18px;">₹0</span>
                         </div>
-                        <button type="button" onclick="removeCouponView()"
-                            style="margin-top: 10px; padding: 5px 10px; background: #ff4d4f; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 12px;">Remove
-                            Coupon</button>
+                        <button type="button" onclick="removeCoupon()"
+                            style="margin-top:10px; padding:5px 10px; background:#ff4d4f; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px;">
+                            Remove Coupon
+                        </button>
                     </div>
                 </div>
 
                 <div class="btn-group">
-                    <button class="btn" onclick="proceedToPayment()" id="payNowBtn">💳 Pay Now</button>
+                    <button class="btn" id="submitQueryBtn" onclick="submitQuery()">
+                        📋 Submit &amp; Proceed to Payment
+                    </button>
                 </div>
             </div>
+            <!-- ========== END QUERY FORM ========== -->
 
-            <!-- Edit Mode -->
-
-
-            <!-- Debug Sections (Hidden) -->
             <input type="hidden" id="apiBaseUrl" value="https://api.citrineclinic.com/api">
-            <input type="hidden" id="referenceId" value="MDAwMDAwMDQ0NDY2">
         </div>
     </div>
 
     <script>
-        let paymentData = {};
+        // ─── State ────────────────────────────────────────────────────────────
         let doctorsList = [];
+        let appliedCoupon = null;
+        let originalPriceValue = 0;
+        let submittedQueryData = null; // stored after PMS submission
 
-        // Local price & hours map (fallback if API does not return price/hours)
+        // Doctor price / hours local maps (fallback)
         const DOCTOR_PRICE_MAP = {
             'dr niti': 2000,
             'dr niti gaur': 2000,
@@ -448,14 +458,41 @@
             'moonis khan': '11 AM – 8 PM'
         };
 
+        // ─── Helpers ─────────────────────────────────────────────────────────
+        function getApiUrl() {
+            return document.getElementById('apiBaseUrl').value;
+        }
+
+        function getUrlParameter(name) {
+            return new URLSearchParams(window.location.search).get(name);
+        }
+
+        function showAlert(type, message) {
+            const el = document.getElementById('alertMessage');
+            el.className = `alert alert-${type} show`;
+            el.textContent = message;
+            el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            if (type !== 'success') {
+                setTimeout(() => el.classList.remove('show'), 6000);
+            }
+        }
+
+        function showLoading(text = 'Please wait...') {
+            document.getElementById('loadingText').textContent = text;
+            document.getElementById('loadingState').style.display = 'block';
+            document.getElementById('queryForm').style.display = 'none';
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('queryForm').style.display = 'block';
+        }
+
+        // ─── Doctor helpers ───────────────────────────────────────────────────
         function getDoctorPrice(doctor) {
             if (!doctor) return null;
             const nameLower = (doctor.name || '').toLowerCase();
-            // Force Niti to be 2000 as per instruction
-            if (nameLower.includes('niti')) {
-                return 2000;
-            }
-            // Use API price if available
+            if (nameLower.includes('niti')) return 2000;
             if (doctor.price !== undefined && doctor.price !== null && doctor.price !== '') {
                 return parseFloat(doctor.price);
             }
@@ -464,7 +501,6 @@
 
         function getDoctorHours(doctor) {
             if (!doctor) return null;
-            // Use API working_hours if available
             if (doctor.working_hours) return doctor.working_hours;
             const nameLower = (doctor.name || '').toLowerCase();
             return DOCTOR_HOURS_MAP[nameLower] || null;
@@ -472,42 +508,25 @@
 
         function isSlotWithinAllowedHours(doctorName, slotStartTime) {
             if (!doctorName || !slotStartTime) return true;
-            const nameLower = doctorName.toLowerCase();
-
-            let startLimit = null;
-            let endLimit = null;
-
-            if (nameLower.includes('niti')) {
-                startLimit = "10:00";
-                endLimit = "17:00";
-            } else if (nameLower.includes('guneet')) {
-                startLimit = "10:00";
-                endLimit = "18:00";
-            } else if (nameLower.includes('raheel')) {
-                startLimit = "11:00";
-                endLimit = "20:00";
-            } else if (nameLower.includes('moonis')) {
-                startLimit = "11:00";
-                endLimit = "20:00";
-            }
-
-            if (startLimit && endLimit) {
-                return slotStartTime >= startLimit && slotStartTime < endLimit;
-            }
-
+            const n = doctorName.toLowerCase();
+            let s = null, e = null;
+            if (n.includes('niti'))   { s = '10:00'; e = '17:00'; }
+            else if (n.includes('guneet')) { s = '10:00'; e = '18:00'; }
+            else if (n.includes('raheel')) { s = '11:00'; e = '20:00'; }
+            else if (n.includes('moonis')) { s = '11:00'; e = '20:00'; }
+            if (s && e) return slotStartTime >= s && slotStartTime < e;
             return true;
         }
 
         function onDoctorChange() {
-            const doctorId = document.getElementById('paymentDoctor').value;
+            const doctorId = document.getElementById('qDoctor').value;
             const doctor = doctorsList.find(d => String(d.id) === String(doctorId));
-
             if (doctor) {
                 const price = getDoctorPrice(doctor);
                 if (price !== null) {
-                    document.getElementById('paymentPrice').value = price;
-                    // Also update paymentData so coupon logic uses the correct base price
-                    paymentData.amount = price;
+                    document.getElementById('qPrice').value = price;
+                    // Show coupon section once price is known
+                    document.getElementById('couponSection').style.display = 'block';
                 }
                 const hours = getDoctorHours(doctor);
                 const hoursEl = document.getElementById('doctorHoursInfo');
@@ -518,172 +537,46 @@
                     hoursEl.style.display = 'none';
                 }
             } else {
-                document.getElementById('paymentPrice').value = '';
-                paymentData.amount = '';
+                document.getElementById('qPrice').value = '';
                 document.getElementById('doctorHoursInfo').style.display = 'none';
+                document.getElementById('couponSection').style.display = 'none';
             }
-
             fetchSlots();
         }
 
-        // Extract reference_token from URL on page load
-        function getUrlParameter(name) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(name);
-        }
-
-        // Initialize on page load
-        window.addEventListener('DOMContentLoaded', () => {
-            const urlReferenceToken = getUrlParameter('reference_token') || getUrlParameter('ref');
-
-            // Set min date for the picker
-            const today = new Date();
-            const tomorrow = new Date(today);
-            tomorrow.setDate(today.getDate() + 1);
-            const yyyy = tomorrow.getFullYear();
-            const mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
-            const dd = String(tomorrow.getDate()).padStart(2, '0');
-            const minDate = `${yyyy}-${mm}-${dd}`;
-            const dateInput = document.getElementById('paymentDate');
-            if (dateInput) dateInput.setAttribute('min', minDate);
-
-            if (urlReferenceToken) {
-                if (localStorage.getItem('payment_completed_' + urlReferenceToken) === 'true') {
-                    hideLoading();
-                    showAlert('error', 'This payment link has already been used.');
-                    return;
-                }
-
-                document.getElementById('referenceId').value = urlReferenceToken;
-
-                // Automatically load data in background
-                loadPaymentData();
-            } else {
-                showAlert('error', 'Invalid payment link. Reference token is missing.');
-            }
-        });
-
-        function getApiUrl() {
-            return document.getElementById('apiBaseUrl').value;
-        }
-
-        function getReferenceId() {
-            return document.getElementById('referenceId').value;
-        }
-
-        function showAlert(type, message) {
-            const alert = document.getElementById('alertMessage');
-            alert.className = `alert alert-${type} show`;
-            alert.textContent = message;
-            setTimeout(() => {
-                alert.classList.remove('show');
-            }, 5000);
-        }
-
-        function showLoading() {
-            document.getElementById('loadingState').style.display = 'block';
-            document.getElementById('paymentForm').classList.remove('active');
-        }
-
-        function hideLoading() {
-            document.getElementById('loadingState').style.display = 'none';
-        }
-
-        function showDetailsView(data) {
-            hideLoading();
-
-            // Store data globally
-            paymentData = data;
-
-            // Populate form directly
-            document.getElementById('paymentId').value = data.id || '';
-            document.getElementById('referenceToken').value = data.reference_token || getReferenceId();
-            document.getElementById('paymentName').value = data.name || '';
-            document.getElementById('paymentEmail').value = data.email || '';
-            document.getElementById('paymentPhone').value = data.phone || '';
-            document.getElementById('paymentService').value = data.service || '';
-            document.getElementById('paymentDate').value = data.appointment_date || '';
-// Validate that the appointment date is not today
-const todayStr = new Date().toISOString().split('T')[0];
-if (data.appointment_date && data.appointment_date === todayStr) {
-    showAlert('error', 'Today Appointment Slot not available Please select the future Date for Appointment.');
-    document.getElementById('paymentDate').value = '';
-};
-
-            // Prefill price only if a doctor is already set/preselected, otherwise leave blank
-            const priceVal = data.doctor_id ? (data.amount || '') : '';
-            document.getElementById('paymentPrice').value = priceVal;
-            paymentData.amount = priceVal;
-
-            document.getElementById('clinicLocationId').value = data.clinic_location_id || '1';
-            document.getElementById('paymentMessage').value = data.message || '';
-
-            // Set doctor and trigger slots fetch if needed
-            if (data.doctor_id) {
-                document.getElementById('paymentDoctor').value = data.doctor_id;
-                fetchSlots(data.time_slot);
-            }
-
-            document.getElementById('paymentForm').classList.add('active');
-        }
-
+        // ─── Load doctors ─────────────────────────────────────────────────────
         async function loadDoctors() {
             try {
                 const response = await fetch(`${getApiUrl()}/get-doctor-list`);
                 const result = await response.json();
-
-                if ((result.status === "success" || result.success === true) && result.data) {
+                if ((result.status === 'success' || result.success === true) && result.data) {
                     doctorsList = result.data;
-                    const doctorSelect = document.getElementById('paymentDoctor');
-
-                    // Clear existing options except the first one
-                    doctorSelect.innerHTML = '<option value="">Select Doctor</option>';
-
+                    const sel = document.getElementById('qDoctor');
+                    sel.innerHTML = '<option value="">Select Doctor</option>';
                     doctorsList.forEach(doc => {
-                        const option = document.createElement('option');
-                        option.value = doc.id;
-                        option.textContent = doc.name;
-                        doctorSelect.appendChild(option);
+                        const opt = document.createElement('option');
+                        opt.value = doc.id;
+                        opt.textContent = doc.name;
+                        sel.appendChild(opt);
                     });
-
-                    // If we already have a doctor_id in paymentData, select it and update price
-                    if (paymentData.doctor_id) {
-                        doctorSelect.value = paymentData.doctor_id;
-                        const doctor = doctorsList.find(d => String(d.id) === String(paymentData.doctor_id));
-                        if (doctor) {
-                            const price = getDoctorPrice(doctor);
-                            // Only set price from doctor if no explicit amount was already set
-                            if (price !== null && (!paymentData.amount || paymentData.amount == 0)) {
-                                document.getElementById('paymentPrice').value = price;
-                                paymentData.amount = price;
-                            }
-                            const hours = getDoctorHours(doctor);
-                            const hoursEl = document.getElementById('doctorHoursInfo');
-                            if (hours) {
-                                hoursEl.textContent = '🕐 Consultation Hours: ' + hours;
-                                hoursEl.style.display = 'block';
-                            }
-                        }
-                    }
                 }
-            } catch (error) {
-                console.error('Error loading doctors:', error);
+            } catch (e) {
+                console.error('Error loading doctors:', e);
             }
         }
 
-        async function fetchSlots(preSelectedSlot = null) {
-            const doctorId = document.getElementById('paymentDoctor').value;
-            const date = document.getElementById('paymentDate').value;
-            const slotSelect = document.getElementById('paymentSlot');
-
-            // Disallow selecting today’s date
+        // ─── Fetch slots ──────────────────────────────────────────────────────
+        async function fetchSlots() {
+            const doctorId = document.getElementById('qDoctor').value;
+            const date = document.getElementById('qDate').value;
+            const slotSelect = document.getElementById('qSlot');
             const todayStr = new Date().toISOString().split('T')[0];
+
             if (date === todayStr) {
-                showAlert('error', 'Today Appointment Slot not available Please select the future Date for Appointment.');
+                showAlert('error', 'Today\'s appointment slots are not available. Please select a future date.');
                 slotSelect.innerHTML = '<option value="">Select Time Slot</option>';
                 return;
             }
-
             if (!doctorId || !date) {
                 slotSelect.innerHTML = '<option value="">Select Time Slot</option>';
                 return;
@@ -694,27 +587,19 @@ if (data.appointment_date && data.appointment_date === todayStr) {
             try {
                 const response = await fetch(`${getApiUrl()}/get-doctor-slots`, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        doctor_id: doctorId,
-                        date: date
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ doctor_id: doctorId, date })
                 });
-
                 const result = await response.json();
 
                 if (result.success && result.slots) {
-                    slotSelect.innerHTML = '<option value="">Select Time Slot*</option>';
+                    slotSelect.innerHTML = '<option value="">Select Time Slot *</option>';
                     let hasSlots = false;
-
                     const periods = [
                         { key: 'morning', label: 'Morning' },
                         { key: 'afternoon', label: 'Afternoon' },
                         { key: 'evening', label: 'Evening' }
                     ];
-
                     const doctor = doctorsList.find(d => String(d.id) === String(doctorId));
                     const doctorName = doctor ? doctor.name : '';
 
@@ -723,30 +608,20 @@ if (data.appointment_date && data.appointment_date === todayStr) {
                         if (Array.isArray(periodSlots) && periodSlots.length > 0) {
                             const optgroup = document.createElement('optgroup');
                             optgroup.label = period.label;
-
-                            let periodHasSlots = false;
+                            let periodHas = false;
                             periodSlots.forEach(slot => {
-                                // Filter slot by doctor allowed working hours
                                 if (isSlotWithinAllowedHours(doctorName, slot.start_time)) {
                                     hasSlots = true;
-                                    periodHasSlots = true;
-                                    const option = document.createElement('option');
-                                    // Use display for both value and text as it's user-friendly
-                                    option.value = slot.display;
-                                    option.textContent = slot.display;
-                                    optgroup.appendChild(option);
+                                    periodHas = true;
+                                    const opt = document.createElement('option');
+                                    opt.value = slot.display;
+                                    opt.textContent = slot.display;
+                                    optgroup.appendChild(opt);
                                 }
                             });
-
-                            if (periodHasSlots) {
-                                slotSelect.appendChild(optgroup);
-                            }
+                            if (periodHas) slotSelect.appendChild(optgroup);
                         }
                     });
-
-                    if (hasSlots && preSelectedSlot) {
-                        slotSelect.value = preSelectedSlot;
-                    }
 
                     if (!hasSlots) {
                         slotSelect.innerHTML = '<option value="">No slots available for this date</option>';
@@ -754,268 +629,218 @@ if (data.appointment_date && data.appointment_date === todayStr) {
                 } else {
                     slotSelect.innerHTML = '<option value="">No slots available</option>';
                 }
-            } catch (error) {
-                console.error('Error fetching slots:', error);
+            } catch (e) {
+                console.error('Error fetching slots:', e);
                 slotSelect.innerHTML = '<option value="">Error loading slots</option>';
             }
         }
 
-        async function loadPaymentData() {
-            showLoading();
+        // ─── Coupon logic ─────────────────────────────────────────────────────
+        async function applyCoupon() {
+            const couponCode = document.getElementById('couponCodeInput').value.trim().toUpperCase();
+            const amount = document.getElementById('qPrice').value;
+            const phone = document.getElementById('qPhone').value;
+            const email = document.getElementById('qEmail').value;
+            const btn = document.getElementById('applyCouponBtn');
+
+            if (!couponCode) { showCouponMsg('⚠️ Please enter a coupon code.', 'error'); return; }
+            if (!amount || amount <= 0) { showCouponMsg('⚠️ Invalid amount.', 'error'); return; }
+
+            btn.disabled = true;
+            btn.textContent = 'Validating...';
 
             try {
-                // Check link status first
-                const statusResponse = await fetch(`${getApiUrl()}/payment-link-status?reference_token=${getReferenceId()}`);
-                const statusData = await statusResponse.json();
-
-                if (statusData.success && statusData.link_status === 'used') {
-                    hideLoading();
-                    showAlert('error', 'This payment link has already been used.');
-                    return;
-                }
-
-                if (statusData.success && statusData.link_status === 'expired') {
-                    hideLoading();
-                    showAlert('error', 'This payment link has expired. Please request a new link.');
-                    return;
-                }
-
-                // Fetch form data
-                const response = await fetch(`${getApiUrl()}/payment-form-data?reference_token=${getReferenceId()}`);
-                const data = await response.json();
-
-                if (data.success && data.data) {
-                    // Restricted access check (Temporary)
-                    // if (data.data.phone !== '9205636456' || data.data.phone !== '9689946290' || data.data.phone !== '6395333436') {
-                    //     hideLoading();
-                    //     showAlert('error', 'This page is currently restricted for testing.');
-                    //     return;
-                    // }
-                    // Load doctors first, then show details
-                    await loadDoctors();
-                    showDetailsView(data.data);
-                } else {
-                    hideLoading();
-                    showAlert('error', data.message || 'Unable to load payment details.');
-                }
-            } catch (error) {
-                hideLoading();
-                showAlert('error', 'Failed to connect to the server. Please try again.');
-            }
-        }
-
-
-
-        let appliedCoupon = null;
-        let originalPriceValue = 0;
-        let viewModeAmount = 0;
-
-        async function applyCouponView() {
-            const couponCode = document.getElementById('couponCodeView').value.trim().toUpperCase();
-            const amount = paymentData.amount || document.getElementById('paymentPrice').value;
-            viewModeAmount = amount;
-            const phone = paymentData.phone || document.getElementById('paymentPhone').value;
-            const email = paymentData.email || document.getElementById('paymentEmail').value;
-            const applyBtn = document.getElementById('applyCouponBtn');
-
-            if (!couponCode) {
-                showCouponMessageView('⚠️ Please enter a coupon code.', 'error');
-                return;
-            }
-
-            if (!amount || amount <= 0) {
-                showCouponMessageView('⚠️ Invalid amount.', 'error');
-                return;
-            }
-
-            // Disable button and show loading
-            applyBtn.disabled = true;
-            applyBtn.textContent = 'Validating...';
-
-            try {
-                const response = await fetch(`${getApiUrl()}/validate-coupon`, {
+                const res = await fetch(`${getApiUrl()}/validate-coupon`, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        coupon_code: couponCode,
-                        amount: amount,
-                        phone: phone,
-                        email: email
-                    })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ coupon_code: couponCode, amount, phone, email })
                 });
-
-                const data = await response.json();
+                const data = await res.json();
 
                 if (data.success) {
-                    appliedCoupon = data.data;
-                    appliedCoupon.coupon_code = couponCode;
+                    appliedCoupon = { ...data.data, coupon_code: couponCode };
                     originalPriceValue = amount;
-
-                    // Update view mode UI
                     document.getElementById('originalAmountView').textContent = '₹' + data.data.original_amount;
                     document.getElementById('discountAmountView').textContent = '-₹' + data.data.discount_amount;
                     document.getElementById('finalAmountView').textContent = '₹' + data.data.final_amount;
                     document.getElementById('discountInfoView').style.display = 'block';
-
-                    // Update hidden payment price
-                    document.getElementById('paymentPrice').value = data.data.final_amount;
-                    paymentData.amount = data.data.final_amount;
-
-                    showCouponMessageView(`✅ ${data.message} You saved ₹${data.data.savings}!`, 'success');
-
-                    // Disable coupon input
-                    document.getElementById('couponCodeView').disabled = true;
-                    applyBtn.textContent = 'Applied ✓';
+                    document.getElementById('qPrice').value = data.data.final_amount;
+                    document.getElementById('couponCodeInput').disabled = true;
+                    btn.textContent = 'Applied ✓';
+                    showCouponMsg(`✅ ${data.message} You saved ₹${data.data.savings}!`, 'success');
                 } else {
-                    // Show detailed error message from backend
-                    const errorMsg = data.message || 'Invalid coupon code.';
-                    showCouponMessageView('❌ ' + errorMsg, 'error');
-                    // Don't call removeCouponView() here - it hides the error message
-                    applyBtn.disabled = false;
-                    applyBtn.textContent = 'Apply';
+                    showCouponMsg('❌ ' + (data.message || 'Invalid coupon code.'), 'error');
+                    btn.disabled = false;
+                    btn.textContent = 'Apply';
                 }
-            } catch (error) {
-                console.error('Coupon validation error:', error);
-                showCouponMessageView('❌ Failed to validate coupon. Please check your connection and try again.', 'error');
-                applyBtn.disabled = false;
-                applyBtn.textContent = 'Apply';
+            } catch (e) {
+                showCouponMsg('❌ Failed to validate coupon. Please try again.', 'error');
+                btn.disabled = false;
+                btn.textContent = 'Apply';
             }
         }
 
-        function removeCouponView() {
+        function removeCoupon() {
             appliedCoupon = null;
-            const applyBtn = document.getElementById('applyCouponBtn');
-
-            // Restore original price
-            if (viewModeAmount > 0) {
-                document.getElementById('paymentPrice').value = viewModeAmount;
-                paymentData.amount = viewModeAmount;
-            }
-
-            // Reset UI (don't clear error message - user might want to see it)
-            document.getElementById('couponCodeView').value = '';
-            document.getElementById('couponCodeView').disabled = false;
+            if (originalPriceValue > 0) document.getElementById('qPrice').value = originalPriceValue;
+            document.getElementById('couponCodeInput').value = '';
+            document.getElementById('couponCodeInput').disabled = false;
             document.getElementById('discountInfoView').style.display = 'none';
-            // Hide error message after clearing
-            setTimeout(() => {
-                document.getElementById('couponMessageView').style.display = 'none';
-            }, 500);
-            applyBtn.disabled = false;
-            applyBtn.textContent = 'Apply';
+            document.getElementById('applyCouponBtn').disabled = false;
+            document.getElementById('applyCouponBtn').textContent = 'Apply';
+            setTimeout(() => document.getElementById('couponMessageView').style.display = 'none', 500);
         }
 
-        function showCouponMessageView(message, type) {
-            const msgDiv = document.getElementById('couponMessageView');
-            msgDiv.style.display = 'block';
-            msgDiv.textContent = message;
-            msgDiv.style.fontWeight = '600';
-
+        function showCouponMsg(message, type) {
+            const el = document.getElementById('couponMessageView');
+            el.style.display = 'block';
+            el.textContent = message;
+            el.style.fontWeight = '600';
             if (type === 'success') {
-                msgDiv.style.color = '#155724';
-                msgDiv.style.backgroundColor = '#d4edda';
-                msgDiv.style.borderLeft = '4px solid #28a745';
+                el.style.color = '#155724';
+                el.style.backgroundColor = '#d4edda';
+                el.style.borderLeft = '4px solid #28a745';
             } else {
-                msgDiv.style.color = '#721c24';
-                msgDiv.style.backgroundColor = '#f8d7da';
-                msgDiv.style.borderLeft = '4px solid #dc3545';
-            }
-
-            // Auto-hide error messages after 5 seconds
-            if (type === 'error') {
-                setTimeout(() => {
-                    msgDiv.style.display = 'none';
-                }, 5000);
+                el.style.color = '#721c24';
+                el.style.backgroundColor = '#f8d7da';
+                el.style.borderLeft = '4px solid #dc3545';
+                setTimeout(() => el.style.display = 'none', 5000);
             }
         }
 
-        async function proceedToPayment() {
-            const dateVal = document.getElementById('paymentDate').value;
-            const doctorVal = document.getElementById('paymentDoctor').value;
-            const slotVal = document.getElementById('paymentSlot').value;
+        // ─── MAIN: Submit query → PMS + local DB → then payment ──────────────
+        async function submitQuery() {
+            const name    = document.getElementById('qName').value.trim();
+            const phone   = document.getElementById('qPhone').value.trim();
+            const email   = document.getElementById('qEmail').value.trim();
+            const service = document.getElementById('qService').value.trim();
+            const message = document.getElementById('qMessage').value.trim();
+            const date    = document.getElementById('qDate').value;
+            const doctor  = document.getElementById('qDoctor').value;
+            const slot    = document.getElementById('qSlot').value;
+            const price   = document.getElementById('qPrice').value;
+            const clinicId = document.getElementById('clinicLocationId').value;
 
-            if (!dateVal) {
-                showAlert('error', 'Please select an appointment date.');
-                return;
+            // ── Validation ──
+            if (!name)    { showAlert('error', 'Please enter your full name.'); return; }
+            if (!email)   { showAlert('error', 'Please enter your email address.'); return; }
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                showAlert('error', 'Please enter a valid email address.'); return;
             }
-            if (!doctorVal) {
-                showAlert('error', 'Please select a doctor.');
-                return;
+            if (!phone || phone.length !== 10 || !/^\d{10}$/.test(phone)) {
+                showAlert('error', 'Please enter a valid 10-digit phone number.'); return;
             }
-            if (!slotVal) {
-                showAlert('error', 'Please select an appointment time slot.');
-                return;
+            if (!service) { showAlert('error', 'Please enter the service or concern.'); return; }
+            if (!date)    { showAlert('error', 'Please select an appointment date.'); return; }
+            if (!doctor)  { showAlert('error', 'Please select a doctor.'); return; }
+            if (!slot)    { showAlert('error', 'Please select a time slot.'); return; }
+            if (!price || parseFloat(price) <= 0) {
+                showAlert('error', 'Amount is not set. Please select a doctor to get the consultation fee.'); return;
             }
 
-            // Get button reference - try to find it by ID or from event
-            const btn = document.getElementById('payNowBtn') || document.querySelector('.btn-group .btn:last-child') || event?.target;
-            if (btn) {
-                btn.disabled = true;
-                btn.textContent = 'Processing...';
-            }
+            const btn = document.getElementById('submitQueryBtn');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            showLoading('Creating your appointment query...');
 
             try {
-                const paymentPayload = {
-                    reference_token: document.getElementById('referenceToken').value || getReferenceId(),
-                    id: document.getElementById('paymentId').value,
-                    name: document.getElementById('paymentName').value,
-                    email: document.getElementById('paymentEmail').value,
-                    phone: document.getElementById('paymentPhone').value,
-                    appointment_date: document.getElementById('paymentDate').value,
-                    service: document.getElementById('paymentService').value,
-                    doctor_id: document.getElementById('paymentDoctor').value,
-                    time_slot: document.getElementById('paymentSlot').value,
-                    message: document.getElementById('paymentMessage').value,
-                    amount: document.getElementById('paymentPrice').value,
-                    clinic_location_id: document.getElementById('clinicLocationId').value,
+                // ── Step 1: Submit query to our backend (which calls PMS + stores locally) ──
+                const queryPayload = {
+                    name,
+                    phone,
+                    email,
+                    service,
+                    message,
+                    date,
+                    doctor_id: doctor,
+                    time_slot: slot,
+                    amount: price,
+                    clinic_location_id: clinicId,
+                    unique_type: getUrlParameter('unique_type') || 'enquiry',
                     coupon_code: appliedCoupon ? appliedCoupon.coupon_code : null
                 };
 
-                // console.log('Payment Payload:', paymentPayload);
-
-                const response = await fetch(`${getApiUrl()}/payment-initialize`, {
+                const queryRes = await fetch(`${getApiUrl()}/wa-query-submit`, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(queryPayload)
+                });
+
+                const queryData = await queryRes.json();
+
+                if (!queryData.success) {
+                    hideLoading();
+                    showAlert('error', queryData.message || 'Failed to create query. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = '📋 Submit & Proceed to Payment';
+                    return;
+                }
+
+                // Store returned IDs for payment step
+                document.getElementById('pmsUniqueId').value = queryData.data.pms_unique_id || '';
+                document.getElementById('localTransactionId').value = queryData.data.transaction_id || '';
+
+                submittedQueryData = {
+                    ...queryPayload,
+                    transaction_id: queryData.data.transaction_id,
+                    pms_unique_id: queryData.data.pms_unique_id,
+                };
+
+                // ── Step 2: Initialize payment ──
+                showLoading('Initializing payment...');
+
+                const paymentPayload = {
+                    transaction_id: queryData.data.transaction_id,
+                    name,
+                    email,
+                    phone,
+                    appointment_date: date,
+                    service,
+                    doctor_id: doctor,
+                    time_slot: slot,
+                    message,
+                    amount: price,
+                    clinic_location_id: clinicId,
+                    unique_type: getUrlParameter('unique_type') || 'enquiry',
+                    coupon_code: appliedCoupon ? appliedCoupon.coupon_code : null
+                };
+
+                const payRes = await fetch(`${getApiUrl()}/payment-initialize`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(paymentPayload)
                 });
 
-                const data = await response.json();
-                // console.log('Payment Response:', data);
+                const payData = await payRes.json();
 
-                if (data.success && data.data.payment_session_id) {
-                    // Store order_id and payment data for later use
-                    const orderId = data.data.order_id;
+                if (payData.success && payData.data.payment_session_id) {
+                    const orderId = payData.data.order_id;
                     sessionStorage.setItem('pending_order_id', orderId);
-
-                    // Store payment form data for retry functionality
                     sessionStorage.setItem('lastPaymentData', JSON.stringify({
-                        reference_token: paymentPayload.reference_token
+                        transaction_id: queryData.data.transaction_id,
+                        unique_type: getUrlParameter('unique_type') || 'enquiry'
                     }));
-
-                    // Open Cashfree checkout
-                    openCashfreeCheckout(data.data.payment_session_id, data.data.environment, orderId);
+                    hideLoading();
+                    openCashfreeCheckout(payData.data.payment_session_id, payData.data.environment, orderId);
                 } else {
-                    const errorMsg = data.message || 'Failed to initialize payment.';
-                    console.error('Payment initialization error:', errorMsg);
-                    showAlert('error', errorMsg);
-                    if (btn) {
-                        btn.disabled = false;
-                        btn.textContent = '💳 Pay Now';
-                    }
-                }
-            } catch (error) {
-                console.error('Payment initialization exception:', error);
-                showAlert('error', 'Payment initialization failed: ' + error.message);
-                if (btn) {
+                    hideLoading();
+                    showAlert('error', payData.message || 'Failed to initialize payment. Please try again.');
                     btn.disabled = false;
-                    btn.textContent = '💳 Pay Now';
+                    btn.textContent = '📋 Submit & Proceed to Payment';
                 }
+
+            } catch (err) {
+                console.error('submitQuery error:', err);
+                hideLoading();
+                showAlert('error', 'Connection error. Please check your internet and try again.');
+                btn.disabled = false;
+                btn.textContent = '📋 Submit & Proceed to Payment';
             }
         }
 
+        // ─── Cashfree checkout ────────────────────────────────────────────────
         function openCashfreeCheckout(sessionId, environment, orderId) {
             const cashfree = Cashfree({
                 mode: environment === 'production' ? 'production' : 'sandbox'
@@ -1031,17 +856,48 @@ if (data.appointment_date && data.appointment_date === todayStr) {
                 if (result.error) {
                     console.error('Payment error:', result.error);
                     showAlert('error', 'Payment failed: ' + result.error.message);
+                    const btn = document.getElementById('submitQueryBtn');
+                    btn.disabled = false;
+                    btn.textContent = '📋 Submit & Proceed to Payment';
                 }
                 if (result.paymentDetails) {
-                    // console.log('Payment completed:', result.paymentDetails);
-                    // Redirect to callback page with order_id
                     window.location.href = `https://www.citrineclinic.com/payment/payment-callback.html?order_id=${orderId}`;
                 }
             }).catch((error) => {
                 console.error('Checkout error:', error);
-                showAlert('error', 'Payment checkout failed.');
+                showAlert('error', 'Payment checkout failed. Please try again.');
+                const btn = document.getElementById('submitQueryBtn');
+                btn.disabled = false;
+                btn.textContent = '📋 Submit & Proceed to Payment';
             });
         }
+
+        // ─── Init ─────────────────────────────────────────────────────────────
+        window.addEventListener('DOMContentLoaded', () => {
+            // Autofill phone from URL: ?phone=9876543210
+            const urlPhone = getUrlParameter('phone') || getUrlParameter('mobile');
+            if (urlPhone) {
+                const cleaned = urlPhone.replace(/^\+91/, '').replace(/\D/g, '').slice(-10);
+                document.getElementById('qPhone').value = cleaned;
+            }
+
+            // Autofill name if passed
+            const urlName = getUrlParameter('name');
+            if (urlName) document.getElementById('qName').value = decodeURIComponent(urlName);
+
+            // Autofill service if passed
+            const urlService = getUrlParameter('service');
+            if (urlService) document.getElementById('qService').value = decodeURIComponent(urlService);
+
+            // Set min date = tomorrow
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const minDate = tomorrow.toISOString().split('T')[0];
+            document.getElementById('qDate').setAttribute('min', minDate);
+
+            // Load doctors list
+            loadDoctors();
+        });
     </script>
 </body>
 

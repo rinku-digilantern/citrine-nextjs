@@ -25,24 +25,17 @@ export default function OurTeamPage() {
     },
     {
       id: 2,
-      name: 'Dr. Isheeta RVM',
-      description: 'MBBS, MD - Dermatology , Venereology & Leprosy Board Certified Dermatologist Laser,Injectable & Energy- Based Device expert',
-      image: '/assets/images/about-clinic/doctor02.webp',
-      experience: '<span>10+</span> years of experience',
-    },
-    {
-      id: 3,
       name: 'Dr. Guneet Bedi',
       description: 'MBBS - Dermatology, Venereology & Leprosy (DVL).',
       image: '/assets/images/about-clinic/doctor03.webp',
       experience: '<span>10+</span> years of experience',
     },
     {
-      id: 4,
-      name: 'Dr. Nitika Yadav',
-      description: 'MBBS, MD (Dermatology)',
-      image: '/assets/images/about-clinic/doctor04.webp',
-      experience: '<span>6+</span> years of clinical experience',
+      id: 3,
+      name: 'Dr. Raheel Khan',
+      description: 'MBBS, MD (Dermatology, Venereology & Leprosy)',
+      image: '/assets/images/about-clinic/doctor05.webp',
+      experience: '',
     },
   ];
 
