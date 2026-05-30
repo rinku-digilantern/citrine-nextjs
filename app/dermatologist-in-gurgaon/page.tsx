@@ -6,7 +6,6 @@ import BestDermatologistFirstSection from '@/src/app/components/BestDermatologis
 import BestDermatologistFourthSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistFourthSection/BestDermatologistFourthSection';
 import BestDermatologistFivethSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistFivethSection/BestDermatologistFivethSection';
 import BestDermatologistSixthSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistSixthSection/BestDermatologistSixthSection';
-import BestDermatologistEightSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistEightSection/BestDermatologistEightSection';
 import BestDermatologistTestimonialSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistTestimonialSection/BestDermatologistTestimonialSection';
 import BestDermatologistTenthSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistTenthSection/BestDermatologistTenthSection';
 import fs from 'fs';
@@ -27,6 +26,8 @@ function getPageData() {
 
 import { getSeoData } from '@/src/lib/cms';
 import { resolveMetadata } from '@/src/lib/seo-utils';
+import BestDermatologistSecondSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistSecondSection/BestDermatologistSecondSection';
+import BestDermatologistThirdSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistThirdSection/BestDermatologistThirdSection';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoData('dermatologist-in-gurgaon');
@@ -50,6 +51,8 @@ const DermatologistInGurgaon = async () => {
       <BestDermatologistBanner section={pageData.BestDermatologistBanner} />
       <Breadcrumb />
       <BestDermatologistFirstSection section={pageData.BestDermatologistFirstSection} />
+      <BestDermatologistSecondSection section={pageData.BestDermatologistSecondSection} />
+      <BestDermatologistThirdSection section={pageData.BestDermatologistThirdSection} />
       <BestDermatologistFourthSection section={pageData.BestDermatologistFourthSection} />
       <DermatologyThirdSection section={pageData.DermatologyThirdSection} />
       <DermatologyFivethSection section={pageData.DermatologyFivethSection} />

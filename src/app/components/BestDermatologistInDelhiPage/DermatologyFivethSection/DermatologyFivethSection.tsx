@@ -6,6 +6,7 @@ interface Props {
   section: {
     mainHeading: string;
     paragraph: string;
+    list?: string[];
   } | null;
 }
 
@@ -17,6 +18,13 @@ const DermatologyFivethSection: React.FC<Props> = ({ section }) => {
         <div className={styles.doctorprofile}>
           <h2 className={`mainHeading ${styles.mainHeading}`}>{section.mainHeading}</h2>
           <p dangerouslySetInnerHTML={{ __html: section.paragraph }} />
+          {section.list && (
+            <ul className={styles.BestDermatologistList}>
+              {section.list.map((item, idx) => (
+                <li key={idx} dangerouslySetInnerHTML={{ __html: item }} />
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </section>

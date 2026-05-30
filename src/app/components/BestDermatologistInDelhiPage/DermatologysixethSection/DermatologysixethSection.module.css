@@ -32,6 +32,34 @@
   border-radius: 50%;
   display: inline-block;
 }
+
+.tableResponsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.tableResponsive table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 100%;
+  background: #fffaf2;
+}
+
+.tableResponsive table th,
+.tableResponsive table td {
+  padding: 0.75em 1em;
+  border: 1px solid #d5c7b3;
+  text-align: left;
+  font-size: 18px;
+  color: var(--default-color);
+  vertical-align: top;
+}
+
+.tableResponsive table th {
+  background: #fffaf2;
+  font-weight: 600;
+}
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 1400.98px) and (min-width:1101px) {
   .DermatologysixethSection {padding: 2rem 0px;}
@@ -41,6 +69,8 @@
   .DermatologysixethSection p{font-size: 16px}
   .BestDermatologistList li {font-size: 16px;margin-bottom: 0.3em;padding-left:20px;}
   .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.4em;left: 0.2em;}
+  .tableResponsive table th,
+  .tableResponsive table td {font-size: 16px;padding: 0.5em 0.75em;}
 }
 
 /* Small devices (Phones in landscape mode) */
@@ -52,6 +82,8 @@
   .DermatologysixethSection p{font-size: 16px}
   .BestDermatologistList li {font-size: 16px;margin-bottom: 0.3em;padding-left:20px;}
   .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.4em;left: 0.2em;}
+  .tableResponsive table th,
+  .tableResponsive table td {font-size: 16px;padding: 0.5em 0.75em;}
 }
 
 /* Small devices (Phones in landscape mode) */
@@ -63,6 +95,8 @@
   .DermatologysixethSection p{font-size: 15px}
   .BestDermatologistList li {font-size: 15px;margin-bottom: 0.3em;padding-left:20px;}
   .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.4em;left: 0.2em;}
+  .tableResponsive table th,
+  .tableResponsive table td {font-size: 15px;padding: 0.5em 0.75em;}
 }
 
 /* Small devices (Phones in landscape mode) */
@@ -74,6 +108,8 @@
   .DermatologysixethSection p{font-size: 15px}
   .BestDermatologistList li {font-size: 15px;margin-bottom: 0.3em;padding-left:20px;width: 48%;}
   .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.4em;left: 0.2em;}
+  .tableResponsive table th,
+  .tableResponsive table td {font-size: 15px;padding: 0.5em 0.75em;}
 }
 
 /* Small devices (Phones in landscape mode) */
@@ -85,4 +121,6 @@
   .DermatologysixethSection p{font-size: 15px}
   .BestDermatologistList li {font-size: 15px;margin-bottom: 0.3em;padding-left:20px;width: 100%;display:block;}
   .BestDermatologistList li::before {width: 0.5em;height: 0.5em;top: 0.4em;left: 0.2em;}
+  .tableResponsive table th,
+  .tableResponsive table td {font-size: 15px;padding: 0.5em 0.75em;}
 }

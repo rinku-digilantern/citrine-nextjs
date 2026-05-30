@@ -704,142 +704,268 @@
     "altTag": "Dermatologist in Gurgaon"
   },
   "BestDermatologistFirstSection": {
-    "mainHeading": "Best Dermatologist in Gurgaon",
-    "paragraph": "If you are searching for the <strong>best dermatologist in Gurgaon</strong>, Dr. Niti Gaur at Citrine Clinic is one of the most trusted and highly recommended names in dermatology, aesthetics, and skin wellness across Gurgaon and Delhi NCR.",
-    "paragraphs": "With over two decades of experience, Dr. Niti Gaur is a board-certified dermatologist, aesthetic physician, and medical educator who has successfully treated thousands of patients with medical and cosmetic skin concerns. As the Founder & Medical Director of Citrine Clinic, she has built a state-of-the-art dermatology center known for evidence-based treatments, ethical practice, and measurable results."
+    "mainHeading": "Dr. Niti Gaur – Leading Dermatologist in Gurgaon for Skin, Hair, Anti-Ageing & Aesthetic Care",
+    "paragraph": "Dr. Niti Gaur is a highly experienced <strong>Dermatologist in Gurgaon</strong>, and Founder of Citrine Clinic. With over 21 years of clinical experience, she has helped thousands of patients achieve healthier skin, improved hair health, and long-term confidence through evidence-based dermatology and personalized treatment plans.",
+    "paragraphs": "Her expertise spans clinical dermatology, aesthetic dermatology, regenerative medicine, anti-ageing treatments, body contouring procedures, and wellness solutions. Combining medical science with advanced technologies and a patient-first philosophy, Dr. Niti Gaur focuses on delivering natural-looking results that enhance appearance while preserving individuality."
   },
-  "BestDermatologistFourthSection": {
-    "mainHeading": "Dr. Niti Gaur – Qualifications & Experience",
+  "BestDermatologistSecondSection": {
+    "mainHeading": "What Sets Dr. Niti Gaur Apart?",
     "table": [
       {
-        "Category": "Specialisation",
-        "Details": "Dermatology, Aesthetics & Laser Medicine"
+        "Patient Need": "Accurate Diagnosis",
+        "Dr. Niti Gaur's Approach": "Comprehensive clinical assessment"
+      },
+      {
+        "Patient Need": "Personalised Care",
+        "Dr. Niti Gaur's Approach": "Tailored treatment plans"
+      },
+      {
+        "Patient Need": "Natural Results",
+        "Dr. Niti Gaur's Approach": "Conservative aesthetic philosophy"
+      },
+      {
+        "Patient Need": "Advanced Solutions",
+        "Dr. Niti Gaur's Approach": "Internationally recognised technologies"
+      },
+      {
+        "Patient Need": "Long-Term Improvement",
+        "Dr. Niti Gaur's Approach": "Focus on skin quality and maintenance"
+      },
+      {
+        "Patient Need": "Safety",
+        "Dr. Niti Gaur's Approach": "Protocols customised for Indian skin"
+      },
+      {
+        "Patient Need": "Transparency",
+        "Dr. Niti Gaur's Approach": "Honest recommendations"
+      },
+      {
+        "Patient Need": "Education",
+        "Dr. Niti Gaur's Approach": "Patients understand every step of treatment"
+      }
+    ] 
+  },
+  "BestDermatologistThirdSection": {
+    "mainHeading": "Qualifications, Fellowships & Professional Credentials",
+    "paragraph1": "Dr. Niti Gaur's academic achievements, advanced training, and international exposure reflect her commitment to clinical excellence and continuous learning.",
+    "table": [
+      {
+        "Patient Need": "Accurate Diagnosis",
+        "Dr. Niti Gaur's Approach": "Comprehensive clinical assessment"
+      },
+      {
+        "Patient Need": "Personalised Care",
+        "Dr. Niti Gaur's Approach": "Tailored treatment plans"
+      },
+      {
+        "Patient Need": "Natural Results",
+        "Dr. Niti Gaur's Approach": "Conservative aesthetic philosophy"
+      },
+      {
+        "Patient Need": "Advanced Solutions",
+        "Dr. Niti Gaur's Approach": "Internationally recognised technologies"
+      },
+      {
+        "Patient Need": "Long-Term Improvement",
+        "Dr. Niti Gaur's Approach": "Focus on skin quality and maintenance"
+      },
+      {
+        "Patient Need": "Safety",
+        "Dr. Niti Gaur's Approach": "Protocols customised for Indian skin"
+      },
+      {
+        "Patient Need": "Transparency",
+        "Dr. Niti Gaur's Approach": "Honest recommendations"
+      },
+      {
+        "Patient Need": "Education",
+        "Dr. Niti Gaur's Approach": "Patients understand every step of treatment"
+      }
+    ]  
+  },
+  "BestDermatologistFourthSection": {
+    "mainHeading": "Who is Dr. Niti Gaur?",
+    "paragraphs": "Dr. Niti Gaur is an internationally trained dermatologist and aesthetic physician with extensive expertise in diagnosing and treating skin, hair, and ageing-related concerns. As the Founder and Medical Director of Citrine Clinic, Gurgaon, she has established a reputation for ethical dermatology, personalised care, and science-backed treatment protocols.",
+    "subheading": "At a Glance",
+    "table": [
+      {
+        "Detail": "Name",
+        "Information": "Dr. Niti Gaur"
+      },
+      {
+        "Category": "Qualification",
+        "Details": "MBBS, MD Dermatology"
       },
       {
         "Category": "Experience",
-        "Details": "20+ Years"
+        "Details": "21+ Years"
       },
       {
-        "Category": "Education",
-        "Details": "MBBS & MD (Dermatology)"
+        "Category": "Clinic",
+        "Details": "Citrine Clinic, Gurgaon"
       },
       {
-        "Category": "Institutions",
-        "Details": "BJ Medical College, Pune & LHMC, New Delhi"
+        "Category": "Specialisation",
+        "Details": "Dermatology, Aesthetic Medicine, Anti-Ageing, Regenerative Dermatology & Body Contouring"
+      },
+      {
+        "Category": "Languages",
+        "Details": "English, Hindi"
       },
       {
         "Category": "International Training",
         "Details": "Europe, USA & Singapore"
       },
       {
-        "Category": "Certifications",
-        "Details": "Advanced Aesthetics, Injectables & Lasers"
-      },
-      {
-        "Category": "Technology Used",
-        "Details": "US FDA-Approved Devices"
-      },
-      {
-        "Category": "Public Speaking / Thought Leadership",
-        "Details": "TEDx Speaker"
+        "Category": "Known For",
+        "Details": "Ethical, Personalised & Evidence-Based Dermatology"
       },
        {
-        "Category": "Awards",
-        "Details": "1st Position in Inter-College Debate Competition Held At BJMC, Pune<br/> 1st Position In MD (2010)<br/> Galderma PG Grant 2008, 2009."
-      },
-      {
-        "Category": "Clinic",
-        "Details": "Citrine Clinic, SCO-19, Sector 15, Part 2, Gurgaon."
+        "Category": "Expertise",
+        "Details": "Skin, Hair, Anti-Ageing, Regenerative Medicine & Wellness"
       }
     ] 
    },
   "DermatologyThirdSection": {
-    "mainHeading": "Why Patients Trust Dr. Niti Gaur as the Best Dermatologist in Gurgaon?",
-    "paragraph1": "Dr. Niti Gaur is widely regarded as the <strong>best skin specialist in Gurgaon</strong> due to her patient-first philosophy, scientific approach, and consistent clinical outcomes.",
-    "subHeading": "Unmatched Clinical Experience",
-    "list": [
-      "20+ years in dermatology and aesthetics",
-      "Expertise in both medical and cosmetic dermatology",
-      "Proven track record with complex skin and hair conditions."
-    ],
-    "subHeadings": "Board-Certified & Highly Trained",
-    "lists": [
-      "MD Dermatology from a premier institution",
-      "International training in advanced aesthetic procedures."
-    ],
-    "subHeadingss": "Precision-Based Personalized Treatment",
-    "paragraph3": "She does not believe in “one-size-fits-all” skincare. Every patient receives a customised treatment plan based on skin type, lifestyle, medical history, and long-term goals.",
-    "subheading": "US FDA-Approved Technology",
-    "desc": "Citrine Clinic is equipped with <strong>US FDA-approved lasers and advanced dermatology devices</strong>, ensuring safety, precision, and superior results.",
-    "subhead": "Trusted by Patients (Real Results, Not Promises)",
-    "descing": "Her high patient satisfaction, ethical approach, and transparent communication make her a preferred choice for dermatology in Gurgaon."
+    "mainHeading": "Body Contouring & Body Rejuvenation",
+    "table": [
+      {
+        "Concern": "Localised Fat",
+        "Treatment Approach": "Body sculpting procedures"
+      },
+      {
+        "Concern": "Stubborn Fat Deposits",
+        "Treatment Approach": "Non-surgical fat reduction"
+      },
+      {
+        "Concern": "Skin Laxity",
+        "Treatment Approach": "Exilis Elite & HIFU"
+      },
+      {
+        "Concern": "Post Weight Loss Changes",
+        "Treatment Approach": "Tightening treatments"
+      },
+      {
+        "Concern": "Cellulite",
+        "Treatment Approach": "Body remodelling"
+      },
+      {
+        "Concern": "Body Ageing",
+        "Treatment Approach": "Collagen stimulation"
+      },
+      {
+        "Concern": "Inch Loss",
+        "Treatment Approach": "Personalised body programmes"
+      },
+      {
+        "Concern": "Body Definition",
+        "Treatment Approach": "Advanced contouring protocols"
+      }
+    ] 
   },
   "DermatologyFivethSection": {
-    "mainHeading": "Who is the Dermatologist?",
-    "paragraph": "A dermatologist is a medical doctor who specializes in diagnosing and treating conditions related to the <strong>skin, hair, and nails</strong>. Dermatologists manage medical conditions such as acne, eczema, hair loss, fungal infections, and also perform cosmetic treatments like laser therapy, fillers, and skin rejuvenation."
+    "mainHeading": "Wellness Services at Citrine Clinic",
+    "list": [
+      "Body Composition Analysis",
+      "Metabolic Health Assessment",
+      "Weight Management Support",
+      "Recovery & Detox Programmes",
+      "Lymphatic Drainage Therapy",
+      "Body Balancer Sessions",
+      "Skin Longevity Programmes",
+      "Preventive Wellness Consultations"
+    ]
   },
   "DermatologysixethSection":{
-  "mainHeading": "Advanced Skin Treatments by Expert Dermatologist in Gurgaon",
-  "paragraph": "Dr. Niti Gaur is a <strong>renowned dermatologist in Gurgaon</strong> who offers advanced treatments for skin concerns such as:",
-  "list": [
-      "Carbon Peel Treatment",
-      "Dermal Filler Treatment",
-      "Acne Treatment",
-      "Skin Resurfacing Treatment",
-      "Acne Scar Treatment",
-      "Skin Tightening Treatment",
-      "Pigmentation Treatment",
-      "Chemical Peel Treatment",
-      "Dark Circles Treatment",
-      "Threadlift Treatment",
-      "Laser Hair Removal",
-      "Mesotherapy Treatment.",
-      "Stretch Marks Treatment"
-    ]
+  "mainHeading": "Advanced Technologies Offered by Dr. Niti Gaur at Citrine Clinic",
+  "paragraph": "Dr. Niti Gaur utilises internationally recognised technologies selected for safety, precision, and effectiveness.",
+  "table": [
+      {
+        "Technology": "Morpheus8",
+        "Clinical Application": "Skin tightening & remodelling"
+      },
+      {
+        "Technology": "Secret RF 2.0 (Ilooda)",
+        "Clinical Application": "Acne scars & rejuvenation"
+      },
+      {
+        "Technology": "Ultracel Q Plus",
+        "Clinical Application": "Skin lifting & tightening"
+      },
+      {
+        "Technology": "HIFU Ultracel QT",
+        "Clinical Application": "Non-surgical facelift"
+      },
+      {
+        "Technology": "Exilis Elite",
+        "Clinical Application": "Face & body tightening"
+      },
+      {
+        "Technology": "Triton (InMode)",
+        "Clinical Application": "Laser hair reduction"
+      },
+      {
+        "Technology": "Primelase HR",
+        "Clinical Application": "Advanced hair reduction"
+      },
+      {
+        "Technology": "Alma Harmony XL Pro",
+        "Clinical Application": "Pigmentation & rejuvenation"
+      },
+      {
+        "Technology": "G3 Fractional CO2 Laser",
+        "Clinical Application": "Acne scar correction"
+      },
+      {
+        "Technology": "Synergy",
+        "Clinical Application": "Multi-platform laser treatments"
+      },
+      {
+        "Technology": "Artiqa",
+        "Clinical Application": "Skin rejuvenation"
+      },
+      {
+        "Technology": "Hydrafacial MD",
+        "Clinical Application": "Deep cleansing & hydration"
+      },
+      {
+        "Technology": "Hydra New O2 & PDT",
+        "Clinical Application": "Acne & skin rejuvenation"
+      },
+      {
+        "Technology": "Body Balancer",
+        "Clinical Application": "Wellness & lymphatic therapy"
+      },
+      {
+        "Technology": "BCA Machine",
+        "Clinical Application": "Body composition analysis"
+      },
+      {
+        "Technology": "AI Skin Analyzer",
+        "Clinical Application": "AI-powered skin assessment"
+      }
+    ] 
   },
   "DermatologySevenSection": {
-    "mainHeading": "Why Choose Dr. Niti Gaur – Best Skin Specialist in Gurgaon",
-    "paragraph1": "A Dermatologist with extensive expertise is more capable of addressing challenging cases. They have resolved thousands of minor and hundreds of severe skin issues. Therefore, if you choose a dermatologist with many years of experience, you can attain the skin of your dreams.",
-    "paragraph2": "Dr. Niti Gaur has been a practicing skin specialist and has almost two decades of overall experience in skin and hair treatments. As a top and the <strong>best skin specialist in Gurgaon</strong>, Dr. Niti Gaur listens attentively until you have thoroughly explained everything. This way, she can fully comprehend your issue and devise an appropriate treatment strategy.",
+    "mainHeading": "Awards, Recognition & Media Presence",
+    "subheading": "Awards & Recognition",
     "list": [
-      "Citrine Clinic by Dr. Niti Gaur is one of the leading skin clinics. Numerous individuals come here for routine dermal fillers, lip fillers, laser hair removal, anti-wrinkle injections, chemical peels, skin tightening, and rejuvenation treatments.",
-      "Dr. Niti Gaur is a famous Cosmetic Dermatologist who creates individualized skin care plans to treat your skin, hair, and nail concerns. The best skin doctor in Gurgaon has a specific interest in instances of hair loss. She customizes hair growth injections, so that a hair transplant is unnecessary. In addition, she treats dark circles, under-eye puffiness, and under-eye wrinkles.",
-      "In addition, the <strong>best skin specialist in Gurgaon</strong> also provides flawless pigmentation therapy, wart removal, mole removal, skin tag removal, and other skin and hair treatments.",
-      "Dr. Niti Gaur is also well-trained in numerous anti-aging and other skin laser treatments. She ensures that the effects of your laser therapy or light therapy are optimal.",
-      "Dr. Niti Gaur, the best skin doctor in Gurgaon, also treats seborrheic dermatitis, atopic dermatitis, lichen planus, and other skin conditions in her state-of-the-art Gurgaon Citrine Clinic facility."
-    ]
-  },
-  "BestDermatologistFivethSection": {
-    "mainHeading": "Benefits of Consulting a Skin Specialist in Gurgaon",
-    "paragraph1": "Key Benefits of Consulting with Skin Specialist in Gurgaon are:",
-    "list": [
-      "Expert guidance on skin Issues",
-      "Personalised Advice",
-      "Accurate diagnosis and treatment plans",
-      "Up-to-date information on dermatology services."
-    ]
-  },
-  "BestDermatologistSixthSection": {
-    "mainHeading": "What Makes Us Unique in Skin & Hair Care?",
-    "list": [
-      "Highly Skilled Team",
-      "Premium Services For Skin, Hair, and Body",
-      "Personalized Treatment Plans",
-      "Us FDA Approved Laser Equipment",
-      "Hygienic Environment",
-      "Cost-Effective Treatments",
-      "Advanced Technologies for Treatments."
-    ]
-  },
-  "DermatologyEightSection": {
-    "mainHeading": "What Makes Dr. Niti Gaur the Best Skin Specialist in Gurgaon?",
-    "list": [
-      "<strong>Expertise:</strong> Proven track record of providing effective skin treatments", 
-      "<strong>Medical Training:</strong> Well-equipped to diagnose skin problems accurately",
-      "<strong>Knowledge:</strong> Up-to-date on the latest dermatology treatments",
-      "<strong>Holistic Approach:</strong> Provides the best approach for skin treatments",
-      "<strong>Compassion:</strong> Committed to serving patients of all ages",
-      "<strong>Affordability:</strong> Offers accessible and affordable care."
+      "Times Business Icons Award (TOI)",
+      "First Rank Gold Medalist in MD Dermatology",
+      "Recipient of Galderma Research Grants",
+      "Recognised Dermatology & Aesthetic Medicine Expert"
+    ],
+   "subheadings": "Media Features & Speaking Engagements",
+    "lists": [
+      "TEDx Speaker",
+      "Josh Talks Speaker",
+      "Featured Guest on Raj Shamani Podcast",
+      "Featured Guest on Tanay Tulsaney Podcast",
+      "National & International Conference Speaker",
+      "Expert Panels & Industry Podcasts",
+      "Health & Wellness Publications",
+      "Dermatology Awareness Campaigns",
+      "YouTube Educational Collaborations"
     ]
   },
   "BestDermatologistTestimonialSection": {
@@ -873,85 +999,80 @@
     "faqData": [
       {
         "id": 1,
-        "question": "Which dermatologist is best for acne in Gurgaon?",
-        "answer": "Dr. Niti Gaur specialises in medical and procedural acne management, including lasers, chemical peels, and personalized treatment plans."
+        "question": "Who is the best dermatologist in Gurgaon?",
+        "answer": "Dr. Niti Gaur is widely recognised as one of the leading dermatologists in Gurgaon, with over 21 years of experience in clinical dermatology, aesthetic medicine, anti-ageing treatments, regenerative dermatology, and body contouring."
       },
       {
         "id": 2,
-        "question": "Are the treatments safe at Citrine Clinic?",
-        "answer": "Consultation fees vary by clinic and doctor’s experience; at Citrine Clinic, pricing is transparent and competitive."
+        "question": "Who is the best dermatologist in Gurgaon Sector 15?",
+        "answer": "Patients searching for a dermatologist near Gurgaon Sector 15 often consult Dr. Niti Gaur at Citrine Clinic. With extensive experience in dermatology, anti-ageing medicine, aesthetic treatments, regenerative therapies, and body contouring procedures, she offers comprehensive solutions for skin, hair, and wellness concerns."
       },
       {
         "id": 3,
-        "question": "Who is the best dermatologist in Gurgaon?",
-        "answer": "Dr. Niti Gaur of Citrine Clinic is widely regarded as one of the best dermatologists in Gurgaon due to her 20+ years of experience, advanced training, and patient-centric approach."
+        "question": "When should I visit a dermatologist in Gurgaon?",
+        "answer": "You should consult a dermatologist if you experience persistent acne, pigmentation, hair fall, eczema, psoriasis, skin allergies, fungal infections, unusual moles, premature ageing, or any skin condition that does not improve with home care. "
       },
       {
         "id": 4,
-        "question": "Who is the best dermatologist in Gurgaon for hair?",
-        "answer": "Gurgaon has several experienced dermatologists, but Dr. Niti Gaur is widely consulted for medical hair loss treatment and scalp disorders. She focuses on diagnosis-first treatment rather than only procedures."
+        "question": "How do I choose the right skin specialist in Gurgaon?",
+        "answer": "Choosing the right skin specialist involves evaluating qualifications, years of experience, patient reviews, treatment expertise, clinic infrastructure, and the doctor's approach to patient care."
       },
       {
         "id": 5,
-        "question": "Who is the best dermatologist near me in Gurgaon?",
-        "answer": "If you are in Gurgaon, Dr. Niti Gaur at Citrine Clinic is among the most recommended dermatologists, offering advanced skin and hair treatments with modern technology and personalized care."
+        "question": "What is the cost of a dermatologist consultation in Gurgaon?",
+        "answer": " The consultation fee for a dermatologist in Gurgaon varies depending on the clinic, doctor's experience, and services offered. Patients are advised to contact the clinic directly for the latest consultation charges and appointment availability."
       },
       {
         "id": 6,
-        "question": "Who is the best female dermatologist in Gurgaon?",
-        "answer": "Dr. Niti Gaur is considered among the leading female dermatologists in Gurgaon for medical and aesthetic dermatology. She is known for detailed consultations and evidence-based treatments."
+        "question": "How often should I visit a dermatologist or skin specialist?",
+        "answer": "The frequency of visits depends on your skin concerns and treatment goals. Patients undergoing active treatment for acne, pigmentation, hair loss, or anti-ageing concerns may require regular follow-up appointments."
       },
       {
         "id": 7,
-        "question": "Who is the best skin doctor in Gurgaon, India, for advanced treatments?",
-        "answer": "Dr. Niti Gaur at Citrine Clinic, Gurgaon, is recognized for advanced dermatology treatments like lasers, anti-aging procedures, and scar management using state-of-the-art technology."
+        "question": "How do I book an appointment with Dr. Niti Gaur?",
+        "answer": " Appointments with Dr. Niti Gaur at Citrine Clinic can be scheduled through the clinic's website, phone call, WhatsApp, or online appointment platforms"
       },
       {
         "id": 8,
-        "question": "Who is the best skin specialist in Sector 15 Part 2, Gurgaon?",
-        "answer": "Best skin specialist in Sector 15 Part 2, Gurgaon often recommended by patients is Dr. Niti Gaur at Citrine Clinic for acne, pigmentation, and hair-related skin concerns."
+        "question": "Can a skin specialist in Gurgaon treat children's skin problems?",
+        "answer": "Yes. Dermatologists and skin specialists commonly treat childhood skin conditions such as eczema, fungal infections, birthmarks, skin allergies, acne, and rashes."
       },
       {
         "id": 9,
-        "question": "Who is the best aesthetic dermatologist in Gurgaon?",
-        "answer": "Dr. Niti Gaur is regarded as a leading aesthetic dermatologist in Gurgaon for Boto-x, fillers, and laser-based skin rejuvenation. Her approach emphasizes natural-looking results with medical safety."
+        "question": "Can I get cosmetic treatments from a dermatologist?",
+        "answer": "Yes. Many dermatologists provide cosmetic and aesthetic treatments in addition to medical dermatology services."
       },
       {
         "id": 10,
-        "question": "Why is Dr. Niti Gaur the Best Dermatologist in Gurgaon?",
-        "answer": "Dr. Niti Gaur is widely recognized as a highly skilled and experienced dermatologist in Gurgaon with expertise in using the most promising advancements for skin, hair, and nail care including cosmetic therapies."
+        "question": "Do skin specialists treat sensitive skin?",
+        "answer": "Yes. Sensitive skin requires careful diagnosis to identify triggers and underlying causes."
       },
        {
         "id": 11,
-        "question": "Which doctor is best for skin problems?",
-        "answer": "A dermatologist is a medical specialist, who is an expert in diagnosing and treating skin, hair, and nail general and cosmetic ageing problems. Dr. Niti Gaur is renowned as the best doctor for skin problems in Gurgaon."
+        "question": "Why should I choose Dr. Niti Gaur as my skin doctor in Gurgaon?",
+        "answer": "Dr. Niti Gaur brings over 21 years of experience in clinical dermatology, aesthetic medicine, anti-ageing treatments, regenerative dermatology, and hair restoration. Her personalised, evidence-based approach focuses on delivering safe, effective, and natural-looking results while prioritising long-term skin health."
       },
        {
         "id": 12,
-        "question": "Is a dermatologist good for the skin?",
-        "answer": "Yes, a dermatologist is good for the skin. A dermatologist can diagnose and treat skin concerns."
+        "question": "Can a skin doctor remove moles and warts?",
+        "answer": "Yes. Dermatologists can evaluate and remove certain moles, warts, skin tags, and benign growths using procedures such as electrocautery, cryotherapy, laser treatments, radiofrequency devices, or minor surgical techniques."
       },
        {
         "id": 13,
-        "question": "When should I make an appointment with a dermatologist?",
-        "answer": "If one notices anything unusual with their skin, hair, or nails, a condition that persists and affects appearance or daily life, they should see a dermatologist as soon as possible."
+        "question": "How do I prepare for my first appointment with a skin doctor in Gurgaon?",
+        "answer": "Before your appointment, make a note of your symptoms, medical history, medications, skincare products, previous treatments, and any questions you may have"
       },
        {
         "id": 14,
-        "question": "Which treatments do dermatologists provide?",
-        "answer": "Dermatologists offer a variety of treatments for medical or cosmetic dermatological concerns, tailored to the patient's dermatology needs, problems, and desires."
-      },
-      {
-        "id": 15,
-        "question": "What are the benefits of seeing a skin specialist?",
-        "answer": "The pros of visiting a skin specialist in Gurgaon include early detection of skin cancer, treatment of minor to severe skin conditions, enhanced skin appearance, and tailored skincare recommendations."
-      },
-      {
-        "id": 16,
-        "question": "How to find the right skin specialist in Gurgaon?",
-        "answer": "To search for the right skin specialist in Gurgaon, one would need to check referrals, verify the specialist’s credentials, check the doctor’s experience level and expertise, go through patient reviews and testimonials, and consider facilities provided at the Clinic where the specialist practices."
+        "question": "Who is the best anti-ageing specialist in Gurgaon?",
+        "answer": "Dr. Niti Gaur is recognised for her expertise in anti-ageing medicine, regenerative dermatology, and skin rejuvenation. Her approach focuses on improving skin quality, preserving collagen, supporting healthy ageing, and maintaining natural facial harmony."
       }
     ]
+  },
+  "BestDermatologistFivethSection": {
+    "mainHeading": "Consult Dr. Niti Gaur at Citrine Clinic, Gurgaon",
+    "paragraph1": "Whether you are looking for the <strong>best dermatologist in Gurgaon</strong>, a trusted <strong>skin specialist in Gurgaon</strong>, an experienced <strong>acne doctor</strong>, a leading <strong>anti-ageing specialist</strong>, or an expert in <strong>body contouring and regenerative dermatology</strong>, Dr. Niti Gaur offers personalised, evidence-based care designed around your unique skin, hair, and wellness goals.",
+    "paragraph2": "<strong>Book your consultation today and begin your journey towards healthier skin, stronger hair, and long-lasting confidence.</strong>"
   }
 }
 

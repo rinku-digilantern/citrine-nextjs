@@ -10,6 +10,8 @@ interface Props {
     paragraphs2?: string;
     paragraphs3?: string;
     paragraphs4?: string;
+    paragraphs5?: string;
+    subheading?: string;
     table?: TableRow[];
     paragraph?: string;
   } | null;
@@ -26,6 +28,8 @@ const BestDermatologistFourthSection: React.FC<Props> = ({ section }) => {
           <p dangerouslySetInnerHTML={{ __html: section.paragraphs2 || "" }} />
           <p dangerouslySetInnerHTML={{ __html: section.paragraphs3 || "" }} />
           <p dangerouslySetInnerHTML={{ __html: section.paragraphs4 || "" }} />
+          <p dangerouslySetInnerHTML={{ __html: section.paragraphs5 || "" }} />
+          {section.subheading && <h3>{section.subheading}</h3>}
           <div className={styles.tableResponsive}>
             <table>
               <tbody>
