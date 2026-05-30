@@ -218,6 +218,14 @@ const MainBanner = () => {
               </div>
             </div> */}
 
+             {/* Panel 3: Recipients */}
+            <div className={styles.mb_contentpanel}>
+              <picture>
+                <source media="(max-width: 600px)" srcSet={`assets/images/home/mobilewebsitebanners.png`} />
+                <img src={`/assets/images/home/websitebanners.png`} className={styles.bannerImage2} width={1442} height={700} decoding="async" alt="DR. NITI GAUR" />
+              </picture>
+            </div>
+
             {/* Panel 3: Recipients */}
             <div className={styles.mb_contentpanel}>
               <picture>
@@ -258,6 +266,7 @@ const MainBanner = () => {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 

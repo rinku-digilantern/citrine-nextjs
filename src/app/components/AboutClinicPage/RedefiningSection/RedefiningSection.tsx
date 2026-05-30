@@ -11,7 +11,7 @@ const RedefiningSection = () => {
         <div className={styles.achievementsGrid}>
           <div className={`${styles.achievementCard} ${styles.cardBeige}`}>
             <h3 className={styles.cardTitle}>
-              CELEBRATING <span className={styles.highlight}>10 YEARS OF</span><br /> <span className={styles.highlight}>CITRINE GROUP</span> - AS SEEN<br /> ON NEWS NATION</h3>
+              CELEBRATING <span className={styles.highlight}>10<br/> YEARS OF</span> <span className={styles.highlight}>CITRINE GROUP</span> - AS SEEN ON NEWS NATION</h3>
             <div className={styles.cardLogo}>
               <Image
                 src="/assets/images/about-clinic/nmlogo.webp"
@@ -35,7 +35,7 @@ const RedefiningSection = () => {
           </div>
 
           <div className={`${styles.achievementCard} ${styles.cardGreen}`}>
-            <h3 className={styles.cardTitle}>REDEFINING CARE WITH<br /> <span className={styles.highlight}>ADVANCED MEDICAL<br /> TECHNOLOGY</span></h3>
+            <h3 className={styles.cardTitle}>REDEFINING CARE WITH <span className={styles.highlight}>ADVANCED MEDICAL<br /> TECHNOLOGY</span></h3>
             <div className={styles.cardLogo}>
               <Image
                 src="/assets/images/about-clinic/medicaltechnology.webp"
@@ -45,6 +45,19 @@ const RedefiningSection = () => {
                 className={styles.awardImage} />
             </div>
           </div>
+
+          <div className={`${styles.achievementCard} ${styles.cardSkyblue}`}>
+            <h3 className={styles.cardTitle}>Times Business Icons <span className={styles.highlight}>Award<br/> 2026</span></h3>
+            <div className={styles.cardLogo}>
+              <Image
+                src="/assets/images/about-clinic/redifineaward.webp"
+                alt="Technology"
+                width={200}
+                height={200}
+                className={styles.awardImage} />
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>

@@ -31,9 +31,9 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cardContent:hover {
+/* .cardContent:hover {
   transform: translateY(-5px);
-}
+} */
 
 .imageWrapper {
   width: 100%;

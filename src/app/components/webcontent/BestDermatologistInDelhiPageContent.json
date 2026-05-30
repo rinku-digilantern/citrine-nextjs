@@ -708,81 +708,6 @@
     "paragraph": "Dr. Niti Gaur is a highly experienced <strong>Dermatologist in Gurgaon</strong>, and Founder of Citrine Clinic. With over 21 years of clinical experience, she has helped thousands of patients achieve healthier skin, improved hair health, and long-term confidence through evidence-based dermatology and personalized treatment plans.",
     "paragraphs": "Her expertise spans clinical dermatology, aesthetic dermatology, regenerative medicine, anti-ageing treatments, body contouring procedures, and wellness solutions. Combining medical science with advanced technologies and a patient-first philosophy, Dr. Niti Gaur focuses on delivering natural-looking results that enhance appearance while preserving individuality."
   },
-  "BestDermatologistSecondSection": {
-    "mainHeading": "What Sets Dr. Niti Gaur Apart?",
-    "table": [
-      {
-        "Patient Need": "Accurate Diagnosis",
-        "Dr. Niti Gaur's Approach": "Comprehensive clinical assessment"
-      },
-      {
-        "Patient Need": "Personalised Care",
-        "Dr. Niti Gaur's Approach": "Tailored treatment plans"
-      },
-      {
-        "Patient Need": "Natural Results",
-        "Dr. Niti Gaur's Approach": "Conservative aesthetic philosophy"
-      },
-      {
-        "Patient Need": "Advanced Solutions",
-        "Dr. Niti Gaur's Approach": "Internationally recognised technologies"
-      },
-      {
-        "Patient Need": "Long-Term Improvement",
-        "Dr. Niti Gaur's Approach": "Focus on skin quality and maintenance"
-      },
-      {
-        "Patient Need": "Safety",
-        "Dr. Niti Gaur's Approach": "Protocols customised for Indian skin"
-      },
-      {
-        "Patient Need": "Transparency",
-        "Dr. Niti Gaur's Approach": "Honest recommendations"
-      },
-      {
-        "Patient Need": "Education",
-        "Dr. Niti Gaur's Approach": "Patients understand every step of treatment"
-      }
-    ] 
-  },
-  "BestDermatologistThirdSection": {
-    "mainHeading": "Qualifications, Fellowships & Professional Credentials",
-    "paragraph1": "Dr. Niti Gaur's academic achievements, advanced training, and international exposure reflect her commitment to clinical excellence and continuous learning.",
-    "table": [
-      {
-        "Patient Need": "Accurate Diagnosis",
-        "Dr. Niti Gaur's Approach": "Comprehensive clinical assessment"
-      },
-      {
-        "Patient Need": "Personalised Care",
-        "Dr. Niti Gaur's Approach": "Tailored treatment plans"
-      },
-      {
-        "Patient Need": "Natural Results",
-        "Dr. Niti Gaur's Approach": "Conservative aesthetic philosophy"
-      },
-      {
-        "Patient Need": "Advanced Solutions",
-        "Dr. Niti Gaur's Approach": "Internationally recognised technologies"
-      },
-      {
-        "Patient Need": "Long-Term Improvement",
-        "Dr. Niti Gaur's Approach": "Focus on skin quality and maintenance"
-      },
-      {
-        "Patient Need": "Safety",
-        "Dr. Niti Gaur's Approach": "Protocols customised for Indian skin"
-      },
-      {
-        "Patient Need": "Transparency",
-        "Dr. Niti Gaur's Approach": "Honest recommendations"
-      },
-      {
-        "Patient Need": "Education",
-        "Dr. Niti Gaur's Approach": "Patients understand every step of treatment"
-      }
-    ]  
-  },
   "BestDermatologistFourthSection": {
     "mainHeading": "Who is Dr. Niti Gaur?",
     "paragraphs": "Dr. Niti Gaur is an internationally trained dermatologist and aesthetic physician with extensive expertise in diagnosing and treating skin, hair, and ageing-related concerns. As the Founder and Medical Director of Citrine Clinic, Gurgaon, she has established a reputation for ethical dermatology, personalised care, and science-backed treatment protocols.",
@@ -826,6 +751,293 @@
       }
     ] 
    },
+  "DermatologySecondSection": {
+    "mainHeading": "What Sets Dr. Niti Gaur Apart?",
+    "table": [
+      {
+        "Patient Need": "Accurate Diagnosis",
+        "Dr. Niti Gaur's Approach": "Comprehensive clinical assessment"
+      },
+      {
+        "Patient Need": "Personalised Care",
+        "Dr. Niti Gaur's Approach": "Tailored treatment plans"
+      },
+      {
+        "Patient Need": "Natural Results",
+        "Dr. Niti Gaur's Approach": "Conservative aesthetic philosophy"
+      },
+      {
+        "Patient Need": "Advanced Solutions",
+        "Dr. Niti Gaur's Approach": "Internationally recognised technologies"
+      },
+      {
+        "Patient Need": "Long-Term Improvement",
+        "Dr. Niti Gaur's Approach": "Focus on skin quality and maintenance"
+      },
+      {
+        "Patient Need": "Safety",
+        "Dr. Niti Gaur's Approach": "Protocols customised for Indian skin"
+      },
+      {
+        "Patient Need": "Transparency",
+        "Dr. Niti Gaur's Approach": "Honest recommendations"
+      },
+      {
+        "Patient Need": "Education",
+        "Dr. Niti Gaur's Approach": "Patients understand every step of treatment"
+      }
+    ] 
+  },
+  "DermatologynewFourthSection": {
+    "mainHeading": "Qualifications, Fellowships & Professional Credentials",
+    "paragraphs": "Dr. Niti Gaur's academic achievements, advanced training, and international exposure reflect her commitment to clinical excellence and continuous learning.",
+    "table": [
+      {
+        "Qualification / Credential": "MBBS",
+        "Institution / Details": "B.J. Medical College, Pune"
+      },
+      {
+        "Qualification / Credential": "MD Dermatology",
+        "Institution / Details": "Lady Hardinge Medical College, New Delhi"
+      },
+      {
+        "Qualification / Credential": "Academic Distinction",
+        "Institution / Details": "First Rank Gold Medalist in MD Dermatology"
+      },
+      {
+        "Qualification / Credential": "Advanced Fellowships",
+        "Institution / Details": "Aesthetic Dermatology & Anti-Ageing Medicine"
+      },
+      {
+        "Qualification / Credential": "International Training",
+        "Institution / Details": "Europe, USA & Singapore"
+      },
+      {
+        "Qualification / Credential": "Regenerative Dermatology Training",
+        "Institution / Details": "International Workshops & Certification Programs"
+      },
+      {
+        "Qualification / Credential": "Laser & Energy Device Training",
+        "Institution / Details": "Global Clinical Training Programs"
+      },
+       {
+        "Qualification / Credential": "Clinical Experience",
+        "Institution / Details": "21+ Years"
+      },
+       {
+        "Qualification / Credential": "Professional Memberships",
+        "Institution / Details": "IADVL & Leading Dermatology Associations"
+      }
+    ]  
+  },
+  "DermatologyNewFivethSection": {
+    "mainHeading": "Skin Conditions Treated by Dr. Niti Gaur",
+    "paragraphs": "As a leading dermatologist in Gurgaon, Dr. Niti Gaur treats a wide range of medical and cosmetic skin concerns.",
+    "subheading": "Skin Concerns & Treatment Approach",
+    "table": [
+      {
+        "Concern": "Acne & Acne Scars",
+        "Treatment Approach": "Medical acne management, chemical peels, RF microneedling, scar revision"
+      },
+      {
+        "Concern": "Open Pores",
+        "Treatment Approach": "Secret RF 2.0, laser resurfacing, skin boosters"
+      },
+      {
+        "Concern": "Pigmentation & Dark Spots",
+        "Treatment Approach": "Medical skincare, lasers, chemical peels"
+      },
+      {
+        "Concern": "Melasma",
+        "Treatment Approach": "Combination therapies and maintenance protocols"
+      },
+      {
+        "Concern": "Age Spots",
+        "Treatment Approach": "Advanced pigmentation correction"
+      },
+      {
+        "Concern": "Sensitive Skin",
+        "Treatment Approach": "Barrier repair and personalised skincare"
+      },
+      {
+        "Concern": "Rosacea",
+        "Treatment Approach": "Medical management and redness control"
+      },
+      {
+        "Concern": "Uneven Skin Tone",
+        "Treatment Approach": "Skin rejuvenation treatments"
+      },
+      {
+        "Concern": "Dull Skin",
+        "Treatment Approach": "Hydrafacial MD, oxygen therapies and skin boosters"
+      },
+      {
+        "Concern": "Skin Texture Concerns",
+        "Treatment Approach": "Fractional lasers, RF microneedling"
+      },
+      {
+        "Concern": "Ageing Skin",
+        "Treatment Approach": "Anti-ageing and regenerative therapies"
+      },
+      {
+        "Concern": "Psoriasis",
+        "Treatment Approach": "Medical dermatology treatments"
+      },
+      {
+        "Concern": "Eczema & Dermatitis",
+        "Treatment Approach": "Long-term skin management"
+      },
+      {
+        "Concern": "Fungal Infections",
+        "Treatment Approach": "Evidence-based dermatological treatment"
+      },
+      {
+        "Concern": "Skin Allergies",
+        "Treatment Approach": "Comprehensive diagnosis and management"
+      }
+    ] 
+   },
+  "DermatologyNewSixthSection": {
+    "mainHeading": "Hair & Scalp Disorders Treated",
+    "paragraphs": "Hair loss is often influenced by genetics, hormones, nutrition, stress, and medical conditions. Effective treatment begins with identifying the root cause.",
+    "subheading": "Hair & Scalp Concerns",
+    "table": [
+      {
+        "Concern": "Hair Fall",
+        "Treatment Approach": "Medical evaluation and treatment"
+      },
+      {
+        "Concern": "Male Pattern Baldness",
+        "Treatment Approach": "Medical therapies, PRP and GFC"
+      },
+      {
+        "Concern": "Female Pattern Hair Loss",
+        "Treatment Approach": "Personalised restoration programmes"
+      },
+      {
+        "Concern": "Hair Thinning",
+        "Treatment Approach": "Regenerative therapies"
+      },
+      {
+        "Concern": "Alopecia",
+        "Treatment Approach": "PRP, GFC and advanced hair protocols"
+      },
+      {
+        "Concern": "Dandruff",
+        "Treatment Approach": "Medical scalp treatments"
+      },
+      {
+        "Concern": "Oily Scalp",
+        "Treatment Approach": "Scalp balancing therapies"
+      },
+      {
+        "Concern": "Weak Hair Quality",
+        "Treatment Approach": "Nutritional and regenerative support"
+      },
+      {
+        "Concern": "Postpartum Hair Loss",
+        "Treatment Approach": "Targeted treatment plans"
+      }
+    ] 
+   },
+  "DermatologyNewSeventhSection": {
+    "mainHeading": "Aesthetic Dermatology Expertise",
+    "paragraphs": "Dr. Niti Gaur combines dermatology with aesthetic medicine to improve skin quality, facial harmony, and overall appearance while maintaining natural-looking results.",
+    "subheading": "Aesthetic Concerns & Treatments",
+    "table": [
+      {
+        "Concern": "Fine Lines & Wrinkles",
+        "Treatment Approach": "Botox and neuromodulators"
+      },
+      {
+        "Concern": "Volume Loss",
+        "Treatment Approach": "Dermal fillers"
+      },
+      {
+        "Concern": "Skin Laxity",
+        "Treatment Approach": "HIFU, Ultracel, Exilis Elite"
+      },
+      {
+        "Concern": "Double Chin",
+        "Treatment Approach": "Non-surgical contouring"
+      },
+      {
+        "Concern": "Facial Ageing",
+        "Treatment Approach": "Combination rejuvenation protocols"
+      },
+      {
+        "Concern": "Uneven Skin Tone",
+        "Treatment Approach": "Laser rejuvenation"
+      },
+      {
+        "Concern": "Acne Scars",
+        "Treatment Approach": "Secret RF 2.0, CO2 laser"
+      },
+      {
+        "Concern": "Enlarged Pores",
+        "Treatment Approach": "RF microneedling"
+      },
+      {
+        "Concern": "Dull Skin",
+        "Treatment Approach": "Hydrafacial MD, skin boosters"
+      },
+      {
+        "Concern": "Facial Rejuvenation",
+        "Treatment Approach": "Multi-modality treatments"
+      }
+    ] 
+   },
+  "DermatologyNewEightthSection": {
+    "mainHeading": "Regenerative Treatments Offered",
+    "table": [
+      {
+        "Treatment": "P-R-P Therapy",
+        "Purpose": "Growth factor stimulation"
+      },
+      {
+        "Treatment": "GFC Therapy",
+        "Purpose": "Hair restoration"
+      },
+      {
+        "Treatment": "Exosome Therapy",
+        "Purpose": "Cellular regeneration"
+      },
+      {
+        "Treatment": "PDRN Therapy",
+        "Purpose": "Tissue repair and rejuvenation"
+      },
+      {
+        "Treatment": "Salmon DNA Therapy",
+        "Purpose": "Skin repair and collagen support"
+      },
+      {
+        "Treatment": "Polynucleotides",
+        "Purpose": "Skin quality improvement"
+      },
+      {
+        "Treatment": "Biostimulators",
+        "Purpose": "Natural collagen production"
+      },
+      {
+        "Treatment": "Regenerative Hair Protocols",
+        "Purpose": "Hair growth support"
+      }
+    ] 
+   },
+  "DermatologyNewNinethSection": {
+    "mainHeading": "Anti-Ageing Treatments",
+    "list": [
+      "Botox",
+      "Dermal Filler",
+      "Morpheus8",
+      "Ultracel Q Plus",
+      "HIFU Ultracel QT",
+      "Exilis Elite",
+      "Skin Boosters",
+      "Collagen Stimulators",
+      "Regenerative Therapies"
+    ]
+  },
   "DermatologyThirdSection": {
     "mainHeading": "Body Contouring & Body Rejuvenation",
     "table": [
@@ -953,7 +1165,7 @@
       "Times Business Icons Award (TOI)",
       "First Rank Gold Medalist in MD Dermatology",
       "Recipient of Galderma Research Grants",
-      "Recognised Dermatology & Aesthetic Medicine Expert"
+      "Recognised Dermatology & Aesthetic Medicine Expert."
     ],
    "subheadings": "Media Features & Speaking Engagements",
     "lists": [
@@ -965,7 +1177,7 @@
       "Expert Panels & Industry Podcasts",
       "Health & Wellness Publications",
       "Dermatology Awareness Campaigns",
-      "YouTube Educational Collaborations"
+      "YouTube Educational Collaborations."
     ]
   },
   "BestDermatologistTestimonialSection": {
@@ -1060,7 +1272,7 @@
        {
         "id": 13,
         "question": "How do I prepare for my first appointment with a skin doctor in Gurgaon?",
-        "answer": "Before your appointment, make a note of your symptoms, medical history, medications, skincare products, previous treatments, and any questions you may have"
+        "answer": "Before your appointment, make a note of your symptoms, medical history, medications, skincare products, previous treatments, and any questions you may have."
       },
        {
         "id": 14,

@@ -9,7 +9,7 @@ const StickyCard = () => {
     <section className={styles.stickySection}>
       <div className={styles.container}>
 
-         {/* Static card 3: Podcast */}
+         {/* Static card 1: Podcast */}
         <div className={styles.stickyCard}>
           <div className={styles.cardContent}>
             <div className={styles.imageWrapper}>
@@ -38,7 +38,7 @@ const StickyCard = () => {
           </div>
         </div>
 
-        {/* Static card 1: Josh Talks */}
+        {/* Static card 2: Josh Talks */}
         <div className={styles.stickyCard}>
           <div className={styles.cardContent}>
             <div className={styles.joshWrapper}>
@@ -72,7 +72,7 @@ const StickyCard = () => {
           </div>
         </div>
 
-        {/* Static card 2: TEDx */}
+        {/* Static card 3: TEDx */}
         <div className={styles.stickyCard}>
           <div className={styles.cardContent}>
             <div className={styles.tedxWrapper}>
@@ -105,6 +105,24 @@ const StickyCard = () => {
                   </button> */}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+         {/* Static card 4: Josh Talks */}
+        <div className={styles.stickyCard}>
+          <div className={styles.cardContent}>
+            <div className={styles.joshWrapper}>
+               <picture className={styles.pictureWrapper}>
+                <source media="(max-width: 767.98px)" srcSet="/assets/images/about-doctor/stickyscrollmobilebanners.svg" />
+                <source media="(min-width: 768px)" srcSet="/assets/images/about-doctor/stickyfourthcard.svg" />
+                <img
+                  src="/assets/images/about-doctor/stickyfourthcard.svg"
+                  alt="Times Business Icons Award"
+                  width={1300}
+                  height={600}
+                  className={styles.cardImage}/>
+              </picture>
             </div>
           </div>
         </div>
