@@ -6,7 +6,6 @@ import BestDermatologistFirstSection from '@/src/app/components/BestDermatologis
 import BestDermatologistFourthSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistFourthSection/BestDermatologistFourthSection';
 import BestDermatologistFivethSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistFivethSection/BestDermatologistFivethSection';
 import BestDermatologistSixthSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistSixthSection/BestDermatologistSixthSection';
-import BestDermatologistEightSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistEightSection/BestDermatologistEightSection';
 import BestDermatologistTestimonialSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistTestimonialSection/BestDermatologistTestimonialSection';
 import BestDermatologistTenthSection from '@/src/app/components/BestDermatologistInDelhiPage/BestDermatologistTenthSection/BestDermatologistTenthSection';
 import fs from 'fs';
@@ -27,6 +26,13 @@ function getPageData() {
 
 import { getSeoData } from '@/src/lib/cms';
 import { resolveMetadata } from '@/src/lib/seo-utils';
+import DermatologySecondSection from '@/src/app/components/BestDermatologistInDelhiPage/DermatologySecondSection/DermatologySecondSection';
+import DermatologynewFourthSection from '@/src/app/components/BestDermatologistInDelhiPage/DermatologynewFourthSection/DermatologynewFourthSection';
+import DermatologyNewFivethSection from '@/src/app/components/BestDermatologistInDelhiPage/DermatologyNewFivethSection/DermatologyNewFivethSection';
+import DermatologyNewSixthSection from '@/src/app/components/BestDermatologistInDelhiPage/DermatologyNewSixthSection/DermatologyNewSixthSection';
+import DermatologyNewSeventhSection from '@/src/app/components/BestDermatologistInDelhiPage/DermatologyNewSeventhSection/DermatologyNewSeventhSection';
+import DermatologyNewEightthSection from '@/src/app/components/BestDermatologistInDelhiPage/DermatologyNewEightthSection/DermatologyNewEightthSection';
+import DermatologyNewNinethSection from '@/src/app/components/BestDermatologistInDelhiPage/DermatologyNewNinethSection/DermatologyNewNinethSection';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoData('dermatologist-in-gurgaon');
@@ -51,15 +57,22 @@ const DermatologistInGurgaon = async () => {
       <Breadcrumb />
       <BestDermatologistFirstSection section={pageData.BestDermatologistFirstSection} />
       <BestDermatologistFourthSection section={pageData.BestDermatologistFourthSection} />
+      <DermatologySecondSection section={pageData.DermatologySecondSection} />
+      <DermatologynewFourthSection section={pageData.DermatologynewFourthSection} />
+      <DermatologyNewFivethSection section={pageData.DermatologyNewFivethSection} />
+      <DermatologyNewSixthSection section={pageData.DermatologyNewSixthSection} />
+      <DermatologyNewSeventhSection section={pageData.DermatologyNewSeventhSection} />
+      <DermatologyNewEightthSection section={pageData.DermatologyNewEightthSection} />
+      <DermatologyNewNinethSection section={pageData.DermatologyNewNinethSection} />
       <DermatologyThirdSection section={pageData.DermatologyThirdSection} />
       <DermatologyFivethSection section={pageData.DermatologyFivethSection} />
       <DermatologysixethSection section={pageData.DermatologysixethSection}/>
       <DermatologySevenSection section={pageData.DermatologySevenSection}/>
-      <BestDermatologistFivethSection section={pageData.BestDermatologistFivethSection} />
       <BestDermatologistSixthSection section={pageData.BestDermatologistSixthSection} />
       <DermatologyEightSection section={pageData.DermatologyEightSection} />
       <BestDermatologistTestimonialSection section={pageData.BestDermatologistTestimonialSection} />
       <BestDermatologistFaqSection section={pageData.BestDermatologistFaqSection} />
+      <BestDermatologistFivethSection section={pageData.BestDermatologistFivethSection} />
       <BestDermatologistTenthSection section={pageData.BestDermatologistTenthSection} />
       <AppointmentSection />
     </>

@@ -221,6 +221,14 @@ const MainBanner = () => {
             {/* Panel 3: Recipients */}
             <div className={styles.mb_contentpanel}>
               <picture>
+                <source media="(max-width: 600px)" srcSet={`assets/images/home/mbbanner.png`} />
+                <img src={`/assets/images/home/banner.jpg`} className={styles.bannerImage2} width={1442} height={700} decoding="async" alt="DR. NITI GAUR" />
+              </picture>
+            </div>
+
+            {/* Panel 3: Recipients */}
+            <div className={styles.mb_contentpanel}>
+              <picture>
                 <source media="(max-width: 600px)" srcSet={`assets/images/home/mobilesecondbanners.webp`} />
                 <img src={`/assets/images/home/citrinesecondbanner.webp`} className={styles.bannerImage2} width={1440} height={700} decoding="async" alt="Slide 2" />
               </picture>
@@ -258,6 +266,7 @@ const MainBanner = () => {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
 

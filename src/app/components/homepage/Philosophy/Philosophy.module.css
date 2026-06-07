@@ -34,7 +34,7 @@
 
 .card {
   background:var(--lightyellowbg);
-  padding: 30px 25px;
+  padding: 30px 20px 20px 20px;
   display: flex;
   width: 100%;
   min-width: 0; 
@@ -146,9 +146,9 @@
 }
 
 .subheading {
-  margin-bottom: 25px;font-size: 35px;
+  margin-bottom: 25px;font-size: 32px;
   font-weight: 400;line-height: 1.2;
-  letter-spacing: 1px;
+  letter-spacing: 0px;
 }
 
 .cardDescription {

@@ -181,7 +181,7 @@ export default function BlogContent({
               <div className={styles.authorBox}>
                 <div className={styles.authorInfo}>
                   <Image
-                    src="/assets/images/blogdetail/blogauthor.webp"
+                    src="/assets/images/blogdetail/blogauthors.webp"
                     alt="Dr. Niti Gaur"
                     className={styles.authorImage}
                     width={200}
