@@ -19,6 +19,7 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const menuListRef = React.useRef<HTMLUListElement>(null);
+  const itemRefs = React.useRef<{ [key: string]: HTMLLIElement | null }>({});
 
   // Default sections if not provided
   const defaultSections = [
@@ -155,6 +156,31 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [menuSections]);
 
+  // Auto-scroll the TOC bar so the active item is always visible
+  useEffect(() => {
+    if (!activeSection) return;
+    const menuList = menuListRef.current;
+    const activeItem = itemRefs.current[activeSection];
+    if (!menuList || !activeItem) return;
+
+    // Calculate position of the item relative to the scrollable list
+    const itemLeft = activeItem.offsetLeft;
+    const itemWidth = activeItem.offsetWidth;
+    const listScrollLeft = menuList.scrollLeft;
+    const listWidth = menuList.clientWidth;
+
+    const itemRight = itemLeft + itemWidth;
+    const visibleRight = listScrollLeft + listWidth;
+
+    if (itemLeft < listScrollLeft) {
+      // Item is hidden to the left — scroll left to reveal it
+      menuList.scrollTo({ left: itemLeft - 20, behavior: 'smooth' });
+    } else if (itemRight > visibleRight) {
+      // Item is hidden to the right — scroll right to reveal it
+      menuList.scrollTo({ left: itemRight - listWidth + 20, behavior: 'smooth' });
+    }
+  }, [activeSection]);
+
   const handleClick = (sectionId: string) => {
     // Don't navigate if user was dragging
     if (hasDragged) {
@@ -163,7 +189,7 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
 
     const element = document.getElementById(sectionId);
     if (element) {
-      const offset = 120; // Offset for sticky header
+      const offset = 150; // Offset for sticky header
       const elementPosition = element.offsetTop - offset;
       window.scrollTo({
         top: elementPosition,
@@ -188,7 +214,11 @@ const TableOfContent: React.FC<TableOfContentProps> = ({ sections }) => {
             style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
           >
             {menuSections.map((section) => (
-              <li key={section.id} className={styles.menuItem}>
+              <li
+                key={section.id}
+                className={styles.menuItem}
+                ref={(el) => { itemRefs.current[section.id] = el; }}
+              >
                 <button
                   onClick={() => handleClick(section.id)}
                   className={`${styles.menuLink} ${activeSection === section.id ? styles.active : ''}`}

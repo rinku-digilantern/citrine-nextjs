@@ -21,8 +21,8 @@ interface FormState {
 
 type FormErrors = Partial<FormState>;
 
-const CAPTCHA_API = `\${process.env.NEXT_PUBLIC_API_URL}/googlecaptcha`;
-const APPT_API = `\${process.env.NEXT_PUBLIC_API_URL}/appointment`;
+const CAPTCHA_API = `${process.env.NEXT_PUBLIC_API_URL}/googlecaptcha`;
+const APPT_API = `${process.env.NEXT_PUBLIC_API_URL}/appointment`;
 
 const services = [
   'Acne/Pimple',
@@ -182,7 +182,7 @@ const AppointmentSection = () => {
 
       if (res.ok && (data.success || data.status === 'success' || data.title === 'Success')) {
         setStatus('success');
-        setFormData({ 
+        setFormData({
           name: '', email: '', phone: '', service: '', date: '', message: '', captcha: '',
         });
         router.push('/thankyou');
@@ -223,7 +223,7 @@ const AppointmentSection = () => {
 
               {/* Row 1: Name, Email, Phone */}
               <div className={styles.formRow}>
-                
+
                 <div className={styles.inputGroup}>
                   <label className={styles.label}>Full Name<span>*</span></label>
                   <input

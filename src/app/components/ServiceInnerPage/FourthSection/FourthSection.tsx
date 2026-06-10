@@ -31,7 +31,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({ data, headingtag = 'h2' }
           />
         )}
 
-        <div className={styles.benefitsGrid}>
+        <div className={styles.benefitsGrid} style={{ '--grid-columns': Math.min(5, benefits.length) } as React.CSSProperties}>
           {benefits.map((benefit: any) => (
             <div key={benefit.id} className={styles.benefitCard}>
               <div className={styles.cardTopLine}></div>
@@ -42,7 +42,7 @@ const FourthSection: React.FC<FourthSectionProps> = ({ data, headingtag = 'h2' }
         
         {data.content_bottom && (
           <div 
-            className={styles.description}
+            className={styles.footerText}
             dangerouslySetInnerHTML={{ __html: data.content_bottom }} 
           />
         )}

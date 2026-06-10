@@ -21,8 +21,8 @@ interface FormData {
 
 type FormErrors = Partial<FormData>;
 
-const CAPTCHA_API = `\${process.env.NEXT_PUBLIC_API_URL}/googlecaptcha`;
-const APPT_API = `\${process.env.NEXT_PUBLIC_API_URL}/appointment`;
+const CAPTCHA_API = `${process.env.NEXT_PUBLIC_API_URL}/googlecaptcha`;
+const APPT_API = `${process.env.NEXT_PUBLIC_API_URL}/appointment`;
 
 interface OfferDetailsProps {
   offer: {

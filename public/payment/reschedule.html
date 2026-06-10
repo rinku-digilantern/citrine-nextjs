@@ -664,8 +664,7 @@
         const DOCTOR_HOURS_MAP = {
             'dr niti gaur':   '11 AM – 6 PM',
             'dr guneet bedi': '10 AM – 6 PM',
-            'dr raheel khan': '11 AM – 8 PM',
-            'moonis khan':    '11 AM – 8 PM'
+            'dr raheel khan': '11 AM – 8 PM'
         };
 
         function getDoctorPrice(doctor) {
@@ -702,9 +701,6 @@
                 startLimit = "10:00";
                 endLimit = "18:00";
             } else if (nameLower.includes('raheel')) {
-                startLimit = "11:00";
-                endLimit = "20:00";
-            } else if (nameLower.includes('moonis')) {
                 startLimit = "11:00";
                 endLimit = "20:00";
             }
@@ -917,9 +913,9 @@
                     const response = await axios.get(`${API_BASE}/api/get-doctor-list`);
                     const result = response.data;
                     if ((result.status === 'success' || result.success === true) && result.data) {
-                        this.state.doctors = result.data;
+                        this.state.doctors = result.data.filter(doc => !doc.name.toLowerCase().includes('moonis'));
                         sel.innerHTML = '<option value="">Select Doctor</option>';
-                        result.data.forEach(doc => {
+                        this.state.doctors.forEach(doc => {
                             const opt = document.createElement('option');
                             opt.value = doc.id;
                             opt.textContent = doc.name;

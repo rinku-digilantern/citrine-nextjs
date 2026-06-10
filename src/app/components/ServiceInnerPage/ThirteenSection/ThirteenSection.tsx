@@ -33,7 +33,7 @@ const ThirteenSection: React.FC<ThirteenSectionProps> = ({ data, headingtag = 'h
         )}
 
         {consultCards.length > 0 && (
-          <div className={styles.risksGrid}>
+          <div className={styles.risksGrid} style={{ '--grid-columns': Math.min(5, consultCards.length) } as React.CSSProperties}>
             {consultCards.map((card: any) => (
               <div
                 key={card.id}

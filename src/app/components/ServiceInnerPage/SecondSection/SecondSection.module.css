@@ -18,12 +18,26 @@
 }
 
 .contentWrapper.noImage .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
   text-align: center;
+}
+
+@media (min-width: 992px) {
+  .contentWrapper.noImage .paragraph ul {
+    column-count: 2;
+    column-gap: 40px;
+    text-align: left;
+  }
+  .contentWrapper.noImage .paragraph li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 }
 
 .leftContent {
   flex: 1;
-  background: #F6EADB;
+  background: var(--section-bg, #F6EADB);
   padding: 50px 50px 50px 100px;
   display: flex;
   align-items: flex-start;
@@ -32,6 +46,11 @@
 }
 
 .contentscroll {
+  padding-right: 10px;
+}
+
+/* Only applied when an image is present (two-column layout) */
+.scrollActive {
   height: 240px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -40,24 +59,22 @@
   scrollbar-color: #C7965C #F6EADB;
 }
 
-.contentscroll::-webkit-scrollbar-track {
-    background-color: #ddd;
-    border-radius: 5px;
-    box-shadow: inset 0 0 6px #0000004d
+.scrollActive::-webkit-scrollbar-track {
+  background-color: #ddd;
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px #0000004d;
 }
 
-.contentscroll::-webkit-scrollbar {
-    background-color: var(--primary-color);
-    width: 5px
+.scrollActive::-webkit-scrollbar {
+  background-color: var(--primary-color);
+  width: 5px;
+  background-clip: padding-box;
 }
 
-.contentscroll::-webkit-scrollbar {
-    background-color: var(--primary-color);
-    width: 5px;
-     background-clip: padding-box;
-} 
 
 .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
   font-size: 45px;
   font-weight: 400;
   font-family: var(--font-montserrat), sans-serif;
@@ -76,9 +93,12 @@
   font-family: var(--font-poppins), sans-serif;
 }
 
-.paragraph p{  font-size: 18px;
-  font-weight: 400;  line-height: 1.8;
-  margin: 0 0 10px 0;text-align: left;
+.paragraph p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+  margin: 0 0 10px 0;
+  text-align: left;
   font-family: var(--font-poppins), sans-serif;
 }
 
@@ -106,7 +126,8 @@
 .paragraph ul li::before {
   content: "•";
   position: absolute;
-  left: 0;top:-5px;
+  left: 0;
+  top: -5px;
   color: var(--primary-color);
   font-size: 25px;
   font-weight: bold;
@@ -172,8 +193,8 @@
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
 }
 
-.playButton:hover .playIcon{
-    color: var(--default-color);
+.playButton:hover .playIcon {
+  color: var(--default-color);
 
 }
 
@@ -184,6 +205,8 @@
   }
 
   .heading {
+    font-weight: 400;
+    text-transform: uppercase;
     font-size: 30px;
   }
 
@@ -210,6 +233,8 @@
   }
 
   .heading {
+    font-weight: 400;
+    text-transform: uppercase;
     font-size: 26px;
     margin-bottom: 20px;
   }
@@ -235,13 +260,48 @@
 
 /* Small devices (Phones in landscape mode) */
 @media (max-width: 599.98px) and (min-width: 320px) {
-  .container {max-width: 100%;width:90%;}
-  .contentWrapper{display: flex;flex-direction:column-reverse}
-  .leftContent {padding: 30px 20px;}
-  .heading {font-size: 26px;}
-  .mainHeading {font-size: 26px;margin-bottom: 12px;letter-spacing: 0px;}
-  .paragraph {font-size: 15px;}
-  .rightContent {padding: 15px 15px;}
-  .playButton {width: 54px;height: 54px;}
-  .playIcon {font-size: 24px;}
+  .container {
+    max-width: 100%;
+    width: 90%;
+  }
+
+  .contentWrapper {
+    display: flex;
+    flex-direction: column-reverse
+  }
+
+  .leftContent {
+    padding: 30px 20px;
+  }
+
+  .heading {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 26px;
+  }
+
+  .mainHeading {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 26px;
+    margin-bottom: 12px;
+    letter-spacing: 0px;
+  }
+
+  .paragraph {
+    font-size: 15px;
+  }
+
+  .rightContent {
+    padding: 15px 15px;
+  }
+
+  .playButton {
+    width: 54px;
+    height: 54px;
+  }
+
+  .playIcon {
+    font-size: 24px;
+  }
 }

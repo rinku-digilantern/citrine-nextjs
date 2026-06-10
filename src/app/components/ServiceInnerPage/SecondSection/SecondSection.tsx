@@ -44,7 +44,7 @@ const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }
               {data.section_heading}
             </HeadingTag>
           )}
-          <div className={styles.contentscroll}>
+          <div className={`${styles.contentscroll} ${hasImage ? styles.scrollActive : ''}`}>
             {data.content_top && (
               <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.content_top }}/>
             )}

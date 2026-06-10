@@ -49,7 +49,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({ faqData, headingtag }) => {
                 onClick={() => toggleFaq(faq.id)}
                 aria-expanded={openId === faq.id}
               >
-                <h3>{faq.question}</h3>
+                <h3 dangerouslySetInnerHTML={{ __html: faq.question.replace(/^\d+\.\s*/, '') }} />
                 <span className={styles.icon}>
                   {openId === faq.id ? "−" : "+"}
                 </span>

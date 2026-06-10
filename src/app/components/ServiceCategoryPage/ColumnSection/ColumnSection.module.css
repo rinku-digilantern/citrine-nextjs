@@ -1,6 +1,6 @@
 .columnSection {
   padding: 2rem 0 3rem 0px;
-  background: #fbf4ea;
+  background: var(--section-bg, #fbf4ea);
   width: 100%;
 }
 

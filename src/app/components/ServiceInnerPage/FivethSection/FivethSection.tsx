@@ -38,7 +38,7 @@ const FivethSection: React.FC<FivethSectionProps> = ({ data, headingtag = 'h2' }
         )}
 
         {risks.length > 0 && (
-          <div className={styles.risksGrid}>
+          <div className={styles.risksGrid} style={{ '--grid-columns': Math.min(5, risks.length) } as React.CSSProperties}>
             {risks.map((risk: any) => (
               <div
                 key={risk.id}

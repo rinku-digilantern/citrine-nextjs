@@ -445,8 +445,7 @@
         const DOCTOR_HOURS_MAP = {
             'dr niti gaur': '10 AM ΓÇô 5 PM',
             'dr guneet bedi': '10 AM ΓÇô 6 PM',
-            'dr raheel khan': '11 AM ΓÇô 8 PM',
-            'moonis khan': '11 AM ΓÇô 8 PM'
+            'dr raheel khan': '11 AM ΓÇô 8 PM'
         };
 
         function getDoctorPrice(doctor) {
@@ -485,9 +484,6 @@
                 startLimit = "10:00";
                 endLimit = "18:00";
             } else if (nameLower.includes('raheel')) {
-                startLimit = "11:00";
-                endLimit = "20:00";
-            } else if (nameLower.includes('moonis')) {
                 startLimit = "11:00";
                 endLimit = "20:00";
             }
@@ -648,7 +644,7 @@ if (data.appointment_date && data.appointment_date === todayStr) {
                 const result = await response.json();
 
                 if ((result.status === "success" || result.success === true) && result.data) {
-                    doctorsList = result.data;
+                    doctorsList = result.data.filter(doc => !doc.name.toLowerCase().includes('moonis'));
                     const doctorSelect = document.getElementById('paymentDoctor');
 
                     // Clear existing options except the first one

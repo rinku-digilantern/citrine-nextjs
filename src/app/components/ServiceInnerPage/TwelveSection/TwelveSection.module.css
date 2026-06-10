@@ -1,16 +1,19 @@
 .twelveSection {
-  padding: 60px 0 30px 0px;
-  background-color: #FFFAF3;
+  padding: 60px 0px;
+  background-color: var(--section-bg, #FFFAF3);
   border-top: 1px solid #E5D7C3
 }
 
 .container {
   max-width: 1320px;
+  width: 90%;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 45px;
   text-align: center;
@@ -33,7 +36,7 @@
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(var(--grid-columns, 4), 1fr);
   gap: 30px; margin-top: 2rem;
   margin-bottom: 40px;
   max-width: 1320px;
@@ -42,7 +45,7 @@
 }
 
 .consultCard {
-  background: #FFFAF2;
+  background: var(--card-bg, #FFFAF2);
   padding: 35px 30px;
   min-height: 200px;
   display: flex;
@@ -84,13 +87,14 @@
   letter-spacing: 1.5px;
 }
 
-/* Center the last 2 cards in the second row */
-.consultCard:nth-child(5) {
-  grid-column: 2 / 3;
-}
-
-.consultCard:nth-child(6) {
-  grid-column: 3 / 4;
+/* Center the last 2 cards in the second row — desktop only (4-col grid) */
+@media (min-width: 992px) {
+  .consultCard:nth-child(5) {
+    grid-column: 2 / 3;
+  }
+  .consultCard:nth-child(6) {
+    grid-column: 3 / 4;
+  }
 }
 
 /* Top-left corner bracket (accent color) - Card 1 */
@@ -256,6 +260,8 @@
   }
 
   .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
     font-size: 38px;
     margin-bottom: 18px;
   }
@@ -272,6 +278,8 @@
   }
 
   .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
     font-size: 32px;
     letter-spacing: 0.5px;
   }
@@ -304,7 +312,9 @@
 @media (max-width: 599.98px) and (min-width: 320px) {
   .twelveSection {padding: 1.5rem 0;}
   .container {max-width: 100%;width:90%;padding:0px}
-  .mainHeading {font-size: 26px;margin-bottom: 15px;}
+  .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;font-size: 26px;margin-bottom: 15px;}
   .subtitle {font-size: 15px;margin-bottom: 15px;}
   .consultCard {padding: 12px; margin-top: 15px;min-height: 90px;}
   .cardText {font-size: 15px;}
@@ -312,3 +322,7 @@
   .cardsGrid {max-width: 100%;margin: 15px auto 15px auto;display: block;
  }
 }
+
+
+
+

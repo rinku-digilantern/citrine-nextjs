@@ -1,10 +1,12 @@
 .sixthSection {
   padding: 60px 0px;
-  background: #F6EADB;
+  background: var(--section-bg, #F6EADB);
 }
 
 .container {
   max-width: 1320px;
+  width: 90%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -46,7 +48,7 @@
   align-items: center;
   gap: 12px;
   padding: 15px 20px;
-  background: #FFFAF2;
+  background: var(--card-bg, #FFFAF2);
   border: 1px solid #E5D7C3;
   box-shadow: 0px 10px 25px 0px #0000000D;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -115,6 +117,8 @@
   }
 
   .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
     font-size: 28px;
   }
 
@@ -150,7 +154,9 @@
   .columnLeft,.columnRight {gap: 8px;}
   .subtitle {font-size: 15px;margin-bottom: 15px;}
   .container {max-width: 100%;width:90%;}
-  .mainHeading {font-size: 26px;}
+  .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;font-size: 26px;}
   .candidateText {font-size: 15px;line-height:1.6}
   .footerText {font-size: 15px;}
  .candidateItem {padding: 9px 12px;gap:5px;align-items: flex-start;}
@@ -159,3 +165,7 @@
 .buttonrow {margin-top: 1rem;}
 .bookbtn {letter-spacing: 0%;padding: 8px 16px;font-size: 15px;font-weight: 500;}
 }
+
+
+
+

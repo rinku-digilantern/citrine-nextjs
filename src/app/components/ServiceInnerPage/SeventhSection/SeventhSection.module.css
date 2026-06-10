@@ -1,6 +1,6 @@
 .seventhSection {
   padding: 60px 0px;
-  background-color: #F8F4ED;
+  background-color: var(--section-bg, #F8F4ED);
   overflow: hidden;
 }
 
@@ -11,6 +11,8 @@
 } 
 
 .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 45px;
   text-align: center;
@@ -41,8 +43,26 @@
   padding-right: 85px;
 }
 
+@media (max-width: 992px) {
+  .contentGrid.noImageGrid {
+    padding-right: 0;
+  }
+}
+
 .noImageGrid .emblaSlide {
   flex: 0 0 30%;
+}
+
+@media (max-width: 992px) {
+  .noImageGrid .emblaSlide {
+    flex: 0 0 60%;
+  }
+}
+
+@media (max-width: 599.98px) {
+  .noImageGrid .emblaSlide {
+    flex: 0 0 100%;
+  }
 }
 
 .noImageGrid .footerText {
@@ -140,7 +160,7 @@
 }
 
 .stepCard {
-  background: #FFFAF2;
+  background: var(--card-bg, #FFFAF2);
   padding: 30px 25px;
   min-height: 240px;
   display: flex;
@@ -226,6 +246,8 @@
   }
 
   .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
     font-size: 28px;
   }
 
@@ -260,10 +282,14 @@
 @media (max-width: 599.98px) and (min-width: 320px) {
   .seventhSection {padding: 1.5rem 0px;}
   .container {max-width: 100%;width:90%;padding:0px}
-  .mainHeading {font-size: 26px;}
+  .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;font-size: 26px;}
   .subtitle {font-size: 15px;margin-bottom: 15px;}
   .emblaSlide {flex: 0 0 100%;}
-  .stepCard {padding: 30px 15px 15px 15px;gap: 10px; margin-bottom: 1rem;}
+  /* Remove gap/padding so one card fills the carousel exactly */
+  .emblaContainer {gap: 0; padding-left: 0; padding-right: 0;}
+  .stepCard {padding: 30px 15px 15px 15px;gap: 10px; margin-bottom: 1rem; min-height: 180px;}
   .stepCard::before {height: 30px;}
   .playButton {width: 54px;height: 54px;}
   .stepDescription {font-size: 15px;}
@@ -271,4 +297,7 @@
   .contentGrid {gap: 10px;display:block}
   .videoColumn:before {top: unset;right: unset; bottom:0px;display:none;}
   .videoWrapper {max-width: 100%;margin: 0 auto;width:100%;}
+  .contentGrid.noImageGrid {padding-right: 0;}
 }
+
+

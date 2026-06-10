@@ -6,6 +6,7 @@
 
 .container {
   max-width: 1320px;
+  width: 90%;
   margin: 0 auto;
   padding: 0px;
 }
@@ -23,6 +24,8 @@
 }
 
 .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 45px;
   text-align: left;
@@ -154,6 +157,8 @@ background: linear-gradient(143.21deg, #F4F4F4 14.93%, #FFFFFF 61.75%);
   }
 
   .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
     text-align: center;
     font-size: 35px;
   }
@@ -177,6 +182,8 @@ background: linear-gradient(143.21deg, #F4F4F4 14.93%, #FFFFFF 61.75%);
   }
 
   .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
     font-size: 28px;
     margin-bottom: 30px;
   }
@@ -218,7 +225,9 @@ background: linear-gradient(143.21deg, #F4F4F4 14.93%, #FFFFFF 61.75%);
 @media (max-width: 599.98px) and (min-width: 320px) {
   .tenthSection {padding: 1.5rem 0px;}
   .container {max-width: 100%;width:90%;padding:0px}
-  .mainHeading {font-size: 26px;margin-bottom: 15px;}
+  .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;font-size: 26px;margin-bottom: 15px;}
   .emblaContainer {gap: 8px;display: flex;}
   .emblaSlide {flex: 0 0 88%;}
   .techName {font-size: 16px;padding: 15px 15px;}
@@ -232,3 +241,7 @@ background: linear-gradient(143.21deg, #F4F4F4 14.93%, #FFFFFF 61.75%);
   .desktopScreen {display: none;}
   .mobileScreen {display: flex; margin-top: 1rem;}
 }
+
+
+
+

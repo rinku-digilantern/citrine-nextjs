@@ -454,8 +454,7 @@
         const DOCTOR_HOURS_MAP = {
             'dr niti gaur': '10 AM – 5 PM',
             'dr guneet bedi': '10 AM – 6 PM',
-            'dr raheel khan': '11 AM – 8 PM',
-            'moonis khan': '11 AM – 8 PM'
+            'dr raheel khan': '11 AM – 8 PM'
         };
 
         // ─── Helpers ─────────────────────────────────────────────────────────
@@ -513,7 +512,6 @@
             if (n.includes('niti'))   { s = '10:00'; e = '17:00'; }
             else if (n.includes('guneet')) { s = '10:00'; e = '18:00'; }
             else if (n.includes('raheel')) { s = '11:00'; e = '20:00'; }
-            else if (n.includes('moonis')) { s = '11:00'; e = '20:00'; }
             if (s && e) return slotStartTime >= s && slotStartTime < e;
             return true;
         }
@@ -550,7 +548,7 @@
                 const response = await fetch(`${getApiUrl()}/get-doctor-list`);
                 const result = await response.json();
                 if ((result.status === 'success' || result.success === true) && result.data) {
-                    doctorsList = result.data;
+                    doctorsList = result.data.filter(doc => !doc.name.toLowerCase().includes('moonis'));
                     const sel = document.getElementById('qDoctor');
                     sel.innerHTML = '<option value="">Select Doctor</option>';
                     doctorsList.forEach(doc => {

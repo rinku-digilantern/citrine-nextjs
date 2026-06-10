@@ -23,6 +23,8 @@ import SixthSection from '@/src/app/components/ServiceInnerPage/SixthSection/Six
 import SeventhSection from '@/src/app/components/ServiceInnerPage/SeventhSection/SeventhSection';
 import EightSection from '@/src/app/components/ServiceInnerPage/EightSection/EightSection';
 import NinethSection from '@/src/app/components/ServiceInnerPage/NinethSection/NinethSection';
+import NinethSectionAlt from '@/src/app/components/ServiceInnerPage/NinethSectionAlt/NinethSectionAlt';
+import NinethSectionAlt2 from '@/src/app/components/ServiceInnerPage/NinethSectionAlt2/NinethSectionAlt2';
 import EleventhSection from '@/src/app/components/ServiceInnerPage/EleventhSection/EleventhSection';
 import TwelveSection from '@/src/app/components/ServiceInnerPage/TwelveSection/TwelveSection';
 import ThirteenSection from '@/src/app/components/ServiceInnerPage/ThirteenSection/ThirteenSection';
@@ -104,6 +106,18 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
 
   const imageBase = `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/`;
 
+  let noHeadingCardGridCount = 0;
+  let leftHeadingCount = 0;
+  let sectionIndex = 0;
+  const getBgStyle = () => {
+    const isLight = sectionIndex % 2 === 0;
+    sectionIndex++;
+    return {
+      '--section-bg': isLight ? '#FFFAF2' : '#F6EADB',
+      '--card-bg': isLight ? '#FFFFFF' : '#FFFAF2',
+    } as React.CSSProperties;
+  };
+
   return (
     <>
       <TopSection data={{
@@ -136,7 +150,7 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
 
         if (classAdd.includes('eleventhSection')) {
           return (
-            <div key={index} id={sectionId}>
+            <div key={index} id={sectionId} style={getBgStyle()}>
               <EleventhSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
             </div>
           );
@@ -146,13 +160,13 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
           case 'quickoverview':
             if (typeIndex === 0 || classAdd.includes('firstSection')) {
               return (
-                <div key={index} id={sectionId}>
+                <div key={index} id={sectionId} style={getBgStyle()}>
                   <FirstSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
                 </div>
               );
             } else {
               return (
-                <div key={index} id={sectionId}>
+                <div key={index} id={sectionId} style={getBgStyle()}>
                   <SixthSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
                 </div>
               );
@@ -161,7 +175,7 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
           case 'videosection':
             if (classAdd.includes('secondSection') || type === 'videosection') {
               return (
-                <div key={index} id={sectionId}>
+                <div key={index} id={sectionId} style={getBgStyle()}>
                   <SecondSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
                 </div>
               );
@@ -170,64 +184,84 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
 
           case 'fulltext':
             return (
-              <div key={index} id={sectionId}>
+              <div key={index} id={sectionId} style={getBgStyle()}>
                 <ThirdSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
               </div>
             );
 
           case 'threeparagraphnoheading':
-            if (typeIndex === 0) {
+          case 'threeparagraphdifferentlayout': {
+            const currentCount = noHeadingCardGridCount;
+            noHeadingCardGridCount++;
+            if (currentCount % 3 === 0) {
               return (
-                <div key={index} id={sectionId}>
+                <div key={index} id={sectionId} style={getBgStyle()}>
                   <ThirteenSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                </div>
+              );
+            } else if (currentCount % 3 === 1) {
+              return (
+                <div key={index} id={sectionId} style={getBgStyle()}>
+                  <FourthSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
                 </div>
               );
             } else {
               return (
-                <div key={index} id={sectionId}>
-                  <FourthSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                <div key={index} id={sectionId} style={getBgStyle()}>
+                  <FivethSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
                 </div>
               );
             }
-
-          case 'threeparagraphdifferentlayout':
-            return (
-              <div key={index} id={sectionId}>
-                <FivethSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
-              </div>
-            );
+          }
 
           case 'tabparagraphsection':
             return (
-              <div key={index} id={sectionId}>
+              <div key={index} id={sectionId} style={getBgStyle()}>
                 <SeventhSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
               </div>
             );
 
           case 'fulltextdifferentlayout':
             return (
-              <div key={index} id={sectionId}>
+              <div key={index} id={sectionId} style={getBgStyle()}>
                 <EightSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
               </div>
             );
 
-          case 'threeparagraphleftheading':
-            return (
-              <div key={index} id={sectionId}>
-                <NinethSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
-              </div>
-            );
+          case 'threeparagraphleftheading': {
+            const leftIdx = leftHeadingCount;
+            leftHeadingCount++;
+            if (leftIdx % 3 === 0) {
+              return (
+                <div key={index} id={sectionId} style={getBgStyle()}>
+                  <NinethSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                </div>
+              );
+            } else if (leftIdx % 3 === 1) {
+              return (
+                <div key={index} id={sectionId} style={getBgStyle()}>
+                  <NinethSectionAlt data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                </div>
+              );
+            } else {
+              return (
+                <div key={index} id={sectionId} style={getBgStyle()}>
+                  <NinethSectionAlt2 data={desc} headingtag={desc.heading_tag || service.heading_tag} />
+                </div>
+              );
+            }
+          }
 
           case 'twoparagraphsection':
             return (
-              <div key={index} id={sectionId}>
+              <div key={index} id={sectionId} style={getBgStyle()}>
                 <EleventhSection data={desc} headingtag={desc.heading_tag || service.heading_tag} />
               </div>
             );
 
           case 'threeparagraphsection':
             return (
-              <div key={index} id={sectionId}>
+              <div key={index} id={sectionId} style={getBgStyle()}>
                 <TwelveSection data={desc} headingtag={desc.heading_tag || service.heading_tag} subheadingtag={desc.sub_heading_tag} />
               </div>
             );
@@ -250,7 +284,7 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
                   name: (name && typeof name === 'string' ? name : '').toUpperCase(),
                   link: subUrls[i] ? `/${subUrls[i]}` : '#'
                 })).filter((item: any) => item.name);
-
+ 
                 if (t.length > 0) {
                   finalTabs.push({
                     id: key,
@@ -285,7 +319,7 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
             })).filter((b: any) => b.label);
 
             return (
-              <div key={index} id={sectionId}>
+              <div key={index} id={sectionId} style={getBgStyle()}>
                 <ColumnSection
                   sections={[{
                     id: sectionId,
@@ -308,13 +342,13 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
       })}
 
       {service.faq && (
-        <div id="faq">
+        <div id="faq" style={getBgStyle()}>
           <FaqSection faqData={parseFaqs(service.faq)} headingtag={service.heading_tag} />
         </div>
       )}
 
       {data.result && data.result.length > 0 && (
-        <div id="result">
+        <div id="result" style={getBgStyle()}>
           <ResultSection
             title={`${service.service_name} Results`}
             results={data.result.map((r: any) => ({
@@ -332,7 +366,7 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
       )}
 
       {data.technology && data.technology.length > 0 && (
-        <div id="technology">
+        <div id="technology" style={getBgStyle()}>
           <ServiceTechnologySection technology={data.technology} headingtag={service.heading_tag} />
         </div>
       )}
@@ -354,7 +388,7 @@ const ServiceInnerTemplate: React.FC<ServiceInnerTemplateProps> = ({ data }) => 
       )}
 
       {data.video && data.video.length > 0 && (
-        <div id="videos">
+        <div id="videos" style={getBgStyle()}>
           <ServiceVideoSection
             videos={data.video.map((v: any) => ({
               thumbnail: `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service_video/image/${v.image}`,

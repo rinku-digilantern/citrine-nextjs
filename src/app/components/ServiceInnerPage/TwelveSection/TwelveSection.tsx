@@ -38,7 +38,7 @@ const TwelveSection: React.FC<TwelveSectionProps> = ({ data, headingtag = 'div',
         )}
 
         {risks.length > 0 && (
-          <div className={styles.cardsGrid}>
+          <div className={styles.cardsGrid} style={{ '--grid-columns': Math.min(4, risks.length) } as React.CSSProperties}>
             {risks.map((risk: any) => {
               const CardHeadingTag = risk.tag as any;
               return (

@@ -1,15 +1,18 @@
 .eleventhSection {
   padding: 60px 0 40px 0px;
-  background-color: #FFFAF3;
+  background-color: var(--section-bg, #FFFAF3);
 }
 
 .container {
   max-width: 1320px;
+  width: 90%;
   margin: 0 auto;
   padding: 0px;
 }
 
 .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 45px;
   text-align: center;
@@ -64,7 +67,7 @@
 }
 
 .column {
-  background: #FFFAF2;
+  background: var(--card-bg, #FFFAF2);
   border: 1px solid #E5D7C3;
   box-shadow: 0px 10px 25px 0px #0000000D;
   padding: 0px 0px 20px 0px;
@@ -248,6 +251,8 @@
   }
 
   .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
     font-size: 38px;
     margin-bottom: 18px;
   }
@@ -264,6 +269,8 @@
   }
 
   .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;
     font-size: 32px;
     letter-spacing: 1px;
   }
@@ -273,17 +280,14 @@
     margin-bottom: 35px;
   }
 
-  .column {
-    padding: 30px 25px;
-  }
-
   .iconWrapper {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
   }
 
   .columnTitle {
-    font-size: 16px;
+    font-size: 20px;
+    margin-left: 75px;
   }
 
   .itemText {
@@ -299,7 +303,9 @@
 @media (max-width: 599.98px) and (min-width: 320px) {
   .eleventhSection {padding: 1.5rem 0px;}
   .container {max-width: 100%;width:90%;padding:0px}
-  .mainHeading {font-size: 26px;margin-bottom: 15px;letter-spacing: 0px;}
+  .mainHeading {
+  font-weight: 400;
+  text-transform: uppercase;font-size: 26px;margin-bottom: 15px;letter-spacing: 0px;}
   .subtitle {font-size: 15px;margin-bottom: 15px;}
   .column {padding: 15px;}
   .iconWrapper {width: 52px;height: 52px;}
@@ -313,3 +319,7 @@
   .bullet {font-size: 18px;}
   .contentGrid {gap: 10px;margin-bottom: 15px;}
 }
+
+
+
+
