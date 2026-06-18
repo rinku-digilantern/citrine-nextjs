@@ -4,6 +4,8 @@ import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import ConcernPage from '@/src/app/components/ConcernPage/ConcernPage';
 
+export const dynamic = 'force-dynamic';
+
 // TypeScript interfaces
 interface InnerConcern {
   id: number;
@@ -57,7 +59,7 @@ interface ConcernsApiResponse {
 // Fetch concerns data from API
 async function getConcernsData(): Promise<ConcernsApiResponse | null> {
   try {
-    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/service/concerns`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-category/concerns`, {
       cache: 'no-store',
     });
     
@@ -83,12 +85,24 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Concerns = async () => {
-    const concernsData = await getConcernsData();
+    const response: any = await getConcernsData();
+    
+    const formattedConcerns = response?.data?.servicelist?.map((item: any) => ({
+      id: item.ser_id,
+      name: item.service_name,
+      image: item.service_image,
+      short_desc: item.short_desc,
+      alt_tag: item.alt_tag,
+      url: item.url,
+    })) || [];
     
     return (
         <>
           <Breadcrumb />
-          <ConcernPage concernsData={concernsData?.data || []} />
+          <ConcernPage 
+            concernsData={formattedConcerns} 
+            title={response?.data?.service_name || "Concerns"} 
+          />
           <AppointmentSection />  
         </>
     )

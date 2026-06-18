@@ -69,6 +69,7 @@ const TopSection: React.FC<TopSectionProps> = ({ data }) => {
                 height={500}
                 alt={content.name}
                 className={styles.treatmentImage}
+                unoptimized
               />
             </div>
           </div>

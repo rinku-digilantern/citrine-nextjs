@@ -46,6 +46,7 @@ const ClinicGalleryPage: React.FC<ClinicGalleryPageProps> = ({ galleryData }) =>
                       width={720}
                       height={470}
                       className={styles.image}
+                      unoptimized
                     />
                   </div>
                   <div className={styles.imageTitle}>{item.alt_tag}</div>

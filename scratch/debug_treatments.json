@@ -1,0 +1,23 @@
+{
+  "title": "Success",
+  "data": [],
+  "cat": {
+    "id": 0,
+    "name": "Treatments",
+    "image": null,
+    "type": "image",
+    "alt_tag": null,
+    "description": null
+  },
+  "seo": {
+    "id": 0,
+    "page_name": "Treatments",
+    "title_tag": "Skin Treatments in Gurgaon | Skin Specialist | Citrine Clinic",
+    "keyword_tag": null,
+    "description_tag": "Are you looking for the best skin treatments clinic in Gurgaon? Visit Citrine Clinic, we are offering affordable skin problem treatments in Gurgaon.",
+    "canonical_tag": null,
+    "faq_schema": null,
+    "bred_schema": null,
+    "url": "treatments"
+  }
+}

@@ -55,7 +55,8 @@ const TreatmentPage: React.FC<TreatmentPageProps> = ({ treatmentsData, categoryN
                       src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${treatment.image}`}
                       alt={treatment.alt_tag || treatment.name}
                       width={600} 
-                      height={450} 
+                      height={450}
+                      unoptimized
                     />
                   </div>
                   <div className={styles.details}>

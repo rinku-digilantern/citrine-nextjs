@@ -7,14 +7,14 @@ import BlogBanner from '@/src/app/components/BlogDetails/BlogBanner/BlogBanner';
 import BlogContent from '@/src/app/components/BlogDetails/BlogContent/BlogContent';
 import RecentPost from '@/src/app/components/BlogDetails/RecentPost/RecentPost';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL;
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'https://api.citrineclinic.com/api';
 
 // ── Data Fetcher ──────────────────────────────────────────────────────────────
 // API shape: { success, data: {...}, seo: {...}, recent: [...], prev_url, next_url }
 async function getBlogData(slug: string) {
   try {
     const res = await fetch(`${API_BASE}/blog-detail/${slug}`, {
-      next: { revalidate: 3600 }
+      next: { revalidate: 60 }
     });
     if (!res.ok) return null;
     const text = await res.text();
@@ -55,17 +55,17 @@ export default async function BlogPostPage(
   return (
     <>
       {json.seo?.faq_schema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(json.seo.faq_schema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof json.seo.faq_schema === 'string' ? json.seo.faq_schema : JSON.stringify(json.seo.faq_schema)) }} />
       )}
       {json.seo?.bred_schema && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(json.seo.bred_schema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof json.seo.bred_schema === 'string' ? json.seo.bred_schema : JSON.stringify(json.seo.bred_schema)) }} />
       )}
       <Breadcrumb />
       <BlogBanner
         title={blog.blog_name || ''}
         date={blog.date || ''}
         image={blog.thumb_image
-          ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/blog/${blog.thumb_image}`
+          ? `${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://api.citrineclinic.com'}/backend/blog/${blog.thumb_image}`
           : '/assets/images/blogdetail/blogbanners.webp'}
         imageAlt={blog.alt_tag || blog.blog_name || ''}
       />

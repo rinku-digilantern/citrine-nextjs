@@ -4,6 +4,8 @@ import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import TreatmentPage from '@/src/app/components/TreatmentPage/TreatmentPage';
 
+export const dynamic = 'force-dynamic';
+
 interface TreatmentItem {
   id: number;
   name: string;
@@ -47,7 +49,7 @@ interface TreatmentsApiResponse {
 async function getTreatmentsData(): Promise<TreatmentsApiResponse> {
   try {
     // console.log('Fetching treatments data from API...');
-    const res = await fetch(`\${process.env.NEXT_PUBLIC_API_URL}/service/treatments`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/service-category/treatments`, {
       cache: 'no-store'
     });
 
@@ -58,10 +60,9 @@ async function getTreatmentsData(): Promise<TreatmentsApiResponse> {
     }
 
     const data = await res.json();
-    // console.log('Treatments data fetched successfully, items count:', data.data?.length);
     return data;
-  } catch (error) {
-    // console.error('Error fetching treatments data:', error);
+  } catch (error: any) {
+    console.error('Error fetching treatments data:', error);
     return {
       title: 'Success',
       data: [],
@@ -97,14 +98,23 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 const Treatments = async () => {
-  const treatmentsData = await getTreatmentsData();
+  const response: any = await getTreatmentsData();
+
+  const formattedTreatments = response?.data?.servicelist?.map((item: any) => ({
+    id: item.ser_id,
+    name: item.service_name,
+    image: item.service_image,
+    short_desc: item.short_desc,
+    alt_tag: item.alt_tag,
+    url: item.url,
+  })) || [];
 
   return (
     <>
       <Breadcrumb />
       <TreatmentPage
-        treatmentsData={treatmentsData.data}
-        categoryName={treatmentsData.cat?.name || 'Treatments'} />
+        treatmentsData={formattedTreatments}
+        categoryName={response?.data?.service_name || 'Treatments'} />
       <AppointmentSection />
     </>
   )

@@ -88,7 +88,8 @@ const VideoDetailsPage: React.FC<VideoDetailsPageProps> = ({ videoData }) => {
                       src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service_video/inner/${video.image}`}
                       alt={video.alt_tag} 
                       width={480} 
-                      height={360}/>
+                      height={360}
+                      unoptimized/>
                     <div 
                       className={styles.overlay}
                       onClick={() => openModal(video.video, video.name)}>

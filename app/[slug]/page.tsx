@@ -68,10 +68,10 @@ export default async function DynamicSlugPage({ params }: PageProps) {
     return (
       <>
         {data.seo?.faq_schema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.faq_schema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof data.seo.faq_schema === 'string' ? data.seo.faq_schema : JSON.stringify(data.seo.faq_schema)) }} />
         )}
         {data.seo?.bred_schema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.bred_schema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof data.seo.bred_schema === 'string' ? data.seo.bred_schema : JSON.stringify(data.seo.bred_schema)) }} />
         )}
         <ServiceCategoryPage data={data} />
       </>
@@ -98,10 +98,10 @@ export default async function DynamicSlugPage({ params }: PageProps) {
     return (
       <>
         {data.seo?.faq_schema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.faq_schema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof data.seo.faq_schema === 'string' ? data.seo.faq_schema : JSON.stringify(data.seo.faq_schema)) }} />
         )}
         {data.seo?.bred_schema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.bred_schema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof data.seo.bred_schema === 'string' ? data.seo.bred_schema : JSON.stringify(data.seo.bred_schema)) }} />
         )}
         <Breadcrumb />
         <ConcernPage title={data.data?.service_name} concernsData={mappedConcerns} />
@@ -118,10 +118,10 @@ export default async function DynamicSlugPage({ params }: PageProps) {
     return (
       <>
         {data.seo?.faq_schema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.faq_schema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof data.seo.faq_schema === 'string' ? data.seo.faq_schema : JSON.stringify(data.seo.faq_schema)) }} />
         )}
         {data.seo?.bred_schema && (
-          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data.seo.bred_schema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof data.seo.bred_schema === 'string' ? data.seo.bred_schema : JSON.stringify(data.seo.bred_schema)) }} />
         )}
         <ServiceInnerTemplate data={data} />
       </>

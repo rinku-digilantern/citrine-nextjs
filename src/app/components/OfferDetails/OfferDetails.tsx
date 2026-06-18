@@ -198,7 +198,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
             width={540}
             height={540}
             className={styles.offerImage}
-          />
+           unoptimized/>
           <div className={styles.discountTag}>{offer.offer_code || "Offer"}</div>
           <div className={styles.offerTitle}>{offer.offer_name || "Offer Title"}</div>
           <div className={styles.offerSubtitle}>{offer.offer_description || "Offer description not available."}</div>

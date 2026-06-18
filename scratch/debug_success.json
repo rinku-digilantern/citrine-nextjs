@@ -1,0 +1,1480 @@
+{
+  "success": true,
+  "data": {
+    "ser_id": 2,
+    "service_name": "Treatments",
+    "banner_image": null,
+    "video_type": "image",
+    "video_link": null,
+    "description": null,
+    "alt_tag": "Treatments",
+    "title_tag": null,
+    "keyword_tag": null,
+    "description_tag": null,
+    "canonical_tag": null,
+    "url": "treatments",
+    "servicelist": [
+      {
+        "ser_id": 5,
+        "parent_id": null,
+        "service_name": "Acne Scar Treatment in Gurgaon",
+        "name_desc": "Scars",
+        "short_desc": "<p>Acne scar treatment is a specialized dermatology procedure designed to reduce the appearance of scars left behind after acne. These treatments work",
+        "service_image": "1776509197_image.webp",
+        "alt_tag": "Acne Scar Treatment in Gurgaon",
+        "url": "acne-scar-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 6,
+        "parent_id": null,
+        "service_name": "Alopecia Areata Treatment in Gurgaon",
+        "name_desc": "Alopecia Areata",
+        "short_desc": "<p>Alopecia areata treatment is a specialized medical approach designed to help people who are facing sudden, patchy hair loss. This condition happens",
+        "service_image": "1776510109_image.webp",
+        "alt_tag": "Alopecia Areata Treatment in Gurgaon",
+        "url": "alopecia-areata-treatment-gurgaon"
+      },
+      {
+        "ser_id": 7,
+        "parent_id": null,
+        "service_name": "Androgenetic Alopecia ( Patterned hair loss and hair thinning)",
+        "name_desc": "Androgenetic Alopecia",
+        "short_desc": "<p>Androgenetic alopecia, usually known as patterned hair loss, is one of the most common causes of hair thinning. This condition is progressive, whic",
+        "service_image": "1776510437_image.webp",
+        "alt_tag": "Androgenetic Alopecia ( Patterned hair loss and hair thinning)",
+        "url": "androgenetic-alopecia"
+      },
+      {
+        "ser_id": 9,
+        "parent_id": null,
+        "service_name": "Anti-Wrinkle Injection in Gurgaon",
+        "name_desc": "Anti-Wrinkle Injection",
+        "short_desc": "<p>Anti-wrinkle injections are an effective way to reduce wrinkles and fine lines, ensuring that your skin appears youthful and smooth. If you are con",
+        "service_image": "1776510647_image.webp",
+        "alt_tag": "Anti-Wrinkle Injection in Gurgaon",
+        "url": "anti-wrinkle-injection-in-gurgaon"
+      },
+      {
+        "ser_id": 10,
+        "parent_id": null,
+        "service_name": "Artiqa Body Contouring Treatment in Gurgaon",
+        "name_desc": "Artiqa Body Contouring Treatment",
+        "short_desc": "<p>Stubborn fat deposits and uneven body contours can sometimes persist despite regular exercise and a healthy lifestyle. At Citrine Clinic, Dr. Niti ",
+        "service_image": "1776510920_image.webp",
+        "alt_tag": "ARTIQA Body Contouring Treatment in Gurgaon",
+        "url": "artiqa-body-contouring-treatment"
+      },
+      {
+        "ser_id": 11,
+        "parent_id": null,
+        "service_name": "Atopic Dermatitis Treatment in Gurgaon",
+        "name_desc": "Atopic Dermatitis Treatment",
+        "short_desc": "<p>Atopic dermatitis treatment is a specialized treatment that helps people manage a very common and persistent form of skin sensitivity. This conditi",
+        "service_image": "1776511171_image.webp",
+        "alt_tag": "Atopic Dermatitis Treatment in Gurgaon",
+        "url": "atopic-dermatitis-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 12,
+        "parent_id": null,
+        "service_name": "Body Ballancer Lymphatic Drainage Massage in Gurgaon",
+        "name_desc": "Body Ballancer Lymphatic Drainage Massage",
+        "short_desc": "<p><a id=\"_kj9ltho4a512\"></a>Body Ballancer Lymphatic Drainage is a non-invasive procedure that is developed to restore lymph flow, reduce fluid reten",
+        "service_image": "1779878480_image.webp",
+        "alt_tag": "Body Ballancer Lymphatic Drainage Massage in Gurgaon",
+        "url": "body-ballancer"
+      },
+      {
+        "ser_id": 13,
+        "parent_id": null,
+        "service_name": "Chemical Peel Treatment in Gurgaon",
+        "name_desc": "Chemical Treatment",
+        "short_desc": "<p>Chemical peel treatment is a procedure developed to improve tone, texture, and overall skin appearance. At Citrine Clinic, we customize chemical pe",
+        "service_image": "1779960443_image.webp",
+        "alt_tag": null,
+        "url": "chemical-peel-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 14,
+        "parent_id": null,
+        "service_name": "Best Acne Doctor in Gurgaon",
+        "name_desc": "Acne Treatment",
+        "short_desc": "<p>Acne is a common skin problem that generally manifests in the form of pimples, blackheads, whiteheads, or cysts on the face, back, chest, and shoul",
+        "service_image": "1776512416_image.webp",
+        "alt_tag": "Best Acne Doctor in Gurgaon",
+        "url": "acne-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 16,
+        "parent_id": null,
+        "service_name": "CO2 Fractional Laser Treatment in Gurgaon",
+        "name_desc": "CO2 Fractional Laser Treatment",
+        "short_desc": "<p>Skin concerns such as acne scars, pigmentation, uneven texture, fine lines, and sun damage often require targeted dermatological treatments for vis",
+        "service_image": "1776513592_image.webp",
+        "alt_tag": "CO2 Fractional Laser Treatment in Gurgaon",
+        "url": "co2-fractional-laser-treatment"
+      },
+      {
+        "ser_id": 17,
+        "parent_id": null,
+        "service_name": "Dermal Fillers Treatment in Gurgaon",
+        "name_desc": "Dermal Fillers",
+        "short_desc": "<p>Facial volume loss, under-eye hollowness, fine lines, and reduced skin elasticity are common concerns that can affect overall facial balance and yo",
+        "service_image": "1776513954_image.webp",
+        "alt_tag": "Dermal Fillers Treatment in Gurgaon",
+        "url": "dermal-fillers-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 18,
+        "parent_id": null,
+        "service_name": "Laser Resurfacing in Gurgaon",
+        "name_desc": "Laser Resurfacing",
+        "short_desc": "<p>Skin concerns such as acne scars, uneven texture, pigmentation, fine lines, and sun damage often require advanced treatments for visible and long-l",
+        "service_image": "1779868391_image.webp",
+        "alt_tag": "Laser Resurfacing in Gurgaon",
+        "url": "laser-resurfacing-in-gurgaon"
+      },
+      {
+        "ser_id": 19,
+        "parent_id": null,
+        "service_name": "Laser Toning in Gurgaon",
+        "name_desc": "Laser Toning",
+        "short_desc": "<p>Laser toning is one of the most effective non-surgical treatments for improving skin tone and reducing pigmentation. The procedure uses advanced la",
+        "service_image": "1776514606_image.webp",
+        "alt_tag": "Laser Toning in Gurgaon",
+        "url": "laser-toning-in-gurgaon"
+      },
+      {
+        "ser_id": 20,
+        "parent_id": null,
+        "service_name": "Laser Hair Reduction in Gurgaon",
+        "name_desc": "Laser Hair Reduction",
+        "short_desc": "<p>Unwanted hair growth can often become time-consuming to manage with regular methods like shaving, waxing, or threading. At Citrine Clinic, Dr. Niti",
+        "service_image": "1780896471_image.webp",
+        "alt_tag": "Laser Hair Reduction in Gurgaon",
+        "url": "laser-hair-reduction"
+      },
+      {
+        "ser_id": 21,
+        "parent_id": null,
+        "service_name": "Medifacials Treatment in Gurgaon",
+        "name_desc": "Medifacial",
+        "short_desc": "<p>Healthy, radiant skin requires treatments that go beyond temporary surface-level care. At Citrine Clinic, Dr. Niti Gaur offers customized skin reju",
+        "service_image": "1776516927_image.webp",
+        "alt_tag": "Medifacials Treatment in Gurgaon",
+        "url": "medifacial-for-pigmentation"
+      },
+      {
+        "ser_id": 23,
+        "parent_id": null,
+        "service_name": "PDRN Therapy in Gurgaon",
+        "name_desc": "PDRN Therapy",
+        "short_desc": "<p>Dull skin, dehydration, fine lines, and early signs of skin damage often require treatments that focus on deep skin repair and regeneration. At Cit",
+        "service_image": "1779867895_image.webp",
+        "alt_tag": "PDRN Therapy in Gurgaon",
+        "url": "pdrn-therapy"
+      },
+      {
+        "ser_id": 24,
+        "parent_id": null,
+        "service_name": "Pigmentation Treatment in Gurgaon",
+        "name_desc": "Hyperpigmentation",
+        "short_desc": "<p>Pigmentation is one of the common issues faced by many. This condition affects the skin&rsquo;s appearance by making it uneven and dull. With prope",
+        "service_image": "1776665322_image.webp",
+        "alt_tag": "Best Hyperpigmentation Treatment in Gurgaon",
+        "url": "hyperpigmentation-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 25,
+        "parent_id": null,
+        "service_name": "Warts and Corns",
+        "name_desc": "Warts and Corns",
+        "short_desc": "<p>Corns are tiny, thickened areas of skin, commonly on the feet and toes. It develops due to repeated pressure on the area. The corns appear as hard ",
+        "service_image": "1776665676_image.webp",
+        "alt_tag": "Warts and Corns",
+        "url": "warts-and-corns"
+      },
+      {
+        "ser_id": 26,
+        "parent_id": null,
+        "service_name": "Dandruff ( seborrhoeic capitis )",
+        "name_desc": "Dandruff",
+        "short_desc": "<p>Dandruff is one of the most common issues affecting the scalp, causing white flakes, itching, and discomfort. It might be a minor problem, but it c",
+        "service_image": "1776665955_image.webp",
+        "alt_tag": "Dandruff Treatment in Gurgaon",
+        "url": "dandruff"
+      },
+      {
+        "ser_id": 27,
+        "parent_id": null,
+        "service_name": "Dark Circles Treatment in Gurgaon",
+        "name_desc": "Dark Circles Treatment",
+        "short_desc": "<p>Dark circles treatment works to make the eyes look younger by reducing pigmentation and tiredness under the eyes.<strong> Dark circle treatment in ",
+        "service_image": "1776682619_image.webp",
+        "alt_tag": "Dark Circles Treatment in Gurgaon",
+        "url": "dark-circles-treatment-gurgaon"
+      },
+      {
+        "ser_id": 28,
+        "parent_id": null,
+        "service_name": "Dermapen 4 Treatment in Gurgaon",
+        "name_desc": "Dermapen 4",
+        "short_desc": "<p>Dermapen 4 treatment is an advanced skin procedure that helps improve skin texture, reduce scars, and boost natural collagen. It uses a microneedli",
+        "service_image": "1779879839_image.webp",
+        "alt_tag": "Dermapen 4 Treatment in Gurgaon",
+        "url": "dermapen-4"
+      },
+      {
+        "ser_id": 29,
+        "parent_id": null,
+        "service_name": "Dermaroller Treatment in Gurgaon",
+        "name_desc": "Dermaroller",
+        "short_desc": "<p>Dermaroller treatment is an excellent way to fix skin issues like acne scars, open pores, and fine lines without using lasers or harsh chemicals. T",
+        "service_image": "1776668061_image.webp",
+        "alt_tag": "Dermaroller Treatment in Gurgaon",
+        "url": "dermaroller-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 30,
+        "parent_id": null,
+        "service_name": "Ear Piercing in Gurgaon",
+        "name_desc": "Ear Piercing",
+        "short_desc": "<p>Ear piercing is a simple and popular cosmetic procedure. It is performed for cultural, aesthetic, or personal reasons. While people see it as a min",
+        "service_image": "1776668195_image.webp",
+        "alt_tag": "Ear Piercing in Gurgaon",
+        "url": "ear-piercing-gurgaon"
+      },
+      {
+        "ser_id": 31,
+        "parent_id": null,
+        "service_name": "Eczema Treatment in Gurgaon",
+        "name_desc": "Eczema",
+        "short_desc": "<p>Eczema treatment is a specialized treatment that helps people manage dry, itchy, and inflamed skin. This condition, also known as dermatitis, happe",
+        "service_image": "1776668475_image.webp",
+        "alt_tag": "Eczema Treatment in Gurgaon",
+        "url": "eczema-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 32,
+        "parent_id": null,
+        "service_name": "Eye Restore",
+        "name_desc": "Eye Restore",
+        "short_desc": "<p>Dark circles, under-eye puffiness, fine lines, and tired-looking eyes are common concerns that can affect the overall freshness and youthful appear",
+        "service_image": "1776668979_image.webp",
+        "alt_tag": "Eye Restore",
+        "url": "eye-restore"
+      },
+      {
+        "ser_id": 33,
+        "parent_id": null,
+        "service_name": "Forma RF Skin Tightening  in Gurgaon",
+        "name_desc": "Forma RF Skin Tightening",
+        "short_desc": "<p>Loss of skin firmness, mild sagging, fine lines, and reduced elasticity are common concerns that can develop with age and collagen depletion. At Ci",
+        "service_image": "1776669263_image.webp",
+        "alt_tag": "Forma RF Skin Tightening",
+        "url": "forma-rf-skin-tightening"
+      },
+      {
+        "ser_id": 34,
+        "parent_id": null,
+        "service_name": "Freckles Treatment in Gurgaon",
+        "name_desc": "Freckles Treatment",
+        "short_desc": "<p>Freckles are small, brown spots that usually appear on the parts exposed to the sun. These areas commonly include the face, arms, neck, and shoulde",
+        "service_image": "1776669553_image.webp",
+        "alt_tag": "Freckles",
+        "url": "freckles-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 35,
+        "parent_id": null,
+        "service_name": "FUE Hair Transplant in Gurgaon",
+        "name_desc": "FUE Hair Transplant",
+        "short_desc": "<p>FUE hair transplant is a hair restoration process with minimal invasion. It is developed to fix hair loss patterns and baldness while ensuring natu",
+        "service_image": "1776669654_image.webp",
+        "alt_tag": "FUE Hair Transplant in Gurgaon",
+        "url": "fue-hair-transplant-in-gurgaon"
+      },
+      {
+        "ser_id": 36,
+        "parent_id": null,
+        "service_name": "Fungal Infection Treatment in Gurgaon",
+        "name_desc": "Fungal Infection Treatment",
+        "short_desc": "<p>Fungal infection treatment helps in managing skin infections caused by fungi. It mainly affects areas like the face, feet, and scalp. Fungal infect",
+        "service_image": "1776669764_image.webp",
+        "alt_tag": "Fungal Infection Treatment in Gurgaon",
+        "url": "fungal-infections-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 37,
+        "parent_id": null,
+        "service_name": "Fungal Nail Infection Treatment in Gurgaon",
+        "name_desc": "Fungal Nail Infection Treatment",
+        "short_desc": "<p>Fungal nail infection is a common condition that affects the fingernails or toenails. It is also known as onychomycosis. It begins as a small white",
+        "service_image": "1776669885_image.webp",
+        "alt_tag": "Fungal Nail Infection",
+        "url": "fungal-nail-infection"
+      },
+      {
+        "ser_id": 38,
+        "parent_id": null,
+        "service_name": "FUT Hair Transplant in Gurgaon",
+        "name_desc": "FUT Hair Transplant",
+        "short_desc": "<p>FUT hair transplant is a modern hair restoration developed to treat severe hair loss and restore the natural density of hair.<strong>FUT hair trans",
+        "service_image": "1776669978_image.webp",
+        "alt_tag": "FUT Hair Transplant in Gurgaon",
+        "url": "fut-hair-transplant-in-gurgaon"
+      },
+      {
+        "ser_id": 39,
+        "parent_id": null,
+        "service_name": "GFC Hair Treatment  in Gurgaon",
+        "name_desc": "GFC Hair Treatment",
+        "short_desc": "<p>Hair thinning, excessive hair fall, and reduced hair density can affect both confidence and overall scalp health. At Citrine Clinic, Dr. Niti Gaur ",
+        "service_image": "1776670086_image.webp",
+        "alt_tag": "GFC Hair Treatment in Gurgaon",
+        "url": "gfc-hair-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 40,
+        "parent_id": null,
+        "service_name": "Growth Factor Injection Treatment in Gurgaon",
+        "name_desc": "Growth Factor Injection Treatment",
+        "short_desc": "<p>Growth factor injection treatment is a modern and highly effective way to naturally rejuvenate your skin and hair without surgery. This advanced th",
+        "service_image": "1776670419_image.webp",
+        "alt_tag": "Growth Factor Injection",
+        "url": "growth-factor-injection"
+      },
+      {
+        "ser_id": 41,
+        "parent_id": null,
+        "service_name": "Hair Loss Treatment in Gurgaon",
+        "name_desc": "Hair Loss Treatment",
+        "short_desc": "<p>Hair loss is a common issue affecting people from all walks of life. Losing a few hairs every day is quite normal, but anything in excess is harmfu",
+        "service_image": "1777365520_image.webp",
+        "alt_tag": null,
+        "url": "hair-loss-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 42,
+        "parent_id": null,
+        "service_name": "HIFU Treatment in Gurgaon",
+        "name_desc": "HIFU Treatment",
+        "short_desc": "<p>HIFU Treatment in Gurgaon is an advanced non-surgical procedure used for skin tightening and lifting by stimulating collagen production in deeper s",
+        "service_image": "1776671195_image.webp",
+        "alt_tag": "HIFU",
+        "url": "hifu"
+      },
+      {
+        "ser_id": 44,
+        "parent_id": null,
+        "service_name": "HydraFacial MD Treatment in Gurgaon",
+        "name_desc": "HydraFacial MD Treatment",
+        "short_desc": "<p>Your skin faces a lot every single day, the sun, pollution, stress, and endless layers of makeup. Over time, all of this leaves your skin looking d",
+        "service_image": "1777034998_image.webp",
+        "alt_tag": null,
+        "url": "hydrafacial-md"
+      },
+      {
+        "ser_id": 45,
+        "parent_id": null,
+        "service_name": "Ingrown Toenail Treatment in Gurgaon",
+        "name_desc": "Ingrown Toenail Treatment",
+        "short_desc": "<p>Ingrown toenail treatment is an effective process used to relieve pain and swelling. This infection is caused when the nail grows into the surround",
+        "service_image": "1776674741_image.webp",
+        "alt_tag": "Ingrown Toenails",
+        "url": "ingrown-toenails"
+      },
+      {
+        "ser_id": 46,
+        "parent_id": null,
+        "service_name": "Laser Hair Removal in Gurgaon",
+        "name_desc": "Laser Hair Removal",
+        "short_desc": "<p>Laser hair removal is a widely popular treatment specialising in offering long-term reduction of unwanted hair. <strong>Laser hair removal treatmen",
+        "service_image": "1776674872_image.webp",
+        "alt_tag": "Laser Hair Removal in Gurgaon",
+        "url": "laser-hair-removal-in-gurgaon"
+      },
+      {
+        "ser_id": 47,
+        "parent_id": null,
+        "service_name": "Laser Tattoo Removal Treatment in Gurgaon",
+        "name_desc": "Laser Tattoo Removal Treatment",
+        "short_desc": "<p>Laser tattoo removal treatment is a safe and effective way to remove unwanted tattoos using advanced laser technology. It works by breaking down ta",
+        "service_image": "1776675334_image.webp",
+        "alt_tag": "Laser Tattoo Removal Treatment in Gurgaon | Citrine Clinic",
+        "url": "laser-tattoo-removal-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 48,
+        "parent_id": null,
+        "service_name": "Lip Enhancement Surgery  in Gurgaon",
+        "name_desc": "Lip Enhancement Surgery",
+        "short_desc": "<p>Lip enhancement surgery aims at enhancing lip shape, volume, and symmetry for a more harmonious and aligned appearance. At Citrine Clinic, advanced",
+        "service_image": "1776675532_image.webp",
+        "alt_tag": "Lip Enhancement",
+        "url": "lip-enhancement-surgery-in-gurgaon"
+      },
+      {
+        "ser_id": 49,
+        "parent_id": null,
+        "service_name": "Melasma Treatment in Gurgaon",
+        "name_desc": "Melasma Treatment",
+        "short_desc": "<p>Melasma is a common skin condition described by dark and patchy pigmentation. This condition generally appears on the face, especially on the cheek",
+        "service_image": "1776675719_image.webp",
+        "alt_tag": "Melasma Treatment in Gurgaon",
+        "url": "melasma-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 50,
+        "parent_id": null,
+        "service_name": "Mesotherapy Treatment in Gurgaon",
+        "name_desc": "Mesotherapy Treatment",
+        "short_desc": "<p>Mesotherapy treatment is a non-surgical skin and hair procedure that helps improve skin quality, reduce hair fall, and restore a healthy, fresh loo",
+        "service_image": "1776675944_image.webp",
+        "alt_tag": "Mesotherapy Treatment Cost in Gurgaon",
+        "url": "mesotherapy-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 51,
+        "parent_id": null,
+        "service_name": "Microdermabrasion Treatment in Gurgaon",
+        "name_desc": "Microdermabrasion Treatment",
+        "short_desc": "<p>Microdermabrasion treatment is a gentle skin polishing procedure that helps remove dead skin cells and improve overall skin texture. It is a non-in",
+        "service_image": "1779966633_image.webp",
+        "alt_tag": null,
+        "url": "microdermabrasion-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 52,
+        "parent_id": null,
+        "service_name": "Microneedling Treatment in Gurgaon",
+        "name_desc": "Microneedling Treatment",
+        "short_desc": "<p>Microneedling treatment is a popular skin procedure that helps improve texture, reduce scars, and boost natural skin repair. It works by creating t",
+        "service_image": "1776682337_image.webp",
+        "alt_tag": "Microneedling",
+        "url": "microneedling"
+      },
+      {
+        "ser_id": 53,
+        "parent_id": null,
+        "service_name": "Morpheus8 Treatment in Gurgaon",
+        "name_desc": "Morpheus8 Treatment",
+        "short_desc": "<p>Morpheus8 Treatment in Gurgaon is an advanced skin rejuvenation procedure that combines microneedling with radiofrequency (RF) energy to remodel de",
+        "service_image": "1776683053_image.webp",
+        "alt_tag": "Morpheus8 Treatment",
+        "url": "morpheus8-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 54,
+        "parent_id": null,
+        "service_name": "Oily Scalp Treatment in Gurgaon",
+        "name_desc": "Oily Scalp Treatment",
+        "short_desc": "<p>An oily scalp is a common hair and scalp issue that occurs due to excessive oil production. Oil is necessary for maintaining scalp hydration and ha",
+        "service_image": "1776683246_image.webp",
+        "alt_tag": "Oily scalp",
+        "url": "oily-scalp"
+      },
+      {
+        "ser_id": 55,
+        "parent_id": null,
+        "service_name": "Oily Skin Treatment in Gurgaon",
+        "name_desc": "Oily Skin Treatment",
+        "short_desc": "<p>Oily skin is a common skin condition that occurs due to excessive production of sebum (oily substance) from the sebaceous glands. Sebum is an essen",
+        "service_image": "1776683385_image.webp",
+        "alt_tag": "Oily Skin",
+        "url": "oily-skin-for-acne"
+      },
+      {
+        "ser_id": 56,
+        "parent_id": null,
+        "service_name": "Open Pores Treatment in Gurgaon",
+        "name_desc": "Open Pores Treatment",
+        "short_desc": "<p>Open pore treatment is an advanced skin solution intended to improve the skin texture and noticeably reduce enlarged pores. At Citrine Clinic<stron",
+        "service_image": "1776683655_image.webp",
+        "alt_tag": "Open Pores Treatment in Gurgaon",
+        "url": "open-pores"
+      },
+      {
+        "ser_id": 57,
+        "parent_id": null,
+        "service_name": "Oxygen Facial Treatment in Gurgaon",
+        "name_desc": "Oxygen Facial Treatment",
+        "short_desc": "<p>Oxygen facial treatment is a non-surgical procedure that revitalizes the skin. This procedure is designed to brighten, hydrate, and rejuvenate dull",
+        "service_image": "1776683787_image.webp",
+        "alt_tag": "Oxygen Facial Treatment in Gurgaon",
+        "url": "oxygen-facial-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 58,
+        "parent_id": null,
+        "service_name": "Photofacial Treatment in Gurgaon",
+        "name_desc": "Photofacial Treatment",
+        "short_desc": "<p>Photofacial treatment is a modern skin procedure that uses light-based technology to clear up your complexion. Often called IPL (Intense Pulsed Lig",
+        "service_image": "1776684126_image.webp",
+        "alt_tag": "Photofacial Treatment in Gurgaon",
+        "url": "photofacial-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 59,
+        "parent_id": null,
+        "service_name": "Profhilo Treatment in Gurgaon",
+        "name_desc": "Profhilo Treatment",
+        "short_desc": "<p>Profhilo treatment is an advanced injectable skin treatment designed to improve skin quality, hydration, and firmness. Unlike traditional fillers, ",
+        "service_image": "1779878557_image.webp",
+        "alt_tag": "Profhilo",
+        "url": "profhilo"
+      },
+      {
+        "ser_id": 60,
+        "parent_id": null,
+        "service_name": "P-R-P Therapy in Gurgaon",
+        "name_desc": "P-R-P Therapy",
+        "short_desc": "<p>P-R-P Therapy in Gurgaon is a regenerative treatment that uses Platelet-Rich Plasma derived from the patient&rsquo;s own blood to promote healing, ",
+        "service_image": "1779884456_image.webp",
+        "alt_tag": "P-R-P Therapy",
+        "url": "p-r-p-therapy-in-gurgaon"
+      },
+      {
+        "ser_id": 61,
+        "parent_id": null,
+        "service_name": "Psoriasis Treatment in Gurgaon",
+        "name_desc": "Psoriasis Treatment",
+        "short_desc": "<p>Psoriasis treatment aims to manage a chronic skin condition that causes red and inflamed patches on the skin. This is an autoimmune condition that ",
+        "service_image": "1776685163_image.webp",
+        "alt_tag": "Psoriasis Treatment in Gurgaon",
+        "url": "psoriasis-treatment-gurgaon"
+      },
+      {
+        "ser_id": 62,
+        "parent_id": null,
+        "service_name": "Pumpkin Medifacial  in Gurgaon",
+        "name_desc": "Pumpkin Medifacial",
+        "short_desc": "<p>Dullness, uneven texture, dehydration, and tired-looking skin often need more than regular facials to restore a healthy glow. At Citrine Clinic, Dr",
+        "service_image": "1776686170_image.webp",
+        "alt_tag": "Pumpkin Medifacial",
+        "url": "pumpkin-medi-facial"
+      },
+      {
+        "ser_id": 63,
+        "parent_id": null,
+        "service_name": "Pumpkin Peel Treatment in Gurgaon",
+        "name_desc": "Pumpkin Peel Treatment",
+        "short_desc": "<p>Pumpkin peel facial treatment is a procedure to revitalize the skin. This procedure is designed to exfoliate dead skin cells, enhance the skin text",
+        "service_image": "1776686311_image.webp",
+        "alt_tag": "Pumpkin Peel facial",
+        "url": "pumpkin-peel-facial-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 64,
+        "parent_id": null,
+        "service_name": "Repechage Medifacial  in Gurgaon",
+        "name_desc": "Repechage Medifacial",
+        "short_desc": "<p>Dryness, dullness, uneven texture, and tired-looking skin often require targeted skincare treatments that focus on deep nourishment and hydration. ",
+        "service_image": "1780389744_image.webp",
+        "alt_tag": "Repechage Medi Facial in Gurgaon",
+        "url": "repechage-medi-facial-in-gurgaon"
+      },
+      {
+        "ser_id": 65,
+        "parent_id": null,
+        "service_name": "Rosacea Treatment in Gurgaon",
+        "name_desc": "Rosacea Treatment",
+        "short_desc": "<p>Rosacea treatment is a specialized treatment that helps manage sensitivity, and redness on the face. This skin condition appears as constant rednes",
+        "service_image": "1776686978_image.webp",
+        "alt_tag": "Rosacea Treatment in Gurgaon",
+        "url": "rosacea-for-acne"
+      },
+      {
+        "ser_id": 66,
+        "parent_id": null,
+        "service_name": "Semi-Permanent Makeup Treatment in Gurgaon",
+        "name_desc": "Semi-Permanent Makeup",
+        "short_desc": "<p>Semi-permanent makeup is a cosmetic treatment developed to enhance the features for long-lasting results. This process shapes the eyebrows, eyes, a",
+        "service_image": "1776687156_image.webp",
+        "alt_tag": "SPMU",
+        "url": "spmu"
+      },
+      {
+        "ser_id": 67,
+        "parent_id": null,
+        "service_name": "Sensitive Skin Treatment in Gurgaon",
+        "name_desc": "Sensitive Skin Treatment",
+        "short_desc": "<p>Sensitive skin is a common skin concern that affects individuals irrespective of their age. People having sensitive skin usually deal with redness,",
+        "service_image": "1776687479_image.webp",
+        "alt_tag": "Sensitive skin",
+        "url": "sensitive-skin-for-acne"
+      },
+      {
+        "ser_id": 68,
+        "parent_id": null,
+        "service_name": "Skin Lightening Treatment in Gurgaon",
+        "name_desc": "Skin Lightening Treatment",
+        "short_desc": "<p>Skin lightening treatment is a widely chosen dermatology procedure that helps improve skin tone, reduce pigmentation, and give a brighter and more ",
+        "service_image": "1776687749_image.webp",
+        "alt_tag": "Skin Lightening Treatment in Gurgaon",
+        "url": "skin-lightening-treatment-gurgaon"
+      },
+      {
+        "ser_id": 69,
+        "parent_id": null,
+        "service_name": "Skin Resurfacing Treatment in Gurgaon",
+        "name_desc": "Skin Resurfacing Treatment",
+        "short_desc": "<p>Skin resurfacing treatment is a popular dermatology procedure that helps improve skin texture, reduce marks, and bring back a healthy glow. It work",
+        "service_image": "1777030413_image.webp",
+        "alt_tag": "Skin Resurfacing Treatment",
+        "url": "skin-resurfacing-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 70,
+        "parent_id": null,
+        "service_name": "Skin Tightening Treatment in Gurgaon",
+        "name_desc": "Skin Tightening Treatment",
+        "short_desc": "<p>Skin tightening treatment is a non-surgical dermatology procedure that helps improve loose or sagging skin and restore a firmer, more youthful look",
+        "service_image": "1777029589_image.webp",
+        "alt_tag": null,
+        "url": "skin-tightening-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 71,
+        "parent_id": null,
+        "service_name": "Skin Whitening Treatment in Gurgaon",
+        "name_desc": "Skin Whitening Treatment",
+        "short_desc": "<p>Skin whitening treatment is a dermatology-based solution that helps reduce pigmentation, improve uneven skin tone, and give the skin a brighter and",
+        "service_image": "1776688012_image.webp",
+        "alt_tag": "Skin Whitening Treatment in Gurgaon",
+        "url": "skin-whitening-treatment-gurgaon"
+      },
+      {
+        "ser_id": 73,
+        "parent_id": null,
+        "service_name": "Telogen Effluvium Treatment in Gurgaon",
+        "name_desc": "Telogen Effluvium Treatment",
+        "short_desc": "<p>Telogen effluvium is a type of hair loss described by excessive fall of hair in a short time. This condition causes noticeable hair fall while wash",
+        "service_image": "1776689029_image.webp",
+        "alt_tag": "Telogen Effluvium",
+        "url": "telogen-effluvium"
+      },
+      {
+        "ser_id": 74,
+        "parent_id": null,
+        "service_name": "Thread Lift Treatment in Gurgaon",
+        "name_desc": "Thread Lift Treatment",
+        "short_desc": "<p>Thread lift treatment is a minimally invasive procedure used to tighten and lift sagging skin to enhance the appearance. At Citrine Clinic, advance",
+        "service_image": "1776689412_image.webp",
+        "alt_tag": "Thread lift Treatment in Gurgaon",
+        "url": "thread-lift-treatment-gurgaon"
+      },
+      {
+        "ser_id": 75,
+        "parent_id": null,
+        "service_name": "Total ClearLift Treatment in Gurgaon",
+        "name_desc": "Total ClearLift Treatment",
+        "short_desc": "<p>Total clearlift treatment is a modern laser skin treatment that helps improve skin tone, reduce pigmentation, and give a smoother and brighter look",
+        "service_image": "1776752057_image.webp",
+        "alt_tag": "Total ClearLift Treatment in Gurgaon",
+        "url": "total-clearlift-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 76,
+        "parent_id": null,
+        "service_name": "Uneven Skin Tone Treatment in Gurgaon",
+        "name_desc": "Uneven Skin Tone Treatment",
+        "short_desc": "<p>Uneven skin tone is a skin issue defined by discoloration, redness, or pigmentation. The dullness causes the skin to appear irregular and less brig",
+        "service_image": "1776752450_image.webp",
+        "alt_tag": "Uneven Skin Tone",
+        "url": "uneven-skin-tone"
+      },
+      {
+        "ser_id": 77,
+        "parent_id": null,
+        "service_name": "Urticaria Treatment in Gurgaon",
+        "name_desc": "Urticaria Treatment",
+        "short_desc": "<p>Urticaria, generally known as hives, is a skin condition defined by red and swollen patches. These patches appear suddenly on the skin and may vary",
+        "service_image": "1776752716_image.webp",
+        "alt_tag": "Urticaria Treatment in Gurgaon",
+        "url": "urticaria-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 78,
+        "parent_id": null,
+        "service_name": "Vampire Facelift Treatment in Gurgaon",
+        "name_desc": "Vampire Facelift Treatment",
+        "short_desc": "<p>Vampire facelift treatment is a modern, non-surgical solution for those who want to restore facial volume and youthful skin without going under the",
+        "service_image": "1776752960_image.webp",
+        "alt_tag": "Vampire Facelift Treatment in Gurgaon",
+        "url": "vampire-facelift-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 79,
+        "parent_id": null,
+        "service_name": "Warts Treatment in Gurgaon",
+        "name_desc": "Warts Treatment",
+        "short_desc": "<p>Warts are small, rough skin growths that can appear on different parts of the body like hands, feet, face, or neck. They are caused by a virus and ",
+        "service_image": "1776753242_image.webp",
+        "alt_tag": null,
+        "url": "warts-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 80,
+        "parent_id": null,
+        "service_name": "ZO Obagi Medifacial in Gurgaon",
+        "name_desc": "ZO Obagi Medifacial",
+        "short_desc": "<p><strong>ZO Obagi Medifacial in Gurgaon</strong> is a result-driven skin treatment designed using medical-grade skincare by ZO Skin Health. It focus",
+        "service_image": "1776753428_image.webp",
+        "alt_tag": "ZO Obagi Medi Facial",
+        "url": "zo-obagi-medi-facial"
+      },
+      {
+        "ser_id": 81,
+        "parent_id": null,
+        "service_name": "Microblading in Gurgaon",
+        "name_desc": "Microblading",
+        "short_desc": "<p>Microblading is a cosmetic procedure that is widely popular for giving a boost to the look of the eyebrows. It helps people to have full and well-s",
+        "service_image": "1776753735_image.webp",
+        "alt_tag": null,
+        "url": "microblading"
+      },
+      {
+        "ser_id": 83,
+        "parent_id": null,
+        "service_name": "Rich Peel Advance Treatment in Gurgaon",
+        "name_desc": "Rich Peel Advance Treatment",
+        "short_desc": "<p>Rich peel advance treatment is an aesthetic procedure that helps refresh dull, tired, and ageing skin, making it look healthier and more radiant. U",
+        "service_image": "1776772468_image.webp",
+        "alt_tag": "Rich Peel Advance",
+        "url": "rich-peel-advance"
+      },
+      {
+        "ser_id": 84,
+        "parent_id": null,
+        "service_name": "Aptos Thread Lift Treatment in Gurgaon",
+        "name_desc": "Aptos Thread Lift Treatment",
+        "short_desc": "<p>Aptos thread lift treatment is an advanced and effective way to lift sagging skin without undergoing major surgery. As we get older, our skin natur",
+        "service_image": "1776772860_image.webp",
+        "alt_tag": "Aptos Thread Lift",
+        "url": "aptos-thread-lift"
+      },
+      {
+        "ser_id": 85,
+        "parent_id": null,
+        "service_name": "Ultherapy Treatment in Gurgaon",
+        "name_desc": "Ultherapy Treatment",
+        "short_desc": "<p>Ultherapy is a procedure that helps to tighten and lift your skin without undergoing surgery. As we age, the skin starts to lose firmness, which le",
+        "service_image": "1780390352_image.webp",
+        "alt_tag": "Ultherapy",
+        "url": "ultherapy"
+      },
+      {
+        "ser_id": 86,
+        "parent_id": null,
+        "service_name": "Exosomes Treatment for Skin in Gurgaon",
+        "name_desc": "Exosomes Treatment for Skin",
+        "short_desc": "<p><strong>Exosomes Treatment for Skin in Gurgaon</strong></p>\r\n\r\n<p>Your skin goes through a lot every single day i.e. sun exposure, pollution, stres",
+        "service_image": "1776773959_image.webp",
+        "alt_tag": "Exosomes Treatment for Skin in Gurgaon",
+        "url": "exosomes-treatment-for-skin-in-gurgaon"
+      },
+      {
+        "ser_id": 87,
+        "parent_id": null,
+        "service_name": "Exosomes Treatment for Hair in Gurgaon",
+        "name_desc": "Exosomes Treatment for Hair",
+        "short_desc": "<p>Exosomes treatment for hair is a modern solution that helps improve hair growth and scalp health in a natural way. Hair fall, thinning, and weak ro",
+        "service_image": "1780386897_image.webp",
+        "alt_tag": "Exosomes Treatment for Hair",
+        "url": "exosomes-therapy"
+      },
+      {
+        "ser_id": 88,
+        "parent_id": null,
+        "service_name": "Bridal Dermatology Treatment in Gurgaon",
+        "name_desc": "Bridal Dermatology Treatment",
+        "short_desc": "<p>Bridal dermatology treatment<strong> </strong>is a personalized skincare plan designed to help brides achieve clear, glowing, and healthy skin befo",
+        "service_image": "1776774410_image.webp",
+        "alt_tag": "Bridal Dermatology Treatment",
+        "url": "bridal-dermatology-treatment"
+      },
+      {
+        "ser_id": 89,
+        "parent_id": null,
+        "service_name": "Scanty Eyebrows Treatment in Gurgaon",
+        "name_desc": "Scanty Eyebrows Treatment",
+        "short_desc": "<p>Eyebrows significantly contribute to framing the face and enhancing the overall facial expressions. Fuller eyebrows make the facial symmetry more a",
+        "service_image": "1776774665_image.webp",
+        "alt_tag": "Scanty eyebrows",
+        "url": "scanty-eyebrows"
+      },
+      {
+        "ser_id": 90,
+        "parent_id": null,
+        "service_name": "Age Spots and Pigmentation Treatment in Gurgaon",
+        "name_desc": "Age Spots and Pigmentation Treatment",
+        "short_desc": "<p>Age spots show up on your skin as you grow older; however, they make your face appear dull and may not go away with simple care because they need a",
+        "service_image": "1776774924_image.webp",
+        "alt_tag": "Age spots and pigmentation",
+        "url": "age-spots-and-pigmentation"
+      },
+      {
+        "ser_id": 91,
+        "parent_id": null,
+        "service_name": "CO2 Laser Resurfacing Treatment in Gurgaon",
+        "name_desc": "CO2 Laser Resurfacing Treatment",
+        "short_desc": "<p>CO2 laser resurfacing treatment is a popular and advanced skin treatment that helps improve texture, reduce scars, and make your skin look smoother",
+        "service_image": "1776775129_image.webp",
+        "alt_tag": "CO2 Laser Resurfacing",
+        "url": "co2-laser-resurfacing"
+      },
+      {
+        "ser_id": 92,
+        "parent_id": null,
+        "service_name": "Rough Skin Texture Treatment in Gurgaon",
+        "name_desc": "Rough Skin Texture Treatment",
+        "short_desc": "<p>Healthy and youthful skin represents a person&#39;s overall health; however, many people experience rough skin texture, which makes the skin dull a",
+        "service_image": "1776775659_image.webp",
+        "alt_tag": "Rough Skin Texture",
+        "url": "rough-skin-texture"
+      },
+      {
+        "ser_id": 94,
+        "parent_id": null,
+        "service_name": "Loss of Facial Volume Treatment in Gurgaon",
+        "name_desc": "Loss of Facial Volume Treatment",
+        "short_desc": "<p>Facial volume maintains a youthful, well-balanced, and healthy appearance. With time and age, the face loses fat, elasticity, and collagen, which l",
+        "service_image": "1776775824_image.webp",
+        "alt_tag": "Loss of Facial Volume",
+        "url": "loss-of-facial-volume"
+      },
+      {
+        "ser_id": 95,
+        "parent_id": null,
+        "service_name": "Skin Boosters in Gurgaon",
+        "name_desc": "Skin Boosters",
+        "short_desc": "<p>When someone follows a healthy routine, their glowing skin is associated with hydration, smooth texture, and even tone. Some lifestyle factors, suc",
+        "service_image": "1776776131_image.webp",
+        "alt_tag": "Skin Boosters",
+        "url": "skin-boosters"
+      },
+      {
+        "ser_id": 96,
+        "parent_id": null,
+        "service_name": "Blood-derived Growth Factors in Gurgaon",
+        "name_desc": "Blood-derived Growth Factors",
+        "short_desc": "<p>Dermatology has been advancing with each passing day, as people seek natural and minimally invasive ways for skin rejuvenation. One of the most adv",
+        "service_image": "1780386535_image.webp",
+        "alt_tag": "Blood-derived Growth Factors",
+        "url": "blood-derived-growth-factors"
+      },
+      {
+        "ser_id": 101,
+        "parent_id": null,
+        "service_name": "Double Chin Treatment in Gurgaon",
+        "name_desc": "Double Chin Treatment",
+        "short_desc": "<p>A double chin is a common concern among people across various age groups. It is the accumulation of excess fat or sagging skin beneath the chin. It",
+        "service_image": "1776854122_image.webp",
+        "alt_tag": "Double Chin",
+        "url": "double-chin"
+      },
+      {
+        "ser_id": 102,
+        "parent_id": null,
+        "service_name": "Dehydrated Skin Treatment in Gurgaon",
+        "name_desc": "Dehydrated Skin Treatment",
+        "short_desc": "<p>Dehydrated skin has become a common skin concern that occurs due to lack of water content in the skin. People often get confused about dry (skin ty",
+        "service_image": "1776855401_image.webp",
+        "alt_tag": "Dehydrated Skin",
+        "url": "dehydrated-skin"
+      },
+      {
+        "ser_id": 103,
+        "parent_id": null,
+        "service_name": "Ageing Hands and Feet Treatment in Gurgaon",
+        "name_desc": "Ageing Hands and Feet Treatment",
+        "short_desc": "<p>When it comes to skincare, most people focus primarily on the face, and the hands and feet remain overlooked. Despite being among the first areas t",
+        "service_image": "1776855594_image.webp",
+        "alt_tag": "Ageing Hands and Feet",
+        "url": "ageing-hands-and-feet"
+      },
+      {
+        "ser_id": 104,
+        "parent_id": null,
+        "service_name": "Ear Lobe Repair Treatment in Gurgaon",
+        "name_desc": "Ear Lobe Repair Treatment",
+        "short_desc": "<p>Earlobe damage is a common issue that affects both men and women. Earlobes are often torn, split, or stretched due to heavy earrings, accidental pu",
+        "service_image": "1776855804_image.webp",
+        "alt_tag": "Ear Lobe Repair",
+        "url": "ear-lobe-repair"
+      },
+      {
+        "ser_id": 105,
+        "parent_id": null,
+        "service_name": "Wrinkles Treatment in Gurgaon",
+        "name_desc": "Wrinkles Treatment",
+        "short_desc": "<p>Out of all the impossible things that humans can&rsquo;t have control over, aging is the topmost. As people age, wrinkles come along like a long-lo",
+        "service_image": "1776856112_image.webp",
+        "alt_tag": "Wrinkles",
+        "url": "wrinkles"
+      },
+      {
+        "ser_id": 107,
+        "parent_id": null,
+        "service_name": "ClearLift Laser Treatment in Gurgaon",
+        "name_desc": "ClearLift Laser Treatment",
+        "short_desc": "<p>ClearLift laser treatment is a gentle and advanced way to improve your skin without any pain or downtime. It helps reduce pigmentation, fine lines,",
+        "service_image": "1776856682_image.webp",
+        "alt_tag": "Clearlift Laser",
+        "url": "clearlift-laser"
+      },
+      {
+        "ser_id": 108,
+        "parent_id": null,
+        "service_name": "Eye Pla-te-let-rich Fibrin (PRF) therapy in Gurgaon",
+        "name_desc": "Eye Pla-te-let-rich Fibrin (PRF) therapy",
+        "short_desc": "<p>Eye Pla-te-let-rich Fibrin (PRF) therapy is an advanced way to improve the delicate skin around your eyes. The under-eye area is usually the first ",
+        "service_image": "1780389370_image.webp",
+        "alt_tag": "Eye Pla-te-let-rich fibrin (PRF) therapy",
+        "url": "eye-pla-te-let-rich-fibrin-prf-therapy"
+      },
+      {
+        "ser_id": 109,
+        "parent_id": null,
+        "service_name": "Eye Perk Treatment in Gurgaon",
+        "name_desc": "Eye Perk Treatment",
+        "short_desc": "<p>Eye perk treatment is a gentle and refreshing solution designed to improve the delicate skin around your eyes. The under-eye area often shows early",
+        "service_image": "1776857104_image.webp",
+        "alt_tag": "Eye Perk",
+        "url": "eye-perk"
+      },
+      {
+        "ser_id": 110,
+        "parent_id": null,
+        "service_name": "Under-Eye Puffiness Treatment in Gurgaon",
+        "name_desc": "Under-Eye Puffiness Treatment",
+        "short_desc": "<p>Under-eye puffiness is a common concern that affects people irrespective of age. Under-eye puffiness makes a person look stressed, worn out, and ol",
+        "service_image": "1776857758_image.webp",
+        "alt_tag": "Under Eye Puffiness",
+        "url": "under-eye-puffiness"
+      },
+      {
+        "ser_id": 111,
+        "parent_id": null,
+        "service_name": "Wrinkles and Crow’s Feet Treatment in Gurgaon",
+        "name_desc": "Wrinkles and Crow’s Feet Treatment",
+        "short_desc": "<p>Among the noticeable signs of aging, wrinkles and crow&rsquo;s feet are among the earliest and most visible. Crow&rsquo;s feet are the fine lines t",
+        "service_image": "1776857875_image.webp",
+        "alt_tag": "Wrinkles and Crow's Feet",
+        "url": "wrinkles-and-crows-feet"
+      },
+      {
+        "ser_id": 112,
+        "parent_id": null,
+        "service_name": "Sagging Skin Treatment in Gurgaon",
+        "name_desc": "Sagging Skin Treatment",
+        "short_desc": "<p>Sagging skin is a common concern that occurs when the skin loses its firmness and elasticity. This phase is natural and occurs with aging, but it c",
+        "service_image": "1776858530_image.webp",
+        "alt_tag": "Sagging Skin",
+        "url": "sagging-skin"
+      },
+      {
+        "ser_id": 113,
+        "parent_id": null,
+        "service_name": "Under-Eye Fillers Treatment in Gurgaon",
+        "name_desc": "Under-Eye Fillers Treatment",
+        "short_desc": "<p>Among the common concerns individuals face today, dark circles and hollow under-eyes are the most common. Various factors, such as aging, stress, u",
+        "service_image": "1776858728_image.webp",
+        "alt_tag": "Under Eye Fillers",
+        "url": "under-eye-fillers"
+      },
+      {
+        "ser_id": 114,
+        "parent_id": null,
+        "service_name": "Stretch Marks Treatment in Gurgaon",
+        "name_desc": "Stretch Marks Treatment",
+        "short_desc": "<p>Stretch marks are a common skin concern that affects both men and women. These marks show up as lines on the skin and usually develop when the skin",
+        "service_image": "1776858843_image.webp",
+        "alt_tag": "Stretch Marks Treatment in Gurgaon",
+        "url": "stretch-marks-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 115,
+        "parent_id": null,
+        "service_name": "Dark Spots Treatment in Gurgaon",
+        "name_desc": "Dark Spots Treatment",
+        "short_desc": "<p>Dark spots (hyperpigmentation) are one of the most common skin concerns that affect people irrespective of age. These spots appear as dark patches ",
+        "service_image": "1776859228_image.webp",
+        "alt_tag": "Dark Spots Removal Treatment in Gurgaon",
+        "url": "dark-spots-removal-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 116,
+        "parent_id": null,
+        "service_name": "Carbon Peel Treatment in Gurgaon",
+        "name_desc": "Carbon Peel Treatment",
+        "short_desc": "<p>Carbon peel treatment is a popular non-invasive skin-repairing procedure. It is designed to enhance skin texture, reduce oiliness, and improve over",
+        "service_image": "1776859431_image.webp",
+        "alt_tag": "Carbon Peel Cost in Gurgaon",
+        "url": "carbon-peel-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 117,
+        "parent_id": null,
+        "service_name": "Aquajet Oxy Peel Facial in Gurgaon",
+        "name_desc": "Aquajet Oxy Peel Facial",
+        "short_desc": "<p>Your skin goes through a lot every day such as dust, pollution, sun exposure, and daily stress. Over time, this can make your skin look dull, uneve",
+        "service_image": "1776861615_image.webp",
+        "alt_tag": "Aquajet Oxy Peel Facial",
+        "url": "aquajet-oxy-peel-facial-in-gurgaon"
+      },
+      {
+        "ser_id": 118,
+        "parent_id": null,
+        "service_name": "Miracle facial treatment in Gurgaon",
+        "name_desc": "Miracle facial treatment",
+        "short_desc": "<p>A Miracle facial treatment offers a unique approach that goes beyond regular facials by combining advanced techniques with deep skin nourishment. T",
+        "service_image": "1776862000_image.webp",
+        "alt_tag": "Miracle Facial Specialist in Gurgaon",
+        "url": "tattva-miracle-therapy"
+      },
+      {
+        "ser_id": 119,
+        "parent_id": null,
+        "service_name": "Laser Treatments in Gurgaon",
+        "name_desc": "Laser Treatments",
+        "short_desc": "<p>Do you have dark spots, blemishes, and a darker skin tone that doesn&rsquo;t go away with serums and face wash? Well, it&rsquo;s not an external pr",
+        "service_image": "1776862205_image.webp",
+        "alt_tag": "Laser Treatments",
+        "url": "laser-treatment-for-pigmentation"
+      },
+      {
+        "ser_id": 120,
+        "parent_id": null,
+        "service_name": "Injectables for Pigmentation Treatment in Gurgaon",
+        "name_desc": "Injectables for Pigmentation Treatment in Gurgaon",
+        "short_desc": "<p>The overactive cells in the skin, which contribute to excess melanin production, cause hyperpigmentation of the skin (darker tone). Many don&rsquo;",
+        "service_image": "1776862738_image.webp",
+        "alt_tag": "Injectables",
+        "url": "injectables-for-pigmentation"
+      },
+      {
+        "ser_id": 121,
+        "parent_id": null,
+        "service_name": "Dark Lips Treatment in Gurgaon",
+        "name_desc": "Dark Lips Treatment",
+        "short_desc": "<p>Dark lip treatments effectively reduce darkening of lips (hyperpigmentation) and establish an even lip texture by balancing pigmentation at a cellu",
+        "service_image": "1777359706_image.webp",
+        "alt_tag": "Dark Lips",
+        "url": "dark-lips"
+      },
+      {
+        "ser_id": 122,
+        "parent_id": null,
+        "service_name": "Dry and Wrinkled Hands Treatment in Gurgaon",
+        "name_desc": "Dry and Wrinkled Hands Treatment",
+        "short_desc": "<p>Dry and wrinkled hands treatment is an advanced skincare treatment that offers deep nourishment and hydration to your hands. These procedures smoot",
+        "service_image": "1777021303_image.webp",
+        "alt_tag": "Dry Hands and Feet",
+        "url": "dry-and-wrinkled-hands"
+      },
+      {
+        "ser_id": 123,
+        "parent_id": null,
+        "service_name": "Dry Lips Treatment in Gurgaon",
+        "name_desc": "Dry Lips Treatment",
+        "short_desc": "<p>The lips are far more delicate than any other portion of skin, which makes them prone to moisture loss and damage. Dryness of lips or chapped lips ",
+        "service_image": "1777020211_image.webp",
+        "alt_tag": "Dry Lips Treatment",
+        "url": "dry-lips"
+      },
+      {
+        "ser_id": 124,
+        "parent_id": null,
+        "service_name": "Thin lips treatment in Gurgaon",
+        "name_desc": "Thin lips treatment",
+        "short_desc": "<p>Several factors, like ageing, make your lips lose their volume. With today&rsquo;s advanced cosmetic procedures, you can enhance the size and shape",
+        "service_image": "1777016868_image.webp",
+        "alt_tag": "Thin lips treatment in Gurgaon",
+        "url": "thin-lips"
+      },
+      {
+        "ser_id": 125,
+        "parent_id": null,
+        "service_name": "Exilis Elite Treatment in Gurgaon",
+        "name_desc": "Exilis Elite Treatment",
+        "short_desc": "<p>Exilis Elite treatment is an advanced, non-surgical procedure designed to reduce stubborn fat and tighten loose skin at the same time. It uses adva",
+        "service_image": "1779884081_image.webp",
+        "alt_tag": null,
+        "url": "exilis-elite"
+      },
+      {
+        "ser_id": 129,
+        "parent_id": null,
+        "service_name": "Laser Toning in Delhi",
+        "name_desc": "Laser Toning in Delhi",
+        "short_desc": "<p>There is an increasing popularity for <strong>laser toning in Delhi </strong>among people who prefer non-invasive treatment methods to improve thei",
+        "service_image": "1777377925_image.webp",
+        "alt_tag": "Laser Toning in Delhi",
+        "url": "laser-toning-in-delhi"
+      },
+      {
+        "ser_id": 130,
+        "parent_id": null,
+        "service_name": "Carbon Peel Treatment in Delhi",
+        "name_desc": "Carbon Peel Treatment in Delhi",
+        "short_desc": "<p>Carbon peel, also known as the carbon laser peel, Hollywood peel, or China doll peel, is a professional cosmetic skin treatment that uses a carbon ",
+        "service_image": "1777378709_image.webp",
+        "alt_tag": "Carbon Peel Treatment in Delhi",
+        "url": "carbon-peel-treatment-in-delhi"
+      },
+      {
+        "ser_id": 131,
+        "parent_id": null,
+        "service_name": "Acne Treatment in Delhi",
+        "name_desc": "Acne Treatment in Delhi",
+        "short_desc": "<p>Acne is one of the common skin issues that teenagers and adults face. The main cause of acne is clogged hair follicles, which are filled with oil a",
+        "service_image": "1777379354_image.webp",
+        "alt_tag": "Acne Treatment in Delhi",
+        "url": "acne-treatment-in-delhi"
+      },
+      {
+        "ser_id": 132,
+        "parent_id": null,
+        "service_name": "Acne Scar Treatment in Delhi",
+        "name_desc": "Acne Scar Treatment in Delhi",
+        "short_desc": "<p>Acne scars can affect both skin texture and confidence, making professional care essential for visible improvement. <strong><em>Acne scar treatment",
+        "service_image": "1777379967_image.webp",
+        "alt_tag": "Acne Scar Treatment in Delhi",
+        "url": "acne-scar-treatment-in-delhi"
+      },
+      {
+        "ser_id": 133,
+        "parent_id": null,
+        "service_name": "Pigmentation Treatment in Delhi",
+        "name_desc": "Pigmentation Treatment in Delhi",
+        "short_desc": "<p><strong>Pigmentation treatment in Delhi</strong> is becoming more common among those who struggle with uneven complexion, dark spots, and discolora",
+        "service_image": "1777380156_image.webp",
+        "alt_tag": "Pigmentation Treatment in Delhi",
+        "url": "pigmentation-treatment-in-delhi"
+      },
+      {
+        "ser_id": 134,
+        "parent_id": null,
+        "service_name": "Open Pores Treatment in Delhi",
+        "name_desc": "Open Pores Treatment in Delhi",
+        "short_desc": "<p>Open pores are the visible openings of enlarged hair follicles and oil glands, which are commonly found on the cheeks, forehead, and nose. An open-",
+        "service_image": "1777380696_image.webp",
+        "alt_tag": "Open Pores Treatment in Delhi",
+        "url": "open-pores-treatment-in-delhi"
+      },
+      {
+        "ser_id": 136,
+        "parent_id": null,
+        "service_name": "Dark Circles Treatment in Delhi",
+        "name_desc": "Dark Circles Treatment in Delhi",
+        "short_desc": "<p>Delhi has been a busy city with long screen times, an irregular sleep schedule, pollution, and stress that contribute to different skin concerns. D",
+        "service_image": "1777448934_image.webp",
+        "alt_tag": "Dark Circles Treatment in Delhi",
+        "url": "dark-circles-treatment-in-delhi"
+      },
+      {
+        "ser_id": 137,
+        "parent_id": null,
+        "service_name": "Laser Hair Removal in Delhi",
+        "name_desc": "Laser Hair Removal in Delhi",
+        "short_desc": "<p>Unwanted hair can be time-consuming to manage with traditional methods like shaving or waxing. <strong>Laser hair removal in Delhi</strong> at Citr",
+        "service_image": "1777453248_image.webp",
+        "alt_tag": "Laser Hair Removal in Delhi",
+        "url": "laser-hair-removal-in-delhi"
+      },
+      {
+        "ser_id": 138,
+        "parent_id": null,
+        "service_name": "Stretch Marks Treatment in Delhi",
+        "name_desc": "Stretch Marks Treatment in Delhi",
+        "short_desc": "<p><strong>Stretch marks treatment in Delhi</strong> is now being actively explored by individuals who are looking to improve visible lines and uneven",
+        "service_image": "1777456551_image.webp",
+        "alt_tag": "Stretch Marks Treatment in Delhi",
+        "url": "stretch-marks-treatment-in-delhi"
+      },
+      {
+        "ser_id": 140,
+        "parent_id": null,
+        "service_name": "Anti-Wrinkle Injections in Delhi",
+        "name_desc": "Anti-Wrinkle Injections in Delhi",
+        "short_desc": "<p>Anti-wrinkle injection is an anti-ageing cosmetic procedure which involves injecting a purified protein &mdash; most commonly Botulinum Toxin (Boto",
+        "service_image": "1777461538_image.webp",
+        "alt_tag": "Anti-Wrinkle Injections in Delhi",
+        "url": "anti-wrinkle-injections-in-delhi"
+      },
+      {
+        "ser_id": 141,
+        "parent_id": null,
+        "service_name": "Dermal Fillers Treatment in Delhi",
+        "name_desc": "Dermal Fillers Treatment in Delhi",
+        "short_desc": "<p>People always look for a way to restore their youthful facial volume without having to undergo surgery. Dermal fillers Treatment in Delhi is one of",
+        "service_image": "1777463673_image.webp",
+        "alt_tag": "Dermal Fillers Treatment in Delhi",
+        "url": "dermal-fillers-treatment-in-delhi"
+      },
+      {
+        "ser_id": 142,
+        "parent_id": null,
+        "service_name": "Repechage Medi Facial in Delhi",
+        "name_desc": "Repechage Medi Facial in Delhi",
+        "short_desc": "<p>Healthy, glowing skin requires professional care that goes beyond regular facials. <strong>Repechage Medi Facial in Delhi</strong> at Citrine Clini",
+        "service_image": "1780389907_image.webp",
+        "alt_tag": "Repechage Medi Facial in Delhi",
+        "url": "repechage-medi-facial-in-delhi"
+      },
+      {
+        "ser_id": 143,
+        "parent_id": null,
+        "service_name": "Skin Resurfacing Treatment in Delhi",
+        "name_desc": "Skin Resurfacing Treatment in Delhi",
+        "short_desc": "<p><strong>Skin resurfacing treatment in Delhi </strong>has become a popular choice among those seeking a solution for skin issues like irregularity i",
+        "service_image": "1777466695_image.webp",
+        "alt_tag": "Skin Resurfacing Treatment in Delhi",
+        "url": "skin-resurfacing-treatment-in-delhi"
+      },
+      {
+        "ser_id": 144,
+        "parent_id": null,
+        "service_name": "Skin Tightening Treatment in Delhi",
+        "name_desc": "Skin Tightening Treatment in Delhi",
+        "short_desc": "<p>Skin tightening treatments consist of various minimally invasive cosmetic procedures that enhance skin firmness and elasticity. The process of agei",
+        "service_image": "1777528026_image.webp",
+        "alt_tag": "Skin Tightening Treatment in Delhi",
+        "url": "skin-tightening-treatment-in-delhi"
+      },
+      {
+        "ser_id": 145,
+        "parent_id": null,
+        "service_name": "Threadlift Treatment in Delhi",
+        "name_desc": "Threadlift Treatment in Delhi",
+        "short_desc": "<p>Threadlift treatment in Delhi is a popular non-surgical cosmetic procedure for people seeking a lifted and youthful appearance. It is a non-invasiv",
+        "service_image": "1777530679_image.webp",
+        "alt_tag": "Threadlift Treatment in Delhi",
+        "url": "threadlift-treatment-in-delhi"
+      },
+      {
+        "ser_id": 146,
+        "parent_id": null,
+        "service_name": "Chemical Peel Treatment in Delhi",
+        "name_desc": "Chemical Peel Treatment in Delhi",
+        "short_desc": "<p>Dull skin, pigmentation, and uneven texture can make the complexion look tired and aged. <strong><em>Chemical Peel Treatment in Delhi</em></strong>",
+        "service_image": "1777531931_image.webp",
+        "alt_tag": "Chemical Peel Treatment in Delhi",
+        "url": "chemical-peel-treatment-in-delhi"
+      },
+      {
+        "ser_id": 147,
+        "parent_id": null,
+        "service_name": "Mesotherapy Treatment in Delhi",
+        "name_desc": "Mesotherapy Treatment in Delhi",
+        "short_desc": "<p>Skin rarely improves with surface-level care alone, especially when concerns like dehydration, dullness, or early aging begin to show. This is wher",
+        "service_image": "1777533486_image.webp",
+        "alt_tag": "Mesotherapy Treatment in Delhi",
+        "url": "mesotherapy-treatment-in-delhi"
+      },
+      {
+        "ser_id": 148,
+        "parent_id": null,
+        "service_name": "Skin Lightening Treatment In Delhi",
+        "name_desc": "Skin Lightening Treatment In Delhi",
+        "short_desc": "<p>Skin lightening treatment, also commonly known as skin whitening treatment, is a cosmetic procedure that removes hyperpigmentation, dark spots, une",
+        "service_image": "1777534599_image.webp",
+        "alt_tag": "Skin Lightening Treatment In Delhi",
+        "url": "skin-lightening-treatment-in-delhi"
+      },
+      {
+        "ser_id": 149,
+        "parent_id": null,
+        "service_name": "Medifacial Treatment in Delhi",
+        "name_desc": "Medifacial Treatment in Delhi",
+        "short_desc": "<p>Do you also find your skin looking dull, dehydrated and tired even after all the skincare? The reason could lie behind the pollution, stress, and h",
+        "service_image": "1777538579_image.webp",
+        "alt_tag": "Medifacial Treatment in Delhi",
+        "url": "medifacial-treatment-in-delhi"
+      },
+      {
+        "ser_id": 150,
+        "parent_id": null,
+        "service_name": "Laser Tattoo Removal in Delhi",
+        "name_desc": "Laser Tattoo Removal in Delhi",
+        "short_desc": "<p>Tattoos may fade in appeal over time, but removing them safely requires advanced dermatological care. <strong>Laser Tattoo Removal in Delhi</strong",
+        "service_image": "1777539455_image.webp",
+        "alt_tag": "Laser Tattoo Removal in Delhi",
+        "url": "laser-tattoo-removal-in-delhi"
+      },
+      {
+        "ser_id": 151,
+        "parent_id": null,
+        "service_name": "Anti Aging Treatment in Delhi",
+        "name_desc": "Anti Aging Treatment in Delhi",
+        "short_desc": "<p>Aging is not sudden. It shows itself gradually, first through fine wrinkles, a loss of skin elasticity, or a decline in the skin&rsquo;s youthful a",
+        "service_image": "1777542722_image.webp",
+        "alt_tag": "Anti Aging Treatment in Delhi",
+        "url": "anti-aging-treatment-in-delhi"
+      },
+      {
+        "ser_id": 152,
+        "parent_id": null,
+        "service_name": "Melasma Treatment in Delhi",
+        "name_desc": "Melasma Treatment in Delhi",
+        "short_desc": "<p>Melasma is a skin condition that appears as brown and dark-coloured patches caused by excessive pigment-producing cells. Melasma treatment includes",
+        "service_image": "1777544182_image.webp",
+        "alt_tag": "Melasma Treatment in Delhi",
+        "url": "melasma-treatment-in-delhi"
+      },
+      {
+        "ser_id": 153,
+        "parent_id": null,
+        "service_name": "Ear Piercing in Delhi",
+        "name_desc": "Ear Piercing in Delhi",
+        "short_desc": "<p>Ear piercing is the most common cosmetic procedure across all genders and age groups. The procedure is mainly done for cultural or aesthetic reason",
+        "service_image": "1777546651_image.webp",
+        "alt_tag": "Ear Piercing in Delhi",
+        "url": "ear-piercing-in-delhi"
+      },
+      {
+        "ser_id": 154,
+        "parent_id": null,
+        "service_name": "Hydrafacial in Delhi",
+        "name_desc": "Hydrafacial in Delhi",
+        "short_desc": "<p>Healthy, glowing skin requires more than basic skincare, especially in today&rsquo;s environment. <strong>Hydrafacial in Delhi</strong> at Citrine ",
+        "service_image": "1777547693_image.webp",
+        "alt_tag": "Hydrafacial in Delhi",
+        "url": "hydrafacial-in-delhi"
+      },
+      {
+        "ser_id": 155,
+        "parent_id": null,
+        "service_name": "Bridal Dermatology Treatment in Delhi",
+        "name_desc": "Bridal Dermatology Treatment in Delhi",
+        "short_desc": "<p>Wedding preparations rarely stop at outfits and d&eacute;cor. Skin, more often than not, becomes just as important&mdash;expected to look clear, fr",
+        "service_image": "1777549384_image.webp",
+        "alt_tag": "Bridal Dermatology Treatment in Delhi",
+        "url": "bridal-dermatology-treatment-in-delhi"
+      },
+      {
+        "ser_id": 156,
+        "parent_id": null,
+        "service_name": "GFC Hair Treatment in Delhi",
+        "name_desc": "GFC Hair Treatment in Delhi",
+        "short_desc": "<p>GFC hair treatment is a non-surgical hair restoration procedure that uses growth factors present in the patient&rsquo;s own blood to activate hair ",
+        "service_image": "1777550854_image.webp",
+        "alt_tag": "GFC Hair Treatment in Delhi",
+        "url": "gfc-hair-treatment-in-delhi"
+      },
+      {
+        "ser_id": 157,
+        "parent_id": null,
+        "service_name": "Morpheus8 Treatment in Delhi",
+        "name_desc": "Morpheus8 Treatment in Delhi",
+        "short_desc": "<p>Advanced technologies have become highly popular for non-surgical skin tightening and rejuvenation procedures. Exposure to pollution, ageing, and d",
+        "service_image": "1777553541_image.webp",
+        "alt_tag": "Morpheus8 Treatment in Delhi",
+        "url": "morpheus8-treatment-in-delhi"
+      },
+      {
+        "ser_id": 158,
+        "parent_id": null,
+        "service_name": "ARTIQA Body Contouring Treatment in Delhi",
+        "name_desc": "ARTIQA Body Contouring Treatment in Delhi",
+        "short_desc": "<p>Stubborn fat and body contour concerns can be difficult to address with diet and exercise alone. <strong>ARTIQA Body Contouring Treatment in Delhi<",
+        "service_image": "1777612753_image.webp",
+        "alt_tag": "ARTIQA Body Contouring Treatment in Delhi",
+        "url": "artiqa-body-contouring-treatment-in-delhi"
+      },
+      {
+        "ser_id": 159,
+        "parent_id": null,
+        "service_name": "Microblading in Delhi",
+        "name_desc": "Microblading in Delhi",
+        "short_desc": "<p>Well-shaped eyebrows can completely change how the face looks. When brows are sparse, uneven, or over-tweezed, maintaining them daily can become te",
+        "service_image": "1777614350_image.webp",
+        "alt_tag": "Microblading in Delhi",
+        "url": "microblading-in-delhi"
+      },
+      {
+        "ser_id": 160,
+        "parent_id": null,
+        "service_name": "Pumpkin Medi Facial in Delhi",
+        "name_desc": "Pumpkin Medi Facial",
+        "short_desc": "<p>A pumpkin medical facial is an antioxidant-rich treatment, loaded with vitamins and essential nutrients that exfoliate dead skin cells, regenerate ",
+        "service_image": "1777617367_image.webp",
+        "alt_tag": "Pumpkin Medi Facial in Delhi",
+        "url": "pumpkin-medi-facial-in-delhi"
+      },
+      {
+        "ser_id": 161,
+        "parent_id": null,
+        "service_name": "ZO Obagi Medi Facial in Delhi",
+        "name_desc": "ZO Obagi Medi Facial in Delhi",
+        "short_desc": "<p>Achieving skin that is glowing and healthy is everyone&rsquo;s concern, regardless of age and gender. Treatments like ZO Obagi Medi Facial in Delhi",
+        "service_image": "1777618377_image.webp",
+        "alt_tag": "ZO Obagi Medi Facial in Delhi",
+        "url": "zo-obagi-medi-facial-in-delhi"
+      },
+      {
+        "ser_id": 170,
+        "parent_id": null,
+        "service_name": "Anti Aging Treatment in Gurgaon",
+        "name_desc": "Anti Aging Treatment in Gurgaon",
+        "short_desc": "<p>Anti aging treatment is a simple and effective way to slow down visible signs of aging and keep your skin looking fresh and youthful. With today&rs",
+        "service_image": "1780292520_image.webp",
+        "alt_tag": "Anti Aging Treatment in Gurgaon",
+        "url": "ageing-skin"
+      },
+      {
+        "ser_id": 171,
+        "parent_id": null,
+        "service_name": "Aqua Restore 4D Facial in Gurgaon",
+        "name_desc": "Aqua Restore 4D Facial in Gurgaon",
+        "short_desc": "<p>Seeking a professional facial that could provide a no-filter glow? Aqua Restore 4D Facial, a proprietary medi-facial to restore inherent skin radia",
+        "service_image": "1781006075_image.webp",
+        "alt_tag": "Aqua Restore 4D Facial in Gurgaon",
+        "url": "aqua-restore-4d-facial-in-gurgaon"
+      },
+      {
+        "ser_id": 172,
+        "parent_id": null,
+        "service_name": "Intimate Area Lightening Treatment in Gurgaon",
+        "name_desc": "Intimate Area Lightening Treatment in Gurgaon",
+        "short_desc": "<p>Get your intimate area skin color to blend with the rest of your body with dermatologist-approved intimate area lightening treatments. This treatme",
+        "service_image": "1781070907_image.webp",
+        "alt_tag": "Intimate Area Lightening Treatment in Gurgaon",
+        "url": "intimate-area-lightening-treatment"
+      },
+      {
+        "ser_id": 182,
+        "parent_id": null,
+        "service_name": "IV Drip Treatment in Gurgaon",
+        "name_desc": "IV Drip Treatment in Gurgaon",
+        "short_desc": "<p>Want a quick, visible, youthful, radiant complexion? IV drip therapy in Gurgaon with Citrine Clinic can be your go-to solution for natural, glowing",
+        "service_image": "1781088161_image.webp",
+        "alt_tag": "IV Drip Treatment in Gurgaon",
+        "url": "iv-drip-treatment-in-gurgaon"
+      },
+      {
+        "ser_id": 183,
+        "parent_id": null,
+        "service_name": "Paediatric Dermatologist in Gurgaon",
+        "name_desc": "Paediatric Dermatologist in Gurgaon",
+        "short_desc": "<p>An infant&#39;s skin is quite sensitive and delicate as compared to the adult skin, which makes it more prone to skin infections. Therefore, child ",
+        "service_image": "1781085961_image.webp",
+        "alt_tag": "Paediatric Dermatologist in Gurgaon",
+        "url": "paediatric-dermatology"
+      },
+      {
+        "ser_id": 184,
+        "parent_id": null,
+        "service_name": "Best Hair Transplant Clinic in Gurgaon",
+        "name_desc": "Best Hair Transplant Clinic in Gurgaon",
+        "short_desc": "<p><span class=\"marker\"><strong>Hair Transplant Cost in Gurgaon ranges from Rs. 80,000 - Rs. 1,00,000</strong></span></p>\r\n\r\n<p>Citrine Clinic is one ",
+        "service_image": "1781083973_image.webp",
+        "alt_tag": "Best Hair Transplant Clinic in Gurgaon",
+        "url": "hair-transplant-gurgaon"
+      }
+    ]
+  },
+  "seo": ""
+}

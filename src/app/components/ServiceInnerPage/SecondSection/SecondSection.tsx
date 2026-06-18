@@ -35,7 +35,7 @@ const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }
   const videoId = getVideoId(data.video_url);
 
   return (
-    <section className={styles.secondSection} id="what-is">
+    <section className={`${styles.secondSection} ${!hasImage ? styles.noImage : ''}`} id="what-is">
       <div className={`${styles.contentWrapper} ${!hasImage ? styles.noImage : ''}`}>
         {/* Left Content */}
         <div className={styles.leftContent}>
@@ -46,11 +46,11 @@ const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }
           )}
           <div className={`${styles.contentscroll} ${hasImage ? styles.scrollActive : ''}`}>
             {data.content_top && (
-              <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.content_top }}/>
+              <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.content_top }} />
             )}
 
             {data.content_bottom && (
-              <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.content_bottom }}/>
+              <div className={styles.paragraph} dangerouslySetInnerHTML={{ __html: data.content_bottom }} />
             )}
           </div>
         </div>
@@ -65,6 +65,7 @@ const SecondSection: React.FC<SecondSectionProps> = ({ data, headingtag = 'h2' }
                 width={600}
                 height={400}
                 className={styles.treatmentImage}
+                unoptimized
               />
               {videoId && (
                 <div

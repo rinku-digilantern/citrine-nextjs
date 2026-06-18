@@ -75,6 +75,7 @@ const VideoPage = () => {
                       alt={video.alt_tag}
                       width={480}
                       height={360}
+                      unoptimized
                     />
                   </div>
                   <div className={styles.details}>

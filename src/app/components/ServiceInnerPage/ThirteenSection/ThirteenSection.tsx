@@ -24,32 +24,31 @@ const ThirteenSection: React.FC<ThirteenSectionProps> = ({ data, headingtag = 'h
             {data.section_heading}
           </HeadingTag>
         )}
-        
+
         {data.content_top && (
-          <div 
+          <div
             className={styles.description}
             dangerouslySetInnerHTML={{ __html: data.content_top }}
           />
         )}
 
         {consultCards.length > 0 && (
-          <div className={styles.risksGrid} style={{ '--grid-columns': Math.min(5, consultCards.length) } as React.CSSProperties}>
+          <div className={styles.risksGrid} style={{ '--grid-columns': consultCards.length > 5 ? 4 : consultCards.length } as React.CSSProperties}>
             {consultCards.map((card: any) => (
               <div
                 key={card.id}
-                className={`${styles.riskCard} ${
-                  card.borderType === "top"
+                className={`${styles.riskCard} ${card.borderType === "top"
                     ? styles.topBorder
                     : styles.bottomBorder
-                }`}>
-                <p className={styles.riskText}>{card.text}</p>
+                  }`}>
+                <div className={styles.riskText} dangerouslySetInnerHTML={{ __html: card.text }}></div>
               </div>
             ))}
           </div>
         )}
 
         {data.content_bottom && (
-          <div 
+          <div
             className={styles.footerText}
             dangerouslySetInnerHTML={{ __html: data.content_bottom }}
           />

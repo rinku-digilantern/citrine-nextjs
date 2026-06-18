@@ -66,7 +66,8 @@ const ConcernPage: React.FC<ConcernPageProps> = ({ title, concernsData }) => {
                       src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${concern.image}`}
                       alt={concern.alt_tag || concern.name} 
                       width={500} 
-                      height={400} 
+                      height={400}
+                      unoptimized
                     />
                   </div>
                   <div className={styles.details}>

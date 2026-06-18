@@ -338,6 +338,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                       width={600}
                       height={500}
                       className={styles.sectionImage}
+                      unoptimized
                     />
                   ) : (
                     <div className={styles.imagePlaceholder}></div>
@@ -438,6 +439,7 @@ const ColumnSection: React.FC<ColumnSectionProps> = ({ sections }) => {
                       width={600}
                       height={500}
                       className={styles.sectionImage}
+                      unoptimized
                     />
                   ) : (
                     <div className={styles.imagePlaceholder}></div>

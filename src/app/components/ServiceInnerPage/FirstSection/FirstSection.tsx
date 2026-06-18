@@ -25,9 +25,9 @@ const FirstSection: React.FC<FirstSectionProps> = ({ data, headingtag = 'h2' }) 
             {data.section_heading}
           </HeadingTag>
         )}
-        
+
         {data.content_top && (
-          <div 
+          <div
             className={styles.subtitle}
             dangerouslySetInnerHTML={{ __html: data.content_top }}
           />
@@ -40,14 +40,14 @@ const FirstSection: React.FC<FirstSectionProps> = ({ data, headingtag = 'h2' }) 
                 <span className={styles.icon}>
                   <Image src="/assets/images/serviceinnerpage/arrow.webp" alt="Check Icon" width={28} height={20} />
                 </span>
-                <span className={styles.text}>{item.text}</span>
+                <div className={styles.text} dangerouslySetInnerHTML={{ __html: item.text }}></div>
               </div>
             ))}
           </div>
         )}
-        
+
         {data.content_bottom && (
-          <div 
+          <div
             className={styles.subtitle}
             dangerouslySetInnerHTML={{ __html: data.content_bottom }}
           />

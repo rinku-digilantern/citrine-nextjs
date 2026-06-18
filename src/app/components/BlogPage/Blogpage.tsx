@@ -27,8 +27,8 @@ const Blogpage: React.FC<BlogpageProps> = ({ blogsData }) => {
     setVisibleCount(prevCount => prevCount + 3);
   };
 
-  const displayedBlogs = blogsData.slice(0, visibleCount);
-  const hasMore = visibleCount < blogsData.length;
+  const displayedBlogs = Array.isArray(blogsData) ? blogsData.slice(0, visibleCount) : [];
+  const hasMore = visibleCount < (Array.isArray(blogsData) ? blogsData.length : 0);
 
   return (
     <section className={`${styles.blogpage} section blogposts`}>
@@ -37,51 +37,58 @@ const Blogpage: React.FC<BlogpageProps> = ({ blogsData }) => {
           <h1 className={`mainHeading ${styles.mainHeading}`}>Blogs</h1>
         </div>
         <div className={styles.blogrow}>
-          {displayedBlogs.map((blg, index) => (
-            <article key={blg.id} className={`${styles.blogCard}`}>
-              <div className={`${styles.postImg} postimg`}>
-                <Link href={`/blog-post/${blg.url}`}>
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/blog/${blg.image}`}
-                    className="img-fluid"
-                    width={550}
-                    height={365}
-                    alt={blg.alt_tag || blg.blog_name}
-                    priority={index < 3}
-                  />
-                </Link>
-              </div>
-              <div className={styles.meta}>
-                <div className={styles.user}>
-                  <Image
-                    src="/assets/images/blogs/users.webp"
-                    width={14}
-                    height={14}
-                    alt="User"
-                  />
-                  By {blg.dr_name || 'Citrine Clinic'}
+          {displayedBlogs.length > 0 ? (
+            displayedBlogs.map((blg, index) => (
+              <article key={blg.id} className={`${styles.blogCard}`}>
+                <div className={`${styles.postImg} postimg`}>
+                  <Link href={`/blog-post/${blg.url}`}>
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_BACKEND_URL || 'https://api.citrineclinic.com'}/backend/blog/${blg.image}`}
+                      className="img-fluid"
+                      width={550}
+                      height={365}
+                      alt={blg.alt_tag || blg.blog_name}
+                      priority={index < 3}
+                      unoptimized
+                    />
+                  </Link>
                 </div>
-                <div className={styles.date}>
-                  <Image
-                    src="/assets/images/blogs/calendar.webp"
-                    width={16}
-                    height={16}
-                    alt="Calendar"
-                  />
-                  {blg.date}
+                <div className={styles.meta}>
+                  <div className={styles.user}>
+                    <Image
+                      src="/assets/images/blogs/users.webp"
+                      width={14}
+                      height={14}
+                      alt="User"
+                    />
+                    By {blg.dr_name || 'Citrine Clinic'}
+                  </div>
+                  <div className={styles.date}>
+                    <Image
+                      src="/assets/images/blogs/calendar.webp"
+                      width={16}
+                      height={16}
+                      alt="Calendar"
+                    />
+                    {blg.date}
+                  </div>
                 </div>
-              </div>
-              <div className={styles.postContent}>
-                <div className={styles.postTitle}>
-                  <Link href={`/blog-post/${blg.url}`}>{blg.blog_name}</Link>
+                <div className={styles.postContent}>
+                  <div className={styles.postTitle}>
+                    <Link href={`/blog-post/${blg.url}`}>{blg.blog_name}</Link>
+                  </div>
+                  <div dangerouslySetInnerHTML={{ __html: blg.short_desc }} />
+                  <Link href={`/blog-post/${blg.url}`} className={styles.viewallbtn}>
+                    Read More
+                  </Link>
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: blg.short_desc }} />
-                <Link href={`/blog-post/${blg.url}`} className={styles.viewallbtn}>
-                  Read More
-                </Link>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))
+          ) : (
+            <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '2rem 0', fontSize: '18px', color: '#666' }}>
+              No blogs available at the moment. Please check back later.
+            </div>
+          )}
         </div>
         <div className={styles.blogtbottom}>
           {hasMore && (

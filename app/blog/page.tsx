@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { Metadata } from 'next/dist/types';
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
@@ -34,22 +34,18 @@ interface BlogApiResponse {
 
 async function getBlogData(): Promise<BlogApiResponse> {
   try {
-    // console.log('Fetching blog data from API...');
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/blog`, {
-      cache: 'no-store'
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://api.citrineclinic.com/api';
+    const res = await fetch(`${baseUrl}/blog`, {
+      next: { revalidate: 60 }
     });
 
-    // console.log('Blog API Response status:', res.status);
-
     if (!res.ok) {
-      throw new Error('Failed to fetch blog data');
+      throw new Error(`Failed to fetch blog data: ${res.status} ${res.statusText}`);
     }
 
     const data = await res.json();
-    // console.log('Blog data fetched successfully, items count:', data.data?.length);
     return data;
-  } catch (error) {
-    // console.error('Error fetching blog data:', error);
+  } catch (error: any) {
     return {
       title: 'Success',
       data: [],
@@ -68,19 +64,25 @@ async function getBlogData(): Promise<BlogApiResponse> {
 
 import { getSeoData } from '@/src/lib/cms';
 import { resolveMetadata } from '@/src/lib/seo-utils';
+import BlogShimmer from '@/src/app/components/BlogPage/BlogShimmer';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoData('blog');
   return resolveMetadata('blog', seo);
 }
 
-const Blog = async () => {
+const BlogListWrapper = async () => {
   const blogData = await getBlogData();
+  return <Blogpage blogsData={blogData.data} />;
+};
 
+const Blog = () => {
   return (
     <>
       <Breadcrumb />
-      <Blogpage blogsData={blogData.data} />
+      <Suspense fallback={<BlogShimmer />}>
+        <BlogListWrapper />
+      </Suspense>
       <AppointmentSection />
     </>
   )

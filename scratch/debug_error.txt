@@ -1,0 +1,7 @@
+URL: http://localhost:8000/api/service-category/treatments
+ERROR: Failed to parse URL from ${process.env.NEXT_PUBLIC_API_URL}/service-category/treatments
+STACK: TypeError: Failed to parse URL from ${process.env.NEXT_PUBLIC_API_URL}/service-category/treatments
+    at new Request (node:internal/deps/undici/undici:10415:19)
+    at dedupeFetch (D:\Client_work\2026\mar\citrine-nextjs\.next\dev\server\chunks\ssr\node_modules_next_dist_esm_00xse_0._.js:15974:87)
+    at doOriginalFetch (D:\Client_work\2026\mar\citrine-nextjs\.next\dev\server\chunks\ssr\node_modules_next_dist_esm_00xse_0._.js:16648:24)
+    at D:\Client_work\2026\mar\citrine-nextjs\.next\dev\server\chunks\ssr\node_modules_next_dist_esm_00xse_0._.js:16940:24

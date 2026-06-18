@@ -45,13 +45,14 @@ const MediaPage: React.FC<MediaPageProps> = ({ mediaData }) => {
                 <div className={styles.imageWrapper}>
                   <Image 
                     src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/pressmedia/category/${item.image}`}
-                    alt={item.alt_tag} width={400} height={300} />
+                    alt={item.alt_tag} width={400} height={300} unoptimized />
                   <div className={styles.sourceTag}>
                     <Image 
                       src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/pressmedia/logo/${item.logo}`}
                       alt={item.name}
                       width={180}
-                      height={50}/>
+                      height={50}
+                      unoptimized/>
                   </div>
                 </div>
                 <div className={styles.cardContent}>{item.name}</div>

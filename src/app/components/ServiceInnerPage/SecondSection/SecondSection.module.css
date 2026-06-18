@@ -12,6 +12,10 @@
   flex: 1;
 }
 
+.secondSection.noImage {
+  min-height: auto;
+}
+
 .contentWrapper.noImage .leftContent {
   padding: 60px 6% 40px 6%;
   text-align: center;

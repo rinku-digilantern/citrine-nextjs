@@ -142,8 +142,12 @@ const ServiceCategoryPage: React.FC<ServiceCategoryPageProps> = ({ data }) => {
         image: service.service_banner_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/banner/${service.service_banner_image}` : (service.service_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/image/${service.service_image}` : ''),
         description: service.description2 || ''
       }} />
-      <TableofContentcategory sections={formattedSections.map((s: any) => ({ id: s.id, title: s.heading }))} />
-      <ColumnSection sections={formattedSections as any} />
+      {formattedSections.length > 0 && (
+        <>
+          <TableofContentcategory sections={formattedSections.map((s: any) => ({ id: s.id, title: s.heading }))} />
+          <ColumnSection sections={formattedSections as any} />
+        </>
+      )}
 
       {service.faq && (
         <div id="faq">

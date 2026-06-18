@@ -77,7 +77,7 @@ const ServiceTechnologySection: React.FC<ServiceTechnologySectionProps> = ({ tec
                       width={480} 
                       height={360} 
                       alt={item.alt_tag || item.name} 
-                    />
+                     unoptimized/>
                   </div>
                 </div>
                 <div className={styles.rightCol}>

@@ -17,6 +17,7 @@ export default function ServiceDetailBannerSection({ title, image }: Props) {
           height={580} 
           alt={title || "Service Detail Page Banner"} 
           priority
+          unoptimized
         />
 			<div className={styles.container}>
             <div className={styles.textSection}>

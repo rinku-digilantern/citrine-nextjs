@@ -35,6 +35,7 @@ const ServiceDetailSecondSection: React.FC<Props> = ({ heading, content, classAd
             height={500} 
             alt="Decorative background" 
             className={styles.backgroundImage}
+            unoptimized
           />
           </div>
         )}

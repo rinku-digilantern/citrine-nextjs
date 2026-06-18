@@ -39,6 +39,7 @@ export default function ServiceDetailFirstSection({ heading, description, conten
                 height={500}
                 alt={heading || "Service image"}
                 className={styles.treatmentImage}
+                unoptimized
               />
             </div>
           )}

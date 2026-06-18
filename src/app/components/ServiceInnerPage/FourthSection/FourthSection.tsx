@@ -23,27 +23,27 @@ const FourthSection: React.FC<FourthSectionProps> = ({ data, headingtag = 'h2' }
             {data.section_heading}
           </HeadingTag>
         )}
-        
+
         {data.content_top && (
-          <div 
+          <div
             className={styles.description}
-            dangerouslySetInnerHTML={{ __html: data.content_top }} 
+            dangerouslySetInnerHTML={{ __html: data.content_top }}
           />
         )}
 
-        <div className={styles.benefitsGrid} style={{ '--grid-columns': Math.min(5, benefits.length) } as React.CSSProperties}>
+        <div className={styles.benefitsGrid} style={{ '--grid-columns': benefits.length > 5 ? 4 : benefits.length } as React.CSSProperties}>
           {benefits.map((benefit: any) => (
             <div key={benefit.id} className={styles.benefitCard}>
               <div className={styles.cardTopLine}></div>
-              <p className={styles.benefitText}>{benefit.text}</p>
+              <div className={styles.benefitText} dangerouslySetInnerHTML={{ __html: benefit.text }}></div>
             </div>
           ))}
         </div>
-        
+
         {data.content_bottom && (
-          <div 
+          <div
             className={styles.footerText}
-            dangerouslySetInnerHTML={{ __html: data.content_bottom }} 
+            dangerouslySetInnerHTML={{ __html: data.content_bottom }}
           />
         )}
       </div>
