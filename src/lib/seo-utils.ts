@@ -1,8 +1,15 @@
 import { Metadata } from 'next';
+import { headers } from 'next/headers';
 
-export function resolveMetadata(slug: string, seoData: any, fallbackTitle: string = 'Citrine Clinic'): Metadata {
+export async function resolveMetadata(slug: string, seoData: any, fallbackTitle: string = 'Citrine Clinic'): Promise<Metadata> {
   const cleanSlug = (slug === 'home' || slug === '') ? '' : (slug.startsWith('/') ? slug.substring(1) : slug);
-  const fullUrl = cleanSlug ? `/${cleanSlug}` : '/';
+
+  // Get host and protocol from request headers dynamically on the server
+  const headersList = await headers();
+  const host = headersList.get('host') || 'www.citrineclinic.com';
+  const proto = headersList.get('x-forwarded-proto') || 'https';
+
+  const fullUrl = `${proto}://${host}${cleanSlug ? `/${cleanSlug}` : '/'}`;
 
   const title = seoData?.title_tag || fallbackTitle;
   const description = seoData?.description_tag || '';
@@ -25,7 +32,7 @@ export function resolveMetadata(slug: string, seoData: any, fallbackTitle: strin
       siteName: 'Citrine Clinic',
       images: [
         {
-          url: 'https://www.citrineclinic.com/assets/images/img/logo.webp',
+          url: `${proto}://${host}/assets/images/logo.webp`,
           width: 1200,
           height: 630,
           alt: 'Citrine Logo',
@@ -36,7 +43,7 @@ export function resolveMetadata(slug: string, seoData: any, fallbackTitle: strin
       card: 'summary_large_image',
       title,
       description,
-      images: ['https://www.citrineclinic.com/assets/images/img/logo.webp'],
+      images: [`${proto}://${host}/assets/images/logo.webp`],
     },
   };
 }

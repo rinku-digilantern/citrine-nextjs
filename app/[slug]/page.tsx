@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const typeRes = await getServiceType(slug);
 
-  if (!typeRes || typeRes.title !== "Success") return {};
+  if (!typeRes || typeRes.title !== "Success") return resolveMetadata(slug, null);
 
   let seoData;
   if (typeRes.type === "firstcategory") {
@@ -36,20 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     } : null);
   }
 
-  if (!seoData) return {};
-
-  return {
-    title: seoData.title_tag || 'Citrine Clinic',
-    description: seoData.description_tag || '',
-    alternates: {
-      canonical: seoData.canonical_tag ? `/${seoData.canonical_tag}` : undefined,
-    },
-    openGraph: {
-      title: seoData.title_tag || '',
-      description: seoData.description_tag || '',
-      url: seoData.canonical_tag ? `/${seoData.canonical_tag}` : undefined,
-    },
-  };
+  return resolveMetadata(slug, seoData);
 }
 
 export default async function DynamicSlugPage({ params }: PageProps) {
