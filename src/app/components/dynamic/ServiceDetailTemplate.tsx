@@ -76,16 +76,16 @@ const ServiceDetailTemplate: React.FC<ServiceDetailTemplateProps> = ({ data }) =
 
         // Fallback to SecondSection (centered style) for other segments
         if (['imagetext', 'rightimagetext'].includes(sec.type)) {
-        return (
-          <ServiceDetailSecondSection
-            key={idx}
-            heading={sec.section_heading}
-            content={sec.section1}
-            classAdd={sec.class_add}
-            image={sec.image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/${sec.image}` : undefined}
-            headingtag={sec.heading_tag || 'div'}
-          />
-        );
+          return (
+            <ServiceDetailSecondSection
+              key={idx}
+              heading={sec.section_heading}
+              content={sec.section1}
+              classAdd={sec.class_add}
+              image={sec.image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/service/section/${sec.image}` : undefined}
+              headingtag={sec.heading_tag || 'div'}
+            />
+          );
         }
       })}
 

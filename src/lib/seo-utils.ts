@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 export function resolveMetadata(slug: string, seoData: any, fallbackTitle: string = 'Citrine Clinic'): Metadata {
   const cleanSlug = (slug === 'home' || slug === '') ? '' : (slug.startsWith('/') ? slug.substring(1) : slug);
-  const fullUrl = `https://www.citrineclinic.com/${cleanSlug}`;
+  const fullUrl = cleanSlug ? `/${cleanSlug}` : '/';
 
   const title = seoData?.title_tag || fallbackTitle;
   const description = seoData?.description_tag || '';

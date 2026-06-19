@@ -48,6 +48,66 @@ const nextConfig: NextConfig = {
         destination: '/dr-niti-gaur',
         permanent: true,
       },
+      {
+        source: '/hydrafacial-in-gurgaon',
+        destination: '/hydrafacial-md',
+        permanent: true,
+      },
+      {
+        source: '/medifacials-for-acne',
+        destination: '/medifacial-for-pigmentation',
+        permanent: true,
+      },
+      {
+        source: '/medifacials',
+        destination: '/medifacial-for-pigmentation',
+        permanent: true,
+      },
+      {
+        source: '/acne-scar-treatment',
+        destination: '/acne-scar-treatment-in-gurgaon',
+        permanent: true,
+      },
+      {
+        source: '/exilis-elite-for-wrinkles-treatment',
+        destination: '/exilis-elite',
+        permanent: true,
+      },
+      {
+        source: '/eye-pla-te-let-rich-fibrin-prf-therapy',
+        destination: '/eye-pla-te-let-rich-fibrin-therapy',
+        permanent: true,
+      },
+      {
+        source: '/dark-circles',
+        destination: '/dark-circles-treatment-gurgaon',
+        permanent: true,
+      },
+      {
+        source: '/melasma',
+        destination: '/melasma-treatment-in-gurgaon',
+        permanent: true,
+      },
+      {
+        source: '/patchy-pigmentation',
+        destination: '/hyperpigmentation-treatment-in-gurgaon',
+        permanent: true,
+      },
+      {
+        source: '/chemical-peels-for-ageing',
+        destination: '/chemical-peel-treatment-in-gurgaon',
+        permanent: true,
+      },
+      {
+        source: '/microdermabrasion',
+        destination: '/microdermabrasion-treatment-in-gurgaon',
+        permanent: true,
+      },
+      {
+        source: '/chemical-peels-for-acne',
+        destination: '/chemical-peel-treatment-in-gurgaon',
+        permanent: true,
+      },
     ];
   },
 };
