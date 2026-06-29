@@ -103,6 +103,11 @@ const nextConfig: NextConfig = {
         destination: '/chemical-peel-treatment-in-gurgaon',
         permanent: true,
       },
+      {
+        source: '/ingrown-toenails',
+        destination: '/ingrown-toe-nail',
+        permanent: true,
+      },
     ];
   },
 };

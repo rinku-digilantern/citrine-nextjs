@@ -5,6 +5,19 @@
 // const BASE_API_URL = process.env.NEXT_PUBLIC_API_URL;
 const BASE_API_URL = process.env.NEXT_PUBLIC_API_URL;
 
+function cleanSeoSchemas(obj: any) {
+  if (typeof obj !== 'object' || obj === null) return;
+  for (const key in obj) {
+    if ((key === 'faq_schema' || key === 'bred_schema') && typeof obj[key] === 'string') {
+      try {
+        obj[key] = obj[key].replace(/\\"/g, '"');
+      } catch (e) {}
+    } else if (typeof obj[key] === 'object') {
+      cleanSeoSchemas(obj[key]);
+    }
+  }
+}
+
 async function fetchWithTimeout(url: string, options: any = {}, timeout = 10000) {
   const controller = new AbortController();
   const id = setTimeout(() => controller.abort(), timeout);
@@ -29,7 +42,11 @@ export async function getServiceType(slug: string) {
     });
     if (!res.ok) return null;
     const text = await res.text();
-    try { return JSON.parse(text); } catch { return null; }
+    try {
+      const parsed = JSON.parse(text);
+      cleanSeoSchemas(parsed);
+      return parsed;
+    } catch { return null; }
   } catch (error) {
     console.error("Error fetching service type:", error);
     return null;
@@ -44,7 +61,11 @@ export async function getServiceCategoryData(slug: string) {
     });
     if (!res.ok) return null;
     const text = await res.text();
-    try { return JSON.parse(text); } catch { return null; }
+    try {
+      const parsed = JSON.parse(text);
+      cleanSeoSchemas(parsed);
+      return parsed;
+    } catch { return null; }
   } catch (error) {
     console.error("Error fetching service category data:", error);
     return null;
@@ -59,7 +80,11 @@ export async function getServiceInnerData(slug: string) {
     });
     if (!res.ok) return null;
     const text = await res.text();
-    try { return JSON.parse(text); } catch { return null; }
+    try {
+      const parsed = JSON.parse(text);
+      cleanSeoSchemas(parsed);
+      return parsed;
+    } catch { return null; }
   } catch (error) {
     console.error("Error fetching service inner data:", error);
     return null;
@@ -74,7 +99,11 @@ export async function getSecondCategoryData(slug: string) {
     });
     if (!res.ok) return null;
     const text = await res.text();
-    try { return JSON.parse(text); } catch { return null; }
+    try {
+      const parsed = JSON.parse(text);
+      cleanSeoSchemas(parsed);
+      return parsed;
+    } catch { return null; }
   } catch (error) {
     console.error("Error fetching second category data:", error);
     return null;
@@ -90,6 +119,7 @@ export async function getSeoData(slug: string) {
     const text = await res.text();
     try {
       const json = JSON.parse(text);
+      cleanSeoSchemas(json);
       return json?.seo || null;
     } catch { return null; }
   } catch (error) {

@@ -193,12 +193,12 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
         {/* Left Section: Offer Details */}
         <div className={styles.leftSection}>
           <Image
-            src={offer.offer_image ? `${process.env.NEXT_PUBLIC_BACKEND_URL}/backend/offer/${offer.offer_image}` : "/assets/images/offers/offerdetail01.webp"}
+            src={offer.offer_image ? `${offer.offer_image}` : "/assets/images/offers/offerdetail01.webp"}
             alt={offer.alt_tag || offer.offer_name || "Offer Image"}
             width={540}
             height={540}
             className={styles.offerImage}
-           unoptimized/>
+            unoptimized />
           <div className={styles.discountTag}>{offer.offer_code || "Offer"}</div>
           <div className={styles.offerTitle}>{offer.offer_name || "Offer Title"}</div>
           <div className={styles.offerSubtitle}>{offer.offer_description || "Offer description not available."}</div>
@@ -226,7 +226,7 @@ const OfferDetails: React.FC<OfferDetailsProps> = ({ offer }) => {
                 className={`${styles.input} ${styles.orange} ${styles.selectedOfferInput}`}
                 type="text"
                 name="selectedOffer"
-                value={offer.offer_name || "Selected Offer"}
+                value={offer.offer_name + ' ' + offer.offer_code || "Selected Offer"}
                 readOnly
               />
               <span className={styles.selectedOfferIcon}>

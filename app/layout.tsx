@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Citrine Clinic',
     images: [
       {
-        url: 'https://www.citrineclinic.com/assets/images/img/logo.webp',
+        url: 'https://www.citrineclinic.com/assets/images/logo.webp',
         width: 1200,
         height: 630,
         alt: 'Citrine Logo',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@citrineclinic',
-    images: ['https://www.citrineclinic.com/assets/images/img/logo.webp'],
+    images: ['https://www.citrineclinic.com/assets/images/logo.webp'],
   },
 };
 
@@ -70,11 +70,11 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
               "@type": "Organization",
               "name": "Citrine Clinic",
               "url": "https://www.citrineclinic.com",
-              "logo": "https://www.citrineclinic.com/assets/images/logo.svg",
+              "logo": "https://www.citrineclinic.com/assets/images/logo.webp",
               "sameAs": [
                 "https://www.facebook.com/citrineclinicbydrniti/",
-                "https://www.instagram.com/citrineclinic/",
-                "https://www.youtube.com/@citrineclinicbydr.nitigaur2957"
+                "https://www.instagram.com/citrinedermatologyclinic/",
+                "https://www.youtube.com/channel/UC9Oo0M9EtAcWcNXN1_e6gsQ"
               ]
             }),
           }}
@@ -140,11 +140,11 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
               "@type": "Person",
               "name": "Dr. Niti Gaur",
               "url": "https://www.citrineclinic.com/dermatologist-in-gurgaon",
-              "image": "https://www.citrineclinic.com/assets/images/home-doctor-bg.webp",
+              "image": "https://www.citrineclinic.com/assets/images/about-doctor/doctorbanners.webp",
               "sameAs": [
                 "https://www.facebook.com/citrineclinicbydrniti/",
-                "https://www.instagram.com/citrineclinic/",
-                "https://www.youtube.com/@citrineclinicbydr.nitigaur2957"
+                "https://www.instagram.com/citrinedermatologyclinic/",
+                "https://www.youtube.com/channel/UC9Oo0M9EtAcWcNXN1_e6gsQ"
               ],
               "jobTitle": "Dermatologist, Cosmetologist, Trichologist",
               "worksFor": {

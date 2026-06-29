@@ -30,6 +30,7 @@ export default function BlogBanner({ title, date, image, imageAlt }: BlogBannerP
           width={1176}
           height={750}
           priority
+          unoptimized
         />
       </div>
     </div>
