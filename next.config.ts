@@ -49,11 +49,6 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/hydrafacial-in-gurgaon',
-        destination: '/hydrafacial-md',
-        permanent: true,
-      },
-      {
         source: '/medifacials-for-acne',
         destination: '/medifacial-for-pigmentation',
         permanent: true,

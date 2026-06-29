@@ -29,11 +29,15 @@ const defaultFaqs: FaqItem[] = [
 
 const FaqSection: React.FC<FaqSectionProps> = ({ faqData, headingtag }) => {
   const HeadingTag = (headingtag || 'h2') as keyof React.JSX.IntrinsicElements;
-  const [openId, setOpenId] = useState<number | null>(1);
   const data = faqData && faqData.length > 0 ? faqData : defaultFaqs;
+  const [openIds, setOpenIds] = useState<number[]>(() => data.map((faq) => faq.id));
 
   const toggleFaq = (id: number) => {
-    setOpenId(openId === id ? null : id);
+    setOpenIds((currentOpenIds) =>
+      currentOpenIds.includes(id)
+        ? currentOpenIds.filter((faqId) => faqId !== id)
+        : [...currentOpenIds, id]
+    );
   };
 
   return (
@@ -42,19 +46,19 @@ const FaqSection: React.FC<FaqSectionProps> = ({ faqData, headingtag }) => {
         <HeadingTag className={`mainHeading ${styles.mainHeading}`}>FREQUENTLY ASKED QUESTIONS</HeadingTag>
         <div className={styles.faqList}>
           {data.map((faq) => (
-            <div key={faq.id} className={`${styles.faqItem} ${openId === faq.id ? styles.active : ''}`}>
+            <div key={faq.id} className={`${styles.faqItem} ${openIds.includes(faq.id) ? styles.active : ''}`}>
               <button
-                className={`${styles.faqQuestion} ${openId === faq.id ? styles.active : ""
+                className={`${styles.faqQuestion} ${openIds.includes(faq.id) ? styles.active : ""
                   }`}
                 onClick={() => toggleFaq(faq.id)}
-                aria-expanded={openId === faq.id}
+                aria-expanded={openIds.includes(faq.id)}
               >
                 <h3 dangerouslySetInnerHTML={{ __html: faq.question.replace(/^\d+\.\s*/, '') }} />
                 <span className={styles.icon}>
-                  {openId === faq.id ? "−" : "+"}
+                  {openIds.includes(faq.id) ? "−" : "+"}
                 </span>
               </button>
-              {openId === faq.id && (
+              {openIds.includes(faq.id) && (
                 <div className={styles.faqAnswer}>
                   <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
                 </div>

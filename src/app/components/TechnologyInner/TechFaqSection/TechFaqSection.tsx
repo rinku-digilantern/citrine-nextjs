@@ -63,10 +63,14 @@ const faqData: FaqItem[] = [
 ];
 
 const TechFaqSection: React.FC = () => {
-  const [openId, setOpenId] = useState<number | null>(1);
+  const [openIds, setOpenIds] = useState<number[]>(() => faqData.map((faq) => faq.id));
 
   const toggleFaq = (id: number) => {
-    setOpenId(openId === id ? null : id);
+    setOpenIds((currentOpenIds) =>
+      currentOpenIds.includes(id)
+        ? currentOpenIds.filter((faqId) => faqId !== id)
+        : [...currentOpenIds, id]
+    );
   };
 
   return (
@@ -75,19 +79,19 @@ const TechFaqSection: React.FC = () => {
         <h2 className={`mainHeading ${styles.mainHeading}`}>FREQUENTLY ASKED QUESTIONS</h2>
         <div className={styles.faqList}>
           {faqData.map((faq) => (
-            <div key={faq.id} className={`${styles.faqItem} ${openId === faq.id ? styles.active : ''}`}>
+            <div key={faq.id} className={`${styles.faqItem} ${openIds.includes(faq.id) ? styles.active : ''}`}>
               <button
-                className={`${styles.faqQuestion} ${openId === faq.id ? styles.active : ""
+                className={`${styles.faqQuestion} ${openIds.includes(faq.id) ? styles.active : ""
                   }`}
                 onClick={() => toggleFaq(faq.id)}
-                aria-expanded={openId === faq.id}
+                aria-expanded={openIds.includes(faq.id)}
               >
                 <h3>{faq.question}</h3>
                 <span className={styles.icon}>
-                  {openId === faq.id ? "−" : "+"}
+                  {openIds.includes(faq.id) ? "−" : "+"}
                 </span>
               </button>
-              {openId === faq.id && (
+              {openIds.includes(faq.id) && (
                 <div className={styles.faqAnswer}>
                   <p>{faq.answer}</p>
                 </div>
