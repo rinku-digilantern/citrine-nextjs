@@ -42,6 +42,7 @@ const Footer = () => {
                   alt={"Citrine Clinic"}
                   width={250}
                   height={70}
+                  unoptimized
                 />
               </Link>
             </div>

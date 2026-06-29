@@ -83,7 +83,7 @@ const Header = () => {
                     <div className={`row ${styles.row}`}>
                         <div className={styles.logo}>
                             <Link href="/">
-                                <Image src='/assets/images/logo.webp' alt={"Citrine Clinic"} width={321} height={90} />
+                                <Image src='/assets/images/logo.webp' alt={"Citrine Clinic"} width={321} height={90} unoptimized />
                             </Link>
                         </div>
                         <div className={styles.headerActions}>
