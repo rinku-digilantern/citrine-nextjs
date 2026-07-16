@@ -201,7 +201,7 @@ const Header = () => {
                                             <li><Link href="/repechage-medi-facial-in-gurgaon" onClick={toggleMenu}>Repechage Medifacial</Link></li>
                                             <li><Link href="/hifu" onClick={toggleMenu}>HIFU</Link></li>
                                             <li><Link href="/laser-tattoo-removal-treatment-in-gurgaon" onClick={toggleMenu}>Tattoo Removal</Link></li>
-                                            <li><Link href="/hydrafacial-md" onClick={toggleMenu}>Hydrafacial MD</Link></li>
+                                            <li><Link href="/hydrafacial-in-gurgaon" onClick={toggleMenu}>Hydrafacial MD</Link></li>
                                             <li><Link href="/clearlift-laser" onClick={toggleMenu}>Total Clearlift</Link></li>
                                             <li><Link href="/laser-hair-reduction" onClick={toggleMenu}>Laser Hair Reduction</Link></li>
                                             <li><Link href="/zo-obagi-medi-facial" onClick={toggleMenu}>Zo Obagi Medifacial</Link></li>
@@ -314,7 +314,7 @@ const Header = () => {
                                                 <li><Link href="/repechage-medi-facial-in-gurgaon" onClick={toggleMenu}>Repechage Medifacial</Link></li>
                                                 <li><Link href="/hifu" onClick={toggleMenu}>HIFU</Link></li>
                                                 <li><Link href="/laser-tattoo-removal-treatment-in-gurgaon" onClick={toggleMenu}>Tattoo Removal</Link></li>
-                                                <li><Link href="/hydrafacial-md" onClick={toggleMenu}>Hydrafacial MD</Link></li>
+                                                <li><Link href="/hydrafacial-in-gurgaon" onClick={toggleMenu}>Hydrafacial MD</Link></li>
                                                 <li><Link href="/clearlift-laser" onClick={toggleMenu}>Total Clearlift</Link></li>
                                                 <li><Link href="/laser-hair-reduction" onClick={toggleMenu}>Laser Hair Reduction</Link></li>
                                                 <li><Link href="/zo-obagi-medi-facial" onClick={toggleMenu}>Zo Obagi Medifacial</Link></li>
