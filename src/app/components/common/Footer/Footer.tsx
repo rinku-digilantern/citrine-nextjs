@@ -6,11 +6,12 @@ import Image from "next/image";
 import { BsArrowUpShort } from "react-icons/bs";
 import {
   FaFacebookF,
-  FaLinkedinIn,
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
-import { RiTwitterXLine } from "react-icons/ri";
+
+import Script from "next/script";
+
 
 const Footer = () => {
   const [showTop, setShowTop] = useState(false);
@@ -245,7 +246,7 @@ const Footer = () => {
             <div className={styles.conCard}>
               <strong>Disclaimer:</strong>{" "}
               <p>
-                This website's information is exclusively intended to educate
+                This website&apos;s information is exclusively intended to educate
                 and raise awareness about dermatology. This is not to be
                 considered a substitute for professional medical advice or a
                 prescription. Since each individual and case is unique, the
@@ -281,10 +282,10 @@ const Footer = () => {
       </a>
 
       <div className={`${styles.footerfixed} ${styles.desktophide}`}>
-        <a href="/book-an-appointment" className={styles.fixedCol + ' ' + styles.left} aria-label="Request An Appointment">
+        <Link href="/book-an-appointment" className={styles.fixedCol + ' ' + styles.left} aria-label="Request An Appointment">
           <Image src="/assets/images/fcalendar.webp" alt="Request An Appointment" width={28} height={28} />
           <span className={styles.fixedText}>Request An Appointment</span>
-        </a>
+        </Link>
         <a href="https://api.whatsapp.com/send?phone=919289980157&text=Hello, I have contacted you through Citrine Clinic website." target="_blank" rel="noopener noreferrer" className={styles.fixedCol + ' ' + styles.right} aria-label="WhatsApp">
           <Image src="/assets/images/fwhatsapp.webp" alt="WhatsApp" width={28} height={28} />
           <span className={styles.fixedText}>WhatsApp</span>
@@ -292,6 +293,20 @@ const Footer = () => {
       </div>
       {/* Click-to-open phone numbers (mobile) */}
       <PhoneNumbers />
+      <Script
+        src="https://chat.citrineclinic.com/widget.js"
+        strategy="lazyOnload"
+        onLoad={() => {
+          const w = window as unknown as {
+            CitrineChat?: {
+              init: (options: { position: string }) => void;
+            };
+          };
+          if (w.CitrineChat) {
+            w.CitrineChat.init({ position: 'bottom-right' });
+          }
+        }}
+      />
     </>
   );
 };
