@@ -299,11 +299,20 @@ const Footer = () => {
         onLoad={() => {
           const w = window as unknown as {
             CitrineChat?: {
-              init: (options: { position: string }) => void;
+              init: (options: { position: string; margin?: string; padding?: string; bottom?: string; right?: string; top?: string; left?: string; zIndex?: number }) => void;
             };
           };
           if (w.CitrineChat) {
-            w.CitrineChat.init({ position: 'bottom-right' });
+            w.CitrineChat.init({
+              position: 'bottom-right',
+              margin: '0px',
+              padding: '0px',
+              bottom: '95px',             // bottom-* positions ke liye bottom offset
+              right: '0px',              // *-right positions ke liye right offset
+              top: '0px',                // top-* positions ke liye top offset
+              left: '0px',               // *-left positions ke liye left offset
+              zIndex: 2147483000,        // optional: layer control
+            });
           }
         }}
       />
