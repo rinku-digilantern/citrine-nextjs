@@ -307,7 +307,7 @@ const Footer = () => {
               position: 'bottom-right',
               margin: '0px',
               padding: '0px',
-              bottom: '95px',             // bottom-* positions ke liye bottom offset
+              bottom: '80px',             // bottom-* positions ke liye bottom offset
               right: '0px',              // *-right positions ke liye right offset
               top: '0px',                // top-* positions ke liye top offset
               left: '0px',               // *-left positions ke liye left offset
