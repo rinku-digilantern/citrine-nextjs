@@ -60,6 +60,9 @@ export default async function BlogPostPage(
       {json.seo?.bred_schema && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof json.seo.bred_schema === 'string' ? json.seo.bred_schema : JSON.stringify(json.seo.bred_schema)) }} />
       )}
+      {json.seo?.seo_schema && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof json.seo.seo_schema === 'string' ? json.seo.seo_schema : JSON.stringify(json.seo.seo_schema)) }} />
+      )}
       <Breadcrumb />
       <BlogBanner
         title={blog.blog_name || ''}

@@ -4,8 +4,18 @@
 
 .container {max-width: 1320px;margin: 0 auto;padding: 0px;}
 
-/* Privacy Policy content Start */
+/* Refund Policy content Start */
+.RefundPolicyPage h2{font-size: 28px;padding: 10px 0px 8px 0px;font-weight: 500;font-family: var( --font-montserrat), sans-serif;color: var(--default-color);}
+.RefundPolicyPage h3{font-size: 22px;padding: 10px 0px 8px 0px;font-weight: 500;font-family: var( --font-montserrat), sans-serif;color: var(--default-color);}
 .RefundPolicyPage p {margin-bottom: 10px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+.RefundPolicyPage p a {color: var(--accent-color);}
+.RefundPolicyPage ol{padding: 0px; margin: 0px 0 12px 30px;}
+.RefundPolicyPage ol li{list-style-type: decimal;padding: 3px 0px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+.RefundPolicyPage ol li::marker{color: var(--accent-color);}
+.RefundPolicyPage ul{padding: 0px; margin: 0px 0 12px 30px;}
+.RefundPolicyPage ul li{list-style-type: square;padding: 3px 0px;font-size: 1.15rem; line-height: 1.8;color: var(--default-color);}
+.RefundPolicyPage ul li a{color: var(--accent-color);}
+.RefundPolicyPage ul li::marker{color: var(--accent-color);}
 
 
 @media (max-width: 1400.98px) and (min-width: 1301px) {
@@ -40,5 +50,11 @@
 .container {max-width: 92%;}
 .commonheader {margin-bottom: 10px;}
 .mainHeading{font-size: 26px;}
+.RefundPolicyPage h2{font-size: 20px;}
+.RefundPolicyPage h3{font-size: 17px;}
 .RefundPolicyPage p {margin-bottom: 10px;font-size: 15px;}
+.RefundPolicyPage ul{margin: 0px 0 12px 20px;}
+.RefundPolicyPage ul li{font-size: 15px;}
+.RefundPolicyPage ol{margin: 0px 0 12px 20px;}
+.RefundPolicyPage ol li{font-size: 15px;}
 }

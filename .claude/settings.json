@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Lantern/AppData/Local/Temp/claude/d--Client-work-2026-mar-citrine-nextjs/bb92388d-8698-40b1-b699-b53c1e5cad38/scratchpad/**)",
+      "Bash(curl -sv https://api.citrineclinic.com/api/blog-detail/melasma-in-pregnancy-why-it-happens-and-how-to-manage-it-safely -o /c/Users/Lantern/AppData/Local/Temp/claude/d--Client-work-2026-mar-citrine-nextjs/bb92388d-8698-40b1-b699-b53c1e5cad38/scratchpad/blog.json)"
+    ]
+  }
+}
