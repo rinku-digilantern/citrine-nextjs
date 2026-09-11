@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/src/app/components/common/Header/Header";
 import Footer from "@/src/app/components/common/Footer/Footer";
 import Script from "next/script";
+import FooterNew from "@/src/app/components/common/FooterNew/FooterNew";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -189,7 +190,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
         <Header />
         {children}
-        <Footer />
+        <FooterNew />
       </body>
     </html>
   );

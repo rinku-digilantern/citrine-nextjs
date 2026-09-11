@@ -17,6 +17,7 @@ import WellnessTreatment from "@/src/app/components/homepage/WellnessTreatment/W
 
 import { getSeoData } from '@/src/lib/cms';
 import { resolveMetadata } from '@/src/lib/seo-utils';
+import FooterNew from '@/src/app/components/common/FooterNew/FooterNew';
 
 export async function generateMetadata(): Promise<Metadata> {
   const seo = await getSeoData('home');
