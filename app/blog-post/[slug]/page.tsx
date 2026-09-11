@@ -30,14 +30,18 @@ async function getBlogData(slug: string) {
 
 // ── Dynamic Metadata ──────────────────────────────────────────────────────────
 // Next.js 16: params is a Promise — must be awaited
-import { resolveMetadata } from '@/src/lib/seo-utils';
+import { resolveMetadata, cmsImageUrl, pickImage } from '@/src/lib/seo-utils';
 
 export async function generateMetadata(
   { params }: { params: Promise<{ slug: string }> }
 ): Promise<Metadata> {
   const { slug } = await params;
   const json = await getBlogData(slug);
-  return resolveMetadata('blog-post/' + slug, json?.seo, 'Blog | Citrine Clinic');
+  const ogImage = pickImage(
+    cmsImageUrl('blog', json?.data?.thumb_image),
+    cmsImageUrl('blog', json?.data?.blog_image_inner)
+  );
+  return resolveMetadata('blog-post/' + slug, json?.seo, 'Blog | Citrine Clinic', ogImage);
 }
 
 // ── Page ──────────────────────────────────────────────────────────────────────

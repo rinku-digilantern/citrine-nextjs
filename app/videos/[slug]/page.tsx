@@ -69,13 +69,18 @@ async function getVideoDetails(slug: string): Promise<ApiResponse | null> {
   }
 }
 
-import { resolveMetadata } from '@/src/lib/seo-utils';
+import { resolveMetadata, cmsImageUrl, pickImage } from '@/src/lib/seo-utils';
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await Promise.resolve(params);
   const videoData = await getVideoDetails(slug);
 
-  return resolveMetadata('videos/' + slug, videoData?.data);
+  const ogImage = pickImage(
+    cmsImageUrl('service_video/banner', videoData?.data?.banner_image),
+    cmsImageUrl('service_video/inner', videoData?.video?.[0]?.image)
+  );
+
+  return resolveMetadata('videos/' + slug, videoData?.data, 'Citrine Clinic', ogImage);
 }
 
 const VideoDetails = async ({ params }: PageProps) => {

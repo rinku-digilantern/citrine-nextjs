@@ -8,7 +8,7 @@ import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
 import AppointmentSection from '@/src/app/components/common/AppointmentSection/AppointmentSection';
 import { notFound } from 'next/navigation';
 
-import { resolveMetadata } from '@/src/lib/seo-utils';
+import { resolveMetadata, cmsImageUrl, pickImage } from '@/src/lib/seo-utils';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -21,12 +21,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!typeRes || typeRes.title !== "Success") return resolveMetadata(slug, null);
 
   let seoData;
+  let ogImage: string | null = null;
+
   if (typeRes.type === "firstcategory") {
     const data = await getServiceCategoryData(slug);
     seoData = data?.seo;
+    ogImage = pickImage(
+      cmsImageUrl('service/banner', data?.data?.banner_image),
+      cmsImageUrl('service/image', data?.data?.service_image)
+    );
   } else if (typeRes.type === "secondcategory") {
     const data = await getSecondCategoryData(slug);
     seoData = data?.seo;
+    ogImage = cmsImageUrl('service/banner', data?.data?.banner_image);
   } else if (typeRes.type === "service") {
     const data = await getServiceInnerData(slug);
     seoData = data?.seo || (data?.data ? {
@@ -34,9 +41,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description_tag: data.data.description_tag,
       canonical_tag: data.data.canonical_tag
     } : null);
+    ogImage = pickImage(
+      cmsImageUrl('service/banner', data?.data?.service_banner_image),
+      cmsImageUrl('service/image', data?.data?.service_image)
+    );
   }
 
-  return resolveMetadata(slug, seoData);
+  return resolveMetadata(slug, seoData, 'Citrine Clinic', ogImage);
 }
 
 export default async function DynamicSlugPage({ params }: PageProps) {
@@ -52,6 +63,9 @@ export default async function DynamicSlugPage({ params }: PageProps) {
   if (typeRes.type === "firstcategory") {
     const data = await getServiceCategoryData(slug);
     if (!data) return notFound();
+    // `seo` is server-only. Keeping it out of the client component's props stops
+    // Next.js serialising the schema a second time into the RSC payload.
+    const { seo: _seo, ...pageData } = data;
     return (
       <>
         {data.seo?.faq_schema && (
@@ -60,7 +74,7 @@ export default async function DynamicSlugPage({ params }: PageProps) {
         {data.seo?.bred_schema && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof data.seo.bred_schema === 'string' ? data.seo.bred_schema : JSON.stringify(data.seo.bred_schema)) }} />
         )}
-        <ServiceCategoryPage data={data} />
+        <ServiceCategoryPage data={pageData} />
       </>
     );
   }
@@ -101,6 +115,9 @@ export default async function DynamicSlugPage({ params }: PageProps) {
     const data = await getServiceInnerData(slug);
     if (!data || !data.success) return notFound();
 
+    // `seo` is server-only — see the firstcategory branch above.
+    const { seo: _seo, ...pageData } = data;
+
     // Using ServiceInnerTemplate exclusively after merging logic
     return (
       <>
@@ -110,7 +127,7 @@ export default async function DynamicSlugPage({ params }: PageProps) {
         {data.seo?.bred_schema && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: (typeof data.seo.bred_schema === 'string' ? data.seo.bred_schema : JSON.stringify(data.seo.bred_schema)) }} />
         )}
-        <ServiceInnerTemplate data={data} />
+        <ServiceInnerTemplate data={pageData} />
       </>
     );
   }

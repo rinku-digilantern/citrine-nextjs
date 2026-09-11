@@ -2,7 +2,7 @@ import React from 'react'
 import { Metadata } from 'next/dist/types';
 import OfferDetails from '@/src/app/components/OfferDetails/OfferDetails';
 import Breadcrumb from '@/src/app/components/common/Breadcrumb/Breadcrumb';
-import { resolveMetadata } from '@/src/lib/seo-utils';
+import { resolveMetadata, pickImage } from '@/src/lib/seo-utils';
 
 function createSlug(name: string) {
   if (!name) return '';
@@ -80,7 +80,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       canonical_tag: offer.canonical_tag
     } : null;
 
-    return resolveMetadata('offers/' + slug, seoData, "Offer Detail | Dr. Niti Gaur | Citrine Clinic");
+    // The offers API already returns absolute image URLs.
+    const ogImage = pickImage(offer?.full_image, offer?.offer_image);
+
+    return resolveMetadata('offers/' + slug, seoData, "Offer Detail | Dr. Niti Gaur | Citrine Clinic", ogImage);
   } catch {
     return resolveMetadata('offers/' + slug, null, "Offer Detail | Dr. Niti Gaur | Citrine Clinic");
   }
