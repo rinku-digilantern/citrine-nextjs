@@ -29,7 +29,9 @@ const ThirdSection: React.FC<ThirdSectionProps> = ({ data, headingtag = 'h2' }) 
           )}
 
           {data.content_bottom && (
-            <p className={styles.footerText} dangerouslySetInnerHTML={{ __html: data.content_bottom }}></p>
+            // div, not p: CMS content_bottom contains its own <p> tags, and a <p> inside
+            // a <p> is invalid HTML — it breaks hydration and duplicates the page's JSON-LD.
+            <div className={styles.footerText} dangerouslySetInnerHTML={{ __html: data.content_bottom }} />
           )}
 
           {data.button_type === 'Yes' && data.button_url && (
